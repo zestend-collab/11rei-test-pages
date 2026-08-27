@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recensement — 11ᵉ Régiment Étranger d'Infanterie</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;
+    --orange:#fab855;
+    --link:#ff9900;
+    --ink:#1a1a18;
+    --white:#ffffff;
+    --muted:#555555;
+    --border:#aaaaaa;
+    --row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+
+  /* CONTROLS */
+  .controls{background:var(--white);border-bottom:2px solid var(--orange);padding:1rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+  .controls-inner{max-width:1300px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+  .search-wrap{position:relative;flex:1 1 220px}
+  .search-wrap svg{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+  input[type=search]{width:100%;padding:.55rem 2.1rem .55rem 2.2rem;border:1px solid var(--border);background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;font-size:.85rem;outline:none;border-radius:3px;transition:border-color .15s}
+  .help-btn{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);width:1.3rem;height:1.3rem;border-radius:50%;border:1px solid var(--border);background:var(--row);color:var(--muted);font-size:.7rem;font-family:'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+  .help-btn:hover{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+  .help-popover{display:none;position:absolute;top:calc(100% + .4rem);left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,.15);padding:.75rem .9rem;font-size:.75rem;line-height:1.5;color:var(--ink);z-index:110}
+  .help-popover.open{display:block}
+  .help-popover code{background:var(--row);padding:.05rem .3rem;border-radius:2px;font-weight:600}
+  .help-popover em{font-style:italic;color:var(--muted)}
+  input[type=search]:focus{border-color:var(--orange)}
+  input[type=search]::placeholder{color:var(--muted)}
+  select{padding:.55rem 2rem .55rem .7rem;border:1px solid var(--border);background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23555'/%3E%3C/svg%3E") no-repeat right .6rem center;-webkit-appearance:none;appearance:none;color:var(--ink);font-family:'Inter',sans-serif;font-size:.82rem;cursor:pointer;outline:none;border-radius:3px;flex-shrink:0;transition:border-color .15s}
+  select:focus{border-color:var(--orange)}
+  .btn-reset{background:none;border:1px solid var(--border);color:var(--muted);font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer;border-radius:3px;transition:all .15s;white-space:nowrap}
+  .btn-reset:hover{background:var(--orange);color:var(--white);border-color:var(--orange)}
+  .back-to-site{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);text-decoration:none;white-space:nowrap;flex-shrink:0;padding:.55rem .3rem;transition:color .15s}
+  .back-to-site:hover{color:var(--link)}
+  .counter-badge{background:#c0392b;color:var(--white);font-family:'EB Garamond',serif;font-size:.9rem;padding:.35rem .9rem;white-space:nowrap;border-radius:3px;align-self:center;font-weight:600}
+  .counter-badge #visible-count{font-weight:700}
+
+  /* LEGEND */
+  .legend{max-width:1300px;margin:.5rem auto 0;padding:0 2rem;display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.73rem;color:var(--muted)}
+  .legend-item{display:flex;align-items:center;gap:.4rem}
+  .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .dot-mort{background:#c0392b}
+  .dot-prison{background:#7f8c8d}
+  .dot-evade{background:#27ae60}
+  .dot-mortcap{background:#8e44ad}
+  .dot-deporte{background:#2c3e50}
+  .dot-resistant{background:#d35400}
+  .dot-afn{background:#fab855}
+  .dot-unknown{background:#bbb}
+
+  /* TABLE */
+  .table-wrap{max-width:1300px;margin:1rem auto 3rem;padding:0 2rem;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--border)}
+  thead tr{background:var(--ink);color:#fff}
+  th{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.75rem .8rem;text-align:left;white-space:nowrap;cursor:pointer;user-select:none}
+  th:hover{background:#333}
+  th .si{margin-left:.3rem;opacity:.5;font-size:.65rem}
+  th.sorted .si{opacity:1;color:var(--orange)}
+
+  tbody tr{border-bottom:1px solid #e0e0e0;transition:background .1s}
+  tbody tr:hover{background:#f0f0f0}
+  tbody tr.row-mort      {border-left:3px solid #c0392b}
+  tbody tr.row-prisonnier{border-left:3px solid #7f8c8d}
+  tbody tr.row-evade     {border-left:3px solid #27ae60}
+  tbody tr.row-mortcap   {border-left:3px solid #8e44ad}
+  tbody tr.row-deporte   {border-left:3px solid #2c3e50}
+  tbody tr.row-resistant {border-left:3px solid #d35400}
+  tbody tr.row-afn       {border-left:3px solid #fab855}
+  tbody tr.row-unknown   {border-left:3px solid transparent}
+
+  td{padding:.55rem .8rem;vertical-align:top;font-size:.82rem;line-height:1.4}
+  td.num{color:var(--muted);font-size:.72rem;width:38px}
+  td.nom{font-family:'EB Garamond',serif;font-size:.95rem;font-weight:600;min-width:180px}
+  td.nom a.fiche{color:var(--link);text-decoration:none;border-bottom:1px dotted var(--link)}
+  td.nom a.fiche:hover{border-bottom-style:solid}
+  td.nom a.alpha{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--border)}
+  td.nom a.alpha:hover{color:var(--link);border-bottom-color:var(--link)}
+  td.nom a.photo{font-size:.8rem;margin-left:.3rem;opacity:.8;text-decoration:none;vertical-align:middle}
+  td.nom a.photo:hover{opacity:1}
+  td.date{color:var(--muted);font-size:.75rem;min-width:160px}
+  td.grade{min-width:90px}
+  td.cie{min-width:110px}
+  td.destin{min-width:220px}
+
+  .badge{display:inline-block;font-size:.67rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;padding:.15rem .45rem;border-radius:2px;white-space:nowrap;margin:.1rem .1rem .1rem 0}
+  .b-mort     {background:#fde8e8;color:#922b21}
+  .b-prison   {background:#f0f0f0;color:#555}
+  .b-prisonnier{background:#eaecee;color:#566573}
+  .b-evade    {background:#d5f5e3;color:#1e8449}
+  .b-mortcap  {background:#e8daef;color:#6c3483}
+  .b-deporte  {background:#d5d8dc;color:#1c2833}
+  .b-resistant{background:#fdebd0;color:#935116}
+  .b-afn      {background:#fef9e7;color:#7d6608}
+  .b-aconfirmer{background:#fffbeb;color:#b45309;border:1px solid #f59e0b}
+  .detail{font-size:.73rem;color:var(--muted);margin-top:.2rem;line-height:1.35}
+  .dlieu{font-size:.73rem;color:#922b21;margin-top:.15rem}
+
+  .loading{text-align:center;padding:4rem;color:var(--muted);font-family:'EB Garamond',serif;font-size:1.1rem;font-style:italic}
+  .empty-state{text-align:center;padding:3rem;color:var(--muted);display:none}
+  .empty-state p{font-family:'EB Garamond',serif;font-size:1.1rem;font-style:italic}
+
+  footer{text-align:center;padding:1.5rem;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border);letter-spacing:.06em}
+  footer a{color:var(--link);text-decoration:none}
+
+  @media(max-width:600px){
+    .controls{padding:.8rem 1rem}
+    .table-wrap{padding:0 .3rem}
+    td.date,td.grade{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <div class="controls-inner">
+    <a href="https://www.11regimentetranger.com" class="back-to-site" title="Retour au site principal">← Retour au site</a>
+    <div class="search-wrap">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="search" placeholder="Rechercher un nom… (essayez Zombro* ou Zombr?wski)" autocomplete="off">
+      <button type="button" class="help-btn" id="help-btn" title="Aide sur la recherche" aria-label="Aide sur la recherche">?</button>
+      <div class="help-popover" id="help-popover">
+        La recherche porte sur le nom, les variantes orthographiques, le matricule, la date, la ville de naissance, la compagnie et le destin.<br><br>
+        <strong>Caractères joker</strong> (sur le nom et la ville de naissance) :<br>
+        <code>*</code> remplace une suite de caractères quelconque — ex. <em>Zombro*</em><br>
+        <code>?</code> remplace un seul caractère — ex. <em>Zombr?wski</em>
+      </div>
+    </div>
+    <select id="filter-lieu"><option value="">Tous pays de naissance</option></select>
+    <select id="filter-cie"><option value="">Toutes compagnies</option></select>
+    <select id="filter-destin">
+      <option value="">Tous destins</option>
+      <option value="mort">Mort pour la France</option>
+      <option value="prisonnier">Prisonnier de guerre</option>
+      <option value="evade">Évadé</option>
+      <option value="mortcap">Mort en captivité</option>
+      <option value="deporte">Déporté</option>
+      <option value="resistant">Résistant</option>
+      <option value="afn">Rejoint l'AFN</option>
+      <option value="inconnu">Non renseigné</option>
+    </select>
+    <button class="btn-reset" id="reset">✕ Réinitialiser</button>
+    <div class="counter-badge"><span id="visible-count">—</span> résultats</div>
+  </div>
+</div>
+
+<div class="legend" style="max-width:1300px;margin:.5rem auto 0;padding:.3rem 2rem .5rem">
+  <span class="legend-item"><span class="dot dot-mort"></span>MPF</span>
+  <span class="legend-item"><span class="dot dot-prison"></span>Prisonnier</span>
+  <span class="legend-item"><span class="dot dot-evade"></span>Évadé</span>
+  <span class="legend-item"><span class="dot dot-mortcap"></span>Mort captivité</span>
+  <span class="legend-item"><span class="dot dot-deporte"></span>Déporté</span>
+  <span class="legend-item"><span class="dot dot-resistant"></span>Résistant</span>
+  <span class="legend-item"><span class="dot dot-afn"></span>AFN</span>
+  <span class="legend-item"><span class="dot dot-unknown"></span>Non renseigné</span>
+</div>
+
+<div class="table-wrap">
+  <div class="loading" id="loading">Chargement des données…</div>
+  <table id="main-table" style="display:none">
+    <thead>
+      <tr>
+        <th data-col="num" class="sorted">N° <span class="si">↑</span></th>
+        <th data-col="Nom">Nom <span class="si">↕</span></th>
+        <th data-col="date">Naissance <span class="si">↕</span></th>
+        <th data-col="grade">Grade <span class="si">↕</span></th>
+        <th data-col="Cie1">Compagnie <span class="si">↕</span></th>
+        <th data-col="destin">Destin <span class="si">↕</span></th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="empty-state" id="empty-state"><p>Aucun légionnaire ne correspond à ces critères.</p></div>
+</div>
+
+<footer>
+  Sources : Mémoire des hommes · SHD Vincennes &amp; Aubagne · Journal officiel · Archives de captivité<br>
+  <a href="https://www.11regimentetranger.com">11regimentetranger.com</a>
+</footer>
+
+<script src="data.js?v=20260713"></script>
+<script>
+let sortCol='num', sortDir=1;
+
+// Tronque le texte de décès : ne garde que "Mort le <date>" (avec heure éventuelle)
+// ou "Porté disparu [complément court]", sans le récit/commentaire qui suit.
+function truncMort(txt){
+  if(!txt) return txt;
+  // Cas "Porté disparu ..." : on garde jusqu'au premier point, sans le récit détaillé après
+  let m=txt.match(/^Porté disparu(?:\s+en\s+\S+\s+\d{4})?/i);
+  if(m) return m[0];
+  // Cas "Mort le <date>" (+ heure optionnelle "à XXhXX"), on coupe avant toute parenthèse/commentaire
+  m=txt.match(/^(?:[Mm]ort le\s+(?:"sans date"|\d{2}\/\d{2}\/\d{4})(?:\s+à\s*\d{1,2}h\d{0,2})?)/);
+  if(m) return m[0];
+  return txt;
+}
+
+
+// Priority order for destin category
+function destCat(d){
+  if(d.Mort) return 'mort';
+  if(d.MortDeportation||d.ResistantMortDeportation) return 'mortcap';
+  if(d.MortCaptivite) return 'mortcap';
+  if(d.Deporte||d.ResistantDeporte) return 'deporte';
+  if(d.Resistant) return 'resistant';
+  if(d.Evasion) return 'evade';
+  if(d.AFN) return 'afn';
+  if(d.Prisonnier) return 'prisonnier';
+  return 'inconnu';
+}
+
+// Build badges for destin column
+function buildDestin(d){
+  let h='';
+  if(d.ACConfirmer)      h+=`<span class="badge b-aconfirmer">À confirmer</span>`;
+  if(d.Mort)             h+=`<span class="badge b-mort">${truncMort(d.Mort)}</span>`;
+  if(d.MortApres)        h+=`<span class="badge b-mort">${truncMort(d.MortApres)}</span>`;
+  if(d.Prisonnier)       h+=`<span class="badge b-prisonnier">Prisonnier</span>`;
+  if(d.Evasion)          h+=`<span class="badge b-evade">Évadé</span>`;
+  if(d.MortCaptivite)    h+=`<span class="badge b-mortcap">Mort en captivité</span>`;
+  if(d.Deporte)          h+=`<span class="badge b-deporte">Déporté</span>`;
+  if(d.MortDeportation)  h+=`<span class="badge b-mortcap">Mort en déportation</span>`;
+  if(d.Resistant)        h+=`<span class="badge b-resistant">Résistant</span>`;
+  if(d.ResistantDeporte) h+=`<span class="badge b-deporte">Déporté</span>`;
+  if(d.ResistantMortDeportation) h+=`<span class="badge b-mortcap">Mort en déportation</span>`;
+  if(d.AFN)              h+=`<span class="badge b-afn">Rejoint l'AFN</span>`;
+  return h||'<span style="color:#bbb">—</span>';
+}
+
+function getPays(d){ return d.pays||null; }
+
+function buildFilters(){
+  // Pays de naissance — extrait la partie pays du champ lieu "Ville - Pays"
+  const pays=[...new Set(DATA.map(d=>getPays(d)).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'));
+  const ls=document.getElementById('filter-lieu');
+  pays.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;ls.appendChild(o)});
+
+  // Compagnies — tri logique : numérotées, CA, spéciales, bataillons
+  const cieOrder = [
+    '1ère compagnie','2è compagnie','3è compagnie','4è compagnie',
+    '5è compagnie','6è compagnie','7è compagnie','8è compagnie',
+    '9è compagnie','10è compagnie','11è compagnie','12è compagnie',
+    'CA1','CA2','CA3',
+    'Compagnie de commandement','Compagnie Hors Rang',
+    "Compagnie Régimentaire d'Engins",'État-Major','Groupe franc','Dépôt',
+    '1er bataillon','2è bataillon','3è bataillon','Passé au 12è REI'
+  ];
+  const cieSet=new Set();
+  DATA.forEach(d=>{if(d.Cie1)cieSet.add(d.Cie1);if(d.Cie2)cieSet.add(d.Cie2);if(d.GroupeFranc)cieSet.add('Groupe franc');if(d.AutreRegiment)cieSet.add(d.AutreRegiment)});
+  const cies=[...cieSet].sort((a,b)=>{
+    const ia=cieOrder.indexOf(a), ib=cieOrder.indexOf(b);
+    if(ia>=0&&ib>=0) return ia-ib;
+    if(ia>=0) return -1;
+    if(ib>=0) return 1;
+    return a.localeCompare(b,'fr');
+  });
+  const cs=document.getElementById('filter-cie');
+  cies.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;cs.appendChild(o)});
+}
+
+function render(rows){
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  const frag=document.createDocumentFragment();
+
+  rows.forEach(d=>{
+    const cat=destCat(d);
+    const tr=document.createElement('tr');
+    tr.className='row-'+cat;
+
+    // Nom
+    const ap = d.LettreDossier || (d.Nom.replace(/^\?/,'').charAt(0).toLowerCase());
+    const aURL = `https://zestend-collab.github.io/-11rei-recensement/recensement-${ap}.html${d.Identifiant ? '#'+d.Identifiant : ''}`;
+    let nomHTML = d.URL
+      ? `<a class="fiche" href="${d.URL}" target="_blank" rel="noopener">${d.Nom}</a>`
+      : `<a class="alpha" href="${aURL}" target="_blank" rel="noopener">${d.Nom}</a>`;
+    if(d.photo) {
+      const photoHref = d.photo_link || "https://www.11regimentetranger.com/portraits";
+      nomHTML+=` <a class="photo" href="${photoHref}" target="_blank" rel="noopener" title="Portrait disponible">📷</a>`;
+    }
+
+    // Compagnie (fusionnee "puis", coherent avec les fiches par lettre)
+    let cieHTML = [d.Cie1, d.Cie2].filter(Boolean).join(' puis ') || '—';
+    if(d.GroupeFranc){
+      cieHTML = (cieHTML==='—') ? 'Groupe franc' : cieHTML+' · Groupe franc';
+    }
+    if(d.AutreRegiment){
+      cieHTML = (cieHTML==='—') ? d.AutreRegiment : cieHTML+' · '+d.AutreRegiment;
+    }
+
+    tr.innerHTML=`
+      <td class="num">${d.num||''}</td>
+      <td class="nom">${nomHTML}</td>
+      <td class="date">${d.date||'—'}</td>
+      <td class="grade">${d.grade||'—'}</td>
+      <td class="cie">${cieHTML}</td>
+      <td class="destin">${buildDestin(d)}</td>`;
+    frag.appendChild(tr);
+  });
+
+  tbody.appendChild(frag);
+  document.getElementById('visible-count').textContent=rows.length;
+  const empty=rows.length===0;
+  document.getElementById('empty-state').style.display=empty?'block':'none';
+  document.getElementById('main-table').style.display=empty?'none':'table';
+}
+
+function wildcardToRegex(q){
+  // echappe tous les caracteres speciaux de regex sauf * et ?
+  const escaped=q.replace(/[.+^${}()|[\]\\]/g,'\\$&');
+  const pattern=escaped.replace(/\*/g,'.*').replace(/\?/g,'.');
+  return new RegExp(pattern,'i');
+}
+
+function filterAndRender(){
+  const qRaw=document.getElementById('search').value;
+  const q=qRaw.toLowerCase();
+  const isWildcard = qRaw.includes('*') || qRaw.includes('?');
+  const wcRegex = isWildcard ? wildcardToRegex(qRaw) : null;
+  const lieu=document.getElementById('filter-lieu').value;
+  const cie=document.getElementById('filter-cie').value;
+  const dest=document.getElementById('filter-destin').value;
+
+  let rows=DATA.filter(d=>{
+    if(qRaw){
+      if(isWildcard){
+        const nomEtVariantes=[d.Nom,d.Variantes,d.lieu].filter(Boolean).join(' ');
+        if(!wcRegex.test(nomEtVariantes)) return false;
+      } else {
+        const txt=[d.Nom,d.Variantes,d.Matricule,d.date,d.lieu,d.grade,d.Cie1,d.Cie2,
+          d.GroupeFranc?'Groupe franc':null,d.AutreRegiment,d.Mort,d.Dlieu,
+          d.MortCaptivite,d.Evasion,d.Deporte,d.MortDeportation,
+          d.Resistant,d.ResistantDeporte,d.AFN,d.nationalite
+        ].filter(Boolean).join(' ').toLowerCase();
+        if(!txt.includes(q)) return false;
+      }
+    }
+    if(lieu && getPays(d)!==lieu) return false;
+    if(cie){
+      if(cie==='Groupe franc'){
+        if(!d.GroupeFranc) return false;
+      } else if(cie==='Passé au 12è REI'){
+        if(!d.AutreRegiment) return false;
+      } else if(d.Cie1!==cie && d.Cie2!==cie){
+        return false;
+      }
+    }
+    if(dest){
+      if(dest==='mort'        && !d.Mort) return false;
+      if(dest==='prisonnier'  && !d.Prisonnier) return false;
+      if(dest==='evade'       && !d.Evasion) return false;
+      if(dest==='mortcap'     && !(d.MortCaptivite||d.MortDeportation||d.ResistantMortDeportation)) return false;
+      if(dest==='deporte'     && !(d.Deporte||d.ResistantDeporte)) return false;
+      if(dest==='resistant'   && !d.Resistant) return false;
+      if(dest==='afn'         && !d.AFN) return false;
+      if(dest==='inconnu'     && destCat(d)!=='inconnu') return false;
+    }
+    return true;
+  });
+
+  rows.sort((a,b)=>{
+    let va=a[sortCol]??'', vb=b[sortCol]??'';
+    if(sortCol==='num'){va=+va||0;vb=+vb||0;}
+    else{va=String(va).toLowerCase();vb=String(vb).toLowerCase();}
+    return va<vb?-sortDir:va>vb?sortDir:0;
+  });
+
+  render(rows);
+}
+
+document.querySelectorAll('th[data-col]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const col=th.dataset.col;
+    if(sortCol===col) sortDir*=-1; else{sortCol=col;sortDir=1;}
+    document.querySelectorAll('th').forEach(t=>{t.classList.remove('sorted');t.querySelector('.si').textContent='↕'});
+    th.classList.add('sorted');
+    th.querySelector('.si').textContent=sortDir===1?'↑':'↓';
+    filterAndRender();
+  });
+});
+
+['search','filter-lieu','filter-cie','filter-destin'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',filterAndRender);
+  document.getElementById(id).addEventListener('change',filterAndRender);
+});
+
+document.getElementById('help-btn').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('help-popover').classList.toggle('open');
+});
+document.addEventListener('click', (e) => {
+  const pop = document.getElementById('help-popover');
+  if(pop.classList.contains('open') && !pop.contains(e.target) && e.target.id !== 'help-btn'){
+    pop.classList.remove('open');
+  }
+});
+
+document.getElementById('reset').addEventListener('click',()=>{
+  document.getElementById('search').value='';
+  document.getElementById('filter-lieu').value='';
+  document.getElementById('filter-cie').value='';
+  document.getElementById('filter-destin').value='';
+  filterAndRender();
+});
+
+document.getElementById('loading').style.display='none';
+document.getElementById('main-table').style.display='table';
+buildFilters();
+filterAndRender();
+</script>
+</body>
+</html>
