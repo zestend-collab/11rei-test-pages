@@ -8,7 +8,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
+    :root{
     --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
@@ -44,16 +44,27 @@
   .pcard-name{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;text-align:center;line-height:1.35;padding:10px 8px}
   .pcard-grade{font-family:'Inter',sans-serif;font-size:.7rem;color:var(--muted);text-align:center;margin-top:-6px;padding-bottom:10px}
 
-  .floating-comment-btn{position:fixed;bottom:18px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
-    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
-    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
   .floating-comment-btn:hover{background:var(--link);color:#fff}
-
-  .back-to-top{position:fixed;bottom:74px;right:18px;z-index:100;width:2.6rem;height:2.6rem;border-radius:50%;
-    background:var(--orange);color:var(--ink);border:none;font-size:1.2rem;line-height:1;cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,.25);display:none;align-items:center;justify-content:center;transition:opacity .2s}
-  .back-to-top.show{display:flex}
-  .back-to-top:hover{background:var(--link)}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
 
   footer{text-align:center;font-size:.72rem;color:var(--muted);font-style:italic;padding:1rem}
 
@@ -77,13 +88,13 @@
 <body>
 
 <a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Page-Portraits" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
-<button class="back-to-top" id="portraits-top" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
 
 <header>
   <h1>Portraits — 11<sup>e</sup> REI</h1>
   <div class="sub">332 portraits, classés par ordre alphabétique</div>
   <div class="hint">Cliquez sur une photo pour ouvrir la fiche de la personne</div>
-  <a class="back" href="https://test.11regimentetranger.com/recherche-legionnaire">← Retour à la recherche globale</a>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour à la recherche globale</a>
 </header>
 
 <nav class="az-nav">
@@ -2069,7 +2080,8 @@
 
 <script>
 (function(){
-  var btn = document.getElementById('portraits-top');
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
   function onScroll(){
     if(window.scrollY > 500){ btn.classList.add('show'); }
     else { btn.classList.remove('show'); }

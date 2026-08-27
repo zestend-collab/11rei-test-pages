@@ -43,7 +43,7 @@
   .back-to-site{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--link);text-decoration:none;white-space:nowrap;flex-shrink:0}
   .back-to-site:hover{text-decoration:underline}
 
-  .floating-comment-btn{
+    .floating-comment-btn{
     position:fixed;bottom:74px;right:18px;z-index:100;
     display:flex;align-items:center;gap:.4rem;
     font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
@@ -53,7 +53,6 @@
     transition:background .15s;white-space:nowrap;
   }
   .floating-comment-btn:hover{background:var(--link);color:#fff}
-
   .floating-top-btn{
     position:fixed;bottom:18px;right:18px;z-index:100;
     width:2.6rem;height:2.6rem;border-radius:50%;
@@ -174,7 +173,7 @@
         <div class="sub">Fiches biographiques — lettre H</div>
       </div>
     </div>
-    <a class="back-to-site" href="https://test.11regimentetranger.com/recherche-legionnaire">← Retour à la recherche globale</a>
+    <a class="back-to-site" href="https://test.11regimentetranger.com/arborescence">← Retour à la recherche globale</a>
   </div>
 </header>
 
@@ -327,18 +326,18 @@ function init(){
   document.getElementById('top-btn').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
   (function(){
-    var btn = document.getElementById('floating-top-btn');
-    if(!btn) return;
-    function onScroll(){
-      if(window.scrollY > 500){ btn.classList.add('show'); }
-      else { btn.classList.remove('show'); }
-    }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-    btn.addEventListener('click', function(){
-      window.scrollTo({top:0, behavior:'smooth'});
-    });
-  })();
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
 
   const qParam = new URLSearchParams(location.search).get('q');
   if(qParam){

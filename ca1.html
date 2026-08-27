@@ -8,11 +8,11 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
+    :root{
     --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
-    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;
   }
+  :root{--paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;}
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
   main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
@@ -151,9 +151,15 @@
   .page-left .tapzone{left:0}
   .page-right .tapzone{right:0}
 
-  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
-    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
-    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
   .floating-comment-btn:hover{background:var(--link);color:#fff}
   .floating-top-btn{
     position:fixed;bottom:18px;right:18px;z-index:100;
@@ -183,7 +189,7 @@
   <div class="htext">
     <h1>Compagnie d'Accompagnement n°1 (CA1)</h1>
     <div class="sub">Effectif recensé : 86 légionnaires</div>
-    <a class="back" href="https://test.11regimentetranger.com/recherche-legionnaire">← Retour</a>
+    <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
   </div>
 </header>
 
