@@ -1,0 +1,1647 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSR3XYVTB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FKSR3XYVTB');
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  .rei-resist{
+    --bg:#cccccc; --card:#ffffff; --orange:#fab855; --link:#ff9900;
+    --ink:#1a1a18; --muted:#555555; --border:#aaaaaa; --row:#f7f7f7;
+    --stamp-mort:#a5514a; --stamp-prison:#6b6b6b; --stamp-evade:#5c7a56;
+    --stamp-mortcap:#6d5d7c; --stamp-deporte:#455663; --stamp-resistant:#a5793f;
+    --stamp-afn:#9c8340; --stamp-unknown:#999999;
+    --stamp-resistantdeporte:#455663; --stamp-resistantmort:#3b3b3b;
+    --movement:#3f6b4f;
+    background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;padding:16px 0;
+  }
+  .rei-resist *{box-sizing:border-box;}
+  .rei-resist .back-to-site{display:inline-block;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);
+    text-decoration:none;margin:0 auto 12px;padding:.3rem 0;transition:color .15s;max-width:1100px;}
+  .rei-resist .back-to-site:hover{color:var(--link);}
+  .rei-resist .page-intro{font-family:'Inter',sans-serif;font-size:.85rem;line-height:1.65;color:var(--ink);
+    max-width:1100px;margin:0 auto 20px;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:4px;}
+  .rei-resist .page-intro p{margin:0 0 10px;text-align:justify;text-justify:inter-word;}
+  .rei-resist .page-intro p:last-child{margin-bottom:0;}
+  .rei-resist .page-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.6rem;color:var(--ink);
+    margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--orange);}
+  .rei-resist .toolbar{max-width:1100px;margin:0 auto 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+  .rei-resist .search-box{flex:1 1 220px;padding:8px 12px;border:1px solid var(--border);border-radius:4px;font-family:'Inter',sans-serif;font-size:.85rem;}
+  .rei-resist .filter-select{flex:0 0 auto;padding:8px 10px;border-radius:4px;border:1px solid var(--border);background:var(--card);
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);cursor:pointer;}
+  .rei-resist .count{max-width:1100px;margin:0 auto 10px;font-size:.78rem;color:var(--muted);}
+  .rei-resist .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:1100px;margin:0 auto;}
+  @media (max-width:680px){.rei-resist .grid{grid-template-columns:1fr;}}
+  .rei-resist .card{background:var(--card);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;}
+  .rei-resist .card.open{box-shadow:0 2px 10px rgba(0,0,0,.1);}
+  .rei-resist .card.hide{display:none;}
+  .rei-resist .badges-corner{position:absolute;top:9px;right:9px;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:58%;z-index:2;}
+  .rei-resist .stamp{
+    font-family:'Inter',sans-serif;font-size:.6rem;font-weight:500;text-transform:uppercase;letter-spacing:.03em;
+    padding:2px 6px;border-radius:3px;border:1px solid currentColor;line-height:1.3;white-space:normal;text-align:right;
+    background:var(--row);opacity:.92;max-width:110px;
+  }
+  .rei-resist .stamp-mort{color:var(--stamp-mort);}
+  .rei-resist .stamp-prison{color:var(--stamp-prison);}
+  .rei-resist .stamp-evade{color:var(--stamp-evade);}
+  .rei-resist .stamp-mortcap{color:var(--stamp-mortcap);}
+  .rei-resist .stamp-deporte{color:var(--stamp-deporte);}
+  .rei-resist .stamp-resistant{color:var(--stamp-resistant);}
+  .rei-resist .stamp-afn{color:var(--stamp-afn);}
+  .rei-resist .stamp-unknown{color:var(--stamp-unknown);}
+  .rei-resist .stamp-resistantdeporte{color:var(--stamp-resistantdeporte);}
+  .rei-resist .stamp-resistantmort{color:var(--stamp-resistantmort);}
+  .rei-resist .card-head{all:unset;display:flex;align-items:center;gap:12px;width:100%;padding:11px 100px 11px 14px;cursor:pointer;box-sizing:border-box;}
+  .rei-resist .card-head:hover{background:var(--row);}
+  .rei-resist .portrait{flex:0 0 auto;width:2.5rem;height:2.5rem;border-radius:50%;overflow:hidden;border:1.5px solid var(--orange);background:var(--row);display:none;}
+  .rei-resist .card.has-photo .portrait{display:block;}
+  .rei-resist .portrait img{width:100%;height:100%;object-fit:cover;display:block;}
+  .rei-resist .head-text{flex:1 1 auto;min-width:0;}
+  .rei-resist .head-text .name{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem;}
+  .rei-resist .head-text .name .alias{font-family:'Inter',sans-serif;font-weight:400;font-style:italic;font-size:.82rem;color:var(--muted);}
+  .rei-resist .head-text .meta{font-size:.72rem;color:var(--muted);margin-top:3px;}
+  .rei-resist .movements{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px;}
+  .rei-resist .movement-chip{font-size:.6rem;text-transform:uppercase;letter-spacing:.03em;padding:1px 6px;border-radius:3px;
+    color:#fff;font-weight:500;}
+  .rei-resist .chip-mouvement{background:#3f6b4f;}
+  .rei-resist .chip-reseau{background:#4a5f8a;}
+  .rei-resist .chip-maquis{background:#8a5a3f;}
+  .rei-resist .chevron{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:.9rem;height:.9rem;color:var(--muted);transition:transform .2s;pointer-events:none;}
+  .rei-resist .card.open .chevron{transform:translateY(-50%) rotate(180deg);}
+  .rei-resist .card-body{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .rei-resist .card.open .card-body{max-height:3000px;}
+  .rei-resist .body-content{padding:10px 14px 16px;border-top:1px solid var(--border);font-size:.85rem;line-height:1.6;}
+  .rei-resist .section{margin-top:8px;}
+  .rei-resist .section h4{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--orange);
+    padding-bottom:3px;margin:0 0 5px;display:inline-block;}
+  .rei-resist .section p{margin:0 0 3px;}
+  .rei-resist .no-results{max-width:1100px;margin:0 auto;text-align:center;color:var(--muted);font-style:italic;padding:20px;display:none;}
+  .rei-resist .back-to-top{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .rei-resist .back-to-top.show{display:flex;}
+  .rei-resist .back-to-top:hover{background:var(--link);}
+  .rei-resist .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .rei-resist .floating-comment-btn:hover{background:var(--link);color:#fff;}
+</style>
+<div class="rei-resist">
+<button class="back-to-top" id="rei-resist-top" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=R%C3%A9sistants" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<div style="max-width:1100px;margin:0 auto;">
+<a class="back-to-site" href="https://www.11regimentetranger.com" title="Retour au site principal">← Retour au site</a>
+</div>
+
+<div class="page-intro">
+<h1 class="page-title">Résistants du 11e REI</h1>
+<p>Cette page rassemble les légionnaires du 11è régiment étranger d'infanterie dont le parcours après la campagne de 1939-40 croise la Résistance : engagement dans les Forces Françaises de l'Intérieur (FFI), les Forces Françaises Libres (FFL), un réseau ou un maquis identifié, jusqu'à parfois l'arrestation et la déportation.</p>
+<p>Les mouvements et réseaux affichés en tag sous chaque nom sont extraits automatiquement du texte des fiches — l'information n'est pas toujours complète ou peut être approximative pour les cas les moins documentés.</p>
+<p>Utilisez le filtre ci-dessous pour cibler un mouvement ou un réseau en particulier.</p>
+</div>
+
+<div class="toolbar">
+<input type="text" id="rei-resist-search" class="search-box" placeholder="Rechercher un nom...">
+<select id="rei-resist-filter-mouvement" class="filter-select"><option value="all">Tous les mouvements (63)</option><option value="dir">DIR (6)</option><option value="ffc">FFC (5)</option><option value="ffi">FFI (41)</option><option value="ffl">FFL (17)</option><option value="ftp">FTP (1)</option><option value="ftpf">FTPF (6)</option><option value="mnpg">MNPG (1)</option><option value="ocm">OCM (1)</option><option value="ora">ORA (1)</option></select>
+<select id="rei-resist-filter-reseau" class="filter-select"><option value="all">Tous les réseaux (9)</option><option value="reseaubuck">Réseau Buck (1)</option><option value="reseaudiplomat">Réseau Diplomat (1)</option><option value="reseaueleuthere">Réseau Eleuthere (1)</option><option value="reseaueric">Réseau Eric (1)</option><option value="reseauevasiondefrance">Réseau Evasion de France (1)</option><option value="reseaugallia">Réseau Gallia (1)</option><option value="reseaugoelette">Réseau Goelette (1)</option><option value="reseauhonneuretpatrie">Réseau Honneur et Patrie (1)</option><option value="reseauliberationnord">Réseau Libération Nord (2)</option><option value="reseaumithridate">Réseau Mithridate (2)</option></select>
+<select id="rei-resist-filter-maquis" class="filter-select"><option value="all">Tous les maquis (7)</option><option value="maquisnonprecise">Maquis (non précisé) (2)</option><option value="maquisairedecote">Maquis Aire de Cote (1)</option><option value="maquischerimont">Maquis Cherimont (1)</option><option value="maquislasalle">Maquis Lasalle (1)</option><option value="maquislot">Maquis Lot (1)</option><option value="maquisoisans">Maquis Oisans (1)</option><option value="maquispontsaintesprit">Maquis Pont Saint Esprit (1)</option><option value="maquisrosporden">Maquis Rosporden (1)</option><option value="maquisvercors">Maquis Vercors (1)</option></select>
+</div>
+<div class="count" id="rei-resist-count">91 fiches sur 91</div>
+<div class="grid">
+
+  <div class="card has-photo" id="amand-maurice" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="amand maurice">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/amand-maurice.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">AMAND Maurice</div>
+        <div class="meta">(03/12/1911 - Mons - Belgique)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : peut être JO 23/05/1948 portant attribution de la médaille des évadés AMAND (Maurice), adjudant FFI</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jules et Alphonsine Verbruggen</p><p><b>Mariage</b> : le 25/01/1933 à Namur avec Mireille Vandepoortael, divorce. Le 23/01/1948 à Villemomble avec Odette Denise Chantier</p><p><b>Décès</b> : le 19/10/1985</p><p><b>Profession</b> : artiste chorégraphe, garçon de restaurant</p><p><b>Naturalisation</b> : JO 23/05/1948 naturalisé AMAND (Maurice), Mons (Belgique), 03-12-11 — 32028x47 — 75</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p><p><b>Évasion</b> : Évadé le 30/10/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="astardjian-artin" data-open="false" data-mouvements="ftpf" data-reseaux="" data-maquis="" data-search="astardjian artin &quot;arthur&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/astardjian-artin.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">ASTARDJIAN Artin &quot;Arthur&quot;</div>
+        <div class="meta">(30/12/1902 - Nicopole - Bulgarie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FTPF</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il rejoint les FTPF en juin 1944 à Aix en Provence. Il participe à la libération d'Aix et aux attaques contre des convois allemands</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Marditch et Ebrouki Kalfayan</p><p><b>Mariage</b> : le 03/12/1949 à Chavelot avec Marie Latrasse</p><p><b>Profession</b> : chauffeur</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="babitch-alois-henri" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="babitch/babic/babitsch aloïs henri babic/babitsch">
+    <div class="badges-corner"><span class="stamp stamp-deporte" title="Déporté">DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/babitch-alois-henri.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BABITCH/BABIC/BABITSCH Aloïs Henri</div>
+        <div class="meta">(23/05/1905 - Marebourg - Yougoslavie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : groupement de résistance Belfort? Sergent FFI</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Karl et Rosa Karmel</p><p><b>Décès</b> : le 27/02/1985 à Marebourg (mention marginale acte de naissance)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Déportation raciale</b> : Il est déporté à Sierbourg le 13/08/1943</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="baumont-pierre-jean-francois" data-open="false" data-mouvements="dir|ffc|ffi|ffl" data-reseaux="reseaumithridate" data-maquis="" data-search="baumont pierre jean françois">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/baumont-pierre-jean-francois.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BAUMONT Pierre Jean François</div>
+        <div class="meta">(05/02/1911 - Rochefort - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">DIR</span><span class="movement-chip chip-mouvement">FFC</span><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">FFL</span><span class="movement-chip chip-reseau">Réseau Mithridate</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : forces françaises combattantes (FFC), déportés et internés de la résistance (DIR), forces françaises libres (FFL), forces françaises de l’intérieur (FFI), réseau Mithridate, interné résistant</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Daniel et Jeanne Brugère</p><p><b>Mariage</b> : le 08/06/1942 à Argentière avec Armande Marcelle Lautet</p><p><b>Décès</b> : le 11/10/1991 à Nice</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Évasion</b> : Il échappe à la reddition</p><p><b>A rejoint l'AFN</b> : Rejoint le dépôt de Fuveau le 09/08/1940 puis l'AFN et le 2è REI. Il est jugé en cour martiale en 1941 avec 5 autres gaullistes. Accusé de crimes et manœuvres contre la sauvegarde de l'unité et de la patrie, il est acquitté</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="berembaum-chaim" data-open="false" data-mouvements="ffi|mnpg" data-reseaux="" data-maquis="" data-search="berembaum chaïm &quot;emile&quot; dubois et béranger">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/berembaum-chaim.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BEREMBAUM Chaïm &quot;Emile&quot; <span class="alias">alias &laquo;&nbsp;Dubois et Béranger&nbsp;&raquo;</span></div>
+        <div class="meta">(10/09/1913 - Varsovie - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">MNPG</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;Dubois et Béranger&quot; pour le MNPG (non homologué FFI)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Icek Ber Isaac (mort en 1937) et Szyla Mordkowicz. Son père a été marié une première fois avec Ida Schlonender</p><p><b>Mariage</b> : le 04/10/1945 à Paris 18 avec Virginie Camille Poulet</p><p><b>Profession</b> : fourreur</p><p><b>Naturalisation</b> : JO 04/05/1947 naturalisé BEREMBAUM (Emile), secrétaire, né le 10 septembre 1913 à Varsovie (Pologne), demeurant à Paris</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier le 23/06/1940 à Toul</p><p><b>Lieu de captivité</b> : Il est interné au stalag XI B mle 95364</p><p><b>Évasion</b> : Le soldat BERENBAUM Emile- Nº Mle 75.836 demeurant 11, Rue Buzelin à Paris (18) a obtenu la médaille instituée par la loi du 20 août 1926 complétée par l'ordonnance du 7 Janvier 1944 pour le motif suivant : &quot;Prisonnier de guerre en Allemagne, depuis juin 1940, s’est le 19 Septembre 1943, après deux tentatives avortées évadé du kommando de Goettingen (Wesphalie). Est parvenu ensuite au prix de maintes difficultés à regagner la France, caché dans un wagon de marchandises. Dés son retour s'est mis au service de la résistance&quot; (Décret du 25 octobre 1946 - J.O. N ° 278 du 28 Novembre 1946) la présente citation entraîne le droit au port de la croix de Guerre avec étoile de Bronze</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="binoche-francois-etienne-adolphe-henri" data-open="false" data-mouvements="dir|ffc|ffi|ffl" data-reseaux="reseaugallia|reseaumithridate" data-maquis="" data-search="binoche françois etienne adolphe henri auger">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/binoche-francois-etienne-adolphe-henri.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BINOCHE François Etienne Adolphe Henri <span class="alias">alias &laquo;&nbsp;Auger&nbsp;&raquo;</span></div>
+        <div class="meta">(23/03/1911 - Paris 6 - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">DIR</span><span class="movement-chip chip-mouvement">FFC</span><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">FFL</span><span class="movement-chip chip-reseau">Réseau Gallia</span><span class="movement-chip chip-reseau">Réseau Mithridate</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;Auger&quot;. Compagnon de la Libération par décret du 07/03/1945, Médaillé par décret du 05/10/1946. forces françaises combattantes (FFC), déportés et internés de la résistance (DIR), forces françaises libres (FFL), forces françaises de l’intérieur (FFI), réseau Mithridate, FFI, Réseau Gallia</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Léon et Suzanne Amélie Anna Marguerite Jacquemin</p><p><b>Mariage</b> : le 24/10/1939 à Sidi Bel Abbès avec Madeleine Guedra</p><p><b>Décès</b> : le 18/05/1997 à Nice</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier</p><p><b>Évasion</b> : Evadé le 01/08/1940</p><p><b>A rejoint l'AFN</b> : Rejoint le dépôt de Fuveau</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="boulanger-maurice-jean-fernand" data-open="false" data-mouvements="dir" data-reseaux="" data-maquis="" data-search="boulanger maurice jean fernand">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/boulanger-maurice-jean-fernand.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BOULANGER Maurice Jean Fernand</div>
+        <div class="meta">(25/07/1906 - Châlons sur Marne - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">DIR</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : attribution du titre d'interné résistant (DIR) pour avoir été interné au camp de Rawa Ruska du 12/06/1942 au 23/01/1943</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Auguste et Lucienne Octavie Fontaine (séparés de corps depuis 1925, divorcés en 1932)</p><p><b>Mariage</b> : le 18/02/1928 à Paris 20 avec Paulette Linard. Mariage dissous par jugement de divorce le 23/06/1937. Le 03/07/1957 à Quebec avec Aline Girerd (née Limosi)</p><p><b>Enfant(s)</b> : Gisèle (1929), Claude (1938)</p><p><b>Décès</b> : le 01/02/1978 à Paris 20è</p><p><b>Profession</b> : ajusteur mécanicien</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°86 du 03/04/1941</p><p><b>Lieu de captivité</b> : Fait prisonnier le 22/06/1940 à l'hôpital Saint-Charles à Saint Dié des Vosges. Il est interné au stalag V C et II E mle 54997. Il est interné au camp 325 de Rawa Ruska du 15/06/1942 au 23/01/1943</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="boyadjian-sarkis" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="boyadjian sarkis">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/boyadjian-sarkis.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BOYADJIAN Sarkis</div>
+        <div class="meta"></div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : forces françaises libres (FFL)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Naturalisation</b> : JO 27/09/1936 naturalisé BOYADJIAN (Sarkis), docker, né le 28 avril 1911 à Zilé (Asie-Mineure), demeurant à Marseille (Bouches-du-Rhône), ayant deux filles mineures: 1° Marie-Jeanne, née le 17 mars 1932 à Marseille; 2° Reine, née le 27 septembre 1933 à Marseille.</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="bozzonetti-edouard-henri" data-open="false" data-mouvements="ffi" data-reseaux="reseaudiplomat" data-maquis="" data-search="bozzonetti edouard henri la chouette">
+    <div class="badges-corner"><span class="stamp stamp-resistantdeporte" title="Résistant déporté">RÉS. DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bozzonetti-edouard-henri.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BOZZONETTI Edouard Henri <span class="alias">alias &laquo;&nbsp;la Chouette&nbsp;&raquo;</span></div>
+        <div class="meta">(15/03/1910 - Salins les Bains - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-reseau">Réseau Diplomat</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;la Chouette&quot;, après son évasion, il rejoint les FFI et le réseau diplomat puis le commando M en mars 1944 jusqu'à son arrestation le 12/05/1944</p><p><b>Déportation</b> : Il est déporté de Compiègne le 15/07/1944 (I.247.) Sandbostel Bremen (Brême)-Farge Bremen (Brême)-Osterortau, KL Neuengamme (mle 36571). Il est libéré par les anglais le 08/05/1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : César (né en 1872 en Italie) et Marie Brocard</p><p><b>Mariage</b> : le 15/09/1948 à La Tronche avec Rose Françoise Henriette Combe</p><p><b>Décès</b> : le 28/04/1957à Saint Marcellin</p><p><b>Profession</b> : garçon boucher, bûcheron en 1936</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°13 du 10/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag IX B</p><p><b>Évasion</b> : Evadé le 06/11/1943</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="brandstatter-mathias-menachem" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="brandstatter mathias menachem">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brandstatter-mathias-menachem.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BRANDSTATTER Mathias Menachem</div>
+        <div class="meta">(06/07/1904 - Francfort sur le Main - Allemagne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : le 26/06/1940, il rejoint l'Angleterre et s'engage dans les FFL. Il fait partie de la gendarmerie prévôtale de la 1ère DFL</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Mojzesz et Debora ou Dwojre Landau Strumpfner</p><p><b>Mariage</b> : le 12/01/1933 à Strasbourg avec Elisabeth Michaely. Le 27/02/1954 à Paris 11 avec Micheline Odette Denis</p><p><b>Décès</b> : le 07/11/1986 à Fontenay les Briis</p><p><b>Profession</b> : magasinier</p><p><b>Naturalisation</b> : JO 29/02/1948 naturalisé BRANDSTATTER (Motthias), Francfort (Allemagne) , 06-07-04 — 11717x47—75</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="brzezinski-srul" data-open="false" data-mouvements="" data-reseaux="" data-maquis="maquisoisans|maquisvercors" data-search="brzezinski srul &quot;israël&quot;">
+    <div class="badges-corner"><span class="stamp stamp-deporte" title="Déporté">DÉPORTÉ</span><span class="stamp stamp-resistantmort" title="Mort au combat">MORT AU COMBAT</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brzezinski-srul.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">BRZEZINSKI Srul &quot;Israël&quot;</div>
+        <div class="meta">(17/11/1901 - Brzeziny - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-maquis">Maquis Oisans</span><span class="movement-chip chip-maquis">Maquis Vercors</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il rejoint le maquis du Vercors, secteur 8 de l’AS Isère, le 09/06/1944 et intègre à la compagnie Brisac du 6ème Bataillon de Chasseurs Alpins reconstitué</p><p><b>Mort au combat</b> : Mort le 13/06/1944 à Saint-Nizier-du-Moucherotte lors d'une attaque contre les allemands. Son fils Maurice s'engage dans la résistance puis rejoint le maquis de l’Oisans (Isère). Il est exécuté le 07/08/1944 à Grenoble. Israël BRZEZINSKI est initialement inhumé à Saint Nizier (Corps restitué, cimetière de Bagneux 06/12/1948)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Eilszel et Pessah Flaum</p><p><b>Mariage</b> : en Pologne avec Blima Rozenberg</p><p><b>Enfant(s)</b> : Fanny (1929 en Pologne) et Maurice Abram Mojsze (né en 1926 en Pologne) ce dernier est exécuté comme otage en représaille de l'exécution d'un milicien.</p><p><b>Profession</b> : tailleur</p><p><b>Naturalisation</b> : Sa femme et sa fille sont naturalisées en 1948</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Déportation raciale</b> : Il est arrêté à son domicile et interné au camp de transit de Beaune-La-Rolande (Loiret). Il en est libéré le 28 août 1941 pour avoir été décoré de la croix de Guerre</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="cadiou-pierre-jean-marie-yvon" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="maquisrosporden" data-search="cadiou pierre jean marie yvon tireur et la légion">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cadiou-pierre-jean-marie-yvon.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">CADIOU Pierre Jean Marie Yvon <span class="alias">alias &laquo;&nbsp;tireur et la Légion&nbsp;&raquo;</span></div>
+        <div class="meta">(28/07/1912 - Nevez - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-maquis">Maquis Rosporden</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : Sert dans les FFI sous l'alias &quot;tireur&quot; et &quot;la Légion&quot;. Il rejoint le maquis de Rosporden le 14/07/1944. Il est chef de section au bataillon Mercier et participe aux combats de Rosporden, Concarneau et Lorient</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Pierre et Marie Guillou</p><p><b>Mariage</b> : le 09/10/1948 à Tancarville avec Marguerite Marie Sinou</p><p><b>Décès</b> : le 23/10/1990 à Quimper</p><p><b>Profession</b> : cultivateur puis secrétaire comptable</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°20 du 23/09/1940</p><p><b>Lieu de captivité</b> : Interné au stalag XI B, puis X C et VI A</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="calatayud-inigo-jose" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="calatayud inigo josé">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/calatayud-inigo-jose.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">CALATAYUD INIGO José</div>
+        <div class="meta">(24/06/1903 - Valencia - Espagne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il s'engage dans les FFL le 14/06/1943, il est affecté au 1er BLE 3è compagnie. Il débarque en Italie en septembre 1943 et en Provence le 17/08/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Grasiniano et Dolores Inigo</p><p><b>Mariage</b> : avec Regina García García</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="chapeau-alphonse-louis-eugene" data-open="false" data-mouvements="" data-reseaux="reseauhonneuretpatrie|reseauliberationnord" data-maquis="" data-search="chapeau alphonse louis eugène">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chapeau-alphonse-louis-eugene.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">CHAPEAU Alphonse Louis Eugène</div>
+        <div class="meta">(09/03/1904 - Vihiers - France)</div>
+        <div class="movements"><span class="movement-chip chip-reseau">Réseau Honneur et Patrie</span><span class="movement-chip chip-reseau">Réseau Libération Nord</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : déclare avoir fait partie du réseau Honneur et Patrie à Angers de 1942 à 1944. Puis du réseau Libération nord</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Alphonse et Angèle Duverger</p><p><b>Mariage</b> : célibataire</p><p><b>Décès</b> : le 24/11/1989 à Angers</p><p><b>Profession</b> : ecclésiastique, professeur de lettre au collège Mongazon</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="chiron-henri-louis-victor-julien" data-open="false" data-mouvements="dir|ffc|ffi" data-reseaux="reseaueleuthere" data-maquis="" data-search="chiron henri louis victor julien">
+    <div class="badges-corner"><span class="stamp stamp-resistantdeporte" title="Résistant déporté">RÉS. DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chiron-henri-louis-victor-julien.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">CHIRON Henri Louis Victor Julien</div>
+        <div class="meta">(30/03/1897 - Cholet - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">DIR</span><span class="movement-chip chip-mouvement">FFC</span><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-reseau">Réseau Eleuthere</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : forces françaises combattantes (FFC), déportés et internés de la résistance (DIR), forces françaises de l’intérieur (FFI). Membre du réseau Eleuthere</p><p><b>Déportation</b> : Il est déporté à Mauthausen le 06/04/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Henri Dominique et Eulalie Forestier</p><p><b>Mariage</b> : le 08/08/1921 au Puiset Doré avec Madeleine Marie Renée Albert</p><p><b>Décès</b> : le 11/06/1950 à Angers</p><p><b>Profession</b> : directeur d'école</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°49 du 07/12/1940</p><p><b>Lieu de captivité</b> : Il est interné à l'oflag VI A mle 4034</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="cidlina-joseph" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="cidlina joseph">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cidlina-joseph.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">CIDLINA Joseph</div>
+        <div class="meta">(13/09/1913 - Dvory - Tchécoslovaquie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il s'engage dans les FFL le 06/09/1943, il a déjà 7 ans de service. Il intègre la CL2 du 2è BLE. Il est déclaré manquant le 07/11/1943 puis déserteur le 07/11/1943. Le 25/03/1944, il y a un mandat d'arrêt contre lui. Le 15/06/1944, il est au DCRE. En 1948 et 1949, il est signalé en Allemagne comme réfugié et demande à aller en France</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Josef et Františka Kabeláková</p><p><b>Mariage</b> : avec Marie Thérèse Vanpee</p><p><b>Décès</b> : le 30/01/2011 à Calais</p><p><b>Profession</b> : chauffeur</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="cieslak-wladislas" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="cieslak wladislas &quot;lucien&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cieslak-wladislas.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">CIESLAK Wladislas &quot;Lucien&quot;</div>
+        <div class="meta">(07/06/1917 - Popowo Parcele - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : en août 1943, il rejoint les parachutistes SAS</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : enfant naturel de Florentine Cieslak</p><p><b>Mariage</b> : en 1946 avec Agnes McWhirr Carson</p><p><b>Décès</b> : le 30/01/1999 à Dumfries (Ecosse)</p><p><b>Profession</b> : mineur pour les mines d'Aniches, machine operator</p><p><b>Naturalisation</b> : naturalisé britannique le 13/06/1966</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°14 du 11/09/1940</p><p><b>Lieu de captivité</b> : Fait prisonnier le 24/06/1940 à Blénod les Toul, interné frontstalag 240 (Verdun) puis 241 (Saint Mihiel)</p><p><b>Évasion</b> : Evadé le 02/01/1941, se présente à Mâcon</p><p><b>A rejoint l'AFN</b> : Il rejoint l'AFN en février 1941 et est affecté au 1er REI. En janvier 1942 il est affecté au 3è REI et il participe à la campagne de Tunisie jusqu'au 10/05/1943 date à laquelle il rejoint les SAS</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="clokers-jean-pascal-albert" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="clokers jean pascal albert">
+    <div class="badges-corner"><span class="stamp stamp-resistantmort" title="Exécuté">EXÉCUTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clokers-jean-pascal-albert.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">CLOKERS Jean Pascal Albert</div>
+        <div class="meta">(11/10/1916 - Vivegnis - Belgique)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : résistant en Belgique. Membre du MNB (Mouvement national belge). Arrêté le 30 mars 1942. Fusillé à la Citadelle de Liège le 10 avril 1942 à 06h00</p><p><b>Exécuté</b> : Mort le 10/04/1942. Fusillé par les allemands à la prison de Liège (Inhumé à Vivegnis le 16/04/1945, monument dans le cimetière de Vivegnis)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jean et Gertrude Saint Remy</p><p><b>Mariage</b> : célibataire</p><p><b>Profession</b> : apprenti boulager</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="delporte-philippe-arthur" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="delporte philippe arthur">
+    <div class="badges-corner"><span class="stamp stamp-mort" title="Mort pour la France">MPF</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/delporte-philippe-arthur.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">DELPORTE Philippe Arthur</div>
+        <div class="meta">(01/06/1913 - Marcinelle - Belgique)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il aurait rejoint la Résistance intérieure belge. Il est porté disparu en 1943 lors d'une opération contre l'occupant</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Vital Charles et Yvonne Victoria Hortense Catherine Neffe</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Mort pour la France</b> : Mort le &quot;sans date&quot;</p><p><b>Capture</b> : Liste des prisonniers n°18 du 19/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="derderian-garabed" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="derderian garabed &quot;gabriel charles&quot;">
+    <div class="badges-corner"><span class="stamp stamp-resistantmort" title="Exécuté">EXÉCUTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/derderian-garabed.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">DERDERIAN Garabed &quot;Gabriel Charles&quot;</div>
+        <div class="meta">(03/11/1909 - Erzurum - Turquie)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il était chargé de mettre en relation les prisonniers soviétiques servant dans l'armée allemande stationnés à Mende avec la résistance de la région. Il est arrêté par la gestapo le 14/07/1944</p><p><b>Exécuté</b> : Mort le 17/08/1944 à Sainte-Radegonde (Aveyron). Fusillé par les allemands</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Kallouste et Loussentah Victoria Torossian</p><p><b>Mariage</b> : le 12/12/1942 au Puy en Velay avec Victoria Torrossian</p><p><b>Enfant(s)</b> : Le couple n'a pas eu d'enfant. Victoria est enceinte quand elle est arrêtée avec son mari par la gestapo. Elle fait une fausse couche et accouche d'un enfant mort né à la prison de Mende</p><p><b>Profession</b> : marchand forain, ouvrier agricole</p><p><b>Naturalisation</b> : JO 08/08/1943 naturalisé DERDERIAN (Carabed), concierge, né le 3 novembre 1909 à Erzeroum (Arménie), demeurant à Vals-près-le-Puy (Haute-Loire)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="desroziers-henri-albert-joseph" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="desroziers henri albert joseph">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/desroziers-henri-albert-joseph.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">DESROZIERS Henri Albert Joseph</div>
+        <div class="meta">(20/03/1912 - Chartres - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : engagé FFL le 21/05/1943 (acte d'engagement n°805)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : enfant naturel non reconnu de Léonie Amandine Desroziers veuve de Victor Pigeon (décès en 1909). Il est placé à l'assistance publique</p><p><b>Mariage</b> : célibataire</p><p><b>Décès</b> : le 25/06/1948 à Paris 14è</p><p><b>Profession</b> : domestique de ferme, chiffonnier</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°13 du 10/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="devaux-henri-marie-antoine" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="devaux henri marie antoine">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/devaux-henri-marie-antoine.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">DEVAUX Henri Marie Antoine</div>
+        <div class="meta">(13/06/1912 - Étainhus - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : en 1944, il est invité par son ancien commandant à la Légion étrangère à créer le service de santé clandestin des Crozets dans le Jura (FFI)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Henri Gaston Marie Germain et Marie-Madeleine Élisa Tinel</p><p><b>Mariage</b> : le 14/12/1945 à Heyrieux avec Marie Joseph Saunier</p><p><b>Décès</b> : le 25/01/1999 à Maisons-Laffitte</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier à Saint Germain</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="doret-jean-pierre" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="doret jean pierre">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/doret-jean-pierre.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">DORET Jean Pierre</div>
+        <div class="meta">(25/02/1906 - Pecanie - Bosnie Herzegovine)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il fait parti de l'AS 1/2 brigade Armagnac dans le Gers (FFI) du 06/06 au 30/08/1944. Il rejoint le 158è RI jusqu'au 16/02/1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Emile et Marie Travika</p><p><b>Mariage</b> : avec Blanche ?</p><p><b>Décès</b> : en 1989 inhumé à Vaucouleurs</p><p><b>Profession</b> : mécanicien</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°14 du 11/09/1940</p><p><b>Lieu de captivité</b> : Il déclare sur l'honneur avoir été fait prisonnier le 23/06/1940 à Saint Germain sur Meuse. Interné successivement à Vaucouleurs, Lerouville et Verdun. Transféré au stalag XVII A. A travaillé au kommando 20724 g88 à Talgau</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="dufour-marcel-francois-henri" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="dufour marcel françois henri">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dufour-marcel-francois-henri.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">DUFOUR Marcel François Henri</div>
+        <div class="meta">(30/12/1911 - Morlaix - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : Engagé dans les FFL du Finistère le 08/12/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jules et Catherine Laurent</p><p><b>Décès</b> : le 07/06/1959 à Reims</p><p><b>Profession</b> : boucher</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°22 du 27/09/1940</p><p><b>Lieu de captivité</b> : Fait prisonnier le 23/06/1940 à Bruyères. Interné au stalag XVII B</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="dupuis-louis-henri" data-open="false" data-mouvements="" data-reseaux="reseauevasiondefrance" data-maquis="" data-search="dupuis louis henri">
+    <div class="badges-corner"><span class="stamp stamp-resistantdeporte" title="Résistant déporté">RÉS. DÉPORTÉ</span><span class="stamp stamp-resistantmort" title="Mort en déportation">MORT EN DÉP.</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dupuis-louis-henri.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">DUPUIS Louis Henri</div>
+        <div class="meta">(01/06/1906 - Saint Germain en Laye - France)</div>
+        <div class="movements"><span class="movement-chip chip-reseau">Réseau Evasion de France</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il n’appartient à aucun réseau, son action est entreprise à titre privé mais elle a été enregistrée à Londres en janvier 1943 par le capitaine Leduc. Dès octobre 1940 il fournit de l'aide aux prisonniers évadés d'Allemagne pour passer en zone libre avec des papiers d'identité, il collabore avec le Réseau Evasion de France</p><p><b>Déportation</b> : Il est arrêté le 21/02/1943, par la gestapo au 49 rue Petit à Paris 19è (adresse de Léon Oudem) suite à l'arrestation à la frontière espagnole de deux légionnaires munis de fausses cartes d’identité délivrées par les soins de Louis Dupuis et hébergés par la Comtesse de Ganay, pendant leur séjour à Paris. Il est déporté à Sachsenhausen le 16/08/1943 (mle 4335)</p><p><b>Mort en déportation</b> : Mort le 21/02/1945 à Oranienburg-Sachsenhausen (Allemagne)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Henri Etienne et Jeanne Couffon</p><p><b>Mariage</b> : le 05/03/1931 à Saint Germain en Laye avec Andrée Albertine Pauline Amélie Gaud</p><p><b>Profession</b> : employé de bureau aide comptable</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°31 du 15/10/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 161 (Nancy)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="egloff-walter" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="egloff walter">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/egloff-walter.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">EGLOFF Walter</div>
+        <div class="meta">(20/05/1900 - Wettingen - Suisse)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : inscrit au mouvement de Thonon du 26/08/1944 au 14/09/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Johann Emil et Genofeva Brühlmeier</p><p><b>Mariage</b> : le 27/10/1937 à Antoinette Fernandez</p><p><b>Enfant(s)</b> : Marc Alain né le 04/08/1938 à Sidi Bel Abbes</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="faltus-joseph-franz" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="faltus joseph franz">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/faltus-joseph-franz.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">FALTUS Joseph Franz</div>
+        <div class="meta">(21/04/1911 - Lanskroun - Tchécoslovaquie)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : oui</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Frantisek et Filomena Suchomelova</p><p><b>Mariage</b> : avec ? Prochazka</p><p><b>Décès</b> : le 20/12/1998 à Lorton (USA)</p><p><b>Naturalisation</b> : JO 10/04/1949 naturalisé FALTUS (Joseph), Lanskroun (Tchécoslovaquie), 21-04-11. — 2674x49—75 et FALTUS, née PROCHAZKA, Mnichovice (Tchécoslovaquie), 09-04-19. — 2674x49—75</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="funk-rachmil" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="funk rachmil &quot;maurice&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/funk-rachmil.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">FUNK Rachmil &quot;Maurice&quot;</div>
+        <div class="meta">(13/05/1918 - Radom - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : dans la résistance</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Icek et Perla Blatman</p><p><b>Décès</b> : le 19/09/1999 à Ile Norfolk</p><p><b>Profession</b> : voyageur de commerce</p><p><b>Naturalisation</b> : JO 21/09/1947 naturalisé FUNK (Rachmil-Maurice), fourreur, né le 13 mai 1918 à Radom (Pologne), demeurant à Paris</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°11 du 05/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 161 (Nancy) mle 785 puis stalag VII A en 1942. Le 14/01/1942, il est enregistré à l'infirmerie du stalag</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="gelbard-simar-szlana" data-open="false" data-mouvements="ffi|ftpf" data-reseaux="" data-maquis="" data-search="gelbard simar szlana &quot;simon&quot; serge">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gelbard-simar-szlana.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">GELBARD Simar Szlana &quot;Simon&quot; <span class="alias">alias &laquo;&nbsp;Serge&nbsp;&raquo;</span></div>
+        <div class="meta">(10/08/1914 - Radomsko - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">FTPF</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;Serge&quot;, il rejoint les FFI le 01/06/1944, il passe chef de la section d'Anduze. Il prend part à la libération d'Alès, aux combats de Saint Christol et de la Madeleine. Après la libération, il est versé au 4è bataillon FTPF du commandant Colbert d'Ales. Il est démobilisé le 26/12/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Icyk Majer &quot;Jacques&quot; et Fajgla Fela Zandberg Sandberg</p><p><b>Décès</b> : le 10/11/1991 à Montpellier</p><p><b>Profession</b> : vendeur</p><p><b>Naturalisation</b> : JO 24/08/1947 naturalisé GELBARD (Szlana), employé de commerce, né le 10 août 1914 à Radomski (Pologne), demeurant à Montpellier (Hérault)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°39 du 14/11/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 241 (Saint Mihiel)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="gelles-israel" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="gelles israël &quot;louis&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gelles-israel.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">GELLES Israël &quot;Louis&quot;</div>
+        <div class="meta">(25/03/1902 - Nowy Sacz - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il signe un engagement pour les FFL le 08/10/1942, matricule 55245, il est affecté comme serveur au mess des officiers puis comme planton</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Berel Abraham et Ettel Esther Jowicz. Son père a eu 3 épouses (en première noce Rifka Faber et en dernière noce Sara Rosenstein)</p><p><b>Mariage</b> : en 1945 en Angleterre avec Mary Bernard</p><p><b>Décès</b> : en novembre 1974 en Angleterre</p><p><b>Profession</b> : garçon coiffeur, interprète et garçon de restaurant</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier le 23/06/1940</p><p><b>Évasion</b> : Evadé le 24/01/1941 par la Suisse</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="gogol-paul" data-open="false" data-mouvements="ffi|ftpf" data-reseaux="" data-maquis="" data-search="gogol paul">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gogol-paul.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">GOGOL Paul</div>
+        <div class="meta">(23/03/1904 - Krementchouk - Russie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">FTPF</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : chef de groupe aux FTPF d’Arles. Il a servi à Chateaurenard dans les FFI, ½ brigade Rhône Durance. Il participe à la libération des territoires d’Eyragues et de Chateaurenard,
+au sabotage de voies ferrées. Il est arrêté par la gestapo au mois de mai 1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jean et Anna Antreo</p><p><b>Mariage</b> : le 21/10/1941 à Eyragues avec avec Appolonie Vigne</p><p><b>Enfant(s)</b> : Annie (1942), Henri (1943), Jean Pierre (1946), Alain (1956)</p><p><b>Décès</b> : le 01/09/1968 à Eyragues</p><p><b>Naturalisation</b> : JO 16/03/1947 naturalisé GOGOL (Paul), manœuvre, né le 23 mars 1904 à Crémentcboug (Russie), demeurant à Eyragues (Bouches-du-Rhône)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier le 25/06/1940 à Blénod les Toul</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 241 (Saint Mihiel) puis interné au stalag I A à stablack le 12/10/1940, sous le numéro de matricule 9071. Il est transféré au stalag I B à hohenstein le 21/10/1940, sous le matricule 30714. Il est transféré au heilag de Chalon sur Saone le 19/06/1941</p><p><b>Évasion</b> : Evadé en août 1941</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="gragnon-jacques-jean-philippe" data-open="false" data-mouvements="ffi|ffl" data-reseaux="" data-maquis="" data-search="gragnon jacques jean philippe morgan">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gragnon-jacques-jean-philippe.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">GRAGNON Jacques Jean Philippe <span class="alias">alias &laquo;&nbsp;Morgan&nbsp;&raquo;</span></div>
+        <div class="meta">(29/04/1906 - Paris 15 - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : entré dans la résistance le 10/10/1942 alias &quot;Morgan&quot;. Le 10/03/1943, il est arrêté par les services du contre espionnage italien à Saint Tropez pour avoir tenté une liaison avec les FFL d'Afrique du Nord. Il est interné à la prison de San Remo puis transféré par les allemands le 15/06/1943 à la prison de Fresne. Il est libéré le 17/08/1944 par la croix rouge. Il appartient au groupe FFI du colonel Brechat du 14è arrdt groupe sud. Homologué FFI mais rejet de sa demande d'interné-résistant car il n'est pas prouvé que sa détention ait été motivée par un acte de résistance selon l'article 287 du code des pensions</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Alfred Ghislain et Marie Blanche Paillard Duclere (divorce en 1909)</p><p><b>Mariage</b> : le 13/06/1939 à Colombes avec Renée Rachel Bouhana (divorce en 1947). Le 19/10/1957 à Vélizy avec Suzanne Manoury (divorce en 1963)</p><p><b>Décès</b> : le 05/05/1976 à Paris 18</p><p><b>Profession</b> : contrôleur comptable</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier à l'hôpital Haxo d'Epinal</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 121 (Epinal)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="guedj-gaston" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="guedj gaston">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/guedj-gaston.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">GUEDJ Gaston</div>
+        <div class="meta">(16/07/1916 - Khenchela - Algérie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFL engagé volontaire au 501è RCC</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Kalfalah et Rosa Ghazala Allouche</p><p><b>Profession</b> : peintre</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="guillemet-maurice-eugene" data-open="false" data-mouvements="ffc" data-reseaux="reseaubuck|reseaugoelette" data-maquis="" data-search="guillemet maurice eugène l'angevin">
+    <div class="badges-corner"><span class="stamp stamp-resistantdeporte" title="Résistant déporté">RÉS. DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/guillemet-maurice-eugene.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">GUILLEMET Maurice Eugène <span class="alias">alias &laquo;&nbsp;l'angevin&nbsp;&raquo;</span></div>
+        <div class="meta">(05/04/1906 - Saumur - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFC</span><span class="movement-chip chip-reseau">Réseau Buck</span><span class="movement-chip chip-reseau">Réseau Goelette</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : Alias  &quot;l'angevin&quot;, le 01/05/1943 il rejoint les FFC et le réseau Buck comme agent P1 puis le réseau Goelette comme agent P2. Le 07/08/1944, il est arrêté à son domicile par la Gestapo</p><p><b>Déportation</b> : le 29/08/1944 il est déporté de Belfort, vers le camp de Neuengamme (mle 43856). Il est libéré le 8 mai 1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Maurice et Angèle Meunier</p><p><b>Mariage</b> : le 27/12/1937 à Saumur avec Violette Berthe Augusta Richomme (elle fera également partie du réseau Goelette)</p><p><b>Décès</b> : le 14/12/1976 à Lyon 3, acte de décès transcrit à La Balme les Grottes</p><p><b>Profession</b> : ouvrier typographe</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°13 du 10/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag XVII B (mle 60213), puis transféré le 8 avril 1941 vers le frontstalag 194 (Châlons-sur-Marne)</p><p><b>A rejoint l'AFN</b> : Libéré fin de contrat le 05/08/1942. Se rengage à la Légion le 05/07/1945 jusqu'en 1955</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="herbinia-marius-joseph" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="maquischerimont" data-search="herbinia marius joseph">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/herbinia-marius-joseph.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">HERBINIA Marius Joseph</div>
+        <div class="meta">(24/12/1914 - Denain - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-maquis">Maquis Cherimont</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : réfractaire STO, il se réfugie à la Côte en Haute Saône. Le 10/07/1943 il rejoint le groupe Lure du lieutenant Melard puis le maquis Cherimont (FFI de Haute Saône)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jean Joseph Ernest et Adolphine Léonie Van Acker</p><p><b>Mariage</b> : le 21/07/1945 à Lure avec Raymonde Marcelle Lamboley</p><p><b>Enfant(s)</b> : Lucy, Jacques, Alain</p><p><b>Décès</b> : le 15/01/1976 à Nivelles (Belgique)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°31 du 15/10/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 161 (Nancy)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="hora-karel" data-open="false" data-mouvements="ffc|ffl" data-reseaux="" data-maquis="" data-search="hora karel &quot;charles&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hora-karel.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">HORA Karel &quot;Charles&quot;</div>
+        <div class="meta">(01/12/1908 - Yokohama - Japon )</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFC</span><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFC et FFL, action R6</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Karel Jan et Fuku Takemoto</p><p><b>Mariage</b> : avec Léonore Iturralde. En 2è noce avec Claudette Esnault</p><p><b>Décès</b> : le 08/08/1989 à Ajaccio</p><p><b>Naturalisation</b> : JO 24/07/1949 naturalisé HORA (Charles), Yokohama (Japon), 02-12-08.— 10707x49—92</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier à l’hôpital complémentaire Saint Joseph à Epinal</p><p><b>Évasion</b> : Evadé</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="hugget-robert-charles-francois-marie" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="hugget robert charles françois marie">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hugget-robert-charles-francois-marie.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">HUGGET Robert Charles François Marie</div>
+        <div class="meta">(18/09/1905 - Paris 15 - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : le 01/08/1944 il rejoint les FFI et l'AS des Deux Sèvres, triangle 16 secteur 4. Il est chef de groupe</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Robert François Georges (décédé en 1905) et Marguerite Charlotte Augustine Marie Herve</p><p><b>Mariage</b> : avec Mme née Ng-thi-Nu puis le 23/05/1942 à Chalagné avec Rolande Alberte Faidy</p><p><b>Enfant(s)</b> : Robert né en 1933 en Indochine, Jean Jacques (1943)</p><p><b>Décès</b> : le 27/06/1991 à Saint-Maixent-l'École</p><p><b>Profession</b> : électricien, agent d'assurance</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>A rejoint l'AFN</b> : Rejoint Fuveau le 12/05/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="hypousteguy-georges-joseph-roger" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="hypousteguy georges joseph roger">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hypousteguy-georges-joseph-roger.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">HYPOUSTEGUY Georges Joseph Roger</div>
+        <div class="meta">(06/12/1909 - Bordeaux - France)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : pendant la dernière guerre, Roger Hypoustéguy a participé activement à la résistance, appartenant à l’Alliance de la jeunesse française. Un courrier émanant du Conseil de l’Ordre des médecins de la Gironde et adressé au préfet de la Gironde sollicite une autorisation de libre circulation pour douze médecins du quartier de Bacalan, dont le docteur Hypousteguy, 71 rue Achard. Dans l’ouvrage cité plus haut, on apprend que son attitude à Bordeaux pendant l’occupation lui valut de siéger dans la commission d’épuration du corps médical</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Gustave Marcel et Héloïse Cabaries</p><p><b>Mariage</b> : avec Odette Planet</p><p><b>Décès</b> : le 29/06/1995 à Bordeaux</p><p><b>Profession</b> : docteur en médécine</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="ingwer-rafael" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="ingwer rafaël fouleq">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ingwer-rafael.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">INGWER Rafaël <span class="alias">alias &laquo;&nbsp;Fouleq&nbsp;&raquo;</span></div>
+        <div class="meta">(18/01/1906 - Drohobycz - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : déclare avoir appartenu aux FFI sous l'alias &quot;Fouleq&quot;</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Isaak et Itte Liebe Lustig (mariés en 1905)</p><p><b>Profession</b> : étudiant en médecine</p><p><b>Naturalisation</b> : JO 09/11/1947 naturalisé INGWER (Raphaël), Drohobycz (Pologne), 18-01-06. — 51469 x38—59</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="jolsvay-andre" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="jolsvay andré marocain">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jolsvay-andre.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">JOLSVAY André <span class="alias">alias &laquo;&nbsp;Marocain&nbsp;&raquo;</span></div>
+        <div class="meta">(01/01/1896 - Debreczen - Hongrie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : engagé le 02/01/1944 alias &quot;Marocain&quot; avec le grade FFI de lieutenant</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Emerich et Elisabeth Kiss</p><p><b>Décès</b> : le 25/03/1973 ex légionnaire inhumé à Casablanca cimetière militaire Ben M'Sick 3</p><p><b>Profession</b> : manœuvre</p><p><b>Naturalisation</b> : JO 24/01/1932 naturalisé JOLSVAY (André), manœuvre, né le 1er janvier 1896 à Debreczen (Hongrie), demeurant à Lyon (Rhône)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>A rejoint l'AFN</b> : Rejoint Fuveau en août 1940, il rejoint le 4è REI. Reste à la Légion jusqu'en 1952</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="kanar-josef" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="kanar josef">
+    <div class="badges-corner"><span class="stamp stamp-deporte" title="Déporté">DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kanar-josef.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">KANAR Josef</div>
+        <div class="meta">(12/12/1903 - Ostrow - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : résistant FFI de 1943 au 27/03/1944. Interné au fort de Montluc puis déporté à Auschwitz</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Szlama Leib et Bajla Gitla Binc/Minc/Munz</p><p><b>Mariage</b> : le 08/09/1936 à Paris 20 avec Cypa Szajndla Gastman</p><p><b>Enfant(s)</b> : Salomon (1936-1937)</p><p><b>Décès</b> : le 25/06/1981 à Paris 20</p><p><b>Profession</b> : malletier</p><p><b>Naturalisation</b> : JO 09/01/1949 naturalisé KANAR (Josek), Ostrow Siedlecki (Pologne), 12-09-03. — 6090 x48—75</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Déportation raciale</b> : Josek Kanar est interné une première fois du 01/10 au 30/09/1941, au Fort de Chapoly puis à Ruffieu (Isère) il s'agit d'un internement administratif antérieur à la déportation proprement dite, probablement lié à son statut de Juif étranger. Il est arrêté à Lyon le 18/01/1944 et interné à la prison de Montluc avant son transfert vers Drancy le 21/03/1944. 4 jours plus tard, il est déporté à Auschwitz par le convoi n°70 (matricule 17332) où il est affecté au kommando de Laurahütte (Siemianowice), un camp annexe d'Auschwitz III-Monowitz où les détenus travaillaient pour l'entreprise Oberschlesische Geräteban GmbH. Il est transféré à Mauthausen puis au kdo de Grolitz le 03/03/1945 et au camp de Flossenbourg (mle 83887). Il est rapatrié le 24/05/1945</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="karger-meier" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="karger meier max">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/karger-meier.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">KARGER Meier <span class="alias">alias &laquo;&nbsp;Max&nbsp;&raquo;</span></div>
+        <div class="meta">(25/11/1911 - Harburg - Allemagne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il rejoint la résistance dès l'armistice, (alias &quot;Max&quot;) et fait partie du &quot;mouvement les ardents&quot; en Auvergne</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Lipe &quot;Hersch&quot; et Beila Schuster Schmidt</p><p><b>Mariage</b> : le 16/06/1931 à Lille avec Mariem (Myriam) Rubin. Le 13/06/1938 à Lille avec Alfréda Nafteux. Divorce en 1946. Le 22/05/1948 à Paris 8 avec Simone Potier</p><p><b>Décès</b> : le 26/12/1983 à Paris 5è</p><p><b>Profession</b> : mécanicien, commerçant</p><p><b>Naturalisation</b> : JO 12/03/1950 naturalisé KARGER (Meier), Harburg (Allemagne), 25-11-11. — 5164 x 49—75</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="kaufman-david-meyer" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="kaufman david meyer">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kaufman-david-meyer.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">KAUFMAN David Meyer</div>
+        <div class="meta">(13/06/1913 - Karszew - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : dans la résistance du 15/10/1944 au 15/02/1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Enfant(s)</b> : Michel (1948)</p><p><b>Profession</b> : tailleur</p><p><b>Naturalisation</b> : JO 16/03/1947 naturalisé KAUFMAN (David-Majer), tailleur, né le 13 juin 1913 à Karczew (Pologne), demeurant à Paris + JO 27/05/1959 M. Kaufman (David-Majer), né à Karczew (Pologne) le 13 juin 1913, demeurant 33, rue des Tournelles, Paris (3e), agissant tant en son nom personnel qu’au nom de son enfant mineur Michel, né le 28 juin 1948 à Paris (12e), dépose une requête auprès du garde des sceaux à l’effet de substituer à son nom patronymique celui de Comaret, ou subsidiairement celui de Caumaret.</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="kornblau-hersz" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="kornblau hersz &quot;henri&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kornblau-hersz.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">KORNBLAU Hersz &quot;Henri&quot;</div>
+        <div class="meta">(17/01/1917 - Wulka - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : Sergent FFI</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Getzel dit Tugendhaft et Dworja Gross</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="krasseff-panaist-ou-panaiot" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="krasseff panaist ou panaiot">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/krasseff-panaist-ou-panaiot.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">KRASSEFF Panaist ou Panaiot</div>
+        <div class="meta">(15/08/1900 - Losenglad - Bulgarie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFI dans l'armée Secrète secteur 1 groupe Aurore puis gardien 431ècompagnie au camp de PGA 141 à Saint Fons et MNPGD de Lyon. Il est ensuite au camp de rapatriement de Sathonay jusqu'au 27/10/1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Guiro et Stana Nikolova</p><p><b>Mariage</b> : le 16/03/1940 à Villeurbanne avec Eugénie Violy</p><p><b>Enfant(s)</b> : 1 enfant né le 21/05/1934 (probablement enfant de sa femme)</p><p><b>Profession</b> : cordonnier</p><p><b>Naturalisation</b> : JO 03/05/1931 naturalisé KRASSEFF (Panaist), soldat au 1er régiment étranger d'infanterie, né le 15 août 1900 à Lozengrad (Bulgarie), demeurant à Sidi-bel- Abbès (Oran). Remise totale</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°82 du 14/03/1941</p><p><b>Lieu de captivité</b> : Fait prisonnier avec le 12è REI suite à sa mutation de février 1940. Il est interné au stalag II A mle 49445</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="kraszinski-nicolaus" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="kraszinski nicolaus">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kraszinski-nicolaus.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">KRASZINSKI Nicolaus</div>
+        <div class="meta">(05/12/1916 - Dantzig LangFuhr - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : oui</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°11 du 05/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="lakomiak-marjan" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="lakomiak marjan">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lakomiak-marjan.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">LAKOMIAK Marjan</div>
+        <div class="meta">(19/04/1908 - Wrzonca - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : oui (pour deux évasions et son internement à Graudenz)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Andrzej et Sikora</p><p><b>Naturalisation</b> : JO 30/10/1938 naturalisé LAKOMIAK (Marjan), caporal au 1er régiment étranger d'infanterie à Sidi Bel Abbes (Oran), né le 19 avril 1908 à Wrzaca (Pologne)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier le 22/06/1940 à Mirecourt</p><p><b>Lieu de captivité</b> : En 1941 il est au stalag XVII A mle 85827. En avril 1942 au stalag XVIII A où il tente de s'évader. Repris par la gestapo, il est condamné à 4 mois de prison à Graudenz. Le 30/03/1943 il est transféré au stalag XX B à Marienbourg. Il s'évade en décembre et se cache en Pologne où il reste après la fin de la guerre</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="lala-gilbert" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="lala gilbert">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lala-gilbert.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">LALA Gilbert</div>
+        <div class="meta">(09/04/1904 - Paris 14 - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : le 06/09/1943 il est affecté à la 1ère DIA (FFL) et rejoint le 1er BLE</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jean Léon Augustin et Yvonne Joséphine Lebugle. Divorce en 1911</p><p><b>Mariage</b> : le 21/08/1937 à Casablanca avec Amina Bent</p><p><b>Décès</b> : le 05/07/1974 à Marseille</p><p><b>Profession</b> : employé de bureau</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag XI A, IV B et X B mle 30718. Il est hospitalisé du 24/03/1941 au 25/04/1941</p><p><b>A rejoint l'AFN</b> : Il passe en zone libre et il est en AFN le 05/07/1941. Il rejoint le DCRE puis le 3è REI. Rengagé jusqu'en 1948 (25 ans de service)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="landsberg-hirch-mordka" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="landsberg hirch mordka">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/landsberg-hirch-mordka.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">LANDSBERG Hirch Mordka</div>
+        <div class="meta">(05/11/1898 - Zyrardow - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFI à Tulles et Brive du 12/02/1942 au 02/11/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Mosek Genoch Henrich &quot;Maurice&quot; et Myszka &quot;Lucie&quot; Wajnrib Weinreb</p><p><b>Mariage</b> : le 18/10/1927 à Paris 19 avec Hinda Kempinska. Divorce en 1957</p><p><b>Enfant(s)</b> : Léon (1932)</p><p><b>Profession</b> : manœuvre aux usines citroen, tricoteur</p><p><b>Naturalisation</b> : JO 30/01/1949 naturalisé LANDZBERG (Hersz), Ruda Guzowska (Pologne), 26-12-99. — 31911x24—75</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°23 du 30/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag XVIII</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="le-lan-jean-joseph-marie" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="le lan jean joseph marie">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/le-lan-jean-joseph-marie.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">LE LAN Jean Joseph Marie</div>
+        <div class="meta">(11/06/1911 - Pluvigner - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : a servi dans les FFI groupe &quot;Morgan&quot; à compter du 21/05/1943</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : enfant naturel reconnu de Marie Anne Le Lan</p><p><b>Mariage</b> : avec Marie Madeleine Guillome</p><p><b>Décès</b> : le 09/01/1979 à Auray</p><p><b>Profession</b> : peintre vit(rier, fonctionnaire</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°14 du 11/09/1940</p><p><b>Lieu de captivité</b> : Fait prisonnier à l'hôpital d'Epinal puis passe au frontstalag 121(Épinal) à laserne Courcy le 30/07/1940</p><p><b>Évasion</b> : Il cesse la captibité le 01/11/1940</p><p><b>A rejoint l'AFN</b> : Rejoint l'AFN le 20/12/1940 et est affecté au 2è REI</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="le-moenner-jean-louis" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="le moënner jean louis">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/le-moenner-jean-louis.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">LE MOËNNER Jean Louis</div>
+        <div class="meta">(25/02/1902 - Quimper - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : rejoint les FFI, engagé volontaire comme sergent chef le 26/02/1942. Démobilisé le 31/12/1945 (noté sur sa fiche matricule)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Herve Joseph et Marie Jeanne Therese Ronarch</p><p><b>Mariage</b> : le 29/06/1925 à Quimperlé avec Marie Anne Antoinette Le Miniou. Veuf en 1930</p><p><b>Enfant(s)</b> : Hervé (1926), Marie</p><p><b>Décès</b> : le 03/11/1968 à Quimper</p><p><b>Profession</b> : ajusteur mécanicien</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°25 du 03/10/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag XII A</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="lewkowicz-leopold" data-open="false" data-mouvements="ftpf" data-reseaux="" data-maquis="" data-search="lewkowicz/lewkowitch léopold &quot;léon-bernard&quot; lewkowitch">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lewkowicz-leopold.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">LEWKOWICZ/LEWKOWITCH Léopold &quot;Léon-Bernard&quot;</div>
+        <div class="meta">(16/09/1912 - Plauen - Allemagne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FTPF</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : en mars 1944, il rejoint son groupe FTPF. A partir du 06/06/1944 il est au 13è bataillon FTPF Dordogne, à partir du 15 octobre 1944 il intègre le 4è régiment 6è brigade Demorny et passe le 1er janvier 1945 au 108è RI. Après le débarquement il passe successivement à Périgueux, St Astier et Bordeaux. D’août à octobre 1944, il est sur le front à la Pointe de Grave et d’octobre 1944 à juin 1945 il particpe au siège de la Rochelle. En décembre 1944, il est muté à la 1ère compagnie du 108è RI comme chef de section. Il est homologué au grade de sous lieutenant le 1er mars 1945 par la 12è région militaire. Après la chute de la Rochelle, il part avec son régiment en occupation en Allemagne</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Abraham Bernard et Amanda Adler</p><p><b>Mariage</b> : le 20/06/1946 à Strasbourg avec Ester Liba Gelcman</p><p><b>Enfant(s)</b> : Bernard, Michel</p><p><b>Décès</b> : le 23/02/1976 à Roanne</p><p><b>Naturalisation</b> : JO 16/06/1946 naturalisé LEWKOWICZ (Léopold), peintre en bâtiments, né le 10 septembre 1912, de père polonais, à Plauen (Allemagne), demeurant à Strasbourg (Bas-Rhin)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 241 (Saint Mihiel)</p><p><b>Évasion</b> : Evadé le 20/11/1940 depuis Lunéville (Meurthe-et-Moselle)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="lozano-jean-pierre" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="lozano jean pierre">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lozano-jean-pierre.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">LOZANO Jean Pierre</div>
+        <div class="meta">(03/07/1908 - Palikao - Algérie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il rejoint les FFI en 1942. Il est blessé le 04/08 et le 21/08/1944 lors de la libération de Marseille. Avec le 3è bataillon de Zouaves (1ère DB), il participe aux opérations dans les Vosges. Il est blessé à la face le 22/09/1944 et perd la vue</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Miguel Théodoro et Maria De Los Angelès Galtero</p><p><b>Mariage</b> : le 18/07/1936 à La Rochelle avec Suzanne Augustine Francise Geveau (divorce 1945). Le 05/07/1947 à Fère Champenoise avec Claire Marie Rossi</p><p><b>Décès</b> : le 09/02/1977 à Marseille 8</p><p><b>Naturalisation</b> : JO 08/01/1928 naturalisé LOZANO (Miguel-Théodore), ouvrier agricole, né le 9 novembre 1879 à Carthagène (Espagne), demeurant à Fère-Champenoise (Marne), ayant trois enfants mineurs: 1er Jean-Pierre, né le 3 juillet 1908 à Palikao (Oran) ; 2è Pauline-Raphaëla, née le 7 novembre 1914 à Tizi (Oran) ; 3è Marie-Jeanne, née le 10 février 1917 à Mascara (Oran)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°13 du 10/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="manoussaridis-theodore" data-open="false" data-mouvements="ftpf" data-reseaux="" data-maquis="" data-search="manoussaridis théodore manou">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/manoussaridis-theodore.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MANOUSSARIDIS Théodore <span class="alias">alias &laquo;&nbsp;Manou&nbsp;&raquo;</span></div>
+        <div class="meta">(12/05/1912 - Corfou - Grèce)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FTPF</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;Manou&quot;. Après son évasion, il se cache dans une ferme de Rochechouart tenue par le lieutenant Paulet. Le 01/04/1944 il entre dans une unité combattante FTPF au 1er régiment &quot;Bernard&quot;. Il est blessé et fait prisonnier à Saujon le 27/09/1944 puis échangé contre des prisonniers allemands le 09/10/1944. Le 10/10/1944, il contracte un engagement volontaire au titre du 107è RI (Bernard Le Lay)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Georges et Kiriakoula Geordonides</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Lieu de captivité</b> : Fait prisonnier le 24/06/1940 à Toul, il est interné au frontstalag 240 (Verdun)</p><p><b>Évasion</b> : Evadé le 03/07/1940. Repris à Dijon le 13/07/1940. Régime cellulaire jusqu'à son évasion le 24/01/1941</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="mary-bernard-georges-andre" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="mary bernard georges andré">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mary-bernard-georges-andre.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MARY Bernard Georges André</div>
+        <div class="meta">(26/04/1908 - Le Mans - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : résistant depuis le 10/03/1944, il fait une demande de certificat d'appartenance aux FFI pour la période du 18/08/1944 au 30/08/1944 Secteur Nord sous secteur B4. Sa demande est rejétée car ses services ne sont pas établis</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : enfant naturel né Duval fils de Berthe Elise (enfant assistée de Paris N°91319). Légitimé par le mariage de sa mère avec Charle Mary le 27/04/1911. Divorce en 1918</p><p><b>Mariage</b> : célibataire</p><p><b>Décès</b> : le 13/07/1971 à Marseille</p><p><b>Profession</b> : contrôleur de production</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="mast-henri" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="mast henri henri">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mast-henri.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MAST Henri <span class="alias">alias &laquo;&nbsp;Henri&nbsp;&raquo;</span></div>
+        <div class="meta">(01/12/1913 - Paris 12 - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : à Nice dès 1942, il participe à l'organisation de la protection de résistants menacés. Il renonce à ses activités pour entrer dans la clandestinité à Paris en juillet 1943 où il est recherché pour s'être soustrait à une affectation à la kriegsmarine. Il donne son adhésion au général Rapp (Paul Dassault mouvement front national), et devient agent de renseignement et de liaison. Alias &quot;Henri&quot;, FFI</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jacob et Rachel Kutzinski (divorce). Jankiel se remarie avec Rose Smolenski</p><p><b>Mariage</b> : le 07/05/1949 à Paris 8 avec Marie Irène Luc</p><p><b>Décès</b> : le 06/01/1997 à Paris 18è</p><p><b>Profession</b> : gérant de société</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="mattagne-auguste" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="mattagne auguste">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mattagne-auguste.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MATTAGNE Auguste</div>
+        <div class="meta">(09/07/1914 - Wavre - Belgique)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : en Belgique (lieutenant parachutiste SRA- Service de Renseignement et d'Action)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Auguste et Julie Charlier</p><p><b>Mariage</b> : le 17/11/1945 à Genval avec Anne Deloge</p><p><b>Décès</b> : en 1951 en Belgique</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°34 du 21/10/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 240 (Verdun)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="matuszewicz-chaskiel" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="matuszewicz chaskiel &quot;jean jacques&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/matuszewicz-chaskiel.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MATUSZEWICZ Chaskiel &quot;Jean Jacques&quot;</div>
+        <div class="meta">(15/07/1914 - Varsovie - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il rejoint la 1ère DFL (13è DBLE) le 04/12/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Herch Wolf et Chana Siedlecki</p><p><b>Mariage</b> : le 07/06/1958 à Paris 14 avec Seindlea Rubinstein</p><p><b>Profession</b> : vendeur</p><p><b>Naturalisation</b> : JO 11/12/1938 naturalisé MATUSZEWICZ (Chaskiel), soldat au 4e régiment étranger d'infanterie à Marrakech (Maroc), né le 15 juillet 1914 à Varsovie (Pologne)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="micigolski-jean" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="micigolski jean">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/micigolski-jean.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MICIGOLSKI Jean</div>
+        <div class="meta">(04/07/1919 - Cargoniek - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : engagé volontaire au commando de Cluny (FFI) le 01/09/1944. Affecté comme caporal au 4è bataillon de choc le 16/09/1944, il participe à la campagne d'Alsace et Allemagne</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Antoine et Pélagie Zignewski</p><p><b>Mariage</b> : le 03/08/1946 à Beaucourt avec Denise Juliette Michaud</p><p><b>Décès</b> : en 1979</p><p><b>Profession</b> : ouvrier d'usine chez Veillard et Migeon</p><p><b>Naturalisation</b> : JO 01/07/1951 naturalisé MICIGOLSKI (Jean), Targonie (Pologne), 04-07-19. — 16038 x 50 - 25</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°13 du 10/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="mondon-pierre-francois-julien" data-open="false" data-mouvements="dir" data-reseaux="" data-maquis="" data-search="mondon pierre françois julien">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mondon-pierre-francois-julien.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MONDON Pierre François Julien</div>
+        <div class="meta">(23/07/1909 - Grenoble - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">DIR</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : après sa tentative d'évasion de l'Oflag VI A de Soest, il est transféré à l'oflag VI C au Château de Colditz (situation prévu au paragraphe &quot;i&quot; de l'article 4 du décret 49-427). DIR</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Aimé Antoine et Louise Émilie &quot;Louisa&quot; Beguet</p><p><b>Mariage</b> : le 27/09/1945 à Fontaine avec Louise Roberte Marguerite Julia Pegroud</p><p><b>Décès</b> : le 16/02/1987 à Grenoble</p><p><b>Profession</b> : industriel</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°48 du 04/12/1940</p><p><b>Lieu de captivité</b> : Il est interné à l'oflag VI A mle 3735 puis à Colditz après sa tentative d'évasion</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="mossmann-justin-auguste" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="mossmann justin auguste">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mossmann-justin-auguste.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MOSSMANN Justin Auguste</div>
+        <div class="meta">(18/08/1913 - Ebersheim - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFI département de Vendée. Il est lieutenant de gendarmerie chargé de missions de surveillance et de guet pendant les parachutages, d'affichage de tract et de transmission de courriers</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Antoine et Marie-Hélène Hauss</p><p><b>Mariage</b> : avec Denise Guitton</p><p><b>Décès</b> : le 06/08/1995 à Strasbourg</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="moussier-rene-marcel" data-open="false" data-mouvements="" data-reseaux="" data-maquis="maquislot" data-search="moussier rené marcel">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/moussier-rene-marcel.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">MOUSSIER René Marcel</div>
+        <div class="meta">(19/01/1904 - Vichy - France)</div>
+        <div class="movements"><span class="movement-chip chip-maquis">Maquis Lot</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : déclare être rentré dans le maquis du Lot en juillet 1944. Il est affecté par le commandant Collignon comme chef de groupe au centre de parachutage à Verzac</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Alfred et Anna Bel</p><p><b>Mariage</b> : le 28/10/1939 à Paris 1 avec Marie Louise Laval</p><p><b>Décès</b> : le 15/10/1979 à Brive</p><p><b>Profession</b> : employé de librairie</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="neyrat-raymond" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="neyrat raymond">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/neyrat-raymond.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">NEYRAT Raymond</div>
+        <div class="meta">(04/06/1914 - Labouheyre - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : a servi dans les FFI du 15 au 30/08/1944</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Fernand (décès en 1914) et Léontine Marie Davan</p><p><b>Mariage</b> : avant 1934 avec Ernestine Gabriel</p><p><b>Décès</b> : le 08/05/1997 à Vaux-sur-Mer</p><p><b>Profession</b> : crémier en 1931, plombier</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Lieu de captivité</b> : Fait prisonnier le 21/06/1940 à Bruyères (formation sanitaire)</p><p><b>Évasion</b> : Evadé d'un train partant pour l'Allemagne le 15/08/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="nuhrich-max" data-open="false" data-mouvements="dir" data-reseaux="" data-maquis="" data-search="nuhrich max">
+    <div class="badges-corner"><span class="stamp stamp-resistantdeporte" title="Résistant déporté">RÉS. DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/nuhrich-max.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">NUHRICH Max</div>
+        <div class="meta">(16/07/1907 - Harzdorf s. Reichenberg - Tchécoslovaquie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">DIR</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : déportés et internés de la résistance (DIR). Il est arrêté alors qu'il tente de passé la frontière espagnole pour rejoindre une unité en Afrique du Nord</p><p><b>Déportation</b> : Il est déporté à Buchenwald le 22/11/1943</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Joseph et Maria Ulbrich</p><p><b>Mariage</b> : le 04/11/1946 à Bordeaux avec Andrée Roye</p><p><b>Profession</b> : employé de bureau</p><p><b>Naturalisation</b> : JO 09/01/1949 naturalisé NUHRICH (Max), Harzdorf (Tchécoslovaquie), 29-07-07. — 4858x48—91</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°55 du 20/12/1940</p><p><b>Lieu de captivité</b> : Il est interné au camp de Vaucouleurs puis au frontstalag 162 (Toul) jusqu'au 25/01/1941. Puis stalag IV D et IV E jusqu'à son évasion le 06/12/1941</p><p><b>A rejoint l'AFN</b> : Rejoint le 3è REI, à nouveau fait prisonnier au Pont du Fahs</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="olea-salas-pedro" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="olea salas pedro">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/olea-salas-pedro.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">OLEA SALAS Pedro</div>
+        <div class="meta">(- - Espagne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : après la guerre il continue la résistance en Creuse</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="ortiz-peter-julien" data-open="false" data-mouvements="" data-reseaux="" data-maquis="maquisnonprecise" data-search="ortiz peter julien chambellan">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ortiz-peter-julien.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">ORTIZ Peter Julien <span class="alias">alias &laquo;&nbsp;Chambellan&nbsp;&raquo;</span></div>
+        <div class="meta">(05/07/1913 - New York - Etats Unis)</div>
+        <div class="movements"><span class="movement-chip chip-maquis">Maquis (non précisé)</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : remarqué par l'Office of Strategic Services (OSS) en raison de son expérience du combat, sa connaissance de l'Europe et ses facultés linguistiques (il parle français, allemand, espagnol et arabe), Ortiz s'engage pour ce service le 23 mai 1943, alias « Chambellan ». Son rôle sera d'entrer en contact avec des unités de la résistance française afin de définir les besoins de ces dernières et de les aider à préparer le terrain en vue des débarquements futurs. Le 6 janvier 1944, il est parachuté en Haute-Savoie dans le cadre de la mission &quot;Union&quot;. Celle-ci, composée de Peter Ortiz, de Pierre Fourcaud du BRCA et du capitaine Thackwaite du SOE, doit évaluer les capacités des maquis de la région alpine, considérée comme d'importance majeure car étant une porte d'entrée vers l'Italie, alliée de l'Allemagne. Une fois cette mission accomplie, il quitte la France en mai après avoir permis a quatre aviateurs de la RAF abattus de rejoindre l'Espagne neutre</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Philippe George Ortiz et Hilda Marie Louise Ortiz née Jenny</p><p><b>Mariage</b> : avec Jean Ortiz</p><p><b>Décès</b> : le 16/05/1988 à Prescott</p><p><b>Profession</b> : après la guerre il devient acteur, jouant notamment dans des films de guerre sur lesquels il était également conseiller technique</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°18 du 19/09/1940</p><p><b>Lieu de captivité</b> : He spent 15 months as a pow in germany, poland, and austria. He attempted a number of escapes, and finally succeeded in october 1941</p><p><b>Évasion</b> : Evadé en 1941</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="oudem-leon" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="oudem léon oudin">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/oudem-leon.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">OUDEM Léon <span class="alias">alias &laquo;&nbsp;Oudin&nbsp;&raquo;</span></div>
+        <div class="meta">(30/05/1908 - Pskow - Russie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : le 16/12/1942, il passe clandestinement la frontière et traverse l'Espagne et le Portugal. A Londres, il s'engage le 16/02/1943 dans les FFL et est affecté dans les forces terrestres. Le 17/11/1943, il passe dans les Forces navales françaises libres (FNFL). Alias &quot;Oudin&quot;, il est affecté comme second maître radio à bord de la &quot;Combattante&quot;. Il obtient une citation &quot; excellent gradé d'une haute compétence technique a effectué au combat des réparations qui ont permis de continuer à exploiter les transmissions radiophoniques&quot;. Le 01/07/1944 il est affecté comme sergent aux fusillés marins de la division Leclerc. Il est démobilisé le 01/03/1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Moïse Michel et Nina Léon Kalgout</p><p><b>Mariage</b> : le 08/09/1936 à Arzacq avec Héloïse Cuichamans puis divorce. Le 06/03/1950 à Paris 16 avec avec Louise Marguerite Marie Josèphe Milcent de Missienssy (divorce en 1952). Avec Myrthes Pacca</p><p><b>Enfant(s)</b> : Michele (12/01/1938)</p><p><b>Décès</b> : le 30/10/1984 à Paris 7</p><p><b>Profession</b> : commerçant, industriel</p><p><b>Naturalisation</b> : JO 07/01/1934 naturalisé OUDEM (Léon), soldat au 1er régiment étranger d'infanterie à Sidi-Bel-Abbès (Oran), né le 30 mai 1908 à Pskow (Russie)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Lieu de captivité</b> : Fait prisonnier le 25/06/1940 à Blénod les Toul, il est interné au frontstalag 240 (Verdun)</p><p><b>Évasion</b> : Evadé de Verdun le 05/10/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="pajeo-gallego-simon" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="pajeo gallego simon">
+    <div class="badges-corner"><span class="stamp stamp-deporte" title="Déporté">DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pajeo-gallego-simon.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">PAJEO GALLEGO Simon</div>
+        <div class="meta">(12/05/1919 - Anglès - Espagne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il a un dossier dans la série GR 16 P concernant les titres de reconnaissance pour fait de résistance. Sa demande de 1950 a été redirigée sur le statut d'interné et déporté résistant et transmise à la direction des anciens combattants et victimes de guerre</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Paul et Josepha Gallego</p><p><b>Mariage</b> : le 21/02/1947 à Tarnos avec Justine Laplace</p><p><b>Décès</b> : le 21/08/2004 au Boucau</p><p><b>Profession</b> : tischler (charpentier)</p><p><b>Naturalisation</b> : JO 14/05/1950 naturalisé PAGEO (Simon), Anglès (Espagne), 12-05-19. 32484x48 - 40</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°11 du 05/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag VII A München</p><p><b>Déportation raciale</b> : Il est déporté à Mauthausen le 31/08/1941 (mle 4630)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="pellegrini-leon-jean-baptiste" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="pellegrini léon jean baptiste pépé">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pellegrini-leon-jean-baptiste.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">PELLEGRINI Léon Jean Baptiste <span class="alias">alias &laquo;&nbsp;Pépé&nbsp;&raquo;</span></div>
+        <div class="meta">(21/01/1887 - Autechaux Roide - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : en mai 1944, il est contacté par le capitaine Daniel Mercier dit  Luc pour monter et former une section de résistance. Alias &quot;Pépé&quot;, il devient chef de section dans les FFI du Jura, district de Dôle - groupe Panthère jusqu'au 13 septembre 1944. Il effectue des missions de sabotage et réquisitionne du matériel. Après la libération de son secteur il contracte un engagement volontaire pour la durée de la guerre au 2è bataillon FFI du Jura</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Joseph et Alvina Cecile Joly. Enfant assisté</p><p><b>Mariage</b> : le 30/08/1913 à Rolampont avec Marie Gallien (divorce) puis le 29/09/1923 à Mamirolle avec Juliette Vuillin puis le 01/07/1967 à Orchamps avec Marthe Geng</p><p><b>Enfant(s)</b> : Francine (né au Tonkin enfant naturel reconnu)</p><p><b>Décès</b> : le 23/02/1968 à Ancon</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="perc-peretz-mordehay" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="perc-peretz mordehay &quot;marc&quot;">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/perc-peretz-mordehay.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">PERC-PERETZ Mordehay &quot;Marc&quot;</div>
+        <div class="meta">(06/10/1917 - Varsovie - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : résistant dans la Drôme. Compagnie Piron groupe Daniel</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Abram et Cypa Rajla Rapoport</p><p><b>Mariage</b> : le 08/05/1947 à Lyon 2 avec Lydie Franck (divorce le 13/03/1950). Marié le 13/07/1957 à Sarrebruck avec Helene Maria Therese Fürst, divorce le 09/04/1962. Marié en 1996 avec Rita Weile</p><p><b>Décès</b> : le 25/09/1999 à Sarrebruck</p><p><b>Profession</b> : négociant en tissu, en 1963 il fonde une salle de ventes aux enchères à Sarrebruck</p><p><b>Naturalisation</b> : JO 30/12/1945 naturalisé PERC (Mordehaj), secrétaire-interprète, né le 23 septembre 1917 à Varsovie (Pologne) demeurant à Lyon (Rhône), décret 42338x45</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier le 23/06/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="petrochilos-yannis" data-open="false" data-mouvements="ora" data-reseaux="reseaueric" data-maquis="maquisnonprecise" data-search="petrochilos yannis &quot;jean&quot; luciano et jean régis et antonin roux">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/petrochilos-yannis.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">PETROCHILOS Yannis &quot;Jean&quot; <span class="alias">alias &laquo;&nbsp;Luciano et Jean Régis et Antonin Roux&nbsp;&raquo;</span></div>
+        <div class="meta">(15/03/1912 - Smyrne - Turquie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">ORA</span><span class="movement-chip chip-reseau">Réseau Eric</span><span class="movement-chip chip-maquis">Maquis (non précisé)</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : en novembre 1942 il rejoint le réseau Eric mais échoue à passer en Espagne. En avril 1943 il rejoint l'ORA (Organisation de résistance de l'Armée) des Basses Alpes - R2 groupement alpin. Alias &quot;Luciano&quot; puis &quot;Jean Régis&quot; et &quot;Antonin Roux&quot;, il est officier chargé de liaison, chargé de recrutement pour le maquis, il met en place les équipes parachutées d'Alger, il établit deux liaisons avec le maquis italien... A partir de juin 1944, il participe aux combats de libération de Barcelonnette et des villes du département des basses Alpes. Après la Libération, il rejoint l'armée</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Nicolas et Polyxène Emmanuelides</p><p><b>Mariage</b> : le 26/08/1941 à Aix-en-Provence avec Lucie Léonie Charroin, divorce le 10/12/1952. Le 05/10/1964 à Thionville avec Françoise Raine Germaine Holle</p><p><b>Décès</b> : le 12/07/1994 à Toulon</p><p><b>Naturalisation</b> : JO 02/10/1938 naturalisé PETROCHILOS (Jean), caporal au 4e régiment étranger d'infanterie à Marrakech (Maroc) né le 15 mars 1912 à Smyrne (Asie-Mineure)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°100 du 15/06/1941</p><p><b>Lieu de captivité</b> : Il est interné au stalag XI B, XI d et XI A</p><p><b>Évasion</b> : Evadé le 19/03/1941 après 3 tentatives ratées qui lui valent de passer 6 mois en section spéciale</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="proc-panteleimon-justin" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="proc panteleimon justin">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/proc-panteleimon-justin.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">PROC Panteleimon Justin</div>
+        <div class="meta">(08/11/1911 - Torhanovice - Pologne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il contracte un engagement volontaire pour les Corps francs d'Afrique le 08/01/1943 (FFL, 3è bataillon de Marche du Tchad)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Proc et Josephine Klein ou Klern</p><p><b>Mariage</b> : célibataire</p><p><b>Profession</b> : surveillant de travaux</p><p><b>Naturalisation</b> : JO 25/06/1939 naturalisé PROC (Panteleimon), soldat au 4è régiment étranger d'infanterie à Marrakech né le 8 août 1911 à Torhanovice (Pologne)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="quere-michel-yves-marie" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="quere michel yves marie">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/quere-michel-yves-marie.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">QUERE Michel Yves Marie</div>
+        <div class="meta">(29/09/1908 - Plougonvelin - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : après le débarquement en Normandie en juin 1944, Michel Quéré rejoint un groupe de combat à Plougonvelin. Pour son action dans les combats de la Libération, Michel Quéré sera cité à deux reprises et reçoit la Croix de Guerre 1939-1945. Après la dissolution des FFI, il réintègre l’armée et participe aux sièges de Lorient, Royan et La Rochelle. Envoyé dans les Troupes d’Occupation de l’Allemagne (T.O.A) en fin 1945, il poursuit encore quelques années sa carrière militaire avant de retourner définitivement à la vile civile</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jules René Marie et Marie Françoise Raguénès</p><p><b>Mariage</b> : le 30/12/1946 à Carnac avec Simone Hélène Mouriec</p><p><b>Décès</b> : le 04/10/1983 à Saint Renan</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>A rejoint l'AFN</b> : Après sa convalescence, Michel Quéré est renvoyé en Afrique du Nord à Sidi-Bel-Abbès en décembre 1941. Il reste en poste dans son unité et bascule avec l’Armée d’Afrique, du côté des Alliés après les débarquements de novembre 1942 au Maroc et en Algérie. Affecté au 3e Régiment Étranger d’Infanterie et nommé Sergent, il participe à la Campagne de Tunisie mais cette fois il est fait prisonnier par les allemands lors des combats de Pont du Fahs. Envoyé en camp de prisonniers en Italie, il est remis à la France en mai 1943. Il reste près de trois mois en convalescence dans le sud de la France avant d’être mis en permission puis en congés d’Armistice. Michel Quéré regagne alors Plougonvelin</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="rachild-andre-marie" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="rachild andré marie">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rachild-andre-marie.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">RACHILD André Marie</div>
+        <div class="meta">(12/02/1905 - Wavre - Belgique)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il est arrêté le 21/02/1941. Il est condamné par un tribunal en Belgique pour aide à l'espionnage. Il est interné à la prison militaire de Bruxelles (octobre 1941) puis à Lubeck et au camp d'Oranienbourg-Sachsenhausen. Il est rapatrié le 28/05/1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Paul et Josephine Van Vlamerting</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°22 du 27/09/1940</p><p><b>Lieu de captivité</b> : Fait prisonnier le 21/06/1940. Il est interné au frontstalag 240 (Verdun)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="reant-fernand-francois-joseph" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="reant fernand françois joseph">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/reant-fernand-francois-joseph.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">REANT Fernand François Joseph</div>
+        <div class="meta">(17/01/1901 - Noeux les Mines - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : maintenu pendant les hostilités, il déserte le 02/06/1942 pour rejoindre les FFL et le 3e Bataillon d’Infanterie de l’Air. Il arrive en Angleterre le 08/11/1943. Mle FFL 41824</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Augustin et Aimée Delahaye</p><p><b>Mariage</b> : le 14/08/1920 à Saint Amand les Eaux avec Germaine Huel. Le 14/08/1944 à Camberley en Angleterre avec Agnes Margaret Kerr</p><p><b>Décès</b> : le 12/07/1960 à Stoke Upon Trent</p><p><b>Profession</b> : ouvrier mineur</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Lieu de captivité</b> : Fait prisonnier à Saint Omer le 25/05/1940</p><p><b>Évasion</b> : Evadé le 12/12/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="riefstahl-alfred-robert-karl" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="riefstahl alfred robert karl">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/riefstahl-alfred-robert-karl.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">RIEFSTAHL Alfred Robert Karl</div>
+        <div class="meta">(21/07/1905 - Berlin - Allemagne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFI, groupe Raoul</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Max et Anna Klara Ida Runge</p><p><b>Mariage</b> : le 25/03/1936 à Tébessa avec Solange Cholet (divorce en 1946. Elle se remarie avec Jacobs Peter en 1948 lui aussi du 11è REI). Le 22/07/1948 en Allemagne avec Hildegard Ingeborg Gertrud Weber Bühl</p><p><b>Enfant(s)</b> : Charlotte</p><p><b>Décès</b> : le 23/05/1961 à Strasbourg</p><p><b>Profession</b> : reporter de cinema</p><p><b>Naturalisation</b> : JO 11/08/1935 naturalisé RIEFSTAHL (Alfred Robert Karl), caporal au 5e régiment étranger d'infanterie, à Tong (Tonkin), né le 21 juillet 1905 à Berlin (Allemagne)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier à Germiny sous le faux nom de Robert Chollet</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 212 (Metz)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="roux-pierre" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="roux pierre">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/roux-pierre.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">ROUX Pierre</div>
+        <div class="meta">(20/07/1914 - Blacé - France)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : s'engage en 1943 dans le CFA 3è bataillon 12è compagnie. Le 15/06/1944 il est présent à la 2è DB 10è RMT 3è bataillon 10è compagnie</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Claude et Marie Fayard</p><p><b>Mariage</b> : le 11/10/1947 à Arras avec Madeleine Paule Letocard, divorcés le 12/07/1950. Le 23/05/1958 à Loué avec Isabelle Thérèse Patry, divorcés le 09/05/1962. Le 08/08/1968 à Sceaux avec Louise Henriette Gourmand</p><p><b>Décès</b> : le 07/10/1988 à Saint-Pol-sur-Ternoise</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°18 du 19/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag XVIII A</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="roux-robert-louis-maurice" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="roux robert louis maurice maurac">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/roux-robert-louis-maurice.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">ROUX Robert Louis Maurice <span class="alias">alias &laquo;&nbsp;Maurac&nbsp;&raquo;</span></div>
+        <div class="meta">(05/02/1912 - Toulon - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : Alias &quot;Maurac&quot;, a servi dans les forces françaises de l’intérieur (FFI) du 01/03/1943 au 13/09/1944. Commandant du district FFI-Saint-Claude du Jura</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Henri Georges Arsène et Marie Adèle Ganeval</p><p><b>Mariage</b> : le 16/01/1945 à Champagnole avec &quot;Danielle&quot; Michèle Marie Bazinet</p><p><b>Décès</b> : le 16/03/1982 à Toulon</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier à l'hôpital d'Epinal</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="sautour-henri-frederic" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="sautour henri frédéric stofflet">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sautour-henri-frederic.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">SAUTOUR Henri Frédéric <span class="alias">alias &laquo;&nbsp;Stofflet&nbsp;&raquo;</span></div>
+        <div class="meta">(20/01/1912 - Souché - France)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;Stofflet&quot;. Membre de l'AS, corps franc du Sidobre</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Henri Hubert et Marie Louise Fleury</p><p><b>Mariage</b> : le 09/10/1937 au Haillan avec Jeanne Charlotte Guiraud. Divorcé en 1946. Le 12/04/1947 à Andernos les Bains avec Renée Antoinette Olga Charpentier. Séparé de corps</p><p><b>Décès</b> : le 20/03/1997 à Argelès-sur-Mer</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="schenk-georges" data-open="false" data-mouvements="ffi|ftpf" data-reseaux="" data-maquis="" data-search="schenk georges">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/schenk-georges.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">SCHENK Georges</div>
+        <div class="meta">(23/12/1909 - Utzendorf - Suisse)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">FTPF</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : groupe FTPF secteur Est depuis janvier 1944 puis FFI du 10/08/1944 au 20/09/1944. Il participe aux combats à République, Montreuil, Bastille et Bagnolet. S</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Georg et Elise Guidemann</p><p><b>Mariage</b> : le 21/05/1944 à Bagnolet avec Henriette Vivier</p><p><b>Enfant(s)</b> : 3 enfants</p><p><b>Profession</b> : chauffeur</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="schouchine-nicolas" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="schouchine nicolas">
+    <div class="badges-corner"><span class="stamp stamp-deporte" title="Déporté">DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/schouchine-nicolas.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">SCHOUCHINE Nicolas</div>
+        <div class="meta">(16/02/1904 - Pétersbourg - Russie)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : selon des témoins, il aurait été arrêté pour motif de résistance</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Nicolas et Lydie Michailova</p><p><b>Mariage</b> : le 21/09/1943 à Paris 15 avec Marthe Piot</p><p><b>Enfant(s)</b> : il aurait eu une fille née en 1940</p><p><b>Profession</b> : controleur au cinéma Paramount, chauffeur</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°41 du 20/11/1940</p><p><b>Lieu de captivité</b> : Fait prisonnier le 20/06/1940 à Mirecourt. Il est interné au stalag XI A mle 82962 puis XI B mle 51055. Le 03/09/1940 il envoie une postkarte à sa mère pour lui dire qu'il va bien et qu'il est probablement en Allemagne</p><p><b>Déportation raciale</b> : Il travaillait pour les allemands comme chauffeur (organisation TODT). Il est arrêté le 31/07/1943 pour absence illégale et condamné à 5 mois de prison. Interné successivement à Quimper, Troyes, Villeneuve Saint Georges et Fresnes. Après être passé au camp de Compiègne, il est déporté à Dachau le 02/07/1944 (convoi de la mort parti de Compiègne) (mle 77984 block 19)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="siedler-jean" data-open="false" data-mouvements="ffi" data-reseaux="reseauliberationnord" data-maquis="" data-search="siedler jean jean">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/siedler-jean.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">SIEDLER Jean <span class="alias">alias &laquo;&nbsp;Jean&nbsp;&raquo;</span></div>
+        <div class="meta">(06/12/1914 - Berlin - Allemagne)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-reseau">Réseau Libération Nord</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;Jean&quot; dans les FFI. Il s'engage le 20/03/1943 dans le réseau Libération Nord à Asnières</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jean et Marie Jeanne Jouandeau</p><p><b>Mariage</b> : le 17/02/1940 à Asnières avec Lucienne Germaine Maire Richard. Le marié est actuellement au 11è REI. Divorce le 09/07/1948. Le 27/06/1950 à Asnières avec Solange Radoux</p><p><b>Décès</b> : le 30/01/1996 à Fosses</p><p><b>Profession</b> : tolier formeur</p><p><b>Naturalisation</b> : JO 24/05/1953 naturalisé SIEDLER (Jean), Berlin (Allemagne), 06-12-14. — 10489x51—75</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°49 du 07/12/1940</p><p><b>Lieu de captivité</b> : Le régiment indiqué est le 12è REI</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="sneiberg-jugiu" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="sneiberg jugiu joseph vaillant">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sneiberg-jugiu.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">SNEIBERG Jugiu <span class="alias">alias &laquo;&nbsp;Joseph Vaillant&nbsp;&raquo;</span></div>
+        <div class="meta">(20/09/1917 - Neamt - Roumanie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : alias &quot;Joseph Vaillant&quot;. Appartenance FFI non homologuée: en 1951 une lettre lui est envoyée pour des demandes de précisions sur son rôle dans la résistance mais Jugiu Sneiberg est décédé depuis 3 ans</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Iancu et Ghizela Braustain</p><p><b>Mariage</b> : après le 14/02/1945 avec Marie Henriette Jacqueline Merot</p><p><b>Décès</b> : le 02/09/1947 à Paris</p><p><b>Naturalisation</b> : JO 07/09/1947 naturalisé SNEIBERG (Jugiu), rédacteur, né le 20 septembre 1917 à T. G. Neamt (Roumanie), demeurant à Autrey-les-Gray (Haute-Saône)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°14 du 11/09/1940</p><p><b>Évasion</b> : Evadé après 8 mois de captivité</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="s-ur-eugene" data-open="false" data-mouvements="ffi|ocm" data-reseaux="" data-maquis="" data-search="sœur eugène">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/s-ur-eugene.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">SŒUR Eugène</div>
+        <div class="meta">(23/02/1900 - Romanèche Thorins - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">OCM</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : adjudant FFI de juin à août 1944 dans le Bataillon de Rochecouste (OCM organisation civile et militaire)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Jean Marie (mort pour la France en 1915) et Constance Sadot</p><p><b>Mariage</b> : le 23/12/1922 à Lyon 5 avec Antoinette Pierrette Moulet. Séparé de corps le 23/07/1928, divorce le 03/05/1934. Le 23/04/1938 à Nérac avec Simone Péze</p><p><b>Décès</b> : le 31/08/1946 à Nerac</p><p><b>Profession</b> : garçon laitier</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier le 25/06/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="tison-marcel-auguste" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="tison marcel auguste">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/tison-marcel-auguste.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">TISON Marcel Auguste</div>
+        <div class="meta">(17/05/1909 - Paris 11 - France)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il appartient au secteur nord de la Seine, Villetaneuse, groupement Michel Franc</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Auguste (décédé en 1918) et Louise Clementine Saintigny. Elle se remarie en 1920 avec Adolphe Antoine Poirier</p><p><b>Mariage</b> : le 20/04/1940 à Paris 12 avec Lormant Simone Andrée. Actuellement soldat au 11è REI</p><p><b>Enfant(s)</b> : Christian (1940)</p><p><b>Décès</b> : le 04/11/1965 à Gonesse</p><p><b>Profession</b> : imprimeur</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°55 du 20/12/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 162 (Toul)</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="todorow-jean-andre" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="maquisairedecote|maquislasalle|maquispontsaintesprit" data-search="todorow jean andré jean le serbe">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/todorow-jean-andre.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">TODOROW Jean André <span class="alias">alias &laquo;&nbsp;Jean le Serbe&nbsp;&raquo;</span></div>
+        <div class="meta">(09/08/1916 - Dubrovnik Ragusa - Yougoslavie)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-maquis">Maquis Aire de Cote</span><span class="movement-chip chip-maquis">Maquis Lasalle</span><span class="movement-chip chip-maquis">Maquis Pont Saint Esprit</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : le 22/05/1943, il rejoint le maquis Aire de Cote (FFI) où il est agent de liaison. Il s'occupe ensuite de l'instruction militaires des jeunes du maquis de Lasalle. Alias &quot;Jean le Serbe&quot;, il organise les maquis de Pont Saint Esprit, du Col du Mercou, Grand Borie et de la Vallée Borgne. Le 11/05/1944, il est fait prisonnier par les Waffen SS alors qu'il était en service commandé. Interné aux Baumettes à Marseille, il arrive à s'échapper lors du débarquement allié et à rejoindre le maquis de Lasalle. A la tête d'une compagnie il participe aux combats du mois d'août 1944. En octobre, il est capitaine instructeur à l'école des cadres d'officiers</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Sava et Sara Cabrich</p><p><b>Mariage</b> : le 21/08/1945 à Pont Saint Esprit avec Ginette Hélène Rose Marty</p><p><b>Décès</b> : le 14/07/2003 à Arles</p><p><b>Naturalisation</b> : JO 26/05/1946 naturalisé TODOROW (Jean-Andréa), employé, né le 8 août 1916 à Dubrovnik (Yougoslavie), demeurant à Nîmes (Gard)</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p><p><b>Lieu de captivité</b> : Il est interné à Montmédy</p><p><b>Évasion</b> : Evadé le 01/11/1940</p><p><b>A rejoint l'AFN</b> : Rejoint le 1er REI et il quitte la Légion le 23/01/1942. Il fait partie du personnel d'encadrement du 305è groupe de travailleurs étrangers à la Grande Combe dans le Gard jusqu'au 22/05/1943 date à laquelle il prend le maquis</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="touzeau-andre-camille-gaston" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="touzeau andré camille gaston">
+    <div class="badges-corner"><span class="stamp stamp-resistantmort" title="Mort au combat">MORT AU COMBAT</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/touzeau-andre-camille-gaston.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">TOUZEAU André Camille Gaston</div>
+        <div class="meta">(06/10/1913 - Le Blanc - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFI</p><p><b>Mort au combat</b> : Mort le 08/07/1944 à Genouilly (tué au combat). &quot;Il est midi, ce 8 juillet, lorsque Paoli, à la tête des allemands, surgit à la Goubarderie, une ferme pourtant située très à l’écart des routes. Des maquisards qui ont travaillé toute la nuit au parachutage y font leur toilette. Désarmés, André Touzeau, Jean Secrétain, Maurice Nicault sont abattus sur place.&quot;</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Gaston Camille et Léonie Marthe Tatet</p><p><b>Mariage</b> : célibataire</p><p><b>Profession</b> : ébéniste</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au stalag XVIII Markt Pongau, mle 94970</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="verheul-teunis-cornelis" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="verheul teunis cornelis">
+    <div class="badges-corner"><span class="stamp stamp-resistantmort" title="Mort au combat">MORT AU COMBAT</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/verheul-teunis-cornelis.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">VERHEUL Teunis Cornelis</div>
+        <div class="meta">(30/09/1909 - Rotterdam - Pays Bas)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : pas de dossier à Vincennes, mais celui de Caen lui donne le grade de sous-lieutenant FFI de l’armée secrète secteur A de l’Ardèche</p><p><b>Mort au combat</b> : Mort le 19/08/1944 à Annonay. Il meurt des suites de ses blessures après l’attaque d’un poste allemand à Andancette (Drôme). Il aurait alors été blessé à la gorge par un tir venu de la sizaine placée en défense. Alors qu’il était à l’intérieur du poste pris à l’ennemi, il se serait coiffé d’un casque allemand et serait apparu à la fenêtre. Il meurt à 1h30 à l’hospice d’Annonay où il avait été transporté. Il est inhumé dans la Nécropole nationale de La Doua à Villeurbanne</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Hendrik et Neeltje Verschoor</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°13 du 10/09/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 240 (Verdun) mle 7653</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="verny-fernand" data-open="false" data-mouvements="ffi|ftp" data-reseaux="" data-maquis="" data-search="verny fernand fernand">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/verny-fernand.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">VERNY Fernand <span class="alias">alias &laquo;&nbsp;Fernand&nbsp;&raquo;</span></div>
+        <div class="meta">(09/06/1906 - Montauban - France)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFI</span><span class="movement-chip chip-mouvement">FTP</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFI alias &quot;Fernand&quot;. Il rejoint les FTP du 1er bataillon du Lot (commandant Louis Brouel) du 01/05 au 27/08/1944 et commande la 3è compagnie</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Antoine et Marie Léonie Seguin</p><p><b>Mariage</b> : le 25/08/1932 à Brive avec Suzanne Marie Marguerite Grellard</p><p><b>Décès</b> : le 14/08/1963</p><p><b>Profession</b> : cultivateur</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="wickhuys-maurice-alfons" data-open="false" data-mouvements="ffl" data-reseaux="" data-maquis="" data-search="wickhuys maurice alfons">
+    <div class="badges-corner"></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/wickhuys-maurice-alfons.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">WICKHUYS Maurice Alfons</div>
+        <div class="meta">(15/09/1907 - Gand - Belgique)</div>
+        <div class="movements"><span class="movement-chip chip-mouvement">FFL</span></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : il est démobilisé des FFL le 18/12/1945</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Camilus Augustinus et Maria Virgina Dezutter</p><p><b>Décès</b> : le 27/01/1973 à Tielt (Belgique)</p><p><b>Profession</b> : chauffeur</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°20 du 23/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="wilf-abraham" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="wilf abraham &quot;arthur&quot;">
+    <div class="badges-corner"><span class="stamp stamp-deporte" title="Déporté">DÉPORTÉ</span><span class="stamp stamp-resistantdeporte" title="Résistant déporté">RÉS. DÉPORTÉ</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/wilf-abraham.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">WILF Abraham &quot;Arthur&quot;</div>
+        <div class="meta">(30/10/1909 - Stryj - Pologne)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Déportation</b> : dans la résistance à La Bridoire (Savoie)</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Munisch et Sara Erster</p><p><b>Profession</b> : forain</p><p><b>Naturalisation</b> : JO 15/09/1957 naturalisé WILF (Abraham), Stryj (Pologne), 30-10-09. — 25598x48—90</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°28 du 09/10/1940</p><p><b>Lieu de captivité</b> : Il est interné au frontstalag 161 (Nancy)</p><p><b>Déportation raciale</b> : Le commissaire général aux questions juives, vu l'article 1er de la loi du 22 juillet 1941, relative aux entreprises, biens et valeurs appartenant aux Juifs, Arrête: Les entreprises suivantes, appartenant en tout ou en partie ou dirigées en tout ou en partie par des Juifs, sont pourvues des administrateurs provisoires: Wilf (Abraham), 127, avenue Jean - Jaurès, à Belfort (pour prendre effet à la date du 22 avril 1941)</p></div>
+    </div></div>
+  </div>
+</div>
+<div class="no-results" id="rei-resist-no-results">Aucune fiche ne correspond à cette recherche.</div>
+</div>
+<script>
+function toggleCard(btn){
+  const card = btn.closest('.card');
+  const isOpen = card.getAttribute('data-open') === 'true';
+  card.setAttribute('data-open', String(!isOpen));
+  card.classList.toggle('open', !isOpen);
+}
+(function(){
+  var btn = document.getElementById('rei-resist-top');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+(function(){
+  var search = document.getElementById('rei-resist-search');
+  var selectMouvement = document.getElementById('rei-resist-filter-mouvement');
+  var selectReseau = document.getElementById('rei-resist-filter-reseau');
+  var selectMaquis = document.getElementById('rei-resist-filter-maquis');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.rei-resist .card'));
+  var countEl = document.getElementById('rei-resist-count');
+  var noResults = document.getElementById('rei-resist-no-results');
+
+  function normalize(s){
+    return (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  }
+
+  function matchOk(dataAttr, filterValue){
+    if (filterValue === 'all') return true;
+    var values = (dataAttr || '').split('|');
+    return values.indexOf(filterValue) !== -1;
+  }
+
+  function apply(){
+    var q = normalize(search.value.trim());
+    var visible = 0;
+    cards.forEach(function(card){
+      var mouvementOk = matchOk(card.dataset.mouvements, selectMouvement.value);
+      var reseauOk = matchOk(card.dataset.reseaux, selectReseau.value);
+      var maquisOk = matchOk(card.dataset.maquis, selectMaquis.value);
+      var searchOk = !q || normalize(card.dataset.search).indexOf(q) !== -1;
+      var show = mouvementOk && reseauOk && maquisOk && searchOk;
+      card.classList.toggle('hide', !show);
+      if(show) visible++;
+    });
+    countEl.textContent = visible + ' fiche' + (visible > 1 ? 's' : '') + ' sur 91';
+    noResults.style.display = (visible === 0) ? 'block' : 'none';
+  }
+
+  search.addEventListener('input', apply);
+  selectMouvement.addEventListener('change', apply);
+  selectReseau.addEventListener('change', apply);
+  selectMaquis.addEventListener('change', apply);
+  apply();
+})();
+</script>

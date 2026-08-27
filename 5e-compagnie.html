@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5e Compagnie — 11e REI</title>
+<meta name="description" content="5e Compagnie, 11e régiment étranger d'infanterie : organisation, encadrement et effectif recensé.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .flag{width:180px;height:auto;flex-shrink:0;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-size-small img{width:min(240px,100%);margin:0 auto}
+  .ci-size-full img{width:100%}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+  .ci-intro blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+
+  /* --- Carnet, façon journal de terrain --- */
+  .carnet-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.2rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none}
+  .suggestions.show{display:block}
+  .suggestion-item{padding:.5rem .9rem;font-size:.82rem;color:var(--ink);cursor:pointer;
+    display:flex;justify-content:space-between;gap:8px}
+  .suggestion-item:hover,.suggestion-item.active{background:var(--row)}
+  .suggestion-item .sg-meta{color:var(--muted);font-size:.72rem;white-space:nowrap}
+  .navbtn{width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);background:var(--card);
+    color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .navbtn:hover{background:var(--orange)}
+  .pagecount{font-size:.75rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .book-stage{
+    background:
+      radial-gradient(ellipse at center, #4a3826 0%, #1c130a 78%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,.12) 0 2px, transparent 2px 6px);
+    border-radius:10px;
+    padding:2.2rem 1.4rem;
+    margin-bottom:.6rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6);
+  }
+  .book{position:relative;perspective:2200px;display:flex;max-width:720px;margin:0 auto;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .page{
+    flex:1;min-width:0;position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    min-height:260px;
+    color:#2b2013;
+    transition:transform .45s ease, opacity .45s ease;
+  }
+  .page-left{border-radius:6px 0 0 6px;padding-left:1.9rem;
+    box-shadow:inset -10px 0 18px -12px rgba(0,0,0,.45)}
+  .page-right{border-radius:0 6px 6px 0;padding-right:1.9rem;
+    box-shadow:inset 10px 0 18px -12px rgba(0,0,0,.45)}
+  .book::before{ /* reliure centrale */
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;z-index:3;
+    background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.35)),
+               repeating-linear-gradient(180deg, #2a1c0f 0 3px, #1c1108 3px 6px);
+    box-shadow:0 0 14px rgba(0,0,0,.6);
+  }
+  .page::after{ /* coin corné */
+    content:'';position:absolute;bottom:0;width:22px;height:22px;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 50%);
+  }
+  .page-left::after{right:0;border-radius:0 0 6px 0}
+  .page-right::after{left:0;transform:scaleX(-1);border-radius:0 0 0 6px}
+  .page.turning-next{transform:rotateY(-14deg) translateX(-16px);opacity:0}
+  .page.turning-prev{transform:rotateY(14deg) translateX(16px);opacity:0}
+  .page-empty{display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;
+    font-size:1.3rem;color:#8a7554}
+
+  .flip{
+    position:absolute;top:0;bottom:0;width:50%;z-index:5;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    color:#2b2013;
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+    box-shadow:0 0 24px rgba(0,0,0,.45);
+    transition:transform .5s cubic-bezier(.45,.05,.35,1);
+    overflow:hidden;
+    display:none;
+  }
+  .flip::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 40%);
+    opacity:0;transition:opacity .5s}
+  .flip.showing::after{opacity:1}
+  .flip.right{right:0;transform-origin:left center;border-radius:0 6px 6px 0;padding-right:1.9rem}
+  .flip.left{left:0;transform-origin:right center;border-radius:6px 0 0 6px;padding-left:1.9rem}
+  .flip.flipping-right{transform:rotateY(-160deg)}
+  .flip.flipping-left{transform:rotateY(160deg)}
+
+  .p-header{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.2rem;
+    border-bottom:1px dashed rgba(120,90,40,.4);padding-bottom:.4rem}
+  .p-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.15rem;color:#2b2013}
+  .p-stamp{font-family:'Caveat',cursive;font-size:1rem;color:#8a1f11;border:2px solid #8a1f11;border-radius:6px;
+    padding:.05rem .45rem;transform:rotate(4deg);white-space:nowrap;opacity:.8}
+  .p-meta{font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.85rem;margin-bottom:.8rem}
+  .p-field{margin-bottom:.4rem;line-height:1.5;font-size:.82rem}
+  .p-field .lbl{font-family:'Caveat',cursive;font-size:1.02rem;color:#8a4a1f;margin-right:.3rem}
+  .p-link{display:inline-block;margin-top:.7rem;font-size:.76rem;color:#8a4a1f;text-decoration:none;
+    border-bottom:1px dotted #8a4a1f}
+  .p-link:hover{color:#8a1f11}
+  .pageno{position:absolute;bottom:.6rem;font-family:'Caveat',cursive;font-size:.9rem;color:#8a7554}
+  .page-left .pageno{right:1rem}
+  .page-right .pageno{left:1rem}
+  .tapzone{position:absolute;top:0;bottom:0;width:22%;cursor:pointer;z-index:2}
+  .page-left .tapzone{left:0}
+  .page-right .tapzone{right:0}
+
+  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-effectif%205e" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  
+  <div class="htext">
+    <h1>5e Compagnie</h1>
+    <div class="sub">Effectif recensé : 180 légionnaires</div>
+    <a class="back" href="https://www.11regimentetranger.com/recherche-legionnaire">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro"><p class="ci-lede">Liste des officiers, sous-officiers et légionnaires de la 5e compagnie, établie à partir des souvenirs du lieutenant Hervé Chevillotte, chef de section à la batterie saharienne portée de Légion, qui appartint à la 5e compagnie du 6 novembre 1939 au 22 juin 1940. On retrouve certains de ces légionnaires dans les listes des morts pour la France et des engagés volontaires pour la durée de la guerre (EVDG) sur le site Mémoire des hommes ; d'autres apparaissent dans les listes officielles des prisonniers de guerre. Il est ainsi possible, pour certains d'entre eux, de connaître prénom, date et lieu de naissance.</p>
+<h2 class="ci-h2">Officiers de la 5e compagnie</h2>
+<figure class="ci-fig ci-size-small"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-5e-compagnie-4.jpg" alt=""><figcaption>Capitaine Lanchon</figcaption></figure>
+<p>Commandant la compagnie : capitaine Lanchon, né Lefebvre Louis Charles (15/07/1897 — Paris, France), grade capitaine (R). Mort le 18/06/1940 à Ourches-sur-Meuse.</p>
+<p>Chef de section : lieutenant Rabin Félix (21/04/1901 — Pouancé, France), muté en février au dépôt de Sathonay puis au Barcarès.</p>
+<figure class="ci-fig ci-size-small"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-5e-compagnie-5.jpg" alt=""><figcaption>Sous-lieutenant Bertot</figcaption></figure>
+<p>Chef de section : sous-lieutenant Bertot Alfred (réserve), prisonnier le 23 juin.</p>
+<figure class="ci-fig ci-size-small"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-5e-compagnie-6.jpg" alt=""><figcaption>Sous-lieutenant Metman</figcaption></figure>
+<p>Chef de section : sous-lieutenant Metman Henry Jules, né le 27/02/1908 à Guernesey, tué le 26/05/1940 à Malandry. « Excellent officier d'une rare valeur morale. Est tombé mortellement frappé, le 26 mai 1940, au cours d'un engagement aux environs de Malandry. » Croix de guerre avec palme.</p>
+<p>Chef de section : lieutenant Coquet Jacques (28/10/1911 — Reims, France), prisonnier (liste du 04/12/1940), Stalag VI A puis Oflag VI A.</p>
+<h2 class="ci-h2">Récit de campagne</h2>
+<p>Ce récit s'appuie sur le journal de marche de la 5e compagnie (capitaine Lanchon), celui du 2e bataillon (chef de bataillon d'Alegron), la fiche établie après-guerre par le lieutenant Chevillotte, et le rapport du caporal-chef Bedrich sur les circonstances de la mort du capitaine Lanchon.</p>
+<h3 class="ci-h3">Formation et premiers mois</h3>
+<p>Le régiment est créé à La Valbonne vers le 1er novembre 1939, composé de 2 000 légionnaires d'Afrique du Nord, 500 réservistes ayant déjà servi à la Légion et 500 engagés volontaires. Affecté à la 1re D.I.M. pour sa première montée en ligne en janvier 1940, il passe début avril à la 6e D.I.N.A. La 5e compagnie monte aux avant-postes dès la nuit du 1er janvier 1940, y reste cinq jours sans incident si ce n'est quelques évacuations pour pieds gelés, puis alterne repos, travaux sur la ligne Maginot et nouvelles montées en ligne jusqu'à la mi-mai.</p>
+<p>Le 30 avril 1940, toute la garnison de Boulay assiste à la remise du drapeau au 11e REI par le colonel Robert, suivie de la lecture du récit du combat de Camerone.</p>
+<h3 class="ci-h3">14–21 mai : la montée vers le front</h3>
+<p>À partir du 14 mai, la compagnie enchaîne les étapes à marche forcée — Volmerange, Laquenexy, Corny, Xonville, Bréheville — avant d'arriver le 21 mai au bois d'Inor, où elle relève des éléments du 15e RTA très éprouvés par de durs combats. Elle prend position en liaison avec le 21e RTA à gauche et le 1er bataillon à droite.</p>
+<h3 class="ci-h3">22–26 mai : premières pertes au bois d'Inor</h3>
+<p>Dès le 22 mai à 3 heures, de vifs engagements de contact ont lieu ; la section Bertot prend une mitrailleuse à l'ennemi et la section Coquet fait un prisonnier allemand. Le 23 mai, le légionnaire Meyer « Suzanne » est tué d'une balle au cœur, Mecca est blessé au pied. Le 24 mai, Carman et Menchi sont tués à leur poste par éclats d'obus à 8h30 ; Nebotte et Say sont blessés à la même heure ; Mouret et Seifert sont tués à leur poste vers 16h30 ; le légionnaire Ferrer a la main droite arrachée par éclats de grenade.</p>
+<p>Le 26 mai vers 0h10, l'adjudant-chef Metman est tué d'un éclat de grenade au cœur, en se portant en avant de son poste pour observer une patrouille ennemie signalée par un de ses légionnaires.</p>
+<h3 class="ci-h3">27 mai : la compagnie décimée</h3>
+<p>À 3 heures du matin, l'ennemi déclenche une très violente préparation d'artillerie, suivie d'un assaut à 4h45. La section Derly, au centre du dispositif, est enfoncée vers 8h30 : son chef, le sergent Derly, disparaît — tué ou fait prisonnier. Débordé de toutes parts, le groupe se replie sur le groupe Hallermeyer, lui-même bientôt débordé sur 300 mètres, qui se retire à son tour vers le PC du capitaine.</p>
+<p>Les éléments se reforment 250 mètres en arrière, où ils retrouvent le groupement du capitaine Brochet et du lieutenant Picquart, à l'endroit même où le capitaine de Closmadeuc (CA2) venait d'être tué. Picquart est blessé à son tour ; à court de munitions, le groupement se replie vers une clairière près du PC du bataillon. Pendant ce temps, la section Chevillotte et la section de mitrailleuses Marchetti (Virgilio Francesco Carlo « Robert »)  s'organisent en point d'appui à gauche de la compagnie, en liaison avec le lieutenant Blot (6e compagnie) ; à droite, les sections Lhotel et Bertot, aidées du groupe de mitrailleuses Haim, tiennent leurs positions malgré un feu violent.</p>
+<p>Dans la clairière, le capitaine Brochet organise une contre-attaque, renforcée par la section Sautour (Henri Frédéric, sous-lieutenant, 1ère compagnie) du 1er bataillon ; il est blessé à son tour, et le capitaine Lanchon prend le commandement de la progression, malgré un violent tir d'artillerie. La compagnie Jayet (Louis Charles Marie, 9e compagnie) vient à la rescousse vers le premier objectif. Vers 13 heures, les postes Marchetti, Chevillotte et Hallermeyer, ainsi que le PC de la compagnie, sont réoccupés — mais le poste Derly, où les Allemands se sont solidement retranchés, résiste malgré l'appoint de la section Sautour. Le lieutenant Sautour, l'adjudant-chef Egloff (venu prendre le commandement de la section Derly en l'absence de Metman) et l'adjudant-chef Gorski (9e compagnie) sont blessés ; tous les autres sous-officiers de ce secteur sont tués.</p>
+<p>Pour la nuit, la ligne est rétablie 150 mètres en arrière de l'ancienne position d'avant-postes. Cette seule journée coûte à la compagnie 6 tués, 29 blessés et 4 disparus : les caporaux Moriame et Maurin, les légionnaires Mataro, Comi, Horak et Bussière sont morts pour la France ; le sergent Derly, ainsi que Kotchi, Gonzales Théodore et Dudek, restent portés disparus.</p>
+<h3 class="ci-h3">28 mai – 17 juin : repli, ligne d'arrêt, remontée en ligne</h3>
+<p>La nuit du 27 au 28 mai est calme. Le 28 mai à 6 heures, l'ordre de repli sur la ligne d'arrêt arrive ; la compagnie s'y installe et y reste jusqu'au 5 juin, où elle remonte en premières lignes jusqu'au 7 juin au soir, puis se place en soutien jusqu'au 10 juin. Le décrochage du 10 juin se fait sans incident. S'ensuit une retraite par étapes — lisière sud-ouest de Baâlon, bois des Caures, Bras, où l'embarquement en camion prévu est rendu impossible par l'arrivée d'éléments motorisés allemands — jusqu'au fort des Roseliers, puis Void, où la compagnie arrive le 17 juin à 2h30 avant de repartir en fin d'après-midi vers Saint-Germain-sur-Meuse.</p>
+<h3 class="ci-h3">18 juin : la mort du capitaine Lanchon</h3>
+<p>La compagnie s'installe à l'ouest de la Meuse, en avant de Saint-Germain. Les Allemands arrivent au contact et leur artillerie tire à vue. Le lieutenant Chevillotte est envoyé par le colonel porter un ordre de repli à la 7e compagnie, au contact sur le canal de la Marne au Rhin déjà franchi par les Allemands à Void ; à son retour, il apprend que la compagnie a été prise sous un tir d'artillerie violent et que le capitaine Lanchon a été tué.</p>
+<p>Le caporal-chef Bedrich, qui se trouvait à quelques mètres du capitaine au moment de sa mort, en a laissé un témoignage détaillé, rédigé à Meknès le 3 octobre 1940 :</p>
+<p>Sur l'ordre du sous-lieutenant Bertot, le caporal-chef Bedrich court au PC du bataillon rendre compte au capitaine Lemoine, qui venait justement de recevoir l'ordre de repli de la 5e compagnie — quatre agents de transmission envoyés depuis trois quarts d'heure n'étaient jamais parvenus jusqu'au capitaine Lanchon. La compagnie transmet alors l'ordre de repli. « La 5e Cie a été complètement anéantie », conclut le rapport.</p>
+<p>À 11 heures, sur ordre du capitaine Lemoine, le repli est donné. La CA2 n'a alors plus un seul officier ni de voiturettes ; la 5e compagnie est très réduite, une partie de ses éléments s'étant repliés au contact du 21e RTA. La 6e compagnie est anéantie à Void. Le 2e bataillon, réduit à une trentaine d'hommes, assure la défense rapprochée du PC du colonel et se replie jusqu'au 21 juin, où l'ordre de cesser le feu est donné.</p>
+<h3 class="ci-h3">Ce qu'il restait de la 5e compagnie</h3>
+<p>Selon la fiche du lieutenant Chevillotte, il ne restait à la 5e compagnie, à l'issue des combats, que lui-même, le sous-lieutenant Bertot, et une vingtaine de gradés et légionnaires : les caporaux-chefs Cheraffedine, Bedrich, Ferrato et Meaburn, et les légionnaires Branberger, Bernstein, Lelong, Tamburini, Lewkowicz, Maka, Nicolas, Wojdyla, Lasman, Libert, Glifberg, Telesinski, Montard, Lippens, Grisius, Lopez, Soutchenko, Wezolowski et Klesinski.</p>
+<h3 class="ci-h3">Sources du récit</h3>
+<ul><li>Extraits du journal de marche de la 5e compagnie, 16 avril au 30 mai 1940 (capitaine Lanchon)</li><li>Extraits du journal de marche du 2e bataillon, 16 avril au 31 mai 1940 (chef de bataillon d'Alegron)</li><li>Fiche établie par le lieutenant Hervé Chevillotte, chef de section à la batterie saharienne portée de Légion</li><li>Rapport sur la mort du capitaine Lanchon, caporal-chef Bedrich, Meknès, 3 octobre 1940</li></ul></div>
+
+<h2 class="carnet-title">Carnet de l'effectif (180 fiches)</h2>
+<div class="toolbar">
+  <button class="navbtn" id="prevBtn">‹</button>
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Rechercher un nom..." autocomplete="off">
+    <div class="suggestions" id="suggestions"></div>
+  </div>
+  <span class="pagecount" id="pagecount"></span>
+  <button class="navbtn" id="nextBtn">›</button>
+</div>
+<div class="book-stage">
+  <div class="book">
+    <div class="page page-left" id="pageLeft"></div>
+    <div class="page page-right" id="pageRight"></div>
+    <div class="flip right" id="flipRight"></div>
+    <div class="flip left" id="flipLeft"></div>
+  </div>
+</div>
+<p style="font-size:.72rem;color:var(--muted);text-align:center">Chaque fiche du carnet est un résumé — cliquez « Voir la fiche complète » pour tous les détails (captivité, citations, sources...).</p>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+const PEOPLE = [{"nom": "AGOTICS", "prenom": "Sandor", "date": "20/09/1909", "lieu": "Borod - Roumanie", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#agotics-sandor"}, {"nom": "ALLENDER", "prenom": "Emile Georges", "date": "30/09/1909", "lieu": "Douai - France", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#allender-emile-georges"}, {"nom": "AMSTUTZ", "prenom": "Jean Bernard Louis", "date": "18/06/1922", "lieu": "Paris 17 - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#amstutz-jean-bernard-louis"}, {"nom": "BALLESTE GIMENO", "prenom": "Salvador", "date": "26/03/1914", "lieu": "Barcelona - Espagne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#balleste-gimeno-salvador"}, {"nom": "BALME", "prenom": "Robert Julien", "date": "12/01/1905", "lieu": "Sotteville les Rouen - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#balme-robert-julien"}, {"nom": "BEDRICH", "prenom": "Bédrich Joseph", "date": "24/05/1915", "lieu": "Prague - Tchécoslovaquie", "affectation": "caporal chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bedrich-bedrich-joseph"}, {"nom": "BEL", "prenom": "", "date": "", "lieu": "", "affectation": "sergent - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bel"}, {"nom": "BELKE", "prenom": "Jean", "date": "", "lieu": "", "affectation": "sergent - 7è compagnie puis 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#belke-jean"}, {"nom": "BERCHER", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bercher"}, {"nom": "BERNSTEIN", "prenom": "Isidore", "date": "18/03/1904", "lieu": "Constantinople - Turquie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bernstein-isidore"}, {"nom": "BERTOT", "prenom": "Alfred Aristide", "date": "22/02/1911", "lieu": "Beaumont de Lomagne - France", "affectation": "sous Lieutenant - 7è compagnie puis 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bertot-alfred-aristide"}, {"nom": "BERTRAND", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bertrand"}, {"nom": "BES", "prenom": "Joseph", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bes-joseph"}, {"nom": "BESSIERE", "prenom": "Henri", "date": "07/11/1910", "lieu": "Alger - France", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bessiere-henri"}, {"nom": "BON", "prenom": "Georges Claudius Honoré", "date": "03/11/1906", "lieu": "Givry - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bon-georges-claudius-honore"}, {"nom": "BONELL", "prenom": "Jean", "date": "10/06/1914", "lieu": "Barcelone - Espagne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bonell-jean"}, {"nom": "BOURQUIN", "prenom": "", "date": "(- - Suisse)", "lieu": "Suisse", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bourquin"}, {"nom": "BOUZEK", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bouzek"}, {"nom": "BRABANT", "prenom": "Lucien Marceau", "date": "08/09/1909", "lieu": "Carvin - France", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#brabant-lucien-marceau"}, {"nom": "BRANDERBERGER", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#branderberger"}, {"nom": "BRENDEL", "prenom": "Izraël Srulek", "date": "25/08/1914", "lieu": "Kalisz - Pologne", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#brendel-izrael-srulek"}, {"nom": "BURY", "prenom": "Alphonse René", "date": "06/05/1906", "lieu": "Zurich - Suisse", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bury-alphonse-rene"}, {"nom": "BUSSIERE", "prenom": "Marcel", "date": "26/04/1906", "lieu": "Cervon - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bussiere-marcel"}, {"nom": "CARASENA", "prenom": "Emmanuel", "date": "16/12/1912", "lieu": "Sidi Bel Abbès - Algérie", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#carasena-emmanuel"}, {"nom": "CASE", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#case"}, {"nom": "CAZMAN", "prenom": "Jožef", "date": "08/11/1900", "lieu": "Yesenier - Yougoslavie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cazman-jozef"}, {"nom": "CHERAFFEDIN", "prenom": "Radje", "date": "21/03/1901", "lieu": "Istanbul - Turquie", "affectation": "caporal chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cheraffedin-radje"}, {"nom": "CHEVILLOTTE", "prenom": "Hervé Marie Charles", "date": "01/07/1913", "lieu": "Cherbourg - France", "affectation": "lieutenant - 5è compagnie", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chevillotte-herve-marie-charles"}, {"nom": "CHRISTENSONS", "prenom": "Erik", "date": "12/11/1914", "lieu": "Aarhus - Danemark", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#christensons-erik"}, {"nom": "CIESELSKI", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cieselski"}, {"nom": "CLERC", "prenom": "John Gustave", "date": "14/11/1905", "lieu": "Bienne - Suisse", "affectation": "caporal chef - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#clerc-john-gustave"}, {"nom": "CLOSSET", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#closset"}, {"nom": "COGNIOUL", "prenom": "Nicolas Alphonse Joseph", "date": "22/10/1899", "lieu": "Luxembourg - Luxembourg", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cognioul-nicolas-alphonse-joseph"}, {"nom": "COMI", "prenom": "Giacomo", "date": "25/10/1910", "lieu": "Sesto San Giovanni - Italie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#comi-giacomo"}, {"nom": "COQUET", "prenom": "Jacques", "date": "28/10/1911", "lieu": "Reims - France", "affectation": "capitaine - 5è compagnie puis 7è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#coquet-jacques"}, {"nom": "COUPIN", "prenom": "Luce René Louis", "date": "17/09/1914", "lieu": "Osny - France", "affectation": "sergent - 5è compagnie puis Compagnie Hors Rang", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#coupin-luce-rene-louis"}, {"nom": "CZEKALA", "prenom": "Jean", "date": "20/07/1915", "lieu": "Osterfeld - Allemagne", "affectation": "caporal - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#czekala-jean"}, {"nom": "CZIKOS", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#czikos"}, {"nom": "DAWIDSON", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie puis Compagnie Régimentaire d'Engins", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dawidson"}, {"nom": "DECATOIRE", "prenom": "Lucien Fernand", "date": "20/08/1905", "lieu": "Lille - France", "affectation": "2è classe - Compagnie de commandement puis 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#decatoire-lucien-fernand"}, {"nom": "DELAGOUTTE", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delagoutte"}, {"nom": "DELFOSSE", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delfosse"}, {"nom": "DELMAS", "prenom": "Gaston Bernard Jean", "date": "29/11/1907", "lieu": "Tarbes - France", "affectation": "sergent - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delmas-gaston-bernard-jean"}, {"nom": "DELORME", "prenom": "Gabriel Pierre Marie", "date": "26/03/1902", "lieu": "Yssingeaux - France", "affectation": "sergent - 5è compagnie puis passé au 12è REI", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delorme-gabriel-pierre-marie"}, {"nom": "DENIS", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#denis"}, {"nom": "DERLY", "prenom": "Charles René Emile", "date": "09/04/1907", "lieu": "Roubaix - France", "affectation": "sergent - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#derly-charles-rene-emile"}, {"nom": "DESOMBRE", "prenom": "Louis Eugène François", "date": "12/08/1918", "lieu": "Rinxent - France", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#desombre-louis-eugene-francois"}, {"nom": "DEVAUX", "prenom": "Léon", "date": "08/01/1917", "lieu": "Aiseau - Belgique", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#devaux-leon"}, {"nom": "DIMIRJIAN", "prenom": "Kabile", "date": "10/1909", "lieu": "Turquie", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dimirjian-kabile"}, {"nom": "DOUBITROU", "prenom": "Georges Rousso", "date": "18/03/1905", "lieu": "Bucarest - Roumanie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#doubitrou-georges-rousso"}, {"nom": "DUDEK", "prenom": "Bronislaw", "date": "03/02/1911", "lieu": "Debina - Pologne", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dudek-bronislaw"}, {"nom": "DUFFRECHOUX", "prenom": "Roger", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#duffrechoux-roger"}, {"nom": "EGLOFF", "prenom": "Walter", "date": "20/05/1900", "lieu": "Wettingen - Suisse", "affectation": "adjudant chef puis sous lieutenant à titre temporaire - 5è compagnie", "badge": {"cls": "resistant", "label": "Résistant", "stamp": "RÉSISTANT"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-e.html#egloff-walter"}, {"nom": "ERMAN", "prenom": "Izachor", "date": "17/11/1908", "lieu": "Lublin - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-e.html#erman-izachor"}, {"nom": "FERRATO", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-f.html#ferrato"}, {"nom": "FERRER", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-f.html#ferrer-2"}, {"nom": "FISPANN", "prenom": "", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fispann"}, {"nom": "FLOREK", "prenom": "Paul", "date": "01/05/1905", "lieu": "Nowa Wies - Pologne", "affectation": "caporal chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-f.html#florek-paul"}, {"nom": "GLIFBERG", "prenom": "Niels Hakon", "date": "21/01/1915", "lieu": "Copenhague - Danemark", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#glifberg-niels-hakon"}, {"nom": "GONZALES", "prenom": "Théodore", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gonzales-theodore"}, {"nom": "GOURDON", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gourdon"}, {"nom": "GRASSET", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie puis Compagnie Hors Rang", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#grasset"}, {"nom": "GREBLER", "prenom": "Salomon", "date": "13/05/1909", "lieu": "Vignita - Roumanie", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#grebler-salomon"}, {"nom": "GRISIUS", "prenom": "Nicolas Johann", "date": "04/03/1910", "lieu": "Luxembourg - Luxembourg", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#grisius-nicolas-johann"}, {"nom": "GUTTE", "prenom": "Adolf Auguste", "date": "07/12/1900", "lieu": "Arnsdorf - Tchécoslovaquie", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gutte-adolf-auguste"}, {"nom": "HALLERMEIER", "prenom": "Heinrich Ludwig", "date": "29/10/1905", "lieu": "Kaiserslautern - Allemagne", "affectation": "sergent chef - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hallermeier-heinrich-ludwig"}, {"nom": "HELLYEN", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hellyen"}, {"nom": "HERVE", "prenom": "Henri Joseph Marie", "date": "04/10/1915", "lieu": "Concarneau - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#herve-henri-joseph-marie"}, {"nom": "HORAK", "prenom": "Charles", "date": "08/09/1914", "lieu": "Tchécoslovaquie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#horak-charles"}, {"nom": "HUTTER", "prenom": "Josef Maria", "date": "23/06/1908", "lieu": "Salzbourg - Autriche", "affectation": "sergent - 7è compagnie puis 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hutter-josef-maria"}, {"nom": "INGWER", "prenom": "Rafaël", "date": "18/01/1906", "lieu": "Drohobycz - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-i.html#ingwer-rafael"}, {"nom": "JANSSENS", "prenom": "Philippe Jean Auguste", "date": "08/05/1910", "lieu": "Seclin - France", "affectation": "1ère classe - CA2 puis 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#janssens-philippe-jean-auguste"}, {"nom": "KARADZIC", "prenom": "Milan", "date": "14/10/1904", "lieu": "Nikchitch - Yougoslavie", "affectation": "sergent chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#karadzic-milan"}, {"nom": "KLESINSKI", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#klesinski"}, {"nom": "KNIGHT", "prenom": "John", "date": "10/05/1914", "lieu": "Zurich - Suisse", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#knight-john"}, {"nom": "KOCAR", "prenom": "", "date": "(- - Tchécoslovaquie)", "lieu": "Tchécoslovaquie", "affectation": "caporal chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kocar"}, {"nom": "KOMAROWSKI", "prenom": "Alexandre", "date": "15/03/1906", "lieu": "Rostov - Russie", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#komarowski-alexandre"}, {"nom": "KOSEK", "prenom": "", "date": "(- - Tchécoslovaquie)", "lieu": "Tchécoslovaquie", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kosek"}, {"nom": "KOTCHI", "prenom": "Tharrasaqui", "date": "06/06/1906", "lieu": "Karitza - Albanie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kotchi-tharrasaqui"}, {"nom": "KOZOMARA", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kozomara"}, {"nom": "KRANJEC", "prenom": "Franz", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kranjec-franz"}, {"nom": "KRESCH", "prenom": "Moses Moïse Mozesz", "date": "24/09/1906", "lieu": "Lesko - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kresch-moses-moise-mozesz"}, {"nom": "KRIVITCH", "prenom": "Mate", "date": "1906", "lieu": "Yougoslavie", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#krivitch-mate"}, {"nom": "KROUKER", "prenom": "Elie Kaskelev", "date": "22/09/1893", "lieu": "Yampol - Russie", "affectation": "aspirant - 5è compagnie", "badge": {"cls": "deporte", "label": "Déporté", "stamp": "DÉPORTÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#krouker-elie-kaskelev"}, {"nom": "KRYCZMYREK", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kryczmyrek"}, {"nom": "KUSMIREK", "prenom": "Isaac Szaak", "date": "23/12/1900", "lieu": "Varsovie - Pologne", "affectation": "5è compagnie", "badge": {"cls": "deporte", "label": "Déporté", "stamp": "DÉPORTÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kusmirek-isaac-szaak"}, {"nom": "LANCHON", "prenom": "Né Lefebvre Louis Charles", "date": "15/07/1897", "lieu": "Paris 2 - France", "affectation": "capitaine - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lanchon-ne-lefebvre-louis-charles"}, {"nom": "LASMAN", "prenom": "Israël Kalma", "date": "10/06/1908", "lieu": "Czestochowa - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lasman-israel-kalma"}, {"nom": "LAUDOUZE", "prenom": "André", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#laudouze-andre"}, {"nom": "LAZAR", "prenom": "Joseph", "date": "28/04/1894", "lieu": "Klonikowice - Pologne", "affectation": "1ère classe - 5è compagnie puis 7è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lazar-joseph"}, {"nom": "LAZAREK", "prenom": "Stanislas", "date": "14/01/1919", "lieu": "Raisko - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lazarek-stanislas"}, {"nom": "LE MOËNNER", "prenom": "Jean Louis", "date": "25/02/1902", "lieu": "Quimper - France", "affectation": "sergent - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#le-moenner-jean-louis"}, {"nom": "LECHOUBA", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lechouba"}, {"nom": "LELONG", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lelong"}, {"nom": "LEWKOWICZ", "prenom": "Szmul Berek", "date": "22/04/1903", "lieu": "Olkusz - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lewkowicz-szmul-berek"}, {"nom": "LHOTEL", "prenom": "Daniel", "date": "09/10/1911", "lieu": "Florenville - Belgique", "affectation": "adjudant - Compagnie Hors Rang puis 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lhotel-daniel"}, {"nom": "LIBERT", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#libert"}, {"nom": "LIDON", "prenom": "Camille", "date": "29/05/1900", "lieu": "Brive - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lidon-camille"}, {"nom": "LIPPENS", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lippens"}, {"nom": "LOCHU", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie puis Compagnie Hors Rang", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lochu"}, {"nom": "LOPEZ", "prenom": "José", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lopez-jose"}, {"nom": "LOPEZ AVELLAN", "prenom": "Diego", "date": "09/01/1919", "lieu": "La Nora - Espagne", "affectation": "2è classe - 5è compagnie puis Compagnie Régimentaire d'Engins", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lopez-avellan-diego"}, {"nom": "LOVERA", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lovera"}, {"nom": "MACAUX", "prenom": "", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#macaux"}, {"nom": "MAKA", "prenom": "Georges", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#maka-georges"}, {"nom": "MANIFESTI", "prenom": "Sauveur", "date": "04/07/1909", "lieu": "Caltanissetta - Italie", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#manifesti-sauveur"}, {"nom": "MARO", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#maro"}, {"nom": "MASIAK", "prenom": "Karol Jan", "date": "04/11/1902", "lieu": "Lwow - Pologne", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#masiak-karol-jan"}, {"nom": "MATARO BARTRES", "prenom": "Jaime", "date": "21/12/1918", "lieu": "Barcelone - Espagne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mataro-bartres-jaime"}, {"nom": "MATUSZEWICZ", "prenom": "Chaskiel", "date": "15/07/1914", "lieu": "Varsovie - Pologne", "affectation": "1ère classe - Compagnie Hors Rang puis 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#matuszewicz-chaskiel"}, {"nom": "MAURIN", "prenom": "Charles Antoine", "date": "14/04/1909", "lieu": "Affreville - Algérie", "affectation": "caporal - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#maurin-charles-antoine"}, {"nom": "MAYER", "prenom": "Eric", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mayer-eric"}, {"nom": "MAZUREK", "prenom": "Joseph", "date": "18/12/1912", "lieu": "Kalisz - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mazurek-joseph"}, {"nom": "MEABURN", "prenom": "Lionel Henri", "date": "18/03/1911", "lieu": "Cauderan - France", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#meaburn-lionel-henri"}, {"nom": "MECCA", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mecca"}, {"nom": "MENCHI", "prenom": "Armand", "date": "04/04/1912", "lieu": "Pistoia - Italie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#menchi-armand"}, {"nom": "METMAN", "prenom": "Henri Jules", "date": "27/02/1908", "lieu": "Guernesey - Grande Bretagne", "affectation": "adjudant chef puis sous lieutenant - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#metman-henri-jules"}, {"nom": "MICHALOWSKI", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#michalowski"}, {"nom": "MOIS", "prenom": "", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mois"}, {"nom": "MONTARD", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#montard"}, {"nom": "MORIAME", "prenom": "Jules Hubert", "date": "27/02/1907", "lieu": "Wanfercé Baulet - Belgique", "affectation": "caporal - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moriame-jules-hubert"}, {"nom": "MOUCHARD", "prenom": "Joseph", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie puis Compagnie de commandement", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mouchard-joseph"}, {"nom": "MOURET", "prenom": "Charles", "date": "14/02/1907", "lieu": "Paris 19 - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mouret-charles"}, {"nom": "NAPIERALA", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-n.html#napierala"}, {"nom": "NEBOTTE", "prenom": "José", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-n.html#nebotte-jose"}, {"nom": "NICOLAS", "prenom": "Ernest", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-n.html#nicolas-ernest"}, {"nom": "NICOLAS", "prenom": "Germain", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-n.html#nicolas-germain"}, {"nom": "NICOLLEAU", "prenom": "Emile Victor", "date": "20/02/1900", "lieu": "Nantes - France", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-n.html#nicolleau-emile-victor"}, {"nom": "PACTON", "prenom": "Paul Alexandre", "date": "04/06/1911", "lieu": "Courgeac - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pacton-paul-alexandre"}, {"nom": "PECCE", "prenom": "François Henri", "date": "29/04/1905", "lieu": "Cannes - France", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pecce-francois-henri"}, {"nom": "PECQUERY DU CHAUSSOY", "prenom": "Denis", "date": "24/08/1908", "lieu": "Paris - France", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pecquery-du-chaussoy-denis"}, {"nom": "PEYROT", "prenom": "Pierre", "date": "16/02/1914", "lieu": "Saint Martin Curton - France", "affectation": "caporal - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#peyrot-pierre"}, {"nom": "PINTOS", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pintos"}, {"nom": "POURQUOY", "prenom": "Roger Alfred", "date": "02/03/1913", "lieu": "Deinze - Belgique", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pourquoy-roger-alfred"}, {"nom": "PRUVOT", "prenom": "Julien Alphonse Laurent", "date": "18/08/1903", "lieu": "Airaines - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pruvot-julien-alphonse-laurent"}, {"nom": "PUSIC", "prenom": "Jovan-Batista", "date": "06/06/1908", "lieu": "Istanbul - Turquie", "affectation": "sergent chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pusic-jovan-batista"}, {"nom": "RABIN", "prenom": "Félix Louis", "date": "21/04/1901", "lieu": "Pouancé - France", "affectation": "lieutenant - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rabin-felix-louis"}, {"nom": "ROBAK", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#robak"}, {"nom": "ROLLAND", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rolland"}, {"nom": "ROS", "prenom": "", "date": "", "lieu": "", "affectation": "5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#ros"}, {"nom": "ROUX", "prenom": "Marcel", "date": "", "lieu": "", "affectation": "caporal - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#roux-marcel"}, {"nom": "SAFRE", "prenom": "Manuel", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#safre-manuel"}, {"nom": "SAMUELSEN", "prenom": "Sigurd Asbjorn", "date": "03/01/1907", "lieu": "Oslo - Norvège", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#samuelsen-sigurd-asbjorn"}, {"nom": "SAN JUAN", "prenom": "Séverin", "date": "23/10/1913", "lieu": "Alcazaren - Espagne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#san-juan-severin"}, {"nom": "SANJORGE AVISTU", "prenom": "Alphonse Mariano", "date": "10/05/1907", "lieu": "Tarragone - Espagne", "affectation": "sergent chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sanjorge-avistu-alphonse-mariano"}, {"nom": "SAVA", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sava"}, {"nom": "SAY", "prenom": "", "date": "", "lieu": "", "affectation": "5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#say"}, {"nom": "SCHUTI", "prenom": "", "date": "", "lieu": "", "affectation": "5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#schuti"}, {"nom": "SEIFERT", "prenom": "Franz", "date": "22/10/1910", "lieu": "Oberholtz - Tchécoslovaquie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#seifert-franz"}, {"nom": "SEIGNEUR", "prenom": "Georges Frédéric", "date": "09/08/1899", "lieu": "Lac ou Villers - France", "affectation": "caporal chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#seigneur-georges-frederic"}, {"nom": "SELIENSKY", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie puis Compagnie de commandement", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#seliensky"}, {"nom": "SERRA", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#serra"}, {"nom": "SIATRAK", "prenom": "Stanislas", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#siatrak-stanislas"}, {"nom": "SIKOSA", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sikosa"}, {"nom": "SLOBODZIAN", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#slobodzian"}, {"nom": "SOUSSAN", "prenom": "Meïr Rahamim", "date": "24/03/1905", "lieu": "Bzou - Maroc", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#soussan-meir-rahamim"}, {"nom": "SOUSTCHENKO", "prenom": "Alexis", "date": "06/02/1905", "lieu": "Kiev - Russie", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#soustchenko-alexis"}, {"nom": "STACHOWIAK", "prenom": "François", "date": "09/03/1912", "lieu": "Kurnik - Pologne", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#stachowiak-francois"}, {"nom": "STACHOWSKI", "prenom": "Michel", "date": "07/09/1901", "lieu": "Josieninieze - Russie", "affectation": "caporal - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#stachowski-michel"}, {"nom": "STEFFEN", "prenom": "Louis", "date": "13/05/1905", "lieu": "Saint Denis - France", "affectation": "caporal chef - 5è compagnie puis 3è bataillon", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#steffen-louis"}, {"nom": "SUZANNE", "prenom": "Eugène", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#suzanne-eugene"}, {"nom": "SZOKE", "prenom": "Geza", "date": "06/03/1903", "lieu": "Barzava - Roumanie", "affectation": "sergent chef - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#szoke-geza"}, {"nom": "TAMBURINI", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tamburini"}, {"nom": "TAPP", "prenom": "Jos", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tapp-jos"}, {"nom": "TCHOUGAEFF", "prenom": "Alexandre", "date": "15/05/1900", "lieu": "Kharkow - Russie", "affectation": "2è classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tchougaeff-alexandre"}, {"nom": "TELESINSKI", "prenom": "Pierre", "date": "18/04/1921", "lieu": "Saudesnerhotz - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#telesinski-pierre"}, {"nom": "TISON", "prenom": "Marcel Auguste", "date": "17/05/1909", "lieu": "Paris 11 - France", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tison-marcel-auguste"}, {"nom": "TOMASSON", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tomasson"}, {"nom": "URBANEK", "prenom": "August Ludwig", "date": "11/08/1903", "lieu": "Slupna - Pologne", "affectation": "sergent - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#urbanek-august-ludwig"}, {"nom": "VAN CRAENENBROECK", "prenom": "Albert", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#van-craenenbroeck-albert"}, {"nom": "VASSILIEF", "prenom": "Nicolas", "date": "03/05/1899", "lieu": "Charcov - Russie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#vassilief-nicolas"}, {"nom": "VERRA", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#verra"}, {"nom": "WESOLOWSKI", "prenom": "Siegfried", "date": "16/02/1904", "lieu": "Graudenz - Pologne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wesolowski-siegfried"}, {"nom": "WIRTH", "prenom": "Emile", "date": "", "lieu": "", "affectation": "1ère classe - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wirth-emile"}, {"nom": "WITKOVSKI", "prenom": "Paul", "date": "03/02/1895", "lieu": "Minsk - Russie", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#witkovski-paul"}, {"nom": "WOJDYLA", "prenom": "André", "date": "01/01/1912", "lieu": "Drohojów - Pologne", "affectation": "1ère classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wojdyla-andre"}, {"nom": "ZANATTO", "prenom": "Angelo", "date": "28/12/1907", "lieu": "Male di Lagua - Italie", "affectation": "légionnaire - 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zanatto-angelo"}, {"nom": "ZIELINSKI", "prenom": "Jean", "date": "", "lieu": "", "affectation": "légionnaire - 5è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zielinski-jean"}, {"nom": "ZLINSKI", "prenom": "Itswan István", "date": "24/12/1912", "lieu": "Komlo - Hongrie", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zlinski-itswan-istvan"}, {"nom": "ZORO", "prenom": "Ramon", "date": "13/06/1905", "lieu": "Valence - Espagne", "affectation": "2è classe - 5è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zoro-ramon"}];
+let current = 0; // index de la personne affichee en page gauche (toujours pair)
+const pageLeftEl = document.getElementById('pageLeft');
+const pageRightEl = document.getElementById('pageRight');
+
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function personHtml(p, idx, side){
+  const stampHtml = p.badge ? `<div class="p-stamp">${esc(p.badge.stamp)}</div>` : '';
+  return `
+    <div class="p-header">
+      <div class="p-name">${esc(p.nom)} ${esc(p.prenom)}</div>
+      ${stampHtml}
+    </div>
+    <div class="p-meta">${esc(p.date)}${p.date && p.lieu ? ' — ' : ''}${esc(p.lieu)}</div>
+    ${p.affectation ? `<div class="p-field"><span class="lbl">Affectation —</span>${esc(p.affectation)}</div>` : ''}
+    <a class="p-link" href="${p.fiche_url}" target="_blank" rel="noopener">Voir la fiche complète →</a>
+    <div class="pageno">n° ${idx+1}</div>
+    <div class="tapzone ${side}" id="tap-${side}"></div>
+  `;
+}
+
+function render(idx){
+  const left = PEOPLE[idx];
+  const right = PEOPLE[idx+1];
+  pageLeftEl.innerHTML = left ? personHtml(left, idx, 'left') : '<div class="page-empty">— fin du carnet —</div>';
+  pageRightEl.innerHTML = right ? personHtml(right, idx+1, 'right') : '<div class="page-empty">— fin du carnet —</div>';
+  const lastNo = right ? idx+2 : idx+1;
+  document.getElementById('pagecount').textContent = (idx+1) + (right ? '–' + lastNo : '') + ' / ' + PEOPLE.length;
+  const tapLeft = document.getElementById('tap-left');
+  const tapRight = document.getElementById('tap-right');
+  if(tapLeft) tapLeft.onclick = () => turn(-2);
+  if(tapRight) tapRight.onclick = () => turn(2);
+}
+
+function turn(delta){
+  const next = current + delta;
+  if(next < 0 || next >= PEOPLE.length) return;
+
+  const flipEl = delta > 0 ? document.getElementById('flipRight') : document.getElementById('flipLeft');
+  const sourceEl = delta > 0 ? pageRightEl : pageLeftEl;
+
+  // 1) le feuillet qui tourne affiche d'abord le contenu ACTUEL de la page qu'il recouvre
+  flipEl.innerHTML = sourceEl.innerHTML;
+  flipEl.style.display = 'block';
+  flipEl.classList.remove('flipping-right', 'flipping-left');
+  void flipEl.offsetWidth; // force le reflow avant de lancer la transition
+
+  // 2) sous le feuillet, on met deja a jour le contenu reel (invisible pour l'instant, cache dessous)
+  current = next;
+  render(current);
+
+  // 3) on lance la rotation : le feuillet pivote depuis la reliure et revele la nouvelle page en dessous
+  requestAnimationFrame(() => {
+    flipEl.classList.add('showing', delta > 0 ? 'flipping-right' : 'flipping-left');
+  });
+
+  setTimeout(() => {
+    flipEl.style.display = 'none';
+    flipEl.classList.remove('showing', 'flipping-right', 'flipping-left');
+  }, 520);
+}
+
+document.getElementById('prevBtn').onclick = () => turn(-2);
+document.getElementById('nextBtn').onclick = () => turn(2);
+
+function jumpTo(idx){
+  const target = idx % 2 === 0 ? idx : idx - 1;
+  if(target !== current){ current = target; render(current); }
+}
+
+const searchInput = document.getElementById('search');
+const suggestionsEl = document.getElementById('suggestions');
+let activeSuggestion = -1;
+
+function closeSuggestions(){
+  suggestionsEl.classList.remove('show');
+  suggestionsEl.innerHTML = '';
+  activeSuggestion = -1;
+}
+
+function showSuggestions(matches){
+  if(!matches.length){ closeSuggestions(); return; }
+  suggestionsEl.innerHTML = matches.map((m, i) =>
+    `<div class="suggestion-item" data-idx="${m.idx}">${esc(m.nom)} ${esc(m.prenom)}<span class="sg-meta">n° ${m.idx+1}</span></div>`
+  ).join('');
+  suggestionsEl.classList.add('show');
+  activeSuggestion = -1;
+  suggestionsEl.querySelectorAll('.suggestion-item').forEach(el => {
+    el.addEventListener('click', () => {
+      jumpTo(parseInt(el.dataset.idx, 10));
+      searchInput.value = '';
+      closeSuggestions();
+    });
+  });
+}
+
+searchInput.addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  if(!q){ closeSuggestions(); return; }
+  const matches = PEOPLE
+    .map((p, idx) => ({p, idx}))
+    .filter(({p}) => (p.nom + ' ' + p.prenom).toLowerCase().includes(q))
+    .slice(0, 8)
+    .map(({p, idx}) => ({nom:p.nom, prenom:p.prenom, idx}));
+  showSuggestions(matches);
+});
+searchInput.addEventListener('keydown', (e) => {
+  const items = suggestionsEl.querySelectorAll('.suggestion-item');
+  if(e.key === 'ArrowDown' && items.length){
+    e.preventDefault();
+    activeSuggestion = Math.min(activeSuggestion + 1, items.length - 1);
+    items.forEach((el,i) => el.classList.toggle('active', i === activeSuggestion));
+    items[activeSuggestion].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'ArrowUp' && items.length){
+    e.preventDefault();
+    activeSuggestion = Math.max(activeSuggestion - 1, 0);
+    items.forEach((el,i) => el.classList.toggle('active', i === activeSuggestion));
+    items[activeSuggestion].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'Enter'){
+    e.preventDefault();
+    const target = activeSuggestion >= 0 ? items[activeSuggestion] : items[0];
+    if(target){ jumpTo(parseInt(target.dataset.idx, 10)); searchInput.value=''; closeSuggestions(); }
+  } else if(e.key === 'Escape'){
+    closeSuggestions();
+  }
+});
+document.addEventListener('click', (e) => {
+  if(!e.target.closest('.search-wrap')) closeSuggestions();
+});
+document.addEventListener('keydown', (e) => {
+  if(document.activeElement === searchInput) return; // les fleches gauche/droite servent a taper dans le champ
+  if(e.key === 'ArrowLeft') turn(-2);
+  if(e.key === 'ArrowRight') turn(2);
+});
+
+render(0);
+
+(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>

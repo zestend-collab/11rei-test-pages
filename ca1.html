@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compagnie d'Accompagnement n°1 (CA1) — 11e REI</title>
+<meta name="description" content="Compagnie d'Accompagnement n°1 (CA1), 11e régiment étranger d'infanterie : organisation, encadrement et effectif recensé.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .flag{width:180px;height:auto;flex-shrink:0;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-size-small img{width:min(240px,100%);margin:0 auto}
+  .ci-size-full img{width:100%}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+  .ci-intro blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+
+  /* --- Carnet, façon journal de terrain --- */
+  .carnet-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.2rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none}
+  .suggestions.show{display:block}
+  .suggestion-item{padding:.5rem .9rem;font-size:.82rem;color:var(--ink);cursor:pointer;
+    display:flex;justify-content:space-between;gap:8px}
+  .suggestion-item:hover,.suggestion-item.active{background:var(--row)}
+  .suggestion-item .sg-meta{color:var(--muted);font-size:.72rem;white-space:nowrap}
+  .navbtn{width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);background:var(--card);
+    color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .navbtn:hover{background:var(--orange)}
+  .pagecount{font-size:.75rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .book-stage{
+    background:
+      radial-gradient(ellipse at center, #4a3826 0%, #1c130a 78%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,.12) 0 2px, transparent 2px 6px);
+    border-radius:10px;
+    padding:2.2rem 1.4rem;
+    margin-bottom:.6rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6);
+  }
+  .book{position:relative;perspective:2200px;display:flex;max-width:720px;margin:0 auto;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .page{
+    flex:1;min-width:0;position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    min-height:260px;
+    color:#2b2013;
+    transition:transform .45s ease, opacity .45s ease;
+  }
+  .page-left{border-radius:6px 0 0 6px;padding-left:1.9rem;
+    box-shadow:inset -10px 0 18px -12px rgba(0,0,0,.45)}
+  .page-right{border-radius:0 6px 6px 0;padding-right:1.9rem;
+    box-shadow:inset 10px 0 18px -12px rgba(0,0,0,.45)}
+  .book::before{ /* reliure centrale */
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;z-index:3;
+    background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.35)),
+               repeating-linear-gradient(180deg, #2a1c0f 0 3px, #1c1108 3px 6px);
+    box-shadow:0 0 14px rgba(0,0,0,.6);
+  }
+  .page::after{ /* coin corné */
+    content:'';position:absolute;bottom:0;width:22px;height:22px;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 50%);
+  }
+  .page-left::after{right:0;border-radius:0 0 6px 0}
+  .page-right::after{left:0;transform:scaleX(-1);border-radius:0 0 0 6px}
+  .page.turning-next{transform:rotateY(-14deg) translateX(-16px);opacity:0}
+  .page.turning-prev{transform:rotateY(14deg) translateX(16px);opacity:0}
+  .page-empty{display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;
+    font-size:1.3rem;color:#8a7554}
+
+  .flip{
+    position:absolute;top:0;bottom:0;width:50%;z-index:5;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    color:#2b2013;
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+    box-shadow:0 0 24px rgba(0,0,0,.45);
+    transition:transform .5s cubic-bezier(.45,.05,.35,1);
+    overflow:hidden;
+    display:none;
+  }
+  .flip::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 40%);
+    opacity:0;transition:opacity .5s}
+  .flip.showing::after{opacity:1}
+  .flip.right{right:0;transform-origin:left center;border-radius:0 6px 6px 0;padding-right:1.9rem}
+  .flip.left{left:0;transform-origin:right center;border-radius:6px 0 0 6px;padding-left:1.9rem}
+  .flip.flipping-right{transform:rotateY(-160deg)}
+  .flip.flipping-left{transform:rotateY(160deg)}
+
+  .p-header{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.2rem;
+    border-bottom:1px dashed rgba(120,90,40,.4);padding-bottom:.4rem}
+  .p-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.15rem;color:#2b2013}
+  .p-stamp{font-family:'Caveat',cursive;font-size:1rem;color:#8a1f11;border:2px solid #8a1f11;border-radius:6px;
+    padding:.05rem .45rem;transform:rotate(4deg);white-space:nowrap;opacity:.8}
+  .p-meta{font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.85rem;margin-bottom:.8rem}
+  .p-field{margin-bottom:.4rem;line-height:1.5;font-size:.82rem}
+  .p-field .lbl{font-family:'Caveat',cursive;font-size:1.02rem;color:#8a4a1f;margin-right:.3rem}
+  .p-link{display:inline-block;margin-top:.7rem;font-size:.76rem;color:#8a4a1f;text-decoration:none;
+    border-bottom:1px dotted #8a4a1f}
+  .p-link:hover{color:#8a1f11}
+  .pageno{position:absolute;bottom:.6rem;font-family:'Caveat',cursive;font-size:.9rem;color:#8a7554}
+  .page-left .pageno{right:1rem}
+  .page-right .pageno{left:1rem}
+  .tapzone{position:absolute;top:0;bottom:0;width:22%;cursor:pointer;z-index:2}
+  .page-left .tapzone{left:0}
+  .page-right .tapzone{right:0}
+
+  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-CA1" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  <img class="flag" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca1-7.jpg" alt="Fanion">
+  <div class="htext">
+    <h1>Compagnie d'Accompagnement n°1 (CA1)</h1>
+    <div class="sub">Effectif recensé : 86 légionnaires</div>
+    <a class="back" href="https://www.11regimentetranger.com/recherche-legionnaire">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro"><p>Une compagnie d'accompagnement a pour but d'accompagner les compagnies de fusiliers-voltigeurs à l'échelon du bataillon. Elle dispose d'un équipement plus lourd que les autres compagnies, composé théoriquement de :</p>
+<ul><li>2 canons de 25 mm antichar (AC), sans appareil de pointage auxiliaire</li><li>2 mortiers de 81 mm</li><li>16 mitrailleuses de 8 mm</li></ul>
+<p>Elle est composée de 6 sections :</p>
+<h3 class="ci-h3">Section de commandement (2 groupes)</h3>
+<ul><li>1 adjudant, chef de section, chargé du ravitaillement</li><li>1er groupe (transmissions et renseignements) : 1 sergent, 5 agents de transmission (dont 4 clairons), 1 cycliste, 2 observateurs, 2 télémétreurs, 2 bicyclettes</li><li>2e groupe (ravitaillement et services) : 1 sergent-chef comptable chef de groupe, 2 comptables, 1 caporal d'ordinaire, 4 cuisiniers, 1 sous-officier chargé des équipages, 1 caporal mitrailleur-mécanicien, 1 ordonnance, 3 conducteurs, 1 chauffeur, 5 chevaux d'attelage, 2 bicyclettes, 1 camionnette à vivres/bagages/munitions, 1 cuisine roulante, 1 voiture à munitions modèle 1909, 1 voiture d'allègement</li></ul>
+<h3 class="ci-h3">4 sections de mitrailleuses (chacune)</h3>
+<ul><li>1 chef de section, 1 sergent-chef adjoint, 1 agent de transmission, 1 caporal d'échelon</li><li>2 groupes de mitrailleuses, chacun : 1 sergent chef de groupe, 1 mitrailleur mécanicien, 1 conducteur de voiturette, 1 cheval d'attelage, 1 voiturette porte-munitions ; et pour servir la pièce : 1 caporal chef de pièce, 1 tireur, 1 chargeur, 2 pourvoyeurs, 1 conducteur de voiturette, 1 cheval d'attelage, 1 voiturette porte-pièce</li></ul>
+<h3 class="ci-h3">1 section d'engins (mortiers de 81 et canons de 25)</h3>
+<ul><li>Commandée par 1 aspirant ou adjudant, accompagné de 2 agents de transmission et 2 bicyclettes</li><li>Groupe de mortiers de 81 (commandé par 1 adjudant ou sergent) : 2 pièces, chacune commandée par 1 caporal chef de pièce, avec 1 pointeur, 1 chargeur, 1 artificier, 4 pourvoyeurs, 2 conducteurs de voiturette, 2 chevaux d'attelage, 1 voiturette porte-pièce, 1 voiturette porte-munitions</li><li>Groupe de canons de 25 AC (commandé par 1 adjudant ou sergent-chef) : 1 agent de transmission, 1 conducteur, 1 cheval d'attelage, 1 voiturette porte-munitions ; chaque pièce commandée par 1 sergent chef de pièce, avec 1 caporal pointeur, 1 chargeur, 3 pourvoyeurs, 1 conducteur d'avant-train, 1 cheval d'attelage, 1 avant-train</li></ul>
+<p>La compagnie d'accompagnement porte le numéro du bataillon dont elle fait partie. Les sections de la CA1 sont donc ventilées selon les besoins au sein du 1er bataillon, entre le PC du bataillon et les 1re, 2e et 3e compagnies.</p>
+<h2 class="ci-h2">Encadrements successifs, de la mobilisation au 23 juin 1940</h2>
+<figure class="ci-fig ci-size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca1-2.jpg" alt=""><figcaption>11/09/1940 — CMI 145, Sathonay</figcaption></figure>
+<p>Le 11/09/1940, encadrement de la CA1 au CMI 145 à Sathonay : capitaine Seguin (il sera affecté au 12e REI), 3 lieutenants (2 du 1er RTA et 1 du 3e RTA), lieutenant Corduant, lieutenant Drouineau.</p>
+<figure class="ci-fig ci-size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca1-4.jpg" alt=""></figure>
+<p>Dans l'ordre de bataille du régiment, un capitaine commande une compagnie et les lieutenants sont chefs de section. Pour la CA1 : commandant la compagnie, lieutenant Sigmann ; chefs de section, lieutenant Drouineau et sous-lieutenant Levy.</p>
+<figure class="ci-fig ci-size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca1-5.jpg" alt=""><figcaption>6/11/1940</figcaption></figure>
+<p>Le 6/11/1940, c'est le capitaine Clément qui commande la CA1. Il quitte la compagnie pour occuper les fonctions d'adjudant-major au 2e bataillon à partir de février 1940.</p>
+<figure class="ci-fig ci-size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca1-6.jpg" alt=""><figcaption>3 avril 1940</figcaption></figure>
+<p>Le 03/04/1940, le lieutenant Corduant passe à la CHR (commandement de la section de dépannage du régiment) ; il est remplacé par le lieutenant Mondon.</p>
+<p>Combats d'Inor : le lieutenant Drouineau est blessé et évacué, le sous-lieutenant Levy également.</p></div>
+
+<h2 class="carnet-title">Carnet de l'effectif (86 fiches)</h2>
+<div class="toolbar">
+  <button class="navbtn" id="prevBtn">‹</button>
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Rechercher un nom..." autocomplete="off">
+    <div class="suggestions" id="suggestions"></div>
+  </div>
+  <span class="pagecount" id="pagecount"></span>
+  <button class="navbtn" id="nextBtn">›</button>
+</div>
+<div class="book-stage">
+  <div class="book">
+    <div class="page page-left" id="pageLeft"></div>
+    <div class="page page-right" id="pageRight"></div>
+    <div class="flip right" id="flipRight"></div>
+    <div class="flip left" id="flipLeft"></div>
+  </div>
+</div>
+<p style="font-size:.72rem;color:var(--muted);text-align:center">Chaque fiche du carnet est un résumé — cliquez « Voir la fiche complète » pour tous les détails (captivité, citations, sources...).</p>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+const PEOPLE = [{"nom": "ADAM", "prenom": "Franck", "date": "(- - Belgique)", "lieu": "Belgique", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#adam-franck"}, {"nom": "AMBROSINI", "prenom": "Luigi", "date": "20/05/1905", "lieu": "Cividate Al Piano - Italie", "affectation": "2è classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#ambrosini-luigi"}, {"nom": "ANTOLIN GIL", "prenom": "Sebastian", "date": "08/06/1914", "lieu": "Sax - Espagne", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#antolin-gil-sebastian"}, {"nom": "BANOWICZ", "prenom": "Jacob", "date": "06/02/1908", "lieu": "Grodno - Pologne", "affectation": "sergent - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#banowicz-jacob"}, {"nom": "BASTE", "prenom": "Jean", "date": "05/05/1903", "lieu": "Crampacki - Tchécoslovaquie", "affectation": "1ère classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#baste-jean"}, {"nom": "BISSET", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bisset"}, {"nom": "BOROVICKI", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#borovicki"}, {"nom": "BOSEMS", "prenom": "Lambertus", "date": "30/08/1907", "lieu": "Maastricht - Pays Bas", "affectation": "sergent - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bosems-lambertus"}, {"nom": "BOURDIC", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bourdic"}, {"nom": "CACHAT", "prenom": "Basile", "date": "15/07/1901", "lieu": "Meillerie - France", "affectation": "adjudant chef puis sous lieutenant TT - CA1 puis 2è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cachat-basile"}, {"nom": "CARIO", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cario"}, {"nom": "CLEE", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#clee"}, {"nom": "CLÉMENT", "prenom": "Pierre Emile Fernand", "date": "17/05/1902", "lieu": "Arras - France", "affectation": "capitaine - CA1 puis Adjudant major", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#clement-pierre-emile-fernand"}, {"nom": "COLOMBO", "prenom": "Angelo", "date": "", "lieu": "", "affectation": "1ère classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#colombo-angelo"}, {"nom": "CORDUANT", "prenom": "Jean", "date": "21/08/1906", "lieu": "Le Quesnoy - France", "affectation": "lieutenant - CA1 puis Compagnie Hors Rang", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#corduant-jean"}, {"nom": "DIAS DIAS", "prenom": "José", "date": "21/07/1904", "lieu": "Santareu - Portugal", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dias-dias-jose"}, {"nom": "DIMITREFF", "prenom": "Dimitri", "date": "", "lieu": "", "affectation": "sergent - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dimitreff-dimitri"}, {"nom": "DORET", "prenom": "Jean Pierre", "date": "25/02/1906", "lieu": "Pecanie - Bosnie Herzegovine", "affectation": "2è classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#doret-jean-pierre"}, {"nom": "DROUINEAU", "prenom": "Marie Robert", "date": "11/01/1906", "lieu": "Poitiers - France", "affectation": "lieutenant - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#drouineau-marie-robert"}, {"nom": "DZUBA", "prenom": "Nicolas", "date": "06/12/1903", "lieu": "Ekaterinodar - Russie", "affectation": "2è classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dzuba-nicolas"}, {"nom": "ELORRIAGA ZABALA", "prenom": "Carmelo", "date": "16/07/1912", "lieu": "Durango - Espagne", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-e.html#elorriaga-zabala-carmelo"}, {"nom": "ENGELS", "prenom": "", "date": "", "lieu": "", "affectation": "sergent chef - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-e.html#engels"}, {"nom": "FILIKS", "prenom": "Joseph", "date": "15/03/1910", "lieu": "Kruszna - Pologne", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-f.html#filiks-joseph"}, {"nom": "GARCIA", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#garcia-4"}, {"nom": "GILMONT", "prenom": "Lucien Laurent", "date": "08/08/1906", "lieu": "Jeumont - France", "affectation": "CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gilmont-lucien-laurent"}, {"nom": "GORAK", "prenom": "Pawel", "date": "08/01/1914", "lieu": "Rudka Jaroslaw - Pologne", "affectation": "2è classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gorak-pawel"}, {"nom": "GUINTOLI", "prenom": "Guido", "date": "03/01/1894", "lieu": "Carrare - Italie", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guintoli-guido"}, {"nom": "HAUSER", "prenom": "Ferdinand", "date": "16/04/1914", "lieu": "Nafels - Suisse", "affectation": "2è classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hauser-ferdinand"}, {"nom": "HENRIKSEN", "prenom": "Paul Alfred", "date": "13/12/1903", "lieu": "Lyngby - Danemark", "affectation": "1ère classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#henriksen-paul-alfred"}, {"nom": "HIMMER", "prenom": "Aloise", "date": "23/08/1913", "lieu": "Beograd - Yougoslavie", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#himmer-aloise"}, {"nom": "HOLANEC", "prenom": "Jaroslaw", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#holanec-jaroslaw"}, {"nom": "ITTAH", "prenom": "Yomtob Gointale", "date": "15/01/1909", "lieu": "Mogador - Maroc", "affectation": "2è classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-i.html#ittah-yomtob-gointale"}, {"nom": "JAIME BELLIDO", "prenom": "Juan Bautista", "date": "01/01/1920", "lieu": "Sueca - Espagne", "affectation": "2è classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jaime-bellido-juan-bautista"}, {"nom": "JEANGUENIN", "prenom": "François Pierre Aimé", "date": "23/03/1905", "lieu": "Courtelary - Suisse", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jeanguenin-francois-pierre-aime"}, {"nom": "JULIEN", "prenom": "Pierre Corentin", "date": "27/07/1913", "lieu": "Douarnenez - France", "affectation": "légionnaire - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#julien-pierre-corentin"}, {"nom": "KANZIAN", "prenom": "Michel", "date": "05/01/1904", "lieu": "Dravograd - Yougoslavie", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kanzian-michel"}, {"nom": "KIN", "prenom": "Jean", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kin-jean"}, {"nom": "KLERINGS", "prenom": "Jean Joseph", "date": "31/12/1895", "lieu": "Metz - France", "affectation": "adjudant chef - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#klerings-jean-joseph"}, {"nom": "KOPP", "prenom": "Paul Joseph", "date": "19/06/1918", "lieu": "Châteauroux - France", "affectation": "2è classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kopp-paul-joseph"}, {"nom": "KOVACENIC", "prenom": "Sjubonir", "date": "19/07/1905", "lieu": "Jasenovac - Yougoslavie", "affectation": "2è classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kovacenic-sjubonir"}, {"nom": "LAGRANGE", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lagrange"}, {"nom": "LENART", "prenom": "Maté", "date": "02/10/1896", "lieu": "Debrencz - Hongrie", "affectation": "sergent chef - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lenart-mate"}, {"nom": "LEVOEN", "prenom": "", "date": "", "lieu": "", "affectation": "sergent - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#levoen"}, {"nom": "LEVY", "prenom": "Roger Benjamin", "date": "27/01/1914", "lieu": "Paris 5 - France", "affectation": "sous lieutenant - 2è compagnie puis CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#levy-roger-benjamin"}, {"nom": "LEYSEN", "prenom": "Joseph Nikolas", "date": "13/02/1905", "lieu": "Tetange - Luxembourg", "affectation": "sergent - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#leysen-joseph-nikolas"}, {"nom": "LOISEAU", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#loiseau"}, {"nom": "LOURS", "prenom": "André Jean Frédéric", "date": "19/06/1909", "lieu": "Honfleur - France", "affectation": "caporal - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lours-andre-jean-frederic"}, {"nom": "LOVINGER", "prenom": "Yaakov", "date": "12/09/1901", "lieu": "Debreczen - Hongrie", "affectation": "adjudant chef - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lovinger-yaakov"}, {"nom": "MANNES", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mannes"}, {"nom": "MARCHAL", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#marchal"}, {"nom": "MARTEL", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#martel"}, {"nom": "MARTIN", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#martin-2"}, {"nom": "MARTINEZ", "prenom": "Antonio", "date": "26/03/1918", "lieu": "Arbatalia - Espagne", "affectation": "2è classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#martinez-antonio"}, {"nom": "MAZUREK", "prenom": "Stefan", "date": "23/12/1917", "lieu": "Eiokul - Allemagne", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mazurek-stefan"}, {"nom": "MONDON", "prenom": "Pierre François Julien", "date": "23/07/1909", "lieu": "Grenoble - France", "affectation": "lieutenant - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mondon-pierre-francois-julien"}, {"nom": "MONVOISIN", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#monvoisin"}, {"nom": "MORIS", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moris"}, {"nom": "MOTYKA", "prenom": "", "date": "", "lieu": "", "affectation": "sergent - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#motyka"}, {"nom": "NEYRAT", "prenom": "Raymond", "date": "04/06/1914", "lieu": "Labouheyre - France", "affectation": "caporal - CA1", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-n.html#neyrat-raymond"}, {"nom": "OKANIEWSKI", "prenom": "Wladyslaw", "date": "12/06/1902", "lieu": "Kleuzlavice - Pologne", "affectation": "2è classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-o.html#okaniewski-wladyslaw"}, {"nom": "OSMANN", "prenom": "Camille", "date": "05/05/1900", "lieu": "Constantinople - Turquie", "affectation": "1ère classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-o.html#osmann-camille"}, {"nom": "OSZTERTAG", "prenom": "Jean", "date": "01/01/1920", "lieu": "Funfkirch - Hongrie", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-o.html#osztertag-jean"}, {"nom": "OWCZARCZAK", "prenom": "Ludwik", "date": "05/10/1904", "lieu": "Kobylniki - Pologne", "affectation": "2è classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-o.html#owczarczak-ludwik"}, {"nom": "PALMERO", "prenom": "Camille", "date": "15/09/1914", "lieu": "Campillo - Espagne", "affectation": "2è classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#palmero-camille"}, {"nom": "PANKOW", "prenom": "Léonid", "date": "17/02/1902", "lieu": "Druzgenicki - Russie", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pankow-leonid"}, {"nom": "PETER", "prenom": "", "date": "", "lieu": "", "affectation": "CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#peter"}, {"nom": "PETIT BERGHIEN", "prenom": "René", "date": "03/12/1913", "lieu": "Croix - France", "affectation": "caporal - CA1", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#petit-berghien-rene"}, {"nom": "PORTE", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#porte"}, {"nom": "PRETEL", "prenom": "Lésardo", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pretel-lesardo"}, {"nom": "RADOVIC", "prenom": "Stevan", "date": "06/12/1905", "lieu": "Dugotello - Yougoslavie", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#radovic-stevan"}, {"nom": "REITMEYER", "prenom": "Arpad", "date": "18/11/1910", "lieu": "Budapest - Hongrie", "affectation": "2è classe - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#reitmeyer-arpad"}, {"nom": "RODRIGUEZ", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rodriguez-2"}, {"nom": "SARKIS", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sarkis"}, {"nom": "SCHENFELD", "prenom": "Jean", "date": "29/11/1905", "lieu": "Dziedzice - Pologne", "affectation": "caporal - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#schenfeld-jean"}, {"nom": "SCHILLER", "prenom": "David", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#schiller-david"}, {"nom": "SCHLICHTER", "prenom": "Antonin", "date": "27/09/1905", "lieu": "Grenoble - France", "affectation": "1ère classe - CA1", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#schlichter-antonin"}, {"nom": "SIGMANN", "prenom": "Joseph Jacques", "date": "19/03/1909", "lieu": "Paris 16 - France", "affectation": "lieutenant - CA1", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sigmann-joseph-jacques"}, {"nom": "SMUTNY", "prenom": "Bohumil", "date": "02/03/1912", "lieu": "Korusamy - Tchécoslovaquie", "affectation": "caporal chef - CA1", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#smutny-bohumil"}, {"nom": "SMUTNY", "prenom": "Vladislaw", "date": "17/06/1920", "lieu": "Kozusany - Tchécoslovaquie", "affectation": "caporal - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#smutny-vladislaw"}, {"nom": "SPIEGEL", "prenom": "Herbert", "date": "", "lieu": "", "affectation": "caporal - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#spiegel-herbert"}, {"nom": "SWIVEZ", "prenom": "Stephan", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": {"cls": "afn", "label": "A rejoint l'AFN", "stamp": "AFN"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#swivez-stephan"}, {"nom": "TKOCZ", "prenom": "Paul", "date": "27/07/1901", "lieu": "Bulzovia - Pologne", "affectation": "1ère classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tkocz-paul"}, {"nom": "TORRES", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#torres"}, {"nom": "WYTASZIK", "prenom": "", "date": "", "lieu": "", "affectation": "sergent - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wytaszik"}, {"nom": "ZYGA", "prenom": "Karol", "date": "24/10/1907", "lieu": "Kussow - Pologne", "affectation": "2è classe - CA1", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zyga-karol"}, {"nom": "ZYLLBERBERG", "prenom": "Mayer", "date": "22/12/1906", "lieu": "Krasnik - Pologne", "affectation": "2è classe (caporal cassé de son grade) - 3è compagnie puis CA1", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zyllberberg-mayer"}];
+let current = 0; // index de la personne affichee en page gauche (toujours pair)
+const pageLeftEl = document.getElementById('pageLeft');
+const pageRightEl = document.getElementById('pageRight');
+
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function personHtml(p, idx, side){
+  const stampHtml = p.badge ? `<div class="p-stamp">${esc(p.badge.stamp)}</div>` : '';
+  return `
+    <div class="p-header">
+      <div class="p-name">${esc(p.nom)} ${esc(p.prenom)}</div>
+      ${stampHtml}
+    </div>
+    <div class="p-meta">${esc(p.date)}${p.date && p.lieu ? ' — ' : ''}${esc(p.lieu)}</div>
+    ${p.affectation ? `<div class="p-field"><span class="lbl">Affectation —</span>${esc(p.affectation)}</div>` : ''}
+    <a class="p-link" href="${p.fiche_url}" target="_blank" rel="noopener">Voir la fiche complète →</a>
+    <div class="pageno">n° ${idx+1}</div>
+    <div class="tapzone ${side}" id="tap-${side}"></div>
+  `;
+}
+
+function render(idx){
+  const left = PEOPLE[idx];
+  const right = PEOPLE[idx+1];
+  pageLeftEl.innerHTML = left ? personHtml(left, idx, 'left') : '<div class="page-empty">— fin du carnet —</div>';
+  pageRightEl.innerHTML = right ? personHtml(right, idx+1, 'right') : '<div class="page-empty">— fin du carnet —</div>';
+  const lastNo = right ? idx+2 : idx+1;
+  document.getElementById('pagecount').textContent = (idx+1) + (right ? '–' + lastNo : '') + ' / ' + PEOPLE.length;
+  const tapLeft = document.getElementById('tap-left');
+  const tapRight = document.getElementById('tap-right');
+  if(tapLeft) tapLeft.onclick = () => turn(-2);
+  if(tapRight) tapRight.onclick = () => turn(2);
+}
+
+function turn(delta){
+  const next = current + delta;
+  if(next < 0 || next >= PEOPLE.length) return;
+
+  const flipEl = delta > 0 ? document.getElementById('flipRight') : document.getElementById('flipLeft');
+  const sourceEl = delta > 0 ? pageRightEl : pageLeftEl;
+
+  // 1) le feuillet qui tourne affiche d'abord le contenu ACTUEL de la page qu'il recouvre
+  flipEl.innerHTML = sourceEl.innerHTML;
+  flipEl.style.display = 'block';
+  flipEl.classList.remove('flipping-right', 'flipping-left');
+  void flipEl.offsetWidth; // force le reflow avant de lancer la transition
+
+  // 2) sous le feuillet, on met deja a jour le contenu reel (invisible pour l'instant, cache dessous)
+  current = next;
+  render(current);
+
+  // 3) on lance la rotation : le feuillet pivote depuis la reliure et revele la nouvelle page en dessous
+  requestAnimationFrame(() => {
+    flipEl.classList.add('showing', delta > 0 ? 'flipping-right' : 'flipping-left');
+  });
+
+  setTimeout(() => {
+    flipEl.style.display = 'none';
+    flipEl.classList.remove('showing', 'flipping-right', 'flipping-left');
+  }, 520);
+}
+
+document.getElementById('prevBtn').onclick = () => turn(-2);
+document.getElementById('nextBtn').onclick = () => turn(2);
+
+function jumpTo(idx){
+  const target = idx % 2 === 0 ? idx : idx - 1;
+  if(target !== current){ current = target; render(current); }
+}
+
+const searchInput = document.getElementById('search');
+const suggestionsEl = document.getElementById('suggestions');
+let activeSuggestion = -1;
+
+function closeSuggestions(){
+  suggestionsEl.classList.remove('show');
+  suggestionsEl.innerHTML = '';
+  activeSuggestion = -1;
+}
+
+function showSuggestions(matches){
+  if(!matches.length){ closeSuggestions(); return; }
+  suggestionsEl.innerHTML = matches.map((m, i) =>
+    `<div class="suggestion-item" data-idx="${m.idx}">${esc(m.nom)} ${esc(m.prenom)}<span class="sg-meta">n° ${m.idx+1}</span></div>`
+  ).join('');
+  suggestionsEl.classList.add('show');
+  activeSuggestion = -1;
+  suggestionsEl.querySelectorAll('.suggestion-item').forEach(el => {
+    el.addEventListener('click', () => {
+      jumpTo(parseInt(el.dataset.idx, 10));
+      searchInput.value = '';
+      closeSuggestions();
+    });
+  });
+}
+
+searchInput.addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  if(!q){ closeSuggestions(); return; }
+  const matches = PEOPLE
+    .map((p, idx) => ({p, idx}))
+    .filter(({p}) => (p.nom + ' ' + p.prenom).toLowerCase().includes(q))
+    .slice(0, 8)
+    .map(({p, idx}) => ({nom:p.nom, prenom:p.prenom, idx}));
+  showSuggestions(matches);
+});
+searchInput.addEventListener('keydown', (e) => {
+  const items = suggestionsEl.querySelectorAll('.suggestion-item');
+  if(e.key === 'ArrowDown' && items.length){
+    e.preventDefault();
+    activeSuggestion = Math.min(activeSuggestion + 1, items.length - 1);
+    items.forEach((el,i) => el.classList.toggle('active', i === activeSuggestion));
+    items[activeSuggestion].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'ArrowUp' && items.length){
+    e.preventDefault();
+    activeSuggestion = Math.max(activeSuggestion - 1, 0);
+    items.forEach((el,i) => el.classList.toggle('active', i === activeSuggestion));
+    items[activeSuggestion].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'Enter'){
+    e.preventDefault();
+    const target = activeSuggestion >= 0 ? items[activeSuggestion] : items[0];
+    if(target){ jumpTo(parseInt(target.dataset.idx, 10)); searchInput.value=''; closeSuggestions(); }
+  } else if(e.key === 'Escape'){
+    closeSuggestions();
+  }
+});
+document.addEventListener('click', (e) => {
+  if(!e.target.closest('.search-wrap')) closeSuggestions();
+});
+document.addEventListener('keydown', (e) => {
+  if(document.activeElement === searchInput) return; // les fleches gauche/droite servent a taper dans le champ
+  if(e.key === 'ArrowLeft') turn(-2);
+  if(e.key === 'ArrowRight') turn(2);
+});
+
+render(0);
+
+(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>

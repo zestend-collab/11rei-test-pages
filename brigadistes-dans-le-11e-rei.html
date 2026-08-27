@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brigadistes dans le 11e REI</title>
+<meta name="description" content="D'anciens combattants des Brigades internationales retrouvés dans les rangs du 11e régiment étranger d'infanterie, 1939-1940.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:22px;display:flex;align-items:center;gap:20px}
+  header .emblem{width:56px;height:56px;flex-shrink:0}
+  header .flag{width:64px;height:46px;flex-shrink:0;border:1px solid var(--border);border-radius:2px;overflow:hidden}
+  header .flag img{width:100%;height:100%;object-fit:cover;display:block}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .intro{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--orange);
+    border-radius:4px;padding:1.2rem 1.4rem;margin-bottom:20px;font-size:.85rem;line-height:1.65}
+  .intro p{margin-bottom:.85rem}
+  .intro p:last-child{margin-bottom:0}
+
+  .toolbar{margin-bottom:14px}
+  .toolbar input{width:100%;padding:.6rem .9rem;border:1px solid var(--border);border-radius:4px;
+    font-family:'Inter',sans-serif;font-size:.85rem;background:var(--card)}
+  .count{font-size:.75rem;color:var(--muted);margin-bottom:14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .pcard{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:14px;
+    display:flex;gap:12px;transition:border-color .15s,box-shadow .15s}
+  .pcard:hover{border-color:var(--link);box-shadow:0 3px 10px rgba(0,0,0,.12)}
+  .pcard .ph{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--row);
+    border:2px solid var(--orange)}
+  .pcard .ph img{width:100%;height:100%;object-fit:cover}
+  .pcard .ph.empty{display:flex;align-items:center;justify-content:center;color:var(--muted);
+    font-family:'EB Garamond',serif;font-size:1.4rem;font-weight:600}
+  .pcard-body{flex:1;min-width:0}
+  .pcard-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.02rem;margin-bottom:.15rem;
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .pcard-name a{color:var(--link);text-decoration:none;border-bottom:1px dotted var(--link)}
+  .pcard-name a:hover{text-decoration:underline}
+  .pcard-name .mpf{font-family:'Inter',sans-serif;font-size:.6rem;font-weight:500;color:#791F1F;
+    background:#FCEBEB;border:1px solid #F09595;border-radius:3px;padding:1px 5px}
+  .pcard-meta{font-size:.72rem;color:var(--link);margin-bottom:.4rem}
+  .pcard-bio{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+  .floating-comment-btn{position:fixed;bottom:18px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:24px;font-style:italic}
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Brigades" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+
+<main>
+
+<header>
+  <img class="emblem" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brigadistes-dans-le-11e-rei-2.png" alt="Emblème des Brigades internationales">
+  <div class="htext">
+    <h1>Brigadistes dans le 11e REI</h1>
+    <div class="sub">D'anciens combattants des Brigades internationales retrouvés dans les rangs du 11e régiment étranger d'infanterie, 1939-1940</div>
+    <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  </div>
+  <div class="flag"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brigadistes-dans-le-11e-rei-15.png" alt="Drapeau de la Seconde République espagnole"></div>
+</header>
+
+<div class="intro">
+  <p>Les Brigades internationales étaient des unités de volontaires étrangers qui combattirent aux côtés des Républicains pendant la guerre civile espagnole de 1936 à 1938. Un grand nombre étaient d'idées communistes et quasiment tous étaient des anti-fascistes. Elles étaient composées de volontaires venus de 53 pays différents.</p>
+  <p>Les brigades furent dissoutes en septembre 1938 et les combattants durent repartir dans leur pays d'origine. C'est ce que l'on appelle la Despedida. Certains brigadistes estimèrent que ce retour était impossible car ils étaient originaires d'Allemagne ou de pays fascistes et décidèrent de rester en Espagne jusqu'à la Retirada.</p>
+  <p>Comme le retrait des brigadistes n'a pas été prévu, beaucoup d'étrangers ne trouvèrent pas de pays pour les accueillir et furent internés dans des camps en Catalogne ou dans le sud de la France. Le PCF fut chargé de trouver une solution pour extraire les vétérans internés en France.</p>
+  <p>Une solution pour les étrangers qui résidaient en France avant d'aller en Espagne ou ayant déjà servi dans l'armée française fut envisagée. Ils devaient être libérés en échange d'un engagement pour la durée de la guerre, au cas où la France serait attaquée. Le problème de cette solution arriva avec la signature du pacte de non-agression entre l'URSS et l'Allemagne. Le réengagement des vétérans, jusque-là encouragé pour continuer à combattre le fascisme aux côtés de l'armée française, fut interdit par le Komintern en septembre 1939.</p>
+  <p>On retrouve néanmoins des vétérans des Brigades internationales au sein du 11e régiment étranger d'infanterie.</p>
+  <p>Pour mieux cerner leurs parcours, il faut consulter les archives des Brigades internationales conservées au RGASPI (Archives d'État russes d'histoire sociale et politique situées à Moscou).</p>
+  <p>Le fonds 545 concerne les archives des Brigades internationales. Il est divisé en 6 dossiers ou opis, eux-mêmes divisés en articles.</p>
+  <p>Les dossiers qui m'ont le plus intéressé sont le 545/6, car il regroupe les listes, les dossiers personnels des soldats et commandants des Brigades internationales (classés par nationalité), et le 545/2, qui correspond aux documents des divisions, brigades et formations internationales de l'armée républicaine d'Espagne (classés par unités).</p>
+  <p>On trouve dans ces archives de nombreuses listes et des rapports sur les volontaires qui faisaient l'objet d'observations de la part des commissaires de guerre. Le but de ces rapports était d'identifier les indésirables et éléments perturbateurs, mais aussi ceux qui pouvaient faire de bons camarades militants.</p>
+  <p>Pour le moment, je trouve une trentaine de légionnaires du 11e REI qui se sont engagés dans les Brigades internationales. Certains ont été refoulés, ont déserté, ont quitté l'Espagne en 1938, ou ont été internés dans les camps français en 1939.</p>
+</div>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="Rechercher un nom..." oninput="filterCards()">
+</div>
+<div class="count" id="count"></div>
+
+<div class="grid" id="grid">
+  <div class="pcard" data-search="alloucherie marcel gustave 26/11/1911 · marchienne-au-pont, belgique membre des jeunesses communistes, il rejoint les brigades internationales en décembre 1936. 2e classe à la ca2.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/alloucherie-marcel-gustave.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name">ALLOUCHERIE Marcel Gustave<span class="mpf">MPF</span></div>
+      <div class="pcard-meta">26/11/1911 · Marchienne-au-Pont, Belgique</div>
+      <div class="pcard-bio">Membre des jeunesses communistes, il rejoint les Brigades internationales en décembre 1936. 2e classe à la CA2.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="borowiecki felix joseph 16/09/1908 · dabrowa, pologne arrivé en france en 1923 avec sa famille (émigration économique). court séjour dans les brigades internationales (arrivé le 12/02/1938, désertion en avril 1938). evdg au fort de vancia, engagé le 08/10/1939.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-borowiecki-feliks-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/borowiecki-feliks" target="_blank" rel="noopener">BOROWIECKI Felix Joseph</a></div>
+      <div class="pcard-meta">16/09/1908 · Dabrowa, Pologne</div>
+      <div class="pcard-bio">Arrivé en France en 1923 avec sa famille (émigration économique). Court séjour dans les Brigades internationales (arrivé le 12/02/1938, désertion en avril 1938). EVDG au Fort de Vancia, engagé le 08/10/1939.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="buttet andré fernand 19/12/1913 · saint-jean-d'aulps, france domicilié à paris en 1936, garçon de café. en juin 1938, il tente de s'engager dans les brigades internationales mais est refusé. s'engage peu après dans la légion étrangère.">
+    <div class="ph empty">BA</div>
+    <div class="pcard-body">
+      <div class="pcard-name">BUTTET André Fernand</div>
+      <div class="pcard-meta">19/12/1913 · Saint-Jean-d'Aulps, France</div>
+      <div class="pcard-bio">Domicilié à Paris en 1936, garçon de café. En juin 1938, il tente de s'engager dans les Brigades internationales mais est refusé. S'engage peu après dans la Légion étrangère.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="czachur wladislaw 03/05/1911 · jedrzejów, pologne caporal, fait prisonnier, interné au stalag xvii b (mle 58626). rapatrié en france le 04/06/1945, démobilisé le 20/07/1945 à marseille.">
+    <div class="ph empty">CW</div>
+    <div class="pcard-body">
+      <div class="pcard-name">CZACHUR Wladislaw</div>
+      <div class="pcard-meta">03/05/1911 · Jedrzejów, Pologne</div>
+      <div class="pcard-bio">Caporal, fait prisonnier, interné au stalag XVII B (mle 58626). Rapatrié en France le 04/06/1945, démobilisé le 20/07/1945 à Marseille.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="dukalski wladislas 06/02/1917 · léningrad, russie rejoint les brigades internationales, arrivé en espagne le 21/06/1937. affecté au 2e groupe d'artillerie lourde « eslavo », 3e batterie. décrit comme un bon camarade, recommandé pour son entrée au parti.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/dukalski-wladislas" target="_blank" rel="noopener">DUKALSKI Wladislas</a></div>
+      <div class="pcard-meta">06/02/1917 · Léningrad, Russie</div>
+      <div class="pcard-bio">Rejoint les Brigades internationales, arrivé en Espagne le 21/06/1937. Affecté au 2e groupe d'artillerie lourde « Eslavo », 3e batterie. Décrit comme un bon camarade, recommandé pour son entrée au Parti.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="gilger gustave "philippe" 16/05/1905 · saint-privat-la-montagne, france rejoint les brigades internationales le 23/01/1938, passe par figueras et albacete avant d'intégrer la 14e brigade. participe aux combats de caspe et de l'èbre (23/08/1938), blessé deux fois. blessé le 27/05/1940 pendant la campagne.">
+    <div class="ph empty">GG</div>
+    <div class="pcard-body">
+      <div class="pcard-name">GILGER Gustave "Philippe"</div>
+      <div class="pcard-meta">16/05/1905 · Saint-Privat-la-Montagne, France</div>
+      <div class="pcard-bio">Rejoint les Brigades internationales le 23/01/1938, passe par Figueras et Albacete avant d'intégrer la 14e brigade. Participe aux combats de Caspe et de l'Èbre (23/08/1938), blessé deux fois. Blessé le 27/05/1940 pendant la campagne.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="grzybowski stanislas 22/02/1904 · zarzecze, pologne ouvrier agricole puis soldat de l'armée polonaise. arrivé en france en 1929, mineur, affilié à la cgt. rejoint l'espagne et la xiiie brigade internationale le 11/01/1938. interné au stalag ix c.">
+    <div class="ph empty">GS</div>
+    <div class="pcard-body">
+      <div class="pcard-name">GRZYBOWSKI Stanislas</div>
+      <div class="pcard-meta">22/02/1904 · Zarzecze, Pologne</div>
+      <div class="pcard-bio">Ouvrier agricole puis soldat de l'armée polonaise. Arrivé en France en 1929, mineur, affilié à la CGT. Rejoint l'Espagne et la XIIIe brigade internationale le 11/01/1938. Interné au Stalag IX C.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="henschober israël 30/07/1899 · blazowa, pologne apatride, sorti du reich depuis octobre 1934. immatriculé dans les brigades internationales le 08/05/1937, refoulé le 19/07/1937 (non émigrant). evdg au 11e rei. blessé pendant la campagne, évacué sur l'hoe1/5 à ancemont.">
+    <div class="ph empty">HI</div>
+    <div class="pcard-body">
+      <div class="pcard-name">HENSCHOBER Israël</div>
+      <div class="pcard-meta">30/07/1899 · Blazowa, Pologne</div>
+      <div class="pcard-bio">Apatride, sorti du Reich depuis octobre 1934. Immatriculé dans les Brigades internationales le 08/05/1937, refoulé le 19/07/1937 (non émigrant). EVDG au 11e REI. Blessé pendant la campagne, évacué sur l'HOE1/5 à Ancemont.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="herzog karol "charles" 08/03/1905 · nifka, pologne boulanger, engagé dans la légion étrangère de 1925 à 1932. au chômage en 1935, adhère à la cgt. rejoint les brigades internationales en novembre 1936, affecté à la xiiie brigade.">
+    <div class="ph empty">HK</div>
+    <div class="pcard-body">
+      <div class="pcard-name">HERZOG Karol "Charles"</div>
+      <div class="pcard-meta">08/03/1905 · Nifka, Pologne</div>
+      <div class="pcard-bio">Boulanger, engagé dans la Légion étrangère de 1925 à 1932. Au chômage en 1935, adhère à la CGT. Rejoint les Brigades internationales en novembre 1936, affecté à la XIIIe brigade.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="jeckelmann martin 30/11/1915 · fribourg, suisse membre du club ouvrier de genève, part le 10/10/1936 combattre dans les brigades internationales (brigade thälmann puis xive brigade « la marseillaise »). rapatrié le 09/07/1937 pour raison de service militaire.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jeckelman-martin-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/jeckelman-martin" target="_blank" rel="noopener">JECKELMANN Martin</a></div>
+      <div class="pcard-meta">30/11/1915 · Fribourg, Suisse</div>
+      <div class="pcard-bio">Membre du Club ouvrier de Genève, part le 10/10/1936 combattre dans les Brigades internationales (brigade Thälmann puis XIVe brigade « La Marseillaise »). Rapatrié le 09/07/1937 pour raison de service militaire.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="karius jean — arrivé en espagne le 18/11/1936, xive brigade (1re compagnie du 13e bataillon), déjà considéré comme « indésirable ». emprisonné à la villa maruja après avoir contesté un avis médical, rapatrié le 21/02/1938.">
+    <div class="ph empty">KJ</div>
+    <div class="pcard-body">
+      <div class="pcard-name">KARIUS Jean</div>
+      <div class="pcard-meta">—</div>
+      <div class="pcard-bio">Arrivé en Espagne le 18/11/1936, XIVe brigade (1re compagnie du 13e bataillon), déjà considéré comme « indésirable ». Emprisonné à la Villa Maruja après avoir contesté un avis médical, rapatrié le 21/02/1938.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="keurvels henri 1883 · gand, belgique engagé le 11/10/1936 grâce à j. delvigne, secrétaire du parti socialiste de bruxelles. capitaine d'artillerie dans la batterie franco-belge, puis à la compagnie de rééducation et à l'intendance. nommé capitaine le 16/10/1936 sur ordre de marty et vidal.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/keurvels-henri" target="_blank" rel="noopener">KEURVELS Henri</a></div>
+      <div class="pcard-meta">1883 · Gand, Belgique</div>
+      <div class="pcard-bio">Engagé le 11/10/1936 grâce à J. Delvigne, secrétaire du parti socialiste de Bruxelles. Capitaine d'artillerie dans la batterie franco-belge, puis à la compagnie de rééducation et à l'intendance. Nommé capitaine le 16/10/1936 sur ordre de Marty et Vidal.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="konieczny stefan 11/01/1912 · rogi, pologne ouvrier de scierie domicilié en seine-et-marne, affilié à la cgt. rejoint les brigades internationales depuis paris en mai 1938, 2e compagnie du 49e bataillon de la xiiie brigade. blessé en juillet 1938.">
+    <div class="ph empty">KS</div>
+    <div class="pcard-body">
+      <div class="pcard-name">KONIECZNY Stefan</div>
+      <div class="pcard-meta">11/01/1912 · Rogi, Pologne</div>
+      <div class="pcard-bio">Ouvrier de scierie domicilié en Seine-et-Marne, affilié à la CGT. Rejoint les Brigades internationales depuis Paris en mai 1938, 2e compagnie du 49e bataillon de la XIIIe brigade. Blessé en juillet 1938.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="kotula — peut-être boleslaw kotula, charcutier affilié à la cgt depuis 1936, bourse du travail de paris. arrivé en espagne le 16/01/1938.">
+    <div class="ph empty">K</div>
+    <div class="pcard-body">
+      <div class="pcard-name">KOTULA</div>
+      <div class="pcard-meta">—</div>
+      <div class="pcard-bio">Peut-être Boleslaw Kotula, charcutier affilié à la CGT depuis 1936, bourse du travail de Paris. Arrivé en Espagne le 16/01/1938.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="kresch moses moïse / jacob mozesz 24/09/1906 · lesko, pologne en belgique en 1920. vers 1936, rejoint les brigades internationales et part combattre en espagne. evdg à la légion étrangère, 1re région militaire, seine centrale.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/kresch-moise" target="_blank" rel="noopener">KRESCH Moses Moïse / Jacob Mozesz</a></div>
+      <div class="pcard-meta">24/09/1906 · Lesko, Pologne</div>
+      <div class="pcard-bio">En Belgique en 1920. Vers 1936, rejoint les Brigades internationales et part combattre en Espagne. EVDG à la Légion étrangère, 1re région militaire, Seine centrale.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="kus jean 25/05/1905 · sokołów, pologne arrivé en france en 1931 pour travailler dans les mines du nord. membre du pc et de la cgt, rejoint les brigades internationales le 16/10/1936, bataillon dombrowski. evdg au fort de vancia, engagé le 25/10/1939.">
+    <div class="ph empty">KJ</div>
+    <div class="pcard-body">
+      <div class="pcard-name">KUS Jean</div>
+      <div class="pcard-meta">25/05/1905 · Sokołów, Pologne</div>
+      <div class="pcard-bio">Arrivé en France en 1931 pour travailler dans les mines du Nord. Membre du PC et de la CGT, rejoint les Brigades internationales le 16/10/1936, bataillon Dombrowski. EVDG au Fort de Vancia, engagé le 25/10/1939.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="landsberg hirch 05/11/1898 · zyrardów, pologne prisonnier civil en allemagne en 1915. entre 1918 et 1922, légion étrangère au 1er régiment de marche. rejoint les brigades internationales en 1937. evdg au 11e rei, légion étrangère 5e région, perpignan.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lansberg-armand-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/lansberg-armand" target="_blank" rel="noopener">LANDSBERG Hirch</a></div>
+      <div class="pcard-meta">05/11/1898 · Zyrardów, Pologne</div>
+      <div class="pcard-bio">Prisonnier civil en Allemagne en 1915. Entre 1918 et 1922, Légion étrangère au 1er régiment de marche. Rejoint les Brigades internationales en 1937. EVDG au 11e REI, Légion étrangère 5e région, Perpignan.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="lippens — peut-être eugène lippens, ancien légionnaire qui tente de s'engager dans les brigades internationales. jugé douteux, renvoyé le 02/05/1938.">
+    <div class="ph empty">L</div>
+    <div class="pcard-body">
+      <div class="pcard-name">LIPPENS</div>
+      <div class="pcard-meta">—</div>
+      <div class="pcard-bio">Peut-être Eugène Lippens, ancien légionnaire qui tente de s'engager dans les Brigades internationales. Jugé douteux, renvoyé le 02/05/1938.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="lis josef herez 10/06/1913 · brok, pologne rejoint les brigades internationales le 06/01/1938, affecté à la xiiie brigade. rentre en france en mai 1938 sans passeport. déclare être membre du pc depuis 1933 et des jeunesses communistes depuis 1933.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lis-josef-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/lis-josef" target="_blank" rel="noopener">LIS Josef Herez</a></div>
+      <div class="pcard-meta">10/06/1913 · Brok, Pologne</div>
+      <div class="pcard-bio">Rejoint les Brigades internationales le 06/01/1938, affecté à la XIIIe brigade. Rentre en France en mai 1938 sans passeport. Déclare être membre du PC depuis 1933 et des Jeunesses communistes depuis 1933.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="lisik joseph 21/02/1904 · jelanski (varsovie), pologne arrivé en france en 1920. au chômage en 1936, s'engage dans les brigades internationales. combat avec la xiiie brigade dombrowski, 52e bataillon, jusqu'en 1938. blessé, rapatrié par convoi sanitaire le 14/09/1938 via cerbère. membre de la cgtu.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lisik-jozef-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/lisik-jozef" target="_blank" rel="noopener">LISIK Joseph</a></div>
+      <div class="pcard-meta">21/02/1904 · Jelanski (Varsovie), Pologne</div>
+      <div class="pcard-bio">Arrivé en France en 1920. Au chômage en 1936, s'engage dans les Brigades internationales. Combat avec la XIIIe brigade Dombrowski, 52e bataillon, jusqu'en 1938. Blessé, rapatrié par convoi sanitaire le 14/09/1938 via Cerbère. Membre de la CGTU.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="magula franz "françois" 11/09/1907 · atzgerdorf, autriche légion étrangère de 1927 à 1937. chauffeur domicilié à paris 18e en 1937. rejoint les brigades internationales le 09/01/1938, 14e brigade, 2e compagnie du 4e bataillon.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brigadistes-dans-le-11e-rei-8.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name">MAGULA Franz "François"</div>
+      <div class="pcard-meta">11/09/1907 · Atzgerdorf, Autriche</div>
+      <div class="pcard-bio">Légion étrangère de 1927 à 1937. Chauffeur domicilié à Paris 18e en 1937. Rejoint les Brigades internationales le 09/01/1938, 14e brigade, 2e compagnie du 4e bataillon.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="malherbe marcel toussaint 05/03/1908 · basse-indre, france rejoint les brigades internationales en juillet 1938 (xive brigade, 56e puis 9e bataillon). ancien légionnaire réserviste, mobilisé au cmi 145.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-malherbe-marcel-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/malherbe-marcel" target="_blank" rel="noopener">MALHERBE Marcel Toussaint</a></div>
+      <div class="pcard-meta">05/03/1908 · Basse-Indre, France</div>
+      <div class="pcard-bio">Rejoint les Brigades internationales en juillet 1938 (XIVe brigade, 56e puis 9e bataillon). Ancien légionnaire réserviste, mobilisé au CMI 145.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="marzinski stéphan 28/08/1901 · hachow, russie evdg à la légion étrangère, 5e région militaire, pau.">
+    <div class="ph empty">MS</div>
+    <div class="pcard-body">
+      <div class="pcard-name">MARZINSKI Stéphan</div>
+      <div class="pcard-meta">28/08/1901 · Hachow, Russie</div>
+      <div class="pcard-bio">EVDG à la Légion étrangère, 5e région militaire, Pau.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="matternich pavel 07/07/1902 · freskin, hongrie maternich paul, evdg à pau, et/ou ancien légionnaire en 1920 engagé dans les brigades internationales en 1937. au 11e rei, caporal affecté à la ca3.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-maternick-pavel-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/maternick-pavel" target="_blank" rel="noopener">MATTERNICH Pavel</a></div>
+      <div class="pcard-meta">07/07/1902 · Freskin, Hongrie</div>
+      <div class="pcard-bio">Maternich Paul, EVDG à Pau, et/ou ancien légionnaire en 1920 engagé dans les Brigades internationales en 1937. Au 11e REI, caporal affecté à la CA3.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="maulini raymond pierre 05/08/1912 · raon-sur-plaine, france revenu à la vie civile en 1937, domicilié à pantin, adhère à la cgt. se porte volontaire dans les brigades internationales, arrive en espagne le 15/12/1937 (xive brigade). engagé volontaire à la légion étrangère le 21/01/1932 à strasbourg. blessé pendant la campagne, mentionné à l'hoe1/5 d'ancemont le 29/05/1940.">
+    <div class="ph empty">MR</div>
+    <div class="pcard-body">
+      <div class="pcard-name">MAULINI Raymond Pierre</div>
+      <div class="pcard-meta">05/08/1912 · Raon-sur-Plaine, France</div>
+      <div class="pcard-bio">Revenu à la vie civile en 1937, domicilié à Pantin, adhère à la CGT. Se porte volontaire dans les Brigades internationales, arrive en Espagne le 15/12/1937 (XIVe brigade). Engagé volontaire à la Légion étrangère le 21/01/1932 à Strasbourg. Blessé pendant la campagne, mentionné à l'HOE1/5 d'Ancemont le 29/05/1940.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="ochej piotr "pierre" 16/07/1901 · dobronica, pologne brigades internationales, caporal au 50e bataillon de la xiiie brigade, signalé comme bon volontaire, vaillant et énergique au front. syndiqué cgt, rapatrié sur nancy le 21/05/1938. evdg légion étrangère, 6e région militaire, metz.">
+    <div class="ph empty">OP</div>
+    <div class="pcard-body">
+      <div class="pcard-name">OCHEJ Piotr "Pierre"</div>
+      <div class="pcard-meta">16/07/1901 · Dobronica, Pologne</div>
+      <div class="pcard-bio">Brigades internationales, caporal au 50e bataillon de la XIIIe brigade, signalé comme bon volontaire, vaillant et énergique au front. Syndiqué CGT, rapatrié sur Nancy le 21/05/1938. EVDG Légion étrangère, 6e région militaire, Metz.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="otlet auguste 09/09/1904 · la louvière, belgique volontaire en espagne républicaine du 06/01/1937 au 30/08/1938, 14e puis 13e brigade internationale. rapatrié en france le 09/05/1945, démobilisé à marseille le 29/05/1945.">
+    <div class="ph empty">OA</div>
+    <div class="pcard-body">
+      <div class="pcard-name">OTLET Auguste</div>
+      <div class="pcard-meta">09/09/1904 · La Louvière, Belgique</div>
+      <div class="pcard-bio">Volontaire en Espagne républicaine du 06/01/1937 au 30/08/1938, 14e puis 13e brigade internationale. Rapatrié en France le 09/05/1945, démobilisé à Marseille le 29/05/1945.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="pankow léonid 17/02/1902 · druskininkai, russie le 18/09/1936, franchit la frontière franco-espagnole pour rejoindre les brigades internationales. chef de section de mitrailleuses au 135e bataillon de la 49e brigade (44e division), promu caporal, sergent puis lieutenant. evdg, affecté à la ca1 du 11e rei.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pankow-leonid-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/pankow-leonid" target="_blank" rel="noopener">PANKOW Léonid</a></div>
+      <div class="pcard-meta">17/02/1902 · Druskininkai, Russie</div>
+      <div class="pcard-bio">Le 18/09/1936, franchit la frontière franco-espagnole pour rejoindre les Brigades internationales. Chef de section de mitrailleuses au 135e bataillon de la 49e brigade (44e division), promu caporal, sergent puis lieutenant. EVDG, affecté à la CA1 du 11e REI.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="pawelczyk stanislas 23/08/1911 · wroblew, pologne evdg, drmve, saint-omer.">
+    <div class="ph empty">PS</div>
+    <div class="pcard-body">
+      <div class="pcard-name">PAWELCZYK Stanislas</div>
+      <div class="pcard-meta">23/08/1911 · Wroblew, Pologne</div>
+      <div class="pcard-bio">EVDG, DRMVE, Saint-Omer.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="pickarczyk — peut-être wladislas piekarczyk, né le 11/05/1906 à dortmund, evdg (engagé dans les brigades internationales).">
+    <div class="ph empty">P</div>
+    <div class="pcard-body">
+      <div class="pcard-name">PICKARCZYK</div>
+      <div class="pcard-meta">—</div>
+      <div class="pcard-bio">Peut-être Wladislas Piekarczyk, né le 11/05/1906 à Dortmund, EVDG (engagé dans les Brigades internationales).</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="pilarek jean 03/05/1911 · makeo, pologne rejoint son père déjà en france depuis trois ans en 1927. ouvrier agricole, recensé à douy-la-ramée en 1931. le 29/04/1938, rejoint l'espagne, xiiie brigade internationale.">
+    <div class="ph empty">PJ</div>
+    <div class="pcard-body">
+      <div class="pcard-name">PILAREK Jean</div>
+      <div class="pcard-meta">03/05/1911 · Makeo, Pologne</div>
+      <div class="pcard-bio">Rejoint son père déjà en France depuis trois ans en 1927. Ouvrier agricole, recensé à Douy-la-Ramée en 1931. Le 29/04/1938, rejoint l'Espagne, XIIIe brigade internationale.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="pilarz wladislaw 14/02/1911 · truskolasy, tchécoslovaquie famille d'agriculteurs, quitte la pologne en 1934. mineur en belgique, rejoint les brigades internationales le 26/01/1938 (en même temps que wincenty pobereznik). aurait été membre de l'organisation piłsudskienne strzelec.">
+    <div class="ph empty">PW</div>
+    <div class="pcard-body">
+      <div class="pcard-name">PILARZ Wladislaw</div>
+      <div class="pcard-meta">14/02/1911 · Truskolasy, Tchécoslovaquie</div>
+      <div class="pcard-bio">Famille d'agriculteurs, quitte la Pologne en 1934. Mineur en Belgique, rejoint les Brigades internationales le 26/01/1938 (en même temps que Wincenty Pobereznik). Aurait été membre de l'organisation piłsudskienne Strzelec.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="pobereznik wincenty "vincent" 01/02/1906 · janowo, pologne membre du pc polonais entre 1932 et 1935 (arrêté, incarcéré 3 mois). arrivé en belgique en 1937, mineur. rejoint les brigades internationales le 26/01/1938.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brigadistes-dans-le-11e-rei-11.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name">POBEREZNIK Wincenty "Vincent"</div>
+      <div class="pcard-meta">01/02/1906 · Janowo, Pologne</div>
+      <div class="pcard-bio">Membre du PC polonais entre 1932 et 1935 (arrêté, incarcéré 3 mois). Arrivé en Belgique en 1937, mineur. Rejoint les Brigades internationales le 26/01/1938.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="potchwat zymut 14/07/1906 · lobodno, pologne affilié à la cgt, quitte la france pour rejoindre les brigades internationales.">
+    <div class="ph empty">PZ</div>
+    <div class="pcard-body">
+      <div class="pcard-name">POTCHWAT Zymut</div>
+      <div class="pcard-meta">14/07/1906 · Lobodno, Pologne</div>
+      <div class="pcard-bio">Affilié à la CGT, quitte la France pour rejoindre les Brigades internationales.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="przchendzenski paul 18/06/1909 · riga, lettonie brigades internationales. evdg, drmve, 10e région militaire, pau.">
+    <div class="ph empty">PP</div>
+    <div class="pcard-body">
+      <div class="pcard-name">PRZCHENDZENSKI Paul</div>
+      <div class="pcard-meta">18/06/1909 · Riga, Lettonie</div>
+      <div class="pcard-bio">Brigades internationales. EVDG, DRMVE, 10e région militaire, Pau.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="przenioslo wladislas wladek 29/09/1919 · gruszczyn, pologne en mars 1938, part combattre au sein de la brigade dabrowski. 2e classe, 11e compagnie. interné au frontstalag 121 puis au stalag viii c. rapatrié en france le 28/03/1945, démobilisé à marseille le 16/07/1945.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brigadistes-dans-le-11e-rei-12.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name">PRZENIOSLO Wladislas Wladek</div>
+      <div class="pcard-meta">29/09/1919 · Gruszczyn, Pologne</div>
+      <div class="pcard-bio">En mars 1938, part combattre au sein de la brigade Dabrowski. 2e classe, 11e compagnie. Interné au frontstalag 121 puis au stalag VIII C. Rapatrié en France le 28/03/1945, démobilisé à Marseille le 16/07/1945.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="rabiega léon 04/02/1909 · hamborn, pologne rejoint les brigades internationales, arrivé en espagne via espolla le 08/08/1937. porté disparu ou fait prisonnier le 04/04/1938. peut-être issu d'une famille de mineurs westphaliens.">
+    <div class="ph empty">RL</div>
+    <div class="pcard-body">
+      <div class="pcard-name">RABIEGA Léon</div>
+      <div class="pcard-meta">04/02/1909 · Hamborn, Pologne</div>
+      <div class="pcard-bio">Rejoint les Brigades internationales, arrivé en Espagne via Espolla le 08/08/1937. Porté disparu ou fait prisonnier le 04/04/1938. Peut-être issu d'une famille de mineurs westphaliens.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="rechad mehmed suad 22/04/1899 · istanbul, turquie lieutenant au 1er rei, en absence illégale quand il tente de rejoindre les brigades internationales en août 1938.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rechad-mehmed-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/rechad-mehmed" target="_blank" rel="noopener">RECHAD Mehmed Suad</a></div>
+      <div class="pcard-meta">22/04/1899 · Istanbul, Turquie</div>
+      <div class="pcard-bio">Lieutenant au 1er REI, en absence illégale quand il tente de rejoindre les Brigades internationales en août 1938.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="seifert franz 22/10/1910 · oberholtz, tchécoslovaquie s'engage dans les brigades internationales le 01/12/1937, puis interné au camp de gurs, ce qui expliquerait son engagement pour la durée de la guerre à pau. 2e classe, 5e compagnie.">
+    <div class="ph empty">SF</div>
+    <div class="pcard-body">
+      <div class="pcard-name">SEIFERT Franz<span class="mpf">MPF</span></div>
+      <div class="pcard-meta">22/10/1910 · Oberholtz, Tchécoslovaquie</div>
+      <div class="pcard-bio">S'engage dans les Brigades internationales le 01/12/1937, puis interné au camp de Gurs, ce qui expliquerait son engagement pour la durée de la guerre à Pau. 2e classe, 5e compagnie.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="wapinski tadeusz 12/01/1907 · varsovie, pologne quitte la belgique le 30/01/1937 pour les brigades internationales, affecté à la xiiie. signalé comme indésirable le 17/03/1938, incarcéré à la casa marcille.">
+    <div class="ph empty">WT</div>
+    <div class="pcard-body">
+      <div class="pcard-name">WAPINSKI Tadeusz</div>
+      <div class="pcard-meta">12/01/1907 · Varsovie, Pologne</div>
+      <div class="pcard-bio">Quitte la Belgique le 30/01/1937 pour les Brigades internationales, affecté à la XIIIe. Signalé comme indésirable le 17/03/1938, incarcéré à la Casa Marcille.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="wasilewicz françois 17/06/1906 · polesie, pologne quitte la pologne en 1928. mineur en france, affilié à la cgt depuis 1932, membre du pcf depuis 1933. rejoint les brigades internationales en novembre 1937.">
+    <div class="ph empty">WF</div>
+    <div class="pcard-body">
+      <div class="pcard-name">WASILEWICZ François</div>
+      <div class="pcard-meta">17/06/1906 · Polesie, Pologne</div>
+      <div class="pcard-bio">Quitte la Pologne en 1928. Mineur en France, affilié à la CGT depuis 1932, membre du PCF depuis 1933. Rejoint les Brigades internationales en novembre 1937.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="zamaisky joseph 26/09/1902 · mniech, pologne arrivé en france en 1929, mineur dans le gard puis l'aveyron. rejoint les brigades internationales, qualifié d'indésirable ; tente d'être rapatrié en france en novembre 1938. evdg, légion étrangère, 5e région militaire, perpignan.">
+    <div class="ph empty">ZJ</div>
+    <div class="pcard-body">
+      <div class="pcard-name">ZAMAISKY Joseph</div>
+      <div class="pcard-meta">26/09/1902 · Mniech, Pologne</div>
+      <div class="pcard-bio">Arrivé en France en 1929, mineur dans le Gard puis l'Aveyron. Rejoint les Brigades internationales, qualifié d'indésirable ; tente d'être rapatrié en France en novembre 1938. EVDG, Légion étrangère, 5e région militaire, Perpignan.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="zangrilli giovanni "jean" 03/08/1900 · besozzo, italie émigré en 1923 en france puis en belgique, expulsé en 1932. s'engage dans les brigades internationales le 13/11/1936, chef de section au bataillon garibaldi. blessé à madrid, interné aux camps de saint-cyprien et de gurs à son retour.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zangrilli-giovanni-2.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name"><a href="https://www.11regimentetranger.com/blog/zangrilli-giovanni" target="_blank" rel="noopener">ZANGRILLI Giovanni "Jean"</a></div>
+      <div class="pcard-meta">03/08/1900 · Besozzo, Italie</div>
+      <div class="pcard-bio">Émigré en 1923 en France puis en Belgique, expulsé en 1932. S'engage dans les Brigades internationales le 13/11/1936, chef de section au bataillon Garibaldi. Blessé à Madrid, interné aux camps de Saint-Cyprien et de Gurs à son retour.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="zbroinski tadeus 30/12/1916 (?) · banabri, pologne ancien brigadiste, a traversé la frontière à figueras. 13e brigade, sergent, compagnie de mortier, 2e groupe.">
+    <div class="ph empty">ZT</div>
+    <div class="pcard-body">
+      <div class="pcard-name">ZBROINSKI Tadeus</div>
+      <div class="pcard-meta">30/12/1916 (?) · Banabri, Pologne</div>
+      <div class="pcard-bio">Ancien brigadiste, a traversé la frontière à Figueras. 13e brigade, sergent, compagnie de mortier, 2e groupe.</div>
+    </div>
+  </div>
+  <div class="pcard" data-search="zurek jean 05/03/1913 · werne, allemagne volontaire pour les brigades internationales, affecté à la 14e batterie de dca. interné au camp d'argelès le 15/03/1939. fait prisonnier avec le 11e rei, interné au stalag xvii a.">
+    <div class="ph"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brigadistes-dans-le-11e-rei-14.jpg" alt=""></div>
+    <div class="pcard-body">
+      <div class="pcard-name">ZUREK Jean</div>
+      <div class="pcard-meta">05/03/1913 · Werne, Allemagne</div>
+      <div class="pcard-bio">Volontaire pour les Brigades internationales, affecté à la 14e batterie de DCA. Interné au camp d'Argelès le 15/03/1939. Fait prisonnier avec le 11e REI, interné au stalag XVII A.</div>
+    </div>
+  </div>
+</div>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+function filterCards(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const cards = document.querySelectorAll('.pcard');
+  let shown = 0;
+  cards.forEach(c => {
+    const match = c.dataset.search.includes(q);
+    c.style.display = match ? '' : 'none';
+    if(match) shown++;
+  });
+  document.getElementById('count').textContent = shown + ' fiche' + (shown>1?'s':'');
+}
+filterCards();
+</script>
+
+</body>
+</html>

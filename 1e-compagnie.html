@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1re Compagnie — 11e REI</title>
+<meta name="description" content="1re Compagnie, 11e régiment étranger d'infanterie : organisation, encadrement et effectif recensé.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .flag{width:180px;height:auto;flex-shrink:0;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-size-small img{width:min(240px,100%);margin:0 auto}
+  .ci-size-full img{width:100%}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+  .ci-intro blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+
+  /* --- Carnet, façon journal de terrain --- */
+  .carnet-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.2rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none}
+  .suggestions.show{display:block}
+  .suggestion-item{padding:.5rem .9rem;font-size:.82rem;color:var(--ink);cursor:pointer;
+    display:flex;justify-content:space-between;gap:8px}
+  .suggestion-item:hover,.suggestion-item.active{background:var(--row)}
+  .suggestion-item .sg-meta{color:var(--muted);font-size:.72rem;white-space:nowrap}
+  .navbtn{width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);background:var(--card);
+    color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .navbtn:hover{background:var(--orange)}
+  .pagecount{font-size:.75rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .book-stage{
+    background:
+      radial-gradient(ellipse at center, #4a3826 0%, #1c130a 78%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,.12) 0 2px, transparent 2px 6px);
+    border-radius:10px;
+    padding:2.2rem 1.4rem;
+    margin-bottom:.6rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6);
+  }
+  .book{position:relative;perspective:2200px;display:flex;max-width:720px;margin:0 auto;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .page{
+    flex:1;min-width:0;position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    min-height:260px;
+    color:#2b2013;
+    transition:transform .45s ease, opacity .45s ease;
+  }
+  .page-left{border-radius:6px 0 0 6px;padding-left:1.9rem;
+    box-shadow:inset -10px 0 18px -12px rgba(0,0,0,.45)}
+  .page-right{border-radius:0 6px 6px 0;padding-right:1.9rem;
+    box-shadow:inset 10px 0 18px -12px rgba(0,0,0,.45)}
+  .book::before{ /* reliure centrale */
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;z-index:3;
+    background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.35)),
+               repeating-linear-gradient(180deg, #2a1c0f 0 3px, #1c1108 3px 6px);
+    box-shadow:0 0 14px rgba(0,0,0,.6);
+  }
+  .page::after{ /* coin corné */
+    content:'';position:absolute;bottom:0;width:22px;height:22px;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 50%);
+  }
+  .page-left::after{right:0;border-radius:0 0 6px 0}
+  .page-right::after{left:0;transform:scaleX(-1);border-radius:0 0 0 6px}
+  .page.turning-next{transform:rotateY(-14deg) translateX(-16px);opacity:0}
+  .page.turning-prev{transform:rotateY(14deg) translateX(16px);opacity:0}
+  .page-empty{display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;
+    font-size:1.3rem;color:#8a7554}
+
+  .flip{
+    position:absolute;top:0;bottom:0;width:50%;z-index:5;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    color:#2b2013;
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+    box-shadow:0 0 24px rgba(0,0,0,.45);
+    transition:transform .5s cubic-bezier(.45,.05,.35,1);
+    overflow:hidden;
+    display:none;
+  }
+  .flip::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 40%);
+    opacity:0;transition:opacity .5s}
+  .flip.showing::after{opacity:1}
+  .flip.right{right:0;transform-origin:left center;border-radius:0 6px 6px 0;padding-right:1.9rem}
+  .flip.left{left:0;transform-origin:right center;border-radius:6px 0 0 6px;padding-left:1.9rem}
+  .flip.flipping-right{transform:rotateY(-160deg)}
+  .flip.flipping-left{transform:rotateY(160deg)}
+
+  .p-header{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.2rem;
+    border-bottom:1px dashed rgba(120,90,40,.4);padding-bottom:.4rem}
+  .p-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.15rem;color:#2b2013}
+  .p-stamp{font-family:'Caveat',cursive;font-size:1rem;color:#8a1f11;border:2px solid #8a1f11;border-radius:6px;
+    padding:.05rem .45rem;transform:rotate(4deg);white-space:nowrap;opacity:.8}
+  .p-meta{font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.85rem;margin-bottom:.8rem}
+  .p-field{margin-bottom:.4rem;line-height:1.5;font-size:.82rem}
+  .p-field .lbl{font-family:'Caveat',cursive;font-size:1.02rem;color:#8a4a1f;margin-right:.3rem}
+  .p-link{display:inline-block;margin-top:.7rem;font-size:.76rem;color:#8a4a1f;text-decoration:none;
+    border-bottom:1px dotted #8a4a1f}
+  .p-link:hover{color:#8a1f11}
+  .pageno{position:absolute;bottom:.6rem;font-family:'Caveat',cursive;font-size:.9rem;color:#8a7554}
+  .page-left .pageno{right:1rem}
+  .page-right .pageno{left:1rem}
+  .tapzone{position:absolute;top:0;bottom:0;width:22%;cursor:pointer;z-index:2}
+  .page-left .tapzone{left:0}
+  .page-right .tapzone{right:0}
+
+  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{bottom:74px !important;}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+  .ci-note{font-size:.8rem;font-style:italic;color:#7a5a2a;background:var(--paper2);
+    border:1px solid var(--rule);border-radius:4px;padding:.7rem 1rem;margin:.4rem 0 1rem}
+
+  .eff-stats{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin:0 0 18px}
+  .eff-stat{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--orange);
+    border-radius:4px;padding:.9rem .6rem;text-align:center}
+  .eff-stat .n{font-family:'EB Garamond',serif;font-weight:600;font-size:1.7rem;color:var(--ink)}
+  .eff-stat.mpf .n{color:#8a1f11}
+  .eff-stat .l{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:.15rem}
+
+  .eff-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;justify-content:space-between}
+  .eff-search{flex:1 1 240px}
+  .eff-search input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .eff-search input:focus{outline:2px solid var(--orange);outline-offset:-1px}
+  .eff-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .eff-chip{border:1px solid var(--border);background:var(--card);color:var(--muted);padding:.4rem .8rem;
+    font-size:.74rem;cursor:pointer;border-radius:20px;user-select:none;font-family:'Inter',sans-serif}
+  .eff-chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .eff-count{font-size:.74rem;color:var(--muted);margin:-2px 0 10px}
+
+  table.eff-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);font-size:.82rem}
+  table.eff-table thead th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--muted);background:var(--row);padding:.6rem .7rem;cursor:pointer;white-space:nowrap;
+    border-bottom:2px solid var(--orange)}
+  table.eff-table thead th:hover{color:var(--ink)}
+  table.eff-table thead th .arrow{opacity:.5;font-size:.6rem;margin-left:.2rem}
+  table.eff-table tbody td{padding:.55rem .7rem;border-top:1px solid var(--border);vertical-align:top}
+  table.eff-table tbody tr:hover{background:var(--row)}
+  td.eff-nom{font-weight:600;white-space:nowrap}
+  td.eff-nom .eff-prenom{font-weight:400;color:var(--muted)}
+  td.eff-details{color:var(--muted);font-size:.76rem;max-width:280px}
+  td.eff-section{color:var(--muted);font-size:.76rem;max-width:160px}
+
+  .eff-badge{display:inline-block;font-size:.62rem;text-transform:uppercase;letter-spacing:.02em;
+    padding:.1rem .45rem;border-radius:3px;margin:1px 3px 1px 0;white-space:nowrap;border:1px solid transparent;
+    font-family:'Inter',sans-serif}
+  .eff-badge.MPF{background:#f4e3df;color:#8a1f11;border-color:#e3bdb4}
+  .eff-badge.Prisonnier{background:#fdf1d9;color:#8a6d1f;border-color:var(--orange)}
+  .eff-badge.Blessé{background:#fbeee0;color:#9c5a1f;border-color:#edd2ac}
+  .eff-badge.Déserteur{background:#ece9f2;color:#4d4470;border-color:#d3cce4}
+  .eff-badge.Disparu{background:#eee;color:#666;border-color:#ccc}
+  .eff-badge.Évadé{background:#e3f0e0;color:#35662f;border-color:#c3dcbb}
+  .eff-badge.Rapatrié{background:#dfeaf0;color:#2c5f75;border-color:#bcd8e3}
+  .eff-badge.Démobilisé{background:#f0eee6;color:#6b6558;border-color:#ddd8c9}
+
+  a.eff-fiche{font-size:.74rem;color:var(--link);text-decoration:none;white-space:nowrap}
+  a.eff-fiche:hover{text-decoration:underline}
+  .eff-nofiche{color:#c9c3af;font-size:.74rem}
+
+  .ci-table{width:100%;border-collapse:collapse;margin:.3rem 0 1.2rem;font-size:.82rem}
+  .ci-table caption{caption-side:top;text-align:left;font-family:'EB Garamond',serif;font-style:italic;
+    color:var(--muted);margin-bottom:.4rem;font-size:.85rem}
+  .ci-table th{background:var(--row);border-bottom:2px solid var(--orange);padding:.5rem .6rem;
+    text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  .ci-table td{padding:.5rem .6rem;border-top:1px solid var(--border)}
+  .ci-table tr.total-row td{font-weight:600;border-top:2px solid var(--border)}
+
+  @media (max-width:900px){
+    .eff-stats{grid-template-columns:repeat(3,1fr)}
+    td.eff-section{display:none}
+  }
+  @media (max-width:560px){
+    .eff-stats{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-1e%20compagnie" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  <div class="htext">
+    <h1>1re Compagnie</h1>
+    <div class="sub">Effectif recensé : 78 légionnaires</div>
+    <a class="back" href="https://www.11regimentetranger.com/recherche-legionnaire">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro"><p class="ci-lede">Cette page assemble trois sources pour retracer le parcours de la 1re compagnie du 11e REI au printemps 1940 : l'extrait du journal de marche tenu par le lieutenant Pierre en avril, celui tenu par le capitaine Le Moine du 1er au 15 mai, puis les mémoires du sous-lieutenant Colin, qui rejoint la compagnie le 31 mai (venant de la Compagnie régimentaire d'engins) et la commandera jusqu'à la fin de la campagne, jusqu'au « combat de Saint-Germain » du 18 juin 1940, dont il a laissé un récit détaillé en annexe à son journal de marche.</p>
+<h3 class="ci-h3">Avril 1940 — journal de marche (lieutenant Pierre)</h3>
+<ul>
+  <li>16 avril — L'Unité fait mouvement sur Filstroff.</li>
+  <li>17 avril — L'Unité relève aux avant-postes la 1re Compagnie du 21e Tirailleurs Algériens. Journée calme.</li>
+  <li>18 avril — Journée calme.</li>
+  <li>19 avril — Pendant la nuit du 18 au 19, vers 2 heures, une patrouille ennemie attaque par surprise le légionnaire Golaz et tente de le faire prisonnier. Cette patrouille est mise en fuite par le feu de Golaz et d'un guetteur voisin.</li>
+  <li>20 avril — Journée calme. Dans la nuit du 20 au 21, le P.A. 238 est pris à partie par les patrouilles ennemies.</li>
+  <li>21 avril — L'artillerie ennemie tire à trois reprises sur le P.A. 262 (32 coups en tout). Le lieutenant Jurion répare sous le feu la ligne téléphonique hachée par les obus et est proposé pour une citation.</li>
+  <li>22 avril — Pendant la nuit du 21 au 22, le P.A. 262 est pris à partie par des patrouilles allemandes.</li>
+  <li>23–24 avril — Journée et nuit calmes.</li>
+  <li>25 avril — Pendant la nuit du 25 au 26, le P.A. 238 est pris à partie par les patrouilles ennemies.</li>
+  <li>26 avril — La Compagnie est relevée par le GR 37 et fait mouvement sur Bockange.</li>
+  <li>27 avril — Aménagement du cantonnement.</li>
+  <li>28 avril — Aménagement du cantonnement (suite).</li>
+  <li>29 avril — Reconnaissance des travaux à exécuter à Hestroff. Préparation pour la prise d'armes du lendemain.</li>
+  <li>30 avril — Fête de Camerone. L'Unité participe à la prise d'armes qui réunit tout le régiment à 1500 mètres de Boulay et au cours de laquelle est présenté le nouveau drapeau du Régiment.</li>
+</ul>
+<h3 class="ci-h3">1er – 15 mai 1940 — journal de marche (capitaine Le Moine)</h3>
+<ul>
+  <li>1er mai — Travaux au fossé antichars (plaques de béton et rails).</li>
+  <li>2 mai — Matin : travaux au fossé antichars. Après-midi : nettoyage du cantonnement, revue de casernement. Le lieutenant Jurion prend le commandement du Groupe Franc à Filstroff en remplacement du lieutenant Roux, partant en permission.</li>
+  <li>3 mai — Travaux au chantier.</li>
+  <li>4 mai — Travaux au chantier. Inspection et contrôle des armes.</li>
+  <li>5 mai — Travaux de propreté et de couture. Repos l'après-midi.</li>
+  <li>6 mai — Travaux au chantier. Corvée de battage.</li>
+  <li>7 mai — Douches, épouillage, nettoyage du cantonnement.</li>
+  <li>8 mai — Travaux au chantier.</li>
+  <li>9 mai — Travaux au chantier.</li>
+  <li>10 mai — Travaux au chantier. Le légionnaire Boitchenko est blessé par mine contre le personnel.</li>
+  <li>11 mai — Tir au fusil, pistolet et mitrailleur, grenade F1 et V.B. Nettoyage des armes. Le capitaine Le Moine rentre de permission.</li>
+  <li>12 mai — Repos. Quartier consigné.</li>
+  <li>13 mai — Travaux au chantier. À 4h30, le lieutenant Jurion est grièvement blessé par balle en allant dégager le poste 262, en partie occupé par les Allemands. Cet officier est ramené par les légionnaires Croisier, Friedmann et Rose. Il expire vers 10 heures en arrivant à l'hôpital de Charleville-sous-Bois. Les caporaux Purrini et Grenouillat, les légionnaires Meuleman, Hochepied et Vandburger sont blessés au cours de la même action et évacués.</li>
+  <li>14 mai — Reconnaissance, par les commandants de compagnies, des positions en bretelle. L'Unité fait mouvement dans le courant de la nuit et cantonne à Noisseville. Le lieutenant Jurion est fait chevalier de la Légion d'honneur. Le capitaine Le Moine, le sergent-chef Koenecke et le caporal Jankiel assistent à ses obsèques.</li>
+  <li>15 mai — L'Unité fait mouvement de nuit sur Fey.</li>
+</ul>
+<p>À partir du 31 mai, le récit se poursuit à travers les mémoires du sous-lieutenant Colin, affecté ce jour-là à la 1e Compagnie.</p>
+<h3 class="ci-h3">31 mai 1940 — Affectation à la 1e Compagnie</h3>
+<blockquote class="testimony">Je suis affecté au 1er Bataillon, 1e Cie, et quitte la C.R.E. Mes multiples demandes au colonel produisent leur effet, mais cette mutation est avant tout la conséquence du déficit en officiers depuis les derniers combats. A la 1e Cie, le Cdt Lemoine vient d'être nommé adjoint au 2e Btn, [le lieutenant Sautour blessé le 27, le lieutenant Jurion tué avant le 13 mai avec le groupe franc du 1er Btn] --- il ne reste que le lieutenant Pierre qui a le commandement de la Cie --- Dans l'après-midi, je prends le commandement des 3 sections de la ligne de feu : 2e section, S/Lt Didier; 3e section, S/Lt Dupuis; 4e section, S/Chef Plus --- La 1re section et la section de commandement restent en réserve au P.C. de la Cie, à 300 m de là, en arrière.</blockquote>
+<h3 class="ci-h3">2 Juin 1940</h3>
+<blockquote class="testimony">Le Colonel Robert a quitté le Régiment pour prendre le commandement de l'Infanterie Divisionnaire. Le Cdt Clément, proposé pour le colonel, prend le Régiment. C'est un ancien chef de Bataillon de Légion --- Nous avons un nouvel aumônier : l'abbé Houot.</blockquote>
+<blockquote class="testimony">Le P.C. du Régiment s'est déplacé, après le 27 mai qui a prouvé qu'il était vraiment trop repéré. ((capitaine Houet !))</blockquote>
+<blockquote class="testimony">La C.R.E. a également déplacé son P.C. qui se trouve maintenant avec la pièce Favre et le groupe de mortiers, réfugié à droite de la route d'Olizy sur Chiers ---</blockquote>
+<blockquote class="testimony">Le 1er Bataillon a relevé le 2e. Enfin, dernier changement, notre front qui formait poche vers l'ennemi, a été raccourci par alignement avec le 9e R.T.M. et le 21e R.T.A.</blockquote>
+<blockquote class="testimony">Nous nous organisons sur nos nouvelles positions. Je fais poser du barbelé sur les rangs, creuser tranchées, boyaux etc. A droite, j'ai la liaison avec le 9e R.T.M. Un gros inconvénient : les cadavres nombreux d'hommes et de chevaux, mal enterrés, répandent une odeur nauséabonde, surtout la nuit. Nous essayons de les recouvrir de terre, sans résultat appréciable.</blockquote>
+<h3 class="ci-h3">5 Juin 1940</h3>
+<blockquote class="testimony">Avant-hier, une de mes patrouilles est sortie en embuscade. Résultat néant. Cependant, chaque nuit, les patrouilles allemandes travaillent et restent agressives. Elles ont repris le contact et pour cela, sont venues nous mitrailler d'assez près. Nous sommes allés poser un microphone à une centaine de mètres des Boches et pratiquons l'écoute. Nous entendons l'ennemi travailler, piocher, abattre des arbres et parler, mais des choses insignifiantes ---</blockquote>
+<blockquote class="testimony">Dans l'après-midi, nous recevons des ordres : le 2e Btn relève le 1er, et la 6e Cie vient prendre nos emplacements. Nous nous portons sur la ligne d'arrêt. Des patrouilles ont dû éventer notre mouvement, car à peine la relève commence-t-elle que les Fritz commencent à nous mitrailler. La relève s'effectue cependant, nous les balles --- Lorsque je passe avec mes hommes au P.C. Cie</blockquote>
+<blockquote class="testimony">Un marmitage assez sérieux se déclenche; nous pouvons heureusement nous abriter à peu près dans les trous existants et il n'y a pas de casse --- Nous gagnons dans les ténèbres épaisses nos emplacements de la ligne d'arrêt. Nous nous casons n'importe où en attendant le jour ---</blockquote>
+<h3 class="ci-h3">9 juin 1940</h3>
+<blockquote class="testimony">Situation inchangée --- De la situation générale nous ne connaissons rien jusqu'à notre arrivée sur la ligne d'arrêt. Ici nous sommes plus près du P.C. par lesquels nous avons les communications --- Les nouvelles ne sont pas trop bonnes ---</blockquote>
+<blockquote class="testimony">Dans l'après-midi, nous recevons un ordre de mouvement pour la nuit suivante : le 1er Bataillon se portera à la lisière N de la forêt de Woëvre (Bois de Fays) pour y organiser des points d'appui. Les 2e et 3e Bataillon vont sur leurs positions. Mouvement de 23h le 9 à 2h le 10 juin, par Stenay et Baâlon --- Stationnement dans le Bois de Fays, au lieu dit "les Buissons", près d'une batterie de 155L qui, 1/4 d'heure après notre arrivée, est bombardée, pour la première fois. Les artilleurs nous imputent la responsabilité de ce bombardement ! Ils ont d'ailleurs tort, mais c'est un curieux hasard ---</blockquote>
+<h3 class="ci-h3">10 juin 1940</h3>
+<blockquote class="testimony">Stationnement inchangé ---</blockquote>
+<h3 class="ci-h3">11 juin 1940</h3>
+<blockquote class="testimony">Nous apprenons, en plus de l'entrée en guerre de l'Italie contre nous, que le Régiment et la Division ont reçu un ordre de repli. Nous n'y comprenons rien. Le 2e et 3e Bataillon ont ordre d'abandonner la position de résistance solide sur laquelle nous étions (charnière avec la ligne Maginot) pour se porter en lisière de la forêt de Woëvre, face au N.O. C'est d'ailleurs une mesure générale, presque l'Artillerie lourde déménage également. On nous laisse entendre qu'une rupture du front s'est produite à l'ouest. Nous croyons à un repli ayant pour but un raccourcissement et un renforcement du front.</blockquote>
+<blockquote class="testimony">Le 3e Bataillon décroche le dernier. L'ennemi ne réagit pas.</blockquote>
+<blockquote class="testimony">Le soir, nouveau mouvement, alors que nous avions déjà organisé nos nouveaux points d'appui à la 3e D.I.N.A. --- nous y relevés. De 22h à 0h, nous marchons en direction du S.W, vers Juvigny --- Stationnement sous bois où nous recevons une pluie diluvienne, de 1h du matin à 7h, pendant que le tonnerre craque, se superposant au canon --- Au matin, nous grelottons, n'ayant plus un fil de sec ---</blockquote>
+<h3 class="ci-h3">12 juin 1940</h3>
+<blockquote class="testimony">A 9h reprise du mouvement, à travers la forêt de Woëvre, par des layons forestiers marécageux. Les hommes sont très fatigués; barda et munitions sont lourds ---</blockquote>
+<blockquote class="testimony">15h nous prenons position face au canal de la Meuse, près de Charmois (au bois de la Solution), nous nous installons en point d'appui. Sous la pluie, nous creusons nos trous car les obus tombent sur Charmois.</blockquote>
+<blockquote class="testimony">21h alors que nous nous préparions à passer la nuit sur place, l'ordre de départ arrive. Nous abandonnons nos travaux. Décidément, c'est bien une retraite. Nous jouons tous à la manœuvre de la Marne et envisageons un repli général sur une position située plus au sud ---</blockquote>
+<h3 class="ci-h3">13 juin 1940</h3>
+<blockquote class="testimony">Dans la nuit, mouvement par Brandeville, Bréheville, Ecurey (où nous étions il y a presque un mois), Damvillers où tout évacué. A partir de cette localité, nous trouvons la route de Verdun où circule une colonne invraisemblable, 3 files juxtaposées, mélangées, de véhicules de toutes sortes et de toutes armes. Le plus terrible c'est qu'il fait jour --- Cependant, pas d'avion à l'horizon, Dieu merci ! Nous sommes anéantis de fatigue. Ce n'est qu'à 12h le 13 que nous arrivons à destination : le Bois des Caures, près de Flabas, ayant marché, depuis Damvillers, en colonne par 1 dans les fossés, par suite de l'encombrement inimaginable de la route. Nous ne cessons de maudire l'incurie des chefs qui ont organisé ces replis. Il vaudrait mieux dire "cette déroute".</blockquote>
+<blockquote class="testimony">Nous en avons l'explication quand, pauvres retardataires, nous apprenons que la colonne est harcelée par l'Artillerie et des éléments motorisés ennemis. Vers le Sud-Est, nous entendons des armes automatiques. Ceci ne nous empêche pas de dormir profondément dès que nos emplacements de stationnement nous sont fixés ---</blockquote>
+<blockquote class="testimony">21 heures. L'ordre de mouvement immédiat arrive. A regret, nous nous équipons et reprenons la marche. Les pieds des hommes sont en mauvais état, les miens également, mais je ne suis pas blessé. Les munitions semblent de plus en plus lourdes à porter. Nous allégeons les hommes au maximum. Mouvement par Vacherauville, Bras, jusqu'au ravin du Poivre où nous arrivons vers 2h du matin. Au passage nous avons pu saluer le monument à Driant et à ses chasseurs, et les lieux où nos pères se sont battus avec acharnement. Aujourd'hui, nous reculons...</blockquote>
+<h3 class="ci-h3">14 juin 1940</h3>
+<blockquote class="testimony">A 2h, nous arrivons à destination, au Ravin du Poivre, en continuant, pillonné des tranchées et boyaux de 14-18.</blockquote>
+<blockquote class="testimony">Derrière nous, en arrière-garde, le 155e R.I.F. et des tirailleurs tiennent des positions à quelques kilomètres face à l'ennemi --- La région de Douaumont est tenue par les Bataillons d'Afrique sous les ordres du colonel Lambert, ancien chef de Bataillon de Légion que j'ai connu en Algérie ---</blockquote>
+<blockquote class="testimony">Aussi dormons-nous en paix, sous bois, malgré la pluie, jusqu'au matin. Les 2 artilleries commencent à donner --- Vers la fin de la matinée arrive un ordre d'embarquement en camions ! Le Régiment doit se porter dans la région de Chaumont. Ceci nous laisse rêveurs. Si les Allemands menacent déjà par là, au Sud-Est de nos positions actuelles, la situation est singulièrement grave !</blockquote>
+<blockquote class="testimony">Mais voici qu'une heure avant d'embarquer, nous apprenons que l'ennemi s'infiltre déjà vers Bras --- Le 155e R.I.F. a pris le contact et déjà ses éléments se replient... un peu vite semble-t-il. Nous sommes talonnés. Le contre-ordre à l'embarquement parvient. Le Régiment va fournir des bouchons sur les voies de communication pour interdire l'infiltration ---</blockquote>
+<blockquote class="testimony">La 1e Cie va prendre ses emplacements sur la côte de la Jeune d'Haudromont, face à la côte du Poivre, où nous utilisons les tranchées de nos pères et les vieux trous d'obus. Sur notre gauche, en avant, se trouvent des unités amies, mais sur la droite en avant, le 155e se replie --- Nous avons un beau</blockquote>
+<blockquote class="testimony">Panorama : des villages brûlent un peu partout, sur la rive droite et la rive gauche de la Meuse ---</blockquote>
+<blockquote class="testimony">J'ai mon P.A. à cheval sur la route de Louvemont à Bras. Vers 19h arrivent des éléments légers ennemis : automitrailleuse, patrouilleurs. Nous les accueillons à coups de F.M. L'automitrailleuse n'insiste pas et nous n'avons pas le temps de la tirer au canon de 25. Nous faisons sauter un petit pont, ce qui coupe la route.</blockquote>
+<blockquote class="testimony">A 20h30, nous sommes relevés par le 136e R.I. et faisons mouvement vers le Fort du Rozelier par Douaumont et l'ossuaire --- Les hommes, malgré la fatigue, défilent au pas cadencé et saluent les morts par un "tête droite" impeccable. Spectacle inoubliable que ce défilé au crépuscule devant ces milliers de croix blanches. Les larmes montent aux yeux de tous. Demain l'ennemi foulera aux pieds le sol de Douaumont.</blockquote>
+<blockquote class="testimony">Un peu plus tard, la nuit venue, nous apercevons Verdun. La ville brûle : c'est une véritable torche (52 foyers d'incendie), les tours de la cathédrale se détachent sur ce brasier. Nouveau martyre de la "Cité Héroïque".</blockquote>
+<blockquote class="testimony">Ce moment restera un de mes souvenirs les plus poignants ---</blockquote>
+<h3 class="ci-h3">15 juin 1940</h3>
+<blockquote class="testimony">2h du matin : nous arrivons au Fort du Rozelier où nous tombons de sommeil sur place dès l'arrêt.</blockquote>
+<blockquote class="testimony">9h ordre de départ : direction Senzey-Lacroix, par Sommedieue, Rupt-en-Woëvre, Mouilly, Vaux-lès-Palameix. Etape de jour, dans une région où se produisent depuis des infiltrations ennemies. Nous utilisons les bois au maximum, d'autant plus que les bombardiers nous survolent souvent et que les avions de reconnaissance, dits "mouchards", nous surveillent de près ---</blockquote>
+<blockquote class="testimony">Notre train auto est bombardé. Nous-mêmes sommes visés : les bombes tombent sans dommage pour nous, mais c'est impressionnant. Un village est bombardé avant notre passage. Toutes les localités que nous traversons sont déjà en état de défense : des armes automatiques en gardent tous les accès.</blockquote>
+<blockquote class="testimony">Il fait très chaud et la marche avec les sacs est pénible. Je porte mon sac à l'épaule et suis décidé à ne pas l'abandonner. Bien des hommes se sont déjà allégés, ne gardant que les munitions et les vivres ---</blockquote>
+<blockquote class="testimony">A 17 heures, nous arrivons à l'étape. Bivouac sous bois, près de Senzey et Lacroix (Meuse). Des corvées de ravitaillement sur le pays sont envoyées au village. Nous ne sommes plus ravitaillés par l'Intendance depuis plusieurs jours --- Nous surveillons les hommes pour les empêcher de boire : il suffit de peu de chose pour anéantir des hommes si fatigués ---</blockquote>
+<h3 class="ci-h3">16 juin 1940</h3>
+<blockquote class="testimony">A 0 heure, ordre de mouvement vers Coeur-la-Petite et Coeur-la-Grande, par Lacroix, St Mihiel --- Au départ, certaines compagnies laissent sur le terrain des hommes ivres-morts. Nous avons bien fait de voir cette question de près à la 1e Cie.</blockquote>
+<blockquote class="testimony">Etape écrasante et démoralisante au possible. Nous cheminons en colonne par 5, sur une route nationale où roule une invraisemblable cohue de véhicules de toutes sortes. C'est une réédition de l'étape du 13 juin, en plus désordonnée. Des embouteillages continuels se produisent. Tous les 300 m, quelquefois plus souvent, il faut s'arrêter, soit 1 minute, soit 10. Le passage à Saint-Mihiel provoque un arrêt d'une heure. Les convois d'Artillerie, de génie, du train s'embouteillent mutuellement. On sent la déroute et le manque de commandement. Les fantassins doivent marcher dans les fossés. Ils sont à bout. Des hommes se couchent dans les fossés et restent là. Nous ne pouvons pas les porter, il faut les laisser, ils tâcheront de rejoindre. Certains montent sur les véhicules de l'Artillerie ---</blockquote>
+<blockquote class="testimony">Saint-Mihiel est déjà pillé, du moins les magasins le sont, alors que des civils sont encore là. Pas un gendarme, pas un garde mobile pour faire la police. On voit des soldats entrer partout, profitant de la cohue, sous prétexte de ravitaillement. Ici se montre une fois de plus la défaillance du Commandement.</blockquote>
+<blockquote class="testimony">A 7h, nous arrivons à Coeur, où nous cantonnons dans le village même, chose qui ne nous est pas arrivée depuis longtemps --- Enfin du repos : repas chauds auxquels nous ne sommes plus habitués ---</blockquote>
+<blockquote class="testimony">Je compte les hommes de ma section : il en manque plusieurs --- certains rejoindront dans la soirée, d'autres sont définitivement disparus et doivent dormir dans les fossés en attendant que les Boches les prennent --- D'autres encore ont été, en cours de route, à St Mihiel et y sont restés --- qui, certains, montés sur les convois d'Artillerie, ont poursuivi la route en direction de Commercy, sans se rendre compte de ce que nous obliquions à droite vers Coeur, aussitôt après St Mihiel.</blockquote>
+<blockquote class="testimony">Ici encore, à Coeur, il faut faire la police et barricader les caves. Le village est, aux 9/10, évacué et tout a été précipitamment abandonné par les habitants --- Des repas restent, encore servis sur les tables. Le vin et l'alcool sont à la disposition de tous. Malgré nos efforts, quelques-uns réussissent à se procurer des bouteilles d'eau de vie et s'enivrent.</blockquote>
+<blockquote class="testimony">Je dors dans les draps, douceur inexprimable. Repos de courte durée, car, à 15h, arrive l'ordre de départ, une fois de plus. Et nous reprenons la route en direction de Commercy, pour nous rendre à Void.</blockquote>
+<blockquote class="testimony">Etape dans le même genre que celle de la veille --- Les hommes qui avaient bu s'ivrent en route. Les autres sont, comme moi, tellement fatigués qu'ils ne sentent plus la fatigue, et, s'il n'y avait eu encombrement des routes, tout irait bien --- Nous traversons Lérouville, Commercy, Sampigny où nous voyons la maison de Poincaré --- A partir de Commercy, la route se dégage et nous marchons plus librement ---</blockquote>
+<blockquote class="testimony">Chose curieuse : pas un avion allemand ne nous survole --- Mais derrière nous, ponts, voies ferrées sautent, des abattis obstruent les routes. Le bruit se répand qu'il est question d'armistice. Pétain est au pouvoir --- cependant, nous gardons le moral et espérons toujours un redressement semblable à celui de la Marne en 1914. Ne connaissant rien de la situation générale, nous pourrions encore avoir des illusions.</blockquote>
+<h3 class="ci-h3">17 juin 1940</h3>
+<blockquote class="testimony">Arrivée à Void à 2h du matin. Le village est vide à l'approche des Allemands. Des évacués se préparent à partir, chargeant ce qu'ils peuvent de leurs biens sur de grandes charrettes à foin. Nous avons une mission de flanc-garde et, dès notre arrivée, nous occupons, à quelques centaines de mètres des lisières du village, des emplacements de combat : 2e Btn face au N, 1er Btn face à l'ouest. Nous dormons sur place. Nuit et matinée calmes et reposantes. Mais, dans l'après-midi, l'ennemi prend le contact, sur la route venant de Ménil-la-Horgne et sur celle de Commercy --- Ses éléments avancés se font démolir (voitures blindées, motos), nous faisons des prisonniers ---</blockquote>
+<blockquote class="testimony">A 15h --- ordre de quitter les emplacements. Une unité d'infanterie nous relève et prend à son compte la défense du village --- Nous laissons 2 sections du 2e Btn en renfort pour la défense du pont sur le canal (Sud de Void) ---</blockquote>
+<blockquote class="testimony">Mouvement vers Ugny, par St Germain où nous passons la Meuse. Nous sommes maintenant à l'Est de cette rivière --- Nous nous installons à la nuit tombante, en bivouac dans les Bois à l'Est d'Ugny s/Meuse, naturellement sous la pluie ---</blockquote>
+<h3 class="ci-h3">18 juin 1940</h3>
+<blockquote class="testimony">O.R. Nouvel ordre de mouvement. Les hommes sont épuisés. Pas une plainte, cependant, ils sont dans un état d'épuisement total. Mais cette fois, nous repartons vers l'avant et cela réjouit tout le monde ---</blockquote>
+<blockquote class="testimony">Notre bataillon a pour mission de soutenir un mouvement offensif des 2e et 3e Btns vers Void et le canal de la Marne au Rhin que les Allemands ont déjà franchi ---</blockquote>
+<h3 class="ci-h3">Combat de Saint-Germain (18 juin 1940)</h3>
+<blockquote class="testimony">Ma Compagnie, la 1e, doit tenir St Germain et la tête de pont de la Meuse, pendant le mouvement du 2e Bataillon vers Void, et du 3e Btn vers le canal, au Sud du village --- ((J'en fais une relation détaillée en annexe à mon journal de marche))</blockquote>
+<blockquote class="testimony">Je commande un point d'appui, au pont sur la Meuse de la route St Germain-Void. Dans le courant de la matinée, notre 2e Bataillon se fait démolir : il n'y a plus d'Artillerie pour l'appuyer. Les Boches sont déjà solidement organisés au Sud de Void et au S. et W. du Canal. La 6e Cie est entièrement détruite, tous ses officiers tués ou blessés, y compris son chef de Btn, le Cdt d'Alegron tué. La 5e Cie qui la soutient est hachée par l'Artillerie qui la tire à vue. La C.A.2 est également presque entièrement démolie. Tous ses officiers sont tués.</blockquote>
+<blockquote class="testimony">A la fin de la matinée, le 2e Btn reçoit ordre de se replier à l'Est de la Meuse, ainsi que le 3e Btn --- Notre Bataillon, le 1er, prend le contact à son compte. A peine les éléments du 2e Bataillon qui subsistent ont-ils repassé la Meuse que le Boche progresse vers nous, en particulier en direction du pont que je défends. Son Artillerie, qui nous a marmités toute la journée, redouble de violence. Mes armes automatiques tiennent cependant le terrain et font du beau travail --- Je fais sauter le pont alors que des infiltrations ennemies sont à une centaine de mètres. Mitrailleuses et F.M. descendent les éléments trop aventurés et la progression s'arrête de mon côté.</blockquote>
+<blockquote class="testimony">Mais toute l'après-midi et la soirée, nous sommes ajustés par les mitrailleuses et l'Artillerie. Celle-ci fait ses réglages sur nous à l'aide d'un "Mouchard" qui nous bombarde de plus, à coups de tracts nous incitant à la reddition, et annonçant que la France a capitulé, sur l'ordre de Pétain. C'est d'ailleurs anticipé, selon les renseignements que j'aurai le soir ---</blockquote>
+<blockquote class="testimony">Cependant, sur la droite, l'ennemi progresse dangereusement dans le s/secteur du 21e R.T.A. Mais la nuit tombe et, peu à peu, le calme revient, chacun restant sur ses positions ---</blockquote>
+<h3 class="ci-h3">19 juin 1940</h3>
+<blockquote class="testimony">A 1h du matin arrive l'ordre de repli. Nous décrochons sans bruit dans la nuit. Il reste 4 hommes à ma section. Nous devrons abandonner les cadavres et détruire leurs armes.</blockquote>
+<blockquote class="testimony">Dans la journée du 18, nous avons eu de lourdes pertes : 1 chef de Bataillon tué, 1 capitaine tué, 2 autres disparus, 7 lieutenants tués ou disparus, sans compter les blessés. Du 2e Bataillon il reste à peu près 25 hommes. Les autres compagnies de F.V. ont un effectif de l'ordre d'une trentaine d'hommes.</blockquote>
+<blockquote class="testimony">Nous reprenons la route d'Ugny et faisons halte dans les Bois où nous étions la veille. Nous n'y restons que peu de temps --- A 3h du matin, reprise du mouvement, par les Bois, en direction du Sud-Est. Nous prenons position pendant plusieurs heures, en lisière de bois, face au N-O, à proximité de Rigny --- Nous apercevons les Boches déboucher de St Germain et progresser dans notre direction --- Sur les crêtes, plus loin, des convois d'Artillerie débouchent des bois, en masse compacte, imprudemment : nous n'avons donc plus aucune Artillerie ?</blockquote>
+<blockquote class="testimony">De plus, vers ce que nous pourrions supposer notre arrière, nous entendons cracher les mitrailleuses boches. Donc, le fait se refait en nos esprits : nous sommes encerclés ou peu s'en faut. D'ailleurs les renseignements d'ordre général que nous avons eus ne sont pas réconfortants : les Allemands ont tourné la ligne Maginot, ont passé le Rhin à Neuf-Brisach, ont pris Paris, sont déjà à Lyon, Orléans, en Bretagne et plus au Sud !</blockquote>
+<blockquote class="testimony">Reprise du mouvement vers 10h. Sous bois, nous déposons les armes d'observation et l'Artillerie ennemie qui nous cherchent --- Pas un coup de canon venant de chez nous --- et nous n'avons pas vu un avion français depuis le 10 juin.</blockquote>
+<blockquote class="testimony">A 12h nous atteignons la Ferme des Quatre-Vaux, sur la route de Rigny à Blénod-lès-Toul. Nous y retrouvons le 3e Bataillon et le P.C. du Rgt et le reste de la division. Nous avons ordre de nous installer défensivement face à l'Ouest ---</blockquote>
+<h3 class="ci-h3">Combat de la ferme des 4 Vaux (19 juin 1940)</h3>
+<blockquote class="testimony">Le début de l'après-midi est calme. Nous reposons notre pauvre carcasse en plein besoin, d'autant plus que depuis St Germain, nous transportons le plus possible de munitions de fusil et de F.M. Nous n'avons plus de mitrailleuses : elles ont été démolies ou les chevaux tués par le bombardement. Le reste du train hippo est avec la C.H.R. Où ? --- ((J'en fais une relation détaillée en annexe à mon journal de marche))</blockquote>
+<blockquote class="testimony">Les mitrailleuses ont été détruites et jetées à la Meuse par ordre du général de Division(?) Ce geste nous a fait comprendre que c'était la fin. Mais les légionnaires se refusent à le croire. Ces types magnifiques gardent un moral inébranlable.</blockquote>
+<blockquote class="testimony">A la fin de l'après-midi du 19, le G.R.D. reçoit le contact de l'ennemi et se replie. Nous prenons le contact à notre compte. Les obus commencent à pleuvoir. Le terrain se présente ainsi : une clairière orientée Est-Ouest, dont les lisières N, S et Est sont tenues par nous. A droite, le 21e R.T.A.; à gauche le 9e R.T.M.</blockquote>
+<blockquote class="testimony">Le combat s'engage. Bientôt le hameau des 4 Vaux brûle. L'ennemi, par les bois, gagne sur notre droite et notre gauche --- Mais nos F.M. font du beau travail et nous enrayons l'encerclement. Tout ce qui débouche dans la clairière est également aussitôt abattu. Les Boches laissent beaucoup de monde sur le terrain et se retirent.</blockquote>
+<blockquote class="testimony">Une fois de plus, leur infanterie, face à face avec la nôtre n'a pu vaincre, malgré l'appui d'Artillerie à leur profit --- chose qui nous fait totalement défaut --- En conséquence, nous n'avons que 5 blessés dont 4 par balles et pas un tué ---</blockquote>
+<blockquote class="testimony">22h. Pour que nous n'en perdions pas l'habitude, arrive l'ordre de repli. Nous reprenons le mouvement, sans cesse malgré les tirs de harcèlement ennemis; le spectacle est féerique : le hameau brûlé comme une torche illumine les bois d'alentour ---</blockquote>
+<blockquote class="testimony">Mouvement jusqu'à Blénod-lès-Toul où nous cantonnons. Le G.R.D. nous couvre ---</blockquote>
+<h3 class="ci-h3">20 juin 1940</h3>
+<blockquote class="testimony">A 5h du matin, les ordres parviennent. Nous montons au Fort de Blénod-lès-Toul où nous nous installons défensivement. La journée est calme, bien que cela tiraille dans toutes les directions. De fait, les renseignements parvenus nous confirment l'encerclement complet. Notre Division, la 6e D.I.N.A., sans liaisons avec le C.A. (Corps d'Armée Colonial Freydenberg), s'est rattachée au C.A. voisin (Gal Dubuisson). Le Gal de Verdilhac qui nous commande a sa division regroupée (Infanterie-Artillerie-Services), mais devenue à peu près inutilisable (fatigue des hommes --- manque de ravitaillement en vivres et munitions, surtout manque d'obus pour l'Artillerie)</blockquote>
+<h3 class="ci-h3">21 juin 1940</h3>
+<blockquote class="testimony">Jour de l'été et de mon anniversaire : 24 ans --- Il n'est pas gai. Mais nous nous sommes un peu reposés et pensons, qu'enfin, nous allons rester sur place et résister jusqu'à la limite de nos forces. Nos esprits se reportent sur Camerone, le fait d'armes légendaire de la Légion --- Mais un ordre arrive : il faut à nouveau se replier --- Le chef de Corps, Cdt Clément, refuse et veut rester sur place, où nous avons une assez bonne position défensive --- Un ordre impératif du général demande d'exécuter cette décision --- Nous obtempérons et faisons mouvement par Blénod-lès-Toul, Crézilles, jusqu'au Bois de Crézilles-Ochey où nous prenons position (lisière Ouest) vers 11h du matin ---</blockquote>
+<blockquote class="testimony">Cet ordre figure en annexe à mon journal de marche --- Pour la 1ère fois dans les annales de la Légion, celle-ci est livrée à l'ennemi avec ses armes ---</blockquote>
+<blockquote class="testimony">Nous ne perdons pas notre temps --- Immédiatement nous nous mettons au travail de destruction des armes, des véhicules et de tout ce qui pourrait être utilisé par l'ennemi --- J'enterre pour 3000 francs d'affaires personnelles, avec l'espoir de venir les rechercher un jour --- Le Drapeau a été brûlé. Les fanions des unités brûlés ou enterrés ---</blockquote>
+<h3 class="ci-h3">23 juin 1940</h3>
+<blockquote class="testimony">A 9h le régiment, tel qu'il en reste, est rassemblé. Dans la nuit des officiers et des hommes sont partis pour tenter de gagner la France non occupée. Sur beaucoup de poitrines brille la croix de guerre --- Nous nous mettons en marche et traversons les lignes, la tête haute, conscients d'avoir fait notre devoir et sauvé l'honneur du Régiment, dont l'effectif est passé, depuis le 21 mai, de 2500 à 700h.</blockquote>
+<h3 class="ci-h3">Annexe — récit détaillé du combat de Saint-Germain (18 juin 1940)</h3>
+<p>Relation plus complète du même combat, rédigée par le sous-lieutenant Colin « en annexe » à son journal de marche.</p>
+<blockquote class="testimony">*18 juin 1940*</blockquote>
+<blockquote class="testimony">Depuis le 9 juin, l'Armée manoeuvrait en retraite. Partis du Bois le Ligant, entre la Meuse et la Chiers, le 11e Régiment Etranger était arrivé le 17 juin, à la fin de l'après-midi, à proximité du village d'Ugny sur Meuse, venant de Void, où nous avions stationné, en flanc garde face à l'Ouest, depuis la nuit du 16 au 17.</blockquote>
+<blockquote class="testimony">A midi, nous avions eu le contact des éléments allemands avancés, ce qui avait donné l'occasion au canon de 25 de la C.R.E. commandé par le lieutenant Favre et le S/chef Bostan, montés à motocyclette, d'abattre, à courte portée, chargeant contre toute : fusils, bagages, dont une auto blindée, tuant 3 hommes dont un major et faisant un prisonnier --- Vers 15 heures, les 3 Compagnies, en position au mont de Void, s'occupent, du Bataillon, [de tenir] le village et de gagner Saint-Germain sur Meuse, égrené. La défense de Void est assurée par une Compagnie d'un régiment d'infanterie, renforcée pendant un certain temps de deux sections de notre 2e Bataillon ---</blockquote>
+<blockquote class="testimony">Lorsque nous quittons Void, par la route de St Germain, cette dernière termine sa mise en place et se barricade dans le village ---</blockquote>
+<blockquote class="testimony">Sous la pluie d'orage, nous gagnons rapidement Saint-Germain où nous parvenons vers la Meuse, et de là, nous dirigeons vers Ugny, gênés par des convois de toutes sortes qui créent des embouteillages incessants --- Peu après Ugny, nous déboîtons à gauche et stationnons sous bois. Nous nous restaurons tant bien que mal et ne tardons pas à sombrer dans le sommeil, malgré l'humidité pénétrante ---</blockquote>
+<blockquote class="testimony">Vers 23h30, les chefs de section de la 1e Cie sont appelés au P.C. du Lt Pierre : le sergent-chef Plus, le S/Lt Didier et Dupuis, et moi-même. Dans la matinée du 18, le 2e Bataillon doit faire un mouvement offensif sur Void et le canal de la Marne au Rhin, dont l'ennemi a pris possession dans la soirée du 17. Le 3e Bataillon se tiendra en soutien, interdisant le canal au sud de Void.</blockquote>
+<blockquote class="testimony">Notre Bataillon reste en réserve, la 1e Cie à St Germain, la 3e à Ugny, et la 2e au carrefour de l'étoile, dans le Bois de Void, (sur la route Void-Euville)</blockquote>
+<blockquote class="testimony">Dans la nuit, nous reprenons en sens inverse le chemin de la veille, en direction de St Germain. J'ai déposé mon sac à la roulante qui suit en flanc, geste que je devais d'ailleurs regretter par la suite; car, dans le courant de la journée du 18, ils seront pris sous un bombardement intense, devront se déplacer et disparaîtront pour la plupart. Je suppose, qu'ayant été employées dans des convois d'Artillerie ou autres, elles suivirent le mouvement en direction des Vosges --- Toujours est-il que ce fut la perte de mon sac de toilette et de ma sacoche, où j'avais divers objets de valeur ---</blockquote>
+<blockquote class="testimony">Vers 1h du matin, nous atteignons St Germain. La 1e Cie a pour mission de défendre les ponts de la Meuse : pont de la route venant de Void, pont de la voie ferrée Pagny s/Meuse à Vaucouleurs ---</blockquote>
+<blockquote class="testimony">Voici la répartition de la 1e Cie : Ma section (la 4e) tiendra le pont route avec mission d'interdire le passage de la Meuse et la route, avec destruction du pont, en cas de repli des éléments amis se trouvant en avant. Je suis renforcé par la 2e section du S/Lt Didier. Mais cet ensemble de deux sections ne représente qu'une quinzaine d'hommes. La 1e Section, encore assez nombreuse, tiendra le pont chemin de fer avec une mission analogue.</blockquote>
+<blockquote class="testimony">La 3e section (S/Lt Dupuis) reste en réserve au P.C. de la Cie, que le Lieutenant Pierre, Cdt la Cie, a établi dans une cave du village ---</blockquote>
+<blockquote class="testimony">Arrivé sur mon emplacement, je relève une section de la 5e Compagnie, commandée par le S/Lt Bertot qui rejoint son unité. Quelques éléments de la Cie d'accompagnement, également en place à cet endroit, ne quittent pas pour rejoindre leur Compagnie.</blockquote>
+<blockquote class="testimony">Mes armes une fois placées de part et d'autre de la route, avec une sentinelle au-delà du pont, je fais l'inspection des environs. Il fait encore nuit, puisqu'il est 2h du matin, mais pas assez sombre pour que je ne puisse me rendre compte du terrain : la Meuse qui coule N-S, a découpé, sur ma droite, des îlots très boisés qui ne confèrent toute vue rapprochée. Cependant par-dessus les cimes des arbres j'aperçois la cote 292 et tout à fait en arrière à droite, le village d'Ouches. Devant moi, un glacis --- le fond de la vallée --- permettant à nos armes de tirer en rasance jusqu'au rebord ouest de la vallée, des pentes très boisées ---</blockquote>
+<blockquote class="testimony">Sur ma gauche, la Meuse fait un coude vers l'Est et disparaît derrière un mamelon ---</blockquote>
+<blockquote class="testimony">A cette heure, je suis seul sur la lisière ouest du village. Remontant vers celui-ci, je vois arriver la compagnie qui se rend à St Germain, ayant à sa tête le chef du 2e Bataillon, Cdt d'Alegron, le capitaine et le lieutenant Coubard. Ils me serrent la main au passage. Le Commandant semble épuisé. Je devais apprendre, par la suite, qu'avant le départ, il avait dit à son adjudant-major : "Je vais être tué. Conservez mon portefeuille" --- pressentiment qui devait se révéler fondé ---</blockquote>
+<blockquote class="testimony">Je peux m'attarder un peu à une ferme située à 100m de mon emplacement. Elle a été évacuée la veille et les plats sont encore gardés sur la table. Je fais faire du café qui est porté aux hommes. Ils en ont besoin.</blockquote>
+<blockquote class="testimony">Rapidement, le jour se lève. Je vois de la ferme. La route et le pont sont encombrés d'un convoi d'Artillerie qui se replie en arrière de la Meuse, et d'une foule de soldats de toutes unités cherchant leurs régiments. J'en ramasse le plus possible qui viennent grossir mon effectif. Ceux dont les unités sont dans les parages, je les fais rejoindre d'après mes indications ---</blockquote>
+<blockquote class="testimony">Pendant ce temps, un bataillon du 4e Colonial est monté vers la route Void-Vaucouleurs, sur notre gauche, afin de s'installer en bordure du canal. Mais les cadres, partis en reconnaissance sont accueillis à coups de fusil. Les Boches sont déjà là. Le Bataillon revient. Une compagnie s'installe à ma gauche, une autre sur ma droite, en arrière de la Meuse. Ceci renforce singulièrement la défense du village.</blockquote>
+<blockquote class="testimony">Notre 2e Bataillon a pu placer sans encombre la 7e Compagnie vers Villeroy, la 5e sur la cote 292 (N.O. d'Ouches) et les mitrailleuses, canons de 25 et mortiers de la C.A.2, en avant de la Meuse, entre St Germain et le carrefour d'Ouches --- Ceci pendant que la 6e Compagnie, avec le chef de Bataillon, effectue son mouvement, sur Void qui doit toujours être en partie tenu par des éléments d'Infanterie.</blockquote>
+<blockquote class="testimony">Je reçois de la C.A.1, en renforcement, 1 canon de 25 et 1 groupe de mitrailleuses (S/chef Léonard et S/Lersen). La 2e Cie s'est postée en bouchon au carrefour de l'étoile, sur la route Void-Vaucouleurs ---</blockquote>
+<blockquote class="testimony">Le 3e Bataillon a reçu un ordre de l'I.D. lui enjoignant de ne pas se porter sur Vacon et Sauvoy comme prévu, mais de rester à Ugny.</blockquote>
+<blockquote class="testimony">Les heures passent : la route est maintenant dégagée de tout encombrement. Seuls subsistent les éléments mis en place avec une mission bien déterminée : ma section, à gauche une compagnie du 4e Colonial, à droite la 9e Compagnie du 4e colonial --- enfin, en avant du pont, une section du 4e colonial.</blockquote>
+<blockquote class="testimony">Vers la moitié de la matinée, les Boches commencent à tirer. Sur notre droite, les obus pleuvent. Des sections sont là-haut sur la cote 292. J'aperçois de mon emplacement, par-dessus les crêtes, les hommes à plat ventre sur le glacis, sans intention de s'abriter. Ces éléments se replient en arrière de la crête. Cela me semble être des tirailleurs (le 21e R.T.A. est à la droite de la 5e Cie). Celle-ci se fait hacher sur place. Les obus tombent, pilonnant et tuant, soulevant, avec les corps, des gerbes de terre et de fumée ---</blockquote>
+<blockquote class="testimony">La 6e Compagnie qui marchait sur Void, tombe sur des défenses allemandes déjà solidement organisées. Elle se fait décimer par les mitrailleuses et l'Artillerie tirant sur la route de St Germain et le village de Void. En quelques instants, il ne reste rien de l'unité : le Commandant d'Alegron est tué, le capitaine Magne tué, le lieutenant Coubard, blessé, peut être ramené dans nos lignes --- Les Allemands avaient donc pris le village de Void la veille à la tombée de la nuit ! Nos 2 sections y ont été entièrement démolies, ainsi que la Compagnie d'Infanterie qui avait mission de défendre le village ---</blockquote>
+<blockquote class="testimony">La 9e Compagnie a pris le contact au carrefour de l'Étoile et résisté sur place malgré le repli de ses voisins, éléments du 6e R.D. et de Coloniale --- Elle fait des victimes et je remarque sur la route, un prisonnier allemand qui arrive escorté, relevant fièrement la tête ---</blockquote>
+<blockquote class="testimony">De mon emplacement, je ne puis rien faire, n'y ayant rien contre le poste d'observation allemand qui ne cesse de nous survoler. Mais les rafales de mitrailleuses sont impuissantes. Le "Mouchard" --- ainsi l'appelons-nous --- semble blindé. Cependant, hier, nous en avons abattu un à Void. Maintenant il nous arrose de tracts incitant à la reddition, tout en renseignant son Artillerie. Celle-ci s'est rapprochée. Elle tire à vue sur la 5e Cie, de la lisière des bois de Void.</blockquote>
+<blockquote class="testimony">Un instant, nos 75 la font taire. Mais ce sont leurs derniers obus. Une batterie de 75 vient s'installer dans un verger à 100m derrière moi, possédant encore ses coups par pièce ! Elle reçoit d'ailleurs l'ordre de se replier à nouveau ---</blockquote>
+<blockquote class="testimony">Puis les obus se rapprochent et tombent maintenant sur la route, sur la lisière du village et sur le centre même de l'agglomération. Sur ma gauche, des éléments de Coloniale refluent vers les maisons, après quelques rafales assez ajustées. Un obus tombant à quelques mètres blesse le S/chef Manue avec qui je parlais. Un petit éclat me frappe la cuisse, mais ne me fait qu'une légère contusion.</blockquote>
+<blockquote class="testimony">La cadence des rafales s'accentue. Elles sont bien ajustées, résultat évident de l'observation aérienne à laquelle nous sommes soumis --- Bientôt les minenwerfer s'en mêlent ; engins terribles dont le projectile presque silencieux vous surprend. Nous utilisons au mieux nos trous. Le centre d'instruction divisionnaire qui stationnait à St Germain avait eu l'heureuse idée de commencer des travaux d'organisation du terrain à cet endroit. Hélas !, il ne les a pas camouflés le moins du monde ---</blockquote>
+<blockquote class="testimony">Dans l'après-midi, le 2e Bataillon reçoit l'ordre de repli en arrière de la Meuse, ainsi que tous les éléments se trouvant encore en avant de cette rivière. Le 2e Bataillon est d'ailleurs réduit à peu de chose : la 6e Compagnie n'existe plus. De la 5e, il revient une dizaine d'hommes. Le Capitaine Lanchon qui la commandait a été pulvérisé par un obus. Le lieutenant Viel, commandant la C.A.2, a été tué. Le lieutenant Jalouille, qui le remplace, se fait tuer à son tour avec beaucoup de ses hommes en cours de repli. Seule la 7e n'a pas trop de casse ---</blockquote>
+<blockquote class="testimony">Le repli s'effectue par le pont d'Ouches et par celui de St Germain, où je vois passer la 2e Compagnie du 1er Bataillon. Son chef, le lieutenant Roux a eu le bras haché par une rafale de mitrailleuse. Il va en tête, suivi d'une charrette qui transporte des blessés, et des restes de sa Compagnie. Complètement encerclés, il leur a fallu se frayer un passage de vive force. Grâce au S/lieutenant Cachot, qui a remplacé Roux, tout le matériel a pu être ramené (mitrailleuses, canons de 25).</blockquote>
+<blockquote class="testimony">Puis ce sont les restes de la 5e Cie qui rentrent. Il était temps. De toutes les lisières de bois les Boches débouchent, soutenus par l'Artillerie qui tire à vue, et par les mitrailleuses. Le sous-lieutenant Bertot rentre le dernier, à bout de forces, poursuivi par des rafales de mitrailleuses. Il fait une chaleur écrasante, les balles sifflent de tous côtés. Cela va être à nous d'entrer en action. Je fais passer derrière la Meuse la section de Coloniale placée en tête de pont. Elle a ralenti l'avance des Boches qui se terrent. Mais sur la gauche, ce sont les feldgrau qui sortent des bois et progressent dans les blés en direction du pont.</blockquote>
+<blockquote class="testimony">J'ai 3 F.M., 1 groupe de mitrailleuses, 1 mitrailleuse boche, 1 mitraillette qui crachent. Les obus nous encadrent, mais les Boches doivent ramper dans les blés. Nous en suivons les sillages. Ils peuvent s'infiltrer en utilisant les buissons et le fossé du chemin qui descend du bois --- A 200m j'en vois qui progressent. Pas de blindés. Il leur eût fallu se risquer à une mort certaine. Le moment est venu de faire sauter le pont. « La déflagration va être si violente », me dit le sous-officier du Génie chargé de la destruction, « qu'il faut se retirer à 50m en arrière, après avoir abrité les armes le mieux possible » --- Quelques minutes après, le pont voltige dans les airs --- Immédiatement les obus s'abattent. Il faut cependant revenir aux pièces, car le Boche profite de notre inaction pour progresser : certains sont à 100m de la Meuse. Si nous les laissons s'installer là, ils vont nous gêner terriblement. Malgré nos recommandations antérieures, certains hommes ne rejoignent pas de suite les emplacements de combat. Je me retrouve seul avec [quelques] hommes pour remettre en batterie les 6 armes et ouvrir le feu.</blockquote>
+<blockquote class="testimony">A ma gauche, plus personne : la Coloniale a disparu. Il est vrai que les obus tombent serrés et que les hommes, pris dans le bombardement, sont à plat ventre dans de malheureux boyaux de 30 à 40 cm de profondeur, ou même sur le terrain nu. J'ai des blessés, leur évacuation réclame des hommes. Des tués également, dont le S/chef Lénart du canon de 25 --- sans doute d'autres, car certains n'ont jamais reparu.</blockquote>
+<blockquote class="testimony">Je me réinstalle rapidement à droite de la route. Les mitrailleuses ouvrent le feu et descendent les Fritz trop aventurés. J'envoie le Cal chef Chéroff avec sa mitraillette à gauche de la route pour interdire ce côté du pont. En hâte j'envoie un compte-rendu au lieutenant Pierre, lui demandant du personnel de renfort. Le S/lieutenant Didier, qui le porte, arrivera-t-il ? 20 minutes après, il est de retour, je respire. Il est passé entre les obus et l'a échappé belle. Il me ramène la 3e section, du sergent Dupuis qui amène ses F.M. en soutien. Ils ouvrent le feu aussitôt, les nôtres étant enrayés, faute d'huile et de munitions ---</blockquote>
+<blockquote class="testimony">Peu de temps après, Bertot, le sous-lieutenant de la 5e Cie, m'amène une remorque de charrette pleine de munitions. Il était temps, car les balles sifflent dru et il nous faut des cartouches pour neutraliser les armes qui nous tirent à faible distance.</blockquote>
+<blockquote class="testimony">Je peux enfin riposter efficacement, après avoir fait nettoyer les F.M. et les avoir huilés avec de l'huile de boîte à sardines. 7 fusils mitrailleurs, 3 mitrailleuses, 1 petite mitraillette crachent à chaque mouvement de l'ennemi. J'ai des munitions, tout va bien --- Un mortier tirant du village m'appuie par quelques obus bien placés. Mais cela ne dure pas. Un coup au pont ennemi l'entame.</blockquote>
+<blockquote class="testimony">Un appareil de transmission m'apporte un papier du lieutenant Pierre, c'est à peine lisible : « L'ennemi s'infiltre par la droite, vers les Coloniaux qui ont lâché. Tâchez de renforcer le dispositif de ce côté. » J'envoie cependant, à la fin de la matinée, deux F.M. en renfort à la 9e Cie de Coloniale qui est à ma droite. J'envoie encore le caporal Matagne avec un F.M. sur ma droite, en liaison avec ce qui reste de cette 9e Cie. Cette unité avait reçu en renfort des hommes du C.I.D. de la 20e D.I., gens n'ayant jamais vu le feu, exposés dès le moindre bombardement intense. Ceux-ci se sont affolés et ont dû communiquer la panique que le commandant de la 9e Cie a eu du mal à enrayer. Notre section de commandement, avec le S/chef Konecka, tient également la défense sur la lisière N du village ---</blockquote>
+<blockquote class="testimony">Sur la cote 292 et sur toute la crête qui va de ce point au village d'Ouches, l'ennemi progresse, hors de portée de mes armes ---</blockquote>
+<blockquote class="testimony">Après un semblant d'accalmie, nous voici à nouveau encadrés de près par l'Artillerie et le minen. Plusieurs obus nous soufflent violemment et nous arrachent de terre ; mon masque et ma capote, restés au bord du boyau, sont déchiquetés. Enfin, un coup bien placé, juste dans la tranchée me tue 5 hommes et blesse grièvement mon ordonnance qui se trouvait à côté de moi : un léger tournant du boyau m'a protégé. J'évacue le blessé et contemple les dégâts. Nous dégageons 3 fusils mitrailleurs des décombres ; ils sont en piteux état. Un des 5 corps vit encore, nous le dégageons. C'est Libigorski, un chic type, engagé volontaire pour la durée de la guerre. Transpercé de part en part, il baigne dans son sang. Il réclame l'infirmier et demande à boire --- Je le fais boire à mon bidon. Manquant de soif moi-même, sous le coup de la chaleur et de l'émotion, sans même prendre le soin de nettoyer le goulot ensanglanté, je n'hésite pas à boire après lui --- Libigorski ne tarde pas à mourir. En même temps que lui, dans le même trou, a été tué un pauvre Kurazewski, et deux autres tués : les deux Wejner, et enfin Jurkiewicz --- coïncidence étrange, mais vraie : nous perdons là 5 légionnaires d'élite. Le caporal Matagne, qui s'y trouvait un moment plus tôt et que j'avais renvoyé à droite, a eu une belle chance !</blockquote>
+<blockquote class="testimony">Cependant, devant moi et sur ma gauche, la progression ennemie est arrêtée. Nous avons l'impression d'avoir démoli tous les éléments avancés : en tous cas ils ne bougent ni ne tirent plus. Le calme se fait de ce côté. Vers Ouches sur Meuse, par contre, la progression ennemie s'accentue, mais je n'y peux rien. Les colonnes boches, dispersées, gagnent vers le village. Les mitrailleuses de St Germain se taisent, sans doute détruites. Nos canons sont muets ; plus de liquide ou plus de munitions. Ouches, pilonné par le gros calibre ennemi, brûle comme une torche. Sur la crête 292, des gens se rendent, les bras en l'air. Ce doit être des hommes du 21e R.T.A. Qu'y pouvons-nous ---</blockquote>
+<blockquote class="testimony">La nuit ne va pas tarder à tomber, il doit être assez tard, 20h environ. J'ai perdu la notion de l'heure pendant cette journée.</blockquote>
+<blockquote class="testimony">Un ordre de repli, immédiatement suivi d'un contre-ordre, nous est transmis. Il faut donc que St Germain tienne pour protéger le repli des autres éléments de la division et du corps d'armée. Le P.C. du Régiment est resté toute la journée à St Germain, installé dans une cave.</blockquote>
+<blockquote class="testimony">La C.C. et la C.R.E., dans un bois à 500m à l'Ouest de St Germain se sont fait démolir par l'Artillerie. De Konzieès, lieutenant des transmissions, est tué. La mort de cet officier me peine beaucoup. Le Médecin auxiliaire Filhol est également mortellement touché. Tous les cadavres d'officiers qu'on a pu recueillir sont placés dans l'Église, mais un obus qui frappe le clocher les couvre de gravats.</blockquote>
+<blockquote class="testimony">Vers 21h, St Germain est fortement menacé. Sur la droite Ouches est aux Allemands. Peu de chose les empêche de passer la Meuse : presque toutes les armes automatiques de la lisière N de St Germain sont démolies ou restent soit sans servants soit sans munitions. La situation est critique. Au P.C., le chef de Bataillon Clément, commandant le XIe R.E.I., entouré du Cdt Rolitzeille, chef d'État-Major, du Capitaine Costa, commandant la C.R.E., des lieutenants Vrenque, Laforest et Maland, de l'E.M., se résout à brûler le Drapeau. On en conserve la cravate que, sous les obus, le lieutenant Maland, chef de la section des éclaireurs motos, porte au Colonel Robert, notre ancien chef de corps, actuellement Cdt de l'Infanterie Divisionnaire, par la route d'Ugny encore libre ---</blockquote>
+<blockquote class="testimony">Mais, chose curieuse, l'ennemi n'accentue pas davantage sa progression sur St Germain. Il a réussi cependant à s'emparer du village, en accentuant son mouvement d'encerclement.</blockquote>
+<blockquote class="testimony">La nuit tombe. Peu à peu, les obus s'espacent et le calme s'étend sur le champ de bataille ---</blockquote>
+<blockquote class="testimony">Le combat de Saint-Germain est fini ---</blockquote>
+<blockquote class="testimony">Les Allemands ne prendront pas le village dans la soirée. Ils jugent sans doute inutile de sacrifier encore des hommes, sachant, ce que nous ignorons --- qu'il nous faudra sans tarder abandonner le village de nous-mêmes. En effet l'ennemi a franchi la Meuse au Nord d'Ouches et progresse par la rive vers nous. De l'autre côté, il a atteint Vaucouleurs : nous voici pris dans une tenaille.</blockquote>
+<blockquote class="testimony">A 1 heure du matin, nous parvient l'ordre de repli. La nuit est très noire, étrangement calme ; nous détruisons les mousquetons que nous ne pouvons emporter, mais ne laissons aucune arme automatique. Nous partons, terriblement chargés de munitions, abandonnant les cadavres de nos braves légionnaires ---</blockquote>
+<blockquote class="testimony">Le Poste de secours n'a pu évacuer Saint-Germain avant nous : il était encombré de nombreux blessés non évacués. Le Médecin Chef a décidé de rester avec eux, ainsi que le Pharmacien Carraz, le chef de musique Petit, le sous-chef Liégeois, les dentistes Arakian et [...]</blockquote>
+<blockquote class="testimony">Ignorants d'ailleurs de cet événement, nous refluons en direction d'Ugny. Dans les bois, à l'Est, les patrouilleurs ennemis tiraillent ; au Sud-Ouest, vers Rigny-la-Salle, nous apercevons également leurs balles traceuses --- Derrière nous, ils visitent déjà St Germain et s'emparent du Poste de secours.</blockquote>
+<blockquote class="testimony">Le jour se lève. Nous avons rejoint le P.C. du 1er Bataillon, près d'Ugny, où se regroupent les unités. Quelques instants plus tard, nous reprenons la marche, en direction du Sud-Est.</blockquote>
+<blockquote class="testimony">C'est le 9e jour de la retraite qui commence ---</blockquote>
+<blockquote class="testimony">*[Transcription établie d'après les pages manuscrites originales --- certains mots, difficilement lisibles, restent incertains et sont signalés entre crochets]*</blockquote>
+<h3 class="ci-h3">Sources</h3>
+<ul>
+  <li>Extrait du journal de marche de la 1re Compagnie, avril 1940 (lieutenant Pierre)</li>
+  <li>Extrait du journal de marche de la 1re Compagnie, 1er–15 mai 1940 (capitaine Le Moine)</li>
+  <li>Mémoires du sous-lieutenant Colin, C.R.E. et 1re Compagnie (10 mai – 23 juin 1940), transcription établie d'après les pages manuscrites originales</li>
+</ul></div>
+
+<h2 class="carnet-title">Effectif de la compagnie (78 fiches)</h2>
+
+<div class="eff-stats">
+  <div class="eff-stat"><div class="n">78</div><div class="l">Recensés</div></div><div class="eff-stat mpf"><div class="n">16</div><div class="l">Morts pour la France</div></div><div class="eff-stat"><div class="n">13</div><div class="l">Prisonniers</div></div><div class="eff-stat"><div class="n">46</div><div class="l">Blessés</div></div><div class="eff-stat"><div class="n">5</div><div class="l">Évadés</div></div><div class="eff-stat"><div class="n">3</div><div class="l">Déserteurs</div></div>
+</div>
+
+<div class="eff-toolbar">
+  <div class="eff-search">
+    <input type="text" id="effSearch" placeholder="Rechercher un nom, un grade, un lieu…" autocomplete="off">
+  </div>
+  <div class="eff-chips" id="effChips">
+    <span class="eff-chip active" data-badge="">Tous</span><span class="eff-chip" data-badge="MPF">Morts pour la France</span><span class="eff-chip" data-badge="Prisonnier">Prisonniers</span><span class="eff-chip" data-badge="Blessé">Blessés</span><span class="eff-chip" data-badge="Évadé">Évadés</span><span class="eff-chip" data-badge="Déserteur">Déserteurs</span>
+  </div>
+</div>
+<div class="eff-count" id="effCount"></div>
+
+<table class="eff-table" id="effTable">
+  <thead>
+    <tr>
+      <th data-key="nom">Nom <span class="arrow"></span></th>
+      <th data-key="grade_rank">Grade <span class="arrow"></span></th>
+      <th data-key="section">Section / affectation <span class="arrow"></span></th>
+      <th data-key="badges">Statut <span class="arrow"></span></th>
+      <th>Fiche</th>
+    </tr>
+  </thead>
+  <tbody id="effBody"></tbody>
+</table>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+const EFF_DATA = [{"nom": "LE MOINE", "prenom": "Marcel Raymond Marie", "grade": "capitaine", "grade_rank": 1, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°22 du 27/09/1940 — Evadé le 24/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#le-moine-marcel-raymond-marie"}, {"nom": "COLLIN", "prenom": "Yann Marie Charles", "grade": "sous lieutenant", "grade_rank": 4, "section": "1ère section à la 1ère cie", "badges": ["Prisonnier", "Évadé", "Blessé"], "details": "Liste des prisonniers n°22 du 27/09/1940 — Tentative d’évasion ratée, a été repris et envoyé en Allemagne — Il est blessé légèrement le 18/06/1940 par éclat d’obus à la cuisse alors qu’il discute avec le sergent Manue", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#collin-yann-marie-charles"}, {"nom": "SAUTOUR", "prenom": "Henri Frédéric", "grade": "sous lieutenant", "grade_rank": 4, "section": "chef de section", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 vers 15h30 au genou et à l’épaule (évacué sur HOE2 puis sur hôpital complémentaire)", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sautour-henri-frederic"}, {"nom": "JURION", "prenom": "Marc André Maurice Félicien", "grade": "lieutenant", "grade_rank": 5, "section": "groupe franc, chef de section", "badges": ["MPF", "Blessé"], "details": "Mort le 13/05/1940 — Lieu : Filstroff — Le 13/05/1940 il est blessé par balle lui traversant les deux cuisses (évacué sur le GSD 42)", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jurion-marc-andre-maurice-felicien"}, {"nom": "PIERRE", "prenom": "Emile Georges Louis", "grade": "lieutenant", "grade_rank": 5, "section": "chef de section", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pierre-emile-georges-louis"}, {"nom": "FOKINE", "prenom": "Alexandre", "grade": "adjudant chef", "grade_rank": 6, "section": "chef de section", "badges": ["MPF", "Blessé"], "details": "Mort le 22/05/1940 — Lieu : Bras sur Meuse — Il est blessé le 21/05/1940 par éclats d’obus au ventre au Nord des ruines Heurtebise (évacué sur GACA 18)", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fokine-alexandre"}, {"nom": "PLUS", "prenom": "Pierre Paul Etienne", "grade": "sergent chef", "grade_rank": 8, "section": "4è section cdt", "badges": ["Prisonnier", "Rapatrié"], "details": "Liste des prisonniers n°47 du 02/12/1940 — Rapatrié et démobilisé le 15/07/1941 par le centre de Tarbes", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#plus-pierre-paul-etienne"}, {"nom": "DIDIER", "prenom": "André", "grade": "sergent", "grade_rank": 9, "section": "2è section cdt", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#didier-andre"}, {"nom": "DUPUIS", "prenom": "Louis Henri", "grade": "sergent", "grade_rank": 9, "section": "3è section cdt", "badges": ["Prisonnier", "Rapatrié", "Blessé"], "details": "Liste des prisonniers n°31 du 15/10/1940 — Réformé par les autorités allemandes le 01/12/1940 — Evacué sur GSD 6 en mai 1940. Il est blessé le 19/06/1940 à Saint Germain sur Meuse et ramassé par les allemands, il est hospitalisé à Nancy jusqu'au 01/12/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dupuis-louis-henri"}, {"nom": "TIMERMAN", "prenom": "Grégoire", "grade": "sergent", "grade_rank": 9, "section": "section Sautour tireur FM. Groupe franc", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 à l’avant bras par un éclat d’obus", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#timerman-gregoire"}, {"nom": "CHEVOPPE", "prenom": "Antoine", "grade": "caporal chef", "grade_rank": 10, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chevoppe-antoine"}, {"nom": "FISCHER", "prenom": "", "grade": "caporal chef", "grade_rank": 10, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fischer"}, {"nom": "GERARD", "prenom": "André Eugène", "grade": "caporal chef", "grade_rank": 10, "section": "secrétaire du PC du colonel", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : Martincourt", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gerard-andre-eugene"}, {"nom": "DELORME", "prenom": "Henri Pierre Raymond", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["MPF"], "details": "Mort le 25/05/1940 — Lieu : Bois d'Inor", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delorme-henri-pierre-raymond"}, {"nom": "GRENOUILLAT", "prenom": "Jean Abel Justin", "grade": "caporal", "grade_rank": 11, "section": "groupe franc", "badges": ["MPF", "Blessé"], "details": "Mort le 05/06/1940 — Lieu : Pont à Chaussy à l'ambulance chirurgicale légère 206 — Il est blessé dans la nuit du 12 au 13/05/1940 et évacué sur le GSD 42 puis sur l'ACL 206", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#grenouillat-jean-abel-justin"}, {"nom": "JANKIEL", "prenom": "Fedemann", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Blessé"], "details": "Il est porté disparu le 27/05/1940. Blessé, il est mentionné dans les diagnostiques opératoires de l'HOE1/5 d'Ancemont", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jankiel-fedemann"}, {"nom": "KARDURK", "prenom": "Herman", "grade": "caporal", "grade_rank": 11, "section": "cuisinier", "badges": ["Prisonnier", "Évadé"], "details": "Fait prisonnier — Evadé", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kardurk-herman"}, {"nom": "KONNECKE", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "section de Cdt", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#konnecke"}, {"nom": "MATTAGNE", "prenom": "Auguste", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°34 du 21/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mattagne-auguste"}, {"nom": "MONTFORT", "prenom": "Yvon", "grade": "caporal", "grade_rank": 11, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#montfort-yvon"}, {"nom": "PURRINI", "prenom": "Etienne", "grade": "caporal", "grade_rank": 11, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé dans la nuit du 12 au 13/05/1940 par balle de mitraillette à l'épaule (il est à l’hôpital de Cahors en novembre 1940. Il y rencontre le père de Louis Boyer mort au combat à Inor le 27/05/1940)", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#purrini-etienne"}, {"nom": "ROMINGER", "prenom": "Joseph Alexandre", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["MPF"], "details": "Mort le 28/05/1940 — Lieu : Rethel", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rominger-joseph-alexandre"}, {"nom": "SAJTI", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "groupe franc", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sajti"}, {"nom": "SLAIS", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "section Sautour tireur FM", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 par balle à la poitrine, a un pouce coupé — ⚠ Peut être en doublon avec Slaies", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#slais"}, {"nom": "BERHO", "prenom": "Hahir", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#berho-hahir"}, {"nom": "KIESSWETTER", "prenom": "Zdeneck", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["MPF", "Blessé"], "details": "Mort le 22/05/1940 — Lieu : Fontaine de Crau — Il est blessé le 22/05/1940. \"Peu de temps auparavant, le légionnaire KIESSWATTER, l'épaule arrachée par les branches tombant sous l'impact d'un obus contre le tronc, était mort sans prononcer une parole.\"", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kiesswetter-zdeneck"}, {"nom": "SCZEPANIK", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 23/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sczepanik"}, {"nom": "TIMACHENKO", "prenom": "Sivirian", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier", "Blessé"], "details": "Liste des prisonniers n°18 du 19/09/1940 — Il est évacué le 17/04/1940 pour maladie", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#timachenko-sivirian"}, {"nom": "BENKOPF", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#benkopf"}, {"nom": "BOYER", "prenom": "Louis Roger", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 26/05/1940 — Lieu : Bois d'Inor", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#boyer-louis-roger"}, {"nom": "BUHRER", "prenom": "Emile", "grade": "2è classe", "grade_rank": 13, "section": "ordonnance de Le Moine", "badges": ["Démobilisé", "Blessé"], "details": "Il est blessé le 26/05/1940 et évacué sur l'HOE1/5 d'Ancemont", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#buhrer-emile"}, {"nom": "CASIRES", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est porté disparu le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#casires"}, {"nom": "CHMIELEWSKI", "prenom": "Chaïm Geladie", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chmielewski-chaim-geladie"}, {"nom": "CRIQUILLION", "prenom": "Alfred Raymond", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Démobilisé", "Blessé"], "details": "Il est blessé le 26/05/1940 (triplégie des 2 membres inférieurs et bras droit. Bras gauche amputé) (évacué sur hôpital complémentaire et réformé en 1941)", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#criquillion-alfred-raymond"}, {"nom": "DOMANGE", "prenom": "Eugène", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 et évacué sur l'HOE 1/5 à Ancemont jusqu'au 31/05/1940 puis sur Bordeaux", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#domange-eugene"}, {"nom": "FABRE", "prenom": "Philippe", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fabre-philippe"}, {"nom": "FERTSCHTING", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fertschting"}, {"nom": "FRIEDMANN", "prenom": "Antoine", "grade": "2è classe", "grade_rank": 13, "section": "groupe franc", "badges": ["Prisonnier", "Évadé"], "details": "Fait prisonnier le 21/06/1940 — Évadé le 10/04/1941, démobilisé à Châteauroux le 08/05/1941", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#friedmann-antoine"}, {"nom": "GOLAZ", "prenom": "Roger", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#golaz-roger"}, {"nom": "HOCHEPIED", "prenom": "Michel", "grade": "2è classe", "grade_rank": 13, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé le 13/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hochepied-michel"}, {"nom": "JURKIEWIECZ", "prenom": "Théodore", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 19/06/1940 — Lieu : Saint Germain sur Meuse", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jurkiewiecz-theodore"}, {"nom": "KURASZEWSKY", "prenom": "Wladislas", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 18/06/1940 — Lieu : Saint Germain sur Meuse", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kuraszewsky-wladislas"}, {"nom": "LENEVEU", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "section Sautour", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#leneveu"}, {"nom": "LIARD", "prenom": "Michel Auguste Clair", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 26/05/1940 au bois de Neudant", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#liard-michel-auguste-clair"}, {"nom": "LIBIGOCKI", "prenom": "Paul", "grade": "2è classe", "grade_rank": 13, "section": "groupe franc", "badges": ["MPF"], "details": "Mort le 18/06/1940 — Lieu : Saint Germain sur Meuse", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#libigocki-paul"}, {"nom": "LUZCZAK", "prenom": "Joseph", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 26/05/1940 et évacué sur l'HOE1/5 d'Ancemont", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#luzczak-joseph"}, {"nom": "MAGNE", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 non évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#magne"}, {"nom": "MEULEMANS", "prenom": "Marcel", "grade": "2è classe", "grade_rank": 13, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé dans la nuit du 12 au 13/05/1940, par balle de mitrailleuses dans les jambes et éclats d'obus sur le crâne", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#meulemans-marcel"}, {"nom": "MOLERO", "prenom": "Pedro", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#molero-pedro"}, {"nom": "MOROZ", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "section Sautour", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 non évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moroz"}, {"nom": "MULLER", "prenom": "Gyozo", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF", "Blessé"], "details": "Mort le 27/05/1940 — Lieu : Mouzay GSD 96 — Il est blessé le 22/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#muller-gyozo"}, {"nom": "PARMONIK", "prenom": "Wladislaw", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Démobilisé", "Blessé"], "details": "Fait prisonnier le 24/06/1940 — Il est blessé le 27/05/1940 non évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#parmonik-wladislaw"}, {"nom": "RAMOS", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#ramos"}, {"nom": "REANT", "prenom": "Fernand François Joseph", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Évadé", "Blessé"], "details": "Evadé le 12/12/1940 — Il est évacué le 17/04/1940 pour maladie. Le 22/04/1940 il entre à l'hôpital régional XI puis est évacué sur l'HOE n°2 à Metz. Le 28/04/1940 il est évacué sur l'hôpital Excelmans à Bar le Duc. Bénéficie de 10 jours de convalescence", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#reant-fernand-francois-joseph"}, {"nom": "RUDNICKI", "prenom": "Wasyl", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié", "Blessé"], "details": "Liste des prisonniers n°21 du 25/09/1940 — Rapatrié par train sanitaire du 16/01/1941 sur l'hôpital mixte de Castelnaudary (JO 28/03/1941 page 129 a) — Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rudnicki-wasyl"}, {"nom": "TEXIERA", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#texiera"}, {"nom": "VALKOWIAK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#valkowiak"}, {"nom": "VANDEBURGER", "prenom": "Robert", "grade": "2è classe", "grade_rank": 13, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé dans la nuit du 12 au 13/05/1940 (a le bras en bouillie) — ⚠ Peut être en doublon avec Vandhuysen aussi du groupe franc", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#vandeburger-robert"}, {"nom": "VILAIN", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#vilain"}, {"nom": "WASICA", "prenom": "Théophile", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Blessé"], "details": "Liste des prisonniers n°18 du 19/09/1940 — Il est évacué pour maladie le 04/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wasica-theophile"}, {"nom": "WIGORSKI", "prenom": "Stanislas", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 24/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wigorski-stanislas"}, {"nom": "ZANNONI", "prenom": "Joseph", "grade": "2è classe", "grade_rank": 13, "section": "groupe franc", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zannoni-joseph"}, {"nom": "BOITSCHENKO", "prenom": "Serge", "grade": "légionnaire", "grade_rank": 14, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé le 10/05/1940 par éclat de mine dans le dos (près des poumons)", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#boitschenko-serge"}, {"nom": "BRENDA", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["MPF"], "details": "Mort le 08/06/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#brenda"}, {"nom": "CAGERES RODRIGUEZ", "prenom": "Manuel", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : Bois d'Inor", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cageres-rodriguez-manuel"}, {"nom": "CROISIER", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "groupe franc, garde du corps de Jurion", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#croisier"}, {"nom": "DOMS", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#doms"}, {"nom": "HICHETIRI", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé dans la nuit du 12 au 13/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hichetiri"}, {"nom": "JARMINSKI", "prenom": "Joseph", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["Déserteur"], "details": "Il disparaît du PA3 et est soupçonné de désertion le 11/01/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jarminski-joseph"}, {"nom": "KAFER", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kafer"}, {"nom": "MARSINAK", "prenom": "Walaw", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["Déserteur"], "details": "Il disparaît du PA3 et est soupçonné de désertion le 11/01/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#marsinak-walaw"}, {"nom": "ROSE", "prenom": "Niel", "grade": "légionnaire", "grade_rank": 14, "section": "groupe franc", "badges": ["Blessé"], "details": "Il est blessé le 18/06/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rose-niel"}, {"nom": "WEJNER", "prenom": "Anton", "grade": "légionnaire", "grade_rank": 14, "section": "4è section", "badges": ["MPF"], "details": "Mort le 18/06/1940 — Lieu : Saint Germain sur Meuse", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wejner-anton"}, {"nom": "WEJNER", "prenom": "Stefan", "grade": "légionnaire", "grade_rank": 14, "section": "4è section", "badges": ["MPF"], "details": "Mort le 18/06/1940 — Lieu : Saint Germain sur Meuse", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wejner-stefan"}, {"nom": "WERNBERG", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 08/06/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wernberg"}, {"nom": "ZBROINSKI", "prenom": "Tadeuis", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["Déserteur"], "details": "Il disparaît du PA3 et est soupçonné de désertion Le 11/01/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zbroinski-tadeuis"}, {"nom": "MORATTO", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": ["Blessé"], "details": "Il est évacué pour fracture de l’extrémité du radius le 06/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moratto"}, {"nom": "SPICHALLA", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": ["Blessé"], "details": "Il est évacué pour maladie le 05/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#spichalla"}];
+let effSort = { key: 'grade_rank', dir: 1 };
+let effBadge = '';
+let effSearch = '';
+
+function effBadgeHTML(b) {
+  return b.map(x => `<span class="eff-badge ${x.replace(/[^A-Za-zÀ-ÿ]/g,'')}">${x}</span>`).join('');
+}
+
+function effRender() {
+  let rows = EFF_DATA.filter(d => {
+    if (effBadge && !d.badges.includes(effBadge)) return false;
+    if (effSearch) {
+      const hay = (d.nom+' '+d.prenom+' '+d.grade+' '+d.section+' '+d.details).toLowerCase();
+      if (!hay.includes(effSearch)) return false;
+    }
+    return true;
+  });
+
+  rows.sort((a,b) => {
+    let va = a[effSort.key], vb = b[effSort.key];
+    if (effSort.key === 'badges') { va = a.badges.join(','); vb = b.badges.join(','); }
+    if (typeof va === 'string') va = va.toLowerCase();
+    if (typeof vb === 'string') vb = vb.toLowerCase();
+    if (va < vb) return -1 * effSort.dir;
+    if (va > vb) return 1 * effSort.dir;
+    return a.nom.localeCompare(b.nom);
+  });
+
+  document.getElementById('effCount').textContent = rows.length + ' légionnaire(s) affiché(s) sur ' + EFF_DATA.length;
+
+  document.getElementById('effBody').innerHTML = rows.map(d => `
+    <tr>
+      <td class="eff-nom">${d.nom}${d.prenom ? ' <span class="eff-prenom">'+d.prenom+'</span>' : ''}</td>
+      <td>${d.grade}</td>
+      <td class="eff-section">${d.section || ''}</td>
+      <td>${effBadgeHTML(d.badges)}</td>
+      <td>${d.url ? `<a class="eff-fiche" href="${d.url}" target="_blank" rel="noopener">Voir la fiche →</a>` : '<span class="eff-nofiche">—</span>'}</td>
+    </tr>
+  `).join('');
+}
+
+document.getElementById('effSearch').addEventListener('input', e => {
+  effSearch = e.target.value.trim().toLowerCase();
+  effRender();
+});
+
+document.getElementById('effChips').addEventListener('click', e => {
+  const chip = e.target.closest('.eff-chip');
+  if (!chip) return;
+  document.querySelectorAll('.eff-chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  effBadge = chip.dataset.badge;
+  effRender();
+});
+
+document.querySelectorAll('#effTable thead th[data-key]').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.key;
+    if (effSort.key === key) { effSort.dir *= -1; } else { effSort = { key, dir: 1 }; }
+    document.querySelectorAll('#effTable thead .arrow').forEach(a => a.textContent = '');
+    th.querySelector('.arrow').textContent = effSort.dir === 1 ? '▲' : '▼';
+    effRender();
+  });
+});
+
+effRender();
+
+(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>

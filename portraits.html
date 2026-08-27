@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portraits — 11e REI</title>
+<meta name="description" content="Galerie de portraits des légionnaires du 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940), classés par ordre alphabétique.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  html{overflow-x:hidden}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+
+  header{background:var(--card);border-bottom:2px solid var(--orange);padding:1.4rem 1.5rem 1.2rem;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{color:var(--muted);font-family:'EB Garamond',serif;font-style:italic;font-size:.95rem}
+  header .hint{color:var(--muted);font-size:.72rem;margin-top:.35rem}
+  header .back{display:inline-block;margin-top:.6rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  .az-nav{position:sticky;top:0;z-index:40;background:var(--card);border-bottom:1px solid var(--border);
+    padding:.6rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center}
+  .az-link{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:500;color:var(--ink);
+    text-decoration:none;border:1px solid var(--border);border-radius:3px;padding:.25rem .55rem;background:var(--row)}
+  .az-link:hover{background:var(--orange)}
+
+  main{max-width:1100px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  .letter-section{margin-bottom:2.4rem}
+  .letter-section h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.6rem;color:var(--ink);
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin-bottom:1rem;display:flex;align-items:baseline;gap:.6rem}
+  .letter-section h2 .count{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:500;color:var(--muted)}
+
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+  .pcard{display:flex;flex-direction:column;text-decoration:none;color:inherit;
+    background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;
+    transition:border-color .15s,box-shadow .15s,transform .15s}
+  .pcard:hover{border-color:var(--link);box-shadow:0 3px 10px rgba(0,0,0,.18);transform:translateY(-2px)}
+  .pcard-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--row);flex-shrink:0;border-bottom:1px solid var(--border)}
+  .pcard-photo img{width:100%;height:100%;object-fit:contain;display:block}
+  .pcard-name{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;text-align:center;line-height:1.35;padding:10px 8px}
+  .pcard-grade{font-family:'Inter',sans-serif;font-size:.7rem;color:var(--muted);text-align:center;margin-top:-6px;padding-bottom:10px}
+
+  .floating-comment-btn{position:fixed;bottom:18px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+
+  .back-to-top{position:fixed;bottom:74px;right:18px;z-index:100;width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);display:none;align-items:center;justify-content:center;transition:opacity .2s}
+  .back-to-top.show{display:flex}
+  .back-to-top:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);font-style:italic;padding:1rem}
+
+  .sources{margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:6px}
+  .sources summary{cursor:pointer;list-style:none;font-family:'EB Garamond',serif;font-weight:600;
+    font-size:1.15rem;padding:.9rem 1.2rem;display:flex;align-items:center;gap:.5rem}
+  .sources summary::-webkit-details-marker{display:none}
+  .sources summary::before{content:'▸';color:var(--link);font-size:.8rem;transition:transform .15s}
+  .sources[open] summary::before{transform:rotate(90deg)}
+  .sources-body{padding:0 1.2rem 1.3rem;font-size:.78rem;line-height:1.6;color:var(--ink)}
+  .sources-body h4{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--muted);border-bottom:1px solid var(--orange);padding-bottom:.25rem;margin:1.1rem 0 .5rem}
+  .sources-body h4:first-child{margin-top:0}
+  .sources-body p{margin:0 0 .5rem}
+  .sources-body ul{margin:0 0 .5rem;padding-left:1.1rem}
+  .sources-body li{margin-bottom:.3rem}
+  .sources-body a{color:var(--link);word-break:break-all}
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Page-Portraits" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button class="back-to-top" id="portraits-top" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<header>
+  <h1>Portraits — 11<sup>e</sup> REI</h1>
+  <div class="sub">332 portraits, classés par ordre alphabétique</div>
+  <div class="hint">Cliquez sur une photo pour ouvrir la fiche de la personne</div>
+  <a class="back" href="https://www.11regimentetranger.com/recherche-legionnaire">← Retour à la recherche globale</a>
+</header>
+
+<nav class="az-nav">
+  <a href="#g-a" class="az-link">A</a>
+  <a href="#g-b" class="az-link">B</a>
+  <a href="#g-c" class="az-link">C</a>
+  <a href="#g-d" class="az-link">D</a>
+  <a href="#g-e" class="az-link">E</a>
+  <a href="#g-f" class="az-link">F</a>
+  <a href="#g-g" class="az-link">G</a>
+  <a href="#g-h" class="az-link">H</a>
+  <a href="#g-i" class="az-link">I</a>
+  <a href="#g-j" class="az-link">J</a>
+  <a href="#g-k" class="az-link">K</a>
+  <a href="#g-l" class="az-link">L</a>
+  <a href="#g-m" class="az-link">M</a>
+  <a href="#g-n" class="az-link">N</a>
+  <a href="#g-o" class="az-link">O</a>
+  <a href="#g-p" class="az-link">P</a>
+  <a href="#g-q" class="az-link">Q</a>
+  <a href="#g-r" class="az-link">R</a>
+  <a href="#g-s" class="az-link">S</a>
+  <a href="#g-t" class="az-link">T</a>
+  <a href="#g-uvw" class="az-link">UVW</a>
+  <a href="#g-xyz" class="az-link">XYZ</a>
+</nav>
+
+<main>
+<section class="letter-section" id="g-a">
+  <h2>A<span class="count">16</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#agostini-luigi-folco" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/agostini-luigi-folco.jpg" alt="Portrait de AGOSTINI Luigi Folco" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AGOSTINI Luigi Folco</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#agotics-sandor" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/agotics-sandor.jpg" alt="Portrait de AGOTICS Sandor" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AGOTICS Sandor</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#agusti-hervas-ramon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/agusti-hervas-ramon.jpg" alt="Portrait de AGUSTI HERVAS Rámon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AGUSTI HERVAS Rámon</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#alcazar-sanchez-bernabe" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/alcazar-sanchez-bernabe.jpg" alt="Portrait de ALCAZAR SANCHEZ Bernabé" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ALCAZAR SANCHEZ Bernabé</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#alloucherie-marcel-gustave" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/alloucherie-marcel-gustave.jpg" alt="Portrait de ALLOUCHERIE Marcel Gustave" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ALLOUCHERIE Marcel Gustave</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#alvarez-navarro-jaime" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/alvarez-navarro-jaime.jpg" alt="Portrait de ALVAREZ NAVARRO Jaime" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ALVAREZ NAVARRO Jaime</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#amand-maurice" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/amand-maurice.jpg" alt="Portrait de AMAND Maurice" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AMAND Maurice</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#ambrosini-luigi" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ambrosini-luigi.jpg" alt="Portrait de AMBROSINI Luigi" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AMBROSINI Luigi</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#amstutz-jean-bernard-louis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/amstutz-jean-bernard-louis.jpg" alt="Portrait de AMSTUTZ Jean Bernard Louis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AMSTUTZ Jean Bernard Louis</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#anglada-melia-rafael" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/anglada-melia-rafael.jpg" alt="Portrait de ANGLADA MELIA Rafael" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ANGLADA MELIA Rafael</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#aniol-jozef-michal" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/aniol-jozef-michal.jpg" alt="Portrait de ANIOL Jozef Michal" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ANIOL Jozef Michal</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#antolin-gil-sebastian" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/antolin-gil-sebastian.jpg" alt="Portrait de ANTOLIN GIL Sebastian" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ANTOLIN GIL Sebastian</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#apeloig-nison" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/apeloig-nison.jpg" alt="Portrait de APELOIG Nison" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">APELOIG Nison</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#ast-chemje" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ast-chemje.jpg" alt="Portrait de AST Chemje" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AST Chemje</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#ast-nicolas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ast-nicolas.jpg" alt="Portrait de AST Nicolas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AST Nicolas</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-a.html#auffret-pierre-francisque-antoine" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/auffret-pierre-francisque-antoine.jpg" alt="Portrait de AUFFRET Pierre Francisque Antoine" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">AUFFRET Pierre Francisque Antoine</div>
+      <div class="pcard-grade">chef de Bataillon</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-b">
+  <h2>B<span class="count">29</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bacal-henri" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bacal-henri.jpg" alt="Portrait de BACAL Henri" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BACAL Henri</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#balague-marti-alberto" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/balague-marti-alberto.jpg" alt="Portrait de BALAGUE MARTI Alberto" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BALAGUE MARTI Alberto</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#banet-majer-max" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/banet-majer-max.jpg" alt="Portrait de BANET Majer Max" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BANET Majer Max</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#barny-marcel-robert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/barny-marcel-robert.jpg" alt="Portrait de BARNY Marcel Robert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BARNY Marcel Robert</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#baron-charles-antoine" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/baron-charles-antoine.jpg" alt="Portrait de BARON Charles Antoine" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BARON Charles Antoine</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bastin-henri-nicolas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bastin-henri-nicolas.jpg" alt="Portrait de BASTIN Henri Nicolas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BASTIN Henri Nicolas</div>
+      <div class="pcard-grade">soldat</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#baumont-pierre-jean-francois" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/baumont-pierre-jean-francois.jpg" alt="Portrait de BAUMONT Pierre Jean François" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BAUMONT Pierre Jean François</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bedrich-bedrich-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bedrich-bedrich-joseph.jpg" alt="Portrait de BEDRICH Bédrich Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BEDRICH Bédrich Joseph</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#beer-szah-samy" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/beer-szah-samy.jpg" alt="Portrait de BEER Szah Samy" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BEER Szah Samy</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#berembaum-chaim" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/berembaum-chaim.jpg" alt="Portrait de BEREMBAUM Chaïm" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BEREMBAUM Chaïm</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bertot-alfred-aristide" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bertot-alfred-aristide.jpg" alt="Portrait de BERTOT Alfred Aristide" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BERTOT Alfred Aristide</div>
+      <div class="pcard-grade">sous Lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bessiere-henri" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bessiere-henri.jpg" alt="Portrait de BESSIERE Henri" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BESSIERE Henri</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bigger-anton-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bigger-anton-joseph.jpg" alt="Portrait de BIGGER Anton Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BIGGER Anton Joseph</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#binoche-francois-etienne-adolphe-henri" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/binoche-francois-etienne-adolphe-henri.jpg" alt="Portrait de BINOCHE François Etienne Adolphe Henri" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BINOCHE François Etienne Adolphe Henri</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#binsztok-aron" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/binsztok-aron.jpg" alt="Portrait de BINSZTOK Aron" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BINSZTOK Aron</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#binsztok-mordka" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/binsztok-mordka.jpg" alt="Portrait de BINSZTOK Mordka" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BINSZTOK Mordka</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#borowiak-ignatz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/borowiak-ignatz.jpg" alt="Portrait de BOROWIAK Ignatz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BOROWIAK Ignatz</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#borowiecki-felix-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/borowiecki-felix-joseph.jpg" alt="Portrait de BOROWIECKI Felix Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BOROWIECKI Felix Joseph</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bosems-lambertus" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bosems-lambertus.jpg" alt="Portrait de BOSEMS Lambertus" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BOSEMS Lambertus</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#boudoux-d-hautefeuille-marie-joseph-louis-etienne" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/boudoux-d-hautefeuille-marie-joseph-louis-etienne.jpg" alt="Portrait de BOUDOUX D'HAUTEFEUILLE Marie Joseph Louis Etienne" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BOUDOUX D'HAUTEFEUILLE Marie Joseph Louis Etienne</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#boulanger-maurice-jean-fernand" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/boulanger-maurice-jean-fernand.jpg" alt="Portrait de BOULANGER Maurice Jean Fernand" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BOULANGER Maurice Jean Fernand</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bourquin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bourquin.jpg" alt="Portrait de BOURQUIN" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BOURQUIN</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#bozzonetti-edouard-henri" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bozzonetti-edouard-henri.jpg" alt="Portrait de BOZZONETTI Edouard Henri" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BOZZONETTI Edouard Henri</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#brandstatter-mathias-menachem" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brandstatter-mathias-menachem.jpg" alt="Portrait de BRANDSTATTER Mathias Menachem" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BRANDSTATTER Mathias Menachem</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#braidotti-virgile-virginio" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/braidotti-virgile-virginio.jpg" alt="Portrait de BRAÏDOTTI Virgile Virginio" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BRAÏDOTTI Virgile Virginio</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#brochet-de-vaugrineuse-maurice-pierre-claude" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brochet-de-vaugrineuse-maurice-pierre-claude.jpg" alt="Portrait de BROCHET DE VAUGRINEUSE Maurice Pierre Claude" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BROCHET DE VAUGRINEUSE Maurice Pierre Claude</div>
+      <div class="pcard-grade">capitaine TT</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#brunec-sawa" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brunec-sawa.jpg" alt="Portrait de BRUNEC Sawa" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BRUNEC Sawa</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#buhrer-emile" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/buhrer-emile.jpg" alt="Portrait de BUHRER Emile" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BUHRER Emile</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-b.html#burcher-francois" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/burcher-francois.jpg" alt="Portrait de BURCHER François" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">BURCHER François</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-c">
+  <h2>C<span class="count">31</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cachat-basile" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cachat-basile.jpg" alt="Portrait de CACHAT Basile" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CACHAT Basile</div>
+      <div class="pcard-grade">adjudant chef puis sous lieutenant TT</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cadiou-pierre-jean-marie-yvon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cadiou-pierre-jean-marie-yvon.jpg" alt="Portrait de CADIOU Pierre Jean Marie Yvon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CADIOU Pierre Jean Marie Yvon</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#camacho-gimenez-manuel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/camacho-gimenez-manuel.jpg" alt="Portrait de CAMACHO GIMENEZ Manuel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CAMACHO GIMENEZ Manuel</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cardonne-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cardonne-joseph.jpg" alt="Portrait de CARDONNE Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CARDONNE Joseph</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#carraz-louis-marius-gilbert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/carraz-louis-marius-gilbert.jpg" alt="Portrait de CARRAZ Louis Marius Gilbert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CARRAZ Louis Marius Gilbert</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#carricando-michel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/carricando-michel.jpg" alt="Portrait de CARRICANDO Michel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CARRICANDO Michel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#casanova-mario-dante" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/casanova-mario-dante.jpg" alt="Portrait de CASANOVA Mario Dante" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CASANOVA Mario Dante</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cattalano-gilbert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cattalano-gilbert.jpg" alt="Portrait de CATTALANO Gilbert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CATTALANO Gilbert</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cayuela-martinez-miguel-jose" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cayuela-martinez-miguel-jose.jpg" alt="Portrait de CAYUELA MARTINEZ Miguel Jose" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CAYUELA MARTINEZ Miguel Jose</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#ceder-herszek" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ceder-herszek.jpg" alt="Portrait de CEDER Herszek" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CEDER Herszek</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cerro-rodriguez-tomas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cerro-rodriguez-tomas.jpg" alt="Portrait de CERRO RODRIGUEZ Tomas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CERRO RODRIGUEZ Tomas</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cerveny-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cerveny-joseph.jpg" alt="Portrait de CERVENY Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CERVENY Joseph</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#chalandre-gilbert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chalandre-gilbert.jpg" alt="Portrait de CHALANDRÉ Gilbert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CHALANDRÉ Gilbert</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cheraffedin-radje" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cheraffedin-radje.jpg" alt="Portrait de CHERAFFEDIN Radje" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CHERAFFEDIN Radje</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#chevillotte-herve-marie-charles" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chevillotte-herve-marie-charles.jpg" alt="Portrait de CHEVILLOTTE Hervé Marie Charles" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CHEVILLOTTE Hervé Marie Charles</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#chiron-henri-louis-victor-julien" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chiron-henri-louis-victor-julien.jpg" alt="Portrait de CHIRON Henri Louis Victor Julien" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CHIRON Henri Louis Victor Julien</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cieslak-wladislas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cieslak-wladislas.jpg" alt="Portrait de CIESLAK Wladislas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CIESLAK Wladislas</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#clokers-jean-pascal-albert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clokers-jean-pascal-albert.jpg" alt="Portrait de CLOKERS Jean Pascal Albert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CLOKERS Jean Pascal Albert</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#clement-pierre-emile-fernand" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clement-pierre-emile-fernand.jpg" alt="Portrait de CLÉMENT Pierre Emile Fernand" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CLÉMENT Pierre Emile Fernand</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#clement-rene-paul" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clement-rene-paul.jpg" alt="Portrait de CLÉMENT René Paul" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CLÉMENT René Paul</div>
+      <div class="pcard-grade">colonel chef de corps</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#colen-andre-stanislas-emile" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/colen-andre-stanislas-emile.jpg" alt="Portrait de COLEN André Stanislas Emile" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COLEN André Stanislas Emile</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#colet-balart-jaime" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/colet-balart-jaime.jpg" alt="Portrait de COLET BALART Jaime" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COLET BALART Jaime</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#collin-yann-marie-charles" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/collin-yann-marie-charles.jpg" alt="Portrait de COLLIN Yann Marie Charles" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COLLIN Yann Marie Charles</div>
+      <div class="pcard-grade">sous lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#combes-auguste-paulin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/combes-auguste-paulin.jpg" alt="Portrait de COMBES Auguste Paulin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COMBES Auguste Paulin</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#coquet-jacques" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coquet-jacques.jpg" alt="Portrait de COQUET Jacques" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COQUET Jacques</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cornu-serge-antoine-joseph-albert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cornu-serge-antoine-joseph-albert.jpg" alt="Portrait de CORNU Serge Antoine Joseph Albert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CORNU Serge Antoine Joseph Albert</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cottafavi-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cottafavi-joseph.jpg" alt="Portrait de COTTAFAVI Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COTTAFAVI Joseph</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#coubard-yves-victor" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coubard-yves-victor.jpg" alt="Portrait de COUBARD Yves Victor" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COUBARD Yves Victor</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#coupin-luce-rene-louis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coupin-luce-rene-louis.jpg" alt="Portrait de COUPIN Luce René Louis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">COUPIN Luce René Louis</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cukier-jankiel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cukier-jankiel.jpg" alt="Portrait de CUKIER Jankiel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CUKIER Jankiel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-c.html#cukierman-icko" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cukierman-icko.jpg" alt="Portrait de CUKIERMAN Icko" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">CUKIERMAN Icko</div>
+      
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-d">
+  <h2>D<span class="count">14</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#dadu-marcel-robert-delphin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dadu-marcel-robert-delphin.jpg" alt="Portrait de DADU Marcel Robert Delphin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DADU Marcel Robert Delphin</div>
+      <div class="pcard-grade">sous lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#damoiseau-desire" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/damoiseau-desire.jpg" alt="Portrait de DAMOISEAU Désiré" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DAMOISEAU Désiré</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#daum-chaim-hajm-juda" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/daum-chaim-hajm-juda.jpg" alt="Portrait de DAUM Chaïm Hajm Juda" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DAUM Chaïm Hajm Juda</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#dawidowicz-berszlik" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dawidowicz-berszlik.jpg" alt="Portrait de DAWIDOWICZ Berszlik" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DAWIDOWICZ Berszlik</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#dawidzon-cadok" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dawidzon-cadok.jpg" alt="Portrait de DAWIDZON Cadok" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DAWIDZON Cadok</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#de-monte-francois" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/de-monte-francois.jpg" alt="Portrait de DE MONTE François" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DE MONTE François</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#de-rousiers-jacques-paul-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/de-rousiers-jacques-paul-marie.jpg" alt="Portrait de DE ROUSIERS Jacques Paul Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DE ROUSIERS Jacques Paul Marie</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#delmas-georges-hippolyte-louis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/delmas-georges-hippolyte-louis.jpg" alt="Portrait de DELMAS Georges Hippolyte Louis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DELMAS Georges Hippolyte Louis</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#demoulin-rene-nicolas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/demoulin-rene-nicolas.jpg" alt="Portrait de DEMOULIN René Nicolas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DEMOULIN René Nicolas</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#desmoutier-albert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/desmoutier-albert.jpg" alt="Portrait de DESMOUTIER Albert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DESMOUTIER Albert</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#doret-jean-pierre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/doret-jean-pierre.jpg" alt="Portrait de DORET Jean Pierre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DORET Jean Pierre</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#doziere-paul-francis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/doziere-paul-francis.jpg" alt="Portrait de DOZIERE Paul Francis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DOZIERE Paul Francis</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#drouineau-marie-robert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/drouineau-marie-robert.jpg" alt="Portrait de DROUINEAU Marie Robert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DROUINEAU Marie Robert</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-d.html#dubois-joseph-marie-henri" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dubois-joseph-marie-henri.jpg" alt="Portrait de DUBOIS Joseph Marie Henri" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">DUBOIS Joseph Marie Henri</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-e">
+  <h2>E<span class="count">4</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-e.html#einspruch-mosjzesz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/einspruch-mosjzesz.jpg" alt="Portrait de EINSPRUCH Mosjzesz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">EINSPRUCH Mosjzesz</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-e.html#eischen-omer-arthur-alphonse" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/eischen-omer-arthur-alphonse.jpg" alt="Portrait de EISCHEN Omer Arthur Alphonse" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">EISCHEN Omer Arthur Alphonse</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-e.html#emanuelli-jules-cesar" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/emanuelli-jules-cesar.jpg" alt="Portrait de EMANUELLI Jules César" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">EMANUELLI Jules César</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-e.html#erman-izachor" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/erman-izachor.jpg" alt="Portrait de ERMAN Izachor" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ERMAN Izachor</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-f">
+  <h2>F<span class="count">9</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#fitsch-jacques-marcel-andre-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/fitsch-jacques-marcel-andre-marie.jpg" alt="Portrait de FITSCH Jacques Marcel André Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FITSCH Jacques Marcel André Marie</div>
+      <div class="pcard-grade">adjudant médecin</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#foray-claudius" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/foray-claudius.jpg" alt="Portrait de FORAY Claudius" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FORAY Claudius</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#forget-michel-edme-antoine" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/forget-michel-edme-antoine.jpg" alt="Portrait de FORGET Michel Edmé Antoine" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FORGET Michel Edmé Antoine</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#foucher-julien-albert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/foucher-julien-albert.jpg" alt="Portrait de FOUCHER Julien-Albert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FOUCHER Julien-Albert</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#francois-lucien" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/francois-lucien.jpg" alt="Portrait de FRANÇOIS Lucien" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FRANÇOIS Lucien</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#freund-mechel-baruch" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/freund-mechel-baruch.jpg" alt="Portrait de FREUND Mechel Baruch" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FREUND Mechel Baruch</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#frydman-hersz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/frydman-hersz.jpg" alt="Portrait de FRYDMAN Hersz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FRYDMAN Hersz</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#funk-rachmil" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/funk-rachmil.jpg" alt="Portrait de FUNK Rachmil" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FUNK Rachmil</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-f.html#funkl-friedrich" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/funkl-friedrich.jpg" alt="Portrait de FUNKL Friedrich" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">FUNKL Friedrich</div>
+      <div class="pcard-grade">sous lieutenant</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-g">
+  <h2>G<span class="count">21</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gamez-ruiz-maxime" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gamez-ruiz-maxime.jpg" alt="Portrait de GAMEZ RUIZ Maxime" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GAMEZ RUIZ Maxime</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#garcia-lopez-abel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/garcia-lopez-abel.jpg" alt="Portrait de GARCIA LOPEZ Abel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GARCIA LOPEZ Abel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#garcia-martinez-ramon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/garcia-martinez-ramon.jpg" alt="Portrait de GARCIA MARTINEZ Rámon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GARCIA MARTINEZ Rámon</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#garrigues-pierre-emile" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/garrigues-pierre-emile.jpg" alt="Portrait de GARRIGUES Pierre Emile" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GARRIGUES Pierre Emile</div>
+      <div class="pcard-grade">sous lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gaultier-louis-marie-antoine" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gaultier-louis-marie-antoine.jpg" alt="Portrait de GAULTIER Louis Marie Antoine" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GAULTIER Louis Marie Antoine</div>
+      <div class="pcard-grade">chef de Bataillon</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gaussmann-dominique" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gaussmann-dominique.jpg" alt="Portrait de GAUSSMANN Dominique" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GAUSSMANN Dominique</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gelles-israel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gelles-israel.jpg" alt="Portrait de GELLES Israël" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GELLES Israël</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#getzler-eljasz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/getzler-eljasz.jpg" alt="Portrait de GETZLER Eljasz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GETZLER Eljasz</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gheysens-frederic-yvan-camille-francois" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gheysens-frederic-yvan-camille-francois.jpg" alt="Portrait de GHEYSENS Frédéric Yvan Camille François" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GHEYSENS Frédéric Yvan Camille François</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#girard-louis-pierre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/girard-louis-pierre.jpg" alt="Portrait de GIRARD Louis Pierre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GIRARD Louis Pierre</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#giraudeau-maurice-charles" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/giraudeau-maurice-charles.jpg" alt="Portrait de GIRAUDEAU Maurice Charles" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GIRAUDEAU Maurice Charles</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gogol-paul" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gogol-paul.jpg" alt="Portrait de GOGOL Paul" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GOGOL Paul</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#golcer-szyja" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/golcer-szyja.jpg" alt="Portrait de GOLCER Szyja" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GOLCER Szyja</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#goldsztajn-majer-shulim" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/goldsztajn-majer-shulim.jpg" alt="Portrait de GOLDSZTAJN Majer Shulim" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GOLDSZTAJN Majer Shulim</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gontier-maurice" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gontier-maurice.jpg" alt="Portrait de GONTIER Maurice" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GONTIER Maurice</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gouas-roger-aime" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gouas-roger-aime.jpg" alt="Portrait de GOUAS Roger Aimé" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GOUAS Roger Aimé</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gouzarski-michel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gouzarski-michel.jpg" alt="Portrait de GOUZARSKI Michel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GOUZARSKI Michel</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#gragnon-jacques-jean-philippe" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gragnon-jacques-jean-philippe.jpg" alt="Portrait de GRAGNON Jacques Jean Philippe" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GRAGNON Jacques Jean Philippe</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#grossaug-jacob" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/grossaug-jacob.jpg" alt="Portrait de GROSSAUG Jacob" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GROSSAUG Jacob</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#guilbert-georges-alfred" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/guilbert-georges-alfred.jpg" alt="Portrait de GUILBERT Georges Alfred" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GUILBERT Georges Alfred</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-g.html#guillemet-maurice-eugene" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/guillemet-maurice-eugene.jpg" alt="Portrait de GUILLEMET Maurice Eugène" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">GUILLEMET Maurice Eugène</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-h">
+  <h2>H<span class="count">8</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#habif-isaac" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/habif-isaac.jpg" alt="Portrait de HABIF Isaac" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HABIF Isaac</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#hafenscher-janos-laszlo-ladislas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hafenscher-janos-laszlo-ladislas.jpg" alt="Portrait de HAFENSCHER Janos Laszlo Ladislas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HAFENSCHER Janos Laszlo Ladislas</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#hautecoeur-marcel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hautecoeur-marcel.jpg" alt="Portrait de HAUTECOEUR Marcel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HAUTECOEUR Marcel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#hetmanczyk-hilary" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hetmanczyk-hilary.jpg" alt="Portrait de HETMANCZYK Hilary" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HETMANCZYK Hilary</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#honistok-towja" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/honistok-towja.jpg" alt="Portrait de HONISTOK Towja" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HONISTOK Towja</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#hora-karel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hora-karel.jpg" alt="Portrait de HORA Karel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HORA Karel</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#horowicz-srul-pelta" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/horowicz-srul-pelta.jpg" alt="Portrait de HOROWICZ Srul Pelta" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HOROWICZ Srul Pelta</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-h.html#hugget-robert-charles-francois-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hugget-robert-charles-francois-marie.jpg" alt="Portrait de HUGGET Robert Charles François Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">HUGGET Robert Charles François Marie</div>
+      <div class="pcard-grade">adjudant</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-i">
+  <h2>I<span class="count">2</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-i.html#ichselbst-mieczyslaw" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ichselbst-mieczyslaw.jpg" alt="Portrait de ICHSELBST Mieczyslaw" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ICHSELBST Mieczyslaw</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-i.html#ingwer-rafael" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ingwer-rafael.jpg" alt="Portrait de INGWER Rafaël" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">INGWER Rafaël</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-j">
+  <h2>J<span class="count">8</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#jabouille-andre-robert-leon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jabouille-andre-robert-leon.jpg" alt="Portrait de JABOUILLE André Robert Léon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JABOUILLE André Robert Léon</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#jaime-bellido-juan-bautista" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jaime-bellido-juan-bautista.jpg" alt="Portrait de JAIME BELLIDO Juan Bautista" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JAIME BELLIDO Juan Bautista</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#jarno-jacques-joachim" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jarno-jacques-joachim.jpg" alt="Portrait de JARNO Jacques Joachim" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JARNO Jacques Joachim</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#jayet-louis-charles-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jayet-louis-charles-marie.jpg" alt="Portrait de JAYET Louis Charles Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JAYET Louis Charles Marie</div>
+      <div class="pcard-grade">capitaine TT</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#johansen-carl" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/johansen-carl.jpg" alt="Portrait de JOHANSEN Carl" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JOHANSEN Carl</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#jolsvay-andre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jolsvay-andre.jpg" alt="Portrait de JOLSVAY André" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JOLSVAY André</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#julien-pierre-corentin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/julien-pierre-corentin.jpg" alt="Portrait de JULIEN Pierre Corentin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JULIEN Pierre Corentin</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-j.html#jurion-marc-andre-maurice-felicien" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jurion-marc-andre-maurice-felicien.jpg" alt="Portrait de JURION Marc André Maurice Félicien" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">JURION Marc André Maurice Félicien</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-k">
+  <h2>K<span class="count">13</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#kakhovsky-leon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kakhovsky-leon.jpg" alt="Portrait de KAKHOVSKY Léon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KAKHOVSKY Léon</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#kamlay-kamlaj-ludwik" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kamlay-kamlaj-ludwik.jpg" alt="Portrait de KAMLAY/KAMLAJ Ludwik" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KAMLAY/KAMLAJ Ludwik</div>
+      <div class="pcard-grade">adjudant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#kardurk-herman" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kardurk-herman.jpg" alt="Portrait de KARDURK Herman" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KARDURK Herman</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#keurvels-henri-jules-antoine" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/keurvels-henri-jules-antoine.jpg" alt="Portrait de KEURVELS Henri Jules Antoine" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KEURVELS Henri Jules Antoine</div>
+      <div class="pcard-grade">caporal puis sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#klein-jozsef" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/klein-jozsef.jpg" alt="Portrait de KLEIN Jozsef" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KLEIN Jozsef</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#klejman-szmul" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/klejman-szmul.jpg" alt="Portrait de KLEJMAN Szmul" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KLEJMAN Szmul</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#kotowsky-antoni" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kotowsky-antoni.jpg" alt="Portrait de KOTOWSKY Antoni" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KOTOWSKY Antoni</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#kranz-emanuel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kranz-emanuel.jpg" alt="Portrait de KRANZ Emanuel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KRANZ Emanuel</div>
+      <div class="pcard-grade">adjudant chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#krasseff-panaist-ou-panaiot" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/krasseff-panaist-ou-panaiot.jpg" alt="Portrait de KRASSEFF Panaist Ou Panaiot" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KRASSEFF Panaist Ou Panaiot</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#krepko-saul-elie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/krepko-saul-elie.jpg" alt="Portrait de KREPKO Saul Elie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KREPKO Saul Elie</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#kresch-moses-moise-mozesz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/kresch-moses-moise-mozesz.jpg" alt="Portrait de KRESCH Moses Moïse Mozesz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KRESCH Moses Moïse Mozesz</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#krivitch-mate" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/krivitch-mate.jpg" alt="Portrait de KRIVITCH Mate" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KRIVITCH Mate</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-k.html#krouker-elie-kaskelev" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/krouker-elie-kaskelev.jpg" alt="Portrait de KROUKER Elie Kaskelev" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">KROUKER Elie Kaskelev</div>
+      <div class="pcard-grade">aspirant</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-l">
+  <h2>L<span class="count">29</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lagrange-marcel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lagrange-marcel.jpg" alt="Portrait de LAGRANGE Marcel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LAGRANGE Marcel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lainscak-karoly" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lainscak-karoly.jpg" alt="Portrait de LAINSCAK Karoly" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LAINSCAK Karoly</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#laizerowicz-wolf-wilhelm" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/laizerowicz-wolf-wilhelm.jpg" alt="Portrait de LAIZEROWICZ Wolf Wilhelm" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LAIZEROWICZ Wolf Wilhelm</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lakomiak-marjan" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lakomiak-marjan.jpg" alt="Portrait de LAKOMIAK Marjan" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LAKOMIAK Marjan</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lamor-henry-auguste-fernand" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lamor-henry-auguste-fernand.jpg" alt="Portrait de LAMOR Henry Auguste Fernand" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LAMOR Henry Auguste Fernand</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lanchon-ne-lefebvre-louis-charles" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lanchon-ne-lefebvre-louis-charles.jpg" alt="Portrait de LANCHON Né Lefebvre Louis Charles" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LANCHON Né Lefebvre Louis Charles</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#laparra-edgar-jean" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/laparra-edgar-jean.jpg" alt="Portrait de LAPARRA Edgar Jean" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LAPARRA Edgar Jean</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lascaux-jean-pierre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lascaux-jean-pierre.jpg" alt="Portrait de LASCAUX Jean Pierre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LASCAUX Jean Pierre</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lasman-israel-kalma" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lasman-israel-kalma.jpg" alt="Portrait de LASMAN Israël Kalma" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LASMAN Israël Kalma</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lazik-karol" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lazik-karol.jpg" alt="Portrait de LAZIK Karol" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LAZIK Karol</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#le-moine-marcel-raymond-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/le-moine-marcel-raymond-marie.jpg" alt="Portrait de LE MOINE Marcel Raymond Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LE MOINE Marcel Raymond Marie</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#leder-szamsza-lajb" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/leder-szamsza-lajb.jpg" alt="Portrait de LEDER Szamsza Lajb" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEDER Szamsza Lajb</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#leduc-charles-ghislain" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/leduc-charles-ghislain.jpg" alt="Portrait de LEDUC Charles Ghislain" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEDUC Charles Ghislain</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#leibman-chalik" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/leibman-chalik.jpg" alt="Portrait de LEIBMAN Chalik" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEIBMAN Chalik</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lenczner-lejbus" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lenczner-lejbus.jpg" alt="Portrait de LENCZNER Lejbus" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LENCZNER Lejbus</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#levacher-jacques-robert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/levacher-jacques-robert.jpg" alt="Portrait de LEVACHER Jacques Robert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEVACHER Jacques Robert</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lever-hendrik-jacobus" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lever-hendrik-jacobus.jpg" alt="Portrait de LEVER Hendrik Jacobus" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEVER Hendrik Jacobus</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#levy-roger-benjamin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/levy-roger-benjamin.jpg" alt="Portrait de LEVY Roger Benjamin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEVY Roger Benjamin</div>
+      <div class="pcard-grade">sous lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lewkowicz-leopold" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lewkowicz-leopold.jpg" alt="Portrait de LEWKOWICZ Léopold" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEWKOWICZ Léopold</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lewkowicz-szmul-berek" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lewkowicz-szmul-berek.jpg" alt="Portrait de LEWKOWICZ Szmul Berek" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LEWKOWICZ Szmul Berek</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#libet-claudius-antoine" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/libet-claudius-antoine.jpg" alt="Portrait de LIBET Claudius Antoine" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LIBET Claudius Antoine</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#liegeois-rene-georges-marie-desire" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/liegeois-rene-georges-marie-desire.jpg" alt="Portrait de LIEGEOIS René Georges Marie Désiré" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LIEGEOIS René Georges Marie Désiré</div>
+      <div class="pcard-grade">sergent chef puis adjudant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lignez-andre-robert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lignez-andre-robert.jpg" alt="Portrait de LIGNEZ André Robert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LIGNEZ André Robert</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lindeman-floribert-adolphe-andre-franz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lindeman-floribert-adolphe-andre-franz.jpg" alt="Portrait de LINDEMAN Floribert Adolphe André Franz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LINDEMAN Floribert Adolphe André Franz</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lis-josef-herez" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lis-josef-herez.jpg" alt="Portrait de LIS Josef Herez" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LIS Josef Herez</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lopez-saez-jose" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lopez-saez-jose.jpg" alt="Portrait de LOPEZ SAEZ Jose" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LOPEZ SAEZ Jose</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lovinger-yaakov" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lovinger-yaakov.jpg" alt="Portrait de LOVINGER Yaakov" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LOVINGER Yaakov</div>
+      <div class="pcard-grade">adjudant chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lozano-jean-pierre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lozano-jean-pierre.jpg" alt="Portrait de LOZANO Jean Pierre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LOZANO Jean Pierre</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-l.html#lucas-pierre-alain-yves-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lucas-pierre-alain-yves-marie.jpg" alt="Portrait de LUCAS Pierre Alain Yves Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">LUCAS Pierre Alain Yves Marie</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-m">
+  <h2>M<span class="count">27</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#madec-robert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/madec-robert.jpg" alt="Portrait de MADEC Robert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MADEC Robert</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#magne-jean-leon-martial" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/magne-jean-leon-martial.jpg" alt="Portrait de MAGNE Jean Léon Martial" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MAGNE Jean Léon Martial</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#magula-franz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/magula-franz.jpg" alt="Portrait de MAGULA Franz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MAGULA Franz</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#maire-fernand-victor-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/maire-fernand-victor-marie.jpg" alt="Portrait de MAIRE Fernand Victor Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MAIRE Fernand Victor Marie</div>
+      <div class="pcard-grade">colonel</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#malaud-andre-henri-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/malaud-andre-henri-marie.jpg" alt="Portrait de MALAUD André Henri Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MALAUD André Henri Marie</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#malherbe-marcel-toussaint" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/malherbe-marcel-toussaint.jpg" alt="Portrait de MALHERBE Marcel Toussaint" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MALHERBE Marcel Toussaint</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#malrait-leon-hercule" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/malrait-leon-hercule.jpg" alt="Portrait de MALRAIT Léon Hercule" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MALRAIT Léon Hercule</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#manoussaridis-theodore" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/manoussaridis-theodore.jpg" alt="Portrait de MANOUSSARIDIS Théodore" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MANOUSSARIDIS Théodore</div>
+      <div class="pcard-grade">adjudant (nommé en mai)</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#march-rius-joaquin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/march-rius-joaquin.jpg" alt="Portrait de MARCH RIUS Joaquin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MARCH RIUS Joaquin</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#marcus-robert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/marcus-robert.jpg" alt="Portrait de MARCUS Robert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MARCUS Robert</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#marguet-louis-alexandre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/marguet-louis-alexandre.jpg" alt="Portrait de MARGUET Louis Alexandre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MARGUET Louis Alexandre</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#marguilles-henri-bernard" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/marguilles-henri-bernard.jpg" alt="Portrait de MARGUILLES Henri Bernard" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MARGUILLES Henri Bernard</div>
+      <div class="pcard-grade">adjudant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#martinez-fernandez-jose" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/martinez-fernandez-jose.jpg" alt="Portrait de MARTINEZ FERNANDEZ Jose" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MARTINEZ FERNANDEZ Jose</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#marwit-georges-zorach" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/marwit-georges-zorach.jpg" alt="Portrait de MARWIT Georges Zorach" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MARWIT Georges Zorach</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#mast-henri" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mast-henri.jpg" alt="Portrait de MAST Henri" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MAST Henri</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#matuszewicz-chaskiel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/matuszewicz-chaskiel.jpg" alt="Portrait de MATUSZEWICZ Chaskiel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MATUSZEWICZ Chaskiel</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#metman-henri-jules" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/metman-henri-jules.jpg" alt="Portrait de METMAN Henri Jules" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">METMAN Henri Jules</div>
+      <div class="pcard-grade">adjudant chef puis sous lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#mikut-hans" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mikut-hans.jpg" alt="Portrait de MIKUT Hans" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MIKUT Hans</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#mlocik-mosjic-zelich-maurice" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mlocik-mosjic-zelich-maurice.jpg" alt="Portrait de MLOCIK Mosjic Zelich" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MLOCIK Mosjic Zelich</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#mogrovejo-arnaiz-manuel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mogrovejo-arnaiz-manuel.jpg" alt="Portrait de MOGROVEJO ARNAIZ Manuel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MOGROVEJO ARNAIZ Manuel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#mondon-pierre-francois-julien" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mondon-pierre-francois-julien.jpg" alt="Portrait de MONDON Pierre François Julien" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MONDON Pierre François Julien</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#morgenbeser-abram" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/morgenbeser-abram.jpg" alt="Portrait de MORGENBESER Abram" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MORGENBESER Abram</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#moroni-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/moroni-joseph.jpg" alt="Portrait de MORONI Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MORONI Joseph</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#morsel-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/morsel-joseph.jpg" alt="Portrait de MORSEL Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MORSEL Joseph</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#mossmann-justin-auguste" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mossmann-justin-auguste.jpg" alt="Portrait de MOSSMANN Justin Auguste" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MOSSMANN Justin Auguste</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#moszkowicz-chaskiel-charles" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/moszkowicz-chaskiel-charles.jpg" alt="Portrait de MOSZKOWICZ Chaskiel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MOSZKOWICZ Chaskiel</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-m.html#muller-gyozo" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/muller-gyozo.jpg" alt="Portrait de MULLER Gyozo" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">MULLER Gyozo</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-n">
+  <h2>N<span class="count">4</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-n.html#nanti-william-joseph-grimaldi-ignace" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/nanti-william-joseph-grimaldi-ignace.jpg" alt="Portrait de NANTI William Joseph Grimaldi Ignace" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">NANTI William Joseph Grimaldi Ignace</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-n.html#nicolet-arthur" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/nicolet-arthur.jpg" alt="Portrait de NICOLET Arthur" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">NICOLET Arthur</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-n.html#noireault-andre-raymond" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/noireault-andre-raymond.jpg" alt="Portrait de NOIREAULT André Raymond" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">NOIREAULT André Raymond</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-n.html#nowomiast-benjamin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/nowomiast-benjamin.jpg" alt="Portrait de NOWOMIAST Benjamin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">NOWOMIAST Benjamin</div>
+      
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-o">
+  <h2>O<span class="count">5</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-o.html#obdam-andreas-antonius" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/obdam-andreas-antonius.jpg" alt="Portrait de OBDAM Andréas Antonius" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">OBDAM Andréas Antonius</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-o.html#offman-david" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/offman-david.jpg" alt="Portrait de OFFMAN David" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">OFFMAN David</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-o.html#okladek-mordka" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/okladek-mordka.jpg" alt="Portrait de OKLADEK Mordka" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">OKLADEK Mordka</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-o.html#ortiz-peter-julien" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ortiz-peter-julien.jpg" alt="Portrait de ORTIZ Peter Julien" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ORTIZ Peter Julien</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-o.html#oudem-leon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/oudem-leon.jpg" alt="Portrait de OUDEM Léon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">OUDEM Léon</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-p">
+  <h2>P<span class="count">33</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#paeleman-theodore" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/paeleman-theodore.jpg" alt="Portrait de PAELEMAN Théodore" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAELEMAN Théodore</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pajank-jean" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pajank-jean.jpg" alt="Portrait de PAJANK Jean" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAJANK Jean</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#palluat-du-besset-jean-marc-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/palluat-du-besset-jean-marc-marie.jpg" alt="Portrait de PALLUAT Du Besset Jean Marc Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PALLUAT Du Besset Jean Marc Marie</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pankow-leonid" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pankow-leonid.jpg" alt="Portrait de PANKOW Léonid" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PANKOW Léonid</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#paquier-lucien-arthur" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/paquier-lucien-arthur.jpg" alt="Portrait de PAQUIER Lucien Arthur" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAQUIER Lucien Arthur</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#paquot-eugene-germain" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/paquot-eugene-germain.jpg" alt="Portrait de PAQUOT Eugène Germain" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAQUOT Eugène Germain</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#passet-philibert-antonin-raoul" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/passet-philibert-antonin-raoul.jpg" alt="Portrait de PASSET Philibert Antonin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PASSET Philibert Antonin</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#paulin-roger-robert" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/paulin-roger-robert.jpg" alt="Portrait de PAULIN Roger Robert" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAULIN Roger Robert</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pawlik-bronislas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pawlik-bronislas.jpg" alt="Portrait de PAWLIK Bronislas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAWLIK Bronislas</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pawlowski-franciszek" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pawlowski-franciszek.jpg" alt="Portrait de PAWLOWSKI Franciszek" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAWLOWSKI Franciszek</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pazos-pazos-diego" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pazos-pazos-diego.jpg" alt="Portrait de PAZOS PAZOS Diego" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PAZOS PAZOS Diego</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pellegrini-leon-jean-baptiste" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pellegrini-leon-jean-baptiste.jpg" alt="Portrait de PELLEGRINI Léon Jean Baptiste" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PELLEGRINI Léon Jean Baptiste</div>
+      <div class="pcard-grade">adjudant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#petrochilos-yannis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/petrochilos-yannis.jpg" alt="Portrait de PETROCHILOS Yannis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PETROCHILOS Yannis</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#peyrot-pierre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/peyrot-pierre.jpg" alt="Portrait de PEYROT Pierre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PEYROT Pierre</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#philipot-georges-henri" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/philipot-georges-henri.jpg" alt="Portrait de PHILIPOT Georges Henri" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PHILIPOT Georges Henri</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#piatek-bernard" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/piatek-bernard.jpg" alt="Portrait de PIATEK Bernard" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PIATEK Bernard</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#picquart-marie-jean" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/picquart-marie-jean.jpg" alt="Portrait de PICQUART Marie Jean" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PICQUART Marie Jean</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#piens-marceau-auguste-emile" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/piens-marceau-auguste-emile.jpg" alt="Portrait de PIENS Marceau Auguste Emile" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PIENS Marceau Auguste Emile</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pierre-emile-georges-louis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pierre-emile-georges-louis.jpg" alt="Portrait de PIERRE Emile Georges Louis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PIERRE Emile Georges Louis</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#piotrokowski-moszka" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/piotrokowski-moszka.jpg" alt="Portrait de PIOTROKOWSKI Moszka" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PIOTROKOWSKI Moszka</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#placzek-ajzyk-pinkus" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/placzek-ajzyk-pinkus.jpg" alt="Portrait de PLACZEK Ajzyk Pinkus" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PLACZEK Ajzyk Pinkus</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pobercznik-wincenty" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pobercznik-wincenty.jpg" alt="Portrait de POBERCZNIK Wincenty" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">POBERCZNIK Wincenty</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#polaszyk-franz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/polaszyk-franz.jpg" alt="Portrait de POLASZYK Franz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">POLASZYK Franz</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#poncin-marcel-gustave-lucien" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/poncin-marcel-gustave-lucien.jpg" alt="Portrait de PONCIN Marcel Gustave Lucien" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PONCIN Marcel Gustave Lucien</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#ponist-pavel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ponist-pavel.jpg" alt="Portrait de PONIST Pavel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PONIST Pavel</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#popot-louis-paul-alexandre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/popot-louis-paul-alexandre.jpg" alt="Portrait de POPOT Louis Paul Alexandre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">POPOT Louis Paul Alexandre</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#potaznik-aron" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/potaznik-aron.jpg" alt="Portrait de POTAZNIK Aron" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">POTAZNIK Aron</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pouillaude-victor-auguste-aime" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pouillaude-victor-auguste-aime.jpg" alt="Portrait de POUILLAUDE Victor Auguste Aimé" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">POUILLAUDE Victor Auguste Aimé</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pourquoy-roger-alfred" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pourquoy-roger-alfred.jpg" alt="Portrait de POURQUOY Roger Alfred" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">POURQUOY Roger Alfred</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#przenioslo-wladislas-wladek" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/przenioslo-wladislas-wladek.jpg" alt="Portrait de PRZENIOSLO Wladislas Wladek" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PRZENIOSLO Wladislas Wladek</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pukacz-elyukia-eljukin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pukacz-elyukia-eljukin.jpg" alt="Portrait de PUKACZ Elyukia Eljukin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PUKACZ Elyukia Eljukin</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#pulgarin-agredano-jose-maria" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pulgarin-agredano-jose-maria.jpg" alt="Portrait de PULGARIN AGREDANO José Maria" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PULGARIN AGREDANO José Maria</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-p.html#purcheria-gheorghe" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/purcheria-gheorghe.jpg" alt="Portrait de PURCHERIA Gheorghe" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">PURCHERIA Gheorghe</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-q">
+  <h2>Q<span class="count">1</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-q.html#quere-michel-yves-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/quere-michel-yves-marie.jpg" alt="Portrait de QUERE Michel Yves Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">QUERE Michel Yves Marie</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-r">
+  <h2>R<span class="count">23</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#raiewsky-nicolas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/raiewsky-nicolas.jpg" alt="Portrait de RAIEWSKY Nicolas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RAIEWSKY Nicolas</div>
+      <div class="pcard-grade">sous lieutenant TT</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#ramel-joseph-jean-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ramel-joseph-jean-marie.jpg" alt="Portrait de RAMEL Joseph Jean Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RAMEL Joseph Jean Marie</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#reant-fernand-francois-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/reant-fernand-francois-joseph.jpg" alt="Portrait de REANT Fernand François Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">REANT Fernand François Joseph</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rechad-mehmed-suad" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rechad-mehmed-suad.jpg" alt="Portrait de RECHAD Mehmed Suad" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RECHAD Mehmed Suad</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rewinski-salomon-calel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rewinski-salomon-calel.jpg" alt="Portrait de REWINSKI Salomon Calel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">REWINSKI Salomon Calel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#ric-darne-jose" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/ric-darne-jose.jpg" alt="Portrait de RIC DARNE José" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RIC DARNE José</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#richard-denis-robert-lucien" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/richard-denis-robert-lucien.jpg" alt="Portrait de RICHARD Denis Robert Lucien" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RICHARD Denis Robert Lucien</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#richardson-george-ferguson" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/richardson-george-ferguson.jpg" alt="Portrait de RICHARDSON George Ferguson" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RICHARDSON George Ferguson</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#riefstahl-alfred-robert-karl" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/riefstahl-alfred-robert-karl.jpg" alt="Portrait de RIEFSTAHL Alfred Robert Karl" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RIEFSTAHL Alfred Robert Karl</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rio-leo-jean" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rio-leo-jean.jpg" alt="Portrait de RIO Léo Jean" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RIO Léo Jean</div>
+      <div class="pcard-grade">chef de Bataillon</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#robert-georges-louis-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/robert-georges-louis-marie.jpg" alt="Portrait de ROBERT Georges Louis Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROBERT Georges Louis Marie</div>
+      <div class="pcard-grade">colonel chef de corps</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#robitaille-leon-marcel-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/robitaille-leon-marcel-joseph.jpg" alt="Portrait de ROBITAILLE Léon Marcel Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROBITAILLE Léon Marcel Joseph</div>
+      <div class="pcard-grade">chef de Bataillon</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rochat-andre-louis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rochat-andre-louis.jpg" alt="Portrait de ROCHAT André Louis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROCHAT André Louis</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rochet-marcelin" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rochet-marcelin.jpg" alt="Portrait de ROCHET Marcelin" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROCHET Marcelin</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#romani-louis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/romani-louis.jpg" alt="Portrait de ROMANI Louis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROMANI Louis</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#romero-romero-juan-teodoro" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/romero-romero-juan-teodoro.jpg" alt="Portrait de ROMERO ROMERO Juan Teodoro" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROMERO ROMERO Juan Teodoro</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rouillon-paul" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rouillon-paul.jpg" alt="Portrait de ROUILLON Paul" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROUILLON Paul</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#roulin-georges-luc-francois" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/roulin-georges-luc-francois.jpg" alt="Portrait de ROULIN Georges Luc François" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROULIN Georges Luc François</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rousseau-marcel-emile" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rousseau-marcel-emile.jpg" alt="Portrait de ROUSSEAU Marcel Emile" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROUSSEAU Marcel Emile</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#roux-robert-louis-maurice" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/roux-robert-louis-maurice.jpg" alt="Portrait de ROUX Robert Louis Maurice" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROUX Robert Louis Maurice</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#royo-sopena-felipe" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/royo-sopena-felipe.jpg" alt="Portrait de ROYO SOPENA Felipe" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROYO SOPENA Felipe</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rozenberg-judka-josek" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rozenberg-judka-josek.jpg" alt="Portrait de ROZENBERG Judka Josek" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ROZENBERG Judka Josek</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-r.html#rzekiecki-d-alegron-henryk" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rzekiecki-d-alegron-henryk.jpg" alt="Portrait de RZEKIECKI D'ALEGRON Henryk" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">RZEKIECKI D'ALEGRON Henryk</div>
+      <div class="pcard-grade">chef de Bataillon</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-s">
+  <h2>S<span class="count">20</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#salguero-nieto-miguel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/salguero-nieto-miguel.jpg" alt="Portrait de SALGUERO NIETO Miguel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SALGUERO NIETO Miguel</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#samuelsen-sigurd-asbjorn" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/samuelsen-sigurd-asbjorn.jpg" alt="Portrait de SAMUELSEN Sigurd Asbjorn" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SAMUELSEN Sigurd Asbjorn</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#sanjorge-avistu-alphonse-mariano" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sanjorge-avistu-alphonse-mariano.jpg" alt="Portrait de SANJORGE AVISTU Alphonse Mariano" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SANJORGE AVISTU Alphonse Mariano</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#sarga-imre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sarga-imre.jpg" alt="Portrait de SARGA Imré" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SARGA Imré</div>
+      <div class="pcard-grade">1ère classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#scharycki-david" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/scharycki-david.jpg" alt="Portrait de SCHARYCKI David" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SCHARYCKI David</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#schluter-joseph-antoine" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/schluter-joseph-antoine.jpg" alt="Portrait de SCHLUTER Joseph Antoine" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SCHLUTER Joseph Antoine</div>
+      <div class="pcard-grade">sous lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#seillon-benoit-georges" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/seillon-benoit-georges.jpg" alt="Portrait de SEILLON Benoît Georges" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SEILLON Benoît Georges</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#semczak-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/semczak-joseph.jpg" alt="Portrait de SEMCZAK Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SEMCZAK Joseph</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#seniura-maxime" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/seniura-maxime.jpg" alt="Portrait de SENIURA Maxime" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SENIURA Maxime</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#sermet-rene-francois" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sermet-rene-francois.jpg" alt="Portrait de SERMET René François" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SERMET René François</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#siegenthaler-adolf" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/siegenthaler-adolf.jpg" alt="Portrait de SIEGENTHALER Adolf" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SIEGENTHALER Adolf</div>
+      <div class="pcard-grade">adjudant chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#sigmann-joseph-jacques" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sigmann-joseph-jacques.jpg" alt="Portrait de SIGMANN Joseph Jacques" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SIGMANN Joseph Jacques</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#sivera-escriva-rafael" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sivera-escriva-rafael.jpg" alt="Portrait de SIVERA ESCRIVA Rafael" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SIVERA ESCRIVA Rafael</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#smeja-leon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/smeja-leon.jpg" alt="Portrait de SMEJA Léon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SMEJA Léon</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#smirnoff-oleg" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/smirnoff-oleg.jpg" alt="Portrait de SMIRNOFF Oleg" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SMIRNOFF Oleg</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#sperber-samuel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sperber-samuel.jpg" alt="Portrait de SPERBER Samuel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SPERBER Samuel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#spiewak-isaac" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/spiewak-isaac.jpg" alt="Portrait de SPIEWAK Isaac" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SPIEWAK Isaac</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#szerman-szmul" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/szerman-szmul.jpg" alt="Portrait de SZERMAN Szmul" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SZERMAN Szmul</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#szkutek-rodolphe" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/szkutek-rodolphe.jpg" alt="Portrait de SZKUTEK Rodolphe" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SZKUTEK Rodolphe</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-s.html#szoke-geza" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/szoke-geza.jpg" alt="Portrait de SZOKE Geza" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">SZOKE Geza</div>
+      <div class="pcard-grade">sergent chef</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-t">
+  <h2>T<span class="count">11</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#taitz-leizer" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/taitz-leizer.jpg" alt="Portrait de TAITZ Leizer" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TAITZ Leizer</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#tejada-molina-ernesto" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/tejada-molina-ernesto.jpg" alt="Portrait de TEJADA MOLINA Ernesto" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TEJADA MOLINA Ernesto</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#todorow-jean-andre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/todorow-jean-andre.jpg" alt="Portrait de TODOROW Jean André" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TODOROW Jean André</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#tomaszczyk-michael" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/tomaszczyk-michael.jpg" alt="Portrait de TOMASZCZYK Michael" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TOMASZCZYK Michael</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#torrent-casas-michel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/torrent-casas-michel.jpg" alt="Portrait de TORRENT CASAS Michel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TORRENT CASAS Michel</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#toulejbiez-nicolas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/toulejbiez-nicolas.jpg" alt="Portrait de TOULEJBIEZ Nicolas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TOULEJBIEZ Nicolas</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#treister-juljusz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/treister-juljusz.jpg" alt="Portrait de TREISTER Juljusz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TREISTER Juljusz</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#trimaille-pierre" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/trimaille-pierre.jpg" alt="Portrait de TRIMAILLE Pierre" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TRIMAILLE Pierre</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#trougnou-roger-edouard" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/trougnou-roger-edouard.jpg" alt="Portrait de TROUGNOU Roger Edouard" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TROUGNOU Roger Edouard</div>
+      <div class="pcard-grade">adjudant chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#truffy-lucien-emile" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/truffy-lucien-emile.jpg" alt="Portrait de TRUFFY Lucien Emile" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TRUFFY Lucien Emile</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-t.html#turkeltaub-hersz" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/turkeltaub-hersz.jpg" alt="Portrait de TURKELTAUB Hersz" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">TURKELTAUB Hersz</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-uvw">
+  <h2>UVW<span class="count">17</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#uhlar-joseph" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/uhlar-joseph.jpg" alt="Portrait de UHLAR Joseph" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">UHLAR Joseph</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#unger-maurice-max" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/unger-maurice-max.jpg" alt="Portrait de UNGER Maurice Max" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">UNGER Maurice Max</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#urvoy-de-closmadeuc-marie-jules" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/urvoy-de-closmadeuc-marie-jules.jpg" alt="Portrait de URVOY DE CLOSMADEUC Marie Jules" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">URVOY DE CLOSMADEUC Marie Jules</div>
+      <div class="pcard-grade">capitaine</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#van-den-steen-florimond" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/van-den-steen-florimond.jpg" alt="Portrait de VAN DEN STEEN Florimond" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VAN DEN STEEN Florimond</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#versteege-josef-maria-antonius" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/versteege-josef-maria-antonius.jpg" alt="Portrait de VERSTEEGE Josef Maria Antonius" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VERSTEEGE Josef Maria Antonius</div>
+      <div class="pcard-grade">sergent puis sergent chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#vervier-antoine-henri-noel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/vervier-antoine-henri-noel.jpg" alt="Portrait de VERVIER Antoine Henri Noel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VERVIER Antoine Henri Noel</div>
+      <div class="pcard-grade">sergent</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#vidale-emmanuel-antoine-nicolas" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/vidale-emmanuel-antoine-nicolas.jpg" alt="Portrait de VIDALE Emmanuel Antoine Nicolas" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VIDALE Emmanuel Antoine Nicolas</div>
+      <div class="pcard-grade">caporal</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#viel-roger-isidore" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/viel-roger-isidore.jpg" alt="Portrait de VIEL Roger Isidore" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VIEL Roger Isidore</div>
+      <div class="pcard-grade">lieutenant</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#vierstraete-leon" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/vierstraete-leon.jpg" alt="Portrait de VIERSTRAETE Léon" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VIERSTRAETE Léon</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#vitali-stephan-etienne" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/vitali-stephan-etienne.jpg" alt="Portrait de VITALI Stephan Etienne" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VITALI Stephan Etienne</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#votchel-michel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/votchel-michel.jpg" alt="Portrait de VOTCHEL Michel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">VOTCHEL Michel</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#wattel-jean-lucien-marie" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/wattel-jean-lucien-marie.jpg" alt="Portrait de WATTEL Jean Lucien Marie" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">WATTEL Jean Lucien Marie</div>
+      <div class="pcard-grade">aumônier militaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#wavrik-louis" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/wavrik-louis.jpg" alt="Portrait de WAVRIK Louis" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">WAVRIK Louis</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#weilenmann-jacob-karl" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/weilenmann-jacob-karl.jpg" alt="Portrait de WEILENMANN Jacob Karl" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">WEILENMANN Jacob Karl</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#wejner-anton" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/wejner-anton.jpg" alt="Portrait de WEJNER Anton" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">WEJNER Anton</div>
+      <div class="pcard-grade">légionnaire</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#wesolowski-siegfried" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/wesolowski-siegfried.jpg" alt="Portrait de WESOLOWSKI Siegfried" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">WESOLOWSKI Siegfried</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-uvw.html#worobczak-gregor" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/worobczak-gregor.jpg" alt="Portrait de WOROBCZAK Gregor" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">WOROBCZAK Gregor</div>
+      <div class="pcard-grade">caporal chef</div>
+    </a>
+  </div>
+</section>
+
+<section class="letter-section" id="g-xyz">
+  <h2>XYZ<span class="count">7</span></h2>
+  <div class="pgrid">
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-xyz.html#zacher-maxime-cesar" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/zacher-maxime-cesar.jpg" alt="Portrait de ZACHER Maxime César" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ZACHER Maxime César</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-xyz.html#zangrilli-giovanni" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/zangrilli-giovanni.jpg" alt="Portrait de ZANGRILLI Giovanni" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ZANGRILLI Giovanni</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-xyz.html#zielinski-michel" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/zielinski-michel.jpg" alt="Portrait de ZIELINSKI Michel" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ZIELINSKI Michel</div>
+      
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-xyz.html#zigrand-arsene" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/zigrand-arsene.jpg" alt="Portrait de ZIGRAND Arsène" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ZIGRAND Arsène</div>
+      <div class="pcard-grade">brigadier chef</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-xyz.html#zorman-abram" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/zorman-abram.jpg" alt="Portrait de ZORMAN Abram" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ZORMAN Abram</div>
+      <div class="pcard-grade">2è classe (caporal cassé de son grade)</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-xyz.html#zyga-karol" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/zyga-karol.jpg" alt="Portrait de ZYGA Karol" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ZYGA Karol</div>
+      <div class="pcard-grade">2è classe</div>
+    </a>
+    <a class="pcard" href="https://legionnaires.11regimentetranger.com/recensement-xyz.html#zyllberberg-mayer" target="_blank" rel="noopener">
+      <div class="pcard-photo"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/zyllberberg-mayer.jpg" alt="Portrait de ZYLLBERBERG Mayer" loading="lazy" onerror="this.closest('.pcard').style.display='none'"></div>
+      <div class="pcard-name">ZYLLBERBERG Mayer</div>
+      <div class="pcard-grade">2è classe (caporal cassé de son grade)</div>
+    </a>
+  </div>
+</section>
+
+<details class="sources">
+<summary>Sources des portraits</summary>
+<div class="sources-body">
+
+<h4>Avec l'aimable autorisation de la Saint-Cyrienne</h4>
+<p>BAUMONT Pierre Jean François, BINOCHE François Etienne Adolphe Henri, BOUDOUX D'HAUTEFEUILLE Marie Joseph Louis Etienne "Claude", BROCHET DE VAUGRINEUSE Maurice Pierre Claude, CARDONNE Joseph, CLÉMENT Pierre Emile Fernand, CLÉMENT René Paul, COLLIN Yann Marie Charles, COQUET Jacques, Du BESSET Jean Marc Marie, DUBOIS Joseph Marie Henri, EMANUELLI Jules César, FORGET Michel, GARRIGUES Pierre Emile, GAULTIER Louis Marie Antoine, GHEYSENS Frédéric Yvan Camille François, HAFENSCHER Jean Ladislas, JAYET Louis Charles Marie, JURION Marc André Maurice Félicien, PICQUART Jean, RIO Léo, ROBERT Georges Louis Marie, ROUSIERS DE Jacques Paul Marie, ROUX Robert Louis Maurice alias Maurac, SEILLON Benoît Georges, SIGMANN Joseph Jacques, URVOY DE CLOSMADEUC Marie Jules Albéric, VIEL Roger Isidore</p>
+
+<h4>Archives familiales aimablement transmises par les descendants des légionnaires du 11è REI</h4>
+<p>AMSTUTZ Jean, AST Henri, AUFFRET Pierre, BERTOT Alfred, BESSIERE Henri, BOROWIAK Ignatz, BOSEMS Lambert/Albert, BOURQUIN (archive famille Amstutz), BRUNEC Sawa, CARRICANDO MARTINEZ José Miguel "Michel", CAYUELA Miguel, CHALANDRE Gilbert, CHEVILLOTTE Hervé Marie Charles, COUBARD Yves, DADU Marcel, DELMAS Georges, DOZIERE Paul Francis, DROUINEAU Robert, FITSCH Jacques, GARCIA MARTINEZ Ramon, GENAY Achille Jules, GIRAUDEAU Maurice, GOGOL Paul, GONTIER Maurice, GOUZARSKI Michel, HABIF Isaac, JABOUILLE André Robert Léon, KRESCH Moses Moïse/Jacob Mozesz, LANCHON né LEFEBVRE Louis, LASMAN Kalma dit Charles, LE MOINE Marcel, LIBET Claudius, LIEGEOIS René, LOZANO Jean Pierre, MADEC Robert, MALAUD André, MALRAIT Léon, MARCH Joachim, MATUSZEWICZ Chaskiel "Jean Jacques", METMAN Henry Jules, MOSSMAN Auguste, NANTI William, PAJANK Jean, PASSET Philibert, PAWLOWSKI François / Franciszek, PHILIPOT Georges Henri, PIENS Marceau, PONCIN Marcel Gustave Lucien, PONIST Pavel Paul, RICHARD Denis Robert Lucien, ROCHAT André, ROCHET Marcelin, SAMUELSEN Sigurd, SANJORGE Alphonse, SENIURA Maxime, SIEGENTHALER Adolf, TROUGNOU Roger, VERVIER Antoine, VIDALE Emmanuel, VOTCHEL Michel, WATTEL Jean, WEILENMANN Jacob Karl, ZIGRAND Arsène</p>
+
+<h4>Archives privées</h4>
+<ul>
+<li>Généanet (Gertrude Zulte/POURQUOY Alfred)</li>
+<li>MyHeritage (Mar Mys/ANIOL Josef)</li>
+<li>MyHeritage (Richard Treister/TREISTER Juncio)</li>
+<li>MyHeritage (Claude Krüger/CASANOVA Mario)</li>
+<li>MyHeritage (Christine Cristofoli/BOULANGER Maurice)</li>
+<li>Généanet (Georges Thomas/FRANCOIS Lucien)</li>
+<li>Généanet Brigitte Carré</li>
+<li>MyHeritage (SWIERK family/POTAZNIK Aron "Henri")</li>
+<li>MyHeritage (Félix Uhlár/UHLAR Jozef)</li>
+<li>MyHeritage (Pawlik Bronislaw/Marie Magin)</li>
+<li>Généanet (Baptiste VERDU (darkeyras)/Maxime GAMEZ RUIZ)</li>
+<li>MyHeritage (Marian Sprumont/KLEIN Joszef)</li>
+<li>MyHeritage (Christian Pouillaude/Victor Pouillaude)</li>
+<li>Familysearch (TOMASZCZYK Michael "Michel")</li>
+<li>MyHeritage (Kacper Mendla/PRZENIOSLO Wladislas Wladek)</li>
+<li>MyHeritage (LAINSCAK Karoly "Charles")</li>
+<li>MyHeritage (RAMEL Joseph Jean Marie)</li>
+<li>Généanet (André Chipaux/AMBROSINI Luigi)</li>
+<li>MyHeritage (Roberta Tanner/RICHARDSON George Ferguson)</li>
+<li>MyHeritage (Mark Schonwetter/SCHARYCKI David)</li>
+<li>Généanet (Lascaux/Jean Louis Lebouteiller)</li>
+<li>Généanet (hjulien1/Pierre Corentin JULIEN)</li>
+<li>Géanéanet (Benoît Hugget/Robert HUGGET)</li>
+<li>MyHeritage (Estelle Dos Santos/Giovanni ZANGRILLI)</li>
+<li>MyHeritage (ilorap/Szerman Szmul)</li>
+<li>MyHeritage (OKLADEK Mordka)</li>
+<li>MyHeritage (CORNU Serge)</li>
+<li>MyHeritage (Valentin Debels/POLASZYK Franz "François")</li>
+<li>MyHeritage (Pierre Lucas/Gernot Nehmeyer)</li>
+<li>MyHeritage (Antolin Gil Sebastien)</li>
+<li>MyHeritage (DAWIDOWICZ Berszlik "Henri")</li>
+<li>MyHeritage (EINSPRUCH Mosjzesz "Maurice")</li>
+<li>Généanet (Baptiste VERDU (darkeyras)/Gamez Ruiz Maxime)</li>
+</ul>
+
+<h4>Républicains espagnols déportés à Mauthausen</h4>
+<ul>
+<li><a href="http://deportados.es/" target="_blank" rel="noopener">deportados.es</a> — AGUSTI HERVAS Rámon (Augustin Ramon), ESCRIVA SIVERA Rafael, ROMERO ROMERO Juan</li>
+<li><a href="https://trebujena.wordpress.com/2007/" target="_blank" rel="noopener">trebujena.wordpress.com</a> — PAZO Diego</li>
+<li><a href="http://www.barceloninsdeportats.org/es/39/alvarez-navarro-jaume/biografia.html" target="_blank" rel="noopener">barceloninsdeportats.org</a> — ALVAREZ NAVARRO Jaime</li>
+<li><a href="http://www.estelnegre.org/anarcoefemerides/1909.html" target="_blank" rel="noopener">estelnegre.org</a> — BALAGUE MARTI Alberto</li>
+<li><a href="https://www.deia.eus/bizkaia/laudio-nerbioi/2020/11/02/chapa-desvelo-vida-manuel-mogrevo/1075699.html" target="_blank" rel="noopener">deia.eus</a> — Manuel MOGROVEJO ARNAIZ</li>
+<li><a href="http://www.afmd-allier.com" target="_blank" rel="noopener">afmd-allier.com</a> — Jaime COLET BALAR, Jose MARTINEZ HERNANDEZ</li>
+<li><a href="https://www.facebook.com/groups/stolpersteinelospedroches" target="_blank" rel="noopener">Stolpersteine Los Pedroches (Facebook)</a> — TEJADA Ernesto, CAMACHO Manuel, PULGARIN AGRENADO José, ALCAZAR SANCHEZ Bernabé (coll. Juan Molleja)</li>
+<li>SALGUERO NIETO Miguel — « Un almendralejense en el infierno nazi », par Pedro Manuel López Rodríguez</li>
+</ul>
+
+<h4>Archives ITS Arolsen</h4>
+<p>ANGLADA Raphael, CERVENY Joseph, CHERAFFEDIN Radje (caporal-chef, 5è compagnie), KOTOWSKI Antoine, LYS Josef (LIS Jozef), POBEREZNIK Wincenty, WISNIEWSKI Marcin, PAULIN Roger Robert, GARCIA GARCIA Abelle</p>
+
+<h4>Fichiers des étrangers</h4>
+<ul>
+<li><a href="https://felixarchief.antwerpen.be/" target="_blank" rel="noopener">felixarchief.antwerpen.be</a> — APELOIG Henri Nison, GASNER Salomon, GETZLER Elias, INGWER Rafael, KAMLAY Ludwik, KREPKO Saul Elie, LEIBMAN Chalik Charles, LEVER Hendrik Jacob, OBDAM Andréas</li>
+<li>Brésil, visa : LEVY Roger</li>
+<li>Archives suisses : SPIEWAK Isaac</li>
+</ul>
+
+<h4>Mémoriaux</h4>
+<ul>
+<li><a href="http://www.memorialdelashoah.org/" target="_blank" rel="noopener">memorialdelashoah.org</a> — CUKIER Jankiel, FRYDMAN Hersz, GOLDSZTAJN Meyer Shulim, LENCZNER Lejbus, LEWKOWITCH Léopold</li>
+<li><a href="https://yvng.yadvashem.org/" target="_blank" rel="noopener">yvng.yadvashem.org</a> — UNGER Maurice, GOLCER Szyja, BEER Sami</li>
+<li><a href="http://www.memorialgenweb.org/" target="_blank" rel="noopener">memorialgenweb.org</a> — HAUTECOEUR Marcel, PAQUIER Lucien Arthur, REWINSKI Salomon Calel</li>
+<li>Inor, plaque commémorative — COLEN André Stanislas Émile</li>
+<li>Cimetières : Van den Steen Florimond, Erman Isachor (Bagneux)</li>
+<li><a href="https://vhaonline.usc.edu/viewingPage?testimonyID=30409" target="_blank" rel="noopener">vhaonline.usc.edu</a> — Henri Hersz TURKELTAUB</li>
+<li>Cimetière de Besançon — René SERMET</li>
+<li>Cimetière de Grignols — Pierre PEYROT</li>
+<li>Cimetière d'Engayrac — BRAÏDOTTI Virgile Virginio</li>
+<li>Cimetière de Villeparisis — MULLER Gyozo "Victor"</li>
+<li>Cimetière d'Orange — DE CONTE François</li>
+<li>Cimetière de Bagneux — DAWIDSON Cudik, CUKIER Jankiel</li>
+<li>Cimetière Israélite Saint-Eugène, Bologhine, Alger — SMEJA Léon</li>
+<li>Cimetière de Friville-Escarbotin — JARNO Jacques Joachim</li>
+<li>Cimetière de Beyne-Heusay — LINDEMAN Floribert</li>
+</ul>
+
+<h4>Livres</h4>
+<ul>
+<li>« Les Combattants officiers étrangers au service de la France : 1914-1918, 1939-1945... », Association des officiers anciens combattants de l'Armée française à titre étranger, 1977 — KAKHOVSKY Léon, SMIRNOFF Oleg, PRAVOSSOUDOVITCH Jean</li>
+<li>Roger Bruge, « Les Combattants du 18 juin — Le cessez-le-feu » — LIGNEZ André Robert, GIRARD, CARRAZ, ROUILLON Paul</li>
+<li>Guy Weber, « Les belges et la légion »</li>
+</ul>
+
+<h4>Presse de l'époque</h4>
+<ul>
+<li>Belgicapress — BASTIN Henri</li>
+<li>Rétronews / Gallica — FOUCHER Julien Albert (Le Phare de la Loire, 20 juin 1934), KROUKER Elie (L'Univers israélite, 28 mai 1935)</li>
+<li>Notre Volonté n°59 — DAUM Chaïm</li>
+<li>COTTAFARI Joseph</li>
+</ul>
+
+<h4>SHD de Vincennes, série GR 16 P</h4>
+<p>PELLEGRINI Léon, MONDON Pierre, RIEFSTAHL Alfred, KRASSEF Panaiot, GELLES Israël dit Louis, JOLSVAY André, GRAGNON Jacques, LAKOMIAK Marjan, CADIOU Pierre, REANT Fernand, MAST Henri, PETROCGILOS Yannis, TODOROW Jean Andréa, BRANDSTATTER Mathias Menachem, OUDEM Léon (GR 16 P 452557), DORET Jean Pierre</p>
+
+<h4>SHD de Vincennes, série GR 8 YE</h4>
+<p>BARON Charles Antoine (GR 8YE 85340), FUNKL Friedrich (GR 8YE 41446), KRANZ Emanuel (GR 8YE 65839), LEVACHER Jacques (GR 8YE 49763), MAGNE Jean (GR 8YE 37389), TRIMAILLE Pierre (GR 8YE 128728), LOVINGER Jacques (GR 8YE 87234), BEDRICH Bedrich (GR2000Z203/06764), RAIEWSKI Nicolas (GR 2000Z207/11671), LIGNEZ Robert (SHD Vincennes GR2000Z200/494)</p>
+
+<h4>SHD Caen, série AC 21</h4>
+<p>BOZZONETTI Edouard, GUILLEMET Maurice Eugène, HONIGSTOK Towja, LOPEZ SAEZ José</p>
+
+<h4>AN Pierrefitte-sur-Seine, dossiers de naturalisation</h4>
+<p>AGOTICS Sandor, AMAND Maurice, BINSZTOCK Maurice, CATTALANO Gilbert, CERRO RODRIGUEZ Tomas, GROSSAUG Jacob, LAIZEROWICZ Wolf, LAZIK Karol, LEWKOWITCZ Léopold alias "Léon-Bernard", MORGENBESER Abraham, SZKUTEK Rodolphe, VITALI Stephan Etienne, WESOLOWSKI Siegfried, WOROBCZAK Grégoire</p>
+
+<h4>AN Pierrefitte-sur-Seine, fonds de Moscou</h4>
+<p>BOROWIECKI Felix, FUNK Rachmil Maurice</p>
+
+<h4>BALE</h4>
+<p>BACAL Henri, ALLOUCHERIE Marcel, JAIME BELLIDO Juan, SARGA Imre, LEDUC Charles, DEMOULIN Nicolas, WEJNER Anton</p>
+
+<h4>Archives RGASPI</h4>
+<p>F. 545. Op. 6. D. 1297 — MALHERBE Marcel · F. 545. Op. 6. D. 1021 — RECHAD Mehmed · 545/6/1295 — MAGULA François · 545/6/1552 — PANKOV Leonid</p>
+
+<h4>Base Léonore (Légion d'honneur)</h4>
+<p>Henri Bernard MARGUILLES</p>
+
+<h4>Sites internet</h4>
+<ul>
+<li><a href="http://foreignlegion.info" target="_blank" rel="noopener">foreignlegion.info</a> — VERSTEEGE Josef, CIESLAK Wladislas</li>
+<li><a href="http://www.3emegroupedetransport.com/PETITJean002.htm" target="_blank" rel="noopener">3emegroupedetransport.com</a> — ROBITAILLE Léon</li>
+<li><a href="https://bel-memorial.org/" target="_blank" rel="noopener">bel-memorial.org</a> — DAMOISEAU Désiré</li>
+<li><a href="https://www.myheritage.fr/" target="_blank" rel="noopener">myheritage.fr</a> — SIEGENTHALER (arbre MC Prajoux), SZOKE Geza (arbre R Darmon), BARNY Marcel, FORAY Claudius, FREUND Michel Max</li>
+<li><a href="http://www.ons-jongen-a-meedercher.lu" target="_blank" rel="noopener">ons-jongen-a-meedercher.lu</a> — AST Nicolas</li>
+<li><a href="https://fr.wikipedia.org" target="_blank" rel="noopener">fr.wikipedia.org</a> — Emile Buhrer</li>
+<li><a href="https://erfgoedbankmidwest.be" target="_blank" rel="noopener">erfgoedbankmidwest.be</a> — VIERSTRAETE Léon</li>
+<li><a href="https://cbj.jhi.pl/" target="_blank" rel="noopener">cbj.jhi.pl</a> — BANET Majer</li>
+<li><a href="https://maitron.fr/" target="_blank" rel="noopener">maitron.fr</a> — KLEJMAN Szmul</li>
+<li><a href="https://www.maisondusouvenir.be/jean_clokers.php" target="_blank" rel="noopener">maisondusouvenir.be</a> — CLOKERS Jean</li>
+<li><a href="https://www.oldrums.fr/petiteshistoires.html" target="_blank" rel="noopener">oldrums.fr</a> — AGOSTINI Luigi Folco "Louis"</li>
+<li><a href="https://www.assemblee-nationale.fr/histoire/trombinoscope/Vrepublique/Legis01/cachat-armand-15071901.asp" target="_blank" rel="noopener">assemblee-nationale.fr</a> — CACHAT Basile "Armand"</li>
+<li><a href="https://rolande02.skyrock.com/287333173-Mes-parents-My-parents.html" target="_blank" rel="noopener">rolande02.skyrock.com</a> — HOROWICZ Srul Pelta "Paul"</li>
+<li><a href="https://www.usmcu.edu/" target="_blank" rel="noopener">usmcu.edu</a> — ORTIZ Peter Julien</li>
+<li><a href="https://www.resistance-brest.net/article2537.html" target="_blank" rel="noopener">resistance-brest.net</a> — QUERE Michel Yves Marie</li>
+<li><a href="https://www.familysearch.org/" target="_blank" rel="noopener">familysearch.org</a> — ROYO SOPENA Felipe "Philippe"</li>
+<li><a href="https://associationkulturapolska.wordpress.com/henryk-rzekiecki-dalegron/" target="_blank" rel="noopener">associationkulturapolska.wordpress.com</a> — RZEKIECKI D'ALEGRON Henryk</li>
+</ul>
+
+<h4>Films documentaires</h4>
+<p>« España una, Portugal cero. Memorias de un prisionero de guerras » (Santi Ric, Javi Gil, 2023) — José RIC DARNE</p>
+
+<h4>Archiwum Państwowe w Radomiu</h4>
+<p>58/1/0/3.3/8839 — CEDER Herszek</p>
+
+<h4>Bulletins et publications associatives</h4>
+<p>Creuse résistance, bulletin n°54 (Christian Penot) — LEDER Szamsza Lajb "Salomon"</p>
+
+</div>
+</details>
+</main>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('portraits-top');
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>

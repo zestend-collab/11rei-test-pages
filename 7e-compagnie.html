@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7e Compagnie — 11e REI</title>
+<meta name="description" content="7e Compagnie, 11e régiment étranger d'infanterie : organisation, encadrement et effectif recensé.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .flag{width:180px;height:auto;flex-shrink:0;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-size-small img{width:min(240px,100%);margin:0 auto}
+  .ci-size-full img{width:100%}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+  .ci-intro blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+
+  /* --- Carnet, façon journal de terrain --- */
+  .carnet-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.2rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none}
+  .suggestions.show{display:block}
+  .suggestion-item{padding:.5rem .9rem;font-size:.82rem;color:var(--ink);cursor:pointer;
+    display:flex;justify-content:space-between;gap:8px}
+  .suggestion-item:hover,.suggestion-item.active{background:var(--row)}
+  .suggestion-item .sg-meta{color:var(--muted);font-size:.72rem;white-space:nowrap}
+  .navbtn{width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);background:var(--card);
+    color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .navbtn:hover{background:var(--orange)}
+  .pagecount{font-size:.75rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .book-stage{
+    background:
+      radial-gradient(ellipse at center, #4a3826 0%, #1c130a 78%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,.12) 0 2px, transparent 2px 6px);
+    border-radius:10px;
+    padding:2.2rem 1.4rem;
+    margin-bottom:.6rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6);
+  }
+  .book{position:relative;perspective:2200px;display:flex;max-width:720px;margin:0 auto;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .page{
+    flex:1;min-width:0;position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    min-height:260px;
+    color:#2b2013;
+    transition:transform .45s ease, opacity .45s ease;
+  }
+  .page-left{border-radius:6px 0 0 6px;padding-left:1.9rem;
+    box-shadow:inset -10px 0 18px -12px rgba(0,0,0,.45)}
+  .page-right{border-radius:0 6px 6px 0;padding-right:1.9rem;
+    box-shadow:inset 10px 0 18px -12px rgba(0,0,0,.45)}
+  .book::before{ /* reliure centrale */
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;z-index:3;
+    background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.35)),
+               repeating-linear-gradient(180deg, #2a1c0f 0 3px, #1c1108 3px 6px);
+    box-shadow:0 0 14px rgba(0,0,0,.6);
+  }
+  .page::after{ /* coin corné */
+    content:'';position:absolute;bottom:0;width:22px;height:22px;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 50%);
+  }
+  .page-left::after{right:0;border-radius:0 0 6px 0}
+  .page-right::after{left:0;transform:scaleX(-1);border-radius:0 0 0 6px}
+  .page.turning-next{transform:rotateY(-14deg) translateX(-16px);opacity:0}
+  .page.turning-prev{transform:rotateY(14deg) translateX(16px);opacity:0}
+  .page-empty{display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;
+    font-size:1.3rem;color:#8a7554}
+
+  .flip{
+    position:absolute;top:0;bottom:0;width:50%;z-index:5;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    color:#2b2013;
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+    box-shadow:0 0 24px rgba(0,0,0,.45);
+    transition:transform .5s cubic-bezier(.45,.05,.35,1);
+    overflow:hidden;
+    display:none;
+  }
+  .flip::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 40%);
+    opacity:0;transition:opacity .5s}
+  .flip.showing::after{opacity:1}
+  .flip.right{right:0;transform-origin:left center;border-radius:0 6px 6px 0;padding-right:1.9rem}
+  .flip.left{left:0;transform-origin:right center;border-radius:6px 0 0 6px;padding-left:1.9rem}
+  .flip.flipping-right{transform:rotateY(-160deg)}
+  .flip.flipping-left{transform:rotateY(160deg)}
+
+  .p-header{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.2rem;
+    border-bottom:1px dashed rgba(120,90,40,.4);padding-bottom:.4rem}
+  .p-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.15rem;color:#2b2013}
+  .p-stamp{font-family:'Caveat',cursive;font-size:1rem;color:#8a1f11;border:2px solid #8a1f11;border-radius:6px;
+    padding:.05rem .45rem;transform:rotate(4deg);white-space:nowrap;opacity:.8}
+  .p-meta{font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.85rem;margin-bottom:.8rem}
+  .p-field{margin-bottom:.4rem;line-height:1.5;font-size:.82rem}
+  .p-field .lbl{font-family:'Caveat',cursive;font-size:1.02rem;color:#8a4a1f;margin-right:.3rem}
+  .p-link{display:inline-block;margin-top:.7rem;font-size:.76rem;color:#8a4a1f;text-decoration:none;
+    border-bottom:1px dotted #8a4a1f}
+  .p-link:hover{color:#8a1f11}
+  .pageno{position:absolute;bottom:.6rem;font-family:'Caveat',cursive;font-size:.9rem;color:#8a7554}
+  .page-left .pageno{right:1rem}
+  .page-right .pageno{left:1rem}
+  .tapzone{position:absolute;top:0;bottom:0;width:22%;cursor:pointer;z-index:2}
+  .page-left .tapzone{left:0}
+  .page-right .tapzone{right:0}
+
+  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{bottom:74px !important;}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+  .ci-note{font-size:.8rem;font-style:italic;color:#7a5a2a;background:var(--paper2);
+    border:1px solid var(--rule);border-radius:4px;padding:.7rem 1rem;margin:.4rem 0 1rem}
+
+  .eff-stats{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin:0 0 18px}
+  .eff-stat{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--orange);
+    border-radius:4px;padding:.9rem .6rem;text-align:center}
+  .eff-stat .n{font-family:'EB Garamond',serif;font-weight:600;font-size:1.7rem;color:var(--ink)}
+  .eff-stat.mpf .n{color:#8a1f11}
+  .eff-stat .l{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:.15rem}
+
+  .eff-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;justify-content:space-between}
+  .eff-search{flex:1 1 240px}
+  .eff-search input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .eff-search input:focus{outline:2px solid var(--orange);outline-offset:-1px}
+  .eff-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .eff-chip{border:1px solid var(--border);background:var(--card);color:var(--muted);padding:.4rem .8rem;
+    font-size:.74rem;cursor:pointer;border-radius:20px;user-select:none;font-family:'Inter',sans-serif}
+  .eff-chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .eff-count{font-size:.74rem;color:var(--muted);margin:-2px 0 10px}
+
+  table.eff-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);font-size:.82rem}
+  table.eff-table thead th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--muted);background:var(--row);padding:.6rem .7rem;cursor:pointer;white-space:nowrap;
+    border-bottom:2px solid var(--orange)}
+  table.eff-table thead th:hover{color:var(--ink)}
+  table.eff-table thead th .arrow{opacity:.5;font-size:.6rem;margin-left:.2rem}
+  table.eff-table tbody td{padding:.55rem .7rem;border-top:1px solid var(--border);vertical-align:top}
+  table.eff-table tbody tr:hover{background:var(--row)}
+  td.eff-nom{font-weight:600;white-space:nowrap}
+  td.eff-nom .eff-prenom{font-weight:400;color:var(--muted)}
+  td.eff-details{color:var(--muted);font-size:.76rem;max-width:280px}
+  td.eff-section{color:var(--muted);font-size:.76rem;max-width:160px}
+
+  .eff-badge{display:inline-block;font-size:.62rem;text-transform:uppercase;letter-spacing:.02em;
+    padding:.1rem .45rem;border-radius:3px;margin:1px 3px 1px 0;white-space:nowrap;border:1px solid transparent;
+    font-family:'Inter',sans-serif}
+  .eff-badge.MPF{background:#f4e3df;color:#8a1f11;border-color:#e3bdb4}
+  .eff-badge.Prisonnier{background:#fdf1d9;color:#8a6d1f;border-color:var(--orange)}
+  .eff-badge.Blessé{background:#fbeee0;color:#9c5a1f;border-color:#edd2ac}
+  .eff-badge.Déserteur{background:#ece9f2;color:#4d4470;border-color:#d3cce4}
+  .eff-badge.Disparu{background:#eee;color:#666;border-color:#ccc}
+  .eff-badge.Évadé{background:#e3f0e0;color:#35662f;border-color:#c3dcbb}
+  .eff-badge.Rapatrié{background:#dfeaf0;color:#2c5f75;border-color:#bcd8e3}
+  .eff-badge.Démobilisé{background:#f0eee6;color:#6b6558;border-color:#ddd8c9}
+
+  a.eff-fiche{font-size:.74rem;color:var(--link);text-decoration:none;white-space:nowrap}
+  a.eff-fiche:hover{text-decoration:underline}
+  .eff-nofiche{color:#c9c3af;font-size:.74rem}
+
+  .ci-table{width:100%;border-collapse:collapse;margin:.3rem 0 1.2rem;font-size:.82rem}
+  .ci-table caption{caption-side:top;text-align:left;font-family:'EB Garamond',serif;font-style:italic;
+    color:var(--muted);margin-bottom:.4rem;font-size:.85rem}
+  .ci-table th{background:var(--row);border-bottom:2px solid var(--orange);padding:.5rem .6rem;
+    text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  .ci-table td{padding:.5rem .6rem;border-top:1px solid var(--border)}
+  .ci-table tr.total-row td{font-weight:600;border-top:2px solid var(--border)}
+
+  @media (max-width:900px){
+    .eff-stats{grid-template-columns:repeat(3,1fr)}
+    td.eff-section{display:none}
+  }
+  @media (max-width:560px){
+    .eff-stats{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-7eCie" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  <div class="htext">
+    <h1>7e Compagnie</h1>
+    <div class="sub">Effectif recensé : 173 légionnaires</div>
+    <a class="back" href="https://www.11regimentetranger.com/recherche-legionnaire">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro"><p class="ci-lede">Historique reconstitué à partir du Journal de Marche et des Opérations (JMO) de la 7e Compagnie couvrant la période du 1er janvier au 30 avril 1940, des extraits rédigés par le Lieutenant puis Capitaine Coquet pour les périodes du 16 au 30 avril, du 1er au 15 mai puis du 15 au 30 mai 1940, et du registre quotidien de comptabilité des effectifs (mouvements de soldes et de vivres) tenu par la compagnie du 1er avril au 10 juin 1940.</p>
+<h2 class="ci-h2">Janvier – mars 1940 : la guerre de position en Moselle</h2>
+<p>Au 1er janvier 1940, la 7e Compagnie cantonne à Kirchnaumen puis fait route sur Obernaumen, où elle s'installe : la compagnie de commandement et les 2e, 3e et 4e sections à Obernaumen, la 1ère section à la ferme de Tockfelt. La compagnie tient alors un secteur d'avant-postes dans le cadre de la « drôle de guerre ».</p>
+<p>Dès le 2 janvier, les légionnaires Welocker Nicolas et Nicolas Eugène sont évacués sur une formation sanitaire pour « asphyxie » ; le légionnaire Nicolas décède le lendemain au Groupe Sanitaire Divisionnaire (G.S.D.). Le 16 janvier, le légionnaire Koecher meurt de mort violente par arme à feu. Les semaines suivantes sont occupées par des travaux d'abris et de défense, en alternance avec des tours aux avant-postes, jusqu'à la relève de la compagnie à Obernaumen par un bataillon du 2e Régiment de Tirailleurs Marocains le 6 janvier, puis un nouveau cantonnement.</p>
+<p>Le 12 janvier, la compagnie s'installe au bois de Ritzing pour y construire des ouvrages d'abri et de défense, travaux qui se poursuivent jusqu'au 21 janvier, date à laquelle elle est relevée aux avant-postes par le 2e R.T.M. et cantonne à Oudrenne, puis à Ennery à partir du 23 janvier. À Ennery, la compagnie reprend l'instruction et l'éducation physique jusqu'à la fin du mois.</p>
+<h3 class="ci-h3">Février 1940 : Elzange et le bois de Koenigsmacker</h3>
+<p>Début février, l'unité, toujours à Ennery, poursuit l'instruction avant de faire étape le 4 février sur Elzange. Le gros du mois est consacré à des travaux de construction d'abris à la lisière nord-est du bois de Koenigsmacker, mobilisant l'essentiel de l'effectif disponible. Sur le plan du commandement, le Capitaine Perrossier part en permission de détente le 7 février ; le Lieutenant Forget, rentré de permission la veille, prend le commandement de la compagnie par intérim à compter du 8 février. Le 20 février, le Capitaine Perrossier rejoint la compagnie, avant de la quitter définitivement le 22 février, affecté au 12e R.E.I.</p>
+<p>Une importante série de nominations est prononcée les 15 et 16 février 1940 par ordre du régiment n° 39 :</p>
+<ul><li>Sergents : Termens Simon (caporal), Sandrou Nestor, Hutter Joseph, Belke Jean (caporal-chef)</li><li>Sergent-chef : Jolway André (sergent)</li><li>Caporaux : Servez Jean, Velosic Alfred, Cote Gabriel</li><li>Caporal-chef : Foray Claudius (caporal)</li><li>Caporaux (2e série) : Zimmer Henri, Johanson Carl, Guilbert Georges, Brémont Jean, Cadiou Pierre, Tieblemont René, Hernandez André</li></ul>
+<h3 class="ci-h3">Mars 1940 : Sainte-Marguerite</h3>
+<p>Début mars, la compagnie quitte Elzange le 4 mars pour Sainte-Marguerite, où elle cantonne durant tout le mois, alternant travaux de campagne, revues d'armes et de propreté, et quelques journées de repos (les 17, 24 et 31 mars notamment). Le Lieutenant Delmas part en permission de détente le 25 mars.</p>
+<h2 class="ci-h2">Avril 1940 : Metzervisse, Hestroff, la ligne de contact</h2>
+<p>Le 1er avril, le Lieutenant Delmas rentre de permission tandis que le Lieutenant Berthot en part à son tour. La compagnie poursuit ses travaux de campagne à Sainte-Marguerite jusqu'au 12 avril, date à laquelle elle prépare son départ. Le registre quotidien de comptabilité, qui débute précisément à cette période, montre un mouvement continu de légionnaires revenant de permission de détente durant la première quinzaine d'avril, chacun faisant l'objet d'un rappel de solde correspondant à ses jours d'absence.</p>
+<p>Le 13 avril, la compagnie fait mouvement de Sainte-Marguerite à Metzervisse, puis le 14 avril de Metzervisse à Hestroff. Le 15 avril, elle occupe l'emplacement de combat, et à partir du 16 avril s'installe durablement à Hestroff, où elle occupe les emplacements de combat et travaille au fossé antichar jusqu'au 20 avril. Un détachement d'un sergent, deux caporaux et dix légionnaires est envoyé au Groupe Franc le 16 avril.</p>
+<p>Le 21 avril est une journée de repos au cantonnement, suivie par la reprise des travaux de campagne les 22 et 23 avril. Le 24 avril, la compagnie quitte Hestroff à 19 heures pour faire mouvement sur Volmerange, où elle installe son cantonnement les 25 et 26 avril (avec revue d'armes et de matériel), avant un exercice de défilé et une revue de cuirs et d'outillage le 27, puis une journée de repos le 28. Les 29 et 30 avril sont consacrés à l'exercice de repli à Boulay le matin, puis au défilé du régiment et à la célébration de la fête de Camerone.</p>
+<p>Sur le plan du commandement, trois mutations marquent ce mois : le Lieutenant Coquet est affecté à la 7e Compagnie et en prend le commandement le 25 avril 1940 ; le Lieutenant Forget part en permission de détente de dix jours le 27 avril ; le Sous-lieutenant Berthot est affecté à la 5e Compagnie le 24 avril. Deux caporaux sont nommés sergent et caporal-chef par décision du 30 avril (prise d'effet le 1er mai), et trois légionnaires de 2e classe sont nommés à l'emploi de 1re classe à la même date.</p>
+<h2 class="ci-h2">1er – 21 mai 1940 : de la Moselle à la Meuse</h2>
+<p>Durant la première quinzaine de mai, la compagnie reste à Volmerange puis dans ses environs, alternant travaux d'abris et d'emplacements de batterie (1er, 3, 4, 6 à 10 mai) et journées de repos ou d'instruction (2, 5, 11, 12 mai). Le Lieutenant Coquet, un temps absent, rejoint l'unité le 11 mai 1940.</p>
+<p>Le 13 mai, la compagnie fait mouvement sur Villers-Laquenexy, puis le 14 mai sur Corny, où elle cantonne. Le 15 mai est consacré à l'installation du cantonnement, aux travaux de propreté et à une revue de départ. Le rythme s'accélère alors nettement, signe de l'approche de la bataille : le 16 mai, mouvement de nuit sur Xonville ; le 17 mai, nouveau cantonnement à Xonville puis embarquement en camion à 21 heures ; le 18 mai à 4 heures du matin, arrivée à Bréheville et installation dans les bois avoisinants ; le 19 mai, bivouac dans les bois de Bréhéville. Le 20 mai à partir de 22 heures, la compagnie fait mouvement sur le bois de Pâques (bois au sud de Nepvant), où elle arrive le 21 mai à 5 heures.</p>
+<p>Le 21 mai, après un stationnement dans le bois de Pâques, la compagnie relève à 23 heures les éléments du 14e Régiment de Tirailleurs Algériens tenant la ligne dans le bois d'Inor. Elle occupe désormais un secteur de première ligne.</p>
+<h2 class="ci-h2">22 – 30 mai 1940 : les combats du bois d'Inor</h2>
+<p>Le 22 mai, vers 3 heures du matin, de vifs engagements de contact éclatent : le légionnaire Revinski est tué. Le reste de la journée est consacré à l'organisation du terrain, mais de très vifs engagements reprennent vers 22 heures : sont blessés le sergent-chef Saurier et les légionnaires Maury, Delaevin, Kornblaum, Deligne, Kujas et Enkin — le registre de comptabilité de la compagnie, tenu en parallèle, confirme leur évacuation sur formation sanitaire le 23 mai sous des orthographes légèrement différentes (Morry, Delacour, Rujacz/Kujacz, Enkiri).</p>
+<p>Le 23 mai, la 1ère section fait un prisonnier blessé ; des engagements de contact se poursuivent la nuit suivante, le 24 mai, sans nouvelle perte notable. Les 25 et 26 mai sont marqués par des tirs d'artillerie ; le 26 mai, une patrouille de reconnaissance est effectuée par le Lieutenant Forget et le sergent Saudrin (Sandrou). Le JMO souligne qu'aucune perte n'est à déplorer durant ces trois journées.</p>
+<p>Le 27 mai est la journée la plus meurtrière de la période : à 3 heures du matin, des éléments ennemis attaquent, appuyés par l'artillerie et des lance-mines (Minenwerfer). L'ennemi est repoussé sur l'ensemble du front mais poursuit des tentatives d'infiltration pendant plusieurs heures avant de se replier définitivement vers 9 heures ; trois prisonniers restent aux mains de la compagnie. Les légionnaires Grégoire et Amsel sont tués. Sont blessés le sergent-chef Jolsway, le sergent Sandron, le caporal Johaussen et les légionnaires Krizniak, Luigi, Geldhof et Mazalenas. L'Adjudant-chef Klebnikoff est légèrement blessé par éclat d'obus ; le sergent Termens et le caporal Zimmer sont blessés aux abords de la cuisine par un tir d'obus.</p>
+<p>Le 28 mai, la compagnie reçoit l'ordre de se replier derrière la ligne de recueil ; le décrochage s'effectue sans incident entre 8h30 et 9h30, la compagnie ramenant trois prisonniers blessés. Vers 10 heures, elle est soumise à un tir d'artillerie qui tue le légionnaire Giraudeau et blesse le légionnaire Bertaux. Le 29 mai, un détachement subit un tir d'artillerie qui tue le légionnaire Arefieff et blesse les légionnaires Bureau et Grégorowitch. Le 30 mai est consacré à l'aménagement des emplacements de combat éventuels.</p>
+<h3 class="ci-h3">Bilan des pertes identifiées (22 mai – 9 juin 1940)</h3>
+<ul><li>22 mai — tué : Revinski (Rewinski) ; blessés : Saurier, Maury (Morry), Delaevin (Delacour), Kornblaum, Deligne, Kujas (Rujacz), Enkin (Enkiri)</li><li>27 mai — tués : Grégoire, Amsel ; blessés : Jolsway, Sandron, Johaussen (Johansen), Krizniak (Kryskianiak), Luigi (Luiggi), Geldhof, Mazalenas (Mazaleyras), Klebnikoff, Termens, Zimmer</li><li>28 mai — tué : Giraudeau ; blessés : Bertaux, Kaufman</li><li>29 mai — tué : Arefieff ; blessés : Bureau, Grégorowitch (Grégorowicz)</li><li>8 juin — tué : Burda</li><li>9 juin — blessé : Weinberg</li><li>Perte différée — le légionnaire Luiggi, blessé le 27 mai, décède de ses suites le 29 mai 1940 au G.A.C.A. n° 18 (fait constaté le 7 juin par la compagnie)</li></ul>
+<h2 class="ci-h2">Juin 1940 : dernières pertes connues</h2>
+<p>Le registre de comptabilité, qui prend le relais du JMO après le 30 mai, permet de prolonger le récit jusqu'au 10 juin 1940. Le 8 juin, le légionnaire Burda est tué à l'ennemi ; le 9 juin, le légionnaire Weinberg est blessé et évacué. Plusieurs mouvements administratifs interviennent également début juin : des détachements de brancardiers et de muletiers sont formés au profit de la C.A.2 et de la C.H.R. Le registre s'arrête le 10 juin 1940.</p>
+<h2 class="ci-h2">Effectif théorique (JMO) et effectif recensé</h2>
+<p>Les deux tableaux ci-dessous reproduisent les états d'effectif officiels de la compagnie, tels que consignés dans le JMO, aux deux seules dates où ils sont détaillés. Ils permettent de comparer l'effectif théorique de l'unité avec l'effectif recensé plus bas, issu du dépouillement des sources et fiches individuelles.</p>
+<table class="ci-table"><caption>Effectif de la compagnie au 16 avril 1940</caption><thead><tr><th>Désignation</th><th>Officiers</th><th>S/Officiers</th><th>Cx-chefs et Caporaux</th><th>Légionnaires</th><th>Chevaux</th></tr></thead><tbody><tr><td>Présents</td><td>2</td><td>11</td><td>10</td><td>122</td><td>4</td></tr><tr><td>Absents</td><td>1</td><td>1</td><td>2</td><td>25</td><td></td></tr><tr><td>Totaux</td><td>3</td><td>12</td><td>12</td><td>147</td><td>4</td></tr></tbody></table>
+<table class="ci-table"><caption>Effectif de la compagnie au 30 avril 1940 (inchangé au 15 mai 1940)</caption><thead><tr><th>Désignation</th><th>Officiers</th><th>S/Officiers</th><th>Cx-chefs et Caporaux</th><th>Légionnaires</th><th>Chevaux</th></tr></thead><tbody><tr><td>Présents</td><td>2</td><td>7</td><td>11</td><td>129</td><td>5</td></tr><tr><td>Absents</td><td>1</td><td>6</td><td>1</td><td>18</td><td></td></tr><tr><td>Totaux</td><td>3</td><td>13</td><td>12</td><td>147</td><td>5</td></tr></tbody></table>
+<p>Soit un effectif théorique total de 174 à 175 hommes (hors chevaux) selon la date, à comparer aux fiches individuelles recensées ci-dessous — un écart minime, compte tenu du caractère nécessairement incomplet de tout recensement établi a posteriori.</p>
+<h3 class="ci-h3">Sources du récit</h3>
+<ul><li>Journal de Marche et des Opérations de la 7e Compagnie, 1er janvier au 30 avril 1940</li><li>Extraits du journal de marche rédigés par le Lieutenant puis Capitaine Coquet, 16 avril au 30 mai 1940</li><li>Registre quotidien de comptabilité des effectifs (mouvements de soldes et de vivres) de la 7e Compagnie, 1er avril au 10 juin 1940</li></ul></div>
+
+<h2 class="carnet-title">Effectif de la compagnie (173 fiches)</h2>
+
+<div class="eff-stats">
+  <div class="eff-stat"><div class="n">173</div><div class="l">Recensés</div></div><div class="eff-stat mpf"><div class="n">12</div><div class="l">Morts pour la France</div></div><div class="eff-stat"><div class="n">64</div><div class="l">Prisonniers</div></div><div class="eff-stat"><div class="n">29</div><div class="l">Blessés</div></div><div class="eff-stat"><div class="n">7</div><div class="l">Évadés</div></div>
+</div>
+
+<div class="eff-toolbar">
+  <div class="eff-search">
+    <input type="text" id="effSearch" placeholder="Rechercher un nom, un grade, un lieu…" autocomplete="off">
+  </div>
+  <div class="eff-chips" id="effChips">
+    <span class="eff-chip active" data-badge="">Tous</span><span class="eff-chip" data-badge="MPF">Morts pour la France</span><span class="eff-chip" data-badge="Prisonnier">Prisonniers</span><span class="eff-chip" data-badge="Blessé">Blessés</span><span class="eff-chip" data-badge="Évadé">Évadés</span>
+  </div>
+</div>
+<div class="eff-count" id="effCount"></div>
+
+<table class="eff-table" id="effTable">
+  <thead>
+    <tr>
+      <th data-key="nom">Nom <span class="arrow"></span></th>
+      <th data-key="grade_rank">Grade <span class="arrow"></span></th>
+      <th data-key="section">Section / affectation <span class="arrow"></span></th>
+      <th data-key="badges">Statut <span class="arrow"></span></th>
+      <th>Fiche</th>
+    </tr>
+  </thead>
+  <tbody id="effBody"></tbody>
+</table>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+const EFF_DATA = [{"nom": "COQUET", "prenom": "Jacques", "grade": "capitaine", "grade_rank": 1, "section": "cdt la cie", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°48 du 04/12/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#coquet-jacques"}, {"nom": "PERROSSIER", "prenom": "Yves François Georges", "grade": "capitaine", "grade_rank": 1, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#perrossier-yves-francois-georges"}, {"nom": "BERTOT", "prenom": "Alfred Aristide", "grade": "sous Lieutenant", "grade_rank": 4, "section": "1ère section (5è compagnie)", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°48 du 04/12/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bertot-alfred-aristide"}, {"nom": "DELMAS", "prenom": "Georges Hippolyte Louis", "grade": "lieutenant", "grade_rank": 5, "section": "3è section", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°49 du 07/12/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delmas-georges-hippolyte-louis"}, {"nom": "FORGET", "prenom": "Michel Edmé Antoine", "grade": "lieutenant", "grade_rank": 5, "section": "chef de section", "badges": ["Prisonnier", "Évadé"], "details": "Fait prisonnier — Evadé de Nancy le 18/07/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#forget-michel-edme-antoine"}, {"nom": "DE KLEBNIKOFF", "prenom": "Wladimir", "grade": "adjudant", "grade_rank": 7, "section": "", "badges": ["Prisonnier", "Évadé", "Blessé"], "details": "Fait prisonnier le 23/06/1940 — Evadé le 30/08/1940 — Il est blessé le 27/05/1940 par éclats d'obus à la région dorsale latérale droite et au bras droit (non évacué)", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#de-klebnikoff-wladimir"}, {"nom": "SAURIER", "prenom": "Prosper", "grade": "sergent chef", "grade_rank": 8, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940 par éclats d’obus au pied droit. Evacué le 23/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#saurier-prosper"}, {"nom": "STEVENS", "prenom": "Théophile Louis", "grade": "sergent chef", "grade_rank": 8, "section": "chef de section", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°44 du 27/11/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#stevens-theophile-louis"}, {"nom": "WOUTERS", "prenom": "", "grade": "sergent chef", "grade_rank": 8, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wouters"}, {"nom": "BELKE", "prenom": "Jean", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Fait prisonnier — Evadé", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#belke-jean"}, {"nom": "COTE", "prenom": "Gabriel Roger Marcel", "grade": "sergent", "grade_rank": 9, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cote-gabriel-roger-marcel"}, {"nom": "HUTTER", "prenom": "Josef Maria", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Fait prisonnier — Evadé", "url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hutter-josef-maria"}, {"nom": "JACOBS", "prenom": "Peter Karl Johannes", "grade": "sergent", "grade_rank": 9, "section": "fonctionnaire chef comptable à compter du 31/05/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jacobs-peter-karl-johannes"}, {"nom": "JARDIEU", "prenom": "", "grade": "sergent", "grade_rank": 9, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jardieu"}, {"nom": "KRASSEFF", "prenom": "Panaist Ou Panaiot", "grade": "sergent", "grade_rank": 9, "section": "3è section", "badges": ["Prisonnier", "Rapatrié", "Démobilisé"], "details": "Liste des prisonniers n°82 du 14/03/1941 — Rapatrié le 23/01/1943 au titre de la relève", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#krasseff-panaist-ou-panaiot"}, {"nom": "LANGLOIS", "prenom": "Lucien", "grade": "sergent", "grade_rank": 9, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#langlois-lucien"}, {"nom": "LEVEQUE", "prenom": "", "grade": "sergent", "grade_rank": 9, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#leveque"}, {"nom": "MARCUS", "prenom": "", "grade": "sergent", "grade_rank": 9, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#marcus"}, {"nom": "SANDRON", "prenom": "Nestor", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sandron-nestor"}, {"nom": "SEERVEZ", "prenom": "Jean", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°20 du 23/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#seervez-jean"}, {"nom": "TCHERATCHOUKINE", "prenom": "Prokopy", "grade": "sergent", "grade_rank": 9, "section": "détaché au groupe franc du 16/04 au 05/05/1940", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tcheratchoukine-prokopy"}, {"nom": "TERMENS", "prenom": "Simon", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 par éclats d’obus à la poitrine alors qu’il effectuait une corvée de soupe (évacué sur le poste de secours de Bronelle puis sur l'HOE 1/5 à Ancemont)", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#termens-simon"}, {"nom": "VELOVIC", "prenom": "Alfred Antoine", "grade": "sergent", "grade_rank": 9, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#velovic-alfred-antoine"}, {"nom": "FORAY", "prenom": "Claudius", "grade": "caporal chef", "grade_rank": 10, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 21/06/1940 à Vaubrecourt", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#foray-claudius"}, {"nom": "JOLSVAY", "prenom": "André", "grade": "caporal chef", "grade_rank": 10, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jolsvay-andre"}, {"nom": "BELA", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bela"}, {"nom": "BRÉMOND", "prenom": "Jean", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bremond-jean"}, {"nom": "CADIOU", "prenom": "Pierre Jean Marie Yvon", "grade": "caporal", "grade_rank": 11, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": ["Prisonnier", "Rapatrié", "Démobilisé"], "details": "Liste des prisonniers n°20 du 23/09/1940 — Rapatrié sanitaire le 18/11/1943", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cadiou-pierre-jean-marie-yvon"}, {"nom": "GUILBERT", "prenom": "Georges Alfred", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°43 du 25/11/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guilbert-georges-alfred"}, {"nom": "HERNANDEZ LOPEZ", "prenom": "André", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°13 du 10/09/1940 — Évadé le 04/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hernandez-lopez-andre"}, {"nom": "JOHANSEN", "prenom": "Carl", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#johansen-carl"}, {"nom": "SJANS", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sjans"}, {"nom": "THIEBLEMONT", "prenom": "René", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°27 du 07/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#thieblemont-rene"}, {"nom": "VECK", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#veck"}, {"nom": "ZIMMER", "prenom": "Henri", "grade": "caporal", "grade_rank": 11, "section": "cuisinier de la popotte des officiers de la Compagnie de commandement", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 par éclats d’obus au bras alors qu’il effectuait une corvée de soupe (évacué sur le poste de secours de Bronelle) — ⚠ Peut être en doublon avec le précédent?", "url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zimmer-henri"}, {"nom": "ZOMBROWSKI", "prenom": "Ernest", "grade": "caporal", "grade_rank": 11, "section": "3è section 8è groupe", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zombrowski-ernest"}, {"nom": "BATYK", "prenom": "Ivan", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 22/06/1940 à l'hôpital Saint Charles à Saint Dié des Vosges", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#batyk-ivan"}, {"nom": "BIGGER", "prenom": "Anton Joseph", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°23 du 30/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bigger-anton-joseph"}, {"nom": "BUDNY", "prenom": "Sylvestre", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#budny-sylvestre"}, {"nom": "CHAUBELL CASTEL", "prenom": "Joaquin", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°15 du 12/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chaubell-castel-joaquin"}, {"nom": "CHEFTEL", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "détaché au groupe franc du 16/04 au 05/05/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cheftel"}, {"nom": "CHLOND", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chlond"}, {"nom": "DELWAIDE", "prenom": "René", "grade": "1ère classe", "grade_rank": 12, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°21 du 25/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delwaide-rene"}, {"nom": "FRANKOWIAK", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#frankowiak"}, {"nom": "GARESKI", "prenom": "Pierre", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gareski-pierre"}, {"nom": "GILLY", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gilly"}, {"nom": "GOBERT", "prenom": "Léon", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gobert-leon"}, {"nom": "GURFINKIEL", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gurfinkiel"}, {"nom": "JACUBOWSKI", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jacubowski"}, {"nom": "LAZAR", "prenom": "Joseph", "grade": "1ère classe", "grade_rank": 12, "section": "ordonnance de Coquet", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°56 du 22/12/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lazar-joseph"}, {"nom": "MALHERBE", "prenom": "Marcel Toussaint", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#malherbe-marcel-toussaint"}, {"nom": "MEULEMBERG", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#meulemberg"}, {"nom": "MOSER", "prenom": "Kantus", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 par balles dans les jambes. René Coupin raconte comment il a été évacué par 4 brancardiers qui ont \"engueulé\" les allemands qui ont alors cessé de tirer le temps de l'évacuation", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moser-kantus"}, {"nom": "PEJAS", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pejas"}, {"nom": "THOMAS", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#thomas"}, {"nom": "WINIARSKI", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "muletier", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#winiarski"}, {"nom": "WOSJNIACK", "prenom": "", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Blessé"], "details": "Evacué pour maladie sur formation sanitaire le 03/06/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wosjniack"}, {"nom": "ADEVISE", "prenom": "Louis Jean François", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 11/06/1940 — Lieu : Belgique", "url": "https://legionnaires.11regimentetranger.com/recensement-a.html#adevise-louis-jean-francois"}, {"nom": "AMSEL", "prenom": "Maurice", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : région de Soissons", "url": "https://legionnaires.11regimentetranger.com/recensement-a.html#amsel-maurice"}, {"nom": "AMSELLEM", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-a.html#amsellem"}, {"nom": "AREFIEFF", "prenom": "Juré", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 29/05/1940 — Lieu : Bois d'Inor", "url": "https://legionnaires.11regimentetranger.com/recensement-a.html#arefieff-jure"}, {"nom": "BANNIER", "prenom": "Marcel Yves Roger", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF", "Prisonnier"], "details": "Mort le 01/02/1942 — Lieu : Hôpital Complémentaire Du Grand Séminaire Rennes (147 Rue De Brest), prisonnier de Guerre : Présumé rapatrié sanitaire — Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bannier-marcel-yves-roger"}, {"nom": "BAPTISTE", "prenom": "Auguste", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Fait prisonnier — Démobilisé le 23/08/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#baptiste-auguste"}, {"nom": "BASSERAS", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#basseras"}, {"nom": "BERTAUX", "prenom": "Maurice", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 28/05/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bertaux-maurice"}, {"nom": "BERTENANT", "prenom": "Auguste Emile", "grade": "2è classe", "grade_rank": 13, "section": "garde magasin du groupe franc", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°30 du 11/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bertenant-auguste-emile"}, {"nom": "BIALEK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bialek"}, {"nom": "BILLARD", "prenom": "Pierre Henri", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#billard-pierre-henri"}, {"nom": "BORNE", "prenom": "Roger Charles", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié", "Démobilisé"], "details": "Liste des prisonniers n°23 du 30/09/1940 — Libéré au titre de la relève le 07/11/1942", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#borne-roger-charles"}, {"nom": "BRASSEUR", "prenom": "Jules", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#brasseur-jules"}, {"nom": "BROUSSE", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#brousse"}, {"nom": "BURDA", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 06/06/1940 — Lieu : Inor", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#burda-jean"}, {"nom": "BUREAU", "prenom": "Paul", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 avec plaie cuisse droite et évacué sur l'HOE1/5 d'Ancemont puis sur Coulommier", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bureau-paul"}, {"nom": "BUTTER", "prenom": "Rywen", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#butter-rywen"}, {"nom": "CHAUMONT", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Évacué pour maladie sur formation sanitaire le 15/05/1940. Réformé n°2 par le conseil de réforme de Nevers le 01/06/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chaumont"}, {"nom": "CHRZAN", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chrzan"}, {"nom": "CICHY", "prenom": "Ladislas", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16/04 au 05/05/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cichy-ladislas"}, {"nom": "COCHARD", "prenom": "Eugène Emile", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°14 du 11/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cochard-eugene-emile"}, {"nom": "COQUELIN", "prenom": "Louis Désiré Marie François", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Fait prisonnier le 24/06/1940 à Toul — Libéré par les allemands le 25/11/1940 comme (DU) inapte", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#coquelin-louis-desire-marie-francois"}, {"nom": "CORNU", "prenom": "Georges Constant", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 19/06/1940 à Nancy", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cornu-georges-constant"}, {"nom": "COSSARD", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cossard"}, {"nom": "COTTAFAVI", "prenom": "Joseph", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Liste des prisonniers n°54 du 18/12/1940 — Libéré par les autorités allemandes comme alsacien lorrain et rapatrié le 08/05/1942", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cottafavi-joseph"}, {"nom": "CSANADI", "prenom": "Georges", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°69 du 29/01/1941", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#csanadi-georges"}, {"nom": "DE CONNAUGHT CONNINCK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#de-connaught-conninck"}, {"nom": "DE LIGNE", "prenom": "Ferdinand", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF", "Blessé"], "details": "Mort le 24/05/1940 — Lieu : Ancemont — Il est blessé le 22/05/1940 par éclats d’obus", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#de-ligne-ferdinand"}, {"nom": "DELACOUR", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940, évacué le 23/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delacour"}, {"nom": "DEMOISSON", "prenom": "Auguste", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°36 du 30/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#demoisson-auguste"}, {"nom": "DIAK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#diak"}, {"nom": "DOZIER", "prenom": "Roger Marius", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dozier-roger-marius"}, {"nom": "DWORACZEK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dworaczek"}, {"nom": "DYREK", "prenom": "Joseph", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°30 du 11/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dyrek-joseph"}, {"nom": "ENKIRI", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940 par éclats d’obus", "url": "https://legionnaires.11regimentetranger.com/recensement-e.html#enkiri"}, {"nom": "ESCANDE", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Fait prisonnier — Rapatrié par train sanitaire du 14/09/1940 vers l'hôpital Vitriolerie de Lyon (JO du 23/01/1941)", "url": "https://legionnaires.11regimentetranger.com/recensement-e.html#escande"}, {"nom": "FOURNIER", "prenom": "Marcel Joseph", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 19/06/1940 à Dompierre les Vosges", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fournier-marcel-joseph"}, {"nom": "FOURSEFF", "prenom": "Grégoire", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Fait prisonnier le 21/06/1940 à Bouzanville — Rapatrié comme malade le 22/06/1944, réformé définitif n°1 le 27/06/1945", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fourseff-gregoire"}, {"nom": "FRIÈRES", "prenom": "Edouard", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°15 du 12/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#frieres-edouard"}, {"nom": "FUNK", "prenom": "Rachmil", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Liste des prisonniers n°11 du 05/09/1940 — Rapatrié sanitaire le 06/12/1942", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#funk-rachmil"}, {"nom": "GARCIA", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#garcia-8"}, {"nom": "GELDHOF", "prenom": "Camille", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#geldhof-camille"}, {"nom": "GIRAUDEAU", "prenom": "Maurice Charles", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF", "Blessé"], "details": "Mort le 29/05/1940 — Lieu : Ancemont — Blessé, il est évacué sur l'HOE 1/5 à Ancemont", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#giraudeau-maurice-charles"}, {"nom": "GOMEZ", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gomez"}, {"nom": "GRABOWSKAS", "prenom": "François", "grade": "2è classe", "grade_rank": 13, "section": "muletier", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°68 du 25/01/1941", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#grabowskas-francois"}, {"nom": "GREGOROWITCH", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940, évacué le 29/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gregorowitch"}, {"nom": "GRÉGOIRE", "prenom": "Georges Lucien Edouard", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : Bois d'Inor", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gregoire-georges-lucien-edouard"}, {"nom": "GUEGAN", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guegan"}, {"nom": "GUERTIN", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "brancardier", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guertin"}, {"nom": "KAUFFMANN", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 28/05/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kauffmann-jean"}, {"nom": "KOECHER", "prenom": "François", "grade": "2è classe", "grade_rank": 13, "section": "1ère section", "badges": ["MPF", "Blessé"], "details": "Mort le 16/01/1940 — Lieu : Metzervisse au GSD 80 — Son corps est évacué sur GSD 80", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#koecher-francois"}, {"nom": "KORNBLAU", "prenom": "Hersz", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940 par éclats d’obus", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kornblau-hersz"}, {"nom": "KRYSTIANIAK", "prenom": "Stanislas", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#krystianiak-stanislas"}, {"nom": "KUCHARYK", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Démobilisé"], "details": "Liste des prisonniers n°34 du 21/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kucharyk-jean"}, {"nom": "KUJACZ", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940 par éclats d’obus", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kujacz"}, {"nom": "KUS", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°30 du 11/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kus-jean"}, {"nom": "LABRANDERO", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#labrandero"}, {"nom": "LARWLIK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#larwlik"}, {"nom": "LEROUX", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#leroux"}, {"nom": "LOMBARD DONNET", "prenom": "Jean Marie Sebastien", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 22/06/1940 au bois de Fays", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lombard-donnet-jean-marie-sebastien"}, {"nom": "LOONES", "prenom": "Adolphe", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#loones-adolphe"}, {"nom": "LOW", "prenom": "Susskind Lone", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°14 du 11/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#low-susskind-lone"}, {"nom": "LUIGGI", "prenom": "Jean Baptiste", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF", "Blessé"], "details": "Mort le 29/05/1940 — Lieu : Bras sur Meuse — Il est blessé le 27/05/1940, évacué sur GACA 18", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#luiggi-jean-baptiste"}, {"nom": "MARICHALAR", "prenom": "Jean Baptiste", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Fait prisonnier — Démobilisé le 20/08/1940 à Palette Le Tholonet", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#marichalar-jean-baptiste"}, {"nom": "MARKUT", "prenom": "Mickael", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#markut-mickael"}, {"nom": "MASSET", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#masset"}, {"nom": "MAZALEYRAS", "prenom": "André", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 et évacué sur l'HOE1/5 d'Ancemont", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mazaleyras-andre"}, {"nom": "MICHEL", "prenom": "Eugène Auguste Valérien Camille", "grade": "2è classe", "grade_rank": 13, "section": "muletier", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°13 du 10/09/1940 — Evadé le 30/09/1940. A la caserne Gribeauval, il se présente pour être plâtrier et travaille pendant 3 jours. Après avoir trouvé des effets civils, il se mêle aux civils qui quittaient la caserne par une porte dérobée gardée par une seule sentinelle. Il arrive à prendre le train pour Bar le Duc et après une marche de 45 jours, passe la ligne de démarcation à Châlons", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#michel-eugene-auguste-valerien-camille"}, {"nom": "MINOTTI", "prenom": "Marcel Maxime", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#minotti-marcel-maxime"}, {"nom": "MORRY", "prenom": "Guillaume", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Blessé"], "details": "Liste des prisonniers n°41 du 20/11/1940 — Il est blessé le 22/05/1940, évacué le 23/05/1940. Il entre à l'hôpital complémentaire du lycée pour garçon de Poitiers le 07/06/1940. En permission de convalescence de 8 jours à partir du 14/06/1940 avant de rejoindre son corps", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#morry-guillaume"}, {"nom": "MUDYN", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mudyn"}, {"nom": "NERA", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-n.html#nera"}, {"nom": "NICOLAS", "prenom": "Eugène", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 02/01/1940 — Lieu : Ambulance médicale 22 à Rombas", "url": "https://legionnaires.11regimentetranger.com/recensement-n.html#nicolas-eugene"}, {"nom": "NOIREAULT", "prenom": "André Raymond", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 21/06/1940 à Saint Firmin", "url": "https://legionnaires.11regimentetranger.com/recensement-n.html#noireault-andre-raymond"}, {"nom": "OKLADEK", "prenom": "Mordka", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-o.html#okladek-mordka"}, {"nom": "ORIOL", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-o.html#oriol"}, {"nom": "PARSZEZ", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#parszez"}, {"nom": "PAWELCZYK", "prenom": "Stanislas", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°34 du 21/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pawelczyk-stanislas"}, {"nom": "PAWLIK", "prenom": "Bronislas", "grade": "2è classe", "grade_rank": 13, "section": "brancardier", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pawlik-bronislas"}, {"nom": "PELTZMAN", "prenom": "Rywen", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°21 du 25/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#peltzman-rywen"}, {"nom": "PEREIRA", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pereira"}, {"nom": "PEREZ", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#perez"}, {"nom": "PHILIPPOT", "prenom": "René", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#philippot-rene"}, {"nom": "POLASZYK", "prenom": "Franz", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°34 du 21/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#polaszyk-franz"}, {"nom": "POTCHWAT", "prenom": "Zygmunt", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°18 du 19/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#potchwat-zygmunt"}, {"nom": "RASPAIL", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#raspail"}, {"nom": "RENAUDIN", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "ravitaillement ? Effectue une corvée de soupe le 27/05/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#renaudin-jean"}, {"nom": "REWINSKI", "prenom": "Salomon Calel", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 22/05/1940 — Lieu : Martincourt", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rewinski-salomon-calel"}, {"nom": "ROLLAND", "prenom": "Charles Pierre", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "⚠ peut être en doublon avec le précédent", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rolland-charles-pierre"}, {"nom": "ROSENCWAJG", "prenom": "Sucher Ber", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rosencwajg-sucher-ber"}, {"nom": "ROZENBERG", "prenom": "Judka Josek", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié"], "details": "Liste des prisonniers n°21 du 25/09/1940 — Libéré par les autorités allemandes le 28/03/1942 comme travailleur agricole. Jusqu'à la fin de la guerre il travaille pour chez Fernand Ferrière à Saint-Martin-de-Nigelles (28)", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rozenberg-judka-josek"}, {"nom": "RUIZ", "prenom": "Joseph", "grade": "2è classe", "grade_rank": 13, "section": "3è section", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°43 du 25/11/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#ruiz-joseph"}, {"nom": "RUTKWOSKI", "prenom": "Jozef", "grade": "2è classe", "grade_rank": 13, "section": "muletier", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°28 du 09/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rutkwoski-jozef"}, {"nom": "RYSZCZYK", "prenom": "Antoine", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Rapatrié", "Démobilisé"], "details": "Liste des prisonniers n°47 du 02/12/1940 — Rapatrié en France le 04/04/1941 ?", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#ryszczyk-antoine"}, {"nom": "SAMBOUT", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sambout"}, {"nom": "SANCHEZ", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sanchez"}, {"nom": "SCIBIOR", "prenom": "Franciszek", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°15 du 12/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#scibior-franciszek"}, {"nom": "SOKOL", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sokol"}, {"nom": "STAZIAK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#staziak"}, {"nom": "SZUBSKY", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#szubsky-jean"}, {"nom": "TARNIEWICZ", "prenom": "Stanislas", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tarniewicz-stanislas"}, {"nom": "TOUZEAU", "prenom": "André Camille Gaston", "grade": "2è classe", "grade_rank": 13, "section": "détaché au groupe franc du 16/04 au 05/05/1940", "badges": ["Prisonnier", "Rapatrié"], "details": "Liste des prisonniers n°15 du 12/09/1940 — Mis en congé de captivité le 22/07/1943", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#touzeau-andre-camille-gaston"}, {"nom": "VANDENDRIES", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#vandendries"}, {"nom": "VERLINDEN", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#verlinden-jean"}, {"nom": "WEINBERG", "prenom": "Friedrich", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Blessé le 09/06/1940, évacué", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#weinberg-friedrich"}, {"nom": "WELSCHER", "prenom": "Nicolas", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est évacué le 02/01/1940 sur formation sanitaire pour asphyxie", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#welscher-nicolas"}, {"nom": "WOSJNIK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wosjnik"}, {"nom": "WUICK", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wuick"}, {"nom": "ZANGRILLI", "prenom": "Giovanni", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zangrilli-giovanni"}, {"nom": "ZYGULA", "prenom": "Stanislas", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°09 du 31/08/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zygula-stanislas"}, {"nom": "DELAEVIN", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 22/05/1940 par éclats d’obus", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delaevin"}, {"nom": "PERENA ORTIZ", "prenom": "Santiago", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#perena-ortiz-santiago"}, {"nom": "BERGER", "prenom": "Francisc", "grade": "caporal puis sergent", "grade_rank": 50, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°16 du 14/09/1940 — Evadé", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#berger-francisc"}, {"nom": "FEIST", "prenom": "", "grade": "1ère classe puis caporal", "grade_rank": 50, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#feist"}, {"nom": "HERMANN", "prenom": "", "grade": "caporal, gradé de quart", "grade_rank": 50, "section": "1ère section", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hermann"}, {"nom": "MARTIN", "prenom": "Roger Antoine", "grade": "caporal chef puis sergent", "grade_rank": 50, "section": "détaché au groupe franc du 16 au 21/04/1940", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°21 du 25/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#martin-roger-antoine"}];
+let effSort = { key: 'grade_rank', dir: 1 };
+let effBadge = '';
+let effSearch = '';
+
+function effBadgeHTML(b) {
+  return b.map(x => `<span class="eff-badge ${x.replace(/[^A-Za-zÀ-ÿ]/g,'')}">${x}</span>`).join('');
+}
+
+function effRender() {
+  let rows = EFF_DATA.filter(d => {
+    if (effBadge && !d.badges.includes(effBadge)) return false;
+    if (effSearch) {
+      const hay = (d.nom+' '+d.prenom+' '+d.grade+' '+d.section+' '+d.details).toLowerCase();
+      if (!hay.includes(effSearch)) return false;
+    }
+    return true;
+  });
+
+  rows.sort((a,b) => {
+    let va = a[effSort.key], vb = b[effSort.key];
+    if (effSort.key === 'badges') { va = a.badges.join(','); vb = b.badges.join(','); }
+    if (typeof va === 'string') va = va.toLowerCase();
+    if (typeof vb === 'string') vb = vb.toLowerCase();
+    if (va < vb) return -1 * effSort.dir;
+    if (va > vb) return 1 * effSort.dir;
+    return a.nom.localeCompare(b.nom);
+  });
+
+  document.getElementById('effCount').textContent = rows.length + ' légionnaire(s) affiché(s) sur ' + EFF_DATA.length;
+
+  document.getElementById('effBody').innerHTML = rows.map(d => `
+    <tr>
+      <td class="eff-nom">${d.nom}${d.prenom ? ' <span class="eff-prenom">'+d.prenom+'</span>' : ''}</td>
+      <td>${d.grade}</td>
+      <td class="eff-section">${d.section || ''}</td>
+      <td>${effBadgeHTML(d.badges)}</td>
+      <td>${d.url ? `<a class="eff-fiche" href="${d.url}" target="_blank" rel="noopener">Voir la fiche →</a>` : '<span class="eff-nofiche">—</span>'}</td>
+    </tr>
+  `).join('');
+}
+
+document.getElementById('effSearch').addEventListener('input', e => {
+  effSearch = e.target.value.trim().toLowerCase();
+  effRender();
+});
+
+document.getElementById('effChips').addEventListener('click', e => {
+  const chip = e.target.closest('.eff-chip');
+  if (!chip) return;
+  document.querySelectorAll('.eff-chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  effBadge = chip.dataset.badge;
+  effRender();
+});
+
+document.querySelectorAll('#effTable thead th[data-key]').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.key;
+    if (effSort.key === key) { effSort.dir *= -1; } else { effSort = { key, dir: 1 }; }
+    document.querySelectorAll('#effTable thead .arrow').forEach(a => a.textContent = '');
+    th.querySelector('.arrow').textContent = effSort.dir === 1 ? '▲' : '▼';
+    effRender();
+  });
+});
+
+effRender();
+
+(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>

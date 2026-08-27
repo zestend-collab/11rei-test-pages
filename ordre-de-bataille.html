@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ordre de bataille — 11e Régiment étranger d'infanterie, mai-juin 1940</title>
+<meta name="description" content="Ordre de bataille complet du 11e régiment étranger d'infanterie (11e REI), Légion étrangère, mai-juin 1940 : état-major, compagnies, officiers et sous-officiers de chaque unité.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #ECE3CC;
+    --paper-dark: #E1D4AE;
+    --ink: #2B2B23;
+    --ink-soft: #55503f;
+    --olive: #4B5233;
+    --olive-dark: #333824;
+    --rust: #8C4A2F;
+    --brass: #8a6c2f;
+    --line: #B9AC84;
+    --card: #F4EEDC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at top left, rgba(140,74,47,0.05), transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(75,82,51,0.06), transparent 45%);
+    font-family: 'EB Garamond', serif;
+    color: var(--ink);
+    padding: 36px 14px 80px;
+    font-size: 16px;
+  }
+  .sheet{ max-width: 980px; margin: 0 auto; }
+
+  /* Masthead */
+  .masthead{
+    border: 2px solid var(--olive-dark);
+    padding: 26px 30px 20px;
+    background: var(--card);
+    position: relative;
+    box-shadow: 0 1px 0 rgba(43,43,35,0.15), 0 2px 10px rgba(43,43,35,0.08);
+  }
+  .masthead::before{ content:""; position:absolute; inset: 6px; border: 1px solid var(--line); pointer-events:none; }
+  .unit-tag{
+    font-family:'Special Elite', monospace; font-size: 11.5px; letter-spacing: 2px;
+    color: var(--olive-dark); text-transform: uppercase;
+    display:flex; justify-content:space-between; align-items:center; margin-bottom: 14px; gap: 10px; flex-wrap:wrap;
+  }
+  .unit-tag span.rei{ border: 1px solid var(--olive-dark); padding: 3px 8px; background: var(--paper-dark); flex-shrink:0; }
+  h1{ font-family:'Special Elite', monospace; font-size: clamp(20px, 3.6vw, 30px); letter-spacing: 1px; margin: 0 0 4px; color: var(--olive-dark); text-transform: uppercase; }
+  .sub{ font-style: italic; color: var(--ink-soft); font-size: 15px; margin-bottom: 16px; }
+
+  .chef-row{ display:flex; flex-wrap:wrap; gap:10px; padding-top:10px; border-top: 1px dashed var(--line); }
+  .chef-chip{ flex:1 1 220px; background: var(--paper-dark); border:1px solid var(--line); padding:8px 12px; }
+  .chef-chip .n{ font-size:10px; font-family:'Special Elite', monospace; color:var(--brass); }
+  .chef-chip .name{ font-weight:600; display:flex; align-items:center; gap:8px; }
+  .chef-chip .thumb{ width:30px; height:30px; }
+  .chef-chip .dates{ font-size:12px; color:var(--ink-soft); }
+
+  /* Nav */
+  nav.jump{
+    display:flex; flex-wrap:wrap; gap:8px; justify-content:center;
+    margin: 22px 0 6px; font-family:'Special Elite', monospace; font-size: 10.5px; text-transform:uppercase; letter-spacing:0.5px;
+  }
+  nav.jump a{ color: var(--olive-dark); text-decoration:none; border:1px solid var(--line); padding: 5px 10px; background: var(--card); }
+  nav.jump a:hover{ background: var(--olive); color: var(--paper); }
+
+  /* Section titles */
+  .section-title{
+    font-family:'Special Elite', monospace; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--paper); background: var(--olive-dark); display: inline-block; padding: 6px 16px; margin: 40px 0 14px;
+    scroll-margin-top: 20px;
+  }
+
+  .support-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 720px){ .support-grid{ grid-template-columns: 1fr; } }
+
+  .unit-card{ background: var(--card); border: 1px solid var(--line); padding: 16px 18px; position: relative; }
+  .unit-card::after{ content:""; position:absolute; top:0; left:0; bottom:0; width: 4px; background: var(--olive); }
+  .unit-card h3{ font-family:'Special Elite', monospace; font-size: 13px; letter-spacing: 0.5px; color: var(--olive-dark); margin: 0 0 10px; text-transform: uppercase; padding-left: 4px; }
+
+  .role-block{ margin-bottom: 10px; }
+  .role-block:last-child{ margin-bottom:0; }
+  .role-label{ font-family:'Special Elite', monospace; font-size: 10.5px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--olive); display:block; margin-bottom: 3px; }
+
+  .holder{ display:flex; align-items:center; gap:10px; padding: 3px 0 3px 4px; border-bottom: 1px dotted var(--line); }
+  .holder:last-child{ border-bottom:none; }
+  .holder .idx{ font-family:'Special Elite', monospace; font-size:10px; color: var(--brass); margin-right:4px; flex-shrink:0; }
+  .holder .who{ font-weight:600; display:inline-flex; align-items:center; gap:8px; }
+  .thumb{ width:34px; height:34px; border-radius:50%; object-fit:cover; border:1px solid var(--olive-dark); flex-shrink:0; background:var(--paper-dark); }
+  .holder .meta{ text-align:right; font-size: 12.5px; color: var(--ink-soft); flex-shrink:0; margin-left:auto; padding-left:10px; }
+  .bio-link{ color: inherit; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: var(--brass); text-underline-offset: 2px; }
+  .bio-link:hover{ color: var(--rust); }
+  .note{ font-size: 12.5px; font-style: italic; color: var(--rust); display:block; padding-left: 16px; margin-top:-2px; }
+
+  /* Battalion accordions */
+  details.bataillon{ border: 1.5px solid var(--olive-dark); background: rgba(244,238,220,0.5); margin-bottom: 18px; }
+  details.bataillon summary{
+    cursor:pointer; list-style:none;
+    background: var(--olive); color: var(--paper); padding: 12px 16px;
+    font-family:'Special Elite', monospace; font-size: 14.5px; letter-spacing:1px; text-transform:uppercase;
+  }
+  details.bataillon summary::-webkit-details-marker{ display:none; }
+  details.bataillon summary::before{ content:"▸ "; }
+  details.bataillon[open] summary::before{ content:"▾ "; }
+  .bataillon-staff{ padding: 14px 16px; border-bottom: 1px dashed var(--line); }
+  .cie-grid{ padding: 14px; display:grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+  @media (max-width: 720px){ .cie-grid{ grid-template-columns: 1fr; } }
+  .cie{ background: var(--card); border: 1px solid var(--line); padding: 12px 14px; }
+  .cie h4{ font-family:'Special Elite', monospace; font-size: 12.5px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--rust); margin: 0 0 8px; }
+
+  .misc-card{ background: var(--card); border:1px solid var(--line); padding:16px 18px; margin-bottom:16px; }
+  .misc-card h3{ font-family:'Special Elite', monospace; font-size: 13px; color: var(--olive-dark); margin:0 0 10px; text-transform:uppercase; }
+  .misc-card p{ margin: 4px 0; font-size: 14.5px; }
+  .misc-card ul{ margin: 6px 0; padding-left: 20px; }
+  .misc-card li{ font-size: 14px; margin-bottom: 3px; }
+  .month-label{ font-family:'Special Elite', monospace; font-size:11px; color:var(--brass); text-transform:uppercase; margin: 10px 0 4px; letter-spacing:0.5px; }
+
+  .legend{ margin-top: 30px; font-size: 12px; color: var(--ink-soft); display:flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+  footer{ margin-top: 30px; text-align:center; font-size: 12px; color: var(--ink-soft); font-style: italic; }
+
+  .back-to-site{ display:inline-block; font-family:'Special Elite', monospace; font-size:11px; letter-spacing:0.5px; text-transform:uppercase; color: var(--olive-dark); text-decoration:none; margin-bottom: 14px; }
+  .back-to-site:hover{ color: var(--rust); }
+
+  .back-to-top{
+    position:fixed; bottom:20px; right:20px; z-index:100;
+    width:2.6rem; height:2.6rem; border-radius:50%;
+    background: var(--olive); color: var(--paper); border: 1px solid var(--olive-dark);
+    font-size:1.2rem; line-height:1; cursor:pointer;
+    box-shadow: 0 2px 8px rgba(43,43,35,0.25);
+    display:none; align-items:center; justify-content:center;
+    transition: opacity .2s, background .15s;
+  }
+  .back-to-top.show{ display:flex; }
+  .back-to-top:hover{ background: var(--rust); }
+
+  .floating-comment-btn{
+    position:fixed; bottom:76px; right:20px; z-index:100;
+    display:flex; align-items:center; gap:.4rem;
+    font-family:'Special Elite', monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase;
+    color: var(--paper); background: var(--rust); border: 1px solid var(--olive-dark);
+    padding: 8px 16px; border-radius: 24px; text-decoration:none;
+    box-shadow: 0 2px 8px rgba(43,43,35,0.25);
+    transition: background .15s; white-space:nowrap;
+  }
+  .floating-comment-btn:hover{ background: var(--olive-dark); }
+</style>
+</head>
+<body>
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-ordre%20de%20bataille" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<div class="sheet">
+
+  <a class="back-to-site" href="https://www.11regimentetranger.com" title="Retour au site principal">← Retour au site</a>
+
+  <div class="masthead">
+    <div class="unit-tag">
+      <span class="rei">11e REI</span>
+      <span>Ordre de bataille — mai-juin 1940</span>
+    </div>
+    <h1>Ordre de bataille du 11e régiment étranger d'infanterie</h1>
+    <div class="sub">Reconstitué campagne de septembre 1939 à juin 1940 — successions de postes, affectations et sorts des officiers</div>
+
+    <div class="chef-row">
+      <div class="chef-chip"><span class="n">1</span><span class="name"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/maire-fernand-victor-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Colonel Maire Fernand</span><span class="dates">02/09/1939 → 24/02/1940</span></div>
+      <div class="chef-chip"><span class="n">2</span><span class="name"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/robert-georges-louis-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Colonel Robert Georges</span><span class="dates">24/02/1940 → 04/06/1940</span></div>
+      <div class="chef-chip"><span class="n">3</span><span class="name"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clement-rene-paul.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Chef de bataillon Clément René Paul (A)</span><span class="dates">04/06/1940 → 23/06/1940</span></div>
+    </div>
+  </div>
+
+  <nav class="jump">
+    <a href="#em">État-major</a>
+    <a href="#cc">Cie commandement</a>
+    <a href="#chr">Cie hors rang</a>
+    <a href="#cre">Cie d'engins</a>
+    <a href="#b1">1er bataillon</a>
+    <a href="#b2">2e bataillon</a>
+    <a href="#b3">3e bataillon</a>
+    <a href="#valbonne">La Valbonne</a>
+    <a href="#renforts">Renforts</a>
+    <a href="#anciens">Anciens combattants 14-18</a>
+  </nav>
+
+  <div class="section-title" id="em">État-major</div>
+  <div class="support-grid">
+    <div class="unit-card">
+      <div class="role-block">
+        <span class="role-label">Chef d'état-major</span>
+        <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/robitaille-leon-marcel-joseph.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Robitaille Léon Marcel Joseph</span><span class="meta">01/09/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Médecin-capitaine</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Blanc Perducet Marcel Antoine Eugène</span><span class="meta">20/10/1939 → 30/03/1940</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who">Lados Jean Auguste (A)</span><span class="meta">09/04/1940 → 22/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier adjoint</span>
+        <div class="holder"><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/cardonne-joseph" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cardonne-joseph.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Cardonne (A)</a></span><span class="meta">01/09/1939 → 25/05/1940</span></div>
+        <span class="note">blessé, évacué</span>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier de renseignement</span>
+        <div class="holder"><span class="who">Lt Virenque Michel Jean René</span><span class="meta">03/10/1939 → 23/06/1940</span></div>
+      </div>
+    </div>
+    <div class="unit-card">
+      <div class="role-block">
+        <span class="role-label">Officier « Z »</span>
+        <div class="holder"><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/lamor-henry" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lamor-henry-auguste-fernand.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Lamor Henry (R)</a></span><span class="meta">03/10/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier de détails</span>
+        <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/funkl-friedrich.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Funkl Friedrich (R)</span><span class="meta">02/09/1939 → 21/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Vétérinaire</span>
+        <div class="holder"><span class="who">S/lt Lemoine Pierre (R)</span><span class="meta">13/11/1939 → 21/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Aumônier</span>
+        <div class="holder"><span class="idx">1</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/wattel-jean" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/wattel-jean-lucien-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Wattel Jean</a></span><span class="meta">✝ 27/05/1940</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who">Capitaine Houet</span><span class="meta">prisonnier 23/06/1940</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" id="cc">Compagnie de commandement (CC)</div>
+  <div class="support-grid">
+    <div class="unit-card">
+      <div class="role-block">
+        <span class="role-label">Commandant la compagnie</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Capitaine Perret-Gentil Jacques</span><span class="meta">02/09/1939 → 12/02/1940</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lignez-andre-robert.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Lignez André Robert (A)</span><span class="meta">à partir du 01/03/1940</span></div>
+        <span class="note">arrivé de la 11e Cie, fait prisonnier</span>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier transmissions</span>
+        <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/de-rousiers-jacques-paul-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt de Rousiers Jacques (A)</span><span class="meta">01/09/1939 → ✝ 18/06/1940</span></div>
+      </div>
+    </div>
+    <div class="unit-card">
+      <div class="role-block">
+        <span class="role-label">Chef des éclaireurs motos</span>
+        <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/malaud-andre-henri-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Malaud André (R)</span><span class="meta">11/09/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier pionnier</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Capitaine Rivière Joseph</span><span class="meta">30/03/1940</span></div>
+        <span class="note">arrivé du 143e RI, affecté provisoirement ; muté au 294e RI le 18/04/1940</span>
+        <div class="holder"><span class="idx">2</span><span class="who">Lt Martin Edmond Marcel (A)</span><span class="meta">11/09/1939 → 23/06/1940</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" id="chr">Compagnie hors rang (CHR)</div>
+  <div class="support-grid">
+    <div class="unit-card">
+      <div class="role-block">
+        <span class="role-label">Commandant la compagnie</span>
+        <div class="holder"><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/chiron-henri" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chiron-henri-louis-victor-julien.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Chiron Henri (R)</a></span><span class="meta">→ 21/06/1940</span></div>
+        <span class="note">fait prisonnier, oflag VI A, rapatrié 1941</span>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier d'approvisionnements</span>
+        <div class="holder"><span class="who">Lt Popot Louis (R)</span><span class="meta">11/09/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier de ravitaillement</span>
+        <div class="holder"><span class="idx">1</span><span class="who">S/lt Egloff Walter</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who">Lt Laparra Edgard (R)</span><span class="meta">03/10/1939 → 23/06/1940</span></div>
+      </div>
+    </div>
+    <div class="unit-card">
+      <div class="role-block">
+        <span class="role-label">Officier de dépannage</span>
+        <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/palluat-du-besset-jean-marc-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Palluat du Besset Jean Marc Marie</span><span class="meta">12/02/1940</span></div>
+        <span class="note">muté à La Valbonne</span>
+        <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/seillon-benoit-georges.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Seillon Georges (A)</span></div>
+        <span class="note">arrivé de la 2e Cie, puis promu capitaine, muté à la 2e Cie</span>
+        <div class="holder"><span class="idx">3</span><span class="who">Lt Corduant Jean</span><span class="meta">01/04/1940 →21/06/1940</span></div>
+        <span class="note">arrivé de la CA1, fait prisonnier, oflag VI A, décédé en captivité</span>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Pharmacien</span>
+        <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/carraz-louis-marius-gilbert.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt-pharmacien Carraz (R)</span><span class="meta">20/10/1939 → 18/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Dentistes</span>
+        <div class="holder"><span class="who">Adjudant Avakian, adjudant Renardet</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" id="cre">Compagnie régimentaire d'engins (CRE)</div>
+  <div class="support-grid" style="grid-template-columns: 1fr;">
+    <div class="unit-card">
+      <div class="role-block">
+        <span class="role-label">Commandant la compagnie</span>
+        <div class="holder"><span class="who">Capitaine Costa Sauveur (A)</span><span class="meta">01/09/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Chefs de section</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Lt Revol</span><span class="meta">12/02/1940</span></div>
+        <span class="note">muté à La Valbonne</span>
+        <div class="holder"><span class="idx">2</span><span class="who">Lt Favre Gaston</span><span class="meta">30/03/1940 → 23/06/1940</span></div>
+        <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/collin-yann-marie-charles.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Collin Yvan</span><span class="meta">01/09/1939 → 28/05/1940</span></div>
+        <span class="note">passe à la 1ère Cie</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" id="b1">Les trois bataillons</div>
+
+  <!-- 1er Bataillon -->
+  <details class="bataillon" open>
+    <summary>1er bataillon</summary>
+    <div class="bataillon-staff">
+      <div class="role-block">
+        <span class="role-label">Chef de bataillon</span>
+        <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/auffret-pierre-francisque-antoine.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Auffrey Pierre</span><span class="meta">02/09/1939 → 11/02/1940</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rouillon-paul.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Rouillon Paul (R)</span></div>
+        <span class="note">échappé avant reddition puis démobilisé</span>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Capitaine adjudant-major</span>
+        <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rouillon-paul.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Rouillon Paul (R)</span><span class="meta">13/02/1940</span></div>
+        <span class="note">passe chef du 1er bataillon</span>
+        <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clement-pierre-emile-fernand.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Clément Pierre Emile (A)</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier adjoint</span>
+        <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/girard-louis-pierre.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Girard Louis Pierre</span><span class="meta">11/09/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Médecin lieutenant</span>
+        <div class="holder"><span class="who">Lt Pressat Simon Claude Charles (R)</span><span class="meta">20/10/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Médecin sous-lieutenant</span>
+        <div class="holder"><span class="who">S/lt Devaux Henri (R)</span><span class="meta">nommé en mars → 23/06/1940</span></div>
+        <span class="note">fait prisonnier, libéré</span>
+      </div>
+    </div>
+    <div class="cie-grid">
+      <div class="cie">
+        <h4>1ère compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/le-moine-marcel" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/le-moine-marcel-raymond-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Le Moine Marcel (A)</a></span><span class="meta">→ 28/05/1940</span></div>
+          <span class="note">muté adjudant-major au 2e bataillon</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pierre-emile-georges-louis.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Pierre Emile</span><span class="meta">28/05/1940 → 23/06/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/pierre-emile-georges-louis.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Pierre Emile Georges Louis (A)</span><span class="meta">04/11/1939 → 28/05/1940</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jurion-marc-andre-maurice-felicien.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Jurion Marc</span><span class="meta">04/11/1939 → ✝ 11/05/1940</span></div>
+          <div class="holder"><span class="idx">3</span><span class="who">S/lt Santour Henri</span><span class="meta">04/10/1939 → 27/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">4</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/collin-yann-marie-charles.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Collin Yvan (A)</span><span class="meta">28/05/1940 → 23/06/1940</span></div>
+          <span class="note">arrivé de la CRE</span>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>2e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who">Capitaine Truffy Lucien Emile (R)</span><span class="meta">12/09/1939 → 08/03/1940</span></div>
+          <span class="note">muté 14e région</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/seillon-benoit-georges.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine (tt) Seillon Georges</span><span class="meta">15/05/1940</span></div>
+          <span class="note">nommé capitaine à titre temporaire, porté disparu le 23/05/1940</span>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/roux-robert-louis-maurice.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Roux Robert (A)</span></div>
+          <span class="note">passe commandant de la Cie, blessé le 18/06/1940</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cachat-basile.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Cachat Armand (R)</span><span class="meta">→ 23/06/1940</span></div>
+          <span class="note">fait prisonnier, oflag VI A</span>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/seillon-benoit-georges.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Seillon Georges (A)</span><span class="meta">15/05/1940</span></div>
+          <span class="note">passe cdt de la 2e Cie</span>
+          <div class="holder"><span class="idx">4</span><span class="who">S/lt Verny Fernand (R)</span><span class="meta">03/10/1939 → 27/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">5</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/levy-roger-benjamin.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Levy Roger</span><span class="meta">01/04/1940 → 23/04/1940</span></div>
+          <span class="note">évacué sur formation sanitaire pour maladie</span>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>3e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/emanuelli-jules-cesar.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Emanuelli Jules César (A)</span><span class="meta">✝ 27/05/1940</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gheysens-frederic-yvan-camille-francois.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Gheysens Frédéric Yvan (A)</span><span class="meta">28/05/1940 → 23/06/1940</span></div>
+          <span class="note">fait prisonnier, oflag VI A</span>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gheysens-frederic-yvan-camille-francois.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Gheysens Frédéric (A)</span><span class="meta">23/05/1940</span></div>
+          <span class="note">blessé par éclat d'obus non évacué, passe cdt de la Cie le 28/05/1940</span>
+          <div class="holder"><span class="idx">2</span><span class="who">Lt Grange Humbert (A)</span></div>
+          <span class="note">évadé</span>
+          <div class="holder"><span class="idx">3</span><span class="who">Lt de Lorraine</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>C.A. du 1er bataillon (CA1)</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clement-pierre-emile-fernand.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Clément Pierre Emile Fernand</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sigmann-joseph-jacques.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Sigmann Jacques</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who">Lt Corduant Jean (R)</span><span class="meta">01/04/1940</span></div>
+          <span class="note">passe à la CC, section de dépannage</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/drouineau-marie-robert.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Drouineau Robert (R)</span><span class="meta">03/10/1939 → 25/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/sigmann-joseph-jacques.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Sigmann Jacques (A)</span></div>
+          <span class="note">passe commandant de la Cie</span>
+          <div class="holder"><span class="idx">4</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/mondon-pierre" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mondon-pierre-francois-julien.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Mondon Pierre</a></span><span class="meta">01/04/1940 → 23/06/1940</span></div>
+          <span class="note">arrivé du 11e RZ</span>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 2e Bataillon -->
+  <details class="bataillon" id="b2">
+    <summary>2e bataillon</summary>
+    <div class="bataillon-staff">
+      <div class="role-block">
+        <span class="role-label">Chef de bataillon</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Brissard Henri</span><span class="meta">02/09/1939 → 04/02/1940</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who">Capitaine Pourcin Robert</span><span class="meta">à partir du 13/02/1940</span></div>
+        <span class="note">arrivé du 8e BM</span>
+        <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rzekiecki-d-alegron-henryk.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Rzekiecki d'Alegron Henryk</span><span class="meta">18/03/1940 → ✝ 18/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Capitaine adjudant-major</span>
+        <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rzekiecki-d-alegron-henryk.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Rzekiecki d'Alegron Henryk (A)</span><span class="meta">04/11/1939 → 18/03/1940</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/le-moine-marcel" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/le-moine-marcel-raymond-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Le Moine Marcel</a></span><span class="meta">28/05/1940 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier adjoint</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Lt Chapeau Alphonse Louis Eugène</span><span class="meta">12/02/1940</span></div>
+        <span class="note">muté à La Valbonne</span>
+        <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brochet-de-vaugrineuse-maurice-pierre-claude.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Brochet de Vaugrineuse Maurice</span><span class="meta">15/05/1940 → 27/05/1940</span></div>
+        <span class="note">blessé évacué</span>
+        <div class="holder"><span class="idx">3</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/le-moine-marcel" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/le-moine-marcel-raymond-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Le Moine Marcel</a></span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Médecin sous-lieutenant</span>
+        <div class="holder"><span class="who">Rousson Charles</span><span class="meta">17/10/1939 → 15/05/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Médecin-adjudant / auxiliaire</span>
+        <div class="holder"><span class="who">Hypousthéguy G (R)</span></div>
+        <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/fitsch-jacques-marcel-andre-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Fitsch Jacques</span><span class="meta">26/05/1940 → ✝ 18/06/1940</span></div>
+      </div>
+    </div>
+    <div class="cie-grid">
+      <div class="cie">
+        <h4>5e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/lanchon-charles" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lanchon-ne-lefebvre-louis-charles.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Lanchon né Lefebvre Louis (R)</a></span><span class="meta">02/09/1939 → ✝ 18/06/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chevillotte-herve-marie-charles.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Chevillotte Hervé (A)</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/metman-henry" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/metman-henri-jules.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Adjt-chef Metman Henry</a></span><span class="meta">12/09/1939 → ✝ 26/05/1940</span></div>
+          <span class="note">remplacé par Egloff</span>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bertot-alfred-aristide.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Bertot Alfred Aristide (R)</span><span class="meta">25/04/1940</span></div>
+          <span class="note">arrivé de la 7e Cie, prisonnier oflag VI A</span>
+          <div class="holder"><span class="idx">4</span><span class="who">Lt Rabin Félix Louis</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+          <div class="holder"><span class="idx">5</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coquet-jacques.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Coquet Jacques</span><span class="meta">25/04/1940</span></div>
+          <span class="note">passe cdt de la 7e Cie</span>
+        </div>
+        <span class="note">sergent Derly Charles René Emile ✝ 27/05/1940 — adjudant Lhotel, JMO 27/05/1940 « section Lhotel »</span>
+      </div>
+      <div class="cie">
+        <h4>6e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/magne-jean" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/magne-jean-leon-martial.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Magne Jean Léon Martial (R)</a></span><span class="meta">→ ✝ 18/06/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/delmas-georges-hippolyte-louis.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Delmas Georges Hippolyte Louis (R)</span></div>
+          <span class="note">prisonnier oflag VI A</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/forget-michel-edme-antoine.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Forget Michel (A)</span><span class="meta">27/05/1940</span></div>
+          <span class="note">prend le commandement de la 6e Cie</span>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coubard-yves-victor.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Coubard Yves Victor (R)</span><span class="meta">01/04/1940</span></div>
+          <span class="note">arrivé de la CA2</span>
+          <div class="holder"><span class="idx">4</span><span class="who">Lt Blot Maurice (R)</span><span class="meta">01/04/1940 → 27/05/1940</span></div>
+          <span class="note">arrivé du 6e RTM</span>
+          <div class="holder"><span class="idx">5</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brochet-de-vaugrineuse-maurice-pierre-claude.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Brochet de Vaugrineuse Maurice</span><span class="meta">04/11/1939 → 01/04/1940</span></div>
+          <div class="holder"><span class="idx">6</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/hafenscher-janos-laszlo-ladislas.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Hafenscher Jean</span><span class="meta">04/11/1939 → ✝ 20/05/1940</span></div>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>7e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who">Capitaine Perrossier Yves</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coquet-jacques.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Coquet Jacques</span><span class="meta">25/04/1940</span></div>
+          <span class="note">arrivé de la 5e Cie</span>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who">Lt Delmas Georges</span></div>
+          <span class="note">passe à la 6e Cie</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/forget-michel-edme-antoine.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Forget Michel (A)</span><span class="meta">04/11/1939 → 23/06/1940</span></div>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bertot-alfred-aristide.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Bertot Alfred Aristide</span><span class="meta">05/04/1940</span></div>
+          <span class="note">passe à la 5e Cie</span>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>C.A. du 2e bataillon (CA2)</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/urvoy-de-closmadeuc-marie-jules.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Urvoy de Closmadeuc Jules Albéric</span><span class="meta">✝ 27/05/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bertot-alfred-aristide.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Bertot Alfred Aristide</span></div>
+          <span class="note">passe à la 5e Cie le 25/04/1940</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/picquart-marie-jean.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Piquard Jean Marie (A)</span><span class="meta">09/09/1939 → 27/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">3</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/jabouille-andre" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jabouille-andre-robert-leon.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Jabouille André (R)</a></span><span class="meta">11/09/1939 → ✝ 18/06/1940</span></div>
+          <div class="holder"><span class="idx">4</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/viel-roger-isidore.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Viel Roger (A)</span><span class="meta">04/11/1939 → ✝ 18/06/1940</span></div>
+          <div class="holder"><span class="idx">5</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coubard-yves-victor.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Coubard Yves Victor (R)</span><span class="meta">01/04/1940</span></div>
+          <span class="note">passe à la 6e Cie</span>
+          <div class="holder"><span class="idx">6</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/brochet-de-vaugrineuse-maurice-pierre-claude.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Brochet de Vaugrineuse Maurice</span><span class="meta">01/04/1940 → 15/05/1940</span></div>
+        </div>
+        <span class="note">JMO 27/05/1940 : section de mitrailleuses Marquetti</span>
+      </div>
+    </div>
+  </details>
+
+  <!-- 3e Bataillon -->
+  <details class="bataillon" id="b3">
+    <summary>3e bataillon</summary>
+    <div class="bataillon-staff">
+      <div class="role-block">
+        <span class="role-label">Chef de bataillon</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Guyot Léon</span><span class="meta">dirigé sur hôpital le 12/12/1939</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rio-leo-jean.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Rio Léo</span><span class="meta">13/02/1940</span></div>
+        <span class="note">muté au 408e RP</span>
+        <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gaultier-louis-marie-antoine.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Gaultier Louis</span><span class="meta">13/02/1940 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Capitaine adjudant-major</span>
+        <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/rio-leo-jean.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Rio Léo</span></div>
+        <div class="holder"><span class="idx">2</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/marguet-louis" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/marguet-louis-alexandre.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Marguet Louis (A)</a></span><span class="meta">01/09/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Officier adjoint</span>
+        <div class="holder"><span class="idx">1</span><span class="who">Lt Lannelongue</span><span class="meta">12/02/1940</span></div>
+        <span class="note">muté à La Valbonne</span>
+        <div class="holder"><span class="idx">2</span><span class="who">Boyer de Rebeval Roger</span><span class="meta">29/03/1940</span></div>
+        <span class="note">muté au 11e REI, blessé le 31/05/1940</span>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Médecin lieutenant</span>
+        <div class="holder"><span class="who">Jaegerschmidt Philippe (A)</span><span class="meta">16/10/1939 → 23/06/1940</span></div>
+      </div>
+      <div class="role-block">
+        <span class="role-label">Médecin aspirant</span>
+        <div class="holder"><span class="who">Dejean Louis (R)</span><span class="meta">prisonnier Stalag XXB</span></div>
+      </div>
+    </div>
+    <div class="cie-grid">
+      <div class="cie">
+        <h4>9e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/marguet-louis" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/marguet-louis-alexandre.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Marguet Louis (A)</a></span></div>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/jayet-louis-charles-marie.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Jayet Louis</span><span class="meta">15/05/1940 → 03/06/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/kakhovsky-leon" target="_blank" rel="noopener">Lt Kakhowsky Léon (R)</a></span><span class="meta">31/12/1939 → 17/06/1940</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/boudoux-d-hautefeuille-marie-joseph-louis-etienne.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Boudoux d'Hautefeuille</span><span class="meta">27/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">3</span><span class="who">Lt Boyer de Rebeval Roger</span><span class="meta">28/03/1940 → 31/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">4</span><span class="who">Lt de La Rocque</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+          <div class="holder"><span class="idx">5</span><span class="who">S/lt Bouyssou René</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+          <div class="holder"><span class="idx">6</span><span class="who">S/lt Viallon Auguste (A)</span></div>
+          <span class="note">adjudant chef de bataillon après Inor, vient de la CA3</span>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>10e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who">Capitaine Février Charles René</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/trimaille-pierre.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Trimaille Pierre (A)</span><span class="meta">07/03/1940 → 23/06/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dubois-joseph-marie-henri.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Dubois Joseph</span><span class="meta">04/11/1939 → 26/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">2</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/garrigues-pierre-emile.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Garrigues</span><span class="meta">01/09/1939 → 28/05/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/boudoux-d-hautefeuille-marie-joseph-louis-etienne.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Boudoux d'Hautefeuille</span></div>
+          <span class="note">passe à la 9e Cie</span>
+          <div class="holder"><span class="idx">4</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/raevski-nicolas" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/raiewsky-nicolas.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Raiewsky Nicolas</a></span><span class="meta">21/10/1939 → 23/06/1940</span></div>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>11e compagnie</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lignez-andre-robert.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Lignez André (R)</span><span class="meta">01/09/1939 → 01/03/1940</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who">Capitaine Lhuisset Daniel (R)</span><span class="meta">04/04/1940 → 18/06/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/baumont-pierre-jean-francois.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Baumont Pierre (A)</span><span class="meta">02/09/1939 → 23/06/1940</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who">Lt David Jean (R)</span><span class="meta">évacué le 02/04/1940</span></div>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/levacher-jacques-robert.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Le Vacher Jacques (A)</span><span class="meta">01/11/1939 → 06/06/1940</span></div>
+          <span class="note">blessé évacué</span>
+        </div>
+      </div>
+      <div class="cie">
+        <h4>C.A. du 3e bataillon (CA3)</h4>
+        <div class="role-block">
+          <span class="role-label">Cdt de Cie</span>
+          <div class="holder"><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/baron-charles-antoine.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Capitaine Baron Charles (A)</span><span class="meta">04/11/1939 → 23/06/1940</span></div>
+        </div>
+        <div class="role-block">
+          <span class="role-label">Chefs de section</span>
+          <div class="holder"><span class="idx">1</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/binoche-11e-rei" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/binoche-francois-etienne-adolphe-henri.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Binoche François (A)</a></span><span class="meta">04/11/1939 → 23/06/1940</span></div>
+          <div class="holder"><span class="idx">2</span><span class="who">S/lt Viallon Auguste (A)</span></div>
+          <span class="note">passe à la 9e Cie</span>
+          <div class="holder"><span class="idx">3</span><span class="who"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mossmann-justin-auguste.jpg" alt="" loading="lazy" onerror="this.style.display='none'">Lt Mossman Justin Auguste (A)</span><span class="meta">29/03/1940 → 27/05/1940</span></div>
+          <span class="note">arrivé du 103e RI, blessé évacué</span>
+          <div class="holder"><span class="idx">4</span><span class="who"><a class="bio-link" href="https://www.11regimentetranger.com/blog/dadu-marcel" target="_blank" rel="noopener"><img class="thumb" src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/dadu-marcel-robert-delphin.jpg" alt="" loading="lazy" onerror="this.style.display='none'">S/lt Dadu Marcel (R)</a></span><span class="meta">30/03/1940 → 06/06/1940</span></div>
+          <span class="note">blessé évacué</span>
+          <div class="holder"><span class="idx">5</span><span class="who">Lt Méliande Robert</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+          <div class="holder"><span class="idx">6</span><span class="who">Lt de Crèvecoeur</span><span class="meta">12/02/1940</span></div>
+          <span class="note">muté à La Valbonne</span>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <div class="section-title" id="valbonne">Le prélèvement du 12 février 1940</div>
+  <div class="misc-card">
+    <p>12 officiers et 30 sous-officiers sont prélevés au 11e régiment étranger d'infanterie pour encadrer un régiment étranger en voie de formation à La Valbonne.</p>
+    <p><strong>Lieutenants :</strong> Revol, Rabin, Perossier, Bouyssou, Méliande, Besset, De Lorraine, Chapeau, de la Roque, Février, de Crèvecoeur.</p>
+    <p><strong>Sous-officiers :</strong> 3 adjudants, 5 sergents-chefs, 22 sergents — dont Delorme Gabriel Pierre Marie (sergent).</p>
+  </div>
+
+  <div class="section-title" id="renforts">Officiers gagnés au régiment en cours de campagne</div>
+  <div class="misc-card">
+    <div class="month-label">Février 1940</div>
+    <ul>
+      <li>Colonel Robert, venant du 1er REI — 24/02/1940</li>
+      <li>Capitaine Trimaille, venant du 102e RI — 26/02/1940</li>
+    </ul>
+    <div class="month-label">Mars 1940</div>
+    <ul>
+      <li>Lt Blot, venant du 6e RTM — 28/03/1940</li>
+      <li>Lt Mossmann (A), venant du CMI 212 — 29/03/1940</li>
+      <li>S/lt Dadu (R), venant du 22e RTA — 30/03/1940</li>
+      <li>Lt Favre Gaston (R), venant du 155e RIF — 30/03/1940</li>
+      <li>Lt Lévy Roger (R), venant du 103e RI — 31/03/1940</li>
+      <li>Lt Boyer de Rebeval (R), venant du 104e RI — 28/03/1940</li>
+      <li>Lt Mondon Pierre (R), venant du 11e RZ — 21/03/1940</li>
+    </ul>
+    <div class="month-label">Avril 1940</div>
+    <ul>
+      <li>Capitaine Lados, venant du GD2 — 09/04/1940</li>
+      <li>Capitaine Lhuisset, venant du 331e RI — 04/04/1940</li>
+    </ul>
+    <div class="month-label">Mai 1940</div>
+    <ul>
+      <li>Clément René (A), venant du 78e RI</li>
+    </ul>
+    <div class="month-label">Juin 1940</div>
+    <ul>
+      <li>Lt Souriau Marcel (A)</li>
+    </ul>
+  </div>
+
+  <div class="section-title" id="anciens">Officiers anciens combattants de la Première Guerre mondiale</div>
+  <div class="misc-card">
+    <p>Une partie de l'encadrement de 1939-1940 avait déjà connu le feu vingt ans plus tôt. Le colonel Maire a servi au Régiment de marche de la Légion étrangère à partir de 1916 ; son successeur, le colonel Robert, sorti de la 93e promotion de Saint-Cyr (1908-1911), a rejoint le front dès la mobilisation. Le chef d'état-major Robitaille porte trois blessures et six citations de la Grande Guerre, tandis que le commandant Rouillon (1er bataillon) en compte sept. Plusieurs légionnaires d'origine étrangère avaient combattu dans d'autres armées avant de rejoindre la Légion : Kakhovsky dans l'armée impériale russe, Jolsvay comme pilote aviateur dans l'aviation hongroise (8 citations), Keurvels dans l'armée belge, Auer et Obénaus du côté allemand. D'autres se sont engagés volontaires alors qu'ils étaient étrangers (EVDG) : Demonchy dès août 1914, Krouker, Clairet — plusieurs fois blessés et cités. Le capitaine Lanchon, futur commandant de la 5e compagnie, avait rallié le 1er régiment de marche de la Légion étrangère (RMLE) en 1918 et reçu la croix de guerre et la Légion d'honneur.</p>
+    <div class="month-label">Officiers cités, blessés ou décorés en 14-18</div>
+    <ul>
+      <li>Auffret Pierre — chef de bataillon — fait prisonnier en juin 1915, croix de guerre, légion d'honneur en 1929</li>
+      <li>Baron Charles — lieutenant — 4 citations, médaille militaire (août 1917)</li>
+      <li>Blanc Perducet Marcel — capitaine médecin — 4 citations, intoxiqué et brûlé à l'ypérite le 28/10/1918</li>
+      <li>Brissard Henri — chef de bataillon — 2 blessures, 2 citations</li>
+      <li>Chiron Henri — capitaine — aux armées dès 1916, blessé le 19/07/1917, 1 citation</li>
+      <li>Clément René — colonel, chef de corps — 4 citations</li>
+      <li>Emanuelli Jules César — capitaine — aux armées à partir du 31/10/1917</li>
+      <li>Février Charles René — capitaine (R) — 2 blessures, plusieurs citations</li>
+      <li>Guyot Léon — chef de bataillon — 1 blessure, 2 citations</li>
+      <li>Pellegrini Léon — adjudant — médaille militaire 1917, 1 blessure, 2 citations</li>
+      <li>Piens Marceau — sergent — blessé à Maurepas (Somme) puis à Longeville (Vosges), croix de guerre</li>
+      <li>Pourcin Robert — capitaine — blessé au Reichackerkopf en 1915, blessé par balle en 1916, intoxiqué en 1918 à Tilloloy</li>
+      <li>Robitaille Léon Marcel Joseph — chef d'état-major — 3 blessures, 6 citations</li>
+      <li>Rouillon Paul — capitaine — 1 blessure, 7 citations</li>
+    </ul>
+    <p style="font-size:12.5px; color:var(--ink-soft); margin-top:10px;">Liste non exhaustive — 38 officiers et sous-officiers du régiment ont un service en 14-18 documenté dans la base de recensement.</p>
+  </div>
+
+  <div class="section-title">Formation : Saint-Cyr et Saint-Maixent</div>
+  <div class="misc-card">
+    <p>La majorité des officiers subalternes de 1939-1940 sortent de Saint-Cyr, essentiellement des promotions du début des années 1930 (117e Joffre, 118e du Tafilalet, 120e du Roi Albert 1er...), plusieurs directement affectés au 1er ou au 11e REI dès leur sortie d'école. Le chef de corps Clément René, lui, appartient à la 97e promotion de Montmirail (1912-1914) — commissionné à la veille de la Grande Guerre. D'autres passent par l'école de Saint-Maixent, filière plus courte destinée aux sous-officiers accédant au rang d'officier : Cardonne (promotion « Verdun » 1935-1937), Emanuelli, Magne, Hafenscher, Laparra.</p>
+    <div class="month-label">Saint-Cyr (par promotion)</div>
+    <ul>
+      <li>93e de Mauritanie (1908-1911) — Robert Georges</li>
+      <li>97e de Montmirail (1912-1914) — Clément René Paul</li>
+      <li>101e Sainte Odile (1917-1918) — Gaultier Louis</li>
+      <li>108e du Souvenir (1921-1923) — Clément Pierre Emile</li>
+      <li>110e du Chevalier Bayard (1923-1925) — Le Moine Marcel, Perrossier Yves</li>
+      <li>111e du Rif (1924-1926) — Rio Léo</li>
+      <li>113e du S/Lt Pol Lapeyre (1926-1928) — Trimaille Pierre, Urvoy de Closmadeuc Albéric</li>
+      <li>114e Maréchal Gallieni (1927-1929) — Palluat du Besset Jean Marc Marie</li>
+      <li>116e Mangin (1929-1931) — Coquet Jacques, Dubois Joseph, Jayet Louis, Sigmann Jacques</li>
+      <li>117e Joffre (1930-1932) — Binoche François, Gheysens Frédéric, Jurion Marc</li>
+      <li>118e du Tafilalet (1931-1933) — Boudoux d'Hautefeuille Claude, Brochet de Vaugrineuse Maurice, Forget Michel, Seillon Benoît, Viel Roger</li>
+      <li>119e de Bournazel (1932-1934) — Baumont Pierre, de Rousiers Jacques</li>
+      <li>120e du Roi Albert 1er (1933-1935) — Levacher Jacques, Picquart Marie Jean, Roux Robert</li>
+      <li>121e du Roi Alexandre 1er (1934-1936) — Chevillotte Hervé</li>
+      <li>123e du Soldat Inconnu (1936-1938) — Collin Yann, Garrigues Pierre</li>
+    </ul>
+    <div class="month-label">Saint-Maixent, EOR et autres écoles</div>
+    <ul>
+      <li>Cardonne Joseph — promotion « Verdun » 1935-1937</li>
+      <li>Emanuelli Jules César — 1924-1925</li>
+      <li>Magne Jean Léon — 16/11/1925 au 10/05/1927</li>
+      <li>Grange Humbert — 21/04/1931 au 19/09/1931</li>
+      <li>Hafenscher Jean — 1932</li>
+      <li>Laparra Edgar — 1933</li>
+      <li>Jabouille André — E.O.R du 20/04 au 20/09/1932</li>
+      <li>Chapeau Alphonse — EPOR 1924</li>
+      <li>Lignez André — école militaire d'infanterie, 1922</li>
+      <li>Kakhovsky Léon — corps des cadets de Tachkent puis école militaire Paul de Saint-Pétersbourg</li>
+    </ul>
+  </div>
+
+  <div class="legend">
+    <span>✝ tué</span>
+    <span>blessé (évacué)</span>
+    <span>prisonnier</span>
+    <span>évadé / disparu</span>
+    <span>(A) active — (R) réserve</span>
+  </div>
+
+  <footer>Reconstitué d'après « Ordre de bataille du 11e REI, mai-juin 1940 » — 11regimentetranger.com/blog/ordre-de-bataille</footer>
+
+</div>
+
+<button class="back-to-top" id="ob-top" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('ob-top');
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>

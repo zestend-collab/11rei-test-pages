@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les cas douteux — 11e REI</title>
+<meta name="description" content="Comment trancher quand le régiment indiqué par les sources n'est pas le 11e REI">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--link);margin-bottom:.4rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
+  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article h2:first-of-type{margin-top:0}
+  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
+  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article p{margin-bottom:1rem}
+  article ul{margin:0 0 1rem 1.2rem}
+  article li{margin-bottom:.3rem}
+  article figure{margin:1.2rem 0}
+  article img{max-width:100%;border-radius:4px;display:block}
+  article figure.size-full{width:100%}
+  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
+  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
+  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow img{width:100%}
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="tag">Méthodologie du recensement</div>
+  <h1>Les cas douteux</h1>
+  <div class="sub">Comment trancher quand le régiment indiqué par les sources n'est pas le 11e REI</div>
+  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+</header>
+
+<article>
+<p class="lede">Ma base de données compte aujourd'hui plus de 2 080 légionnaires dont le nom est associé au 11e REI par au moins une source — listes officielles, archives, mentions dans des livres ou souvenirs de famille. Pour une partie d'entre eux, le lien avec le régiment n'est pas évident au premier abord : leur nom est associé ailleurs à un autre régiment. Voici, avec quelques exemples, comment je tranche ces cas.</p>
+<figure class="size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-2.jpg" alt=""></figure>
+<h2>Confusion avec le 2e REI</h2>
+<p>J'ai retenu quelques légionnaires renseignés comme appartenant au 2e REI sur le site Mémoire des hommes (MDH). Mon hypothèse : un problème de typographie. La touche du chiffre « 1 » n'existait pas sur toutes les machines à écrire ; les lettres « i » majuscule ou « l » minuscule étaient utilisées à la place. Les personnes qui ont saisi les données dans MDH ont pu y voir des chiffres romains et traduire « Ii » en « 2 ».</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-4.jpg" alt=""><figcaption>Fiche de pension DROUINEAU : « IIe R.E.I. »</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-5.jpg" alt=""><figcaption>AST Henri « IIème REI », BAER Max « 2ème REI »</figcaption></figure></div>
+<p>Ci-dessus, tous les « 1 » sont remplacés par des « i » majuscules.</p>
+<p>En 1940, le 2e REI est au Maroc et n'a pas combattu en France — seuls des éléments de ce régiment sont envoyés en métropole pour aider à former les 11e et 12e REI, les régiments de volontaires étrangers (RMVE) et la 13e DBLE. En recoupant dates et lieux de décès des légionnaires du « 2e REI » morts pour la France, j'en déduis que les suivants appartenaient en réalité au 11e REI :</p>
+<ul>
+  <li>Adrien LÉONARD, mort pour la France le 24/05/1940 (Mouzay, Meuse)</li>
+  <li>Koeff MINTCHO, mort pour la France le 20/06/1940 (Ourches, Meuse)</li>
+  <li>René François SERMET, mort pour la France le 19/05/1940 (Inor, Meuse)</li>
+  <li>Stanislas BUDZIOCH, mort pour la France le 17/06/1940 (Vadonville, Meuse)</li>
+  <li>reste douteux le cas du caporal-chef René THALMANN, mort en 1941 à Nancy</li>
+</ul>
+<p>Pour Fulgencio LANUZA GIMENO (mort le 21/07/1940 à Châteauroux), Nicolas MARTINEL (mort le 22/01/1940 dans la Marne), Henri MINSTER (mort à Castelnaudary) et Jean-Louis GOURDY (mort le 15/06/1941 à Limoges), les dates et lieux de décès ne permettent pas de lever le doute.</p>
+<p>Dans la base des EVDG, les documents ont été numérisés : il suffit de regarder les images pour vérifier. Si le chiffre « 1 » n'est pas utilisé, il faut lire 11e REI pour ce qui est transcrit « IIe REI ».</p>
+<h2>Confusion avec le 9e REI ou le 11e RIF</h2>
+<p>Le 9e REI et le 11e RIF (régiment d'infanterie de forteresse) sont des unités qui n'ont jamais existé. Pour le 9e REI, je pense à une inversion de chiffres romains : XI pour 11, IX pour 9. J'ajoute à ma base Anton WEJNER, mort pour la France le 18/06/1940 à Saint-Germain-sur-Meuse (appartenance confirmée par le livre de Roger Bruge).</p>
+<p>Dans les listes de prisonniers, j'en trouve deux qui donnent pour régiment le 9e REI ou « 9e Étr. ». Pour l'instant, je ne sais pas s'il existe un lien avec le 11e REI.</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-6.jpg" alt=""><figcaption>Puyrelo (François) — 9e R.E.I.</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-7.jpg" alt=""><figcaption>Berthias (Michel) — 9e Étr.</figcaption></figure></div>
+<p>L'exemple d'Étienne Bedrossian : c'est un engagé volontaire pour la durée de la guerre. Dans la base des décédés de la Seconde Guerre mondiale, il appartient bien au « 11e Regt étranger inf. ». Mais dans la base des sépultures il est indiqué 11e RIF, et sur son acte de décès comme dans les listes de prisonniers, 11e RI.</p>
+<figure class="size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-8.jpg" alt=""></figure>
+<p>Dernier exemple, Joseph Benet Serado, inscrit sur Mémoire des hommes comme décédé à Montauban en juillet 1945 (sans mention « mort pour la France »). Il aurait appartenu au « 11e Gr d'Inf Étrangère » — une unité qui ne me dit rien, mais qui pourrait bien désigner le 11e REI et un légionnaire longuement hospitalisé.</p>
+<h2>Confusion avec le 11e RI (régiment d'infanterie)</h2>
+<p>Le 11e RI est formé le 9 septembre 1939 par le CMI 171 de Toulouse. Le 11e REI et le 11e RI stationnent dans le même secteur du 16 au 21 juin (combats autour de Vaucouleurs) ; le 11e RI est capturé au bois du Feys, près de Germiny, le 21 juin 1940.</p>
+<p>Sur MDH, je retiens comme appartenant au 11e REI et non au 11e RI :</p>
+<ul>
+  <li>SMEJA Léon (confirmé par sa fiche matricule)</li>
+  <li>DESMEDT Raymond (confirmé par un article de presse)</li>
+  <li>LAMANT Arthur (confirmé par une liste de citation)</li>
+  <li>GUTTE Adolf Auguste (mort à Saint-Germain le 18 juin)</li>
+  <li>DEVOS Josephus Renatus Léo (acte de décès)</li>
+  <li>DIAZ Mariano (EVDG, décédé à Malandry)</li>
+  <li>REWINSKI Calel</li>
+  <li>à confirmer : le Belge BOUTERS Émile</li>
+</ul>
+<p>Dans les listes officielles de prisonniers, il faut trier les hommes du 11e RI. J'ai systématiquement exclu les Français nés dans les départements d'Occitanie, logiquement mobilisés au CMI 171. Pour les étrangers, il était tentant d'imaginer qu'ils étaient tous légionnaires — j'ai donc exclu les naturalisés d'avant 1939 domiciliés autour de Toulouse. Exemple : Nicoletto (Jean), 2e classe, 11e RI, naturalisé en 1936 et domicilié à Nérac (Lot-et-Garonne) — son affectation au 11e régiment d'infanterie paraît tout à fait logique.</p>
+<p>J'ai en revanche systématiquement retenu ceux qui avaient contracté un engagement volontaire pour la durée de la guerre, sachant que j'avais déjà identifié des légionnaires d'active affublés du mauvais nom de régiment. Bernard Marguilles alias Margulies, adjudant au 11e REI, en est un exemple : il recevra la médaille militaire et la Légion d'honneur.</p>
+<figure class="size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-9.jpg" alt=""><figcaption>Marguilles (Bernard) — 11e R.I.</figcaption></figure>
+<p>Beas José, engagé à la Légion étrangère : même nom, même date de naissance. Selon moi, il était bien au 11e REI.</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-10.jpg" alt=""><figcaption>Beas José — Légion étrangère</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-11.jpg" alt=""><figcaption>Beas (Jozé) — 11e R.I.</figcaption></figure></div>
+<p>Zucic (ou Zugic) Ignace, indiqué au 11e RI dans les listes de prisonniers de guerre : son appartenance au 11e REI est confirmée par les meldung du Stalag IV et les archives Arolsen, où il est recensé comme « légionnaire du 11e RI ».</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-12.jpg" alt=""><figcaption>Zucic Ignach — 11e R.I.</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-13.jpg" alt=""><figcaption>Fiche Arolsen : Zucic, légionnaire, 11.R.I.</figcaption></figure></div>
+<h3 class="subhead">La confusion existe aussi dans le Journal officiel</h3>
+<p>Les erreurs dans les citations sont courantes : elles concernent le plus souvent l'orthographe du patronyme, le lieu des événements, et parfois le nom du régiment.</p>
+<p>Journal officiel du 12 octobre 1941 : « DE CONTO (Emilio), soldat au 11e rég. d'infanterie : soldat courageux. Grièvement blessé par éclats d'obus, le 17 juin 1940, à son poste de combat, à Saint-Germain-en-Laye, a dû subir l'amputation de la jambe droite. » Emilio De Conto, né en Suisse, avait contracté un engagement volontaire pour la durée de la guerre à Belfort le 4 septembre 1939. Je pense qu'il y a deux erreurs dans cette citation : le nom du régiment, et le lieu de la blessure — il doit s'agir de Saint-Germain-sur-Meuse, pas de Saint-Germain-en-Laye.</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-14.jpg" alt=""><figcaption>JO du 12/10/1941</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-15.jpg" alt=""><figcaption>Né le 27/07/1910 à Courroux (Suisse)</figcaption></figure></div>
+<p>Jean Dubrus obtient une citation où il est noté qu'il appartenait au 11e RI ; son dossier de la Légion d'honneur confirme pourtant qu'il était bien à la Légion étrangère, au 11e REI. Pour Cyril de Coninck, digne « descendant des légionnaires de Camerone », l'erreur concerne aussi le nom du régiment, mais il ne fait pas de doute qu'il faut comprendre 11e REI et non 11e régiment d'infanterie.</p>
+<p>Pour Henri Bessière, le cas est resté longtemps douteux : sa citation indique une blessure le 27 mai à Malmédy — or à cette date le 11e RI est à Sainte-Menehould (Reims) et le 11e REI à Inor. Il pourrait s'agir d'une erreur sur le nom de la ville : Malmédy est en Belgique, et pour se rapprocher du 11e REI il faudrait plutôt lire Malandry — la citation ci-dessous est d'ailleurs celle de Geldhof Camille, du 11e REI. Finalement, Bessière appartenait bien au 11e régiment étranger d'infanterie, puisqu'il obtient la Légion d'honneur pour cette blessure de guerre (JO du 04/08/1954).</p>
+<figure class="size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-16.jpg" alt=""><figcaption>Citations Geldhof (Camille) et Bessière (Henri) — « Malmédy » souligné</figcaption></figure>
+<h2>Les listes de prisonniers</h2>
+<p>Dans les listes de prisonniers, je repère les légionnaires du 11e REI en surveillant le nom du régiment (11e REI, 11e RIE) et ses variantes (11e RI, 11e RIF, 9e REI...). Le numéro du frontstalag est aussi un indice précieux : le 23 juin 1940, ce qu'il reste du régiment est fait prisonnier vers Ochey, la plupart des légionnaires passent par le frontstalag 240 de Verdun et les officiers sont envoyés à Nancy. À proximité, on trouve aussi des prisonniers aux frontstalags 241 (Saint-Mihiel), 161 (Nancy), 162 (Toul), 160 (Lunéville), 120 (Mirecourt)...</p>
+<p>La liste du 25/11/1940 propose des prisonniers internés au frontstalag 240 sans indiquer le régiment. En recoupant les sources, je trouve de nouveaux légionnaires et complète l'état civil de certains (prénom, date de naissance) :</p>
+<figure class="size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-17.jpg" alt=""><figcaption>Lidon (Camille) — frontstalag 240</figcaption></figure>
+<ul>
+  <li>LIDON Camille dit René (confirmé par sa fiche matricule)</li>
+  <li>MEABURN Lionel Henri (cité par le Lt Chevillotte)</li>
+  <li>OBENAUS Othon Martin (cité par René-Luce Coupin)</li>
+  <li>VOUKOVITCH / VONKOVITCH (cité par le Lt Trimaille et une liste de citation)</li>
+  <li>WAEGEMAN / WAEGEMANN Raphaël (témoignage du Lt Trimaille : évadé au 2e REI)</li>
+  <li>CORNETA Sébastien (EVDG)</li>
+  <li>GELBMANN Joseph (EVDG)</li>
+  <li>peut-être BES Paul, qui pourrait correspondre au 1re classe BES cité par le Lt Chevillotte</li>
+</ul>
+<p>On trouve aussi, dans ces listes, des légionnaires appartenant à des régiments qui n'étaient pas en France en 1940 — difficile alors de savoir dans quelle formation ils servaient réellement (11e ou 12e REI, 21e, 22e ou 23e RMVE). Le frontstalag indiqué donne parfois un indice permettant d'exclure certains noms du 11e REI. Le prisonnier Edouardo Garia indique par exemple le 1er REI comme unité, mais a été interné au frontstalag 192 (Laon) : je pense qu'il aurait plutôt sa place au 12e REI ou au 22e RMVE. À l'inverse, Cyril de Coninck indique le 4e REI comme unité, mais a bien reçu la médaille militaire avec le 11e REI.</p>
+<figure class="size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-18.jpg" alt=""><figcaption>Coninck (Cyrille de) — 4e R.E.I.</figcaption></figure>
+<h2>La gestion des doublons et des homonymes</h2>
+<p>Hormis sur MDH et dans les listes de prisonniers, je dispose rarement de plus que le grade et le nom de famille des légionnaires. Il n'est donc pas impossible que ma liste comporte des doublons. J'ai tenté d'en rapprocher certains, en sachant qu'il y a toujours un risque qu'il s'agisse en réalité d'homonymes — ma méthode reste plus intuitive que scientifique.</p>
+<p>Exemple de Borovicki et Borowiecki : le premier est cité dans une lettre du lieutenant Drouineau, le second dans les listes de prisonniers (un EVDG identifié au 11e RI). Il pourrait s'agir du même légionnaire — le patronyme Borovicki est très peu présent sur les sites de généalogie, et il est possible que le lieutenant Drouineau l'ait simplement écrit en phonétique.</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-19.jpg" alt=""><figcaption>Lettre du Lt Drouineau : « ... Marchal et Borovicki ? »</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-20.jpg" alt=""><figcaption>Borowiecki (Félix) — 11e R.I.</figcaption></figure></div>
+<p>Autre exemple : un sergent-chef radio Deschamps, cassé de son grade, mort au mois de mai, cité par René-Luce Coupin. Je trouve un 1re classe Deschamps Albert, fait prisonnier au mois de juin — incompatible. Le seul qui pourrait correspondre est Dichamp Émile, mort le 27 mai 1940 : le patronyme diffère, mais c'est celui qui colle le mieux au récit de René Coupin.</p>
+<p>Je propose parfois, pour certains légionnaires, un prénom, une date et un lieu de naissance — des propositions issues de déductions, généralement pour des patronymes peu répandus. Le sergent Jolyvan, par exemple, est cité dans la revue du régiment comme un ancien « boujadi » de 48 ans ; je trouve dans le Journal officiel un sergent Jolyvan Michel, né en 1891 et naturalisé en 1939.</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-21.jpg" alt=""><figcaption>« ... n'est-ce pas Jolyvan, boujadi de 48 ans ? »</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-22.jpg" alt=""><figcaption>Jolyvan (Michel), sergent, né en 1891 à Kiev</figcaption></figure></div>
+<p>Roger Bruge cite par ailleurs trois chefs de section : Liebuda, Buschaus et Sigenthaler. Je pense qu'il s'agit de LIBUDA Léon (sergent-chef en 1938), BUSCHHAUS Erich (sergent-chef en 1938) et SIEGENTHALER Adolf.</p>
+<h2>Les bizarreries</h2>
+<p>Je trouve aussi quelques bizarreries et informations contradictoires. Par exemple, dans les listes des morts pour la France, MDH indique comme appartenant au « XIe REI » :</p>
+<ul>
+  <li>AMSEL Maurice, mort le 27/06/1940 à Soissons</li>
+  <li>STETKA Vaclan, mort le 15/06/1940 à Laon</li>
+</ul>
+<p>Ces deux légionnaires sont morts dans une zone éloignée des positions du 11e REI. Le 12e REI, lui, se trouve dans l'Aisne : on peut imaginer qu'ils faisaient partie du contingent de 30 sous-officiers parti du 11e REI le 12 février 1940 pour encadrer le 12e REI, ou qu'ils sont décédés dans une formation sanitaire de l'Aisne.</p>
+<p>Pour d'autres cas, ce sont des imprécisions dans les récits et souvenirs de famille. Roger Bruge rapporte ainsi les circonstances de la mort de Wladislas Kuraszewsky : les rescapés dégagent trois fusils-mitrailleurs des décombres, d'où ils retirent cinq corps. L'un d'eux, Libigoski, vit encore, transpercé de part en part ; il meurt un instant plus tard. Son frère, engagé sous le nom de Kurasewki, a été tué par le même obus — et parmi les cinq morts se trouvent aussi deux autres frères, les Wejner.</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-23.jpg" alt=""><figcaption>Libigosky Paul et Kuraszewsky Wladislas</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-24.jpg" alt=""><figcaption>Registre de naissance, Piotrkow (Pologne)</figcaption></figure></div>
+<p>Ces souvenirs du lieutenant Collin ne concordent pas avec Mémoire des hommes ni avec le Journal officiel pour l'attribution de la médaille militaire à titre posthume, où Wladislas Kuraszewski figure au 1er régiment d'infanterie coloniale. Le cas est intrigant, mais je préfère retenir l'engagement des deux frères à la Légion et les souvenirs du lieutenant. On notera au passage que leurs noms sont mal orthographiés sur le monument aux morts de la ville de Survilliers.</p>
+<div class="imgrow"><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-25.jpg" alt=""><figcaption>MDH : 1er régiment d'infanterie coloniale (1er RIC)</figcaption></figure><figure><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux-26.jpg" alt=""><figcaption>JO : citation à titre posthume</figcaption></figure></div>
+<p>En conclusion, ma liste comporte encore des erreurs ou des imprécisions que je corrige au fur et à mesure. Il convient aussi de ne pas écarter trop vite une information qui, à première vue, ne semble pas correspondre au 11e régiment étranger d'infanterie.</p>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-douteux" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>

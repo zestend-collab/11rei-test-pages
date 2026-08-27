@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compagnie d'Accompagnement n°3 (CA3) — 11e REI</title>
+<meta name="description" content="Compagnie d'Accompagnement n°3 (CA3), 11e régiment étranger d'infanterie : organisation, encadrement et effectif recensé.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .flag{width:180px;height:auto;flex-shrink:0;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-size-small img{width:min(240px,100%);margin:0 auto}
+  .ci-size-full img{width:100%}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+  .ci-intro blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+
+  /* --- Carnet, façon journal de terrain --- */
+  .carnet-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.2rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none}
+  .suggestions.show{display:block}
+  .suggestion-item{padding:.5rem .9rem;font-size:.82rem;color:var(--ink);cursor:pointer;
+    display:flex;justify-content:space-between;gap:8px}
+  .suggestion-item:hover,.suggestion-item.active{background:var(--row)}
+  .suggestion-item .sg-meta{color:var(--muted);font-size:.72rem;white-space:nowrap}
+  .navbtn{width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);background:var(--card);
+    color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .navbtn:hover{background:var(--orange)}
+  .pagecount{font-size:.75rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .book-stage{
+    background:
+      radial-gradient(ellipse at center, #4a3826 0%, #1c130a 78%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,.12) 0 2px, transparent 2px 6px);
+    border-radius:10px;
+    padding:2.2rem 1.4rem;
+    margin-bottom:.6rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6);
+  }
+  .book{position:relative;perspective:2200px;display:flex;max-width:720px;margin:0 auto;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .page{
+    flex:1;min-width:0;position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    min-height:260px;
+    color:#2b2013;
+    transition:transform .45s ease, opacity .45s ease;
+  }
+  .page-left{border-radius:6px 0 0 6px;padding-left:1.9rem;
+    box-shadow:inset -10px 0 18px -12px rgba(0,0,0,.45)}
+  .page-right{border-radius:0 6px 6px 0;padding-right:1.9rem;
+    box-shadow:inset 10px 0 18px -12px rgba(0,0,0,.45)}
+  .book::before{ /* reliure centrale */
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;z-index:3;
+    background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.35)),
+               repeating-linear-gradient(180deg, #2a1c0f 0 3px, #1c1108 3px 6px);
+    box-shadow:0 0 14px rgba(0,0,0,.6);
+  }
+  .page::after{ /* coin corné */
+    content:'';position:absolute;bottom:0;width:22px;height:22px;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 50%);
+  }
+  .page-left::after{right:0;border-radius:0 0 6px 0}
+  .page-right::after{left:0;transform:scaleX(-1);border-radius:0 0 0 6px}
+  .page.turning-next{transform:rotateY(-14deg) translateX(-16px);opacity:0}
+  .page.turning-prev{transform:rotateY(14deg) translateX(16px);opacity:0}
+  .page-empty{display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;
+    font-size:1.3rem;color:#8a7554}
+
+  .flip{
+    position:absolute;top:0;bottom:0;width:50%;z-index:5;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    color:#2b2013;
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+    box-shadow:0 0 24px rgba(0,0,0,.45);
+    transition:transform .5s cubic-bezier(.45,.05,.35,1);
+    overflow:hidden;
+    display:none;
+  }
+  .flip::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 40%);
+    opacity:0;transition:opacity .5s}
+  .flip.showing::after{opacity:1}
+  .flip.right{right:0;transform-origin:left center;border-radius:0 6px 6px 0;padding-right:1.9rem}
+  .flip.left{left:0;transform-origin:right center;border-radius:6px 0 0 6px;padding-left:1.9rem}
+  .flip.flipping-right{transform:rotateY(-160deg)}
+  .flip.flipping-left{transform:rotateY(160deg)}
+
+  .p-header{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.2rem;
+    border-bottom:1px dashed rgba(120,90,40,.4);padding-bottom:.4rem}
+  .p-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.15rem;color:#2b2013}
+  .p-stamp{font-family:'Caveat',cursive;font-size:1rem;color:#8a1f11;border:2px solid #8a1f11;border-radius:6px;
+    padding:.05rem .45rem;transform:rotate(4deg);white-space:nowrap;opacity:.8}
+  .p-meta{font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.85rem;margin-bottom:.8rem}
+  .p-field{margin-bottom:.4rem;line-height:1.5;font-size:.82rem}
+  .p-field .lbl{font-family:'Caveat',cursive;font-size:1.02rem;color:#8a4a1f;margin-right:.3rem}
+  .p-link{display:inline-block;margin-top:.7rem;font-size:.76rem;color:#8a4a1f;text-decoration:none;
+    border-bottom:1px dotted #8a4a1f}
+  .p-link:hover{color:#8a1f11}
+  .pageno{position:absolute;bottom:.6rem;font-family:'Caveat',cursive;font-size:.9rem;color:#8a7554}
+  .page-left .pageno{right:1rem}
+  .page-right .pageno{left:1rem}
+  .tapzone{position:absolute;top:0;bottom:0;width:22%;cursor:pointer;z-index:2}
+  .page-left .tapzone{left:0}
+  .page-right .tapzone{right:0}
+
+  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{bottom:74px !important;}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+  .ci-note{font-size:.8rem;font-style:italic;color:#7a5a2a;background:var(--paper2);
+    border:1px solid var(--rule);border-radius:4px;padding:.7rem 1rem;margin:.4rem 0 1rem}
+
+  .eff-stats{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin:0 0 18px}
+  .eff-stat{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--orange);
+    border-radius:4px;padding:.9rem .6rem;text-align:center}
+  .eff-stat .n{font-family:'EB Garamond',serif;font-weight:600;font-size:1.7rem;color:var(--ink)}
+  .eff-stat.mpf .n{color:#8a1f11}
+  .eff-stat .l{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:.15rem}
+
+  .eff-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;justify-content:space-between}
+  .eff-search{flex:1 1 240px}
+  .eff-search input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .eff-search input:focus{outline:2px solid var(--orange);outline-offset:-1px}
+  .eff-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .eff-chip{border:1px solid var(--border);background:var(--card);color:var(--muted);padding:.4rem .8rem;
+    font-size:.74rem;cursor:pointer;border-radius:20px;user-select:none;font-family:'Inter',sans-serif}
+  .eff-chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .eff-count{font-size:.74rem;color:var(--muted);margin:-2px 0 10px}
+
+  table.eff-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);font-size:.82rem}
+  table.eff-table thead th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--muted);background:var(--row);padding:.6rem .7rem;cursor:pointer;white-space:nowrap;
+    border-bottom:2px solid var(--orange)}
+  table.eff-table thead th:hover{color:var(--ink)}
+  table.eff-table thead th .arrow{opacity:.5;font-size:.6rem;margin-left:.2rem}
+  table.eff-table tbody td{padding:.55rem .7rem;border-top:1px solid var(--border);vertical-align:top}
+  table.eff-table tbody tr:hover{background:var(--row)}
+  td.eff-nom{font-weight:600;white-space:nowrap}
+  td.eff-nom .eff-prenom{font-weight:400;color:var(--muted)}
+  td.eff-details{color:var(--muted);font-size:.76rem;max-width:280px}
+  td.eff-section{color:var(--muted);font-size:.76rem;max-width:160px}
+
+  .eff-badge{display:inline-block;font-size:.62rem;text-transform:uppercase;letter-spacing:.02em;
+    padding:.1rem .45rem;border-radius:3px;margin:1px 3px 1px 0;white-space:nowrap;border:1px solid transparent;
+    font-family:'Inter',sans-serif}
+  .eff-badge.MPF{background:#f4e3df;color:#8a1f11;border-color:#e3bdb4}
+  .eff-badge.Prisonnier{background:#fdf1d9;color:#8a6d1f;border-color:var(--orange)}
+  .eff-badge.Blessé{background:#fbeee0;color:#9c5a1f;border-color:#edd2ac}
+  .eff-badge.Déserteur{background:#ece9f2;color:#4d4470;border-color:#d3cce4}
+  .eff-badge.Disparu{background:#eee;color:#666;border-color:#ccc}
+  .eff-badge.Évadé{background:#e3f0e0;color:#35662f;border-color:#c3dcbb}
+  .eff-badge.Rapatrié{background:#dfeaf0;color:#2c5f75;border-color:#bcd8e3}
+  .eff-badge.Démobilisé{background:#f0eee6;color:#6b6558;border-color:#ddd8c9}
+
+  a.eff-fiche{font-size:.74rem;color:var(--link);text-decoration:none;white-space:nowrap}
+  a.eff-fiche:hover{text-decoration:underline}
+  .eff-nofiche{color:#c9c3af;font-size:.74rem}
+
+  .ci-table{width:100%;border-collapse:collapse;margin:.3rem 0 1.2rem;font-size:.82rem}
+  .ci-table caption{caption-side:top;text-align:left;font-family:'EB Garamond',serif;font-style:italic;
+    color:var(--muted);margin-bottom:.4rem;font-size:.85rem}
+  .ci-table th{background:var(--row);border-bottom:2px solid var(--orange);padding:.5rem .6rem;
+    text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  .ci-table td{padding:.5rem .6rem;border-top:1px solid var(--border)}
+  .ci-table tr.total-row td{font-weight:600;border-top:2px solid var(--border)}
+
+  @media (max-width:900px){
+    .eff-stats{grid-template-columns:repeat(3,1fr)}
+    td.eff-section{display:none}
+  }
+  @media (max-width:560px){
+    .eff-stats{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-CA3" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  <div class="htext">
+    <h1>Compagnie d'Accompagnement n°3 (CA3)</h1>
+    <div class="sub">Effectif recensé : 45 légionnaires</div>
+    <a class="back" href="https://www.11regimentetranger.com/recherche-legionnaire">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro"><p class="ci-lede">Historique reconstitué à partir de l'extrait du journal de marche du 3e Bataillon (16 avril – 31 mai 1940, rédigé par le capitaine Gaultier), qui consigne notamment les pertes propres à la C.A.B.3, du compte-rendu rétrospectif du capitaine Baron — officier du 3e Bataillon en 1939-1940 — établi en 1941 pour le Centre d'Archives de Vincennes, et du témoignage de l'ex-sergent-chef Lamamy, de la C.A.3, sur la retraite de juin 1940.</p>
+<h2 class="ci-h2">Composition et rôle</h2>
+<p>Une compagnie d'accompagnement a pour but d'accompagner les compagnies de fusiliers-voltigeurs à l'échelon du bataillon. Elle dispose d'un équipement plus lourd que les autres compagnies : mortiers de 81 mm, canons de 25 mm antichars et mitrailleuses, répartis en plusieurs sections d'engins et de mitrailleuses. La compagnie d'accompagnement porte le numéro du bataillon dont elle fait partie : la CA3 est donc celle du 3e Bataillon, aux côtés des 9e, 10e et 11e compagnies de fusiliers-voltigeurs.</p>
+<p>Le compte-rendu du capitaine Baron, rédigé en 1941, situe l'encadrement du 3e Bataillon en fin d'opérations : chef de bataillon Gaultier (actif), et parmi les capitaines du bataillon, Marguet (commandant la 9e Compagnie), Trimaille (commandant la 10e Compagnie) et Baron lui-même — vraisemblablement le commandant de la C.A.B.3, seule unité du bataillon dont l'encadrement ne soit pas autrement mentionné dans les documents disponibles.</p>
+<h2 class="ci-h2">16 avril – 31 mai 1940 : secteur de Bockange et bois d'Inor</h2>
+<p>Du 16 au 30 avril, le bataillon travaille sur les chantiers de défense depuis son cantonnement, tandis que son Groupe Franc multiplie embuscades et reconnaissances avancées. Le 24 avril, mouvement de nuit d'Anzeling au camp de Ban-Saint-Jean. Le 30 avril, le bataillon participe à la prise d'armes de remise du drapeau du régiment à Boulay, suivie d'une revue montée par le 3e Bataillon.</p>
+<p>Du 1er au 13 mai, le bataillon construit un fossé antichars entre Miedervisse et Obervisse. Le 14 mai, alerte à 1 heure et départ en camions vers Spincourt, puis Hondelaincourt le 15. Le 17 mai, mouvement vers Écurey, où le bataillon organise une deuxième position. Le 20 mai, nouveau déplacement vers le nord, puis, dans la nuit du 21 au 22, le bataillon relève des éléments du 36e et du 136e R.I. dans les bois d'Inor, du Ligan et de Neudan — une relève retardée et déjà coûteuse sous le feu de l'artillerie ennemie : la C.A.B.3 y perd deux légionnaires tués, un sous-officier et deux légionnaires blessés.</p>
+<p>Les pertes de la C.A.B.3 se poursuivent les jours suivants : un capitaine et deux légionnaires blessés le 24 mai ; un légionnaire tué et cinq blessés (trois sous-officiers, un caporal, un légionnaire) le 25 mai, jour où le P.C. du bataillon lui-même, repéré par l'ennemi, est touché par une salve d'artillerie mettant hors de combat huit hommes de sa section de commandement. Le 27 mai, alors qu'une violente attaque allemande bouscule la 5e Compagnie et menace de percer le front du 2e Bataillon, la C.A.B.3 déplore un capitaine et trois légionnaires tués, le lieutenant Mossmann blessé, ainsi que deux sous-officiers, un caporal-chef et vingt-et-un légionnaires blessés — de loin la journée la plus meurtrière pour l'unité. La contre-attaque de la 9e Compagnie, engagée à midi, rétablira la ligne à 17 heures ; le général de Verdilhac, commandant la 6e D.I.N.A., adressera au régiment un « Bravo la Légion » resté dans les mémoires.</p>
+<p>Fin mai, la situation se stabilise : la ligne est reportée en arrière le 28, puis l'organisation de la position se poursuit dans un calme relatif jusqu'au 31 mai, les patrouilles ne relevant plus que des traces d'un ennemi lui-même très éprouvé.</p>
+<h2 class="ci-h2">1er – 23 juin 1940 : la retraite (témoignage de l'ex-sergent-chef Lamamy)</h2>
+<p>Le témoignage de l'ex-sergent-chef Lamamy, rédigé de mémoire en 1942 à la demande du Bureau de comptabilité de la Légion étrangère, retrace au jour le jour la fin de la campagne pour la C.A.3. Du 1er au 5 juin, l'unité reste en ligne dans les bois d'Inor. La nuit du 6 au 7 juin, le régiment est relevé et gagne un bois aux environs de « Boutin ou Boudin », puis, le 10 juin, la forêt de Woëvre. S'ensuit une retraite de plusieurs jours : bois des Caures (13 juin), côte du Poivre puis fort du Rozelier (14 juin), Lacroix (15 juin), Koeur-la-Grande puis Void (16 juin).</p>
+<p>Le 17 juin, le régiment s'installe en défensive sur les hauteurs dominant Void, accroché vers midi par les avant-gardes ennemies, avant de décrocher en direction de Saint-Germain-sur-Meuse, où il reste les 18 et 19 juin sous le bombardement — un ordre de décrochage y est même donné puis contre-ordonné le soir du 19. Le 20 juin, le régiment abandonne son matériel lourd et se replie à travers bois vers Blénod-lès-Toul, essuyant un accrochage et un bombardement toute la journée près d'une ferme à 4 kilomètres de là. Le 22 juin, arrivée dans la forêt d'Ochey, où l'ordre est donné d'enterrer les munitions. Le 23 juin, « les faisceaux sont formés et le restant du Régiment se rend à l'ennemi d'après les ordres donnés ».</p>
+<h2 class="ci-h2">Pertes du régiment (d'après le capitaine Baron)</h2>
+<p>Le compte-rendu du capitaine Baron dresse, à l'échelle du régiment tout entier — et non de la seule C.A.3 —, une liste des officiers tués (le chef de bataillon d'Alegron, le lieutenant de Rouziers, les capitaines Emanuelli, Lanchon et Magne, le lieutenant Hafenscher, le capitaine de Closmadeuc, les lieutenants Viel, Jabouille et Jurion), blessés (sous-lieutenants Sautour, Verny, Dadu, lieutenants Roux, Drouineau, Brochet, Cardonne, Coubard, Blot, de Rebeval, d'Hautefeuille, Dubois, Garrigues, Levacher, Mossmann, capitaine Lhuisset) et disparus (le capitaine Seillon). L'effectif du régiment, de 3000 hommes à sa formation, tombe à environ 760 en fin de campagne.</p>
+<h3 class="ci-h3">Sources</h3>
+<ul>
+  <li>Journal de marche du 3e Bataillon, 16 avril – 31 mai 1940 (capitaine Gaultier)</li>
+  <li>Fiche de renseignements généraux sur le 11e R.E.I. établie par le capitaine Baron, du 3e Bataillon, pour le Centre d'Archives de Vincennes (D.M. n°300 O/I du 6 janvier 1941)</li>
+  <li>Témoignage de l'ex-sergent-chef Lamamy, de la C.A.3, rédigé de mémoire en 1942 à la demande du Bureau de comptabilité de la Légion étrangère</li>
+</ul></div>
+
+<h2 class="carnet-title">Effectif de la compagnie (45 fiches)</h2>
+
+<div class="eff-stats">
+  <div class="eff-stat"><div class="n">45</div><div class="l">Recensés</div></div><div class="eff-stat mpf"><div class="n">9</div><div class="l">Morts pour la France</div></div><div class="eff-stat"><div class="n">16</div><div class="l">Prisonniers</div></div><div class="eff-stat"><div class="n">12</div><div class="l">Blessés</div></div><div class="eff-stat"><div class="n">10</div><div class="l">Évadés</div></div>
+</div>
+
+<div class="eff-toolbar">
+  <div class="eff-search">
+    <input type="text" id="effSearch" placeholder="Rechercher un nom, un grade, un lieu…" autocomplete="off">
+  </div>
+  <div class="eff-chips" id="effChips">
+    <span class="eff-chip active" data-badge="">Tous</span><span class="eff-chip" data-badge="MPF">Morts pour la France</span><span class="eff-chip" data-badge="Prisonnier">Prisonniers</span><span class="eff-chip" data-badge="Blessé">Blessés</span><span class="eff-chip" data-badge="Évadé">Évadés</span>
+  </div>
+</div>
+<div class="eff-count" id="effCount"></div>
+
+<table class="eff-table" id="effTable">
+  <thead>
+    <tr>
+      <th data-key="nom">Nom <span class="arrow"></span></th>
+      <th data-key="grade_rank">Grade <span class="arrow"></span></th>
+      <th data-key="section">Section / affectation <span class="arrow"></span></th>
+      <th data-key="badges">Statut <span class="arrow"></span></th>
+      <th>Fiche</th>
+    </tr>
+  </thead>
+  <tbody id="effBody"></tbody>
+</table>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+const EFF_DATA = [{"nom": "DADU", "prenom": "Marcel Robert Delphin", "grade": "sous lieutenant", "grade_rank": 4, "section": "2è section", "badges": ["Démobilisé", "Blessé"], "details": "Il est blessé le 06/06/1940 par explosion d’une mine lors d’une patrouille (évacué)", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dadu-marcel-robert-delphin"}, {"nom": "VIALLON", "prenom": "Auguste Gabriel", "grade": "sous lieutenant", "grade_rank": 4, "section": "section d'engin à la CA3", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°50 du 09/12/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#viallon-auguste-gabriel"}, {"nom": "BARON", "prenom": "Charles Antoine", "grade": "lieutenant", "grade_rank": 5, "section": "cdt la cie", "badges": ["Prisonnier", "Évadé"], "details": "Fait prisonnier le 23/06/1940 à Ochey — Evadé de Nancy le 18/07/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#baron-charles-antoine"}, {"nom": "BINOCHE", "prenom": "François Etienne Adolphe Henri", "grade": "lieutenant", "grade_rank": 5, "section": "1ère section", "badges": ["Prisonnier", "Évadé"], "details": "Fait prisonnier — Evadé le 01/08/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#binoche-francois-etienne-adolphe-henri"}, {"nom": "BOYER DE REBEVAL", "prenom": "Roger Joseph Aimé", "grade": "lieutenant", "grade_rank": 5, "section": "officier adjoint", "badges": ["Blessé"], "details": "Il est blessé accidentellement (balle au pied) le 31/05/1940 au bois d’Inor et enregistré à l'HOE 1/5 à Ancemont", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#boyer-de-rebeval-roger-joseph-aime"}, {"nom": "MELIANDE", "prenom": "Robert Bernard Henri", "grade": "lieutenant", "grade_rank": 5, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#meliande-robert-bernard-henri"}, {"nom": "MOSSMANN", "prenom": "Justin Auguste", "grade": "lieutenant", "grade_rank": 5, "section": "4è section", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 (évacué sur l’hôpital à Toulouse le 25/07/1940. Rejoint Fuveau le 03/08/1940)", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mossmann-justin-auguste"}, {"nom": "ROESCH", "prenom": "", "grade": "lieutenant", "grade_rank": 5, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#roesch"}, {"nom": "SAINT JOHN DE CREVECOEUR", "prenom": "Robert Marie Germain", "grade": "lieutenant", "grade_rank": 5, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#saint-john-de-crevecoeur-robert-marie-germain"}, {"nom": "MARTINEZ", "prenom": "Joseph", "grade": "adjudant chef", "grade_rank": 6, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940 (évacué vers l’arrière sur l'hôpital de Pau et il n’a pas rejoint son unité par la suite)", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#martinez-joseph"}, {"nom": "SIEGENTHALER", "prenom": "Adolf", "grade": "adjudant chef", "grade_rank": 6, "section": "3è section", "badges": ["Évadé"], "details": "Il échappe à la reddition avec l'autorisation de Baron et Binoche", "url": "https://legionnaires.11regimentetranger.com/recensement-s.html#siegenthaler-adolf"}, {"nom": "PELLEGRINI", "prenom": "Léon Jean Baptiste", "grade": "adjudant", "grade_rank": 7, "section": "vaguemestre, chef de section", "badges": ["Prisonnier", "Rapatrié"], "details": "Liste des prisonniers n°15 du 12/09/1940 — Libéré par les autorités allemandes le 17/09/1941 comme ancien combattant 14-18", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pellegrini-leon-jean-baptiste"}, {"nom": "CAPLAIN", "prenom": "Louis Marius", "grade": "sergent chef", "grade_rank": 8, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°36 du 30/10/1940 — Evadé", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#caplain-louis-marius"}, {"nom": "LAMAMY", "prenom": "Emile Georges", "grade": "sergent chef", "grade_rank": 8, "section": "", "badges": ["Rapatrié"], "details": "Libéré le 26/07/1940 et démobilisé le 16/12/1940 par le CD de Marseille", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lamamy-emile-georges"}, {"nom": "LEFOLL", "prenom": "Alfred Robert", "grade": "sergent chef", "grade_rank": 8, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : ?", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lefoll-alfred-robert"}, {"nom": "THIEBAUT", "prenom": "", "grade": "sergent chef", "grade_rank": 8, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#thiebaut"}, {"nom": "FESKIN", "prenom": "Jean", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°15 du 12/09/1940 — Evadé le 23/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-f.html#feskin-jean"}, {"nom": "GUILLERM", "prenom": "André Charles", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : Bras sur Meuse", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guillerm-andre-charles"}, {"nom": "HOURLIER", "prenom": "André Jean", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°13 du 10/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hourlier-andre-jean"}, {"nom": "ARNONE", "prenom": "Roger Jean Pascal Vincent", "grade": "caporal chef", "grade_rank": 10, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-a.html#arnone-roger-jean-pascal-vincent"}, {"nom": "AMAND", "prenom": "Maurice", "grade": "caporal", "grade_rank": 11, "section": "section Binoche, chef de pièce de 25", "badges": ["Prisonnier", "Évadé", "Démobilisé", "Blessé"], "details": "Liste des prisonniers n°15 du 12/09/1940 — Évadé le 30/10/1940 — Il est blessé le 27/05/1940 par éclat de minem à la cuisse droite et à la main gauche (non évacué) — ⚠ peut être en doublon avec Armand", "url": "https://legionnaires.11regimentetranger.com/recensement-a.html#amand-maurice"}, {"nom": "BODNAR", "prenom": "Joseph Joszef", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°15 du 12/09/1940 — Evadé", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bodnar-joseph-joszef"}, {"nom": "CAVAIGNAC", "prenom": "Jacques Marie", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : Bois d'Inor", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cavaignac-jacques-marie"}, {"nom": "MATTERNICH", "prenom": "Paul", "grade": "caporal", "grade_rank": 11, "section": "4è section", "badges": ["Blessé"], "details": "Il est blessé pendant les combats vers le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#matternich-paul"}, {"nom": "MERGEN", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mergen"}, {"nom": "BOZEC", "prenom": "Julien Jean Marie", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°32 du 16/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bozec-julien-jean-marie"}, {"nom": "DELGUSTE", "prenom": "Oswald François", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : Stenay", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#delguste-oswald-francois"}, {"nom": "PAWLOWSKI", "prenom": "Franciszek", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["MPF"], "details": "Mort le 04/01/1940 — Lieu : Haute Sierck/Haute Kontz", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pawlowski-franciszek"}, {"nom": "BRAGHINI", "prenom": "Charles François", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Blessé"], "details": "Liste des prisonniers n°22 du 27/09/1940 — Il est blessé le 05/01/1940 par éclats d’obus", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#braghini-charles-francois"}, {"nom": "BULKA", "prenom": "Pavel", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : vers Martincourt", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bulka-pavel"}, {"nom": "CORNEC", "prenom": "Jean Marie", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°21 du 25/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-c.html#cornec-jean-marie"}, {"nom": "HASSA", "prenom": "Josef Paul", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hassa-josef-paul"}, {"nom": "LAVOREL", "prenom": "Gustave Joseph", "grade": "2è classe", "grade_rank": 13, "section": "brancardier", "badges": ["Blessé"], "details": "Blessé par éclats d'obus à l'épaule droite le 26/05/1940 au bois d'Inor. Il est mentionné dans les diagnostiques opératoires de l'HOE1/5 d'Ancemont le 26/05/1940 puis à l'hôpital de Pau le 30/05/1940 (sorti le 12/06/1940)", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lavorel-gustave-joseph"}, {"nom": "LOPEZ SAEZ", "prenom": "Jose", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 23/06/1940 à Toul", "url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lopez-saez-jose"}, {"nom": "MEJIAS", "prenom": "Pedro", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF"], "details": "Mort le 23/05/1940 — Lieu : Mouzay", "url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mejias-pedro"}, {"nom": "PARISET", "prenom": "Georges", "grade": "2è classe", "grade_rank": 13, "section": "4è section", "badges": ["Blessé"], "details": "Il est blessé pendant les combats", "url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pariset-georges"}, {"nom": "ROUSSEAU", "prenom": "Marcel Emile", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rousseau-marcel-emile"}, {"nom": "THOMAS", "prenom": "René", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Blessé, il est mentionné dans les diagnostiques opératoires de l'HOE1/5 d'Ancemont le 26/05/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#thomas-rene"}, {"nom": "TUCH", "prenom": "Joseph David", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier", "Évadé", "Démobilisé", "Blessé"], "details": "Fait prisonnier — Rejoint le dépôt de Fuveau le 12/07/1940 — Blessé par éclats d'obus, il est évacué sur l'HOE 1/5 à Ancemont du 24 au 31/05/1940 puis sur Bordeaux et Mérignac jusqu'au 29/06/1940 puis sur l'hôpital de Digne", "url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tuch-joseph-david"}, {"nom": "DIAZ", "prenom": "Mariano", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": ["MPF"], "details": "Mort le 27/05/1940 — Lieu : Bras sur Meuse", "url": "https://legionnaires.11regimentetranger.com/recensement-d.html#diaz-mariano"}, {"nom": "GARCIA", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "4è section", "badges": ["Blessé"], "details": "Il est blessé pendant les combats", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#garcia-6"}, {"nom": "GILLE", "prenom": "", "grade": "légionnaire", "grade_rank": 14, "section": "", "badges": [], "details": "⚠ peut être en doublon avec le suivant", "url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gille"}, {"nom": "ZIGRAND", "prenom": "Arsène", "grade": "brigadier chef", "grade_rank": 50, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°34 du 21/10/1940 — Evadé le 23/09/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zigrand-arsene"}, {"nom": "BUTKUS", "prenom": "Feliksas", "grade": "", "grade_rank": 99, "section": "", "badges": ["Évadé"], "details": "Evadé le 16/10/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-b.html#butkus-feliksas"}, {"nom": "VANDELANOITTE", "prenom": "Victor Chrysole", "grade": "", "grade_rank": 99, "section": "", "badges": ["Prisonnier"], "details": "Fait prisonnier le 22/06/1940", "url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#vandelanoitte-victor-chrysole"}];
+let effSort = { key: 'grade_rank', dir: 1 };
+let effBadge = '';
+let effSearch = '';
+
+function effBadgeHTML(b) {
+  return b.map(x => `<span class="eff-badge ${x.replace(/[^A-Za-zÀ-ÿ]/g,'')}">${x}</span>`).join('');
+}
+
+function effRender() {
+  let rows = EFF_DATA.filter(d => {
+    if (effBadge && !d.badges.includes(effBadge)) return false;
+    if (effSearch) {
+      const hay = (d.nom+' '+d.prenom+' '+d.grade+' '+d.section+' '+d.details).toLowerCase();
+      if (!hay.includes(effSearch)) return false;
+    }
+    return true;
+  });
+
+  rows.sort((a,b) => {
+    let va = a[effSort.key], vb = b[effSort.key];
+    if (effSort.key === 'badges') { va = a.badges.join(','); vb = b.badges.join(','); }
+    if (typeof va === 'string') va = va.toLowerCase();
+    if (typeof vb === 'string') vb = vb.toLowerCase();
+    if (va < vb) return -1 * effSort.dir;
+    if (va > vb) return 1 * effSort.dir;
+    return a.nom.localeCompare(b.nom);
+  });
+
+  document.getElementById('effCount').textContent = rows.length + ' légionnaire(s) affiché(s) sur ' + EFF_DATA.length;
+
+  document.getElementById('effBody').innerHTML = rows.map(d => `
+    <tr>
+      <td class="eff-nom">${d.nom}${d.prenom ? ' <span class="eff-prenom">'+d.prenom+'</span>' : ''}</td>
+      <td>${d.grade}</td>
+      <td class="eff-section">${d.section || ''}</td>
+      <td>${effBadgeHTML(d.badges)}</td>
+      <td>${d.url ? `<a class="eff-fiche" href="${d.url}" target="_blank" rel="noopener">Voir la fiche →</a>` : '<span class="eff-nofiche">—</span>'}</td>
+    </tr>
+  `).join('');
+}
+
+document.getElementById('effSearch').addEventListener('input', e => {
+  effSearch = e.target.value.trim().toLowerCase();
+  effRender();
+});
+
+document.getElementById('effChips').addEventListener('click', e => {
+  const chip = e.target.closest('.eff-chip');
+  if (!chip) return;
+  document.querySelectorAll('.eff-chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  effBadge = chip.dataset.badge;
+  effRender();
+});
+
+document.querySelectorAll('#effTable thead th[data-key]').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.key;
+    if (effSort.key === key) { effSort.dir *= -1; } else { effSort = { key, dir: 1 }; }
+    document.querySelectorAll('#effTable thead .arrow').forEach(a => a.textContent = '');
+    th.querySelector('.arrow').textContent = effSort.dir === 1 ? '▲' : '▼';
+    effRender();
+  });
+});
+
+effRender();
+
+(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>

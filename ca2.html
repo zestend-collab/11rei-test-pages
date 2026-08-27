@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compagnie d'Accompagnement n°2 (CA2) — 11e REI</title>
+<meta name="description" content="Compagnie d'Accompagnement n°2 (CA2), 11e régiment étranger d'infanterie : organisation, encadrement et effectif recensé.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .flag{width:180px;height:auto;flex-shrink:0;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-size-small img{width:min(240px,100%);margin:0 auto}
+  .ci-size-full img{width:100%}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+  .ci-intro blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+
+  /* --- Carnet, façon journal de terrain --- */
+  .carnet-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.2rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none}
+  .suggestions.show{display:block}
+  .suggestion-item{padding:.5rem .9rem;font-size:.82rem;color:var(--ink);cursor:pointer;
+    display:flex;justify-content:space-between;gap:8px}
+  .suggestion-item:hover,.suggestion-item.active{background:var(--row)}
+  .suggestion-item .sg-meta{color:var(--muted);font-size:.72rem;white-space:nowrap}
+  .navbtn{width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);background:var(--card);
+    color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .navbtn:hover{background:var(--orange)}
+  .pagecount{font-size:.75rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .book-stage{
+    background:
+      radial-gradient(ellipse at center, #4a3826 0%, #1c130a 78%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,.12) 0 2px, transparent 2px 6px);
+    border-radius:10px;
+    padding:2.2rem 1.4rem;
+    margin-bottom:.6rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6);
+  }
+  .book{position:relative;perspective:2200px;display:flex;max-width:720px;margin:0 auto;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .page{
+    flex:1;min-width:0;position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    min-height:260px;
+    color:#2b2013;
+    transition:transform .45s ease, opacity .45s ease;
+  }
+  .page-left{border-radius:6px 0 0 6px;padding-left:1.9rem;
+    box-shadow:inset -10px 0 18px -12px rgba(0,0,0,.45)}
+  .page-right{border-radius:0 6px 6px 0;padding-right:1.9rem;
+    box-shadow:inset 10px 0 18px -12px rgba(0,0,0,.45)}
+  .book::before{ /* reliure centrale */
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;z-index:3;
+    background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.35)),
+               repeating-linear-gradient(180deg, #2a1c0f 0 3px, #1c1108 3px 6px);
+    box-shadow:0 0 14px rgba(0,0,0,.6);
+  }
+  .page::after{ /* coin corné */
+    content:'';position:absolute;bottom:0;width:22px;height:22px;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 50%);
+  }
+  .page-left::after{right:0;border-radius:0 0 6px 0}
+  .page-right::after{left:0;transform:scaleX(-1);border-radius:0 0 0 6px}
+  .page.turning-next{transform:rotateY(-14deg) translateX(-16px);opacity:0}
+  .page.turning-prev{transform:rotateY(14deg) translateX(16px);opacity:0}
+  .page-empty{display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;
+    font-size:1.3rem;color:#8a7554}
+
+  .flip{
+    position:absolute;top:0;bottom:0;width:50%;z-index:5;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    color:#2b2013;
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+    box-shadow:0 0 24px rgba(0,0,0,.45);
+    transition:transform .5s cubic-bezier(.45,.05,.35,1);
+    overflow:hidden;
+    display:none;
+  }
+  .flip::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 40%);
+    opacity:0;transition:opacity .5s}
+  .flip.showing::after{opacity:1}
+  .flip.right{right:0;transform-origin:left center;border-radius:0 6px 6px 0;padding-right:1.9rem}
+  .flip.left{left:0;transform-origin:right center;border-radius:6px 0 0 6px;padding-left:1.9rem}
+  .flip.flipping-right{transform:rotateY(-160deg)}
+  .flip.flipping-left{transform:rotateY(160deg)}
+
+  .p-header{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.2rem;
+    border-bottom:1px dashed rgba(120,90,40,.4);padding-bottom:.4rem}
+  .p-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.15rem;color:#2b2013}
+  .p-stamp{font-family:'Caveat',cursive;font-size:1rem;color:#8a1f11;border:2px solid #8a1f11;border-radius:6px;
+    padding:.05rem .45rem;transform:rotate(4deg);white-space:nowrap;opacity:.8}
+  .p-meta{font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.85rem;margin-bottom:.8rem}
+  .p-field{margin-bottom:.4rem;line-height:1.5;font-size:.82rem}
+  .p-field .lbl{font-family:'Caveat',cursive;font-size:1.02rem;color:#8a4a1f;margin-right:.3rem}
+  .p-link{display:inline-block;margin-top:.7rem;font-size:.76rem;color:#8a4a1f;text-decoration:none;
+    border-bottom:1px dotted #8a4a1f}
+  .p-link:hover{color:#8a1f11}
+  .pageno{position:absolute;bottom:.6rem;font-family:'Caveat',cursive;font-size:.9rem;color:#8a7554}
+  .page-left .pageno{right:1rem}
+  .page-right .pageno{left:1rem}
+  .tapzone{position:absolute;top:0;bottom:0;width:22%;cursor:pointer;z-index:2}
+  .page-left .tapzone{left:0}
+  .page-right .tapzone{right:0}
+
+  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-CA2" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  
+  <div class="htext">
+    <h1>Compagnie d'Accompagnement n°2 (CA2)</h1>
+    <div class="sub">Effectif recensé : 154 légionnaires</div>
+    <a class="back" href="https://www.11regimentetranger.com/recherche-legionnaire">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro"><p>Une compagnie d'accompagnement a pour but d'accompagner les compagnies de fusiliers-voltigeurs à l'échelon du bataillon. Elle dispose d'un équipement plus lourd que les autres compagnies, composé théoriquement de :</p>
+<ul><li>2 canons de 25 mm antichar (AC), sans appareil de pointage auxiliaire</li><li>2 mortiers de 81 mm</li><li>16 mitrailleuses de 8 mm</li></ul>
+<p>Elle est composée de 6 sections :</p>
+<h3 class="ci-h3">Section de commandement (2 groupes)</h3>
+<ul><li>1 adjudant, chef de section, chargé du ravitaillement</li><li>1er groupe (transmissions et renseignements) : 1 sergent, 5 agents de transmission (dont 4 clairons), 1 cycliste, 2 observateurs, 2 télémétreurs, 2 bicyclettes</li><li>2e groupe (ravitaillement et services) : 1 sergent-chef comptable chef de groupe, 2 comptables, 1 caporal d'ordinaire, 4 cuisiniers, 1 sous-officier chargé des équipages, 1 caporal mitrailleur-mécanicien, 1 ordonnance, 3 conducteurs, 1 chauffeur, 5 chevaux d'attelage, 2 bicyclettes, 1 camionnette à vivres/bagages/munitions, 1 cuisine roulante, 1 voiture à munitions modèle 1909, 1 voiture d'allègement</li></ul>
+<h3 class="ci-h3">4 sections de mitrailleuses (chacune)</h3>
+<ul><li>1 chef de section, 1 sergent-chef adjoint, 1 agent de transmission, 1 caporal d'échelon</li><li>2 groupes de mitrailleuses, chacun : 1 sergent chef de groupe, 1 mitrailleur mécanicien, 1 conducteur de voiturette, 1 cheval d'attelage, 1 voiturette porte-munitions ; et pour servir la pièce : 1 caporal chef de pièce, 1 tireur, 1 chargeur, 2 pourvoyeurs, 1 conducteur de voiturette, 1 cheval d'attelage, 1 voiturette porte-pièce</li></ul>
+<h3 class="ci-h3">1 section d'engins (mortiers de 81 et canons de 25)</h3>
+<ul><li>Commandée par 1 aspirant ou adjudant, accompagné de 2 agents de transmission et 2 bicyclettes</li><li>Groupe de mortiers de 81 (commandé par 1 adjudant ou sergent) : 2 pièces, chacune commandée par 1 caporal chef de pièce, avec 1 pointeur, 1 chargeur, 1 artificier, 4 pourvoyeurs, 2 conducteurs de voiturette, 2 chevaux d'attelage, 1 voiturette porte-pièce, 1 voiturette porte-munitions</li><li>Groupe de canons de 25 AC (commandé par 1 adjudant ou sergent-chef) : 1 agent de transmission, 1 conducteur, 1 cheval d'attelage, 1 voiturette porte-munitions ; chaque pièce commandée par 1 sergent chef de pièce, avec 1 caporal pointeur, 1 chargeur, 3 pourvoyeurs, 1 conducteur d'avant-train, 1 cheval d'attelage, 1 avant-train</li></ul>
+<p>La compagnie d'accompagnement porte le numéro du bataillon dont elle fait partie. Les sections de la CA2 sont donc ventilées selon les besoins au sein du 2e bataillon, entre le PC du bataillon et les 5e, 6e et 7e compagnies.</p>
+<h2 class="ci-h2">Encadrements successifs, de la mobilisation au 23 juin 1940</h2>
+<figure class="ci-fig ci-size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca2-2.jpg" alt=""><figcaption>11/09/1940 — CMI 145, Sathonay</figcaption></figure>
+<p>Le 11/09/1940, encadrement de la CA2 au CMI 145 à Sathonay : capitaine Lanchon, lieutenant Picquart, 2 lieutenants (un du 1er RTA et l'autre du 3e RTA), lieutenant Jabouille.</p>
+<figure class="ci-fig ci-size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca2-4.jpg" alt=""></figure>
+<p>Dans l'ordre de bataille du régiment, un capitaine commande une compagnie et les lieutenants sont chefs de section. Pour la CA2 : commandant la compagnie, capitaine Brochet ; 3 sections de mitrailleuses, lieutenants Jabouille et Viel, sous-lieutenant Egloff ; 1 section d'engins, lieutenant Picquart.</p>
+<figure class="ci-fig ci-size-medium"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca2-5.jpg" alt=""><figcaption>6/11/1940</figcaption></figure>
+<p>Le 6/11/1940, le capitaine Urvoy de Closmadeuc — qui occupait les fonctions d'adjudant-major au 2e bataillon — remplace le capitaine Brochet, qui devient officier adjoint au bataillon.</p>
+<h2 class="ci-h2">Récit de campagne, avril–juin 1940</h2>
+<p>Ce récit s'appuie sur le journal de marche de la compagnie (extraits tenus par le capitaine de Closmadeuc puis le lieutenant Viel) et sur trois rapports rédigés après la captivité par le sergent-chef Haim, le sergent-chef Mincer et le sergent-chef Houille.</p>
+<h3 class="ci-h3">Avril–mai 1940 : vie de garnison et montée en ligne</h3>
+<p>Du 16 avril au 10 mai, la CA2 (284 hommes présents le 16 avril) alterne corvées pour le Génie, ravitaillement sur Metz et exercices autour de Boulay et Volmerange. Le 29 et le 30 avril, la compagnie participe aux défilés de la fête de Camerone.</p>
+<p>Le 10 mai au matin, une forte activité de l'aviation ennemie et une alerte générale annoncent l'attaque allemande sur la Belgique. Les préparatifs de départ révèlent le dénuement de l'unité : la compagnie n'a ni caissettes de mitrailleuses ni transport de munitions de 81 et de 25, il manque des culottes et des bandes molletières, et aucun savon n'a été distribué depuis le début des opérations.</p>
+<p>La CA2 quitte Volmerange dans la nuit du 14 mai, puis enchaîne les étapes à marche forcée — Laquenexy, Corny (32 km en une nuit), Xonville — jusqu'au débarquement à Bréhéville le 18 mai. Une ligne d'arrêt y est occupée avant un nouveau déplacement de nuit vers le bois Brûlé, atteint le 21 mai : la compagnie y fait connaissance avec l'artillerie ennemie.</p>
+<h3 class="ci-h3">22–26 mai : premières pertes au bois d'Inor</h3>
+<p>Le 22 mai à 1 heure, la relève est faite dans le secteur du bois d'Inor : la 4e section et le groupe Haim avec la 5e compagnie, la 3e section avec la 6e compagnie, la 2e section et le groupe Moran avec la 7e compagnie, en liaison avec les tirailleurs du 21e RTA.</p>
+<p>À 2h30, l'engagé volontaire Musca est le premier tué de la compagnie, par un éclat d'obus. À 14 heures, huit hommes sont blessés au PC par l'artillerie — Dubois André (caporal infirmier), Migeotte, Davidson, Kitovenko, Moussier, Gueguen, Polleux — et le légionnaire Colen, blessé à 12h30, meurt de ses blessures au GSD à 16h30. Le légionnaire Del-Rey a disparu.</p>
+<p>Les 23 et 24 mai, l'artillerie et les escarmouches se poursuivent ; le légionnaire Danneskjold est tué à son poste téléphonique. Le 26 mai, Karpinski est blessé et le médecin-auxiliaire Fitsch est affecté à la compagnie.</p>
+<h3 class="ci-h3">27 mai : le jour le plus dur</h3>
+<p>Une forte attaque allemande frappe la 5e compagnie, qui subit une brèche dans son dispositif. Le capitaine de Closmadeuc part avec une poignée de légionnaires de la CA2 et se fait tuer en entraînant ses hommes. Varache (Marcel Élie Étienne), en voulant relever son capitaine, est blessé — il mourra de ses blessures le lendemain, 28 mai, à Ancemont.</p>
+<p>Le capitaine Brochet, avec le reste du PC, va relever le corps de Closmadeuc. Avec le lieutenant Picquart, il tente de colmater la brèche : Picquart est blessé, le légionnaire Brenholdt (Holger Vilhem Kristian, de Copenhague) est tué. Brochet repart à l'attaque avec les éléments de la 5e section et des PC, et est blessé à son tour. Closs et Loubli sont tués par éclats d'obus ; le sergent-chef Navarro, les légionnaires Ostrowski, Desmet, Kiss et Vasseur sont blessés. Le légionnaire Zibrowski se distingue une fois de plus à la grenade. Branecki, Champagnon et le caporal-chef Werren sont blessés ; le sergent Giron est blessé par obus au PC du bataillon.</p>
+<p>L'adjudant-chef Egloff, parti avec la compagnie Jayet, est blessé grièvement après un combat héroïque. Le groupe Haim tient bon — le sergent-chef Haim et le légionnaire Hudec s'y distinguent particulièrement. L'adjudant Marchetti (Virgilio Francesco Carlo « Robert », 07/11/1899 — Montaldo Scarampi, Italie) et le sergent-chef Houille doivent se replier « la mort dans l'âme », mais réoccupent leurs emplacements deux heures plus tard. La section Suhlfleisch et le groupe Viel contiennent l'attaque vers la 7e compagnie ; le sergent Moran, en tirant 2000 cartouches sans interruption, permet à cette dernière de redresser une défaillance. Le lieutenant Viel, prenant le commandement de deux groupes de voltigeurs, réoccupe l'emplacement d'un groupe qui avait lâché pied, puis prend le commandement de la compagnie à 11h30.</p>
+<p>De 13 à 17 heures, le sergent Barbier tire 300 obus de mortier au profit de la 5e compagnie ; à 18h30, avec 12 hommes, il rétablit la liaison avec le capitaine Jayet pour tenir le front de la 5e compagnie. La situation est rétablie à 20h30.</p>
+<p>Le bilan de la journée : le capitaine de la compagnie tué, le capitaine adjoint au bataillon blessé, un lieutenant blessé, un adjudant-chef très grièvement blessé, un sergent-chef et un sergent blessés, un caporal nommé à titre posthume (le légionnaire Closs), deux tués et sept blessés au combat — auxquels s'ajoutent quatre muletiers blessés à l'arrière avec les équipages (Camp, Almagro, Ledocte, Pioro). Le caporal Zipzener et le 2e classe Prepoignot ont disparu en contre-attaquant avec le capitaine Brochet ; le brancardier Rizzo a disparu après un bombardement.</p>
+<h3 class="ci-h3">28–31 mai : repli</h3>
+<p>Le 28 mai à 4h45, l'ordre de repli est reçu ; la compagnie s'installe au bois du Pèlerin. Culeq est blessé, le légionnaire Tyger est tué par accident au bois Brûlé avec les muletiers, et Devignon a disparu. Le 29 mai, Jenne est tué ; Billard, Salvador et le sergent Besson sont blessés par obus. Les 30 et 31 mai sont calmes.</p>
+<h3 class="ci-h3">1er–17 juin : nouvelle ligne, puis la longue retraite</h3>
+<p>Début juin, la CA2 organise ses positions au sein du 2e bataillon (S.M.1 au PC du bataillon, S.M.2 avec la 6e compagnie, S.M.3 avec la 7e, S.M.4 avec la 5e), puis remonte en première ligne dans la nuit du 7 au 8 juin. Le 10 juin, un tir de mortiers sous le commandement du lieutenant Viel attire une violente riposte ennemie ; le soir même, l'ordre est donné d'abandonner les positions.</p>
+<p>S'ensuit une retraite de plusieurs jours à travers la Meuse — le matériel est arraché aux positions à bras d'hommes, faute de moyens de transport, tandis que les légionnaires jettent le linge inutile pour emporter le maximum de munitions. La colonne traverse Verdun de nuit, sous l'incendie des dépôts de munitions ; devant l'ossuaire, le passage se fait dans un silence que le sergent-chef Mincer qualifiera de la pause « la plus impressionnante » de tout son service. La marche se poursuit par Saint-Mihiel, Commercy, Void, jusqu'aux abords de Saint-Germain-sur-Meuse le 17 juin. Ce jour-là, des soldats d'autres corps, en déroute, tentent de pousser des légionnaires à jeter les armes : ils sont abattus à bout portant. Le sergent Barbier est blessé par l'un d'eux.</p>
+<h3 class="ci-h3">Nuit du 17 au 18 juin : l'embuscade de Void</h3>
+<p>À minuit, les officiers apprennent la situation réelle et un détachement de volontaires est formé pour tendre une embuscade à l'ennemi près du pont de Void : le chef de bataillon d'Alegron (commandant le 2e bataillon), le capitaine Magne (6e compagnie), le lieutenant Coubard (6e compagnie), les sergents-chefs Heil, Schmidt et Mincer, chacun avec quinze hommes, rejoints en route par l'adjudant Romanovitch (6e compagnie). À environ 1 km du pont, la fusillade éclate : le commandant d'Alegron et le capitaine Magne sont tués en quelques instants. Le lieutenant Viel, arrivé en chenillette pour récupérer le corps du commandant, est tué à son tour.</p>
+<h3 class="ci-h3">18 juin : Ourches et Saint-Germain-sur-Meuse</h3>
+<p>À 6 heures, la 1re section (sergent-chef Haim) est envoyée en renfort de la 5e compagnie (capitaine Lanchon) sur les hauteurs au nord-ouest d'Ourches. Dès 7 heures, les Allemands tentent de déboucher de la forêt de Void ; repoussés trois fois, ils installent mortiers et batteries de 77 et soumettent la position à un tir direct continu. La section de Haim perd plus de la moitié de son effectif dans la matinée.</p>
+<p>À 13h30, le capitaine Lanchon (5e compagnie) vient encourager ses hommes ; quelques instants après, un obus le frappe de plein fouet — seul son casque sera retrouvé. Le même obus ampute deux agents de transmission, l'un de la jambe gauche, l'autre de la droite. Le lieutenant Jabouille, qui commandait la 3e section, est tué le même jour.</p>
+<p>À 14 heures, l'ordre de repli parvient par le caporal-chef Bedrich. En commandant le repli de sa section, le sergent-chef Haim reçoit un éclat qui lui brise le pied gauche ; recueilli par des brancardiers du 21e RTA, il ne peut être évacué et est fait prisonnier à l'ambulance le 19 juin.</p>
+<p>Après la mort de Viel et de Jabouille, le sergent-chef Houille prend le commandement de ce qui reste de la CA2. Le bilan est sévère : la S.M.1 (Haim) est en grande partie détruite, la S.M.2 (Suhlfleisch) dispersée vers Blénod-lès-Toul, la S.M.4 anéantie (matériel détruit, personnel tué ou blessé), seule la S.M.3 (sergent-chef Mincer) reste au complet, en batterie avec le 3e bataillon.</p>
+<h3 class="ci-h3">19–23 juin : dispersion et reddition</h3>
+<p>Le sergent-chef Mincer, séparé du gros de la compagnie dès le 18 juin, erre plusieurs jours avec une poignée d'hommes à la recherche du régiment — Saint-Firmin, Vézélise — avant de se mettre, faute de nouvelles, à la disposition du 14e groupe de reconnaissance de division d'infanterie (G.R.D.I.), qui l'accueille en subsistance du 20 au 23 juin sur la <a href="http://fr.wikipedia.org/wiki/Colline_de_Sion" target="_blank" rel="noopener">colline de Sion-Vaudémont</a>.</p>
+<p>Le sergent-chef Houille rassemble à Rigny une vingtaine de légionnaires de la CA2 et une trentaine des 5e et 6e compagnies, avant de se replier sur Blénod puis sur le fort de Blénod, sous les ordres du commandant Gaultier (commandant le 3e bataillon) puis du colonel Robert (commandant le 11e REI). Le 21 juin, le lieutenant Forget prend le commandement d'un dernier détachement de 25 gradés et légionnaires. Le 22 juin, vingt volontaires par bataillon sont appelés pour un « baroud d'honneur » pendant que se négocie une convention de reddition ; à 20 heures, l'ordre est donné de ne pas chercher à échapper à la captivité, pour raison d'honneur.</p>
+<p>Le 23 juin, les armes sont détruites et la reddition a lieu à Toul. Sur la colline de Sion, le sergent-chef Mincer doit lui aussi rendre les dernières pièces de la CA2 — sur ordre du capitaine de Chazelle (8e G.R.C.A.) — et il rend volontairement inutilisable le fusil-mitrailleur qui l'avait sorti sain et sauf de l'embuscade du 18 juin, refusant qu'il serve plus tard « de l'autre côté ».</p>
+<h2 class="ci-h2">Effectif</h2>
+<p>Selon des extraits du JMO de la CA2, la compagnie d'accompagnement du 2e bataillon compte environ 280 personnes, dont 7 officiers, 20 sous-officiers, 28 caporaux et caporaux-chefs, et 229 légionnaires. Le 23/06/1940, il ne reste plus que 25 légionnaires à la CA2.</p>
+<h3 class="ci-h3">Sources du récit de campagne</h3>
+<ul><li>Journal de marche de la CA2, période du 16 au 30 avril 1940 (capitaine de Closmadeuc)</li><li>Journal de marche de l'unité, période du 1er au 16 mai 1940 (capitaine de Closmadeuc)</li><li>Journal de marche de la CA2, période du 16 au 31 mai 1940 (lieutenant Viel)</li><li>Rapport de fin de campagne du sergent-chef Haim, Marrakech, 14 avril 1942</li><li>Rapport du sergent-chef Mincer André sur les opérations du 1er au 23 juin 1940, 15 juillet 1942</li><li>Rapport d'opération de la S.M.4 (C.A.B.2), période du 1er au 23 juin 1940, sergent-chef Houille</li></ul></div>
+
+<h2 class="carnet-title">Carnet de l'effectif (154 fiches)</h2>
+<div class="toolbar">
+  <button class="navbtn" id="prevBtn">‹</button>
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Rechercher un nom..." autocomplete="off">
+    <div class="suggestions" id="suggestions"></div>
+  </div>
+  <span class="pagecount" id="pagecount"></span>
+  <button class="navbtn" id="nextBtn">›</button>
+</div>
+<div class="book-stage">
+  <div class="book">
+    <div class="page page-left" id="pageLeft"></div>
+    <div class="page page-right" id="pageRight"></div>
+    <div class="flip right" id="flipRight"></div>
+    <div class="flip left" id="flipLeft"></div>
+  </div>
+</div>
+<p style="font-size:.72rem;color:var(--muted);text-align:center">Chaque fiche du carnet est un résumé — cliquez « Voir la fiche complète » pour tous les détails (captivité, citations, sources...).</p>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+const PEOPLE = [{"nom": "ALEXIEFF", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#alexieff"}, {"nom": "ALLEGRINI", "prenom": "Georges Marcel", "date": "11/03/1914", "lieu": "Nice - France", "affectation": "1ère classe - CA2 puis Compagnie Hors Rang", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#allegrini-georges-marcel"}, {"nom": "ALLOUCHERIE", "prenom": "Marcel Gustave", "date": "26/11/1911", "lieu": "Marchienne au Pont - Belgique", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#alloucherie-marcel-gustave"}, {"nom": "ALMAGRO", "prenom": "Fernando", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#almagro-fernando"}, {"nom": "ARCHAMBAUD", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - CA2", "badge": {"cls": "afn", "label": "A rejoint l'AFN", "stamp": "AFN"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-a.html#archambaud"}, {"nom": "BARBE", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#barbe"}, {"nom": "BARBIER", "prenom": "Emile Jean", "date": "29/01/1908", "lieu": "Versailles - France", "affectation": "sergent - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#barbier-emile-jean"}, {"nom": "BARNAL", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2 puis Compagnie Hors Rang", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#barnal"}, {"nom": "BEDOUET", "prenom": "Louis", "date": "12/02/1907", "lieu": "Loué - France", "affectation": "2è classe - Compagnie de commandement puis CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bedouet-louis"}, {"nom": "BENOIT", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#benoit"}, {"nom": "BERNAL JIMENEZ", "prenom": "Jean", "date": "23/08/1910", "lieu": "Centa - Espagne", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bernal-jimenez-jean"}, {"nom": "BESSON", "prenom": "Joanny", "date": "04/04/1901", "lieu": "Saint Bonnet des Bruyères - France", "affectation": "sergent - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#besson-joanny"}, {"nom": "BILLARD", "prenom": "Pierre Henri", "date": "04/04/1910", "lieu": "Paris 10 - France", "affectation": "2è classe - CA2 puis 7è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#billard-pierre-henri"}, {"nom": "BILLARD", "prenom": "René", "date": "", "lieu": "", "affectation": "caporal - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#billard-rene"}, {"nom": "BIREN", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#biren"}, {"nom": "BIZZINI", "prenom": "Gaston", "date": "25/03/1900", "lieu": "Avegno - Suisse", "affectation": "sergent - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bizzini-gaston"}, {"nom": "BON", "prenom": "Zephir", "date": "03/08/1912", "lieu": "Saint Hilaire sur Help - France", "affectation": "caporal chef - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bon-zephir"}, {"nom": "BOURGES", "prenom": "Gaston Lucien", "date": "07/07/1908", "lieu": "Limeray - France", "affectation": "1ère classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#bourges-gaston-lucien"}, {"nom": "BRANECKI", "prenom": "Thadie", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#branecki-thadie"}, {"nom": "BRENHOLDT", "prenom": "Holger Vilhem Kristian", "date": "15/07/1912", "lieu": "Copenhague - Danemark", "affectation": "1ère classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-b.html#brenholdt-holger-vilhem-kristian"}, {"nom": "CAMP", "prenom": "Pierre Marius", "date": "13/12/1908", "lieu": "Nîmes - France", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#camp-pierre-marius"}, {"nom": "CARPINSKI", "prenom": "Antoine", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#carpinski-antoine"}, {"nom": "CHALANDRÉ", "prenom": "Gilbert", "date": "12/04/1916", "lieu": "Limoges - France", "affectation": "sergent - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#chalandre-gilbert"}, {"nom": "CHAMPAGNON", "prenom": "Claude", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#champagnon-claude"}, {"nom": "CLOSS", "prenom": "Pierre Georges Louis", "date": "05/09/1914", "lieu": "Grenoble - France", "affectation": "caporal (promu à titre posthume) - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#closs-pierre-georges-louis"}, {"nom": "CLOSSON", "prenom": "André Louis Jules", "date": "26/07/1898", "lieu": "Paris 17 - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#closson-andre-louis-jules"}, {"nom": "COLEN", "prenom": "André Stanislas Emile", "date": "22/09/1920", "lieu": "Racour - Belgique", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#colen-andre-stanislas-emile"}, {"nom": "COQUELIN", "prenom": "Louis Désiré Marie François", "date": "02/02/1900", "lieu": "La Fontenelle - France", "affectation": "2è classe - CA2 puis 7è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#coquelin-louis-desire-marie-francois"}, {"nom": "COURSIN", "prenom": "Roger Joseph Andre Marie", "date": "16/03/1912", "lieu": "Brehal - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#coursin-roger-joseph-andre-marie"}, {"nom": "CULEQ", "prenom": "Yvan", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-c.html#culeq-yvan"}, {"nom": "DANNESKJOLD", "prenom": "Henri Marius Alfred", "date": "09/03/1920", "lieu": "Châtelet - Belgique", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#danneskjold-henri-marius-alfred"}, {"nom": "DAVIDSON", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#davidson"}, {"nom": "DE JONGHE JONGE", "prenom": "Nicolas", "date": "", "lieu": "", "affectation": "1ère classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#de-jonghe-jonge-nicolas"}, {"nom": "DE KLEBNIKOFF", "prenom": "Wladimir", "date": "28/02/1907", "lieu": "Moscou - Russie", "affectation": "adjudant - CA2 puis 7è compagnie", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#de-klebnikoff-wladimir"}, {"nom": "DEBREYNE", "prenom": "Clément Maurice", "date": "19/08/1902", "lieu": "Boulogne sur Mer - France", "affectation": "caporal - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#debreyne-clement-maurice"}, {"nom": "DEL REY", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#del-rey"}, {"nom": "DEMOULIN", "prenom": "René Nicolas", "date": "11/06/1916", "lieu": "Manaihant - Belgique", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#demoulin-rene-nicolas"}, {"nom": "DESMEDT", "prenom": "Raymond", "date": "14/06/1907", "lieu": "Berchem Sainte Agathe - Belgique", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#desmedt-raymond"}, {"nom": "DESMOULINS", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#desmoulins"}, {"nom": "DEVIGNON", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#devignon"}, {"nom": "DIAK", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2 puis 7è compagnie", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#diak"}, {"nom": "DUBOIS", "prenom": "Albert Fernand", "date": "14/09/1917", "lieu": "Paris 9 - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dubois-albert-fernand"}, {"nom": "DUBOIS", "prenom": "André", "date": "", "lieu": "", "affectation": "caporal - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dubois-andre"}, {"nom": "DUGUE", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-d.html#dugue"}, {"nom": "FITSCH", "prenom": "Jacques Marcel André Marie", "date": "22/09/1917", "lieu": "Paris 17 - France", "affectation": "adjudant médecin - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-f.html#fitsch-jacques-marcel-andre-marie"}, {"nom": "GACHES", "prenom": "Yves André Etienne", "date": "26/12/1912", "lieu": "Damiatte - France", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gaches-yves-andre-etienne"}, {"nom": "GAGNE", "prenom": "Antoine Léon", "date": "07/07/1905", "lieu": "Chambon Feugerolles - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gagne-antoine-leon"}, {"nom": "GARCIA", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#garcia"}, {"nom": "GARCIA", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#garcia-5"}, {"nom": "GAWRON", "prenom": "Joseph", "date": "04/07/1901", "lieu": "Ostrova - Pologne", "affectation": "sergent - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#gawron-joseph"}, {"nom": "GIRON", "prenom": "", "date": "", "lieu": "", "affectation": "sergent - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#giron"}, {"nom": "GOLOMBEK", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#golombek"}, {"nom": "GOVOROUKINE", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#govoroukine"}, {"nom": "GOYENS", "prenom": "Jean", "date": "20/01/1916", "lieu": "Landen - Belgique", "affectation": "sergent - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#goyens-jean"}, {"nom": "GUEDJ", "prenom": "Gaston", "date": "16/07/1916", "lieu": "Khenchela - Algérie", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guedj-gaston"}, {"nom": "GUEGEN", "prenom": "", "date": "", "lieu": "", "affectation": "1ère classe - CA2 puis Compagnie de commandement", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guegen"}, {"nom": "GUISADO NAVARRO", "prenom": "José", "date": "23/06/1918", "lieu": "Carthagène - Espagne", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-g.html#guisado-navarro-jose"}, {"nom": "HAIM", "prenom": "Dario", "date": "19/01/1911", "lieu": "Constantinople - Turquie", "affectation": "sergent chef - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#haim-dario"}, {"nom": "HERBINIA", "prenom": "Marius Joseph", "date": "24/12/1914", "lieu": "Denain - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#herbinia-marius-joseph"}, {"nom": "HOUILLE", "prenom": "", "date": "", "lieu": "", "affectation": "sergent chef - CA2", "badge": {"cls": "afn", "label": "A rejoint l'AFN", "stamp": "AFN"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#houille"}, {"nom": "HUBAT", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hubat"}, {"nom": "HUC", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#huc"}, {"nom": "HUDEC", "prenom": "Aloys", "date": "(- Prague - Tchécoslovaquie)", "lieu": "Prague - Tchécoslovaquie", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hudec-aloys"}, {"nom": "HUG", "prenom": "Albert", "date": "08/04/1907", "lieu": "Colmar - France", "affectation": "caporal - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hug-albert"}, {"nom": "HULVNIKI", "prenom": "", "date": "", "lieu": "", "affectation": "1ère classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-h.html#hulvniki"}, {"nom": "INANDEZ", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-i.html#inandez"}, {"nom": "JABOUILLE", "prenom": "André Robert Léon", "date": "03/12/1910", "lieu": "Secondigny - France", "affectation": "lieutenant - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jabouille-andre-robert-leon"}, {"nom": "JACOB", "prenom": "Charles", "date": "10/11/1919", "lieu": "Genève - Suisse", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jacob-charles"}, {"nom": "JANSSENS", "prenom": "Philippe Jean Auguste", "date": "08/05/1910", "lieu": "Seclin - France", "affectation": "1ère classe - CA2 puis 5è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#janssens-philippe-jean-auguste"}, {"nom": "JEANTET", "prenom": "Robert Ferréol Zéphirin", "date": "03/11/1906", "lieu": "Avignon lès Saint Claude - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jeantet-robert-ferreol-zephirin"}, {"nom": "JECKELMANN", "prenom": "Martin", "date": "30/11/1915", "lieu": "Fribourg - Suisse", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jeckelmann-martin"}, {"nom": "JENNE", "prenom": "Armand Waltère", "date": "19/08/1905", "lieu": "Mielen boven Aalst - Belgique", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-j.html#jenne-armand-waltere"}, {"nom": "KALAN", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kalan"}, {"nom": "KARPINSKI", "prenom": "Stéphan", "date": "26/12/1900", "lieu": "Jakobkow - Pologne", "affectation": "CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#karpinski-stephan"}, {"nom": "KELLER", "prenom": "", "date": "", "lieu": "", "affectation": "sergent - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#keller"}, {"nom": "KINIC", "prenom": "Edouard Nicolas", "date": "06/06/1905", "lieu": "Lunéville - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kinic-edouard-nicolas"}, {"nom": "KISS", "prenom": "Charles", "date": "08/02/1897", "lieu": "Budapest - Hongrie", "affectation": "soldat - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kiss-charles"}, {"nom": "KNAR", "prenom": "Jean", "date": "22/11/1902", "lieu": "Alsonyarasd - Hongrie", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#knar-jean"}, {"nom": "KNIESE", "prenom": "", "date": "", "lieu": "", "affectation": "caporal - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kniese"}, {"nom": "KNIZE", "prenom": "Vladimir", "date": "14/11/1914", "lieu": "Nymburk - Tchécoslovaquie", "affectation": "sergent? - CA2", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#knize-vladimir"}, {"nom": "KORNFELD", "prenom": "Moïse", "date": "16/09/1902", "lieu": "Varsovie - Pologne", "affectation": "sergent - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kornfeld-moise"}, {"nom": "KOWACS", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kowacs"}, {"nom": "KOZAK", "prenom": "Michel", "date": "17/07/1905", "lieu": "Lukawica - Pologne", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kozak-michel"}, {"nom": "KRASZINSKI", "prenom": "Nicolaus", "date": "05/12/1916", "lieu": "Dantzig LangFuhr - Pologne", "affectation": "1ère classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kraszinski-nicolaus"}, {"nom": "KRAVERO", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-k.html#kravero"}, {"nom": "LAGARDE", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lagarde"}, {"nom": "LALOUE", "prenom": "Christian Georges", "date": "15/08/1912", "lieu": "Fresnay sur Sarthe - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#laloue-christian-georges"}, {"nom": "LAMAISON", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lamaison"}, {"nom": "LAUBLI", "prenom": "Marcel", "date": "20/09/1910", "lieu": "Zurich - Suisse", "affectation": "1ère classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#laubli-marcel"}, {"nom": "LEBON", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lebon"}, {"nom": "LEDOCTE", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#ledocte"}, {"nom": "LEHAIRE", "prenom": "Marc Charles", "date": "27/07/1914", "lieu": "Lille - France", "affectation": "2è classe - Compagnie Hors Rang puis CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#lehaire-marc-charles"}, {"nom": "LER", "prenom": "Alphonse Henri René", "date": "10/05/1905", "lieu": "Arnières Sur Iton - France", "affectation": "caporal - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#ler-alphonse-henri-rene"}, {"nom": "LEVINE", "prenom": "Michel", "date": "17/08/1904", "lieu": "Petrograd - Russie", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#levine-michel"}, {"nom": "LINSLER", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-l.html#linsler"}, {"nom": "MARCHETTI", "prenom": "Virgilio Francesco Carlo", "date": "07/11/1899", "lieu": "Montaldo Scarampi - Italie", "affectation": "adjudant - Compagnie de commandement puis CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#marchetti-virgilio-francesco-carlo"}, {"nom": "MARY", "prenom": "Bernard Georges André", "date": "26/04/1908", "lieu": "Le Mans - France", "affectation": "légionnaire - CA2", "badge": {"cls": "resistant", "label": "Résistant", "stamp": "RÉSISTANT"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mary-bernard-georges-andre"}, {"nom": "MAZIN", "prenom": "Henri Jean", "date": "23/09/1907", "lieu": "Vieille Brioude - France", "affectation": "1ère classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mazin-henri-jean"}, {"nom": "MENNINCK", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#menninck"}, {"nom": "MIGEOTTE", "prenom": "Marcel", "date": "", "lieu": "", "affectation": "caporal - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#migeotte-marcel"}, {"nom": "MINCER", "prenom": "André", "date": "13/11/1908", "lieu": "Varsovie - Pologne", "affectation": "sergent chef - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#mincer-andre"}, {"nom": "MONCHENY", "prenom": "Maurice Auguste Eugène", "date": "21/12/1897", "lieu": "Paris 20 - France", "affectation": "caporal - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moncheny-maurice-auguste-eugene"}, {"nom": "MONTAVON", "prenom": "Bernard Jules Laurent", "date": "04/09/1906", "lieu": "Bemont - Suisse", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#montavon-bernard-jules-laurent"}, {"nom": "MORAN", "prenom": "Jihm", "date": "( - Alger -)", "lieu": "Alger", "affectation": "sergent - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moran-jihm"}, {"nom": "MORIZOT", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - Compagnie Hors Rang puis CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#morizot"}, {"nom": "MOUSSIER", "prenom": "René Marcel", "date": "19/01/1904", "lieu": "Vichy - France", "affectation": "CA2", "badge": {"cls": "resistant", "label": "Résistant", "stamp": "RÉSISTANT"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#moussier-rene-marcel"}, {"nom": "MUSCAS", "prenom": "Giuseppe", "date": "23/03/1904", "lieu": "Genuri - Italie", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-m.html#muscas-giuseppe"}, {"nom": "NAVARRO", "prenom": "", "date": "", "lieu": "", "affectation": "sergent chef - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-n.html#navarro"}, {"nom": "OSTROWSKI", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-o.html#ostrowski"}, {"nom": "PAVLIK", "prenom": "Jean", "date": "20/05/1913", "lieu": "Prague - Tchécoslovaquie", "affectation": "caporal chef - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pavlik-jean"}, {"nom": "PERGRICHT", "prenom": "Houna", "date": "13/10/1900", "lieu": "Bedzin - Pologne", "affectation": "caporal - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pergricht-houna"}, {"nom": "PICQUART", "prenom": "Marie Jean", "date": "27/11/1912", "lieu": "Bar le Duc - France", "affectation": "lieutenant - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#picquart-marie-jean"}, {"nom": "PIERRAIN", "prenom": "Fernand", "date": "22/11/1907", "lieu": "Hénin Beaumont - France", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pierrain-fernand"}, {"nom": "PIORO", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#pioro"}, {"nom": "PLANELLAS", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#planellas"}, {"nom": "POLLEUX", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#polleux"}, {"nom": "POPADYC", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#popadyc"}, {"nom": "POTEAU", "prenom": "Léon Gaston", "date": "25/03/1905", "lieu": "Arras - France", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#poteau-leon-gaston"}, {"nom": "PREPOIGNOT", "prenom": "Georges Joseph", "date": "14/06/1917", "lieu": "Paris 5 - France", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-p.html#prepoignot-georges-joseph"}, {"nom": "RAMBAULT", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rambault"}, {"nom": "RANON", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#ranon"}, {"nom": "RAUCAZ", "prenom": "Gaston Joseph", "date": "06/03/1917", "lieu": "Champ Sur Drac - France", "affectation": "sergent - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#raucaz-gaston-joseph"}, {"nom": "REICH", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#reich"}, {"nom": "RIDOLFI", "prenom": "Rémo", "date": "17/12/1917", "lieu": "Parona di Valpolicella - Italie", "affectation": "légionnaire - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#ridolfi-remo"}, {"nom": "RIZZO", "prenom": "François", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rizzo-francois"}, {"nom": "ROGER", "prenom": "Augustin", "date": "09/09/1904", "lieu": "Lens - France", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#roger-augustin"}, {"nom": "ROJO", "prenom": "Sernart Germain", "date": "", "lieu": "", "affectation": "1ère classe - CA2 puis Compagnie de commandement", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rojo-sernart-germain"}, {"nom": "ROSEMBAUM", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-r.html#rosembaum"}, {"nom": "SAINTE-CATHERINE", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sainte-catherine"}, {"nom": "SALMON", "prenom": "Joseph Ernest", "date": "20/09/1914", "lieu": "Plelan le Grand - France", "affectation": "1ère classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#salmon-joseph-ernest"}, {"nom": "SALVADOR", "prenom": "Louis", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#salvador-louis"}, {"nom": "SCHOUCHINE", "prenom": "Nicolas", "date": "16/02/1904", "lieu": "Pétersbourg - Russie", "affectation": "caporal chef - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#schouchine-nicolas"}, {"nom": "SCHWEITZER", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#schweitzer"}, {"nom": "SEGURA", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#segura"}, {"nom": "SEILLON", "prenom": "Benoît Georges", "date": "13/06/1909", "lieu": "Saint Etienne - France", "affectation": "lieutenant - CA2 puis 2è compagnie", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#seillon-benoit-georges"}, {"nom": "SOKOL", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - 7è compagnie puis CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#sokol"}, {"nom": "STEINMETZ", "prenom": "", "date": "", "lieu": "", "affectation": "légionnaire/sergent - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#steinmetz"}, {"nom": "STRAUSER", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#strauser"}, {"nom": "SUHLFLEISCH", "prenom": "Guillaume", "date": "04/02/1905", "lieu": "Francfort sur le Main - Allemagne", "affectation": "adjudant - CA2", "badge": {"cls": "evade", "label": "Évadé", "stamp": "ÉVADÉ"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-s.html#suhlfleisch-guillaume"}, {"nom": "TOUPIN", "prenom": "Lucien Paul", "date": "08/11/1908", "lieu": "Noisy le Sec - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#toupin-lucien-paul"}, {"nom": "TYGER", "prenom": "David", "date": "27/09/1906", "lieu": "Lodz - Pologne", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-t.html#tyger-david"}, {"nom": "URVOY DE CLOSMADEUC", "prenom": "Marie Jules", "date": "25/12/1905", "lieu": "Aix en Provence - France", "affectation": "capitaine - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#urvoy-de-closmadeuc-marie-jules"}, {"nom": "VARACHE", "prenom": "Marcel Elie Etienne", "date": "06/01/1903", "lieu": "Saint Julien des Landes - France", "affectation": "2è classe - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#varache-marcel-elie-etienne"}, {"nom": "VARACHE", "prenom": "Martin", "date": "18/04/1906", "lieu": "Morwange Vièvre - France", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#varache-martin"}, {"nom": "VASSEUR", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#vasseur"}, {"nom": "VERLINDEN", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#verlinden"}, {"nom": "VIEL", "prenom": "Roger Isidore", "date": "10/05/1913", "lieu": "Firminy - France", "affectation": "lieutenant - CA2", "badge": {"cls": "mort", "label": "Mort pour la France", "stamp": "MPF"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#viel-roger-isidore"}, {"nom": "VOYES", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#voyes"}, {"nom": "WELTIN", "prenom": "", "date": "", "lieu": "", "affectation": "CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#weltin"}, {"nom": "WERREN", "prenom": "Jean", "date": "", "lieu": "", "affectation": "caporal chef - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#werren-jean"}, {"nom": "WNYTS", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wnyts"}, {"nom": "WOUTERS", "prenom": "Marcel Joseph Alexis", "date": "30/01/1918", "lieu": "Ettèrbeek Bruxelles - Belgique", "affectation": "2è classe - CA2", "badge": {"cls": "prison", "label": "Prisonnier de guerre", "stamp": "PG"}, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-uvw.html#wouters-marcel-joseph-alexis"}, {"nom": "ZIBROWSKI", "prenom": "", "date": "", "lieu": "", "affectation": "2è classe - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zibrowski"}, {"nom": "ZIPZENER", "prenom": "Jean Lucien", "date": "05/03/1917", "lieu": "Budapest - Hongrie", "affectation": "caporal chef - CA2", "badge": null, "fiche_url": "https://legionnaires.11regimentetranger.com/recensement-xyz.html#zipzener-jean-lucien"}];
+let current = 0; // index de la personne affichee en page gauche (toujours pair)
+const pageLeftEl = document.getElementById('pageLeft');
+const pageRightEl = document.getElementById('pageRight');
+
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function personHtml(p, idx, side){
+  const stampHtml = p.badge ? `<div class="p-stamp">${esc(p.badge.stamp)}</div>` : '';
+  return `
+    <div class="p-header">
+      <div class="p-name">${esc(p.nom)} ${esc(p.prenom)}</div>
+      ${stampHtml}
+    </div>
+    <div class="p-meta">${esc(p.date)}${p.date && p.lieu ? ' — ' : ''}${esc(p.lieu)}</div>
+    ${p.affectation ? `<div class="p-field"><span class="lbl">Affectation —</span>${esc(p.affectation)}</div>` : ''}
+    <a class="p-link" href="${p.fiche_url}" target="_blank" rel="noopener">Voir la fiche complète →</a>
+    <div class="pageno">n° ${idx+1}</div>
+    <div class="tapzone ${side}" id="tap-${side}"></div>
+  `;
+}
+
+function render(idx){
+  const left = PEOPLE[idx];
+  const right = PEOPLE[idx+1];
+  pageLeftEl.innerHTML = left ? personHtml(left, idx, 'left') : '<div class="page-empty">— fin du carnet —</div>';
+  pageRightEl.innerHTML = right ? personHtml(right, idx+1, 'right') : '<div class="page-empty">— fin du carnet —</div>';
+  const lastNo = right ? idx+2 : idx+1;
+  document.getElementById('pagecount').textContent = (idx+1) + (right ? '–' + lastNo : '') + ' / ' + PEOPLE.length;
+  const tapLeft = document.getElementById('tap-left');
+  const tapRight = document.getElementById('tap-right');
+  if(tapLeft) tapLeft.onclick = () => turn(-2);
+  if(tapRight) tapRight.onclick = () => turn(2);
+}
+
+function turn(delta){
+  const next = current + delta;
+  if(next < 0 || next >= PEOPLE.length) return;
+
+  const flipEl = delta > 0 ? document.getElementById('flipRight') : document.getElementById('flipLeft');
+  const sourceEl = delta > 0 ? pageRightEl : pageLeftEl;
+
+  // 1) le feuillet qui tourne affiche d'abord le contenu ACTUEL de la page qu'il recouvre
+  flipEl.innerHTML = sourceEl.innerHTML;
+  flipEl.style.display = 'block';
+  flipEl.classList.remove('flipping-right', 'flipping-left');
+  void flipEl.offsetWidth; // force le reflow avant de lancer la transition
+
+  // 2) sous le feuillet, on met deja a jour le contenu reel (invisible pour l'instant, cache dessous)
+  current = next;
+  render(current);
+
+  // 3) on lance la rotation : le feuillet pivote depuis la reliure et revele la nouvelle page en dessous
+  requestAnimationFrame(() => {
+    flipEl.classList.add('showing', delta > 0 ? 'flipping-right' : 'flipping-left');
+  });
+
+  setTimeout(() => {
+    flipEl.style.display = 'none';
+    flipEl.classList.remove('showing', 'flipping-right', 'flipping-left');
+  }, 520);
+}
+
+document.getElementById('prevBtn').onclick = () => turn(-2);
+document.getElementById('nextBtn').onclick = () => turn(2);
+
+function jumpTo(idx){
+  const target = idx % 2 === 0 ? idx : idx - 1;
+  if(target !== current){ current = target; render(current); }
+}
+
+const searchInput = document.getElementById('search');
+const suggestionsEl = document.getElementById('suggestions');
+let activeSuggestion = -1;
+
+function closeSuggestions(){
+  suggestionsEl.classList.remove('show');
+  suggestionsEl.innerHTML = '';
+  activeSuggestion = -1;
+}
+
+function showSuggestions(matches){
+  if(!matches.length){ closeSuggestions(); return; }
+  suggestionsEl.innerHTML = matches.map((m, i) =>
+    `<div class="suggestion-item" data-idx="${m.idx}">${esc(m.nom)} ${esc(m.prenom)}<span class="sg-meta">n° ${m.idx+1}</span></div>`
+  ).join('');
+  suggestionsEl.classList.add('show');
+  activeSuggestion = -1;
+  suggestionsEl.querySelectorAll('.suggestion-item').forEach(el => {
+    el.addEventListener('click', () => {
+      jumpTo(parseInt(el.dataset.idx, 10));
+      searchInput.value = '';
+      closeSuggestions();
+    });
+  });
+}
+
+searchInput.addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  if(!q){ closeSuggestions(); return; }
+  const matches = PEOPLE
+    .map((p, idx) => ({p, idx}))
+    .filter(({p}) => (p.nom + ' ' + p.prenom).toLowerCase().includes(q))
+    .slice(0, 8)
+    .map(({p, idx}) => ({nom:p.nom, prenom:p.prenom, idx}));
+  showSuggestions(matches);
+});
+searchInput.addEventListener('keydown', (e) => {
+  const items = suggestionsEl.querySelectorAll('.suggestion-item');
+  if(e.key === 'ArrowDown' && items.length){
+    e.preventDefault();
+    activeSuggestion = Math.min(activeSuggestion + 1, items.length - 1);
+    items.forEach((el,i) => el.classList.toggle('active', i === activeSuggestion));
+    items[activeSuggestion].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'ArrowUp' && items.length){
+    e.preventDefault();
+    activeSuggestion = Math.max(activeSuggestion - 1, 0);
+    items.forEach((el,i) => el.classList.toggle('active', i === activeSuggestion));
+    items[activeSuggestion].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'Enter'){
+    e.preventDefault();
+    const target = activeSuggestion >= 0 ? items[activeSuggestion] : items[0];
+    if(target){ jumpTo(parseInt(target.dataset.idx, 10)); searchInput.value=''; closeSuggestions(); }
+  } else if(e.key === 'Escape'){
+    closeSuggestions();
+  }
+});
+document.addEventListener('click', (e) => {
+  if(!e.target.closest('.search-wrap')) closeSuggestions();
+});
+document.addEventListener('keydown', (e) => {
+  if(document.activeElement === searchInput) return; // les fleches gauche/droite servent a taper dans le champ
+  if(e.key === 'ArrowLeft') turn(-2);
+  if(e.key === 'ArrowRight') turn(2);
+});
+
+render(0);
+
+(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
