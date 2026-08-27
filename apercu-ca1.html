@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compagnie d'Accompagnement n°1 (CA1) — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  .avertissement{max-width:900px;margin:0 auto 14px;padding:.7rem 1rem;background:#fdf1d9;
+    border:1px solid var(--orange);border-radius:4px;font-size:.78rem;color:#6b4f14;font-family:'Inter',sans-serif}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block;background:var(--row)}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+
+  .placeholder-carnet{max-width:900px;margin:0 auto 20px;padding:2rem 1.4rem;background:repeating-linear-gradient(135deg,#e9e2cf,#e9e2cf 10px,#e2d9c2 10px,#e2d9c2 20px);
+    border:1px dashed var(--rule);border-radius:8px;text-align:center;font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.95rem}
+
+  .floating-comment-btn{position:fixed;bottom:74px;right:18px;z-index:100;display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;color:var(--ink);background:var(--orange);
+    text-decoration:none;padding:.55rem 1rem;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="avertissement">
+  Aperçu de démonstration — CSS et contenu réels du générateur, sans le menu de navigation du site
+  (actuellement fourni par Google Sites, absent de ce HTML) et sans le carnet de fiches individuelles
+  (nécessite verif_data.xlsx, non disponible ici).
+</div>
+
+<a class="floating-comment-btn" href="#" onclick="return false;">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn show" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  <div class="htext">
+    <h1>Compagnie d'Accompagnement n°1 (CA1)</h1>
+    <div class="sub">11e Régiment Étranger d'Infanterie</div>
+    <a class="back" href="#">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro">
+<p class="ci-lede">Une compagnie d'accompagnement a pour but d'accompagner les compagnies de fusiliers-voltigeurs à l'échelon du bataillon. Elle dispose d'un équipement plus lourd que les autres compagnies, composé théoriquement de :</p>
+<ul>
+  <li>2 canons de 25 mm antichar (AC), sans appareil de pointage auxiliaire</li>
+  <li>2 mortiers de 81 mm</li>
+  <li>16 mitrailleuses de 8 mm</li>
+</ul>
+<p>Elle est composée de 6 sections : la section de commandement, quatre sections de mitrailleuses et une section d'engins (mortiers de 81 et canons de 25). La compagnie d'accompagnement porte le numéro du bataillon dont elle fait partie. Les sections de la CA1 sont donc ventilées selon les besoins au sein du 1er bataillon, entre le PC du bataillon et les 1re, 2e et 3e compagnies.</p>
+
+<h2 class="ci-h2">Encadrements successifs, de la mobilisation au 23 juin 1940</h2>
+<figure class="ci-fig ci-size-medium"><img src="" alt="" style="height:220px"><figcaption>11/09/1940 — CMI 145, Sathonay</figcaption></figure>
+<p>Le 11/09/1940, encadrement de la CA1 au CMI 145 à Sathonay : capitaine Seguin (il sera affecté au 12e REI), 3 lieutenants (2 du 1er RTA et 1 du 3e RTA), lieutenant Corduant, lieutenant Drouineau.</p>
+<p>Dans l'ordre de bataille du régiment, un capitaine commande une compagnie et les lieutenants sont chefs de section. Pour la CA1 : commandant la compagnie, lieutenant Sigmann ; chefs de section, lieutenant Drouineau et sous-lieutenant Levy.</p>
+<p>Le 6/11/1940, c'est le capitaine Clément qui commande la CA1. Il quitte la compagnie pour occuper les fonctions d'adjudant-major au 2e bataillon à partir de février 1940.</p>
+<p>Le 03/04/1940, le lieutenant Corduant passe à la CHR (commandement de la section de dépannage du régiment) ; il est remplacé par le lieutenant Mondon.</p>
+<p>Combats d'Inor : le lieutenant Drouineau est blessé et évacué, le sous-lieutenant Levy également.</p>
+</div>
+
+<div class="placeholder-carnet">— carnet de fiches individuelles (nécessite verif_data.xlsx) —</div>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+</body>
+</html>
