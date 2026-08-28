@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BÉREMBAUM Émile — 11e REI</title>
-<meta name="description" content="Militant trotskyste devenu légionnaire, résistant après son évasion d'Allemagne">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,57 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,31 +81,45 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Résistant</div>
   <h1>BÉREMBAUM Émile</h1>
-  <div class="sub">Militant trotskyste devenu légionnaire, résistant après son évasion d'Allemagne</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="sub">(le Maîtron)</div>
+  <div class="tags"><span>11è REI</span><span>prisonnier de guerre</span><span>communiste</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Émile Bérembaum, militant trotskyste plusieurs fois expulsé de France dans les années 1930, s'engage à la Légion étrangère en 1938 pour obtenir sa naturalisation. Fait prisonnier en 1940, il s'évade en 1943 et rejoint la Résistance jusqu'à la Libération.</p>
-<h2>Militantisme et expulsions</h2>
-<p>Arrivé en France avec ses parents en 1924, il vit à Paris jusqu'en 1932, où il devient apprenti fourreur. Il adhère en 1930 au syndicat CGTU de l'Habillement puis à la Jeunesse communiste, dont il est exclu dès janvier 1931 pour opposition ; il rejoint alors la Ligue communiste trotskyste et milite dans son groupe juif, en écrivant pour son journal La Vérité.</p>
-<p>Expulsé de France en juillet 1932, il se réfugie dans la région de Lille où il poursuit son militantisme syndical et politique, avant d'être finalement contraint de quitter la France pour la Belgique en janvier 1934, puis la Pologne. De retour à Lille en 1937 malgré la mesure d'expulsion qui le frappe toujours, il rallie le Parti communiste internationaliste.</p>
-<h2>La Légion étrangère et le 11e REI</h2>
-<p>En 1938, il juge que la Légion étrangère est le plus court chemin vers une naturalisation définitive et s'engage à l'intendance militaire de Paris le 8 avril 1938. Affecté au 4e REI puis, en septembre 1939, aux volontaires envoyés à Sathonay pour constituer le 11e REI, il est fait prisonnier pendant la campagne et interné au Stalag XI B de Fallingbostel.</p>
-<h2>Évasion et Résistance</h2>
-<p>En 1941, il tente une évasion difficile et est repris à Eupen ; transféré à la section disciplinaire du Stalag XI B, il participe aussitôt aux actions du comité de résistance qui vient de s'y créer. Il réussit à s'évader d'Allemagne en 1943 et rejoint le Mouvement national des prisonniers de guerre et déportés (MNPGD) sur le territoire français, où il est chargé de mission en Meurthe-et-Moselle puis à Paris. Sous les pseudonymes de Dubois puis Béranger, il prend contact avec les prisonniers rapatriés pour fonder un noyau de résistance.</p>
-<h2>Après-guerre</h2>
-<p>Après la Libération, il reprend son engagement trotskyste au sein du PCI et son militantisme syndical à la CGT. Lors de la scission de 1952-1953 qui divise le mouvement trotskyste, il l'abandonne définitivement. Il adhère ensuite au Parti socialiste autonome (1958) puis au Parti socialiste unifié (1960), qu'il quitte dix ans plus tard en désaccord sur la question du Moyen-Orient.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-berembaum-11e-rei-2.jpg" alt="Émile Bérembaum">
+  </figure>
+  <div class="side-text">
+    <p>Émile Bérembaum arrive en France avec ses parents en 1924, il vit à Paris jusqu'en 1932. Après avoir fréquenté l'école communale, il devient apprenti fourreur d'octobre 1926 à août 1929.</p>
+    <p>Il adhère en 1930 au syndicat CGTU de l'Habillement. En octobre il prend sa carte de la Jeunesse communiste. Très rapidement oppositionnel, il est exclu le 2 janvier 1931 du 3e rayon de la JC. Il est alors déjà membre de la Ligue communiste qui regroupe les partisans de Trotsky et milite plus particulièrement dans le groupe juif qui s'est organisé en son sein. Durant la période 1931-1932 il écrit dans La Vérité, organe de la Ligue, plusieurs articles portant notamment sur la question des jeunes et de la JC ou sur l'action dans le syndicat de l'Habillement.</p>
+    <p>En juillet 1932, E. Bérembaum est victime d'une mesure d'expulsion prise par la police. Il réussit alors à se réfugier dans la région de Lille où il reprend son action militante. Il continue à écrire, en 1933, des articles pour La Vérité traitant en particulier de la vie syndicale dans la région lilloise. En octobre, il fait parler de lui en démissionnant du bureau de la section de Saint-Sauveur, à Lille, du Secours rouge international en signe de protestation contre les « pratiques staliniennes ». En janvier 1934, E. Bérembaum ne peut éviter l'expulsion et quitte la France pour la Belgique. Il ne cesse pourtant pas ses relations avec la Ligue d'autant qu'il participe à sa direction ; il assiste en effet en février 1933 à la réunion de sa commission exécutive élargie.</p>
+  </div>
+</div>
+
+<p>Se refusant, en juillet 1934, dans une lettre parue dans le bulletin intérieur de l'organisation, à adhérer au Parti SFIO comme le prônait Léon Trotsky, il rejoint cependant la majorité de la Ligue qui forme en septembre le groupe bolchevik-léniniste organisé en tendance dans le Parti socialiste.</p>
+
+<p>E. Bérembaum part en août 1934 à Varsovie en Pologne où il vit chez son oncle maternel Jacob Mordkowicz.</p>
+
+<p>De retour en 1937 dans la région de Lille, malgré la mesure d'expulsion qui le frappe, il rallie le Parti communiste internationaliste fondé en mars par P. Frank* et R. Molinier*. Finalement, E. Bérembaum décide, en 1938, que la Légion étrangère sera le plus court chemin pour obtenir définitivement sa naturalisation. Il s'engage à l'intendance militaire de Paris le 08/04/1938. Il arrive au corps le 23/04/1938 et est afecté deux jours plus tard à la compagnie d'instruction n°4. Le 19/12/1938, il est affecté à la 3è compagnie du 4è REI puis en septembre 1939, il fait parti des volontaires envoyés à Sathonay en vue de constituer le 11è REI.</p>
+
+<p>Fait prisonnier pendant la guerre, il est interné au stalag XI B Fallingbostel. En 1941 il tente une évasion difficile et est repris à Eupen. Transféré au Stalag XI B section disciplinaire baraque 8, Emile Berembaum participe immédiatement à toutes les actions décidées par le Comité de Résistance qui vient de se créer.</p>
+
+<p>Il réussit à s'évader d'Allemagne en 1943 et participe sur le territoire français à la Résistance jusqu'à la Libération. Il rejoint le M.N.G.P.D pour lequel il est chargé de mission en Meurthe et Moselle à Conflans-Jarnisy puis à Paris. Sous le pseudonyme de Dubois puis de Béranger, il prend contact avec les prisonniers rapatriés et fonde un noyau de résistance appartenant au MNPGD.</p>
+
+<p>Après la guerre, il rejoint de nouveau les rangs trotskystes en adhérant au PCI et ceux de la CGT en militant dans l'Habillement. Lors de la scission de 1952-1953 qui écartèle la centaine de militants trotskystes qui restaient organisés, il abandonne définitivement le mouvement. En 1958, il donne son adhésion au Parti socialiste autonome puis en 1960 rejoint le Parti socialiste unifié qu'il quitte dix ans plus tard à cause des divergences qu'il avait avec ce parti sur la question du Moyen-Orient.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>SHD Vincennes, GR 16 P 49210</li>
-    <li>Archives nationales de Pierrefitte-sur-Seine, dossier de naturalisation</li>
-    <li>Fonds de Moscou, 19940434/252 dossier 20871</li>
-    <li>Jean-Michel Brabant, notice « BÉREMBAUM Émile, André, Victor », Le Maitron</li>
+    <li>SHD Vincennes GR 16 P 49210 (consulté)</li>
+    <li>AN Pierrefitte, dossier de naturalisation (consulté)</li>
+    <li>Fond de Moscou 19940434/252 dossier 20871 - consulté</li>
+    <li><a href="https://maitron.fr/spip.php?article16313" target="_blank" rel="noopener">https://maitron.fr/spip.php?article16313</a>, notice BÉREMBAUM Émile, André, Victor par Jean-Michel Brabant, version mise en ligne le 20 octobre 2008, dernière modification le 20 octobre 2008.</li>
+    <li>photo (Fond de Moscou et dossier de naturalisation)</li>
   </ul>
 </div>
 

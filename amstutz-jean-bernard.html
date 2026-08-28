@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMSTUTZ Jean-Bernard — 11e REI</title>
-<meta name="description" content="Engagé à 17 ans, blessé et fait prisonnier le 21 juin 1940, neuf tentatives d'évasion en captivité">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,59 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+  }
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,29 +83,81 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 5e compagnie · EVDG</div>
   <h1>AMSTUTZ Jean-Bernard</h1>
-  <div class="sub">Engagé à 17 ans, blessé et fait prisonnier le 21 juin 1940, neuf tentatives d'évasion en captivité</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Jean-Bernard Amstutz s'engage à 17 ans en se vieillissant de trois ans. Blessé lors des combats de la 5e compagnie à Saint-Germain-sur-Meuse le jour de ses 18 ans, il passe cinq années en captivité, marquées par neuf tentatives d'évasion.</p>
-<h2>Un engagement précoce</h2>
-<p>Né à Paris le 18 juin 1922, fils d'André, un Suisse, et d'Eugénie Broussard, une Française, Jean-Bernard est placé en Suisse en 1939 chez sa tante, directrice d'une pouponnière aux Brenets (Neuchâtel). Le 7 octobre 1939, il part avec trois camarades « aux champignons » mais ne revient pas : il franchit le Doubs à la nage et se présente à l'intendance militaire de Besançon. Le 9 octobre 1939, à 17 ans, il contracte un engagement pour la durée de la guerre en se vieillissant de trois ans — l'un des plus jeunes légionnaires du régiment, avec 39 ans d'écart avec le doyen Henri Keurvels.</p>
-<p>Il est envoyé au camp de la Valbonne pour son instruction, puis affecté le 15 novembre 1939 à la 5e compagnie du 11e REI. En mars 1940, en permission, il choisit officiellement la nationalité française à la mairie du 17e arrondissement de Paris.</p>
-<h2>Les combats de mai-juin 1940</h2>
-<p>Avec le régiment, il se trouve dans le secteur du bois d'Inor à partir du 21 mai 1940. Le 27 mai, après plusieurs jours de bombardement, la 5e compagnie subit de lourdes pertes lors d'une attaque d'infanterie ; Jean-Bernard est proposé pour une citation après avoir participé à l'évacuation de l'adjudant-chef Walter Egloff, gravement blessé.</p>
-<p>Le 18 juin 1940, jour de ses 18 ans, la 5e compagnie, installée à la côte 292 en avant de Saint-Germain-sur-Meuse, doit soutenir les reconnaissances offensives des autres compagnies et protéger leur repli, exposée aux tirs de l'artillerie. Le lieutenant Chevillotte n'a plus de nouvelles de Jean-Bernard à partir de ce jour. Blessé au pied et au genou par des éclats, il a pu être évacué et se retrouve le 21 juin à l'hôpital de Saint-Dié-des-Vosges, où il est fait prisonnier.</p>
-<h2>Cinq ans de captivité</h2>
-<p>Transféré en Bavière en juillet 1940 (Stalag VII B), puis dans divers kommandos, il tente de s'évader à neuf reprises pendant ses cinq années de captivité. À chaque fois repris, il passe au total 180 jours en cellule et de nombreux mois dans des kommandos disciplinaires, transitant notamment par le camp de représailles de Kobierzyn. Il est libéré par les troupes alliées en 1945, alors qu'il se trouve dans un kommando disciplinaire en Autriche.</p>
-<h2>Après-guerre</h2>
-<p>Il devient fabricant de bracelets de montres à Clamart puis à Saint-Herblon (1959-1969), avant de diriger la section « produits vétérinaires » de la pharmacie Boursier à Ancenis. Fondateur et PDG de la société Coophavet, spécialisée dans les produits vétérinaires, il prend sa retraite en 1989. En 1990, il participe aux cérémonies du cinquantenaire des combats de Saint-Germain et d'Ourches-sur-Meuse. Il est inhumé avec son épouse Marie Marcelle Juvin au cimetière des Planchettes, à la Chaux-de-Fonds.</p>
+
+<p>Jean-Bernard Amstutz est né à Paris le 18 juin 1922, fils d'André, un Suisse, et d'Eugénie Broussard, une Française.</p>
+
+<p>Lors de la déclaration de guerre en 1939, Jean-Bernard est placé en Suisse, chez sa tante, « Sœur Diaconesse », directrice de la Pouponnière des Brenets, dans le canton de Neuchâtel. Le 7 octobre 1939, il part avec trois camarades vers Pouillerel « aux champignons », mais il ne revient pas. Il franchit le Doubs à la nage et se présente à l'intendance militaire de Besançon. Le 9 octobre 1939, il contracte un engagement pour la durée de la guerre.</p>
+
+<p>Agé de seulement 17 ans, il change sa date de naissance pour pouvoir s'engager et se vieillit de trois ans. Avec le légionnaire Escriva, né en 1923, il fait partie des plus jeunes légionnaires du 11e REI, avec 39 ans d'écart avec Henri Keurvels, le plus âgé du régiment, et 35 ans d'écart avec l'adjudant Pellegrini.</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-amstutz-jean-bernard-2.jpg" alt="Jean-Bernard Amstutz à la Valbonne">
+    <figcaption>A la Valbonne avant le 15 novembre 1939: Jean Bernard 3è rang à droite. Même rang à gauche Pierre Eugène BOURQUIN natif de La Chaux de Fonds (Suisse) engagé à Besançon le 9/10/1939</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Ses deux autres camarades se désistèrent et rentrèrent à La Chaux-de-Fonds. L'un d'eux fut chargé d'annoncer son départ à la famille.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-amstutz-jean-bernard-4.jpg" alt="">
+</figure>
+
+<p>Jean-Bernard est envoyé au camp de Valbonne, dans l'Ain, pour son instruction militaire, où il fait sa préparation avec la 45e compagnie de fusiliers voltigeurs. Le 15 novembre 1939, il est affecté à la 5e compagnie du 11e régiment étranger d'infanterie.</p>
+
+<p>En mars 1940, lors d'une permission, il se présente à la mairie du 17e arrondissement de Paris pour choisir la nationalité française.</p>
+
+<p>Avec le 11e régiment étranger, il se trouve dans le secteur des bois d'Inor à partir du 21 mai 1940. Le 27 mai, après plusieurs jours de bombardement, le régiment subit une attaque d'infanterie. La 5e compagnie, qui se trouve sur la ligne de résistance, a de lourdes pertes. Après les combats, Jean-Bernard est proposé pour une citation pour avoir participé à l'évacuation de l'adjudant-chef Walter Egloff, gravement blessé.</p>
+
+<p>Pour ses 18 ans, le 18 juin 1940, il se trouve avec la 5e compagnie en avant de Saint Germain sur Meuse. Ce jour-là, la compagnie doit soutenir les reconnaissances offensives des autres compagnies et protéger leur repli. Installée à la côte 292, elle est exposée aux tirs de l'artillerie. Le capitaine Lemoine, commandant du 2e bataillon, tente de faire replier la 5e compagnie, qui compte de nombreux légionnaires tués ou blessés. Dans son compte rendu, le lieutenant Chevillotte indique ne pas avoir eu de nouvelles de Jean-Bernard Amstutz depuis le 18 juin. Ce jour-là, ce qui reste de la 5e compagnie est éclaté en deux groupes : l'un avec le lieutenant Chevillotte à Saint Germain sur Meuse pour défendre le PC du colonel, l'autre replié sur Ourches, où il est affecté au 21e RTA. Jean-Bernard, blessé au pied et au genou par des éclats, a pu être évacué. Le 21 juin, il est à l'hôpital de Saint-Dié-des-Vosges où il est fait prisonnier.</p>
+
+<p>En juillet 1940, il est transféré en Bavière et affecté au stalag VII B. En janvier 1941, il est envoyé dans un kommando à Feuchtwangen.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-amstutz-jean-bernard-5.jpg" alt="Jean-Bernard Amstutz, stalag VIIB">
+  <figcaption>En juin 1942, stalag VIIB. Jean-Bernard (kommando 1769 à Schambach de la ville de Treuchtlingen). Il porte l'insigne du 11è REI</figcaption>
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-amstutz-jean-bernard-6.jpg" alt="Jean-Bernard Amstutz, stalag XVIIIC">
+  </figure>
+  <div class="side-text">
+    <p>En septembre 1942, stalag XVIIIC à Weißenburg in Bayern. Jean-Bernard à le matricule 91018. Il porte l'insigne du 11è REI</p>
+  </div>
+</div>
+
+<p>Pendant ses cinq années de captivité, Jean-Bernard tente de s'évader à neuf reprises. À chaque tentative, il est repris et passe au total 180 jours en cellule, ainsi que de nombreux mois dans des kommando disciplinaires. Il transite par plusieurs stalags, dont le camp de représailles de Kobierzyn. Face à l'avancée de l'armée soviétique, les prisonniers du block III, dont Jean-Bernard fait partie, sont transférés au stalag XVIII C le 12 août 1944.</p>
+
+<p>Il est libéré par les troupes alliées alors qu'il se trouve encore dans un kommando disciplinaire en Autriche.</p>
+
+<p>Après sa libération en 1945, il devient fabricant de bracelets de montres à Clamart, puis à Saint-Herblon de 1959 à 1969. Il devient ensuite directeur de la section "produits vétérinaires" à la pharmacie Boursier à Ancenis. Fondateur et PDG de la société Coophavet, spécialisée dans les produits vétérinaires et installée à Saint-Herblon, il prend sa retraite en 1989.</p>
+
+<p>En 1990, Jean-Bernard participe aux cérémonies du 50e anniversaire des combats de Saint-Germain et d'Ourches-sur-Meuse.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-amstutz-jean-bernard-7.jpg" alt="Jean-Bernard Amstutz">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-amstutz-jean-bernard-8.jpg" alt="Jean-Bernard Amstutz">
+  </figure>
+</div>
+
+<p>Il est inhumé avec son épouse Marie Marcelle Juvin au cimetière des Planchettes à la Chaux de Fonds.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Source principale</h3>
   <ul>
-    <li>Archives, photographies et souvenirs de la famille Amstutz</li>
+    <li>archives, photos et souvenirs de la famille Amstutz</li>
+    <li>Facebook</li>
   </ul>
 </div>
 

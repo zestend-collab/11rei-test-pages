@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AGOSTINI Luigi « Louis » — 11e REI</title>
-<meta name="description" content="Musicien de la famille Agostini, mort de ses blessures au pont de Void le 18 juin 1940">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,47 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ol{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article .caption{font-family:'Inter',sans-serif;font-style:italic;color:var(--muted);font-size:.85rem;
+    text-align:center;margin:1rem 0}
+  article .caption a{color:var(--link)}
+  article .press-list{margin:0 0 1rem 1.3rem;font-size:.9rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+  }
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,32 +71,113 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 6e compagnie · Musicien · Mort pour la France</div>
   <h1>AGOSTINI Luigi « Louis »</h1>
-  <div class="sub">Musicien de la famille Agostini, mort de ses blessures au pont de Void le 18 juin 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span><span>musicien</span><span>MPF</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Louis Agostini n'était pas d'abord identifié comme légionnaire du 11e REI : le site Mémoire des Hommes l'indiquait mort au combat avec le « 11e régiment d'infanterie coloniale », une unité absente de France en 1940. Le rapprochement avec un légionnaire Agostini de la section Romanovitch (6e compagnie), blessé le 17 juin 1940 à Void, et la cohérence des circonstances rendent cette identification très probable.</p>
-<h2>Une famille de musiciens</h2>
-<p>Luigi Agostini naît le 30 janvier 1920 à Mercatello, en Italie, fils de Giuseppe Francesco Domenico Agostini, dit Joseph, et de Luigia Filomena Dini. Comme beaucoup d'Italiens après la Première Guerre mondiale, Joseph émigre en France pour travailler dans les mines : aide-mineur à Dechy en 1924, puis rocheur à la fosse Bonnel en 1925. Sa femme et ses deux fils, Luigi et Giovanni, le rejoignent avant 1925.</p>
-<p>La famille est musicienne : Joseph joue de l'accordéon dans les cabarets de Douai, puis s'installe à Sin-le-Noble où il anime un estaminet avec un orchestre familial auquel participent ses fils aînés, Luigi « Louis » et Giovanni « Dante », dès l'âge de cinq ans. Louis se révèle particulièrement doué : formé au conservatoire de Douai, il obtient très jeune des contrats professionnels, se produit sur Radio PTT Nord et participe à des concours internationaux entre 1931 et 1934, salués par la presse française et belge.</p>
-<h2>Engagement et mort au combat</h2>
-<p>En 1939, Louis s'engage dans la Légion étrangère et est affecté à la 6e compagnie du 11e régiment étranger d'infanterie. Le 17 juin 1940, avec des éléments du 2e bataillon sous le commandement de l'adjudant Romanovitch, il est chargé de couvrir le pont de Void jusqu'au passage du dernier contingent français et de protéger le génie chargé de faire sauter le pont.</p>
-<p>Vers 16h30, la section Romanovitch, presque encerclée, est de nouveau attaquée par des blindés allemands. En tentant de rejoindre le pont tournant, le sergent Vervier, le caporal Zavarine ainsi que les légionnaires Lazarevitch et Agostini sont blessés. Louis Agostini succombe à ses blessures le lendemain. Son corps est retrouvé dans une cave près de l'église ; il est inhumé au cimetière de Void, tombe 28, sous le nom d'Eugène Agostini. Sa famille, restée à Sin-le-Noble, devra attendre 1946 pour avoir la certitude de sa mort au combat.</p>
-<h2>La famille après-guerre</h2>
-<p>En décembre 1944, les biens de Joseph Agostini — de nationalité italienne — sont mis sous séquestre par le tribunal civil de Douai, avant la mainlevée en 1948. Son frère Giovanni « Dante » Agostini, requis pour le STO en 1943, reprend la musique après la guerre : il se produit au Moulin Rouge, accompagne notamment Frank Sinatra, Luis Mariano, Charles Trenet et Tino Rossi, devient titulaire de l'orchestre de l'Olympia, puis fonde en 1965 avec Kenny Clarke une école de batterie dont la méthode fait toujours autorité. Le troisième frère, Fernando, également accordéoniste, s'installe au Québec.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-2.jpg" alt="Giovanni Dante, Guiseppe Joseph et Luigi Louis Agostini">
+  <figcaption>de gauche à droite: Giovanni Dante à la batterie, le père Guiseppe "Joseph" et Luigi "Louis" — <a href="https://www.oldrums.fr/petiteshistoires.html" target="_blank" rel="noopener">site internet Old Drums</a></figcaption>
+</figure>
+
+<p>Je n'avais pas intégré Louis Agostini dans mon recensement puisqu'il était indiqué sur le site mémoire des hommes comme mort au combat avec le 11è régiment d'infanterie coloniale.</p>
+
+<p>Par contre, je connaissais un légionnaire Agostini de la section Romanovitch de la 6è compagnie blessé le 17/06/1940 à Void.</p>
+
+<p>Le rapprochement entre les deux Agostini semble justifié par plusieurs éléments :</p>
+
+<ol>
+<li>Erreur dans l'attribution régimentaire : Le site Mémoire des Hommes indiquant que Louis Agostini appartenait au 11e Régiment d'Infanterie Coloniale (RIC) peut contenir une erreur. En effet, le 11e RIC n'était pas en France à ce moment-là, ce qui rend improbable la participation de ce régiment au combat de Void le 17 juin 1940.</li>
+<li>Correspondance des circonstances : Le légionnaires Agostini, blessé le 17 juin 1940, est mentionné dans la section Romanovitch de la 6e compagnie du 11e Régiment Étranger d'Infanterie (REI). Cette compagnie participait activement à ralentir l'avancée allemande à Void à cette date.</li>
+<li>Cohérence géographique et temporelle : La localisation et les circonstances des combats de Void renforcent l'idée que Louis Agostini était bien membre du 11e REI et non du 11e RIC. La confusion pourrait venir d'erreurs dans la transcription des registres ou des sources initiales.</li>
+</ol>
+
+<p>Il est donc raisonnable de supposer que Louis Agostini, légionnaire blessé à Void le 17 juin 1940, était effectivement avec la 6e compagnie du 11e REI.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-4.jpg" alt="Dossier du personnel des mines d'Aniche, Guiseppe Agostini">
+    <figcaption>Personnels des mines - Archives nationales du monde du travail.<br>Dossier du Giuseppe "Joseph" de la compagnie des mines d'Aniche</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Luigi Agostini est né le 30 janvier 1920 à Mercatello, en Italie. Il est le fils de Guiseppe Francesco Domenico Agostini, dit Joseph Agostini, et de Luigia Filomena Dini.</p>
+    <p>Suite à la crise économique d'après-guerre, de nombreux Italiens émigrent en France pour travailler dans les mines. Parmi eux, Guiseppe, accompagné de son beau-frère Abramo Dini, figure dans les archives du personnel des Mines d'Aniche. Guiseppe y travaille d'abord comme aide-mineur à Dechy en 1924, puis comme rocheur dans la fosse Bonnel en 1925. Il semble être arrivé seul en 1922. Sa femme et ses deux enfants, Luigi et Giovanni, le rejoignent avant 1925.</p>
+  </div>
+</div>
+
+<p>La famille est musicienne, et Guiseppe, dit "Joseph", commence à jouer de l'accordéon dans les cabarets de Douai. Ils s'installent ensuite à Sin-le-Noble, où Joseph prend en gestion un estaminet qu'il anime en organisant des bals. Ses prestations évoluent rapidement en un orchestre familial, avec la participation de ses deux fils aînés, Luigi "Louis" et Giovanni "Dante", qui l'accompagnent. Dès l'âge de 5 ans, les enfants apprennent à jouer de l'accordéon et de la batterie.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-5.jpg" alt="Carte postale publicitaire de l'orchestre familial Agostini">
+  <figcaption>Carte postale publiciatire de l'orchestre familial Agostini — <a href="http://archivesdufolk59-62.blogspot.com/2017/07/roll-swing-au-mupop.html" target="_blank" rel="noopener">Mémoire du Folk en Nord Pas de Calais</a></figcaption>
+</figure>
+
+<p>Louis est particulièrement doué pour la musique et gagne rapidement en notoriété. Il suit un parcours remarqué au conservatoire de Douai et obtient très jeune des contrats en tant que musicien professionnel. La presse française et belge fait la publicité de ses prestations et de sa participation à des concours internationaux entre 1931 et 1934. Il se produit également sur Radio PTT Nord.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-6.jpg" alt="Articles de presse sur les performances de Louis Agostini">
+  </figure>
+  <div class="side-text">
+    <p class="caption" style="text-align:left;margin:0 0 .6rem">Articles de presse sur les performances de Louis Agostini.</p>
+    <p style="margin:0">La dernière heure (Belgique) 03/08/1931<br>
+    Le Grand Echo du Nord 01/09/1933<br>
+    Le Grand Echo du Nord 11/02/1934<br>
+    Le Grand Echo du Nord 05/09/1935 (Radio PTT Nord)</p>
+  </div>
+</div>
+
+<p>En 1939, Louis s'engage dans la Légion étrangère et est affecté à la 6e compagnie du 11e régiment étranger d'infanterie.</p>
+
+<p>Le 17 juin 1940, avec des éléments du 2e bataillon sous le commandement de l'adjudant Romanovitch, il est chargé de couvrir le pont de Void jusqu'au passage du dernier contingent français et de protéger les équipes du génie chargées de faire sauter le pont de la ville.</p>
+
+<p>Vers 16h30, la section Romanovitch, presque encerclée, est à nouveau attaquée par des blindés allemands. En tentant de rejoindre le pont tournant, le sergent Vervier, le caporal Zavarine ainsi que les légionnaires Lazarevitch et Agostini sont blessés. Le lendemain, Louis Agostini succombe à ses blessures.</p>
+
+<p>Son corps est retrouvé dans une cave près de l'église. Il est inhumé au cimetière de Void tombe 28 sous le nom d'Eugène Agostini. Malgré des demandes de recherche, sa famille devra attendre 1946 pour avoir la certitude que Louis est décédé au combat en juin 1940.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-7.jpg" alt="Photo Agostini">
+</figure>
+
+<p>En 1940, sa famille se trouve toujours à Sin-le-Noble et n'est pas évacuée. Joseph, ayant acquis une certaine notoriété, continue de gérer son cabaret ainsi que son école d'accordéon. Parallèlement, il s'occupe également d'un commerce d'instruments de musique.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-8.jpg" alt="Photo Agostini">
+</figure>
+
+<p>Conformément à la décision du 22 août 1944 du secrétaire général aux finances publiques, l'administration des Domaines prend à titre conservatoire possession des biens allemands et italiens situés en France pour en assurer la gestion. En décembre 1944, le tribunal civil de Douai ordonne la mise sous séquestre de tous les biens, et en particulier d'un compte de dépôt appartenant à Joseph Agostini. La main levée du séquestre sera ordonnée en 1948.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-9.jpg" alt="Photo Agostini">
+  </figure>
+  <div class="side-text">
+    <p>Son frère Giovanni "Dante" Agostini est réquisitionné pour le STO en 1943. Après la guerre, il reprend la musique et rejoint diverses formations, ce qui le mène à faire des tournées et à s'installer à Paris. Là, il se produit au Moulin Rouge, accompagne les grandes stars de l'époque telles que Jacques Hélian, Frank Sinatra, Jerry Lewis, Luis Mariano, Charles Trenet et Tino Rossi, et devient titulaire de l'orchestre de l'Olympia.</p>
+    <p>En 1965, il fonde avec Kenny Clarke une école de batterie et développe une méthode d'apprentissage. Aujourd'hui encore, cette méthode fait autorité dans le monde de la batterie, et le réseau Agostini compte plus de quarante écoles, dont six à l'étranger.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi-10.jpg" alt="Photo Agostini">
+  </figure>
+  <div class="side-text">
+    <p>Le deuxième frère, Fernando, né en 1925 à Dechy, est également musicien accordéoniste. On le retrouve installé au Québec.</p>
+  </div>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>oldrums.fr</li>
+    <li>photo 1: <a href="https://www.oldrums.fr/petiteshistoires.html" target="_blank" rel="noopener">https://www.oldrums.fr/petiteshistoires.html</a></li>
     <li>Archives du monde du travail, personnel des Mines</li>
-    <li>rimshotetghostnote.fr</li>
-    <li>Blog Mémoire du folk en Nord-Pas-de-Calais</li>
-    <li>Archives du 11e REI (Aubagne), compte rendu de l'adjudant Romanovitch</li>
-    <li>Presse : Belgicapress, Gallica, Bibliothèque et Archives nationales du Québec</li>
+    <li><a href="https://rimshotetghostnote.fr/dante-agostini/" target="_blank" rel="noopener">https://rimshotetghostnote.fr/dante-agostini/</a></li>
+    <li>blog Mémoire du folk en Nord Pas de Calais</li>
+    <li>Archives du 11è REI (Aubagne) Compte Rendu Adjudant Romanovitch</li>
+    <li>Articles de presse: Belgicapress, Gallica, Bibliothèque et Archives nationales du Québec</li>
   </ul>
 </div>
 

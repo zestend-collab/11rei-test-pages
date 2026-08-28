@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AGOTICS Sandor « Alexandre » — 11e REI</title>
-<meta name="description" content="Lutteur professionnel hongrois, ordonnance et confident du capitaine Lanchon">
+<title>AGOTICS Sandor — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,55 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,42 +79,148 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 5e compagnie · EVDG · Sportif</div>
-  <h1>AGOTICS Sandor « Alexandre »</h1>
-  <div class="sub">Lutteur professionnel hongrois, ordonnance et confident du capitaine Lanchon</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>AGOTICS Sandor</h1>
+  <div class="sub">légionnaire et lutteur professionnel</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>sportif</span><span>ancien légionnaire</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Sandor Agotics apparaît dans les listes d'engagés volontaires, de prisonniers de guerre et dans les archives Arolsen. C'est en lisant la correspondance du capitaine Lanchon qu'il prend tout son relief : Lanchon le cite quatorze fois, et c'est le seul militaire qu'il désigne uniquement par son prénom, sans grade ni nom de famille.</p>
-<h2>Ordonnance et confident du capitaine Lanchon</h2>
-<p>Agotics fait partie de la section de commandement de la 5e compagnie, où il assure les fonctions d'ordonnance : il prépare les abris qu'il partage avec le capitaine Lanchon et veille à son confort. Une réelle intimité se développe entre les deux hommes, dont témoignent les lettres de Lanchon à son épouse.</p>
-<blockquote class="testimony">23 mai 1940 : « Nous sommes dans des trous. Le mien est couvert d'une tôle ondulée. J'y suis avec Sandor. »</blockquote>
-<blockquote class="testimony">24 mai 1940 : « Je partage mon abri avec Sandor. »</blockquote>
-<blockquote class="testimony">30 mai 1940 : « Je couche avec Sandor dans cette cagna [...] Je me fais enguirlander par Sandor, parce que je ne mange pas des haricots qui viennent d'arriver et encore tièdes. Il me semble t'entendre me réclamer à table. »</blockquote>
-<blockquote class="testimony">31 mai 1940 : « On s'occupe à organiser la ligne d'arrêt. On creuse ! Je me prépare un trou, ou plutôt Sandor, au pied d'un chêne, de manière à être protégé par le tronc et les racines. »</blockquote>
-<blockquote class="testimony">1er juin 1940 : « Sandor m'a creusé une fosse au pied d'un chêne qu'il a recouverte de rondins, d'une toile de tente, de branchages et de terre. [...] Ce matin, je me suis chamaillé avec Sandor. Nous sommes sales, fatigués et nerveux [...] Nous avons fait la paix ce soir. »</blockquote>
-<blockquote class="testimony">2 juin 1940 : « Je suis en plein bois. Mes affaires personnelles sont sous terre ou éparpillées. Sandor a commencé un boyau pour rejoindre son propre trou, en cas de bombardement, sans avoir à sortir dehors. »</blockquote>
-<blockquote class="testimony">3 juin 1940 : « Aujourd'hui, je me suis occupé de quelques propositions d'avancement. J'ai proposé Sandor pour le grade de caporal, malgré ses protestations. »</blockquote>
-<blockquote class="testimony">6 juin 1940 : « Je suis installé en plein bois, dans un petit réduit entouré d'une tranchée, avec ma section de commandement [...] Enfin, j'ai mon fidèle Sandor. »</blockquote>
-<blockquote class="testimony">8 juin 1940 : « Cette nuit encore, je couche dans une sorte de tunnel en forme de haricot, où nous sommes trois, bout à bout. Sandor d'un côté, moi au milieu, et Seigneur de l'autre côté. »</blockquote>
-<blockquote class="testimony">9 juin 1940 : « Je t'écris sur une caisse de cartouches. Mon lit est fait de sacs remplis de feuilles mortes. C'est un confort préparé par Sandor. Malgré la chaleur de la journée, la terre reste froide. »</blockquote>
-<h2>Un lutteur professionnel venu de Hongrie</h2>
-<p>Né le 28 février 1909 (ou le 20 septembre, selon les documents) à Borod, une ville passée successivement de la Hongrie à la Roumanie puis de nouveau à la Hongrie entre 1918 et 1944, Alexandru-Sandor Agotics se déclare selon les documents roumain, hongrois ou apatride. Fils d'un cultivateur, il quitte Borod en 1927 pour honorer des contrats sportifs et réside à Budapest puis à Cologne.</p>
-<p>Moins d'un mois après avoir quitté Cologne, il s'engage le 8 juillet 1933 pour cinq ans à la Légion étrangère à Thionville. Il sert au 1er REI puis au 4e REI à Oujda, avant d'être libéré de son contrat en juin 1938 et de reprendre sa profession de serrurier à Paris — ainsi que la lutte professionnelle. Entre novembre 1938 et mai 1939, la presse mentionne à plusieurs reprises un lutteur « Stan Agotics » dans des galas parisiens ; il pourrait s'agir de son nom de scène, sans certitude absolue.</p>
-<h2>Le 11e REI et la captivité</h2>
-<p>Le 6 septembre 1939, il s'engage à nouveau pour la durée de la guerre à Châlons-sur-Marne. Incorporé au 11e REI le 1er novembre, il est affecté à la 5e compagnie le 6 novembre et promu 1re classe le 26 novembre. Le 18 juin 1940, lorsque la 5e compagnie est « hachée sur place » devant Saint-Germain-sur-Meuse et que le capitaine Lanchon est tué, le lieutenant Chevillotte perd le contact avec Sandor. Celui-ci affirmera n'avoir pas été blessé et avoir reçu la Croix de Guerre.</p>
-<p>Fait prisonnier le 22 juin 1940 à Saint-Germain-sur-Meuse, il est interné au Stalag VII A (matricule 179) jusqu'à sa libération par les Alliés le 2 mai 1945, après cinq années de captivité sans salaire ni traitement civil.</p>
-<h2>Après-guerre : naturalisation et retour au ring</h2>
-<p>Démobilisé à Paris en juin 1945, il s'installe à Levallois-Perret comme mécanicien et obtient en 1946 sa licence de lutteur professionnel. La même année, la presse mentionne de nouveau un « Stan Agotics » lors de deux galas de catch — une trajectoire qui rappelle ses débuts sur les rings en 1938, sans qu'il soit possible de confirmer avec certitude qu'il s'agit de la même personne. Sa demande de naturalisation, déposée en mars 1946, reçoit un avis favorable en raison de ses services militaires et de sa longue captivité. Il se marie le 18 septembre 1948 avec Maria Alphonsine Thomas et meurt le 13 janvier 1995 à Levallois-Perret.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-2.jpg" alt="Sandor Agotics">
+  </figure>
+  <div class="side-text">
+    <p>J'ai découvert le nom de Sandor Agotics dans les listes des engagés volontaires pour la durée de la guerre, celles des prisonniers de guerre et dans les archives Arolsen.</p>
+    <p>À l'époque, je ne connaissais que son état civil. C'est en lisant la correspondance du <a href="https://www.11regimentetranger.com/blog/lanchon-charles" target="_blank" rel="noopener">capitaine Lanchon</a> que mon intérêt pour Sandor s'est éveillé, car le capitaine le mentionne 14 fois.</p>
+    <p>C'est également le seul militaire pour lequel il utilise uniquement le prénom, sans préciser le grade ni le nom de famille.</p>
+    <p>Sandor faisait partie de la section de commandement de la 5e compagnie, où il assumait les fonctions d'ordonnance. Il préparait les abris qu'il partageait avec le capitaine Lanchon et veillait au confort de ce dernier.</p>
+    <p>De par ses fonctions et le contexte, une certaine intimité s'est développée entre les deux hommes.</p>
+    <p>Les lettres du capitaine Lanchon témoignent de la confiance qu'il avait en Sandor. Il a d'ailleurs organisé une permission pour lui chez des amis de la famille.</p>
+  </div>
+</div>
+
+<ul>
+<li>Lettre du 23 mai 1940 : « Nous sommes dans des trous. Le mien est couvert d'une tôle ondulée. J'y suis avec Sandor. »</li>
+<li>24 mai 1940 : « Je partage mon abri avec Sandor. »</li>
+<li>30 mai 1940 : « Je couche avec Sandor dans cette cagna [...] Je me fais enguirlander par Sandor, parce que je ne mange pas des haricots qui viennent d'arriver et encore tièdes. Il me semble t'entendre me réclamer à table. »</li>
+<li>31 mai 1940 : « On s'occupe à organiser la ligne d'arrêt. On creuse ! Je me prépare un trou, ou plutôt Sandor, au pied d'un chêne, de manière à être protégé par le tronc et les racines. »</li>
+<li>1er juin 1940 : « Sandor m'a creusé une fosse au pied d'un chêne qu'il a recouverte de rondins, d'une toile de tente, de branchages et de terre. Dans ce trou de 2 m de long, 70 cm de large et 1 m de profondeur, je suis à l'abri des balles et des éclats, et ne crains que les obus au but... [...] Ce matin, je me suis chamaillé avec Sandor. Nous sommes sales, fatigués et nerveux [...] Sandor est au pied d'un hêtre voisin de 10 mètres. Nous avons fait la paix ce soir. »</li>
+<li>2 juin 1940 : « Je suis en plein bois. Mes affaires personnelles sont sous terre ou éparpillées. Sandor a commencé un boyau pour rejoindre son propre trou, en cas de bombardement, sans avoir à sortir dehors. »</li>
+<li>3 juin 1940 : « Aujourd'hui, je me suis occupé de quelques propositions d'avancement. J'ai proposé Sandor pour le grade de caporal, malgré ses protestations. »</li>
+<li>6 juin 1940 : « Je suis installé en plein bois, dans un petit réduit entouré d'une tranchée, avec ma section de commandement constituée de (…) Enfin, j'ai mon fidèle Sandor. »</li>
+<li>8 juin 1940 : « Cette nuit encore, je couche dans une sorte de tunnel en forme de haricot, où nous sommes trois, bout à bout. Sandor d'un côté, moi au milieu, et Seigneur de l'autre côté. »</li>
+<li>9 juin 1940 : « Je t'écris sur une caisse de cartouches. Mon lit est fait de sacs remplis de feuilles mortes. C'est un confort préparé par Sandor. Malgré la chaleur de la journée, la terre reste froide. »</li>
+</ul>
+
+<p>Pour obtenir plus d'informations sur Sandor, il était intéressant de consulter les archives concernant les étrangers, en particulier le fond de Moscou et les dossiers de naturalisation. Ces documents sont conservés aux archives nationales, sur le site de Pierrefitte-sur-Seine.</p>
+
+<p>Sandor est né le 28 février 1909 à Borod, dans le district de Bihor. Actuellement, cette ville se situe en Roumanie, mais en 1909, elle faisait partie du royaume de Hongrie. Après 1918, à la disparition de l'empire austro-hongrois, la ville de Borod intègre la grande Roumanie. De 1940 à 1944, la ville est de nouveau annexée par la Hongrie. Il n'est donc pas surprenant que, selon les documents consultés, Alexandru-Sandor se déclare tantôt de nationalité roumaine, hongroise ou apatride.</p>
+
+<p>Son prénom est Alexandru, et Sandor est une version hongroise d'Alexandre. Il donne aussi le 20 septembre 1909 comme date de naissance.</p>
+
+<p>Il est le fils de Gheorgh, âgé de 55 ans, cultivateur à Borod, et de Maria Radna Anna Nagy, âgée de 28 ans. Ses parents sont de religion catholique romaine.</p>
+
+<p>Il a un frère aîné, Joseph, né le 22 avril 1908.</p>
+
+<p>Pour honorer des contrats sportifs, Sandor quitte Borod le 1er mai 1927. Il réside à Budapest, en Hongrie, de 1927 à 1932, puis à Cologne en Allemagne de 1932 à 1933.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-4.jpg" alt="Sandor Agotics">
+  </figure>
+  <div class="side-text">
+    <p>Moins d'un mois après avoir quitté Cologne, Sandor Agotics se présente à l'intendance militaire de Thionville, où il est de passage. Le 8 juillet 1933, il s'engage pour 5 ans dans la Légion étrangère sous le numéro 249 sur la liste matricule. Il est décrit comme étant blond, aux yeux bleus, mesurant 1 m 71, avec une bosse frontale à la naissance des occipitales.</p>
+    <p>Il passe par la CI 3 du 1er REI, puis est envoyé en renfort au 4e REI à Oujda à partir du 12 décembre 1934.</p>
+    <p>Libéré de son contrat le 9 juin 1938, il se retire à Reims, rue Piepar (peut-être la maison Piepar Haisiak).</p>
+    <p>(Je n'ai pas trouvé de rue à ce nom, la rue piper peut être?).</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-5.jpg" alt="Sandor Agotics">
+  </figure>
+  <div class="side-text">
+    <p>A la fin de l'année 1938, il s'installe 44 rue Poissonnier à Paris 18è, il reprend sa profession de serrurier mais aussi son activité de lutteur professionnel. Il s'agit certainement du sport pour lequel il est allé s'installer en Hongrie en 1927 puis en Allemagne.</p>
+    <p>Je trouve dans la presse, entre le mois de novembre 1938 et le mois de mai 1939, un ensemble d'articles sur des galas de lutte gréco-romaine et de lutte libre (catch as catch can) dans lesquels est cité un lutteur dénommé Stan Agotics.</p>
+    <p>En novembre 1938, Stan Agotics fait son premier gala à l'Elysée Montmartre, il est opposé au lutteur André Trante qui doit mettre à l'épreuve le "nouveau".</p>
+  </div>
+</div>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-6.jpg" alt="Sandor Agotics">
+  </figure>
+  <div class="side-text">
+    <p>Il semble en effet très plausible que le lutteur "Stan Agotics" mentionné dans les articles de presse soit bien Sandor Agotics, mais sous un nom de scène. Cela correspondrait à sa carrière de lutteur professionnel, notamment après sa période dans la Légion étrangère et avant son engagement dans la guerre.</p>
+    <p>Les informations concordent avec son parcours : la demande de titre de voyage et son visa pour lutter à l'étranger en 1939, son retour dans la presse en tant que lutteur après son départ de la Légion, ainsi que les détails sur son combat à l'Elysée Montmartre en mai 1939 contre Bonneville. Cela renforce l'hypothèse que "Stan Agotics" est une version anglicisée ou modifiée de son prénom pour ses apparitions publiques et ses combats.</p>
+    <p>Il est donc tout à fait possible que Sandor Agotics, ayant fait une pause de lutte avant de se réengager pour la guerre, ait adopté un pseudonyme en lien avec sa carrière de lutteur et ses racines hongroises. Il reste néanmoins difficile de confirmer cette hypothèse sans documents ou témoignages supplémentaires.</p>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-7.jpg" alt="Sandor Agotics">
+  </figure>
+</div>
+
+<p>Le 6 septembre 1939, de passage à Châlons-sur-Marne, Sandor s'engage volontairement pour la durée de la guerre, portant le numéro 396 sur la liste de recrutement.</p>
+
+<p>Le 1er novembre 1939, il est incorporé au 11e REI, et le 6 novembre, il est affecté à la <a href="https://www.11regimentetranger.com/blog/5e-compagnie" target="_blank" rel="noopener">5e compagnie</a>. Le 26 novembre 1939, il est promu au grade de 1re classe.</p>
+
+<p>Dans le compte rendu du lieutenant Chevillotte, Sandor est mentionné comme ayant perdu le contact avec sa compagnie le 18 juin 1940. Ce jour-là, la 5e compagnie, installée sur la côte 292 devant Saint-Germain-sur-Meuse, est « hachée sur place » et le capitaine Lanchon est tué par un obus. Lors des combats de 1940, Sandor affirme n'avoir pas été blessé et avoir été décoré de la Croix de Guerre.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-8.jpg" alt="Sandor Agotics">
+</figure>
+
+<p>Sandor est fait prisonnier le 22 juin 1940 à Saint-Germain-sur-Meuse. Il est interné en Allemagne au stalag VII A à partir du 22 juin 1943, sous le matricule 179.</p>
+
+<p>Libéré par les alliés le 2 mai 1945, il déclare n'avoir perçu aucun salaire ni traitement civil pendant ses cinq années de captivité. Après un transit par Thionville, il arrive à Paris le 4 juin 1945, où il est démobilisé au centre de démobilisation de Dupleix (Paris 15e). Le 14 juin 1945, il reçoit un complet neuf, une paire de chaussures, 2 250 francs et 80 grammes de tabac. Le 30 juillet 1945, il perçoit un costume, trois paquets de cigarettes et la somme de 5 628 francs.</p>
+
+<p>Sur sa carte de rapatrié, il indique être de nationalité hongroise et avoir été naturalisé français le 9 juin 1938 (une confusion possible avec la fin de son contrat à la Légion). Il mentionne son adresse au 53 boulevard Saint-Martin, Paris 3e.</p>
+
+<p>Le 21 mars 1946, Sandor Agotics fait une demande de naturalisation. Il déclare être célibataire, sans enfants, et domicilié à Levallois-Perret, 5 place de Chateaudun (rebaptisée place Jean Zay le 23 novembre 1945). Il travaille comme mécanicien et est logé gratuitement par son employeur dans un garage.</p>
+
+<p>Il précise que ses parents sont décédés, mais que son frère Joseph, serrurier, vit à Kecskemét, en Hongrie.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-9.jpg" alt="Sandor Agotics">
+</figure>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-10.jpg" alt="Sandor Agotics">
+</figure>
+
+<p>Sa demande de naturalisation reçoit un avis favorable en raison de ses services militaires et de sa longue captivité. En outre, il est bien assimilé et parle couramment le français.</p>
+
+<p>En 1946, Sandor Agotics est titulaire d'une licence de lutteur professionnel à la FFL, située au 1 rue Taitbout, Paris 9e.</p>
+
+<p>C'est à ce moment-là qu'il réapparaît dans la presse sous le nom de Stan Agotics. Le 9 mars 1946, une annonce fait état d'un gala au Cirque de Reims, où le « jeune pro Pawlas » affrontera le « légionnaire Agotics ». Le 18 avril 1946, un autre combat de catch est signalé à la salle Wagram entre Agotics et Nonest, avec comme résultat une victoire de Nonest.</p>
+
+<p>Il est difficile de confirmer si Sandor et Stan Agotics sont la même personne. Les combats de catch avaient été interdits pendant l'occupation, et leur reprise a eu lieu après la libération, à la fin de l'année 1944. C'est ainsi que Stan Agotics revient sur les rings dès le début de 1946.</p>
+
+<p>Mon hypothèse, basée sur l'idée qu'il s'agit de la même personne, est la suivante : Sandor revient de captivité le 4 juin 1945 et est démobilisé le 30 juillet 1945. En septembre, il a un emploi et un domicile à Levallois-Perret. Il prend le temps de se remettre en forme, d'obtenir sa licence de lutteur professionnel et de fréquenter les salles d'entraînement. En mars 1946, six mois après sa démobilisation, on le retrouve sur le ring au Cirque de Reims. Cette trajectoire ressemble à celle qu'il avait suivie pour ses débuts sur les rings en novembre 1938. Il ne reste plus qu'à trouver une preuve solide pour confirmer ou infirmer cette hypothèse.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-11.jpg" alt="Sandor Agotics">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor-12.jpg" alt="Sandor Agotics">
+  </figure>
+  <div class="side-text">
+    <p>Après cette date, aucune mention de Stan ou Sandor Agotics ne figure plus dans la presse. Sandor Alexandre Agotics se marie le 18 septembre 1948 avec Maria Alphonsine Thomas (née le 2 octobre 1918 à Sens-de-Bretagne). Il décède le 13 janvier 1995 à Levallois-Perret.</p>
+  </div>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives de la famille Lanchon — correspondance du capitaine Lanchon, mai-juin 1940</li>
-    <li>Retronews et Gallica — articles de presse sur Stan Agotics (1938-1939 et 1946)</li>
-    <li>Archives nationales de Pierrefitte-sur-Seine — fonds de Moscou 19940432/52 dossier 4682 ; dossier de naturalisation 19780007/142</li>
-    <li>Archives Arolsen — Sandor Agotics, 69995149</li>
+    <li>archives de la famille Lanchon : correspondance du capitaine Lanchon mai-juin 1940</li>
+    <li>Retronews et Gallica : articles de presse sur Stan Agotics. Compris entre le 18 novembre 1938 et le 13 mai 1939, concernent 5 galas de lutte libre à Toulouse et Paris salle Wagram et Elysée Montmartre. Compris entre le 9 mars et le 19 avril 1946 concernent 2 galas de catch. Salle Wagram et cirque de Reims.</li>
+    <li>Archives nationales Pierrefitte sur Seine : fond de Moscou 19940432/52 Dossier 4682 ; dossier de naturalisation extrait de côte 19780007/142 - 9613x46</li>
+    <li>Archives arolsen : Sandor Agotics 69995149</li>
   </ul>
 </div>
 

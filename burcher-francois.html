@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BURCHER François alias « Bohler Frantz » — 11e REI</title>
-<meta name="description" content="Évadé deux fois, engagé dans les FFL, tué en libérant la région lyonnaise en 1944">
+<title>BURCHER François — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,55 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--muted);border-left:3px solid var(--orange);padding-left:1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,31 +79,84 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 3e compagnie · Groupe franc · FFL · Mort pour la France</div>
-  <h1>BURCHER François alias « Bohler Frantz »</h1>
-  <div class="sub">Évadé deux fois, engagé dans les FFL, tué en libérant la région lyonnaise en 1944</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>BURCHER François</h1>
+  <div class="sub">alias BOHLLER Frantz</div>
+  <div class="tags"><span>11è REI</span><span>FFL</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">François Burcher, Suisse engagé sous une fausse identité belge, sert dans le groupe franc du 11e REI puis s'évade deux fois de captivité avant de rejoindre les Forces françaises libres. Il meurt au combat le 3 septembre 1944 en libérant la région lyonnaise.</p>
-<h2>Un engagement sous une fausse identité</h2>
-<p>Né le 1er octobre 1911 à Glarey/Sierre (Suisse), il est condamné en 1931 à un an de prison, et tente une évasion manquée durant laquelle son compagnon de fuite est tué. Le 7 avril 1939, il se présente à l'intendance militaire d'Annecy et s'engage à la Légion étrangère sous l'identité de Frantz Bohller, se disant né en Belgique.</p>
-<h2>Le groupe franc du 11e REI</h2>
-<p>Affecté début novembre 1939 à la 3e compagnie du 11e REI, cantonnée à Dagneux, il se porte volontaire le 17 avril 1940 pour le groupe franc du 1er bataillon et est promu caporal le 1er mai. Dans la nuit du 12 au 13 mai 1940, lors d'une reconnaissance le long de la Remel, le groupe franc porte secours au point d'appui 262 attaqué par l'ennemi ; le lieutenant Jurion, qui le commande, est blessé, comme douze légionnaires. Bohler est porté disparu ce jour-là — fait prisonnier, il parvient à s'évader et rejoint son unité le soir même.</p>
-<p>Il participe au reste de la campagne jusqu'à sa capture le 21 juin 1940 au bois de Charme. Interné au camp de Forbach, il s'en évade le 21 septembre 1940 et rejoint le centre de la Valbonne. Pensant la Légion étrangère dissoute après l'armistice, il passe 1941 et 1942 entre Dagneux et la Suisse, où il est arrêté, condamné à six mois de prison pour ne pas avoir satisfait ses obligations militaires suisses, et libéré en juillet 1942.</p>
-<h2>Les Forces françaises libres et la mort au combat</h2>
-<p>Le 28 juillet 1942, il passe en zone libre et rejoint l'Afrique du Nord. Le 20 juin 1943, il s'engage pour la durée de la guerre dans les Forces françaises libres, au sein de la 13e demi-brigade de Légion étrangère. Promu caporal-chef, il débarque en Provence le 16 août 1944 lors de l'opération Dragoon et participe avec la 1re DFL à la prise de Toulon et à la libération d'Hyères et d'Avignon.</p>
-<p>Le 2 septembre 1944, le 1er bataillon de Légion étrangère se dirige vers le nord de Lyon. À l'approche de Civrieux-d'Azergues, il est surpris par un barrage allemand ; l'ordre est donné de reprendre un carrefour occupé par l'ennemi. Au cours de ce combat, François Burcher est tué, avec le légionnaire Miloud Garah.</p>
-<blockquote class="testimony">Citation à l'ordre du corps d'armée, à titre posthume : « Vieux baroudeur, plein d'allant et intrépide. Au combat dans la journée du 3 septembre 1944, s'est avancé hardiment avec sa pièce pour intercepter une colonne ennemie. A été blessé mortellement au cours de cette action. »</blockquote>
-<p>Son corps, d'abord inhumé à Civrieux, est transféré à la nécropole nationale de La Doua, à Villeurbanne. Un monument commémoratif à Civrieux honore encore aujourd'hui la mémoire de François Burcher, alias Franz Bohler, et de Miloud Garah.</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois-2.jpg" alt="François Burcher">
+  </figure>
+  <div class="side-text">
+    <p>François Burcher est né le 1er octobre 1911 à Glarey/Sierre, en Suisse. Il est le fils de François Burcher et d'Emma Johanna Ogier.</p>
+    <p>Pour une raison inconnue, il est condamné en janvier 1931 à un an de prison. Pendant son incarcération à Bellechasse, il tente de s'évader en avril 1931, mais il est repris quelques jours plus tard. Lors de son arrestation, son compagnon de fuite est tué.</p>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois-4.jpg" alt="François Burcher">
+  </figure>
+</div>
+
+<p>Le 7 avril 1939, François Burcher se présente à l'intendance militaire d'Annecy, où il signe son acte d'engagement dans la Légion étrangère. Il s'engage sous une identité déclarée, affirmant s'appeler Frantz Bohller et être né le 1er octobre 1912 en Belgique. Il est décrit comme mesurant 1,76 m pour 74 kg, avec des cheveux châtains et des yeux bleus, sans marque particulière signalée.</p>
+
+<p>Immatriculé dans la classe 1939 au bureau d'Annecy sous le numéro 76LE, il rejoint le DCRE (Dépôt commun des régiments étrangers) le 14 avril 1939. Il est déclaré apte au service actif le 7 juin 1939.</p>
+
+<p>Début novembre 1939, il est affecté au centre des régiments étrangers à La Valbonne, puis à la 3e compagnie du 11e REI, cantonnée à Dagneux. Le 17 avril 1940, le soldat de 2e classe Bohler se porte volontaire pour intégrer le groupe franc du 1er bataillon.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois-5.jpg" alt="François Burcher">
+</figure>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois-6.jpg" alt="François Burcher">
+  </figure>
+  <div class="side-text">
+    <p>Le 1er mai 1940, il est promu au grade de caporal.</p>
+    <p>Le 10 mai 1940, le groupe franc du 1er bataillon reçoit pour mission de mener une reconnaissance offensive à la lisière sud du village de Niedaltdorf. Lors de cette patrouille, le légionnaire Boitschenko est blessé par l'explosion d'une mine.</p>
+    <p>Dans la nuit du 12 au 13 mai 1940, le groupe franc part en reconnaissance le long de la Remel. Vers 3 h du matin, alors qu'il revient en direction de Filstroff, il intervient pour porter secours au point d'appui (PA) 262, attaqué par l'ennemi. Le lieutenant Jurion, commandant du groupe franc, est blessé, tout comme 12 légionnaires. Un autre soldat est tué.</p>
+    <p>Le caporal Bohler est porté disparu le 13 mai 1940. Fait prisonnier par les Allemands, il parvient à s'évader et rejoint son unité dans la soirée du même jour.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois-7.jpg" alt="François Burcher">
+</figure>
+
+<p>François Burcher participe au reste de la campagne jusqu'à sa capture, le 21 juin 1940, dans le bois de Charme. Interné au camp de Forbach, il parvient à s'en évader le 21 septembre 1940. Il se présente alors au centre de La Valbonne, où il obtient une permission de cinq jours qu'il passe à Dagneux. Il y aurait probablement noué des liens lors du cantonnement de son bataillon en novembre 1939.</p>
+
+<p>Pensant que la Légion étrangère a été dissoute après l'armistice, François Burcher passe les années 1941 et 1942 entre Dagneux et la Suisse. Il y est arrêté par les autorités suisses, condamné à six mois de prison et libéré le 17 juillet 1942, après avoir satisfait aux obligations militaires de son pays d'origine.</p>
+
+<p>Le 28 juillet 1942, il passe en zone libre et rejoint l'Afrique du Nord, où il réintègre le DCRE. Le 20 juin 1943, il quitte cette unité pour s'engager pour la durée de la guerre dans les Forces françaises libres (FFL), au sein de la 13e DBLE (Demi-Brigade de Légion étrangère). Son contrat initial du 7 avril 1939 avec la Légion étrangère est alors résilié.</p>
+
+<p>Promu caporal-chef, il est affecté à la CL1 du 1er BLE (Bataillon de la Légion étrangère), puis à la 4e compagnie, qui devient par la suite la CM1. François Burcher participe au débarquement de Provence le 16 août 1944 dans le cadre de l'opération Dragoon. Avec la 1re DFL, il prend part à la prise de Toulon ainsi qu'à la libération d'Hyères et d'Avignon.</p>
+
+<p>Le 2 septembre 1944, le 1er BLE se dirige vers le nord de Lyon. À l'approche de Civrieux-d'Azergues, le bataillon est surpris par un barrage allemand. Pour poursuivre la progression vers Villefranche, l'ordre est donné de reprendre un carrefour occupé par l'ennemi. Au cours de ce combat, deux légionnaires sont tués : Miloud Garah et François Burcher, alias Franz Bohler.</p>
+
+<p>François Burcher est cité à l'ordre du corps d'armée à titre posthume :</p>
+
+<blockquote>« Vieux baroudeur, plein d'allant et intrépide. Au combat dans la journée du 3 septembre 1944, s'est avancé hardiment avec sa pièce pour intercepter une colonne ennemie. A été blessé mortellement au cours de cette action. »</blockquote>
+
+<p>Son corps est d'abord inhumé dans le cimetière de Civrieux, avant d'être transféré à la nécropole nationale de La Doua, à Villeurbanne. Le cimetière de Civrieux conserve un monument commémoratif en hommage aux légionnaires François Burcher, alias Franz Bohler, et Miloud Garah, morts pour la libération de la France.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois-8.jpg" alt="François Burcher">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois-9.jpg" alt="François Burcher">
+  </figure>
+</div>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Archives de la famille Burcher — remerciements à Gilbert Schmidt</li>
-    <li>Archives d'Aubagne, compte rendu des pertes du groupe franc du 1er bataillon</li>
-    <li>Archives d'Aubagne, JMO de la 3e compagnie, 1er avril au 15 mai 1940</li>
+    <li>Archives famille Burcher, remerciement à Gilbert Schmidt pour nos échanges</li>
+    <li>Archive Aubagne, compte rendu des pertes du groupe franc du 1er bataillon</li>
+    <li>Archive Aubagne, JMO de la 3è compagnie du 1/04/1940 au 15/05/1940</li>
   </ul>
 </div>
 

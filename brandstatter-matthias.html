@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BRANDSTATTER Max Matthias « Menachem » — 11e REI</title>
-<meta name="description" content="Légionnaire allemand blessé au bois d'Inor, gendarme prévôtal des Forces françaises libres au Levant">
+<title>BRANDSTATTER Matthias Menachem — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,42 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,28 +66,115 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · FFL · Prévôté</div>
-  <h1>BRANDSTATTER Max Matthias « Menachem »</h1>
-  <div class="sub">Légionnaire allemand blessé au bois d'Inor, gendarme prévôtal des Forces françaises libres au Levant</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>BRANDSTATTER Matthias Menachem</h1>
+  <div class="tags"><span>11è REI</span><span>FFL</span><span>prévôté</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Max Matthias Brandstatter, légionnaire juif allemand blessé au bois d'Inor, rejoint l'Angleterre dès juin 1940 et sert comme gendarme dans la prévôté des Forces françaises libres au Levant, tandis qu'une partie de sa famille restée en Allemagne est déportée.</p>
-<h2>Une famille juive de Francfort</h2>
-<p>Né le 6 juillet 1904 à Francfort-sur-le-Main, fils de Mojzesz et Debora Brandstatter, dans une fratrie nombreuse originaire de Brzesko (Pologne). Il effectue un premier engagement à la Légion étrangère de 1923 à 1928, puis se marie à Strasbourg en 1933 avec Elisabeth Michaely.</p>
-<h2>Le 11e REI et l'engagement dans les FFL</h2>
-<p>N'étant pas français, il ne fait pas partie des réservistes rappelés à la mobilisation ; il choisit de s'engager pour la durée de la guerre le 20 septembre 1939 au camp de Sathonay et rejoint le 11e REI comme 1re classe. Blessé pendant les combats du bois d'Inor, il est évacué le 30 mai 1940 et ne rejoindra pas le régiment.</p>
-<p>Le 26 juin 1940, il gagne l'Angleterre et s'engage dans les Forces françaises libres. Affecté au 2e bataillon de marche de l'Afrique-Équatoriale française, il est nommé caporal puis sergent, avant de rejoindre en juin 1941 le rassemblement des forces terrestres de la France libre à Qastina, en Palestine. En janvier 1942, il est détaché à la prévôté du Levant, l'une des deux gendarmeries créées par les FFL pour surveiller la troupe, protéger les populations civiles et traquer les déserteurs. Il sert ensuite à la prévôté des Forces françaises du Western Desert, puis à celle de la 1re division française libre à partir de mars 1943. Blessé à deux reprises, il est décoré de la croix de guerre des TOE, de la croix du combattant colonial, de la médaille du Maroc et de la médaille des blessés.</p>
-<h2>Une famille décimée</h2>
-<p>Démobilisé le 30 octobre 1945, il se retire en Dordogne avant de se fixer à Strasbourg, où son épouse s'était réfugiée. Il est naturalisé français en 1948 et se remarie en 1954 à Paris. Il meurt le 7 novembre 1986 à Fontenay-lès-Briis.</p>
-<p>Sa famille restée en Allemagne paie un lourd tribut à la persécution nazie : son frère Jacob, arrêté à Dachau après la Nuit de Cristal en novembre 1938, est déporté en 1942 avec sa femme et leurs trois enfants — aucun ne survit. Sa sœur Ida est déportée avec son mari et leur fils ; aucun ne revient. Sa sœur Nelly, émigrée aux États-Unis avant 1940, est déchue de la nationalité allemande. Son frère Noah, émigré en Uruguay, meurt à Montevideo en 1950.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brandstatter-matthias-2.jpg" alt="Max Mathias Brandstatter">
+  </figure>
+  <div class="side-text">
+    <p>Il est signalé comme mesurant 1,76 m, les cheveux noirs et les yeux gris verts</p>
+    <p class="subhead">Max Mathias BRANDSTATTER<br>(06/07/1904 - Francfort sur le Main - Allemagne)</p>
+  </div>
+</div>
+
+<p>Il est le fils de Mojzesz et Debora ou Dwojre Landau Strumpfner. Son nom de famille est aussi orthographié Brandstädter, Brandstaedter</p>
+
+<p>Il a pour frères et soeurs nés à Brzesko;</p>
+
+<ul>
+<li>Benjamin (1894-1894),</li>
+<li>Riwke (1895),</li>
+<li>Jakob Schyja (1897), il épouse Mina Rothschild</li>
+</ul>
+
+<p>Ses parents quittent Brzesko en Pologne pour l'Allemagne à la fin du XIXè siècle. Ils se marient à Francfort le 19 août 1898. Le reste de la fratrie est né à Francfort sur le Main:</p>
+
+<ul>
+<li>Chaskel (1899)</li>
+<li>Adasa-Nelli (1901), elle se marie avec Rafael Brenner à Cologne en 1923.</li>
+<li>peut être Abraham (1902),</li>
+<li>Noah (1905) épouse Gerda Orsula Alexander</li>
+<li>Ida (1908) épouse Paul Kamil</li>
+</ul>
+
+<p>Une tante Reisel Brandstatter habite également à Francfort. Elle s'y marie le 19 juillet 1898 avec Mathias Klausner</p>
+
+<p class="subhead">Légion étrangère 1923-1928</p>
+
+<p>Engagé volontaire pour 5 ans au titre de la Légion étrangère le 20/03/1923 à Metz. Il fait un seul engagement et quitte la Légion le 20/03/1928.</p>
+
+<p>Le 12/01/1933 il se marie à Strasbourg avec Elisabeth Michaely. Avant la guerre, il est domicilié 20 boulevard de la Marne à Strasbourg.</p>
+
+<p class="subhead">11è régiment étranger d'infanterie 1939-1940</p>
+
+<p>Comme il n'est pas français, Matthias Brandstatter ne fait pas partie des réservistes rappelés à l'activité. Il choisit de contracter un engagement pour la durée de la guerre le 20/09/1939 au camp de Sathonay.</p>
+
+<p>Il est affecté au 11è REI avec le grade de 1ère classe.</p>
+
+<p>Blessé pendant les combats du bois d'Inor, il est évacué sur l'HOE1/5 d'Ancemont le 30/05/1940 puis il est évacué sur Bar le Duc. Il ne rejoindra pas le régiment.</p>
+
+<p class="subhead">Engagement dans les FFL 1940-1945 (prévôté)</p>
+
+<p>Le 26/06/1940, Mathias Brandstatter rejoint l'Angleterre et s'engage pour la durée de la guerre dans les Forces Françaises Libres (FFL).</p>
+
+<p>Le 15/10/1940 il se trouve à Brazzaville Le 01/11/1940 il est nommé caporal. Il est affecté au 2e bataillon de marche de l'Afrique-Équatoriale française.</p>
+
+<p>Il est nommé sergent le 01/03/1941.</p>
+
+<p>Le 07/06/1941 il rejoint Qastina en Palestine où se regroupent la majeure partie des forces terrestres de la France libre. Le 01/11/1941 il est affecté au Dépôt des Troupes du Levant (DTL).</p>
+
+<p>Le 16/01/1942, il est détaché à la gendarmerie comme élève gendarme et rejoint le poste prévôtal de Beyrouth Saint Elie au Liban. Il est nommé gendarme le 16/07/1942 (matricule 62).</p>
+
+<p>Deux prévôtés des Forces Françaises Libres ont été créées, l'une en Grande-Bretagne et l'autre au Levant, dans des territoires qui correspondent aux principaux théâtres d'opérations de cette troupe et où sont présents les rares gendarmes ralliés à de Gaulle.</p>
+
+<p>Le détachement de prévôté de Londres est chargé d'exercer sa mission de surveillance sur l'ensemble du territoire britannique, tandis que la prévôté de la 1re DFL encadre les troupes qui participent à la guerre du désert en Afrique du nord aux côtés de la 8e armée britannique.</p>
+
+<p>L'action de la prévôté est à la fois, préventive – faire respecter la loi par la surveillance de la troupe et l'information du commandement – et répressive. Chargés de traquer les déserteurs et de protéger les habitants contre le pillage, les prévôtaux contrôlent et sanctionnent également les civils qui suivent les troupes. Les gendarmes détachés aux armées doivent enfin incarcérer les prévenus à la prison prévôtale et les escorter, si besoin est, vers les prisons de l'intérieur.</p>
+
+<p>La création de la prévôté des FFL au Levant, le 22 août 1941, est permise par le ralliement de gendarmes français présents au Levant, les états du Liban et de la Syrie ayant rejoint la France Libre un mois auparavant.</p>
+
+<p>Comme il n'y a pas assez de gendarmes ralliés, il devient indispensable de compléter les effectifs initiaux de la prévôté par des militaires venus d'autres armes que la gendarmerie. Ces militaires sont nommés, à leur incorporation, élèves-gendarmes et sont formés, tant bien que mal, avec les faibles moyens dont dispose alors la France Libre.</p>
+
+<p>Finalement, à la fin de l'année 1941, la prévôté a réussi à recruter un total de 33 élèves gendarmes, ce qui permet au colonel Margalin de pouvoir compter sur 53 gradés et gendarmes ou élèves-gendarmes, sur lesquels seront prélevés les hommes qui formeront les prévôtés des deux brigades françaises libres.</p>
+
+<p>Il est nommé gendarme prévôtal le 16/07/1942 et son affection est à la prévôté des Forces françaises du Western Desert (FFWD).</p>
+
+<p>A partir du 10/03/1943, il fait partie de la gendarmerie prévôtale de la 1ère DFL à la compagnie 50 du quartier général. Il est dirigé sur Beyrouth le 06/07/1943.</p>
+
+<p>Il est 2 fois blessé et titulaire de la croix de guerre TOE, de la croix du combattant colonial, de la médaille du Maroc, et de la médaille des blessés.</p>
+
+<p>Il est démobilisé le 30/10/1945. Il indique souhaiter se retirer en Dordogne rue des Prades à Périgueux. En 1939, les habitants de 107 communes du Bas-Rhin trouvent principalement refuge en Dordogne, il est possible que sa femme Elisabeth Michaely ait été déplacée dans ce département.</p>
+
+<p>Sur sa fiche matriculaire des FFL du Levant, la personne à prévenir est sa sœur Nelly Brenner demeurant à Washigton aux USA.</p>
+
+<p>En 1946, Elisabeth Michaely habite 8 quai Rouget de l'Isle à Strasbourg et avec le certificat de démobilisation de son mari constitue un dossier pour dommage de guerre.</p>
+
+<p>Max Brandstatter est naturalisé français par décret en 1948. Il se remarie le 27/02/1954 à Paris 11 avec Micheline Odette Denis.</p>
+
+<p>Il décède le 07/11/1986 à Fontenay les Briis</p>
+
+<p class="subhead">famille:</p>
+
+<ul>
+<li>Jacob Brandstatter (frère) : Arrêté à Dachau le 28/11/1938 après la Nuit de Cristal, libéré après avoir prouvé son projet d'émigration. Déporté en 1942 avec sa femme Mina et leurs enfants Heinz (1921), Josef (1923) et Lore Sara (1929). Aucun n'a survécu.</li>
+<li>Ida Brandstatter (sœur) : Déportée avec son mari Paul Shmuel Kamil et leur fils Norbert ; tous trois sont décédés.</li>
+<li>Nelly Adassa Brandstatter (sœur) : Émigrée aux États-Unis avant 1940, déchue de la nationalité allemande.</li>
+<li>Noah Brandstatter (frère) : Décédé le 16/10/1950 à Montevideo, Uruguay, inhumé dans le cimetière juif de la ville.</li>
+<li>Gerda Alexander (belle-sœur, épouse de Noah) : A fourni des témoignages pour Yad Vashem en 1999.</li>
+</ul>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>SHD Vincennes, GR 16 P 87774</li>
+    <li>SHD Vincennes GR 16 P 87774 (consulté)</li>
     <li>Service des archives médicales et hospitalières des armées (SAMHA)</li>
+    <li><a href="https://www.force-publique.net/sources/Revues/FP09/FP-09-Lhomeau.html" target="_blank" rel="noopener">Prévoté des FFL</a></li>
   </ul>
 </div>
 

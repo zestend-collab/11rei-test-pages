@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BOZZONETTI Edouard Henri — 11e REI</title>
-<meta name="description" content="Évadé du Stalag XI B, saboteur du réseau Diplomat, déporté à Neuengamme">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,56 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--muted);border-left:3px solid var(--orange);padding-left:1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,31 +80,132 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Évadé · Résistant · Déporté</div>
   <h1>BOZZONETTI Edouard Henri</h1>
-  <div class="sub">Évadé du Stalag XI B, saboteur du réseau Diplomat, déporté à Neuengamme</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span><span>PG évadé</span><span>résistant</span><span>déporté</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Edouard Bozzonetti, légionnaire décoré au Maroc puis au 11e REI, s'évade de captivité en 1943, rejoint le réseau Diplomat du SOE comme chef de groupe saboteur dans l'Aube, et est déporté à Neuengamme après son arrestation par la Gestapo en 1944.</p>
-<h2>Du Maroc au 11e REI</h2>
-<p>De la classe 1930, il est caporal en 1933 et participe à la campagne de pacification du Maroc au 2e régiment de tirailleurs marocains, où il est cité pour son courage lors des opérations du Sagho et du Haut Atlas, décoré de la croix de guerre des TOE. Il s'engage pour cinq ans à la Légion étrangère le 8 juin 1936 et se retrouve, après la mobilisation de septembre 1939, affecté au 11e REI.</p>
-<p>Le 18 juin 1940, à Saint-Germain-sur-Meuse, il est de nouveau cité — « a fait preuve de belle qualité de courage et de sang-froid en assurant son service sous un violent bombardement » — après s'être déjà distingué au bois d'Inor le 27 mai. Fait prisonnier avec son régiment le 23 juin 1940, il est interné au Stalag XI B de Fallingbostel, d'où il réussit à s'évader le 6 novembre 1943 après trois tentatives ratées.</p>
-<h2>Le réseau Diplomat</h2>
-<p>De retour en France, il entre en résistance sous le pseudonyme « la Chouette » et rejoint, le 1er mars 1944, le réseau Diplomat de la section F du Special Operations Executive (SOE), comme chef de groupe saboteur pour le secteur de Troyes (Aube). Il participe à tous les parachutages du réseau entre mars et mai 1944 — organisant le départ de cinq chefs vers l'Angleterre et l'arrivée de cinq autres — ainsi qu'au sabotage des lignes à haute tension de Troyes le 16 avril et à la destruction d'un dépôt d'essence dans la nuit du 4 au 5 mai. Il est nommé sous-lieutenant FFI le 1er mai 1944.</p>
-<h2>Arrestation et déportation</h2>
-<p>Le 12 mai 1944, alors qu'il se rend à un parachutage porteur d'une mitraillette, il est arrêté par la Gestapo à Creney-près-Troyes avec plusieurs camarades du commando « M ». Emprisonné à Troyes, il est interrogé douze fois en 32 jours, cravaché et roué de coups, avant d'être transféré à Châlons-sur-Marne puis au camp de Compiègne. Déporté à Neuengamme le 15 juillet 1944 (matricule 36571), il est affecté au kommando de Bremen-Farge, où il participe à la construction d'une base sous-marine.</p>
-<p>Lors de l'évacuation du camp le 1er mai 1945, il est transféré au Stalag XB de Sandbostel, devenu le « mouroir » de Neuengamme. Il est libéré par l'armée britannique le 8 mai 1945, hospitalisé jusqu'au 11 juin, puis rapatrié par avion au Bourget. Il est cité à l'ordre de la division le 28 décembre 1944 : « Légionnaire évadé, reprit la lutte activement et attaqua un dépôt d'essence qu'il détruisit. Arrêté et déporté en Allemagne, n'a jamais causé. »</p>
-<p>Après la guerre, il reprend du service dans plusieurs régiments puis à la Légion étrangère, et reçoit la médaille militaire par décret du 3 octobre 1949, après 16 ans de service et 11 campagnes.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-2.jpg" alt="Edouard Bozzonetti">
+  </figure>
+  <div class="side-text">
+    <p>De la classe 1930, Edouard Bozzonetti est caporal en 1933 et participe à la campagne de pacification du Maroc.</p>
+    <p>Il obtient une citation à l'ordre de la division avec le 2è R.T.M (affecté au 168è régiment d'infanterie).</p>
+    <p>À Rabat, le 30 décembre 1933, signé par le général de division Huré : « Après s'être fait remarquer aux opérations de SAGHO* par son énergie et sa bravoure, vient à nouveau de se signaler par son mépris absolu du danger dans le HAUT ATLAS. Caporal signaleur* détacher aux supplétifs* le 9 juillet 1933 sur l'AZILAL N'GUILD et le 21 juillet à oued OUTGUEANE, a assuré avec le plus grand calme malgré la fusillade ennemie les liaisons qui lui étaient demandées. »</p>
+    <p>Cette citation comporte l'attribution de la croix de guerre des T.O.E avec étoile d'argent.</p>
+  </div>
+</div>
+
+<p>* La bataille de Bougafer ou bataille de Saghro, débute le 13 février 1933 au Maroc et oppose les forces coloniales françaises aux combattants des tribus Aït Atta dans le cadre de la guerre du Maroc .<br>
+* Caporal signaleur = Les signaleurs étaient, sous la direction de l'officier téléphoniste, chargés de la mise en œuvre des moyens de signalisation dont disposait le régiment<br>
+* supplétifs : troupes levées temporairement pour renforcer l'armée régulière</p>
+
+<p>Le 08/06/1936, il s'engage pour 5 ans à la Légion étrangère mais après la mobilisation de septembre 1939, on le retrouve affecté au 11è REI avec lequel il participe à la « drôle de guerre ».</p>
+
+<p>Probablement dans le 2è bataillon, il obtient une citation à l'ordre du régiment: « le 18 juin 1940 dans l'affaire de Saint Germain sur Meuse a fait preuve de belle qualité de courage et de sang froid en assurant son service sous un violent bombardement. S'était déjà fait remarquer par sa belle tenue au feu au combat du bois d'Inor le 27 mai 1940 ».</p>
+
+<p>Cette citation comporte l'attribution de la croix de guerre avec étoile de bronze</p>
+
+<p>Citation signée par le chef de bataillon Clément, datée du 22 juin 1940, secteur postal 15015.</p>
+
+<p>Edouard Bozzonetti est fait prisonnier de guerre avec son régiment le 23 juin 1940 (Liste officielle des prisonniers de guerre n°13 du 10/09/1940) et envoyé en Allemagne au stalag XI B camp de Fallingbostel</p>
+
+<p>Il réussit à s'évader le 6 novembre 1943 après 3 tentatives ratées.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-4.jpg" alt="Edouard Bozzonetti">
+  </figure>
+  <div class="side-text">
+    <p>A son retour en France, il reprend la lutte et entre en résistance. Le 1er mars 1944, sous le pseudonyme de « la Chouette », il fait partie du réseau Diplomat - section F du Special Operations Executive (SOE).</p>
+    <p>En octobre 1943, après le parachutage de l'officier français Maurice Dupont ("Yvan"), le réseau se dote des commandos « M ». Dupont structure le mouvement en deux entités : un réseau action et un réseau renseignement, centralisé à l'échelon radio.</p>
+    <p>Bozzonetti, a la fonction de chef de groupe saboteur régions C département de l'Aube, secteur de Troyes.</p>
+    <p>Il participe à tous les parachutages du réseau de mars à mai 1944. Il a assuré le départ de 5 chefs pour l'Angleterre et l'arrivée de 5 autres chefs par avion.</p>
+    <p>Le 16 avril 1944 à la ceinture du Creney, il participe au sabotage des lignes électriques à haute tension de Troyes (17 lignes) et dans la nuit du 4 au 5 mai 1944, à la destruction du dépôt d'essence de Saint Julien les Villas.</p>
+    <p>le 1er mai 1944, il est nommé au grade de sous-lieutenant FFI.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-5.jpg" alt="Edouard Bozzonetti">
+</figure>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-6.jpg" alt="Edouard Bozzonetti">
+  </figure>
+  <div class="side-text">
+    <p>Le 12 mai 1944, alors en service commandé, Edouard Bozzonetti est arrêté par la gestapo à Creney-prés-Troyes. Il se rendait à un parachutage et portait une mitraillette et des munitions.</p>
+
+<p>Fernand Jacquelin alias Didi et Charles Rasetti, Denis (?), Cyrille Thourault alias Maxime et d'autres du commando « M » sont témoins de l'arrestation.</p>
+
+<p>Clément Drioton alias Jean et Jacques Scherer alias Le Bufle, également du Commando « M » sont arrêtés avec lui.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-7.jpg" alt="Edouard Bozzonetti">
+</figure>
+
+<p>Avec ses camarades, Edouard est emprisonné pour faits de résistance à la prison de Troyes rue Hennequin ; il est interrogé à 12 reprises pendant 32 jours (cravaché, nerf de bœuf, coups de poings et de pieds, menacé de mort avec un revolver).</p>
+
+<p>A partir du 15 juin 1944, il est déplacé à la prison de Châlons sur Marne puis à partir du 1er juillet 1944 au camp de Compiègne.</p>
+
+<p>Le 15 juillet 1944, il est déporté sur le camp de Neuengamme. Drioton et Scherer sont du même convoi. Arrivé le 19 juillet, il a pour matricule le n° 36571.</p>
+
+<p>Il est affecté au Kommando Bremen-Farge bloc 10, et travaillait à la construction d'une base sous-marine.</p>
+
+<p>Le 1er mai 1945, suite à l'évacuation du camp, Edouard Bozzonetti est déplacé à Sandbostel. Il ne s'agit pas d'un Kommando, mais du Stalag XB camp de prisonnier de guerre, devenu "mouroir" de Neuengamme à partir du 13 avril 1945.</p>
+
+<p>Dans les archives Arolsen, son nom apparaît sur une liste de morts non-identifiés à Bremen Farge. On peut imaginer que son transfert sur Sandbostel n'a pas été enregistré...</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-8.jpg" alt="Edouard Bozzonetti">
+</figure>
+
+<p>Il est libéré par l'armée anglaise le 8 mai 1945 et hospitalisé dans un hôpital de campagne anglais à Sandbostel du 11 mai au 11 juin 1945.</p>
+
+<p>le 11 juin 1945, il est rapatrié par avion au Bourget et transite par l'hôtel Lutetia.</p>
+
+<p>Cité à l'ordre de la division le 28 décembre 1944: Bozzonetti Edouard, s/lieutenant FFI de l'Aube. « Légionnaire évadé, reprit la lutte activement et attaqua un dépôt d'essence qu'il détruisit. Arrêté et déporté en Allemagne, n'a jamais causé. »</p>
+
+<p>Après la libération, il reprend du service le 27 juillet 1945 au 3/106 régiment d'infanterie (En septembre 1944, les commandos "M" forment le 3e bataillon du 106e régiment d'infanterie, alors qu'une compagnie part en renfort en Haute-Marne pour achever la libération de ce département) 14è cie à la Chaussé sur Marne. Il est versé au 57è régiment d'infanterie le 1er octobre 1945 puis à la Légion étrangère, 3è REI, le 1er février 1946, ensuite au DCRE le 1er mars 1947.</p>
+
+<p>Il est nommé adjudant chef d'active, par la commission nationale d'homologation le 18/10/1945.</p>
+
+<p>Dans le Journal Officiel du 9/10/1949, par décret du 3 octobre 1949, "BOZZONETTI (Edouard), adjudant-chef; 16 ans de services, 11 campagnes. A été cité" obtient la médaille militaire.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-9.jpg" alt="Edouard Bozzonetti">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard-10.jpg" alt="Edouard Bozzonetti">
+  </figure>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>SHD Vincennes, GR 16 P 86876 (Forces françaises de l'intérieur)</li>
-    <li>SHD Caen, AC 21 P 716541 (Déportés et internés de la Résistance)</li>
-    <li>SHD Vincennes, GR 19 P 10/3 (Buckmaster Abélard, Commandos M)</li>
-    <li>Archives Arolsen — 84609279</li>
+    <li>SHD Vincennes: GR 16 P 86876 forces françaises de l'intérieur (FFI)</li>
+    <li>SHD Caen: AC 21 P 716541 déportés et internés de la résistance (DIR)</li>
+    <li>SHD Vincennes: GR 19 P 10/3, Buckmaster Abélard, Commandos M</li>
+    <li>AORLSEN - <a href="https://collections.arolsen-archives.org/" target="_blank" rel="noopener">https://collections.arolsen-archives.org/</a><br>
+    Marches de la mort, identification des morts inconnus et procès nazis / 5.3 Marches de la mort / Identification des morts inconnus (enquêtes alliées, itinéraires, identification des morts inconnus) / 5.3.2 Tentatives d'identification /<br>
+    84609279</li>
+  </ul>
+  <p>Arrêté le 12 mai 1944:</p>
+  <ul>
+    <li>Clément Drioton, mort en déportation le 03-05-1945 (Lübeck, Allemagne)</li>
+    <li>Jacques Scherer, mort en déportation le 01-04-1945 (Lübeck, Allemagne)</li>
+  </ul>
+  <p>Sur la liste Arolsen:</p>
+  <ul>
+    <li>Lesimple Louis, mort en déportation le 04-04-1945 (Bremen-Farge, Allemagne)</li>
+    <li>Rivier Vital, mort en déportation le 30-01-1945 (Buchenwald, Allemagne)</li>
   </ul>
 </div>
 

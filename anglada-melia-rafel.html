@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANGLADA MELIA Rafael — 11e REI</title>
-<meta name="description" content="Républicain espagnol exilé de Minorque à bord du Devonshire, cinq ans de captivité en Allemagne">
+<title>ANGLADA MELIA Rafel — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,61 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--muted);border-left:3px solid var(--orange);padding-left:1rem;margin:1rem 0}
+  article blockquote p{margin-bottom:.8rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,35 +85,142 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 11e compagnie · EVDG · Espagnol</div>
-  <h1>ANGLADA MELIA Rafael</h1>
-  <div class="sub">Républicain espagnol exilé de Minorque à bord du Devonshire, cinq ans de captivité en Allemagne</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>ANGLADA MELIA Rafel</h1>
+  <div class="sub">(11/08/1911 - Mahon - Espagne)</div>
+  <div class="tags"><span>11è REI</span><span>espagnol</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Rafael Anglada Melia, jeune Minorquin exilé en France après la reddition de son île aux nationalistes en 1939, s'engage à la Légion étrangère pour quitter le camp d'internement de Bram. Affecté à la 11e compagnie du 11e REI, il passe soixante mois en captivité en Allemagne.</p>
-<h2>La reddition de Minorque et l'exil</h2>
-<p>Né le 11 août 1911 à Mahon (Minorque), Rafael est le fils de Joan Anglada, né à Mahon en 1884, chauffeur de profession, et de Joana Melià Melià, née à Mahon en 1885. La famille compte neuf enfants : Francesc (1908), Catalina (1909), Rafel (1911), Joan (1914), Joana (1917), Carmen (1919, morte jeune), Armando (1921), Enric (1924) et Maria (1926).</p>
-<p>Depuis 1936, Franco contrôlait les Baléares à l'exception de Minorque, tenue par les républicains soutenus depuis Barcelone : malgré un blocus nationaliste, l'île continuait d'être ravitaillée en forçant le barrage. La chute de Barcelone, le 26 janvier 1939, anéantit ces espoirs. Le 4 février, un ultimatum est lancé aux habitants de Minorque pour se rendre sans combat ; des négociations menées à bord du navire britannique Devonshire aboutissent à une occupation nationaliste sans représailles.</p>
-<p>Le 9 février 1939 à 5 heures du matin, 450 habitants « politiquement marqués » — 300 hommes et 150 femmes et enfants — embarquent sur le Devonshire, en partance de Mahon pour Marseille, parmi lesquels Rafael Anglada, accompagné de ses amis Miquel Triay et Joan Riutort. Au même moment, la goélette Carmen Piso évacue une centaine d'autres habitants de Mahon vers Alger. À leur arrivée à Marseille, les femmes et les enfants sont dirigés vers un camp près de Roanne, tandis que les hommes rejoignent en train un camp d'internement, probablement à Argelès-sur-Mer.</p>
-<h2>Le camp de Bram et l'engagement à la Légion</h2>
-<p>Face à l'afflux de réfugiés espagnols, le gouvernement français crée un nouveau camp dans l'Aude pour désengorger les camps de plage : le camp de Bram, construit sur 13 hectares, comprend 170 baraques réparties en 10 quartiers. Rafael Anglada y arrive le 2 mars 1939, affecté à la baraque n°15 du quartier A.</p>
-<p>Moins de deux mois plus tard, ne supportant plus la vie du camp, il décide de s'engager dans la Légion étrangère. Sa fiche individuelle est mise à jour par les autorités du camp, indiquant son départ pour la Légion le 26 avril 1939 ; son nom apparaît aussi, orthographié « Rafael Anglailo », dans les listes d'engagés du quartier A, baraque 15 — une erreur de transcription courante dans ces documents manuscrits. Il quitte Bram le 26 avril 1939 pour Marseille, puis Sidi Bel Abbès, où six mois d'instruction militaire rythment son quotidien de longues marches et de manœuvres.</p>
-<h2>Le 11e régiment étranger d'infanterie</h2>
-<p>À la mobilisation, il est affecté au 11e régiment étranger d'infanterie et envoyé au camp de la Valbonne. Pendant la campagne de France, il sert à la 11e compagnie. Il est fait prisonnier le 21 juin 1940 au bois de Fay, puis interné au frontstalag 162 de Dommartin-lès-Toul sous le matricule 116.</p>
-<h2>Captivité et retour</h2>
-<p>En avril 1941, il est transféré au Stalag IV G, non pas un stalag classique mais un ensemble d'Arbeitslager (camps de travail) dispersés dans l'État de Saxe. Jusqu'en 1944, il est affecté à des kommandos à Wurzen et Leipzig, avant d'être transféré à partir de juillet 1944 à Gransdorf, près de Hanovre. Il sera libéré par l'avancée des troupes alliées après soixante mois de captivité, racontant avoir eu la chance de pouvoir compter, pendant ces années, sur la solidarité des prisonniers de guerre français, qui partageaient avec lui le contenu de leurs colis.</p>
-<p>À son retour de captivité, Rafael Anglada Melia s'installe à Carcassonne, où il travaille comme tailleur de peaux et joue encore quelques années au football, lui qui s'était déjà distingué comme joueur à Minorque. Il ne rendra visite à sa famille restée en Espagne qu'après la chute de Franco. Selon son ami Miquel Triay, c'était un homme gentil, gai, toujours prêt à plaisanter, mais aussi rebelle, anticonformiste, impatient et sans peur de rien.</p>
-<p>Il se marie tardivement, vers 1948, avec une Française, avec qui il a trois enfants : Joana (1950), Miquel (1953) et Catalina (1954) — les deux cadets mourront jeunes. Il ne retourne à Minorque qu'après la mort de Franco, d'abord seul, puis avec sa famille, mais ne fera que trois ou quatre séjours dans son île natale.</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-2.jpg" alt="Rafael Anglada Melia">
+  </figure>
+  <div class="side-text">
+    <ul>
+    <li>grade: 2è classe</li>
+    <li>prisonnier liste du 19/09/1940</li>
+    </ul>
+    <p class="subhead">Sources complémentaires:</p>
+    <ul>
+    <li>Arolsen 121733247 - Raphael ANGLADA</li>
+    <li>républicain espagnol exilé et interné dès le 2 mars 1939 au camp de Bram. Il s'engage dans la Légion étrangère le 26 avril 1939.</li>
+    </ul>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-4.jpg" alt="Rafael Anglada Melia">
+  </figure>
+</div>
+
+<p>Rafael Anglada figure parmi les prisonniers enregistrés le 19 septembre 1940. Né le 11 août 1911 à Mahon, sur l'île de Minorque, il est de nationalité espagnole. Bien que son origine suggère qu'il pourrait être un républicain espagnol exilé, il a fallu approfondir les recherches pour en savoir davantage.</p>
+
+<p>Grâce aux travaux de Josep Portella Coll, qui a recensé les Minorquins partis en exil, une partie de son histoire a été découverte.</p>
+
+<p>La Bataille de Minorque en 1939 est un épisode clé dans l'histoire de l'île. Depuis 1936, Franco dominait les Baléares, à l'exception de Minorque, qui était soutenue par les troupes républicaines de Barcelone. Malgré un blocus imposé par les nationalistes, les républicains réussissaient encore à ravitailler l'île en forçant le barrage. L'état-major républicain de Minorque craignait un débarquement franquiste, renforcé par les soldats italiens, mais l'île était protégée par son artillerie. Cependant, la chute de Barcelone, le 26 janvier 1939, anéantit les espoirs des républicains.</p>
+
+<p>Le 4 février 1939, un ultimatum fut lancé aux habitants de Minorque pour se rendre sans combat. Des négociations furent menées à bord du navire britannique Devonshire, visant à garantir une occupation de l'île par les nationalistes sans représailles.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-5.jpg" alt="Rafael Anglada Melia">
+</figure>
+
+<p class="subhead">Exil à bord du Devonshire</p>
+
+<p>Avec la reddition de l'île de Minorque, 450 habitants "politiquement marqués" embarquent à bord du Devonshire. Rafael Anglada fait partie de ce groupe, accompagné de ses deux amis Miquel Triay et Joan Riutort.</p>
+
+<p>Le 9 février 1939, à 5 heures du matin, le navire quitte le port de Mahon en direction de Marseille. À son bord, on compte 300 hommes ainsi que 150 femmes et enfants.</p>
+
+<p>Au même moment, la goélette Carmen Piso évacue également une centaine de personnes de Mahon, cette fois à destination d'Alger.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-6.jpg" alt="Rafael Anglada Melia">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-7.jpg" alt="Rafael Anglada Melia">
+  </figure>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-8.jpg" alt="Rafael Anglada Melia">
+  </figure>
+  <div class="side-text">
+    <p>Arrivés à Marseille, les femmes et les enfants sont dirigés vers un camp près de Roanne, tandis que les hommes, dont Rafael Anglada, sont embarqués en train à destination d'un camp d'internement, probablement à Argelès-sur-Mer.</p>
+    <p class="subhead">Le camp d'internement de Bram :</p>
+    <p>Face à l'afflux massif de réfugiés espagnols, le gouvernement français décide de créer un nouveau camp dans le département de l'Aude, destiné à désengorger les camps installés sur les plages. Le camp de Bram est construit sur un terrain de 13 hectares et comprend 170 baraques réparties en 10 quartiers.</p>
+  </div>
+</div>
+
+<p>Rafael Anglada y arrive le 2 mars 1939 et est affecté à la baraque n°15 du quartier A.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-9.jpg" alt="Rafael Anglada Melia">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-10.jpg" alt="Rafael Anglada Melia">
+  </figure>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-11.jpg" alt="Rafael Anglada Melia">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">A la Légion étrangère:</p>
+    <p>Moins de deux mois après son arrivée, ne supportant plus la vie du camp, Rafael Anglada décide de s'engager dans la Légion étrangère. Sa fiche individuelle d'entrée est mise à jour par les autorités du camp, indiquant son départ pour la Légion le 26 avril 1939. Son nom apparaît également dans les listes d'engagés, mais comme souvent dans ces documents manuscrits, des erreurs de transcription sont notées. On y trouve un certain "Rafael Anglailo", volontaire du quartier A, baraque 15.</p>
+  </div>
+</div>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-12.jpg" alt="Rafael Anglada Melia">
+</figure>
+
+<p>Rafael quitte le camp de Bram le 26 avril 1939 et est envoyé à Marseille, puis à Sidi Bel Abbès pour effectuer ses classes. Pendant six mois, son quotidien est rythmé par l'instruction militaire, faite de longues marches et de manœuvres.</p>
+
+<p class="subhead">11e régiment étranger d'infanterie :</p>
+
+<p>Avec la mobilisation, Rafael est affecté au 11e régiment étranger d'infanterie et envoyé au camp de Valbonne. Pendant la campagne de France, il fait partie de la 11e compagnie. Il est fait prisonnier le 21 juin 1940, au bois de Fay, puis interné au frontstalag 162 à Dommartin-lès-Toul sous le matricule 116.</p>
+
+<p>En avril 1941, il est transféré au Stalag IV G, administré à Oschatz. Ce n'était pas un stalag classique, mais un ensemble d'Arbeitslager (camps de travail) dispersés dans tout l'état de Saxe. Jusqu'en 1944, il est affecté à des Kommando (KO) à Wurzen et Leipzig. À partir de juillet 1944, il est transféré à Gransdorf, près de Hanovre. Il sera libéré par l'avancée des troupes alliées après 60 mois de captivité. Il racontera avoir eu la chance, pendant ces années, de pouvoir compter sur la solidarité des prisonniers de guerre français qui partagèrent avec lui le contenu de leurs colis.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-13.jpg" alt="Rafael Anglada Melia">
+</figure>
+
+<p>À son retour de captivité, Rafael Anglada Melia s'installe à Carcassonne. Il ne rendra visite à sa famille restée en Espagne qu'après la chute de Franco.</p>
+
+<p>Selon Miquel Triay, Rafael était un homme gentil, gai, toujours prêt à plaisanter, mais également rebelle, anticonformiste, impatient et sans peur de rien.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives départementales de l'Aude : 4M794, 4M816, 4M862, 4M790 (listes et fiches des réfugiés espagnols)</li>
-    <li>Archives Bad Arolsen, 121733247 — Raphael Anglada</li>
-    <li>Josep Portella Coll, « Llibre d'exilis : Diccionari biogràfic de l'exili menorquí » (Menorque)</li>
-    <li>Échanges avec A. Guasch Bosch et généalogie Tuduri, facebook.com/groups/menorcaantigua</li>
+    <li>Archives départementales de l'Aude :
+      <ul>
+        <li>Document 4M794 — Listes des réfugiés espagnols volontaires pour la durée de la guerre, pour servir en Indochine, pour la légion étrangère.</li>
+        <li>Document 4M816 — Identification des réfugiés à leur arrivée</li>
+        <li>Document 4M862 — Identification des réfugiés à la sortie du camp</li>
+        <li>Document 4M790 — Listes nominatives par quartiers et baraques.</li>
+      </ul>
+    </li>
+    <li>Archives Bad Arolsen — 121733247 - Raphael ANGLADA</li>
+    <li>Echanges avec A. Guasch Bosch et généalogie Tuduri</li>
+    <li><a href="https://www.facebook.com/groups/menorcaantigua" target="_blank" rel="noopener">https://www.facebook.com/groups/menorcaantigua</a></li>
+    <li>Llibre d'exilis: Diccionari biogràfic de l'exili menorquí de Josep Portella Coll
+      <blockquote>
+        <p>Anglada, Rafel (a) Uoti (Maó, 1911 – Carcassonne</p>
+        <p>Rafel Anglada va néixer el dia 11 d'agost de 1911. Son pare era Joan Anglada (Maó, 1884), que feia de xofer. Sa mare era Joana Melià Melià (Maó, 1885). La família havia estat nombrosa: Francesc (Maó, 1908), Catalina (Maó, 1909), Rafel (Maó, 1911), Joan (Maó, 1914), Joana (Maó, 1917), Carmen (Maó, 1919), que morí jove; Armando (Maó, 1921), Enric (Maó, 1924) i Maria (1926). Nou germans eren, sí. Francesc va fer de sabater, Armand feia rajoles a ca'ls Adrovers, n'Enric era el petit i hauria estat un gran cantant, de la bona veu que tenia. Rafel també va fer de sabater, abans de la guerra.</p>
+        <p>Dos germans de Rafel Anglada van parar a la presó després de la guerra. A l'esclatar aquesta el van militaritzar.</p>
+        <p>Segons Miquel Triay, era un home simpàtic, alegre, sempre de broma, rebel, inconformista, impacient, sense por de res. Va marxar a l'exili a bord del Devonshire i va fer el trajecte en tren a Argeles amb els seus amics Joan Riutort i Miquel Triay. D'Argeles passà a Bram. Allà, no poguent suportar la vida al camp, s'allistà a la Legió Estrangera i va marxar al cap de pocs dies. Tots els allistats van ser concentrats a Marsella. Un mes després, la primavera del 1939, Anglada ja era a Sidi Bel Abbès (Algèria). Els entrenaments militars van consistir en llargues marxes pel desert i maniobres de guerra durant 6 mesos. A finals de 1939 havia tornat a la metròpoli i transportat a la frontera franco-belga com a tropes especials de l'exèrcit francès. Allà, Rafel Anglada va lluitar durant dies en el primer front de batalla davant la imparable invasió alemanya. Els alemanys van acabar amb tota la resistència, la majoria de legionaris van morir en aquells combats, però Rafel va poder fugir i va córrer durant hores fins arribar a poblet abandonat. Allà, mentre dormia, el van plegar i el van portar a un camp de presoners de guerra d'Alemanya, on va passar cinc anys tancat.</p>
+        <p>(...) No vaig voler soportar el tancament en el camp de Bram i vaig haver de patir seixanta mesos de captiveri en les mazmorras nazis. Vaig tenir sort del companyerisme que van demostrar els francesos. Ells rebien menjar i roba dels seus familiars i em van ajudar a sobreviure. Jo no tenia ningú a qui demanar ajuda...”1</p>
+        <p>Fins que les tropes nord-americanes no van entrar al camp de presoners, ells no van poder recuperar la llibertat. Això va ser el 1945. Els companys menorquins que residien a França, després d'anys de no saber res més d'ell, ja l'havien donat per mort. Un dia, emperò, va aparèixer per Carcassonne amb milers de francs que havia rebut com indemnització. Durant tres mesos, en Rafel i en Vecio Bagur, el fill de Joan Bagur Aloy, van viure una festa continuada, fins que van acabar els diners. Llavors, Vecio tornà a Marsella i Rafel Anglada es posà a fer feina com a tallador de pell. Rafel Anglada, que ja a Menorca havia destacat com a jugador de futbol, encara va jugar uns anys amb un equip de Carcassonne.</p>
+        <p>Es va casar ja major, cap al 1948. Es casà amb una francesa, amb la que va tenir tres fills: Joana (1950), Miquel (1953) i Catalina (1954). Els dos menors es van morir joves. Na Joana encara és viva, a França, però no hem pogut contactar amb ella. Els anys cinquanta, dos germans, en Francesc i na Catalina, amb alguns filles, el van visitar a França. Eren els primers contactes amb la família menorquina.</p>
+        <p>Ell va tornar a Menorca després de la mort de Franco. Va tornar sol, la primera vegada. Després regressà amb la família. Però van ser només 3 ó 4 visites.</p>
+        <p>1 Anglada, Rafel. Citat per M Triay pàgina 181</p>
+      </blockquote>
+    </li>
   </ul>
 </div>
 

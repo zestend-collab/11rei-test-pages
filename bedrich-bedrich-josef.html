@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BEDRICH Bédrich Joseph « Frédéric » — 11e REI</title>
-<meta name="description" content="Caporal-chef héroïque à Saint-Germain-sur-Meuse le 18 juin 1940, carrière jusqu'en Indochine et en Algérie">
+<title>BEDRICH Bedrich Joseph — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,61 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--muted);border-left:3px solid var(--orange);padding-left:1rem;margin:1rem 0}
+  article blockquote p{margin-bottom:.6rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,41 +85,165 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 5e compagnie · Médaille militaire</div>
-  <h1>BEDRICH Bédrich Joseph « Frédéric »</h1>
-  <div class="sub">Caporal-chef héroïque à Saint-Germain-sur-Meuse le 18 juin 1940, carrière jusqu'en Indochine et en Algérie</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>BEDRICH Bedrich Joseph</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Engagé sous une fausse identité à 19 ans, Bédrich Joseph Bedrich sauve une trentaine de légionnaires de la 5e compagnie en assurant seul la liaison sous le feu le 18 juin 1940 à Saint-Germain-sur-Meuse, avant de poursuivre une longue carrière de sous-officier puis d'officier, jusqu'en Indochine et en Algérie.</p>
-<h2>Un engagement sous une fausse identité</h2>
-<p>Né le 24 mai 1915 à Prague, fils d'Emanuel Bedřich, maître cordonnier et ancien sergent de la Légion tchécoslovaque, et de Julie Nacinova, il se présente le 11 mars 1935 à Strasbourg pour s'engager cinq ans à la Légion étrangère — sous l'identité d'emprunt d'Antonin Bauman, se rajeunissant de six ans en empruntant le nom du premier mari de sa mère.</p>
-<p>Après ses classes au dépôt commun des régiments étrangers, il rejoint le 2e REI à Oujda en octobre 1935. Il déserte brièvement son unité de Meknès dans la nuit du 28 au 29 mars 1936, avant d'être arrêté et ramené sous escorte. Il poursuit néanmoins son service, nommé 1re classe en 1938 puis caporal en mai 1939, à la compagnie hors rang.</p>
-<h2>Le sauvetage de la 5e compagnie, 18 juin 1940</h2>
-<p>Affecté au 11e REI le 21 octobre 1939, à la 5e compagnie, il devient caporal-chef le 16 février 1940 et sert comme chef de pièce de mortier de 60 mm. Le 18 juin 1940, alors que la 5e compagnie subit un tir direct d'artillerie depuis la lisière du bois de Void, le capitaine Le Moine tente de faire porter l'ordre de repli au capitaine Lanchon : deux agents de liaison sont tués, un troisième renonce. Bedrich, qui vient d'annoncer au capitaine Le Moine la mort de Lanchon, se propose alors pour assurer lui-même la liaison.</p>
-<blockquote class="testimony">Rapport du capitaine Le Moine, décembre 1940 : « Contre mon avis, il a tenté sa chance en terrain découvert, courant jusqu'à portée de voix pour transmettre l'ordre de repli. Son action a permis à une trentaine de légionnaires de décrocher sous un feu intense, ramenant leur armement. Dix d'entre eux sont tombés au cours de l'opération. Les survivants de la 5e compagnie doivent leur vie au caporal-chef Bedrich. »</blockquote>
-<p>Cette action lui vaut la médaille militaire à titre exceptionnel. Fait prisonnier le 23 juin 1940 au bois de Crézilles et interné au frontstalag 240 de Verdun, il s'évade le 3 août 1940.</p>
-<h2>13e DBLE, Indochine, Algérie</h2>
-<p>Placé en congé d'armistice en février 1941, il est rappelé après le débarquement allié en Tunisie et rejoint en novembre 1943 la 13e demi-brigade de la Légion étrangère (compagnie anti-chars), avec laquelle il combat en Italie puis débarque en Provence lors de l'opération Dragoon. Porté disparu lors de la sortie de vive force de Rossfeld dans la nuit du 11 au 12 janvier 1945, il est fait prisonnier puis libéré le 25 avril 1945.</p>
-<p>Adjudant-chef en 1946, il effectue deux séjours en Indochine (1946-1947 puis 1947-1950), salué par des notations élogieuses comme secrétaire du chef de corps. Promu sous-lieutenant à titre étranger en 1950 puis lieutenant en 1952, il sert ensuite en Indochine et en Algérie au sein du 2e puis du 1er REI, où ses supérieurs saluent son courage au combat tout en notant un caractère de plus en plus fantaisiste et une fatigue croissante. Il est admis à la retraite le 1er juillet 1960, après 25 ans et 4 mois de service, dont 19 années en guerre ou en opérations de maintien de l'ordre.</p>
-<h2>Citations et décorations</h2>
-<ul>
-  <li>28/11/1941 — Croix de guerre 1939-1945 avec palme, pour son action du 18 juin 1940</li>
-  <li>15/06/1945 — Croix de guerre 1939-1945 avec étoile de vermeil, pour la sortie de Rossfeld</li>
-  <li>11/01/1951 — Chevalier de l'Ordre Ouissam Alaouite</li>
-  <li>22/10/1954 — Croix de guerre des théâtres d'opérations extérieurs avec étoile d'argent (Indochine)</li>
-  <li>18/02/1956 — Cité à l'ordre de la division (Algérie, massif des Nementchas)</li>
-  <li>03/08/1956 — Chevalier de la Légion d'honneur</li>
-  <li>29/10/1957 — Croix de la valeur militaire avec étoile de vermeil (Djebel Tikechkach)</li>
-  <li>05/12/1957 — Croix de la valeur militaire avec étoile de bronze (Djebel Es Somm)</li>
-</ul>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bedrich-bedrich-josef-2.jpg" alt="Bedrich Joseph Bedrich">
+  </figure>
+  <div class="side-text">
+    <p>Frédéric Joseph Bedrich est né le 24 mai 1915 à Prague, en Tchécoslovaquie.</p>
+    <p>Il est le fils de Emanuel Bedřich, né en 1894, maître cordonnier et ancien sergent du 23ᵉ RI de la Légion tchécoslovaque, et de Julie Nacinova (ou Bacinova), née en 1878. Julie, veuve de Benediktus Baumannovi, s'est remariée avec Emanuel. Lors de la naissance de Frédéric, son père se trouvait à l'hôpital militaire de Karlin.</p>
+    <p class="subhead">Caractéristiques physiques :</p>
+    <ul>
+    <li>Taille : 1,67 m</li>
+    <li>Cheveux : blonds foncés</li>
+    <li>Yeux : bleus</li>
+    <li>Marques distinctives : cicatrices sur le front, sous le menton et au poignet droit</li>
+    </ul>
+    <p>Il maîtrise couramment le tchèque et l'allemand.</p>
+  </div>
+</div>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bedrich-bedrich-josef-4.jpg" alt="Bedrich Joseph Bedrich">
+  </figure>
+  <div class="side-text">
+    <p>Au début de l'année 1935, Bedrich Josef se trouve à Strasbourg, en France. Le 11 mars 1935, il s'engage volontairement pour cinq ans au titre de la Légion étrangère. Lors de son enrôlement, il se présente à 17 h devant l'intendant militaire et se déclare sous une identité d'emprunt : Antonin Bauman, né le 5 septembre 1909 à Prague, fils de Benediktus Bauman et de Julie Nacinova. En réalité, il a 19 ans et non 25. Cette fausse identité est forgée à partir du nom du premier mari de sa mère.</p>
+
+<p>Le 23 mars 1935, il est dirigé vers Marseille, d'où il embarque deux jours plus tard, le 25 mars, à destination d'Oran. La traversée de la Méditerranée s'effectue à bord du paquebot S/S Président Dal Piaz, un navire mis en service en mai 1929 par la Compagnie générale transatlantique, opérant sur la ligne de l'Afrique du Nord au départ de Marseille.</p>
+  </div>
+</div>
+
+<p>Le 26 mars 1935, Bedrich Josef arrive au dépôt commun des régiments étrangers (DCRE) où il est affecté à la compagnie de passage n°3. Il passe ensuite à la compagnie d'instruction n°2 avant d'être affecté, le 2 octobre 1935, à la compagnie de passage n°2.</p>
+
+<p>Il est ensuite dirigé vers Oujda pour rejoindre le 2ᵉ régiment étranger d'infanterie (2ᵉ REI), et le 11 octobre 1935, il est affecté à la 6ᵉ compagnie.</p>
+
+<p>Cependant, dans la nuit du 28 au 29 mars 1936, il quitte son unité stationnée à Meknès sans autorisation. Le 26 mars 1936, il est arrêté à la gare de Petitjean (Sidi Kacem) par la police ferroviaire. Quatre jours plus tard, il est ramené sous escorte de gendarmerie au régiment.</p>
+
+<p>Malgré cet incident, il poursuit son service. Le 1er juin 1938, il est nommé à l'emploi de 1ʳᵉ classe. Le 26 mars 1939, il est affecté à la compagnie hors rang (CHR) où il est promu au grade de caporal en mai de la même année.</p>
+
+<p class="subhead">11è régiment étranger d'infanterie 1939-1940</p>
+
+<p>Le 21 octobre 1939, Bedrich Josef est affecté au 11ᵉ régiment étranger d'infanterie (5ᵉ compagnie) et embarque à Oran pour Marseille le 24 octobre 1939.</p>
+
+<p>Le 15 décembre 1939, il part aux armées. Nommé caporal-chef le 16 février 1940, il se rengage un mois plus tard pour un an à l'intendance de Thionville. Au sein de la 5ᵉ compagnie, il occupe la fonction de chef de pièce de mortier de 60 mm.</p>
+
+<p>Lors des combats du 18 juin 1940 à Saint-Germain-sur-Meuse, le caporal-chef Bedrich se distingue par son courage exceptionnel en servant d'agent de liaison entre sa compagnie et le poste de commandement (PC) du 2ᵉ bataillon, contribuant à sauver de nombreux camarades.</p>
+
+<p>Le 23 juin 1940, il est fait prisonnier au bois de Crézilles et interné au Frontstalag 240 à Verdun. Il parvient à s'évader le 3 août 1940.</p>
+
+<p>En décembre 1940, le capitaine Le Moine, qui commandait le 2ᵉ bataillon, rédige un rapport recommandant l'attribution de la médaille militaire à titre exceptionnel au caporal-chef Bedrich. Voici un extrait de son rapport :</p>
+
+<blockquote>
+<p>"Le 18 juin 1940, la 5ᵉ compagnie du 11ᵉ R.E.I. se trouvait engagée dans des conditions particulièrement tragiques. Cette unité recevait, vers 8 heures du matin, l'ordre de s'installer défensivement entre Ourches et Saint-Germain-sur-Meuse pour interdire le débouché des bois de Void.</p>
+<p>L'installation s'est effectuée en partie sous le feu des armes automatiques ennemies. Nos munitions étant extrêmement limitées, l'ordre fut donné de n'ouvrir le feu qu'à courte distance.</p>
+<p>À 9 heures, une batterie ennemie s'est installée à découvert en lisière du bois de Void et a ouvert un tir direct à 1 200 mètres, infligeant de lourdes pertes à la 5ᵉ compagnie. Le caporal-chef Bedrich m'a alors rapporté que la position paraissait intenable et que son unité risquait d'être rapidement anéantie.</p>
+<p>À midi, j'ai reçu l'ordre de faire décrocher les éléments lourds, puis l'infanterie. J'ai envoyé trois agents de transmission porter l'ordre au capitaine Lanchon : deux ont été tués, et le troisième, estimant impossible de passer, a renoncé.</p>
+<p>Le caporal-chef Bedrich, qui venait de m'informer de la mort de son capitaine, pulvérisé par un obus, s'est alors proposé pour assurer lui-même la liaison. Contre mon avis, il a tenté sa chance en terrain découvert, courant jusqu'à portée de voix pour transmettre l'ordre de repli. Son action a permis à une trentaine de légionnaires de décrocher sous un feu intense, ramenant leur armement. Dix d'entre eux sont tombés au cours de l'opération.</p>
+<p>Les survivants de la 5ᵉ compagnie doivent leur vie au caporal-chef Bedrich, dont l'acte de bravoure mérite la médaille militaire à titre exceptionnel."</p>
+</blockquote>
+
+<p>Bedrich Josef reçoit cette distinction par ordre 628/D, qui annule la citation n°461 C du 15 janvier 1941. La citation officielle, accompagnant la médaille militaire, précise :</p>
+
+<blockquote>
+<p>"Gradé d'une rare intrépidité. Le 18 juin 1940, sa compagnie étant installée entre Ourches et Saint-Germain-sur-Meuse, et soumise à de violents tirs ennemis causant de lourdes pertes, a, par deux fois, assuré la liaison avec le poste de commandement du bataillon. Lors de sa deuxième liaison, ayant appris qu'un ordre important devait être transmis et que trois agents de transmission avaient échoué, s'est offert pour assurer lui-même cette nouvelle liaison et a réussi, sauvant ainsi les survivants de son unité."</p>
+</blockquote>
+
+<p class="subhead">Congé d'armistice et 13è DBLE 1941-1949</p>
+
+<p>Le 3 septembre 1940, Frédéric Bedrich est réaffecté au 2ᵉ régiment étranger. Le 13 février 1941, il est placé en congé d'armistice conformément à la loi du 25 août 1940. Il est rayé du corps actif et rejoint l'unité administrative de gestion du personnel civil, où il est compté parmi les agents des corps de troupe.</p>
+
+<p>Après le débarquement allié en Tunisie, il est affecté au 3ᵉ régiment étranger d'infanterie et part aux armées le 22 décembre 1942. Le 26 novembre 1943, il rejoint la 13ᵉ demi-brigade de la Légion étrangère (DBLE), au sein de la compagnie anti-chars (CAC/13). En avril 1944, la 13ᵉ DBLE quitte l'Afrique pour rejoindre l'Europe, intégrée au corps expéditionnaire français en Italie. Jusqu'en juin 1944, les légionnaires participent à de violents combats, progressant de Naples jusqu'à la forteresse de Radicofani, au nord de Rome.</p>
+
+<p>Le 17 août 1944, lors de l'opération Dragoon, il débarque en Provence. Promu adjudant le 1ᵉʳ janvier 1945, il est porté disparu lors de la sortie de vive force de Rossfeld dans la nuit du 11 au 12 janvier 1945 (mentionné à l'ordre de l'armée dans l'OG n°30). Fait prisonnier par les Allemands, il est libéré le 25 avril 1945 grâce à l'avancée des troupes alliées et rejoint la 13ᵉ DBLE cinq jours plus tard.</p>
+
+<p>Le 1ᵉʳ février 1946, il est nommé adjudant-chef. Le 16 mars 1946, il embarque pour l'Indochine, où il effectue un premier séjour jusqu'au 28 mars 1947 en tant que chef de section à la CAC/13. Il est ensuite affecté au 2ᵉ REI et effectue un deuxième séjour en Indochine du 7 décembre 1947 au 6 juillet 1950. Durant l'année 1949, il occupe successivement les fonctions d'adjoint de l'officier du renseignement et de secrétaire du chef de corps.</p>
+
+<p>Ses notations pour cette période sont élogieuses : il est jugé de bon esprit, très dévoué, sérieux et sobre, se consacrant pleinement à ses tâches. Le chef de corps, René Thévenot, donne un avis particulièrement favorable, déclarant :</p>
+
+<blockquote>
+<p>"Adjudant-chef toujours noté de façon élogieuse. Beaux services de guerre. Premier secrétaire du chef de corps, déployant une grande activité et se consacrant à son travail de tout son cœur. Auxiliaire précieux, s'adaptant très vite aux situations nouvelles, esprit discipliné, s'efforçant de travailler dans le sens du chef. Parfaitement qualifié pour son emploi actuel. Apte au commandement de la troupe comme au travail de bureau. Digne de passer dans le rang des officiers."</p>
+</blockquote>
+
+<p class="subhead">Service comme officier 1950-1960</p>
+
+<p>Frédéric Bedrich est promu sous-lieutenant à titre étranger par décret du 30/09/1950, publié au Journal officiel du 01/10/1950. Il est affecté à l'État-Major du GALE pour exercer les fonctions de chef de bureau du courrier. Il donne entière satisfaction pour les années 1951 et 1952 et est promu lieutenant à titre étranger le 01/10/1952.</p>
+
+<p>Pour l'année 1953, les notes, toujours élogieuses quant à son dévouement et aux services rendus, révèlent néanmoins qu'il n'a pas encore assimilé toutes les connaissances nécessaires pour devenir un officier des détails.</p>
+
+<p>En 1954, il assure pendant un mois et demi les fonctions d'officier des détails de la compagnie de commandement (GM5/5e REI) avant d'être relevé de ses fonctions. Débordé par ses responsabilités et conscient de ses limites, Bedrich demande à être parachuté à Dien Bien Phû.</p>
+
+<p>En 1955, il est affecté comme officier secrétaire au DBO à Tourane, où il donne satisfaction pendant six mois. Toutefois, ses moyens en tant qu'officier sont jugés limités.</p>
+
+<p>En 1956, en Algérie, il rejoint la 21e compagnie portée de la Légion. Il est préconisé de l'employer dans la troupe, sous les ordres d'un chef capable de le commander, car il est sujet à des changements incessants de moral.</p>
+
+<p>Âgé de 42 ans en 1957, il est considéré comme trop âgé pour mener un peloton au combat. Il est principalement employé comme adjoint du commandant de compagnie, rôle dans lequel il rend d'excellents services. Cependant, son caractère fantaisiste et ses réactions imprévisibles empêchent qu'on lui confie des tâches importantes et nécessitant un suivi rigoureux.</p>
+
+<p>En 1958, Bedrich, alors adjoint au commandant de la compagnie régimentaire et chef de la popote des officiers, se relâche et ne s'acquitte que superficiellement de ses tâches. Le chef de corps du 2e REI estime qu'il est devenu un officier sur lequel on ne peut plus compter et qu'il est temps qu'il prenne sa retraite. Il remarque également que Bedrich se laisse aller au désir de boire. Ses aptitudes générales sont décrites comme étant plus rusées qu'intelligentes, avec un caractère insconstant et versatile, manquant de franchise et flatteur. Le 26/09/1958, il est puni de 15 jours d'arrêt simple.</p>
+
+<p>En 1959, il est muté au 1er REI, mais il devient évident pour ses supérieurs que Bedrich n'est plus apte qu'à des missions secondaires et spécifiques. Jugé fatigué et fatigant, chaque emploi qui lui est confié nécessite d'envisager son remplacement. Le chef de corps espère qu'il pourra prendre sa retraite dès qu'il aura atteint ses 25 ans de service.</p>
+
+<p>Frédéric Bedrich est admis à la retraite le 01/07/1960, après avoir effectué 25 ans et 4 mois de service, sans passer par la réserve. Il est mis en congé dès le 01/04/1960.</p>
+
+<p>Au total, Frédéric Bedrich a effectué 25 ans et 4 mois de service, dont 19 années en guerre ou en opérations de maintien de l'ordre. Bien que sa fin de carrière en tant qu'officier ait été peu flatteuse, il reste reconnu comme un remarquable combattant. Blessé à deux reprises, il a reçu six citations, dont deux après sa nomination dans le premier ordre national.</p>
+
+<p><strong>1. 28/11/1941 (Ordre général n°628/D, remplaçant l'OG n°461/C du 15/01/1941) :</strong></p>
+
+<blockquote>
+<p>"Gradé d'une rare intrépidité. Le 18 juin 1940, sa compagnie, installée entre Ourches et Saint-Germain-sur-Meuse et soumise à de violents tirs ennemis causant de lourdes pertes, a, par deux fois, assuré la liaison avec le poste de commandement du bataillon. Ayant appris lors de sa deuxième liaison qu'un ordre crucial devait être transmis à son unité, que deux agents de transmission avaient été tués en tentant de le porter et qu'un troisième avait renoncé en raison de l'intensité du feu, s'est porté volontaire pour assurer cette mission et l'a accomplie avec succès, sauvant ainsi les survivants de son unité."</p>
+</blockquote>
+<p>Décoré de la Croix de guerre 1939-1945 avec palme.</p>
+
+<p><strong>2. 15/06/1945 (OG n°30, cité à l'ordre de l'armée) :</strong></p>
+
+<blockquote>
+<p>"Adjoint au chef de section anti-chars. Déjà cité deux fois au feu, a confirmé, au cours des opérations en Italie et en France, sa valeur morale et son courage exemplaire. Lors de la sortie de vive force à Rossfeld, le 11/12/1945, est resté auprès de son chef de section blessé, sous un feu ennemi intense, bien qu'il eût l'opportunité de regagner nos lignes. Fait prisonnier, il a, à son retour de captivité, immédiatement repris son poste de combat."</p>
+</blockquote>
+<p>Décoré de la Croix de guerre 1939-1945 avec étoile de vermeil.</p>
+
+<p><strong>3. 11/01/1951 :</strong> Chevalier de l'Ordre Ouissam Alaouite.</p>
+
+<p><strong>4. 22/10/1954 (OG n°1817, cité à l'ordre de la division) :</strong></p>
+
+<blockquote>
+<p>"Officier de Légion courageux. Blessé par une mine le 16/05/1954 à Ban Yen Nhan alors qu'il dirigeait son peloton pour ouvrir la route nationale n°5. Dans la nuit du 24 au 25 juin 1954, a capturé cinq adversaires grâce à des dispositions judicieuses pour protéger la voie ferrée Hanoï-Haïphong. Du 1er au 6 juillet, a mis en fuite plusieurs commandos poseurs de mines."</p>
+</blockquote>
+<p>Décoré de la Croix de guerre des théâtres d'opérations extérieurs avec étoile d'argent.</p>
+
+<p><strong>5. 18/02/1956 (OG n°125, cité à l'ordre de la division) :</strong></p>
+
+<blockquote>
+<p>"Chef de section calme et courageux. Lors d'une opération dans la région d'Aïn Ed Dib (massif de Nementchas, secteur de Tébessa), hélitransporté avec un faible effectif dans une situation critique, a été blessé le 30/12/1955 alors qu'il coordonnait une action contre un groupe rebelle bien armé."</p>
+</blockquote>
+
+<p><strong>6. 03/08/1956 :</strong> Nommé chevalier de la Légion d'honneur.</p>
+
+<p><strong>7. 29/10/1957 (OG n°377, cité à l'ordre de l'armée) :</strong></p>
+
+<blockquote>
+<p>"Brillant chef de section de Légion ayant à maintes reprises fait preuve d'un allant exceptionnel au combat. Le 23/07/1957, alors que son unité affrontait une forte compagnie rebelle retranchée dans le Djebel Tikechkach (sous-secteur de Géryville), a, par une manœuvre habile, atteint les retranchements ennemis malgré les obstacles du terrain et une résistance acharnée. A mené sa section à l'assaut, détruisant un nid de résistance, tuant une quinzaine de rebelles et récupérant leur armement, dont un fusil mitrailleur."</p>
+</blockquote>
+<p>Décoré de la Croix de la valeur militaire avec étoile de vermeil.</p>
+
+<p><strong>8. 05/12/1957 (OG n°573, cité à l'ordre de la brigade) :</strong></p>
+
+<blockquote>
+<p>"Chef de section calme et courageux. Les 2 et 9 octobre 1957, dans le Djebel Es Somm, a conduit sa section à plusieurs reprises à l'assaut de positions tenues par des éléments rebelles. Par son action, a permis de tuer ou capturer plusieurs rebelles et de récupérer leurs armes."</p>
+</blockquote>
+<p>Décoré de la Croix de la valeur militaire avec étoile de bronze.</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Archives du 11e REI (CDRH-LE, Aubagne) ; SHD Vincennes, 34 N 316</li>
-    <li>SHD Vincennes, GR2000Z203/06764</li>
+    <li>Archives du 11è REI (CDRH-LE, Aubagne) (SHD Vincennes, 34 N 316)</li>
+    <li>SHD Vincennes GR2000Z203/06764 (consulté)</li>
   </ul>
 </div>
 

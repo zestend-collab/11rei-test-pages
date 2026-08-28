@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BINSZTOK Mordka « Maurice » — 11e REI</title>
-<meta name="description" content="Engagé volontaire, déporté à Auschwitz en 1942, seul survivant de sa famille avec deux de ses frère et sœur">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,58 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,35 +82,129 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 39e compagnie · Déporté</div>
   <h1>BINSZTOK Mordka « Maurice »</h1>
-  <div class="sub">Engagé volontaire, déporté à Auschwitz en 1942, seul survivant de sa famille avec deux de ses frère et sœur</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span><span>39e compagnie</span><span>déporté</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Maurice Binsztok, engagé volontaire au 11e REI, est arrêté lors de la rafle du billet vert de mai 1941 et déporté à Auschwitz en juin 1942. Il survit aux marches d'évacuation vers Gross-Rosen puis Dachau, mais son épouse et son fils, ainsi qu'une grande partie de sa famille, sont déportés et ne reviennent pas.</p>
-<h2>Une famille juive polonaise émigrée à Paris</h2>
-<p>Mordka, dit Maurice, naît le 21 mars 1903 à Szczekociny (voïvodie de Kielce), dans une famille juive polonaise de six enfants dont les parents tiennent un magasin de chaussures. Après son service militaire en Pologne, il émigre en France le 17 juin 1930, rejoignant sa fratrie déjà installée à Paris. En 1935, les hommes de la famille fondent un atelier de chaussures rue de Romainville ; Maurice y travaille comme cordonnier puis comme repasseur chez son beau-frère Wolf Lerner, tailleur.</p>
-<p>Le 14 septembre 1939, il épouse Idesa Luzerowicz, légitimant leur fils Robert, né en 1934.</p>
-<h2>Engagement au 11e REI</h2>
-<p>Maurice s'engage volontairement le 28 septembre 1939 et rejoint le 11e régiment étranger d'infanterie le 6 octobre, affecté à la 39e compagnie comme 2e classe. Versé au dépôt de la Légion étrangère le 1er avril 1940, il ne semble pas avoir accompagné le régiment au front en décembre 1939. Il est démobilisé le 17 août 1940.</p>
-<h2>Arrestation et déportation</h2>
-<p>Lors de la rafle du « billet vert » du 14 mai 1941 — première grande arrestation de Juifs étrangers à Paris, organisée sous couvert d'un faux « examen de situation » — Maurice et son beau-frère Wolf Lerner se présentent comme convoqués et sont arrêtés, puis internés à Beaune-la-Rolande. Après plus d'un an d'internement, ils sont déportés le 28 juin 1942 par le convoi n°5 à destination d'Auschwitz, où Maurice reçoit le matricule 42839 et est affecté au tri des vêtements et chaussures des déportés.</p>
-<p>Début 1945, devant l'avancée de l'Armée rouge, les SS évacuent les camps : Maurice est transféré d'Auschwitz vers Gross-Rosen en janvier, puis vers Dachau le 21 février, camp libéré par les troupes américaines le 30 avril 1945. Sur les 1038 déportés du convoi n°5, seuls 55 sont encore vivants en 1945, selon Serge Klarsfeld.</p>
-<h2>Une famille décimée</h2>
-<p>Son épouse Idesa et leur fils Robert, âgé de huit ans, sont arrêtés lors de la rafle du Vél d'Hiv et déportés séparément par les convois n°14 et n°24 en août 1942. Sa sœur Madeleine est déportée le même jour que sa belle-sœur, également par le convoi n°14 ; son beau-frère Wolf Lerner, interné avec Maurice, était déjà parti par le convoi n°5 ; leurs deux filles sont déportées à leur tour en août 1942. Son frère cadet Jacques est déporté en septembre 1942 par le convoi n°32. Aucun d'entre eux ne reviendra.</p>
-<p>Deux de ses frère et sœur survivent : Léon, engagé dans la diffusion de propagande gaulliste, est arrêté et déporté à Dachau par le convoi n°59 de septembre 1943 ; Hélène est déportée par le convoi n°68 de février 1944. Leur père n'est pas arrêté, et leur frère aîné Albert se trouve alors prisonnier de guerre en Allemagne.</p>
-<h2>Après-guerre</h2>
-<p>Maurice revient à Paris et reprend son métier d'artisan. Il adhère à l'Union des engagés volontaires anciens combattants juifs et obtient la nationalité française en 1948. Il meurt à Paris, dans le 19e arrondissement, le 26 décembre 1978.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Témoignage de Nadine Rohmer, « La Bonne Étoile »</li>
-    <li>Serge Klarsfeld, Mémorial de la déportation des Juifs de France</li>
-  </ul>
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-2.jpg" alt="Mordka Maurice Binsztok">
+  </figure>
+  <div class="side-text">
+    <p>Mordka, dit Maurice Binsztock, naît le 21 mars 1903 à Szczekociny, petite ville de la voïvodie de Kielce. La famille, juive, parle yiddish et polonais. Ses parents, Moszek Hersz Binszstok et Rywka Goldszmit, tiennent un magasin de chaussures et possèdent une maison de trois étages dont une partie est louée. Rywka a plusieurs frères Goldszmit partis en Argentine et aux États-Unis.</p>
+    <p>Le couple élève six enfants : Abram Ojzer ("Albert", 1899), Szandla Mindl ("Madeleine", 1904), Mordka ("Maurice", 1903), Icyk ("Jacques", 1909), Chaja Sura ("Hélène", 1912) et Lejbus ("Léon", 1913). Les enfants fréquentent l'école polonaise.</p>
+    <p>Maurice effectue quatorze mois de service militaire en Pologne, dont il est démobilisé en 1920.</p>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-4.jpg" alt="Mordka Maurice Binsztok">
+  </figure>
 </div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-5.jpg" alt="">
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-6.jpg" alt="Famille Binsztok">
+  <figcaption>de gauche à droite: Hélène, le père Mosszek, un homme, une femme, nourrisson Simone Sebrenic?, Maurice, Rose Sebrenic, David Sebrenic, une femme, Léon, Albert</figcaption>
+</figure>
+
+<p class="subhead">Émigration en France (1930)</p>
+
+<p>L'aîné, Albert, quitte la Pologne en 1919 pour la France pour des raisons économiques. Il rejoint un petit cousin établi rue Jean Jaurès à Paris 19.</p>
+
+<p>Sa sœur Madeleine arrive ensuite avec son mari Wolf Lerner, puis viennent Jacques, Maurice, et progressivement le reste de la famille.</p>
+
+<p>Maurice arrive en France le 17 juin 1930. Après un premier logement au 30 rue des Lilas, il vit en 1931 en concubinage avec Idesa Luzerowicz, tous deux recensés au 62 bis rue de Romainville, chez sa sœur Madeleine.</p>
+
+<p>À partir de 1932, le couple s'installe au 99 avenue de Compans, Paris 19ᵉ, adresse qu'il conserve jusqu'à la guerre.</p>
+
+<p>En 1935, les hommes de la famille fondent l'atelier de chaussures Les Chaussures Françaises Albert, au 62 rue de Romainville. Maurice y travaille comme cordonnier avant de devenir repasseur dans l'atelier de son beau-frère Wolf Lerner, tailleur.</p>
+
+<p>Le 14 septembre 1939, à Paris 19ᵉ, Maurice épouse Idesa (Idessa) Luzerowicz. Leur fils Robert, né en 1934 français par déclaration, est légitimé par ce mariage.</p>
+
+<p class="subhead">Engagement militaire (1939–1940)</p>
+
+<p>Maurice est inscrit au recrutement de la Seine (bureau central) sous le n° 5012, classe 1939. Il s'engage volontairement le 28 septembre 1939 et rejoint le 11ᵉ Régiment étranger d'infanterie le 6 octobre 1939, affecté à la 39ᵉ compagnie avec le grade de 2ᵉ classe.</p>
+
+<p>Le 1ᵉʳ avril 1940, il est versé au Dépôt de la Légion étrangère (DLE). Il semble ne pas avoir quitté le dépôt lorsque le régiment part pour le front le 15 décembre 1939. Il est démobilisé le 17 août 1940 au centre de Palette-Thonolet.</p>
+
+<p class="subhead">Arrestation et déportation</p>
+
+<p>La première grande arrestation de Juifs étrangers à Paris, la rafle du Billet vert, a lieu le 14 mai 1941. Une convocation – le "billet vert" – est envoyée à domicile pour un prétendu « examen de situation ». L'opération vise exclusivement des hommes juifs étrangers.</p>
+
+<p>Maurice et son beau-frère Wolf Lerner se présentent comme demandé et sont arrêtés puis transférés au camp de Beaune-la-Rolande.</p>
+
+<p>Après plus d'un an d'internement, ils sont déportés le 28 juin 1942 par le convoi n°5, à destination d'Auschwitz (1 038 personnes).</p>
+
+<p>Arrivés le 30 juin 1942, les hommes sont sélectionnés pour le travail. Maurice reçoit le matricule 42839, Wolf le matricule 43278.</p>
+
+<p>Maurice est affecté au tri des chaussures, où il dit avoir reconnu une paire fabriquée pour son fils Robert — un souvenir rapporté par sa petite-nièce Nadine Rohmer dans La Bonne Étoile.</p>
+
+<p>Au début de 1945, devant l'avancée de l'Armée rouge, les SS évacuent les camps. Maurice est transféré :</p>
+
+<ul>
+<li>janvier 1945 : d'Auschwitz vers Gross-Rosen</li>
+<li>21 février 1945 : de Gross-Rosen vers Dachau</li>
+</ul>
+
+<p>Le camp de Dachau est libéré le 30 avril 1945 par les troupes américaines.</p>
+
+<p>Maurice survit à ces transferts et aux marches d'évacuation. Le convoi n°5 comptera 55 survivants en 1945, selon Serge Klarsfeld.</p>
+
+<p class="subhead">Idessa et Maurice</p>
+
+<p>La famille Binsztock est profondément touchée par les déportations durant la Seconde Guerre mondiale.</p>
+
+<p>Lors de la rafle du Vel d'Hiv, l'épouse de Maurice, Idesa (Idessa) Luzerowicz Lerner, est arrêtée avec son fils Robert. Elle est déportée à Auschwitz depuis le camp de Pithiviers par le convoi n°14 du 3 août 1942. Leur fils Robert, fait partie des 360 enfants détenus à Pithiviers après la rafle du 16 juillet 1942, il est transféré à Drancy le 25 août. Il est finalement déporté le 26 août 1942 par le convoi n°24, wagon 9.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-7.jpg" alt="Idessa et Maurice">
+    <figcaption>Idessa et Maurice</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-8.jpg" alt="Robert avec ses cousines Fanny et Lucienne">
+    <figcaption>Robert avec ses cousines Fanny et Lucienne</figcaption>
+  </figure>
+</div>
+
+<p>La sœur de Maurice, Szandla Mindl (Madeleine), est arrêtée à son domicile du 9 rue de Crimée dans le 19ᵉ arrondissement de Paris. Elle est déportée par le convoi n°14, le même jour que l'épouse de Maurice, le 3 août 1942. Son mari, Wolf Lerner, interné comme Maurice à Beaune-la-Rolande en 1941, avait déjà été déporté plus tôt, le 28 juin 1942, par le convoi n°5. Leurs filles, Fajga (Fanny) et Lucienne, sont déportées respectivement par le convoi n°16 du 7 août 1942 et par le convoi n°24 du 26 août 1942 dans le wagon n°9 avec son cousin Robert.</p>
+
+<p>Le frère cadet de Maurice, Icyk (Jacques), est déporté un mois plus tard, le 14 septembre 1942, par le convoi n°32.</p>
+
+<p>Aucun d'entre eux ne survivra.</p>
+
+<p>Quelques membres de la famille échappent toutefois à la mort. Son frère Lejbus (Léon), engagé dans des activités résistantes liées à la diffusion de propagande gaulliste, est arrêté puis interné successivement à Beaune-la-Rolande et à Drancy. Il est déporté à Dachau par le convoi n°59 du 2 septembre 1943, où il survit.</p>
+
+<p>Sa sœur Chaja Sura (Hélène) survit également après avoir été déportée par le convoi n°68 du 10 février 1944.</p>
+
+<p>Son père n'a pas été arrêté et son frère Abram Ojzer (Albert), est prisonnier de guerre en Allemagne.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-9.jpg" alt="Wolf Lerner, Madeleine, Fanny et Lucienne">
+    <figcaption>Wolf Lerner, Madeleine, Fanny et Lucienne</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-10.jpg" alt="Léon">
+    <figcaption>Léon</figcaption>
+  </figure>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-11.jpg" alt="Chaja Hélène">
+  <figcaption>Chaja Hélène</figcaption>
+</figure>
+
+<p class="subhead">Après-guerre</p>
+
+<p>Maurice revient à Paris et reprend une vie d'artisan. Il adhère à l'Union des engagés volontaires, anciens combattants juifs – leurs enfants et amis, association dédiée aux anciens combattants et aux déportés juifs et obtient la nationalité française en 1948.</p>
+
+<p>Il meurt à Paris 19ᵉ, le 26 décembre 1978, il est toujours domicilié 99 rue Compans.</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Binsztok" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

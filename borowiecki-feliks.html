@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOROWIECKI Feliks « Félix » — 11e REI</title>
-<meta name="description" content="Mineur polonais, bref passage par les Brigades internationales, EVDG au 11e REI">
+<title>BOROWIECKI Feliks — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,57 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,23 +81,52 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Brigades internationales</div>
-  <h1>BOROWIECKI Feliks « Félix »</h1>
-  <div class="sub">Mineur polonais, bref passage par les Brigades internationales, EVDG au 11e REI</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>BOROWIECKI Feliks</h1>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>Brigades internationales</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Félix Borowiecki, fils de mineurs polonais du Nord-Pas-de-Calais, fait un court séjour dans les Brigades internationales en 1938 avant de s'engager pour la durée de la guerre au 11e REI, où il est fait prisonnier en 1940.</p>
-<p>Né le 16 septembre 1908 à Dąbrowa (Pologne), Félix arrive en France avec sa famille en 1923, comme beaucoup de mineurs polonais du bassin du Nord-Pas-de-Calais. Après plusieurs déménagements au gré des mines — Divion, Raismes, Wallers, Leforest, Waziers, Libercourt, Carvin, Hornaing —, la famille s'installe définitivement à Raismes en 1933. Félix se marie le 19 mars 1935 avec Marianne Jedrusiak, avec qui il tient une boucherie-épicerie à Vicoigne (Raismes).</p>
-<p>Le 8 février 1938, après une nuit de fête à Valenciennes avec des clients polonais en partance pour l'Espagne, il prend le train le lendemain matin, encore en état d'ébriété, avec sept autres volontaires recrutés par l'ancien mineur Stanislas Lubon. Enregistré dans les Brigades internationales le 12 février 1938, il ne reste que quelques semaines aux armées républicaines espagnoles avant de déserter et de rentrer en France dès le 19 avril.</p>
-<p>Ce départ pour l'Espagne, combiné à un défaut de pièce d'identité, lui vaut un arrêté d'expulsion le 24 mai 1938. Mais l'enquête de police, si elle relève son appartenance à une cellule communiste de Raismes, le décrit aussi comme bien renseigné et père de famille — son premier enfant étant né en juin 1938 — ce qui lui permet d'obtenir des sursis renouvelés.</p>
-<p>Le 8 octobre 1939, il s'engage volontairement pour la durée de la guerre à l'intendance militaire de Valenciennes et est affecté au 11e régiment étranger d'infanterie via le fort de Vancia — possiblement l'ordonnance « Borovicki » que mentionne le lieutenant Drouineau de la CA1 dans ses écrits. Fait prisonnier pendant la campagne de France, son nom figure sur les listes officielles de prisonniers publiées le 22 novembre 1940 et le 18 février 1941.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-borowiecki-feliks-2.jpg" alt="Félix Borowiecki">
+  </figure>
+  <div class="side-text">
+    <p>Félix Joseph Borowiecki est né le 16 septembre 1908 à Dąbrowa, en Pologne, dans une famille originaire de cette région. Ses parents, Feliks Borowiecki (fils de Jan et Józefa Nawrot) et Jozefa Adamius (fille de Dionizy et Agnieszka Włóka), se sont mariés en 1905 à Dąbrowa Górnicza. Félix avait deux frères, Czeslas (né le 5 juillet 1906) et Simon.</p>
+  </div>
+</div>
+
+<p>La famille arrive en France en 1923, probablement pour des raisons économiques, comme beaucoup d'immigrés polonais dans le bassin minier du Nord-Pas-de-Calais, après la Première Guerre mondiale. L'immigration polonaise dans cette région a été encouragée par les recruteurs de main-d'œuvre, notamment ceux venus de la Ruhr. Bien que les détails exacts sur la provenance de la famille ne soient pas clairs, le fait qu'ils soient arrivés ensemble suggère qu'ils ont peut-être émigré d'Allemagne, où des milliers de Polonais avaient trouvé du travail dans les mines (les « mineurs westphaliens »).</p>
+
+<p>La famille s'installe d'abord à Divion (Pas-de-Calais) de 1923 à 1924, où ils vivent dans la Cité 30, rue de Jupiter. Son père et ses frères travaillent comme houilleurs pour la Compagnie des mines de La Clarence. C'est là que son frère Czeslas meurt en 1924, à l'âge de 19 ans. Par la suite, la famille déménage plusieurs fois, vivant successivement à Raismes, Wallers, Leforest, Waziers, Libercourt, Carvin et enfin Hornaing, avant de s'installer définitivement à Raismes en 1933.</p>
+
+<p>Félix Borowiecki se marie le 19 mars 1935 avec Marianne Jedrusiak. Ils exploitent ensemble un commerce de boucherie et épicerie dans un immeuble qu'ils possèdent à la rue de l'Abbaye, dans le quartier de Vicoigne à Raismes.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-borowiecki-feliks-4.jpg" alt="Félix Borowiecki">
+</figure>
+
+<p>Le 8 février 1938, Felix apprend que certains de ces clients polonais sont en partance pour l'Espagne. Afin de recouvrer les dettes de ses clients et pour fêter leur départ, Felix se rend à Valencienne et fait la noce toute la nuit. Le matin du 9 février 1938, en état d'ébriété Felix prend le train en direction de Paris, il est accompagné de 7 volontaires et de Stanislas Lubon. Ce dernier est un ancien mineur, engagé dans les <a href="https://www.11regimentetranger.com/blog/brigadistes-dans-le-11e-rei" target="_blank" rel="noopener">brigades internationales</a> dans l'armée républicaine espagnole, il devient un agent recruteur dans la région de Vieux Condé. A la gare d'Orsay, les volontaires et Felix prennent un deuxième train pour se rendre en Espagne.</p>
+
+<p>Ce serait donc sous l'influence d'amis et compatriotes qu'il serait parti pour l'Espagne. Félix est enregistré dans le Brigades internationales dans les arrivées du 12 février 1938. Il n'a fait qu'un court séjour aux armées républicaines espagnols car il aurait déserté ce pays et serait rentré en France dès le 19 avril.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-borowiecki-feliks-5.jpg" alt="Félix Borowiecki">
+</figure>
+
+<p>Suite à son départ en Espagne pour rejoindre les Brigades internationales, combiné à un défaut de pièce d'identité, Félix Borowiecki fait l'objet d'un arrêté d'expulsion du territoire français le 24 mai 1938. Cependant, une enquête menée par les services de police révèle qu'il bénéficie de bons renseignements. Malgré son appartenance à une cellule communiste de Raismes et son penchant occasionnel pour l'alcool, il est également reconnu comme père de famille, son premier enfant étant né à Beuvrages le 18 juin 1938. Grâce à ces circonstances, Félix obtient des sursis renouvelés tous les trois mois pour rester en France.</p>
+
+<p>Le 8 octobre 1939, Félix se rend à l'intendance militaire de Valenciennes, où il s'engage volontairement pour la durée de la guerre. Il est enregistré au fort Vancia et affecté au 11e Régiment Étranger d'Infanterie (11e REI). Le lieutenant Drouineau, de la <a href="https://www.11regimentetranger.com/blog/ca1" target="_blank" rel="noopener">Compagnie d'Appui n°1 (CA1)</a>, mentionne dans ses écrits un ordonnance du nom de Borovicki, qui pourrait être Félix.</p>
+
+<p>Pendant la campagne de France, Félix est capturé et fait prisonnier par les forces allemandes. Son nom apparaît dans les listes officielles des prisonniers français publiées le 22 novembre 1940 et le 18 février 1941.</p>
+
+<p>Le 11e REI regroupait de nombreux légionnaires d'origine étrangère, dont certains, comme Félix, étaient venus en France pour travailler dans les mines. Parmi eux, des recrues enregistrées à Valenciennes, comme Tomaszczyk Michel, né à Dortmund en Westphalie, partagent des parcours similaires.</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Fonds de Moscou, Archives nationales de Pierrefitte-sur-Seine, cote 19940434/500, dossier 41381</li>
+    <li>fond de Moscou, AN Pierrefitte sur Seine: Cotes : 19940434/500, Dossier 41381</li>
     <li>Liste officielle des prisonniers français</li>
   </ul>
 </div>

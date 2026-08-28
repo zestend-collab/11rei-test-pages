@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOSEMS Lambert dit « Albert » — 11e REI</title>
-<meta name="description" content="Légionnaire néerlandais de la CAB1, resté en lien avec son lieutenant Drouineau tout au long de sa captivité">
+<title>BOSEMS Lambert dit Albert — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,52 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article blockquote .note{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);font-style:normal;display:block;margin-top:.3rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,35 +71,167 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CAB1 · Prisonnier</div>
-  <h1>BOSEMS Lambert dit « Albert »</h1>
-  <div class="sub">Légionnaire néerlandais de la CAB1, resté en lien avec son lieutenant Drouineau tout au long de sa captivité</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>BOSEMS Lambert dit Albert</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Lambert Bosems, légionnaire néerlandais devenu « Albert » à la Légion, sert à la compagnie d'appui n°1 du 11e REI sous les ordres du lieutenant Robert Drouineau. Fait prisonnier en 1940, il entretient avec son ancien officier une correspondance suivie tout au long de sa captivité.</p>
-<h2>Des Pays-Bas à la Légion étrangère</h2>
-<p>Né le 30 août 1907 à Maastricht, l'un des dix enfants de Petrus Hubertus Bosems et Maria van Duurling, Lambertus épouse Maria Reijnen en 1925 ; leur fils unique meurt en bas âge en 1928. La même année, il s'installe en Belgique, où il vit séparé de son épouse — leur divorce est prononcé en 1932. Il s'engage vers 1929-1930 à la Légion étrangère, sert d'abord au Maroc puis, après un passage en Indochine, probablement au 5e REI. C'est à la Légion qu'il commence à se faire appeler Albert, prénom qu'il conservera toute sa vie. Naturalisé français le 24 décembre 1938, il est alors caporal au 1er REI.</p>
-<h2>Le 11e REI et la captivité</h2>
-<p>Incorporé au 11e REI fin 1939, il est affecté à la compagnie d'appui n°1 (CAB1), dans la section du lieutenant Robert Drouineau. Fait prisonnier entre le 25 mai et le 23 juin 1940, il est interné au Stalag XVII B de Krems-Gneixendorf (Autriche), matricule 60212, puis affecté à un kommando à Klein Pöchlarn.</p>
-<h2>La correspondance avec le lieutenant Drouineau</h2>
-<p>Pendant sa captivité, Albert échange au moins sept lettres avec son ancien lieutenant, blessé et rapatrié après avoir perdu un œil au combat, entre janvier 1942 et janvier 1944. Drouineau lui envoie régulièrement des colis et prend de ses nouvelles, tout en lui donnant des nouvelles du régiment et de leurs anciens camarades.</p>
-<blockquote class="testimony">9 janvier 1942 : « J'ai éprouvé une grande joie ce matin, mon cher Bosems, en recevant votre carte. Je vous savais vivant, mais regrettais de ne pouvoir établir la liaison avec vous. Merci de vos vœux ; moi aussi, je souhaite de tout cœur vous revoir un jour. J'ai le plaisir de vous faire savoir que notre XIe R.E.I. vient d'être cité à l'ordre de l'armée. Écrivez-moi et envoyez-moi des étiquettes pour que je puisse vous adresser des colis. Je vous serre cordialement la main. »</blockquote>
-<blockquote class="testimony">24 février 1942 : « Je reçois ce matin votre lettre du 29 janvier 1942 et votre étiquette. Je vais m'occuper tout de suite de vous constituer un colis acceptable [...] Si la chose est possible, mettez-moi un peu au courant du sort de ma section après le 25 mai 1940, je n'ai eu que très peu de détails. C'est avec un vif plaisir que j'ai appris que vous aviez la Croix de guerre. [...] J'avais reçu, mon cher Bosems, un éclat d'obus dans chaque œil et devais donc normalement être aveugle. Grâce à Dieu, on a pu retirer sans dommage les éclats de l'œil gauche et je n'ai perdu que l'œil droit. »</blockquote>
-<blockquote class="testimony">25 mai 1942 : « Il y a deux ans aujourd'hui que je t'ai vu pour la dernière fois. [...] Tu nous as vu et tu es venu me soutenir. Je t'ai bien reconnu malgré le sang qui coulait et qui m'aveuglait. Je ne devais pas être beau à voir ! [...] Saurais-tu plus particulièrement ce que sont devenus mes ordonnances successifs Marchal et Borovichi ? »</blockquote>
-<blockquote class="testimony">18 août 1942 : « Je viens de recevoir une visite qui m'a fait grand plaisir puisqu'elle m'a parlé de toi. Il s'agit de la femme d'un de tes camarades de captivité [...] qui venait me demander ton matricule de façon à te faire expédier des colis par un Comité de Secours aux prisonniers. »</blockquote>
-<blockquote class="testimony">12 octobre 1942 : « Ta lettre du 6 septembre me parvient aujourd'hui, je veux tout de suite te rassurer au sujet des colis que je vais t'expédier, ne crains pas d'être indiscret ni importun. En dépit des restrictions je me ferai une joie et un devoir de t'adresser régulièrement quelques vivres et quelques douceurs. »</blockquote>
-<blockquote class="testimony">10 février 1943 : « On vient de faire à ton attention un lapin sauté. La cuisine de maison est souvent meilleure que les conserves ordinaires. [...] Comme toi j'espère que nous nous reverrons bientôt. »</blockquote>
-<blockquote class="testimony">17 janvier 1944 : « La mort d'une mère est toujours quelque chose d'affreux [...] Je pense donc tout spécialement à toi [...] Courage et espoir, une guerre ne peut pas être éternelle. Ce qu'il faut c'est conserver le moral et l'énergie pour plus tard. »</blockquote>
-<p>Une carte adressée en captivité, écrite en allemand à « mein Kamaraad », suggère qu'Albert était resté prisonnier jusqu'à la fin de la guerre. De retour en France, il se marie en 1945 avec Lucienne Julienne Driot ; en 1951, il reçoit la médaille militaire des mains du commandant Gaultier aux Invalides.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Correspondance du lieutenant Robert Drouineau à Lambert Bosems, 1942-1944</li>
-  </ul>
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-2.jpg" alt="Lambert Bosems">
+</figure>
+
+<p>Lambertus Bosems est né le 30 août 1907 à Maastricht, aux Pays-Bas. Il est l'un des dix enfants de Petrus Hubertus Bosems (1866-1922) et de Maria van Duurling (1872-1943).</p>
+
+<p>Le 9 septembre 1925, Lambertus épouse Maria Reijnen (aussi orthographiée Reinen ou Reijen) à Maastricht. De leur union naît un fils, Wilhelmus Bosems, en 1927, qui décède malheureusement en bas âge, en 1928.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-4.jpg" alt="">
+</figure>
+
+<p>Pour des raisons non documentées, Lambertus Bosems, comme son frère Jean Baptiste (Johannes Baptist), quitte les Pays-Bas et s'installe en Belgique à partir du 14 juin 1928.</p>
+
+<p>En Belgique, il se déclare célibataire et exerce la profession d'ouvrier. Il réside successivement dans plusieurs localités, Charleroi, Montégnée, Anvers, puis retourne à Montégnée.</p>
+
+<p>Après le 17 juillet 1929, il semble se trouver à Bruxelles, mais à partir de cette date, aucun document ne figure à son sujet dans les archives de la police de l'immigration belge.</p>
+
+<div class="gallery">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-5.jpg" alt="">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-6.jpg" alt="">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-7.jpg" alt="">
 </div>
+
+<p>Lambert Bosems vit séparé de sa femme Maria, et leur divorce est officiellement prononcé le 26 mai 1932 à Maastricht.</p>
+
+<p>Probablement en 1929 ou 1930, il s'engage dans la Légion étrangère. Son parcours le conduit d'abord au Maroc avec la 4e montée, vraisemblablement au sein du 2e REI (Régiment Étranger d'Infanterie). Par la suite, ayant passé une période en Indochine, il aurait probablement été affecté au 5e REI.</p>
+
+<p>Durant son engagement dans la Légion, il commence à être appelé Albert, un prénom qui devient son usage courant et qu'il conserve jusqu'à la fin de sa vie.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-8.jpg" alt="">
+</figure>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-9.jpg" alt="">
+</figure>
+
+<p>Il est naturalisé français le 24 décembre 1938, il est alors caporal au 1er REI.</p>
+
+<p>A la fin de l'année 1939, il est incorporé au 11è REI et participe à la campagne de France. Affecté dans le 1er bataillon à la compagnie d'appui n°1 (CAB1) il appartient à la section commandée par le Lt Robert Drouineau.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-10.jpg" alt="">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-11.jpg" alt="" style="margin-top:8px">
+  <figcaption>En arrière du front dans un bois, ils ne portent pas la musette du masque à gaz ni la capote réglementaire mais ce qui semble être le manteau de troupe montée (la CAB avait des chevaux pour le transport de son armement). L'homme en contre bas porte quand à lui une canadienne typique de l'époque (corps francs, officiers, troupes sur véhicule...)</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-12.jpg" alt="">
+  <figcaption>cantonnement du 11e REI. Les Légionnaires ont suspendu leurs équipements en cuir, casque, bidon et musettes. Ils s'affairent à l'entretien de leurs brodequins (nettoyage et cirage) et équipement (dont sac à dos et cirage d'un ceinturon) après leur retour des lignes ou d'un exercice ou d'un service.</figcaption>
+</figure>
+
+<p>On retrouve la photo ci-dessous, dans le journal Le Matin paru le 3 avril 1940.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-13.jpg" alt="">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-14.jpg" alt="" style="margin-top:8px;max-width:min(240px,100%)">
+  <figcaption>Le Matin, 3 avril 1940</figcaption>
+</figure>
+
+<p>Entre le 25 mai et le 23 juin 1940, Lambert/Albert est fait prisonnier et envoyé au Stalag XVII B situé à Krems-Gneixendorf en Autriche, il a le matricule 60212.</p>
+
+<p>Il fait ensuite parti d'un KL à Pochlarn.</p>
+
+<p>Au mois de juillet 1941, Lambert est condamné à 15 jours de prison au motif suivant:</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-15.png" alt="">
+</figure>
+
+<blockquote>31/7/1941 En raison d'une tentative de liaison amoureuse avec une Allemande alors qu'il travaillait à Klein Pochlarn, le prisonnier de guerre néerlandais Lambert Bosems est condamné à 14 jours de prison par le commandant du camp du Stalag 17B.</blockquote>
+
+<p>Pendant sa captivité il entretien une correspondance avec Robert Drouineau (échange d'au moins 7 lettres entre janvier 1942 et le 17 janvier 1944). Il est fort probable que Lambert/Albert soit resté captif pendant toute la durée de la guerre.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-16.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-17.jpg" alt="">
+  </figure>
+</div>
+
+<blockquote>9 janvier 1942 j'ai éprouvé une grande joie ce matin, mon cher Bosems en recevant votre carte. Je vous savais vivant ; mais regrettais de ne pouvoir établir la liaison avec vous. Merci de vos vœux ; moi aussi, je souhaite de tout cœur vous revoir un jour. J'ai le plaisir de vous faire savoir que notre XIème R.E.I. vient d'être cité à l'ordre de l'armée. Écrivez-moi et envoyez moi des étiquettes pour que je puisse vous adresser des colis. Je vous serre cordialement la main.<span class="note">Drouineau</span></blockquote>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-18.jpg" alt="">
+</figure>
+
+<blockquote>24 février 1942 mon cher Bosems, je reçois ce matin votre lettre du 29 janvier 1942 et votre étiquette. Je vais m'occuper tout de suite de vous constituer un colis acceptable, heureux de pouvoir vous manifester de l'intérêt que je continue à vous porter. Si la chose est possible, mettez-moi un peu au courant du sort de ma section après le 25 mai 1940, je n'ai eu que très peu de détails. C'est avec un vif plaisir que j'ai appris que vous aviez la Croix de guerre et je vous félicite d'autre part d'avoir échappé à la mort. Souvent il s'en faut de très peu que l'on soit sauvé mais ce très peu suffit. J'en ai moi-même fait l'expérience et ceci m'amène à répondre à votre question quant à mes blessures. J'avais reçu, mon cher Bosems, un éclat d'obus dans chaque oeil et devait donc normalement être aveugle. Grâce à Dieu, on a pu retirer sans dommage les éclats de l'œil gauche et je n'ai perdu que l'œil droit. D'autre part deux éclats m'étaient entrés dans la poitrine et se sont arrêtés à temps, l'un avant d'atteindre le poumon l'autre l'aorte. Enfin deux autres éclats m'avaient ouverts le bras gauche sans rien casser de définitif. Comme vous voyez moi aussi j'ai eu de la chance. À l'heure actuelle je suis complètement remis et je me suis très bien fait à n'avoir plus qu'un œil. Le lieutenant Sigmann vient d'être nommé capitaine et le capitaine Clément chef de bataillon. Le capitaine Clément me disait dans une carte avoir revu en Afrique Leysens. Écrivez-moi bien cordialement à vous.<span class="note">Drouineau</span></blockquote>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-19.jpg" alt="">
+</figure>
+
+<blockquote>25 mai 1942 mon cher Bosems, il y a deux ans aujourd'hui que je t'ai vu pour la dernière fois. Te souviens-tu ? Lours, Petitberghier et Martin me conduisaient au PC du Lieutenant Roux. Tu nous as vu et tu es venu me soutenir. Je t'ai bien reconnu malgré le sang qui coulait et qui m'aveuglait. Je ne devais pas être beau à voir ! À ce moment je ne me doutais pas que je ne reverrais plus personne de ma section et quand on m'a mis dans l'ambulance je croyais bien que ce n'était que pour un congé temporaire. Je m'entends encore au PC du colonel dire: « Je reviens" à l'aumônier* qui me serrait la main. Le pauvre a été tué le lendemain et moi, je ne suis jamais revenu ! Ma pensée n'a cependant jamais cessé d'être présente parmi vous et sur mon lit d'hôpital à Bordeaux puis à Montauban puis à Toulouse je me demandais sans cesse où vous étiez, ce que vous deveniez. Saurais-tu plus particulièrement ce que sont devenus mes ordonnances successifs Marchal et Borovichi ? Je devais le 30 avril dernier me retrouver à Paris avec le lieutenant Devaux*, Chauveau* et quelques autres. Je suis tombé malade j'ai bien regretté de ne pouvoir y aller. Au revoir mon cher Bosems, tes lettres me feront toujours plaisir, je te serre cordialement la main.<span class="note">Drouineau<br>* Il s'agit de l'abbé Wattel tué par éclat d'obus le 27 mai 1940 au Bois d'Inor<br>* Devaux, médecin-sous-lieutenant, prisonnier libéré, 1er bataillon<br>* peut être Chauveau caporal</span></blockquote>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-20.jpg" alt="">
+</figure>
+
+<blockquote>18 août 1942 mon cher Bosems je viens de recevoir une visite qui m'a fait grand plaisir puisqu'elle m'a parlé de toi. Il s'agit de la femme d'un de tes camarades de captivité le sergent Henri Dallet qui venait me demander ton matricule de façon à te faire expédier des colis par un Comité de Secours aux prisonniers. J'ai donné à ton sujet tous les renseignements utiles. Cette visite d'autre part m'a révélé que tu n'étais pas extrêmement gâté en fait de colis. Or tu ne m'as pas envoyé d'étiquette depuis fort longtemps. Je compte en recevoir sous peu et régulièrement. C'est ma seule façon de montrer à l'un de mes légionnaires que son lieutenant pense toujours à lui et à eux. Ta lettre du mois de juillet m'a fait bien plaisir. Merci des renseignements que tu me donnes. Mon 30 avril 1942 a été aussi bien mélancolique par suite d'une scarlatine qui m'immobilisait et m'a empêché d'aller à Paris retrouver les quelques officiers du I/XIe qui s'y trouvaient. À la TSF j'ai écouté avec émotion le récit de Camerone. Courage mon cher Bosems et à bientôt j'espère la joie de te revoir. En attendant je te serre cordialement la main.<span class="note">Drouineau</span></blockquote>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-21.jpg" alt="">
+</figure>
+
+<blockquote>12 octobre 1942 mon cher Bosems ta lettre du 6 septembre me parvient aujourd'hui je veux tout de suite te rassurer au sujet des colis que je vais t'expédier ne crains pas d'être indiscret ni importun. En dépit des restrictions je me ferai une joie et un devoir de t'adresser régulièrement quelques vivres et quelques douceurs. C'est bien le moins que le lieutenant n'abandonne pas dans l'épreuve son sous-officier adjoint dont il a toujours apprécié le dévouement et la fidélité. La dernière fois j'ai joint à mon envoi quelques haricots je l'ai fait avec hésitation ne sachant pas si tu as le moyen de les faire cuire. Donne-moi des précisions sur ce point. Il y a des temps infinis que je n'ai eu des nouvelles de notre légion à noter cependant une carte Interzone de Bourdier qui m'a fait d'autant plus de plaisir qu'elle manifestait le regret de son attitude de Gueling. J'ai appris que Leysens avais revu le capitaine (aujourd'hui commandant) Clément, mais je ne sais où il est actuellement. Encore un cependant dont j'aimerais avoir des nouvelles. Ici la vie continue dans la patience quotidienne. Mes petits-enfants connaissent Bosems par une photo de la section prise à Gueling et que j'ai sur mon bureau. À toi très cordialement.<span class="note">Drouineau</span></blockquote>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-22.jpg" alt="">
+</figure>
+
+<blockquote>10 février 1943 mon cher Bosems on vient de faire à ton attention un lapin sauté. La cuisine de maison est souvent meilleure que les conserves ordinaires. J'ai apporté les deux boîtes qui le contiennent chez un sertisseur. J'espère qu'il ne profitera pas de son travail pour manger une partie de l'animal. Tu me diras si l'envoi était normal. Ta lettre du 28 décembre m'a fait un peu vivre ta vie lointaine et je t'en remercie. Tout ce qui touche à mes hommes m'est cher. Comme toi j'espère que nous nous reverrons bientôt. J'ai évidemment peu de nouvelles en ce moment de nos compagnons d'armes, mais je sais bien sur que la liaison finira par se rétablir. Figure toi qu'à mon retour chez moi en septembre 1940 j'ai trouvé tout le village de Koenig** réfugié dans un hameau tout proche de Poitiers. C'est un hasard auquel je ne m'attendais pas. J'ai encore présent à l'esprit les moindres détails de notre séjour là-bas. Notre marche glissante depuis Clouange nos travaux près du ....J'espère que ta santé continue à être bonne je ne me ressens pratiquement plus de mes blessures sauf la nuit quand je dois sortir car avec un seul œil je n'y vois pas à trois pas! T'ai je dit que le lieutenant Cordouan est mort en captivité il y a plusieurs mois ? Ça a été une peine pour moi.<br>Au revoir mon cher Bosems courage; je te serre cordialement la main.<span class="note">Drouineau</span></blockquote>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-23.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-24.jpg" alt="">
+  </figure>
+</div>
+
+<blockquote>17 janvier 1944 mon cher Bosems je prends une grande part à la peine que tu m'annonces. La mort d'une mère est toujours quelque chose d'affreux et ton chagrin est évidemment doublé par l'éloignement forcé où tu te trouvais au moment de son dernier soupir. Je pense donc tout spécialement à toi et à elle est très simplement, mon vieux, je te promets de prier pour elle et pour toi.<br><br>Je suis content que mon colis de Noël te soit arrivé. Je voudrais pouvoir t'en envoyer plus souvent. Mais nous nous heurtons ici à de grandes difficultés de ravitaillement. Comme je voudrais que tu n'aies plus besoin ni toi ni tous tes camarades de recevoir des paquets. Courage et espoir une guerre ne peut pas être éternelle. Ce qu'il faut c'est conserver le moral et l'énergie pour plus tard. Je sais bien sûr qu'il est inutile de prêcher cela : la légion.<br><br>Avant-hier soir je faisais une conférence à des jeunes gens de ma ville sur "La conscience professionnelle". Pour mieux leur faire comprendre ce que c'est, je leur ai raconté maint détails de la vie du légionnaire et je les ai promené de nos cantonnements de Lorraine au bois d'Inor en passant par Bockange et la route de Boulay où nous avons fêté le 30 avril 1940. Ils m'ont écouté avec ferveur et ça a été une grande joie pour moi que de faire applaudir la légion par ces jeunes qui sont la France de demain.<br><br>Comment dois-je faire maintenant pour t'envoyer des colis? Au revoir, Bosems, crois à mes sentiments fidèles et bien cordiaux.<span class="note">Drouineau</span></blockquote>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-25.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-26.jpg" alt="">
+  </figure>
+</div>
+<p class="caption" style="text-align:center;font-style:italic;color:var(--muted);font-size:.85rem;margin-top:-.6rem">En captivité: Klein Pöchlarn 12 ? 1943 An mein Kamaraad Gretl Albert Bosems</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-27.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-28.jpg" alt="">
+  </figure>
+</div>
+
+<p>Après la guerre il se marie avec Lucienne Julienne Driot en 1945 à Paris</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert-29.jpg" alt="">
+  <figcaption>30 avril 1951, les anciens de la légion après le défilé sous l'arc de triomphe</figcaption>
+</figure>
+
+<p class="caption" style="text-align:center;font-style:italic;color:var(--muted);font-size:.85rem">1951 Invalides, remise de la médaille militaire par le commandant Gaultier</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Bosems" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

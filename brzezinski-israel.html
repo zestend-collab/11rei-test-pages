@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BRZEZINSKI Israël — 11e REI</title>
-<meta name="description" content="Tailleur juif polonais blessé au bois d'Inor, tué au combat au Vercors en 1944">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,25 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
-  article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
-  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
-    text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article a{color:var(--link)}
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +44,58 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 1er bataillon · EVDG · Résistant · Mort pour la France</div>
   <h1>BRZEZINSKI Israël</h1>
-  <div class="sub">Tailleur juif polonais blessé au bois d'Inor, tué au combat au Vercors en 1944</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="sub">(dictionnaire les Fusillés)</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Israël Brzezinski, tailleur juif polonais engagé au 11e REI, est blessé et décoré au bois d'Inor en 1940. Rejoignant le maquis du Vercors en juin 1944, il meurt à son poste de combat lors de la défense de Saint-Nizier-du-Moucherotte, quelques semaines avant que son fils ne soit sommairement exécuté par la Milice.</p>
-<p>Né le 17 novembre 1901 à Brzeziny (alors Empire russe, aujourd'hui en Pologne), tailleur de vêtements, il s'installe en France avec sa famille après 1926 et vit à Paris 18e. Il s'engage à la Légion étrangère à la déclaration de guerre et rejoint le 11e REI. Blessé le 27 mai 1940 pendant l'attaque allemande du bois d'Inor, il est décoré de la croix de guerre et cité à l'ordre du régiment comme « légionnaire courageux qui a fait preuve de sang-froid et d'énergie ».</p>
-<p>Rendu à la vie civile, il est arrêté en juin 1941 et interné au camp de transit de Beaune-la-Rolande ; il en est libéré le 28 août 1941, sa décoration militaire lui ayant vraisemblablement évité la déportation. La famille quitte ensuite Paris pour s'installer dans la région grenobloise.</p>
-<p>Le 9 juin 1944, répondant à l'ordre de mobilisation du chef militaire du Vercors François Huet, il rejoint le maquis et intègre la compagnie Brisac du 6e bataillon de chasseurs alpins reconstitué. Le 13 juin 1944, lors du premier grand combat pour la défense du plateau à Saint-Nizier-du-Moucherotte, où 300 à 400 soldats allemands tentent de forcer le passage, Israël Brzezinski meurt à son poste vers 14 heures, au lieu-dit « Charvet », peu avant que l'arrivée de renforts ne fasse rebrousser chemin aux troupes ennemies.</p>
-<p>Homologué résistant des Forces françaises de l'intérieur, mort pour la France, il est décoré à titre posthume de la croix de guerre 1944 avec étoile d'argent. Son fils Maurice est sommairement exécuté par la Milice le 7 août 1944 à l'aérodrome de Grenoble. Les deux sont exhumés du cimetière de Saint-Nizier et réinhumés ensemble à Bagneux en 1948. Le Mémorial de la Shoah et Yad Vashem recensent Israël Brzezinski parmi les victimes de la Shoah.</p>
+
+<p>Né le 17 novembre 1901 à Brzeziny (Empire russe, aujourd'hui Pologne), tué au combat le 13 juin 1944 à Saint-Nizier-du-Moucherotte (Isère) ; tailleur ; résistant de l'Armée secrète homologué Forces françaises de l'Intérieur</p>
+
+<p>Juif polonais, Israël Brzezinski est le fils de Eilszel et de Peta Flaum, son épouse. Il est tailleur de vêtements.</p>
+
+<p>Il épouse Elina Rozenberg. Le couple a deux enfants.</p>
+
+<p>La famille vient s'installer en France après 1926.</p>
+
+<p>En 1936, il est domicilié 1 rue de la Goutte d'Or à Paris 18.</p>
+
+<p>Israël Brzezinski s'engage dans la Légion Étrangère à la déclaration de guerre, intégrant le 11ème Régiment Étranger d'Infanterie.</p>
+
+<p>Il est blessé le 27 mai 1940 pendant l'attaque allemande du bois d'Inor et est décoré de la croix de Guerre 1940. Il est cité à l'ordre du régiment n°323/C "légionnaire courageux qui a fait preuve de sang-froid et d'énergie lors de l'attaque allemande du 27 mai 1940. A été blessé au cours de l'action".</p>
+
+<p>Rendu à la vie civile, il est arrêté en juin 1941 et interné au camp de transit de Beaune-La-Rolande (Loiret). Il en est libéré le 28 août 1941 pour avoir été décoré de la croix de Guerre. La famille habite 3 cité des Envierges dans le XXe arrondissement avant de quitter Paris.</p>
+
+<p>En 1944, Ils sont installés dans la région grenobloise. Israël Brzezinski et son épouse habitent au manoir de Vinay à Sassenage (Isère) avec leur fils Maurice Brzezinski.</p>
+
+<p>Répondant à l'ordre de mobilisation lancé par le chef militaire du Vercors, François Huet, Israël Brzezinski rejoint le maquis du Vercors, secteur 8 de l'AS Isère, le 9 juin 1944 et est intégré à la compagnie Brisac du 6ème Bataillon de Chasseurs Alpins reconstitué.</p>
+
+<p>Le 10 juin 1944, la compagnie Brisac et la compagnie Prévost sont mises en position à Saint-Nizier-du-Moucherotte (Isère) pour défendre l'accès du plateau et observer les activités des troupes ennemies.</p>
+
+<p>Le 13 juin 1944, l'état-major allemand lance un bataillon pour forcer le passage et, en cas de succès, pouvoir effectuer une première reconnaissance du dispositif du maquis.</p>
+
+<p>Vers neuf heures, les maquisards sont prévenus de l'arrivée de 300 à 400 hommes venant à pied de Seyssins (Isère).</p>
+
+<p>Faiblement armés, les maquisards ont du mal à tenir la position. L'arrivée de la compagnie Chabal fait tourner le combat en leur faveur et les troupes allemandes rebroussent chemin.</p>
+
+<p>C'est au cours de ce premier combat pour la défense du Vercors qu'Israël Brzezinski meurt à son poste de combat vers 14 heures, au lieu-dit "Charvet".</p>
+
+<p>Il obtient la mention « Mort pour la France » et est homologué résistant, membre des Forces françaises de l'Intérieur.</p>
+
+<p>Il est décoré de la croix de Guerre 1944 avec étoile d'argent à titre posthume.</p>
+
+<p>Son fils Maurice Brzezinski est sommairement exécuté par des membres de la Milice le 7 août 1944 à l'aérodrome de Grenoble.</p>
+
+<p>Enterré dans le cimetière de Saint-Nizier-du-Moucherotte, ses restes sont exhumés et enterrés au cimetière de Bagneux (Hauts-de-Seine) en même temps que ceux de son fils, le 6 décembre 1948.</p>
+
+<p>Le mémorial de la Shoah à Paris et le Mémorial de Yad Vashem le recensent parmi les victimes de la Shoah.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Dictionnaire des Fusillés, fusilles-40-44.maitron.fr</li>
-  </ul>
+  <h3>Source</h3>
+  <p><a href="https://fusilles-40-44.maitron.fr/" target="_blank" rel="noopener">https://fusilles-40-44.maitron.fr/</a></p>
+  <p>Les notices du Dictionnaire des Fusillés sont désormais disponibles en intégralité sur un site dédié, qui reprend la totalité des notices publiées dans l'édition papier du Dictionnaire des fusillés après condamnation et comme otages, ainsi que de très nombreuses notices inédites des exécutés sommaires et victimes civiles massacrées soit plus de 31 350 entrées. La matière de ce site est encore en cours de développement et s'enrichit quotidiennement, à travers des compléments ou de nouvelles biographies. Il propose également des présentations historiques des lieux d'exécution et de massacre en France, ainsi que des outils de recherche spécifiques.</p>
 </div>
 
 <div class="actions">

@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AGUSTI HERVAS Ramón — 11e REI</title>
-<meta name="description" content="Républicain espagnol, engagé volontaire au 11e REI, mort à Mauthausen en 1943">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,55 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +79,59 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Espagnol · Déporté</div>
-  <h1>AGUSTI HERVAS Ramón</h1>
-  <div class="sub">Républicain espagnol, engagé volontaire au 11e REI, mort à Mauthausen en 1943</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>AGUSTI HERVAS Rámon</h1>
+  <div class="sub">(1918-1943)</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>Espagnol</span><span>Déporté</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Ramón Agustí Hervàs, militant anarchiste de la CNT et combattant de l'Armée populaire républicaine, s'engage à la Légion étrangère après son exil en France. Fait prisonnier avec le 11e REI en 1940, il est déporté à Mauthausen fin 1941 et y meurt en mai 1943.</p>
-<p>Né le 9 août 1918 à Sagunto (Valence), il est affilié dès son plus jeune âge à la CNT, la confédération syndicale anarchiste, et incorporé dans les rangs de l'Armée populaire de la République en novembre 1937. Il s'enfuit en France lors de la retraite de Catalogne, au début de 1939.</p>
-<p>Pour quitter les camps d'internement, il s'engage dans la Légion étrangère à Perpignan (matricule 1642) et rejoint en novembre le 11e régiment étranger d'infanterie. Il est fait prisonnier aux environs de Fay le 21 juin 1940, puis transféré au Stalag XVII-B de Krems-Gneixendorf (Autriche), où il est immatriculé sous le numéro 55942.</p>
-<p>Après interrogatoire par la Gestapo de Vienne, il est envoyé à Mauthausen dans le convoi n°61, avec 342 autres Espagnols, où il arrive le 19 décembre 1941 (matricule 4339). Il meurt le 23 mai 1943 au Sanitätslager du camp, où les soins étaient rudimentaires et parfois le lieu d'assassinats par injection ; la cause déclarée de son décès — une dégradation générale due à une mauvaise circulation — ne coïncide pas nécessairement avec la cause réelle.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agusti-ramon-2.jpg" alt="Ramón Agustí Hervàs">
+  </figure>
+  <div class="side-text">
+    <p>Ramón Agustí Hervàs</p>
+    <p>Il est né le 9 août 1918 à Sagunto, Valence.</p>
+    <p>Déporté à Mauthausen le 19 décembre 1941. Prisonnier numéro 4339</p>
+    <p>Il est mort à Mauthausen le 23 mai 1943.</p>
+    <p>Dès son plus jeune âge, il est affilié à la CNT, la Confédération des syndicats anarchistes. Il est incorporé dans les rangs de l'Armée Populaire de la République en novembre 1937.</p>
+  </div>
+</div>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agusti-ramon-4.jpg" alt="Ramón Agustí Hervàs">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agusti-ramon-5.jpg" alt="Ramón Agustí Hervàs">
+  </figure>
+  <div class="side-text">
+    <p>Il s'enfuit en France lors du retrait de Catalogne début 1939.</p>
+    <p>Pour quitter les camps d'internement, il s'engage dans la Légion étrangère à Perpignan, il a le matricule 1642. En novembre, il est affecté au 11è régiment étranger d'infanterie.</p>
+    <p>Il est fait prisonnier dans les environs de Fay, le 21 juin 1940 puis il est transféré au Stalag XVII-B à Krems-Gneixendorf, Autriche, où il immatriculé sous le n° 55942 comme prisonnier de guerre.</p>
+    <p>Après avoir été interrogé par la Gestapo de Vienne, il est envoyé à Mauthausen dans le convoi n° 61 avec 342 Espagnols, où il arrive le 19 décembre 1941.</p>
+    <p>Il meurt au Sanitätslager du camp de Mauthausen. Dans cet endroit les soins médicaux étaient très rudimentaires et souvent le lieu d'assassinats par injections d'essence dans le cœur. La cause déclarée du décès, qui ne doit pas nécessairement coïncider avec la cause réelle, était la dégradation générale due à une mauvaise circulation.</p>
+  </div>
+</div>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agusti-ramon-6.jpg" alt="Ramón Agustí Hervàs">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agusti-ramon-7.jpg" alt="Ramón Agustí Hervàs">
+  </figure>
+</div>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Informations et photographies transmises par les historiens Lara Cardona Fernández, Nel·lo Navarro et José Manuel Palomar</li>
-    <li>deportados.es/agusti</li>
-    <li>raumdernamen.mauthausen-memorial.org</li>
+    <li>Informations et photographies fournies par l'historienne Lara Cardona Fernández, Nel lo Navarro, journaliste et écrivain, et José Manuel Palomar, diplômé des Beaux-Arts et écrivain.</li>
+    <li><a href="http://deportados.es/agusti" target="_blank" rel="noopener">http://deportados.es/agusti</a></li>
+    <li><a href="https://raumdernamen.mauthausen-memorial.org/" target="_blank" rel="noopener">https://raumdernamen.mauthausen-memorial.org/</a></li>
   </ul>
 </div>
 
