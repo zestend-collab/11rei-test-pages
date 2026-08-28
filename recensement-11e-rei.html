@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11è REI — Recensement 11e REI</title>
+<style>
+  :root{
+    --jaune:#f5c344;
+    --texte:#2b2b2b;
+    --gris-fond:#f4f4f2;
+    --accent:#c99b2f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:Georgia, 'Times New Roman', serif;
+    color:var(--texte);
+    background:#fff;
+    line-height:1.6;
+  }
+  .bandeau-livre{
+    background:var(--jaune);
+    text-align:center;
+    padding:14px 20px;
+    font-weight:bold;
+    font-size:0.95rem;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+  }
+  .bandeau-livre a.btn-livre{
+    background:#fff;
+    color:var(--texte);
+    padding:8px 18px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  .hero{
+    position:relative;
+    background:linear-gradient(rgba(20,15,10,0.55),rgba(20,15,10,0.55)),
+      url('https://raw.githubusercontent.com/zestend-collab/11rei-bannieres/main/hero-legionnaires.jpg') center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    padding:110px 20px;
+  }
+  .hero h1{
+    font-size:1.6rem;
+    font-weight:normal;
+    margin:0 0 8px 0;
+    letter-spacing:1px;
+  }
+  .hero h2{
+    font-size:2.2rem;
+    margin:0;
+    font-weight:bold;
+  }
+  main{
+    max-width:900px;
+    margin:0 auto;
+    padding:50px 24px;
+  }
+  main p{
+    margin-bottom:22px;
+    text-align:justify;
+  }
+  .recherche-block{
+    margin-top:50px;
+  }
+  .recherche-block h3{
+    text-align:center;
+    font-family:Arial, sans-serif;
+    font-weight:normal;
+    margin-bottom:24px;
+  }
+  .lettres{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    font-family:Arial, sans-serif;
+  }
+  .lettres a{
+    display:inline-block;
+    padding:8px 14px;
+    background:var(--gris-fond);
+    border-radius:4px;
+    text-decoration:none;
+    color:var(--texte);
+    font-weight:bold;
+  }
+  .lettres a:hover{
+    background:var(--jaune);
+  }
+  .laisser-commentaire{
+    text-align:center;
+    margin:40px 0;
+    font-family:Arial, sans-serif;
+  }
+  .laisser-commentaire a{
+    color:var(--accent);
+    text-decoration:underline;
+  }
+  .bouton-recherche-wrap{
+    text-align:center;
+    margin:60px 0 40px 0;
+  }
+  .bouton-recherche{
+    display:inline-block;
+    background:var(--jaune);
+    color:var(--texte);
+    padding:14px 34px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:bold;
+    font-family:Arial, sans-serif;
+    font-size:1rem;
+  }
+  .bouton-recherche:hover{
+    background:var(--accent);
+    color:#fff;
+  }
+  section.commentaires{
+    background:var(--gris-fond);
+    padding:50px 24px;
+    font-family:Arial, sans-serif;
+  }
+  section.commentaires .inner{
+    max-width:900px;
+    margin:0 auto;
+  }
+  section.commentaires h3{
+    font-size:1.4rem;
+    margin-bottom:30px;
+  }
+  .commentaire{
+    background:#fff;
+    border-radius:6px;
+    padding:18px 22px;
+    margin-bottom:18px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.08);
+  }
+  .commentaire .auteur{
+    font-weight:bold;
+  }
+  .commentaire .date{
+    color:#777;
+    font-size:0.85rem;
+    margin-left:8px;
+  }
+  .commentaire p{
+    margin:10px 0 0 0;
+    text-align:left;
+  }
+  .commentaire.reponse{
+    margin-left:32px;
+    background:#fbfbfb;
+    border-left:3px solid var(--jaune);
+  }
+  footer{
+    text-align:center;
+    padding:24px;
+    font-size:0.85rem;
+    color:#888;
+    font-family:Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+  <script src="/menu.js"></script>
+
+  <div class="hero">
+    <h1>Légion Etrangère</h1>
+    <h2>11e Régiment étranger d'infanterie</h2>
+  </div>
+
+  <main>
+    <p>Le 11ᵉ régiment étranger d'infanterie était composé d'anciens légionnaires réservistes rappelés lors de la mobilisation, d'engagés volontaires pour la durée de la guerre (EVDG) et de légionnaires d'active stationnés en Afrique du Nord. Son effectif s'élevait à environ 3 000 hommes.</p>
+
+    <p>Ce recensement biographique des légionnaires du 11ᵉ régiment étranger d'infanterie s'inscrit dans une démarche de recherche historique, de transmission de la mémoire et d'aide aux familles et aux chercheurs. Il concerne des hommes nés, pour l'essentiel, dans les vingt premières années du XXᵉ siècle, aujourd'hui pour la plupart décédés depuis plusieurs décennies.</p>
+
+    <p>Les informations publiées ont pour seule finalité de permettre la compréhension des trajectoires individuelles dans leur contexte historique, social, politique et juridique, et ne visent en aucun cas à porter un jugement moral sur les personnes concernées. Elles cherchent au contraire à restituer la complexité de parcours souvent marqués par la guerre, l'exil, la précarité, les politiques de contrôle des étrangers, la répression politique ou raciale, et les dispositifs d'encadrement et d'intégration propres à l'époque.</p>
+
+    <p>Les notices reposent exclusivement sur des sources archivistiques identifiées (archives militaires, administratives, judiciaires, policières, de captivité ou de déportation, ainsi que bases biographiques spécialisées). Ces sources ont été produites dans un contexte historique caractérisé par la crise des années 1930, la montée des fascismes, la guerre civile espagnole, l'Occupation, la déportation et le développement de politiques de fichage et de surveillance des populations étrangères.</p>
+
+    <p>Dans ce cadre, certaines notices peuvent mentionner des éléments aujourd'hui qualifiés de « données sensibles » (opinions politiques ou syndicales, condamnations pénales, mesures d'internement ou d'expulsion, appartenance religieuse lorsqu'elle conditionne une persécution, statut de prisonnier de guerre...). Ces informations ne sont reproduites que lorsqu'elles sont strictement nécessaires à l'intelligibilité du parcours biographique : par exemple pour comprendre un engagement dans la Légion étrangère à la sortie d'une institution pénale, une alternative à l'incarcération, une trajectoire d'exil politique, une déportation, ou les effets concrets des politiques antijuives et de la révision des naturalisations.</p>
+
+    <p>Lorsque les sources utilisent des formulations stigmatisantes ou marquées idéologiquement, notamment dans les archives policières ou judiciaires, celles-ci sont autant que possible reformulées dans un langage neutre et contextualisé, afin de ne pas prolonger les biais et catégories propres à ces documents. Les adresses mentionnées sont anciennes et exclusivement issues de documents d'archives.</p>
+
+    <p>L'identification nominative des personnes est indissociable de la démarche de recherche historique et de recensement biographique ; une anonymisation systématique ferait perdre toute cohérence aux parcours reconstitués et empêcherait le croisement des sources.</p>
+
+    <p>Les descendants ou proches des personnes mentionnées peuvent demander la correction, la mise à jour, la contextualisation ou l'atténuation de certaines informations, afin de concilier au mieux le respect de la mémoire familiale et les exigences de la recherche biographique. Cette démarche s'inscrit dans une volonté constante d'équilibre entre rigueur scientifique, respect des personnes et responsabilité mémorielle.</p>
+
+    <p>Les fiches présentées ont été établies à partir de nombreuses sources : le site Mémoire des hommes (Morts pour la France et EVDG), les listes officielles de prisonniers français, le Journal officiel (citations et décorations), la revue du régiment (L'Écho des bataillons), des ouvrages tels que Vainqueur quand même (René Luce Coupin) et Les Combattants du 18 juin (Roger Bruge), les archives du régiment conservées à Vincennes et à Aubagne, ainsi que de nombreuses autres archives françaises et étrangères.</p>
+
+    <p>Sur les fiches, le repère ⚠ Attention signale les points à interpréter avec prudence : le plus souvent la possibilité d'un doublon, ou une hypothèse d'identification restant à confirmer. Les comptes rendus manuscrits ont parfois été copiés plusieurs fois et certaines lettres mal retranscrites — les confusions les plus fréquentes concernent notamment le N avec le U, ou le E avec le C, et peuvent aussi toucher un ensemble de lettres ou de sons. Ainsi, dans la liste du SAHMA figure un Louis Madmel, qu'il faudrait probablement lire Louis Madurel.</p>
+
+    <p>Je tiens à remercier ici toutes les personnes, les familles ainsi que les bénévoles du Fil d'Ariane qui m'ont transmis des informations et permis d'enrichir ce travail.</p>
+
+    <div class="recherche-block">
+      <h3>Rechercher un légionnaire</h3>
+      <div class="lettres">
+        <a href="recensement-a.html">A</a>
+        <a href="recensement-b.html">B</a>
+        <a href="recensement-c.html">C</a>
+        <a href="recensement-d.html">D</a>
+        <a href="recensement-e.html">E</a>
+        <a href="recensement-f.html">F</a>
+        <a href="recensement-g.html">G</a>
+        <a href="recensement-h.html">H</a>
+        <a href="recensement-i.html">I</a>
+        <a href="recensement-j.html">J</a>
+        <a href="recensement-k.html">K</a>
+        <a href="recensement-l.html">L</a>
+        <a href="recensement-m.html">M</a>
+        <a href="recensement-n.html">N</a>
+        <a href="recensement-o.html">O</a>
+        <a href="recensement-p.html">P</a>
+        <a href="recensement-q.html">Q</a>
+        <a href="recensement-r.html">R</a>
+        <a href="recensement-s.html">S</a>
+        <a href="recensement-t.html">T</a>
+        <a href="recensement-uvw.html">UVW</a>
+        <a href="recensement-xyz.html">XYZ</a>
+        <a href="recensement-a-confirmer.html">à confirmer</a>
+      </div>
+    </div>
+
+    <p class="laisser-commentaire"><a href="#commentaires">laisser un commentaire</a></p>
+
+    <div class="bouton-recherche-wrap">
+      <a class="bouton-recherche" href="recherche-legionnaire.html">Recherche legionnaire</a>
+    </div>
+  </main>
+
+  <section class="commentaires" id="commentaires">
+    <div class="inner">
+      <h3>Commentaires</h3>
+
+      <div class="commentaire">
+        <span class="auteur">Frans Janssen</span><span class="date">19-12-2019 07:38</span>
+        <p>Perfect piece of research, finally after all these years most these brave men get a name.<br>
+        The history of this rather unique regiment should have been written in a more thorough and structured way than it has been done so far.<br>
+        Bravo Mr. Zigrand, for making this step in the right direction.<br>
+        Regards Frans Janssen<br>
+        Webmaster<br>
+        http://www.kwaak99.demon.nl</p>
+      </div>
+
+      <div class="commentaire">
+        <span class="auteur">Tony Lambert</span><span class="date">27-04-2020 02:23</span>
+        <p>Hello, My Father was a career Sergent who volunteered and was in the 12eme REI<br>
+        Does such a list as this exist that may have his name mentioned?<br>
+        His name was Francois Karosas from Lithuania and enlisted in 1928<br>
+        Thank you<br>
+        Anton Lambert(Karosas)</p>
+      </div>
+      <div class="commentaire reponse">
+        <span class="auteur">Zede</span><span class="date">28-04-2020 07:18</span>
+        <p>Hello,<br>
+        There is no archive on the 12th REI.<br>
+        I find his name in the prisoners lists https://gallica.bnf.fr/ark:/12148/bpt6k5744144j/f35.image.r=%22Karosas%22?rk=193134;0<br>
+        In the Arolsen archives he appears with his wife and two first children. You must search for the family name because it is cited with several different first names Frank, Franz, Pranas ...<br>
+        https://collections.arolsen-archives.org/en/search/<br>
+        You can write to the foreign legion for a copy of their service records.<br>
+        What was his regiment in 1943 before his captivity in Italy?</p>
+      </div>
+
+      <div class="commentaire">
+        <span class="auteur">Jean-Marie RICHARD</span><span class="date">07-10-2020 02:01</span>
+        <p>Merci beaucoup, j'ai retrouvé avec émotion une trace de mon père... RICHARD Denis Robert Lucien<br>
+        - grade: caporal chef<br>
+        - JO: mie 74260, caporal chef au 11e rég. étranger d'infanterie : excellent chef d'atelier, calme et dévoué. A toujours obtenu le meilleur rendement dans son équipe. Grièvement blessé le 24 mai 1940, alors qu'il construisait, sous un violent bombardement, une ligne téléphonique à proximité de l'ennemi.</p>
+      </div>
+      <div class="commentaire reponse">
+        <span class="auteur">Zede</span><span class="date">07-10-2020 08:01</span>
+        <p>Merci pour votre commentaire</p>
+      </div>
+
+      <div class="commentaire">
+        <span class="auteur">HELINIAK</span><span class="date">18-11-2020 09:21</span>
+        <p>Bonjour,<br>
+        J'ai découvert grâce à vous mon Grand oncle : HELENIAK Czeslaw.<br>
+        Cela me permet d'avancer dans mon arbre généalogique...<br>
+        Merci pour votre précieux travail.<br>
+        Bien à vous.</p>
+      </div>
+
+      <div class="commentaire">
+        <span class="auteur">BEGLIOMINI HENRI</span><span class="date">26-02-2023 10:35</span>
+        <p>Bonjour Mesdames Messieurs les chercheurs.<br>
+        Félicitations pour toutes vos recherches et tout ce que vous faites encore pour que la Mémoire ne s efface pas. Il faut perdurer ce système de recherches. Je fais parti du Souvenir Français et je fais pareil que Vous. Merci vivement pour tout. J ai retrouvé des personnes.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    11e Régiment Étranger d'Infanterie — 11regimentetranger.com
+  </footer>
+
+</body>
+</html>
