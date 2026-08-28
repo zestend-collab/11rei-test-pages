@@ -105,7 +105,24 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     return BANNIERES_GENERIQUES[index];
   }
 
+  // Style de base du bloc .hero, injecte une seule fois en tout debut de <head> (donc
+  // de plus faible priorite en cascade que n'importe quel CSS deja present sur la page :
+  // une page qui definit deja .hero avec son propre style, comme recensement-11e-rei.html,
+  // garde ce style ; les autres recoivent au moins une hauteur et un rendu correct).
+  function injecterStyleParDefaut() {
+    if (document.getElementById("banniere-js-style")) return;
+    var style = document.createElement("style");
+    style.id = "banniere-js-style";
+    style.textContent =
+      ".hero{min-height:260px;display:flex;align-items:center;justify-content:center;" +
+      "color:#fff;text-align:center;padding:60px 20px;background-size:cover;" +
+      "background-position:center;background-repeat:no-repeat}";
+    document.head.insertBefore(style, document.head.firstChild);
+  }
+
   function appliquerBanniere() {
+    injecterStyleParDefaut();
+
     var slug = slugDePage();
     var fichier = choisirBanniere(slug);
     var url = BASE + fichier;
