@@ -2,8 +2,14 @@
 menu.js — Menu de navigation partage du site 11e REI (variante de test GitHub Pages)
 ================================================================================================
 Un seul fichier, charge par toutes les pages via <script src="/menu.js"></script>.
-Insere le menu de navigation (reproduction du menu Google Sites) en haut de la page
-au chargement, sans dependance a un template particulier.
+Insere le menu de navigation en haut de la page au chargement, sans dependance a un
+template particulier.
+
+Style : le menu flotte en surimpression transparente sur la banniere (texte blanc, pas
+de fond), comme sur certaines pages du Google Sites. Des que la page est scrollee au-dela
+de la hauteur de la banniere, le menu passe automatiquement en fond blanc plein + texte
+sombre pour rester lisible par-dessus n'importe quel contenu (le menu reste toujours
+visible, position fixe).
 
 Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateurs Python.
 */
@@ -22,15 +28,23 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
   ];
 
   var CSS = ""
-    + ".gsite-nav{background:#ffffff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:200;font-family:'Roboto',Arial,sans-serif}"
+    + ".gsite-nav{position:fixed;top:0;left:0;width:100%;z-index:500;"
+    + "font-family:'Roboto',Arial,sans-serif;background:transparent;"
+    + "transition:background .25s ease,box-shadow .25s ease}"
+    + ".gsite-nav.scrolled{background:#ffffff;box-shadow:0 1px 6px rgba(0,0,0,.15)}"
     + ".gsite-nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:0 24px;height:64px}"
-    + ".gsite-logo{font-size:1.05rem;font-weight:500;color:#202124;white-space:nowrap;margin-right:8px;text-decoration:none}"
+    + ".gsite-logo{font-size:1.05rem;font-weight:500;color:#ffffff;white-space:nowrap;margin-right:8px;text-decoration:none;transition:color .25s ease}"
+    + ".gsite-nav.scrolled .gsite-logo{color:#202124}"
     + ".gsite-links{display:flex;align-items:center;gap:26px;flex:1;overflow-x:auto}"
-    + ".gsite-links a{font-size:.86rem;color:#3c4043;text-decoration:none;white-space:nowrap;padding:22px 0;border-bottom:3px solid transparent}"
-    + ".gsite-links a:hover{color:#202124}"
-    + ".gsite-links a.active{color:#202124;font-weight:500;border-bottom-color:#fab855}"
-    + ".gsite-search{width:2.2rem;height:2.2rem;border-radius:50%;border:none;background:transparent;color:#5f6368;font-size:1.1rem;cursor:pointer;flex-shrink:0}"
-    + ".gsite-search:hover{background:#f1f3f4}"
+    + ".gsite-links a{font-size:.86rem;color:#ffffff;text-decoration:none;white-space:nowrap;padding:22px 0;border-bottom:3px solid transparent;transition:color .25s ease}"
+    + ".gsite-nav.scrolled .gsite-links a{color:#3c4043}"
+    + ".gsite-links a:hover{opacity:.8}"
+    + ".gsite-nav.scrolled .gsite-links a:hover{color:#202124;opacity:1}"
+    + ".gsite-links a.active{font-weight:500;border-bottom-color:#fab855}"
+    + ".gsite-search{width:2.2rem;height:2.2rem;border-radius:50%;border:none;background:transparent;color:#ffffff;font-size:1.1rem;cursor:pointer;flex-shrink:0;transition:color .25s ease}"
+    + ".gsite-nav.scrolled .gsite-search{color:#5f6368}"
+    + ".gsite-search:hover{background:rgba(255,255,255,.15)}"
+    + ".gsite-nav.scrolled .gsite-search:hover{background:#f1f3f4}"
     + "@media (max-width:760px){.gsite-links{gap:16px}.gsite-nav-inner{gap:14px;padding:0 12px}}";
 
   function construireMenu() {
@@ -79,7 +93,27 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     inner.appendChild(search);
 
     nav.appendChild(inner);
+    // Insere la nav tout en haut du body : si une banniere (.hero) existe deja ou est
+    // ajoutee ensuite par banniere.js juste apres, elle devient de fait le tout premier
+    // element du flux normal (la nav etant position:fixed, hors flux), et se retrouve
+    // donc visuellement collee en haut de page, sous la nav transparente.
     document.body.insertBefore(nav, document.body.firstChild);
+
+    // Bascule la nav en fond plein des que la banniere (si presente) est depassee par
+    // le defilement, pour rester lisible par-dessus n'importe quel contenu ensuite.
+    function onScroll() {
+      var hero = document.querySelector(".hero");
+      var heroHeight = hero ? hero.getBoundingClientRect().height : 0;
+      var navHeight = nav.offsetHeight || 64;
+      var seuil = Math.max(heroHeight - navHeight, 10);
+      if (window.scrollY > seuil) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
 
   if (document.readyState === "loading") {

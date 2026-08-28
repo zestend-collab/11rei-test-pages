@@ -116,8 +116,32 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     style.textContent =
       ".hero{min-height:260px;display:flex;align-items:center;justify-content:center;" +
       "color:#fff;text-align:center;padding:60px 20px;background-size:cover;" +
-      "background-position:center;background-repeat:no-repeat}";
+      "background-position:center;background-repeat:no-repeat}" +
+      ".banniere-titre{font-family:Georgia,'Times New Roman',serif;font-size:1.9rem;" +
+      "font-weight:bold;color:#fff;margin:0;padding:0 20px;max-width:900px;" +
+      "text-shadow:0 2px 8px rgba(0,0,0,.6)}" +
+      "@media (max-width:640px){.banniere-titre{font-size:1.3rem}}";
     document.head.insertBefore(style, document.head.firstChild);
+  }
+
+  // Titre de repli si la page n'a pas de <h1> (ex. "ordre-de-bataille" -> "Ordre de bataille").
+  function titreDepuisSlug(slug) {
+    var texte = slug.replace(/-/g, " ");
+    return texte.charAt(0).toUpperCase() + texte.slice(1);
+  }
+
+  // Reprend le <h1> deja present sur la page (ecrit par le generateur ou a la main) et
+  // l'affiche en surimpression sur la banniere, en blanc. Rien n'est duplique ni retire :
+  // le <h1> d'origine reste a sa place normale dans le contenu de la page.
+  function ajouterTitre(hero, slug) {
+    if (hero.querySelector("h1, h2")) return; // hero avec son propre titre deja fait main
+    var h1Source = document.querySelector("h1");
+    var texte = (h1Source && h1Source.textContent.trim()) || titreDepuisSlug(slug);
+    if (!texte) return;
+    var titre = document.createElement("h1");
+    titre.className = "banniere-titre";
+    titre.textContent = texte;
+    hero.appendChild(titre);
   }
 
   function appliquerBanniere() {
@@ -144,6 +168,8 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     hero.style.backgroundSize = "cover";
     hero.style.backgroundPosition = "center";
     hero.style.backgroundRepeat = "no-repeat";
+
+    ajouterTitre(hero, slug);
   }
 
   if (document.readyState === "loading") {
