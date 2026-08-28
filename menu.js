@@ -31,7 +31,7 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     + ".gsite-nav{position:fixed;top:0;left:0;width:100%;z-index:500;"
     + "font-family:'Roboto',Arial,sans-serif;background:transparent;"
     + "transition:background .25s ease,box-shadow .25s ease}"
-    + ".gsite-nav.scrolled{background:#ffffff;box-shadow:0 1px 6px rgba(0,0,0,.15)}"
+    + ".gsite-nav.scrolled{background:#f1f3f4;box-shadow:0 1px 6px rgba(0,0,0,.15)}"
     + ".gsite-nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:0 24px;height:64px}"
     + ".gsite-logo{font-size:1.05rem;font-weight:500;color:#ffffff;white-space:nowrap;margin-right:8px;text-decoration:none;transition:color .25s ease}"
     + ".gsite-nav.scrolled .gsite-logo{color:#202124}"
@@ -41,10 +41,6 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     + ".gsite-links a:hover{opacity:.8}"
     + ".gsite-nav.scrolled .gsite-links a:hover{color:#202124;opacity:1}"
     + ".gsite-links a.active{font-weight:500;border-bottom-color:#fab855}"
-    + ".gsite-search{width:2.2rem;height:2.2rem;border-radius:50%;border:none;background:transparent;color:#ffffff;font-size:1.1rem;cursor:pointer;flex-shrink:0;transition:color .25s ease}"
-    + ".gsite-nav.scrolled .gsite-search{color:#5f6368}"
-    + ".gsite-search:hover{background:rgba(255,255,255,.15)}"
-    + ".gsite-nav.scrolled .gsite-search:hover{background:#f1f3f4}"
     + "@media (max-width:760px){.gsite-links{gap:16px}.gsite-nav-inner{gap:14px;padding:0 12px}}";
 
   function construireMenu() {
@@ -80,17 +76,6 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
       linksWrap.appendChild(a);
     });
     inner.appendChild(linksWrap);
-
-    var search = document.createElement("button");
-    search.type = "button";
-    search.className = "gsite-search";
-    search.title = "Rechercher";
-    search.setAttribute("aria-label", "Rechercher");
-    search.textContent = "\uD83D\uDD0D"; // loupe
-    search.addEventListener("click", function () {
-      window.location.href = SITE + "/recherche-legionnaire";
-    });
-    inner.appendChild(search);
 
     nav.appendChild(inner);
     // Insere la nav tout en haut du body : si une banniere (.hero) existe deja ou est
