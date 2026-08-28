@@ -123,27 +123,29 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
       "@media (max-width:640px){.banniere-titre{font-size:1.3rem}}";
     document.head.insertBefore(style, document.head.firstChild);
   }
-
-  // Titre de repli si la page n'a pas de <h1> (ex. "ordre-de-bataille" -> "Ordre de bataille").
-  function titreDepuisSlug(slug) {
-    var texte = slug.replace(/-/g, " ");
-    return texte.charAt(0).toUpperCase() + texte.slice(1);
-  }
-
-  // Reprend le <h1> deja present sur la page (ecrit par le generateur ou a la main) et
-  // l'affiche en surimpression sur la banniere, en blanc. Rien n'est duplique ni retire :
-  // le <h1> d'origine reste a sa place normale dans le contenu de la page.
+ // Reprend le <h1> deja present sur la page (ecrit par le generateur ou a la main) et
+  // l'affiche en surimpression sur la banniere, en blanc.
   function ajouterTitre(hero, slug) {
     if (hero.querySelector("h1, h2")) return; // hero avec son propre titre deja fait main
+    
     var h1Source = document.querySelector("h1");
-    var texte = (h1Source && h1Source.textContent.trim()) || titreDepuisSlug(slug);
+    
+    // MODIFICATION 1 : On utilise .innerHTML au lieu de .textContent pour récupérer le <br>
+    var texte = (h1Source && h1Source.innerHTML.trim()) || titreDepuisSlug(slug);
     if (!texte) return;
+    
     var titre = document.createElement("h1");
     titre.className = "banniere-titre";
-    titre.textContent = texte;
+    
+    // MODIFICATION 2 : On injecte avec innerHTML pour que le navigateur lise le saut de ligne
+    titre.innerHTML = texte;
     hero.appendChild(titre);
-  }
 
+    // MODIFICATION 3 : Pour éviter le doublon visuel, on masque le h1 d'origine en bas de page
+    if (h1Source) {
+      h1Source.style.display = "none";
+    }
+  }
   function appliquerBanniere() {
     injecterStyleParDefaut();
 
