@@ -21,15 +21,17 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
 (function () {
   var BASE = "https://raw.githubusercontent.com/zestend-collab/11rei-bannieres/main/";
 
-  // Bannières dediees a une biographie precise : cle = slug de la page
-  // (dernier segment de l'URL, ex "buhrer-emile" pour /blog/buhrer-emile).
+  // Bannières dediees a UNE page precise (biographie ou page thematique) : cle = slug
+  // de la page (dernier segment de l'URL, ex "buhrer-emile" pour /blog/buhrer-emile,
+  // ou "ordre-de-bataille" pour /ordre-de-bataille).
   var PHOTOS_PERSONNELLES = {
     "arsene-zigrand": "banniere-arsene-zigrand.jpg",
     "binsztok-mordka": "banniere-binsztok-mordka.jpg",
     "brzezinski-israel": "banniere-brzezinski-israel.jpg",
     "buhrer-emile": "banniere-buhrer-emile.jpg",
     "amstutz-jean-bernard": "banniere-amstutz-groupe.jpg",
-    "marguet-louis": "banniere-marguet-velos.jpg"
+    "marguet-louis": "banniere-marguet-velos.jpg",
+    "ordre-de-bataille": "banniere-ordre-de-bataille.jpg"
   };
 
   // Pot commun utilise pour toutes les autres pages (accueil, arborescence,
