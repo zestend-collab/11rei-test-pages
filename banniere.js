@@ -145,7 +145,7 @@ function ajouterTitre(hero, slug) {
 
   // (MODIFICATION 3 supprimée : on ne masque plus le h1 original)
   }
-  function appliquerBanniere() {
+  function appliquerBanniere()
     injecterStyleParDefaut();
 
     var slug = slugDePage();
