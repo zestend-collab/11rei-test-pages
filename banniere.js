@@ -83,7 +83,7 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     var style = document.createElement("style");
     style.id = "banniere-js-style";
     style.textContent =
-      ".hero{min-height:340px;display:flex;align-items:center;justify-content:center;" +
+      ".hero{min-height:320px;display:flex;align-items:center;justify-content:center;" +
       "color:#fff;text-align:center;padding:60px 20px;background-size:cover;" +
       "background-position:center;background-repeat:no-repeat}" +
       ".banniere-titre{font-family:Georgia,'Times New Roman',serif;font-size:1.9rem;" +
