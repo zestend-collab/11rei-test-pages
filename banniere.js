@@ -3,27 +3,11 @@ banniere.js — Bannière visuelle par page du site 11e REI (variante de test Gi
 ================================================================================================
 Un seul fichier, charge par toutes les pages via <script src="/banniere.js"></script>.
 Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page courante.
-
-REGLE:
-- Si un fichier bannière s'appelle "banniere-<slug-de-la-page>.jpg", il est reserve a
-  la biographie de ce slug et s'affiche UNIQUEMENT sur cette page (PHOTOS_PERSONNELLES).
-- Sinon, la page recoit une bannière du pot commun (BANNIERES_GENERIQUES), choisie de
-  facon stable (toujours la meme a chaque visite) a partir du nom de la page.
-
-Pour ajouter une bannière : uploader le fichier dans le depot 11rei-bannieres, puis
-l'ajouter ici -> dans PHOTOS_PERSONNELLES si elle est dediee a une fiche precise
-(cle = slug exact de la page, ex "buhrer-emile" pour /blog/buhrer-emile),
-sinon dans BANNIERES_GENERIQUES.
-
-Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs Python.
 */
 
 (function () {
   var BASE = "https://raw.githubusercontent.com/zestend-collab/11rei-bannieres/main/";
 
-  // Bannières dediees a UNE page precise (biographie ou page thematique) : cle = slug
-  // de la page (dernier segment de l'URL, ex "buhrer-emile" pour /blog/buhrer-emile,
-  // ou "ordre-de-bataille" pour /ordre-de-bataille).
   var PHOTOS_PERSONNELLES = {
     "arsene-zigrand": "banniere-arsene-zigrand.jpg",
     "binsztok-mordka": "banniere-binsztok-mordka.jpg",
@@ -33,64 +17,51 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     "marguet-louis": "banniere-marguet-velos.jpg",
     "ordre-de-bataille": "banniere-ordre-de-bataille.jpg",
     "arborescence": "banniere-arborescence.jpg"
-
   };
 
-  // Pot commun utilise pour toutes les autres pages (accueil, arborescence,
-  // recensement, fiches sans photo dediee...). Choix stable par page : la meme
-  // bannière s'affiche a chaque visite d'une page donnee.
   var BANNIERES_GENERIQUES = [
-    "banniere-rang-soldats.jpg",
-    "banniere-presenter-armes.jpg",
-    "banniere-remise-vetements.jpg",
-    "banniere-mitrailleuse-groupe.jpg",
-    "banniere-cavalerie.jpg",
-    "banniere-colonne-marche.jpg",
-    "banniere-construction-abri-hd.jpg",
-    "banniere-chantier-colline.jpg",
-    "banniere-groupe-champ.jpg",
-    "banniere-infirmerie.jpg",
-    "banniere-interieur-equipement.jpg",
-    "banniere-neige-feu.jpg",
-    "banniere-porte-drapeau-marche.jpg",
-    "banniere-portrait-officier.jpg",
-    "banniere-portrait-officier-2.jpg",
-    "banniere-tanks-motos.jpg",
-    "banniere-tanks-motos-2.jpg",
-    "banniere-troupe-champ-drapeaux.jpg",
-    "banniere-balayage.jpg",
-    "banniere-bar-alcool-tue.jpg",
-    "banniere-deux-hommes-table.jpg",
-    "banniere-general-cheval-troupe.jpg",
-    "banniere-colonne-mitrailleuse.jpg",
-    "banniere-5e-compagnie-salut.jpg",
-    "banniere-clairons.jpg",
-    "banniere-general-rue-face.jpg",
-    "banniere-general-rue-profil.jpg",
-    "banniere-tambours.jpg",
-    "banniere-deux-cavaliers.jpg",
-    "banniere-attelages-mitrailleuses.jpg",
-    "banniere-colonne-contre-jour.jpg",
-    "banniere-discours-officier.jpg",
-    "banniere-fanfare-cymbales.jpg",
-    "banniere-hiver-poele.jpg",
-    "banniere-travaux-tranchee.jpg",
-    "banniere-groupe-foret.jpg",
-    "banniere-canon-ferroviaire.jpg",
-    "banniere-salut-cheval-blanc.jpg",
-    "banniere-jeu-cartes.jpg",
-    "banniere-drapeau-regimentaire.jpg",
-    "banniere-fanfare-cour-ferme.jpg"
+    "banniere-rang-soldats.jpg", "banniere-presenter-armes.jpg", "banniere-remise-vetements.jpg",
+    "banniere-mitrailleuse-groupe.jpg", "banniere-cavalerie.jpg", "banniere-colonne-marche.jpg",
+    "banniere-construction-abri-hd.jpg", "banniere-chantier-colline.jpg", "banniere-groupe-champ.jpg",
+    "banniere-infirmerie.jpg", "banniere-interieur-equipement.jpg", "banniere-neige-feu.jpg",
+    "banniere-porte-drapeau-marche.jpg", "banniere-portrait-officier.jpg", "banniere-portrait-officier-2.jpg",
+    "banniere-tanks-motos.jpg", "banniere-tanks-motos-2.jpg", "banniere-troupe-champ-drapeaux.jpg",
+    "banniere-balayage.jpg", "banniere-bar-alcool-tue.jpg", "banniere-deux-hommes-table.jpg",
+    "banniere-general-cheval-troupe.jpg", "banniere-colonne-mitrailleuse.jpg", "banniere-5e-compagnie-salut.jpg",
+    "banniere-clairons.jpg", "banniere-general-rue-face.jpg", "banniere-general-rue-profil.jpg",
+    "banniere-tambours.jpg", "banniere-deux-cavaliers.jpg", "banniere-attelages-mitrailleuses.jpg",
+    "banniere-colonne-contre-jour.jpg", "banniere-discours-officier.jpg", "banniere-fanfare-cymbales.jpg",
+    "banniere-hiver-poele.jpg", "banniere-travaux-tranchee.jpg", "banniere-groupe-foret.jpg",
+    "banniere-canon-ferroviaire.jpg", "banniere-salut-cheval-blanc.jpg", "banniere-jeu-cartes.jpg",
+    "banniere-drapeau-regimentaire.jpg", "banniere-fanfare-cour-ferme.jpg"
   ];
+
+  // Fonction de secours pour transformer "nom-du-slug" en "Nom Du Slug" si le H1 est absent
+  function titreDepuisSlug(slug) {
+    if (!slug || slug === "accueil") return "";
+    return slug
+      .split("-")
+      .map(function(mot) { return mot.charAt(0).toUpperCase() + mot.slice(1); })
+      .join(" ");
+  }
 
   function slugDePage() {
     var chemin = window.location.pathname.replace(/\/$/, "");
     var morceaux = chemin.split("/");
-    return morceaux[morceaux.length - 1] || "accueil";
+    var dernierMorceau = morceaux[morceaux.length - 1] || "accueil";
+    // Supprime l'extension .html ou .htm si présente
+    return dernierMorceau.replace(/\.html?$/i, "");
   }
 
-  // Hash simple et stable : meme resultat a chaque chargement, donc toujours la
-  // meme bannière du pot commun pour une page donnee (pas d'aleatoire a chaque visite).
+  function hashStable(texte) {
+    var h = 0;
+    for (var i = 0; i < texte.length; i++) {
+      h = (h * 31 + text.charCodeAt(i)) >>> 0; // Note : attention à la variable text vs texte
+    }
+    return h;
+  }
+
+  // Correction de la variable interne dans hashStable
   function hashStable(texte) {
     var h = 0;
     for (var i = 0; i < texte.length; i++) {
@@ -107,10 +78,6 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     return BANNIERES_GENERIQUES[index];
   }
 
-  // Style de base du bloc .hero, injecte une seule fois en tout debut de <head> (donc
-  // de plus faible priorite en cascade que n'importe quel CSS deja present sur la page :
-  // une page qui definit deja .hero avec son propre style, comme recensement-11e-rei.html,
-  // garde ce style ; les autres recoivent au moins une hauteur et un rendu correct).
   function injecterStyleParDefaut() {
     if (document.getElementById("banniere-js-style")) return;
     var style = document.createElement("style");
@@ -125,29 +92,28 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
       "@media (max-width:640px){.banniere-titre{font-size:1.3rem}}";
     document.head.insertBefore(style, document.head.firstChild);
   }
- // Reprend le <h1> deja present sur la page (ecrit par le generateur ou a la main) et
-  // l'affiche en surimpression sur la banniere, en blanc.
+
   function ajouterTitre(hero, slug) {
-    if (hero.querySelector("h1, h2")) return; // hero avec son propre titre deja fait main
-    
+    if (hero.querySelector("h1, h2")) return;
+
     var h1Source = document.querySelector("h1");
     
-    // MODIFICATION 1 : On utilise .innerHTML au lieu de .textContent pour récupérer le <br>
-    var texte = (h1Source && h1Source.innerHTML.trim()) || titreDepuisSlug(slug);
-    if (!texte) return;
-    
+    // Si H1 trouvé, on garde innerHTML au cas où il y a des balises (ex: <span>)
+    // Sinon, on génère un texte sécurisé depuis le slug
     var titre = document.createElement("h1");
     titre.className = "banniere-titre";
-    
-    // MODIFICATION 2 : On injecte avec innerHTML pour que le navigateur lise le saut de ligne
-    titre.innerHTML = texte;
-    hero.appendChild(titre);
 
-    // MODIFICATION 3 : Pour éviter le doublon visuel, on masque le h1 d'origine en bas de page
-    if (h1Source) {
-      h1Source.style.display = "none";
+    if (h1Source && h1Source.innerHTML.trim()) {
+      titre.innerHTML = h1Source.innerHTML.trim();
+    } else {
+      var texteSecours = titreDepuisSlug(slug);
+      if (!texteSecours) return;
+      titre.textContent = texteSecours; // Sécurisé
     }
+
+    hero.appendChild(titre);
   }
+
   function appliquerBanniere() {
     injecterStyleParDefaut();
 
