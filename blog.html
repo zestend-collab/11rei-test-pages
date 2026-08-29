@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Blog — 11e REI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --ink: #2b2b28;
+    --paper: #faf7f0;
+    --accent: #7a3b2e;
+    --line: #ddd3c0;
+    --pill-bg: #efe6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  header.page-head {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  header.page-head h1 {
+    font-size: 2.1em;
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+  }
+  header.page-head .subtitle {
+    font-style: italic;
+    color: #6b6357;
+    font-size: 1em;
+  }
+  a.back {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95em;
+  }
+  a.back:hover { text-decoration: underline; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 22px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+  }
+  .card-disabled {
+    opacity: 0.68;
+    cursor: default;
+  }
+  .card-disabled:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  .thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #ece4d2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .noimg {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #a89b7f;
+    font-size: 0.95em;
+    letter-spacing: 0.05em;
+  }
+  .card-body {
+    padding: 14px 16px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-body h2 {
+    font-size: 1.05em;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .card-body .desc {
+    font-size: 0.88em;
+    color: #6b6357;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">&larr; Retour</a>
+  <header class="page-head">
+    <h1>Blog</h1>
+    <div class="subtitle">11e Régiment Étranger d'Infanterie</div>
+  </header>
+  <div class="grid">
+    <a class="card" href="https://test.11regimentetranger.com/10e-compagnie">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-10e-compagnie.jpg" alt="10è compagnie" loading="lazy"></div>
+      <div class="card-body">
+        <h2>10è compagnie</h2>
+        <p class="desc">... les légionnaires du 11è régiment étranger d&#x27;infanterie affectés à la 10è compagnie...</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/resistants">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-resistants.jpg" alt="Les résistants" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Les résistants</h2>
+        <p class="desc">... les légionnaires du 11è régiment étranger d&#x27;infanterie dont le parcours après 1939-40 croise la Résistance : engagement dans les FFI, les Forces F...</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-12-12-1942">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-12-12-1942.jpg" alt="JO 12/12/1942" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 12/12/1942</h2>
+        <p class="desc">liste de citation du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-25-11-1942">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-25-11-1942.jpg" alt="JO 25/11/1942" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 25/11/1942</h2>
+        <p class="desc">6è liste de citation du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/pankow-leonid">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pankow-leonid.jpg" alt="Léonid PANKOW" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Léonid PANKOW</h2>
+        <p class="desc">successivement soldat de l&#x27;armée blanche, ouvrier du rail, brigadiste en Espagne puis engagé volontaire au 11e régiment étranger d&#x27;infanterie en 1939-1940</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-15-07-1942">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-15-07-1942.jpg" alt="JO 15/07/1942" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 15/07/1942</h2>
+        <p class="desc">3è liste de citation du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-06-06-1942">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-06-06-1942.jpg" alt="JO 06/06/1942" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 06/06/1942</h2>
+        <p class="desc">11e régiment étranger d&#x27;infanterie (2e liste)</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/scutec-rodolphe">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-scutec-rodolphe.jpg" alt="Rodolphe SZKUTEK" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Rodolphe SZKUTEK</h2>
+        <p class="desc">de nationalité polonaise, est né le 30 septembre 1915 en Allemagne, à Lindfort</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-02-01-1942">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-02-01-1942.jpg" alt="JO 02/01/1942" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 02/01/1942</h2>
+        <p class="desc">3è liste de citation du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lajzerowicz-wolf">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf.jpg" alt="Wolf LAJZERROWICZ" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Wolf LAJZERROWICZ</h2>
+        <p class="desc">naît le 14 septembre 1901 à Aleksandrów, en Pologne russe, dans une famille juive originaire de Bedkow</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-07-11-1941">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-07-11-1941.jpg" alt="JO 07/11/1941" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 07/11/1941</h2>
+        <p class="desc">liste de citation au 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-25-08-1941">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-25-08-1941.jpg" alt="JO 25/08/1941" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 25/08/1941</h2>
+        <p class="desc">liste de citation au 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jo-26-06-1941">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jo-26-06-1941.jpg" alt="JO 26/06/1941" loading="lazy"></div>
+      <div class="card-body">
+        <h2>JO 26/06/1941</h2>
+        <p class="desc">1ère liste de citation au 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/prisonniers-du-11e-rei">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-prisonniers-du-11e-rei.jpg" alt="Liste des prisonniers du 11è REI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Liste des prisonniers du 11è REI</h2>
+        
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/carte">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-carte.jpg" alt="Répartition géographique" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Répartition géographique</h2>
+        <p class="desc">Carte par lieux de naissance des hommes du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/klejman-szmul">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-klejman-szmul.png" alt="Szmul KLEJMAN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Szmul KLEJMAN</h2>
+        <p class="desc">article du Maîtron concerne Golda Hercberg la compagne de Szmul Klejman</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/nicolet-arthur">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-nicolet-arthur.jpg" alt="Arthur NICOLET" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Arthur NICOLET</h2>
+        <p class="desc">Arthur Nicolet, né le 23 mars 1912 à la Joux-Perret près de La Chaux-de-Fonds</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/todorow-jean">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-todorow-jean.jpg" alt="Jean Andréa TODOROW" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Jean Andréa TODOROW</h2>
+        <p class="desc">Jean André TODOROW est né le 9 août 1916 à Dubrovnik. Il est le fils de Sava et Sara Cabrich</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/petrochilos-yannis">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-petrochilos-yannis.jpg" alt="Yannis &quot;Jean&quot; PETROCHILOS" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Yannis &quot;Jean&quot; PETROCHILOS</h2>
+        <p class="desc">(15/03/1912 - Smyrne - Turquie) fils de Nicolas et Polyxène Emmanuelides</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/brandstatter-matthias">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brandstatter-matthias.jpg" alt="Matthias Menachem BRANDSTATTER" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Matthias Menachem BRANDSTATTER</h2>
+        <p class="desc">Il est le fils de Mojzesz et Debora ou Dwojre Landau Strumpfner</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/bedrich-bedrich-josef">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bedrich-bedrich-josef.jpg" alt="Frédéric BEDRICH" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Frédéric BEDRICH</h2>
+        <p class="desc">Frédéric Joseph BEDRICH est né le 24/05/1915 à Prague</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/raevski-nicolas">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas.jpg" alt="Nicolas RAIEWSKI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Nicolas RAIEWSKI</h2>
+        <p class="desc">Nikolai Ivanovich Raevsky est né le 04/07/1909 à Nikitzkoie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lovinger-jacques">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques.jpg" alt="Jacob LOVINGER" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Jacob LOVINGER</h2>
+        <p class="desc">Jakob Lövinger est né le 12/09/1901 à Debreczen en Hongrie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/keurvels-henri">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri.jpg" alt="Henri KEURVELS, un &quot;dur à cuire&quot;" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Henri KEURVELS, un &quot;dur à cuire&quot;</h2>
+        <p class="desc">Henri Jules Antoine Eugène Léon Keurvels est né le 21 octobre 1883 à Gand, en Belgique</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/rawa-ruska">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rawa-ruska.jpg" alt="Camp de Rawa Ruska" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Camp de Rawa Ruska</h2>
+        <p class="desc">Parmis les légionnaires du 11è REI prisonniers de guerre, 3 ont été internés au camp 325 à Rawa</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lisik-jozef">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lisik-jozef.png" alt="Joseph LISIK" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Joseph LISIK</h2>
+        <p class="desc">Né le 21 février 1904 en Pologne ; plâtrier ; syndiqué à la CGTU puis à la CGT</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/quere-michel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-quere-michel.jpg" alt="Michel QUERE, FFI de l&#x27;arrondissement de Brest" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Michel QUERE, FFI de l&#x27;arrondissement de Brest</h2>
+        <p class="desc">Les informations trouvées dans les archives du 11e régiment étranger d&#x27;infanterie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/danneskjold-henri">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-danneskjold-henri.jpg" alt="DANNESKJOLD Henri" loading="lazy"></div>
+      <div class="card-body">
+        <h2>DANNESKJOLD Henri</h2>
+        <p class="desc">Les sportifs. Henri Marius Alfred Danneskjold, né le 9 mars 1920 à Châtelet, Belgique</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/delmas-gaston-11e-rei">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-delmas-gaston-11e-rei.png" alt="Gaston DELMAS" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Gaston DELMAS</h2>
+        <p class="desc">notice DELMAS Gaston, Bernard, Jean par Jacques Girault, Le Maîtron</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/salguero-miguel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-salguero-miguel.jpg" alt="Miguel SALGUERO NIETO" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Miguel SALGUERO NIETO</h2>
+        <p class="desc">Autores: Pedro Manuel López Rodríguez</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/kresch-moise">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise.jpg" alt="Moïse KRESCH" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Moïse KRESCH</h2>
+        <p class="desc">KRESCH Moise Moszes surnommé Monek est né le 24/9/1906 à Lesko en Pologne</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/agusti-ramon">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agusti-ramon.jpg" alt="Rámon AGUSTI HERVAS" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Rámon AGUSTI HERVAS</h2>
+        <p class="desc">Ramón Agustí Hervàs, né le 9 août 1918 à Sagunto, Valence. Déporté à Mauthausen le 19 décembre 1941</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/binoche-11e-rei">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binoche-11e-rei.jpg" alt="François BINOCHE" loading="lazy"></div>
+      <div class="card-body">
+        <h2>François BINOCHE</h2>
+        <p class="desc">François Binoche, un officier de parole, Philippe Vial, Éditions Armée de terre</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/berembaum-11e-rei">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-berembaum-11e-rei.jpg" alt="Émile BEREMBAUM" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Émile BEREMBAUM</h2>
+        <p class="desc">Émile Bérembaum arrive en France avec ses parents en 1924, il vit à Paris jusqu&#x27;en 1932</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/malherbe-marcel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-malherbe-marcel.jpg" alt="Marcel MALHERBE Brigades Internationales" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Marcel MALHERBE Brigades Internationales</h2>
+        <p class="desc">Marcel Toussaint Malherbe est né le 05/03/1908 à Basse Indre</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/beck-sigismond">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-beck-sigismond.jpg" alt="Sigismond BECK réserviste" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Sigismond BECK réserviste</h2>
+        <p class="desc">Sigismond Beck est né le 20/08/1900 à Tarnopol</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/rechad-mehmed">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rechad-mehmed.jpg" alt="Mehmed Suad RECHAD réserviste" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Mehmed Suad RECHAD réserviste</h2>
+        <p class="desc">Mehmed Rechad, né le 22 avril 1899 à Scutari</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/maternick-pavel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-maternick-pavel.jpg" alt="Pawel Maternik Brigades Internationales" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Pawel Maternik Brigades Internationales</h2>
+        <p class="desc">Paul Maternik est né le 07/07/1903 à Wrzeszczyna, village du district de Czarnków-Trzcianecki</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/brigadistes-dans-le-11e-rei">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brigadistes-dans-le-11e-rei.png" alt="Brigadistes dans le 11è REI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Brigadistes dans le 11è REI</h2>
+        <p class="desc">Les Brigades internationales étaient des unités de volontaires étrangers</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/dukalski-wladislas">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas.png" alt="Wladislas DUKALSKI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Wladislas DUKALSKI</h2>
+        <p class="desc">Wladislas DUKALSKI est né le 6/2/1917 à Léningrad en Russie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lansberg-armand">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lansberg-armand.png" alt="Armand LANSBERG" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Armand LANSBERG</h2>
+        <p class="desc">Armand LANDSBERG est né le 05/11/1898 à Zyrardow en Pologne</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/kus-jean">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kus-jean.png" alt="Jean KUS" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Jean KUS</h2>
+        <p class="desc">KUS Jean est né le 25/05/1905 ou 1909 à Sokołów en Pologne</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jeckelman-martin">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jeckelman-martin.png" alt="Martin JECKELMANN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Martin JECKELMANN</h2>
+        <p class="desc">Martin JECKELMANN est né le 30/11/1915 à Fribourg en Suisse</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/agostini-luigi">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agostini-luigi.png" alt="Luigi AGOSTINI, musicien" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Luigi AGOSTINI, musicien</h2>
+        <p class="desc">Je n&#x27;avais pas intégré Louis Agostini dans mon recensement puisqu&#x27;il était indiqué</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/leysen-joseph">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-leysen-joseph.jpg" alt="Joseph LEYSEN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Joseph LEYSEN</h2>
+        <p class="desc">Joseph Leysen est cité à plusieurs reprises dans les archives du 11è régiment étranger d&#x27;infanterie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/buhrer-emile">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-buhrer-emile.jpg" alt="Emile BURHER" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Emile BURHER</h2>
+        <p class="desc">Le légionnaire Buhrer est cité dans plusieurs sources du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/reservistes-vancia">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-reservistes-vancia.jpg" alt="Contingent de RÉSERVISTES" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Contingent de RÉSERVISTES</h2>
+        <p class="desc">Le 11è REI devait être composé de 3000 hommes. Pour sa création</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/evdg-vancia">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-evdg-vancia.jpg" alt="Contingent D&#x27;EVDG" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Contingent D&#x27;EVDG</h2>
+        <p class="desc">Le 11è REI devait être composé de 3000 hommes. Pour sa création, 2000 légionnaires</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/cottafari-joseph">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph.jpg" alt="Joseph COTTAFARI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Joseph COTTAFARI</h2>
+        <p class="desc">Des légionnaires du 11è régiment étranger d&#x27;infanterie ont connu une certaine notoriété</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/burcher-francois">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-burcher-francois.jpg" alt="François BURCHER" loading="lazy"></div>
+      <div class="card-body">
+        <h2>François BURCHER</h2>
+        <p class="desc">François BURCHER est né le 01/10/1911 à Glarey/Sierre en Suisse</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/derderian-garabed">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-derderian-garabed.png" alt="Garabed DERDERIAN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Garabed DERDERIAN</h2>
+        <p class="desc">Né le 3 novembre 1909 à Erzeroum (Empire ottoman / Turquie) ; fusillé sommairement par les Allemands</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/vygen-henri">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-vygen-henri.png" alt="Henri VYGEN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Henri VYGEN</h2>
+        <p class="desc">J&#x27;ai découvert récemment l&#x27;existence du légionnaire Heinrich VYGER</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/unger-maurice">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-unger-maurice.jpg" alt="Maurice UNGER" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Maurice UNGER</h2>
+        <p class="desc">Né le 29 juin 1911 à Moravska-Ostrava (Autriche-Hongrie, aujourd&#x27;hui Ostrau, République tchèque)</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/brzezinski-israel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-brzezinski-israel.jpg" alt="Israël BRZEZINSKI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Israël BRZEZINSKI</h2>
+        <p class="desc">Né le 17 novembre 1901 à Brzeziny (Empire russe, aujourd&#x27;hui Pologne), tué au combat le 13 juin 1944</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lis-josef">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lis-josef.png" alt="Josef Herez LYS" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Josef Herez LYS</h2>
+        <p class="desc">Né le 10 juin 1913 à Brok région de Mazovie (Pologne) ; tailleur ; volontaire en Espagne républicaine</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/adametz-juraj">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-adametz-juraj.jpg" alt="Juraj ADAMEC" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Juraj ADAMEC</h2>
+        <p class="desc">mort le 27/05/1940 au Bois de Ligant</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/aguet-paul">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-aguet-paul.jpg" alt="Paul AGUET" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Paul AGUET</h2>
+        <p class="desc">caporal chef au 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/ca1">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca1.jpg" alt="la Compagnie d&#x27;Accompagnement 1" loading="lazy"></div>
+      <div class="card-body">
+        <h2>la Compagnie d&#x27;Accompagnement 1</h2>
+        <p class="desc">Une compagnie d&#x27;accompagnement a pour but d&#x27;accompagner les compagnies de combat</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/ca2">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ca2.jpg" alt="la Compagnie d&#x27;Accompagnement 2" loading="lazy"></div>
+      <div class="card-body">
+        <h2>la Compagnie d&#x27;Accompagnement 2</h2>
+        <p class="desc">Une compagnie d&#x27;accompagnement a pour but d&#x27;accompagner les compagnies de combat</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/votchel-michel-lettres">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-lettres.jpg" alt="lettre de Michel Votchel" loading="lazy"></div>
+      <div class="card-body">
+        <h2>lettre de Michel Votchel</h2>
+        <p class="desc">Le 8 mai 1940, Michel Votchel de la 3è compagnie qui se trouve dans le secteur de Burtoncourt</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/republicains-espagnols">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-republicains-espagnols.jpg" alt="Républicains espagnols" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Républicains espagnols</h2>
+        <p class="desc">La guerre d&#x27;Espagne a entraîné le départ de plusieurs vagues de réfugiés vers la France, de 1936</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/cieslak-lucien">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cieslak-lucien.jpg" alt="Wladislas CIESLAK" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Wladislas CIESLAK</h2>
+        <p class="desc">Aujourd&#x27;hui un article facile car je me contente de reproduire des extraits de l&#x27;article intitulé &quot;Légionnaire&quot;</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/amstutz-jean-bernard">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-amstutz-jean-bernard.jpg" alt="Jean-Bernard AMSTUTZ" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Jean-Bernard AMSTUTZ</h2>
+        <p class="desc">Jean-Bernard Amstutz est né à Paris le 18 juin 1922</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/rouge-vert2">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rouge-vert2.jpg" alt="Rouge Vert n°3" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Rouge Vert n°3</h2>
+        <p class="desc">La revue du 11è régiment étranger a été créée en novembre 1939. Elle comporte 12 numéros dont le dernier date du 1er mai</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/jabouille-andre">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre.jpg" alt="André JABOUILLE" loading="lazy"></div>
+      <div class="card-body">
+        <h2>André JABOUILLE</h2>
+        <p class="desc">Au cours de mes recherches, j&#x27;ai eu le plaisir d&#x27;échanger avec Vincent Jabouille, le fils du lieutenant</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/medaille-militaire-1953">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-medaille-militaire-1953.jpg" alt="Médaille militaire 1953" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Médaille militaire 1953</h2>
+        <p class="desc">Par décret en date du 24 février 1953, rendu sur la proposition du président du conseil des ministres</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/cartographie-inor">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cartographie-inor-2.jpg" alt="cartographie: INOR positions du 11è REI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>cartographie: INOR positions du 11è REI</h2>
+        <p class="desc">faire de la cartographie et aider à localiser les lieux où est passé le 11è régiment étranger d&#x27;infanterie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lewkowicz-leopold">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lewkowicz-leopold.jpg" alt="Léopold LEWKOWICZ" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Léopold LEWKOWICZ</h2>
+        <p class="desc">Lewkowicz Léopold est né le 10 septembre 1912 à Plauen (Allemagne) de parents polonais</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/magne-jean">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-2.jpg" alt="Jean MAGNE" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Jean MAGNE</h2>
+        <p class="desc">Appelé de la classe 1924, il est sursitaire selon l&#x27;article 23 et ajourné d&#x27;un an</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/necropoles">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-necropoles-2.jpg" alt="11è REI: les lieux de mémoires 1/3" loading="lazy"></div>
+      <div class="card-body">
+        <h2>11è REI: les lieux de mémoires 1/3</h2>
+        <p class="desc">les nécropoles nationales sont des cimetières militaires appartenant à l&#x27;État français</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/borowiecki-feliks">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-borowiecki-feliks.jpg" alt="Feliks BOROWIECKI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Feliks BOROWIECKI</h2>
+        <p class="desc">BOROWIEKI Felix Joseph, est né le 16/9/1908 à Dabrowa</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/cimetieres-communaux">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux.png" alt="11è REI: les lieux de mémoires 3/3" loading="lazy"></div>
+      <div class="card-body">
+        <h2>11è REI: les lieux de mémoires 3/3</h2>
+        <p class="desc">Les légionnaires du 11è régiment étranger d&#x27;infanterie morts au combat étaient inhumés sur place</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/monuments">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-monuments.jpg" alt="11è REI: les lieux de mémoires 2/3" loading="lazy"></div>
+      <div class="card-body">
+        <h2>11è REI: les lieux de mémoires 2/3</h2>
+        <p class="desc">une autre façon d&#x27;honorer les morts est de construire des monuments commémoratifs</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/douteux">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-douteux.jpg" alt="11è REI : les cas douteux" loading="lazy"></div>
+      <div class="card-body">
+        <h2>11è REI : les cas douteux</h2>
+        <p class="desc">Aujourd&#x27;hui, ma base de données comporte plus de 20</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/zebrun-piotr">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr.jpg" alt="Piotr ZEBRUN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Piotr ZEBRUN</h2>
+        <p class="desc">Piotr est né en Pologne en 1908. Il est le fils de Wasyl et d&#x27;Eva Żółkiewskich</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/bozzonetti-edouard">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bozzonetti-edouard.jpg" alt="Edouard BOZZONETTI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Edouard BOZZONETTI</h2>
+        <p class="desc">Edouard Bozzonetti est né le 15/03/1910 à Salins les Bains</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/agotics-sandor">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-agotics-sandor.jpg" alt="Sandor AGOTICS" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Sandor AGOTICS</h2>
+        <p class="desc">J&#x27;ai découvert le nom de Sandor Agotics dans les listes des engagés volontaires pour la durée de la guerre</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/11e-rei-en-photo">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-11e-rei-en-photo.jpg" alt="11è REI dans la presse (1)" loading="lazy"></div>
+      <div class="card-body">
+        <h2>11è REI dans la presse (1)</h2>
+        <p class="desc">A l&#x27;heure actuelle, il est relativement aisé de consulter la presse ancienne</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/medaille">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-medaille-2.jpg" alt="décorés du 11è REI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>décorés du 11è REI</h2>
+        <p class="desc">Les médaillés du 11è Régiment Etranger d&#x27;Infanterie (parution au journal officiel)</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/mogrovejo-manuel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel.jpg" alt="Manuel MOGROVEJO ARNAIZ" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Manuel MOGROVEJO ARNAIZ</h2>
+        <p class="desc">Dans la liste officielle n°18 des prisonniers français du 10 septembre 1940</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/presse">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse.jpg" alt="11è REI dans la presse (2)" loading="lazy"></div>
+      <div class="card-body">
+        <h2>11è REI dans la presse (2)</h2>
+        <p class="desc">A l&#x27;heure actuelle, il est relativement aisé de consulter la presse ancienne</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/effectif-de-la-5e-cie-2">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-effectif-de-la-5e-cie-2.jpg" alt="la 5è compagnie du 11è REI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>la 5è compagnie du 11è REI</h2>
+        <p class="desc">Cet ajout vient compléter l&#x27;article initial sur l&#x27;effectif de la 5è compagnie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/ordre-de-bataille">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ordre-de-bataille.jpg" alt="Ordre de bataille du 11è REI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Ordre de bataille du 11è REI</h2>
+        
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/krouker-elie">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-krouker-elie.jpg" alt="Elie KROUKER" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Elie KROUKER</h2>
+        <p class="desc">Il est fait mention, dans le numéro 5 de &quot;Rouge vert; écho des bouteillons du 11e Régt de Légion étrangère&quot;</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/rouge-vert1">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rouge-vert1.jpg" alt="Rouge Vert" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Rouge Vert</h2>
+        <p class="desc">Rouge vert écho des bouteillons du 11e Régt de Légion étrangère</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/mondon-pierre">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mondon-pierre.jpg" alt="Pierre MONDON" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Pierre MONDON</h2>
+        <p class="desc">Pierre Mondon est incorporé le 15/10/1931 au 15è RIA comme 2è classe</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/bedrich-frederic">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bedrich-bedrich-josef-2.jpg" alt="Frédéric BEDRICH" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Frédéric BEDRICH</h2>
+        <p class="desc">BEDRICH Frédéric Joseph, a fait partie du 11è REI et était dans la 5è compagnie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/dadu-marcel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel.jpg" alt="Marcel DADU" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Marcel DADU</h2>
+        <p class="desc">Toujours avec l&#x27;idée de pouvoir connaître les hommes qui composaient le 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/kakhovsky-leon">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon.jpg" alt="Léon KAKHOVSKY (2/2)" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Léon KAKHOVSKY (2/2)</h2>
+        <p class="desc">Лев Валентинович Каховский</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/anglada-melia-rafel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-anglada-melia-rafel-2.jpg" alt="Rafel ANGLADA MELIA" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Rafel ANGLADA MELIA</h2>
+        <p class="desc">Rafael Anglada figure dans la liste des prisonniers du 19/09</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/march-joaquim">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-march-joaquim-2.jpg" alt="Joachim MARCH" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Joachim MARCH</h2>
+        <p class="desc">Joachim March, est un républicain espagnol, exilé en France en février 1939</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/kakhovsky-leon1">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon1.jpg" alt="Léon KAKHOVSKY 1/2" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Léon KAKHOVSKY 1/2</h2>
+        <p class="desc">Etats de service de Léon Kakhovski dans l&#x27;armée russe certifiés conformes</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lanchon-charles">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles.jpg" alt="Louis LANCHON né Lefebvre" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Louis LANCHON né Lefebvre</h2>
+        <p class="desc">Louis Lanchon de la classe 1917, est incorporé à compter du 11 janvier 1916</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/5e-compagnie">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-5e-compagnie.jpg" alt="Effectif 5è compagnie" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Effectif 5è compagnie</h2>
+        
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/pellegrini-leon">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon.jpg" alt="Léon PELLEGRINI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Léon PELLEGRINI</h2>
+        <p class="desc">Léon Pellegrini est cité dans les listes de prisonnier</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/libet-claudius">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-libet-claudius.jpg" alt="Claudius LIBET prêtre" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Claudius LIBET prêtre</h2>
+        <p class="desc">Claudius Libet, est scolarisé de 1912 à 1916 au collège catholique de Florimont</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/le-moine-marcel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-le-moine-marcel.jpg" alt="Marcel LE MOINE" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Marcel LE MOINE</h2>
+        <p class="desc">Le nouveau capitaine-adjoint au chef de bataillon est très chic</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/chiron-henri">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri.jpg" alt="Henri CHIRON" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Henri CHIRON</h2>
+        <p class="desc">Ancien combattant 14/18, commandant la CHR du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/poncin-marcel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel.jpg" alt="Marcel PONCIN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Marcel PONCIN</h2>
+        <p class="desc">La source prouvant l&#x27;appartenance de Marcel Poncin au 11è REI, est un article</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/metman-henry">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-metman-henry-2.jpg" alt="Henry METMAN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Henry METMAN</h2>
+        <p class="desc">Henry Metman, apparaît plusieurs fois dans les sources que j&#x27;utilise habituellement</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/lamor-henry">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lamor-henry-2.jpg" alt="Henry LAMOR" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Henry LAMOR</h2>
+        <p class="desc">Officier Z du 11è REI</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/sanjorge-alphonse">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-sanjorge-alphonse-2.png" alt="Alphonse SANJORGE" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Alphonse SANJORGE</h2>
+        <p class="desc">Alphonse s&#x27;engage en 1932 pour 5 ans dans la légion</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/marguet-louis">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-2.jpg" alt="Louis MARGUET" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Louis MARGUET</h2>
+        <p class="desc">Louis MARGUET est né le 06 novembre 1905 à Paris (20ème)</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/liebman-chalik">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-2.jpg" alt="Chalik LIEBMAN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Chalik LIEBMAN</h2>
+        <p class="desc">Chalik LIEBMAN est né le 05/09/1911 à Kiev</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/volontaires-juifs">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-volontaires-juifs.jpg" alt="Les volontaires juifs" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Les volontaires juifs</h2>
+        <p class="desc">Avec les menaces de guerre en 1938, le gouvernement français insère</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/chalandre-gilbert">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chalandre-gilbert-2.jpg" alt="Gilbert CHALANDRE" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Gilbert CHALANDRE</h2>
+        <p class="desc">Gilbert Chalandré est né le 12 avril 1916 à Limoges</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/wattel-jean">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean.jpg" alt="Jean WATTEL" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Jean WATTEL</h2>
+        <p class="desc">Je reprends ici un article mis en ligne par l&#x27;AALEME</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/bosems-lambert">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-bosems-lambert.jpg" alt="Lambert &quot;Albert&quot; BOSEMS" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Lambert &quot;Albert&quot; BOSEMS</h2>
+        <p class="desc">Lambertus est né le 30/8/1907 à Maastrichct aux Pays-Bas</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/votchel-michel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-2.jpg" alt="Michel VOTCHEL" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Michel VOTCHEL</h2>
+        <p class="desc">Michel Votchel est né le 16/12/1900</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/felsen-wolf">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-felsen-wolf-2.jpg" alt="Wolf FELSEN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Wolf FELSEN</h2>
+        <p class="desc">Wolf Felsen est né le 2/04/1914 à Brzesko en Pologne</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/cheraffedin-radje">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje.jpg" alt="Radje CHERAFFEDIN" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Radje CHERAFFEDIN</h2>
+        <p class="desc">Radje Cheraffedin est un caporal-chef que l&#x27;on trouve</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/ponist-pavel">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-2.jpg" alt="Pavel PONIST" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Pavel PONIST</h2>
+        <p class="desc">Pavel Ponist est né le 19/06/1900 à Riečnica en Slovaquie</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/getzler-elias">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-2.jpg" alt="Elias GETZLER" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Elias GETZLER</h2>
+        <p class="desc">Elias Getzler (aussi orthographié Goetzler) est le fils de Nachmann</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/glifberg-nils-haakon">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-glifberg-nils-haakon-2.jpg" alt="Nils Haakon GLIFBERG" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Nils Haakon GLIFBERG</h2>
+        <p class="desc">Nils Haakon Glifberg est né le 21/1/1915 à Copenhague au Danemark</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/morts-du-11e-rei">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-morts-du-11e-rei-2.jpg" alt="Listes des morts du 11è REI" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Listes des morts du 11è REI</h2>
+        <p class="desc">Effectifs du 11è REI tués pendant les combats, morts en captivité</p>
+      </div>
+    </a>
+    <a class="card" href="https://test.11regimentetranger.com/medaille-militaire-1952">
+      <div class="thumb"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-medaille-militaire-1952.jpg" alt="Médaille militaire 1952" loading="lazy"></div>
+      <div class="card-body">
+        <h2>Médaille militaire 1952</h2>
+        <p class="desc">Par décret en date du 12 novembre 1952, rendu sur la proposition du président du conseil des ministres</p>
+      </div>
+    </a>
+  </div>
+</main>
+</body>
+</html>
