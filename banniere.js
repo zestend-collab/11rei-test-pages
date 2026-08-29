@@ -3,27 +3,11 @@ banniere.js — Bannière visuelle par page du site 11e REI (variante de test Gi
 ================================================================================================
 Un seul fichier, charge par toutes les pages via <script src="/banniere.js"></script>.
 Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page courante.
-
-REGLE:
-- Si un fichier bannière s'appelle "banniere-<slug-de-la-page>.jpg", il est reserve a
-  la biographie de ce slug et s'affiche UNIQUEMENT sur cette page (PHOTOS_PERSONNELLES).
-- Sinon, la page recoit une bannière du pot commun (BANNIERES_GENERIQUES), choisie de
-  facon stable (toujours la meme a chaque visite) a partir du nom de la page.
-
-Pour ajouter une bannière : uploader le fichier dans le depot 11rei-bannieres, puis
-l'ajouter ici -> dans PHOTOS_PERSONNELLES si elle est dediee a une fiche precise
-(cle = slug exact de la page, ex "buhrer-emile" pour /blog/buhrer-emile),
-sinon dans BANNIERES_GENERIQUES.
-
-Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs Python.
 */
 
 (function () {
   var BASE = "https://raw.githubusercontent.com/zestend-collab/11rei-bannieres/main/";
 
-  // Bannières dediees a UNE page precise (biographie ou page thematique) : cle = slug
-  // de la page (dernier segment de l'URL, ex "buhrer-emile" pour /blog/buhrer-emile,
-  // ou "ordre-de-bataille" pour /ordre-de-bataille).
   var PHOTOS_PERSONNELLES = {
     "arsene-zigrand": "banniere-arsene-zigrand.jpg",
     "binsztok-mordka": "banniere-binsztok-mordka.jpg",
@@ -33,12 +17,8 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     "marguet-louis": "banniere-marguet-velos.jpg",
     "ordre-de-bataille": "banniere-ordre-de-bataille.jpg",
     "arborescence": "banniere-arborescence.jpg"
-
   };
 
-  // Pot commun utilise pour toutes les autres pages (accueil, arborescence,
-  // recensement, fiches sans photo dediee...). Choix stable par page : la meme
-  // bannière s'affiche a chaque visite d'une page donnee.
   var BANNIERES_GENERIQUES = [
     "banniere-rang-soldats.jpg",
     "banniere-presenter-armes.jpg",
@@ -89,8 +69,6 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     return morceaux[morceaux.length - 1] || "accueil";
   }
 
-  // Hash simple et stable : meme resultat a chaque chargement, donc toujours la
-  // meme bannière du pot commun pour une page donnee (pas d'aleatoire a chaque visite).
   function hashStable(texte) {
     var h = 0;
     for (var i = 0; i < texte.length; i++) {
@@ -107,10 +85,6 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     return BANNIERES_GENERIQUES[index];
   }
 
-  // Style de base du bloc .hero, injecte une seule fois en tout debut de <head> (donc
-  // de plus faible priorite en cascade que n'importe quel CSS deja present sur la page :
-  // une page qui definit deja .hero avec son propre style, comme recensement-11e-rei.html,
-  // garde ce style ; les autres recoivent au moins une hauteur et un rendu correct).
   function injecterStyleParDefaut() {
     if (document.getElementById("banniere-js-style")) return;
     var style = document.createElement("style");
@@ -125,27 +99,23 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
       "@media (max-width:640px){.banniere-titre{font-size:1.3rem}}";
     document.head.insertBefore(style, document.head.firstChild);
   }
- // Reprend le <h1> deja present sur la page (ecrit par le generateur ou a la main) et
-// l'affiche en surimpression sur la banniere, en blanc.
-function ajouterTitre(hero, slug) {
-  if (hero.querySelector("h1, h2")) return; // hero avec son propre titre deja fait main
-  
-  var h1Source = document.querySelector("h1");
-  
-  // MODIFICATION 1 : On utilise .innerHTML au lieu de .textContent pour récupérer le <br>
-  var texte = (h1Source && h1Source.innerHTML.trim()) || titreDepuisSlug(slug);
-  if (!texte) return;
-  
-  var titre = document.createElement("h1");
-  titre.className = "banniere-titre";
-  
-  // MODIFICATION 2 : On injecte avec innerHTML pour que le navigateur lise le saut de ligne
-  titre.innerHTML = texte;
-  hero.appendChild(titre);
 
-  // (MODIFICATION 3 supprimée : on ne masque plus le h1 original)
+  // Reprend le <h1> deja present sur la page et l'affiche en surimpression sur la bannière
+  function ajouterTitre(hero, slug) {
+    if (hero.querySelector("h1, h2")) return;
+
+    var h1Source = document.querySelector("h1");
+    var texte = (h1Source && h1Source.innerHTML.trim()) || titreDepuisSlug(slug);
+    if (!texte) return;
+
+    var titre = document.createElement("h1");
+    titre.className = "banniere-titre";
+    titre.innerHTML = texte;
+    hero.appendChild(titre);
+    // On ne masque plus le h1 original
   }
-  function appliquerBanniere()
+
+  function appliquerBanniere() {
     injecterStyleParDefaut();
 
     var slug = slugDePage();
