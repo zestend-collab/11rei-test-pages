@@ -144,7 +144,6 @@ function ajouterTitre(hero, slug) {
   hero.appendChild(titre);
 
   // (MODIFICATION 3 supprimée : on ne masque plus le h1 original)
-}
   }
   function appliquerBanniere() {
     injecterStyleParDefaut();
