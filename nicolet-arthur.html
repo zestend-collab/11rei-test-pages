@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NICOLET Arthur — 11e REI</title>
-<meta name="description" content="Poète jurassien et légionnaire à deux reprises, chantre du Jura et de la Légion">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,46 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,26 +70,80 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Légionnaire d'active · Poète</div>
   <h1>NICOLET Arthur</h1>
-  <div class="sub">Poète jurassien et légionnaire à deux reprises, chantre du Jura et de la Légion</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="sub">poète et légionnaire · Arthur Nicolet: poète suisse</div>
+  <div class="tags"><span>11è REI</span><span>légionnaire d'active</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Arthur Nicolet, instituteur suisse devenu poète, s'engage deux fois à la Légion étrangère par nécessité, sert au 11e REI en 1940, et devient après-guerre l'une des voix littéraires marquantes du Jura, aujourd'hui régulièrement rééditée.</p>
-<p>Né le 23 mars 1912 à la Joux-Perret, près de La Chaux-de-Fonds, il obtient son brevet d'instituteur en 1930 mais ne trouve pas d'emploi en raison de sa réputation d'esprit insoumis. Pour ne plus être à la charge de la ferme familiale, il s'engage en septembre 1931 à la Légion étrangère, où il commence à écrire et entame une correspondance avec sa future épouse, l'institutrice française Marie-Louise Deschamps, qu'il épouse en 1936.</p>
-<p>Ne pouvant assurer seul la vie du couple, il se réengage au printemps 1937 et rejoint le Maroc, où Marie-Louise le retrouve pour ce qu'ils considèrent comme la plus belle période de leur vie ensemble ; leur fille Jeannette naît en juin 1939, peu avant la mobilisation.</p>
-<p>Envoyé sur la ligne Maginot avec le 11e REI, il assiste au printemps 1940 au massacre de nombreux camarades et est blessé au talon par un éclat d'obus. Évacué à La Rochelle, non démobilisé, il traverse la France chaussé d'une pantoufle pour rejoindre le Maroc, où il est réformé en mars 1941.</p>
-<p>De retour au pays, il publie plusieurs recueils chez son ami imprimeur Samuel Glauser, au Locle, sans grand succès public. En mai 1943, tentant de rejoindre sa famille en France, il est arrêté par les Allemands, interné trois mois à Besançon puis envoyé comme travailleur forcé dans les usines de la Ruhr — une expérience qu'il transformera en récit picaresque, L'œil de bronze.</p>
-<p>Après-guerre, il publie en 1948 Mektoub, roman argotique de la Légion étrangère qui connaît un vrai succès, et devient dans les années 1950 l'une des plumes les plus flamboyantes du séparatisme jurassien dans le journal Le Jura libre. Il meurt le 12 septembre 1958, d'une congestion pulmonaire contractée lors de la Fête du peuple jurassien à Delémont.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Article Wikipédia « Arthur Nicolet »</li>
-  </ul>
+<p>Article wikipédia, un des rares légionnaires (non officier) a avoir une page wiki!</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-nicolet-arthur-2.jpg" alt="Arthur Nicolet">
+  </figure>
+  <div class="side-text">
+<p>Arthur Nicolet, né le 23 mars 1912 à la Joux-Perret près de La Chaux-de-Fonds (canton de Neuchâtel) et décédé le 12 septembre 1958 en France au Chauffaud à Villers-le-Lac à deux pas de la frontière helvétique, est un poète et écrivain suisse, instituteur privé d'élèves puis légionnaire à deux reprises, et occasionnellement, suivant les circonstances de son existence mouvementée, paysan, tourbier, ouvrier d'usine au Locle ou en Allemagne, petit contrebandier.</p>
+
+<p>Personnage non conformiste et paradoxal, à la fois royaliste anar fleurdelysé et contestataire, fier et franc buveur, aux superbes tirades déclamatoires, au verbe épique, désespéré puis flamboyant ou facétieux, il a été, passant du vers classique à l'argot légionnaire, tout autant le chantre de son Jura natal que de sa Légion, autre de ses passions avec sa tendre et admirée épouse Marie-Louise, sa Nicolette et ses libations d'amitiés pour défaire le monde.</p>
+
+<p>Peu reconnu de son vivant, il a pourtant su, tel un Frédéric Mistral pour la Provence, tirer de ses Montagnes neuchâteloise un chant pur et beau, aux accents menant à l'universel. Plus de cinquante ans après sa disparition, son œuvre est régulièrement rééditée et sa mémoire honorée.</p>
+  </div>
 </div>
+
+<p class="subhead">Biographie</p>
+
+<p>Arthur Nicolet nait le 23 mars 1912 près de La Chaux-de-Fonds d'une famille originaire de Mont-Tramelan (canton de Berne) dont la devise « De plus en plus fort fort, comme chez Nicolet » s'affichera plus tard en couverture de ses premières brochures poétiques où il s'annonce fièrement « Paysan neuchâtelois ». Sa sœur Madeleine nait cinq ans plus tard. Pour ses dix ans, la famille s'installe en terres viticoles au Bas-de-Sachet à Cortaillod, non loin du lac de Neuchâtel, puis deux ans après dans les pâtures à sonnailles des Gilliottes au Quartier de Lune sur la commune du Locle près de La Chaux-du-Milieu.</p>
+
+<p>Arthur entre à l'école secondaire du Locle où il s'ennuie déjà fortement, préférant les plaisanteries aux leçons de ses professeurs qu'il caricature dans les marges de ses cahiers et dans le journal satirique Le Vieux Corbeau qu'il crée alors qu'il n'a pas douze ans. Il entre au printemps 1926 à l'école normale où son comportement insoumis manque à plusieurs reprises de le conduire à l'exclusion, ne réchappant au renvoi que grâce au soutien de deux professeurs ayant malgré tout distingué, derrière son caractère rebelle, des qualités hors normes. il commence à ce moment à confier au papier ses premiers poèmes, parfois rédigés en sténo, pour le secret. Il obtient son brevet d'instituteur en 1930, mais du fait de sa réputation dans les milieux pédagogiques, il ne trouve aucun emploi.</p>
+
+<p>Se retrouvant à la charge des siens dans la ferme familiale, il signe en septembre 1931 un engagement de cinq ans dans la Légion étrangère. Durant cette période, il commence à écrire et entre en correspondance avec sa future épouse, une jeune institutrice française du pays bressan, Marie-Louise Deschamps.</p>
+
+<p>En septembre 1936, libéré de son engagement, il voit neuf de ses poèmes publiés à Paris, avec un bel accueil, dans la revue Euridyce. Le 23 décembre à Cuisery, près de Tournus en Saône-et-Loire, il se marie avec Marie-Louise qui est nommée à l'école de Saint-Usuge dans le même département. Dans l'indifférence, Arthur continue d'écrire quelques poèmes, et, ne pouvant assurer la vie du couple, se réengage au printemps 1937 dans la Légion. Il part à Erfoud dans le sud marocain où Marie-Louise obtient un poste pour le rejoindre, vivant là-bas tous deux la plus heureuse période de leur vie. Au printemps 1939, enceinte, Marie-Louise rentre en France pour accoucher le 2 juin d'une petite Jeannette.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-nicolet-arthur-4.png" alt="Arthur Nicolet">
+</figure>
+
+<p>À l'entrée en guerre, Arthur est envoyé sur la ligne Maginot avec son régiment (le 11è REI) où il passe la « drôle de guerre ». Lors de l'offensive des forces du Troisième Reich au printemps 1940, il assiste au massacre de nombreux camarades. Blessé au talon par un éclat d'obus et évacué sur La Rochelle pour y être soigné, il fuit devant l'avancée de l'armée allemande et traverse la France d'ouest en est malgré son pied non guéri, chaussé d'une pantoufle. Après un bref passage à Cuisery pour voir son épouse et sa fille, non démobilisé, il doit rejoindre le Maroc où il est réformé en mars 1941. Il regagne alors, via Annemasse, la maison familiale des Gillottes au printemps où il est enrôlé par l'armée suisse dans l'école de recrue en vue d'apprendre le maniement des armes ! De retour à la ferme, il poursuit ses travaux littéraires et se lie avec l'imprimeur Samuel Glauser au Locle qui devient son ami et mécène et publie le recueil Joux-Perret, Valandron et autres paturages pour le compte des Éditions populaires aux Gilliottes. Mais ses poèmes n'éveillent toujours pas l'intérêt du grand public.</p>
+
+<p>En mai 1943, désireux de revoir son épouse et sa fille, il passe la frontière et arrêté par les Allemands il est interné trois mois à Besançon pour soupçons d'espionnage puis envoyé comme travailleur étranger vers les usines de la Ruhr au sein de l'Organisation Todt. Il tirera de cette expérience un récit emprunt de verve et d'humour, L'œil de bronze, aventures d'un légionnaire en Hitlercynie. En novembre 1944, il revient en Suisse où il devient un temps tourbier au Cachot à la Chaux-du-Milieu pour ne pas dépendre de ses parents âgés. Afin se rapprocher, Marie-Louise est nommée à l'école des Fontenottes, hameau de Montlebon près de Morteau puis, plus près encore de la frontière suisse, à celle du Chauffaud, limitrophe du hameau du Prévoux sur la commune de la ville du Locle, permettant ainsi à Arthur Nicolet de retrouver les joies d'une vie de famille. Il trouve à s'employer dans une fabrique de briquets du Locle (qu'il n'appelle jamais que « borgne trou »), tout en se livrant à la contrebande de papier à cigarettes qui lui vaudra trois mois de geôle.</p>
+
+<p>En septembre 1948, il publie Mektoub, roman argotique de la Légion étrangère chez un imprimeur de Colombier sur le lac de Neuchâtel, qui connaît suffisamment de succès pour bénéficier d'une réimpression à Mâcon en 1949. La Radio suisse romande annonce même qu'a été décerné à Arthur Nicolet, pour l'ensemble de son œuvre, le prix des Antipodes. Mais il s'agit d'un canular créé par ce même Arthur ! Un vrai prix littéraire, le Prix Derème, lui sera toutefois véritablement attribué plus tard.</p>
+
+<p>A partir des années 1950, il embrasse la cause du séparatisme jurassien en donnant au journal « Le Jura libre » dirigé par Roland Béguelin plus de 120 chroniques parues sous le titre Du haut de ma potence. Certaines fois signées Colin Arthuret, il y déploie dans un style flamboyant, les inventions sarcastiques, les distorsions verbales et les contrepèteries innocentes ou vengeresses, les guets-apens facétieux, toujours débordant de culture historique. Elles seront intégralement rééditées par les éditions du Jura Libre à Delémont en 1961, trois ans après sa mort.</p>
+
+<p>En 1956, le 26 juin, sort des presses de son cher éditeur Glauser-Oberbolz, La Saboulée des Borgognons, magnifique poème épique, illustré par le peintre Lucien Grounauer, auteur du portrait d'Arthur figurant dans les collections du Musée des Beaux-Arts du Locle. Mais le succès n'est toujours pas là pour permettre à Arthur de vivre de sa plume. Malgré le soutien de ses poches, son moral et sa santé déclinent.</p>
+
+<p>En septembre 1958, il se rend à la Fête du peuple jurassien à Delémont et participe jusqu'à l'aube aux trois jours de liesse largement arrosés. Il y contracte une congestion pulmonaire dont il décède le 12 septembre après être rentré chez lui au Chauffaud où il sera enterré devant un nombreux public. Marie-Louise, après être retournée tenir une classe à Cuisery où elle décède le 18 mai 1999, a exprimé le souhait que ses cendres reposent dans la tombe de son cher mari et poète.</p>
+
+<p class="subhead">Poésie</p>
+
+<ul>
+<li>9 poèmes à Eurydice, Cahiers de poésie et d'humanisme, Paris, 1937</li>
+<li>Joux-Perret, Valanvron et autres pâturages, poèmes, chez Glauser-Oderbolz, Le Locle, 1941 (500 ex. numérotés)</li>
+<li>Felix Agricola (Jura, paysage d'exil), poèmes, chez Protat Frères, Mâcon, 1942 (100 ex. numérotés)</li>
+<li>La Rose des vents et La Rose des sables (Légionnaires, mes frères) : tome 1 - Le Vent du large (1000 ex. numérotés), tome - 2- Les Forçats de la soif (1000 ex. numérotés), Éditions populaires Glauser-Oderbolz, Le Locle, 1943</li>
+<li>Coup de Joran, poèmes, chez Glauser-Oderbolz, Le Locle, 1945 (100 ex. numérotés)</li>
+<li>Noires-Joux, poèmes, chez Glauser-Oderbolz, Le Locle, 1947 (300 ex. numérotés)</li>
+<li>Almanach, poèmes, chez Glauser-Oderbolz, Le Locle, 1948 (220 ex. numérotés)</li>
+<li>La complainte noëllique, dédiée à Georges Duhamel et Noël aux Antipodes, dédié à Pierre Mac Orlan, poèmes publiés dans les Cahiers de l'Artisan, Montjustin, (France), n° 21, décembre 1954. La complainte est éditée en 1955 chez Glauser-Oderbolz, Le Locle</li>
+<li>La Saboulée des Borgognons, poème épique, illustré par le peintre Lucien Grounauer chez Glauser-Oderbolz, Le Locle, 1956 (100 ex. numérotés)</li>
+<li>Les poèmes d'Arthur Nicolet, avec inédits et 6 photographies hors texte, préface du Maréchal Juin de l'Académie française, Bibliothèque jurassienne, Delémont, 1962, 462 pp. (1200 ex. numérotés)</li>
+</ul>
+
+<p class="subhead">Prose</p>
+
+<ul>
+<li>L'œil de bronze. Aventures d'un légionnaire en Hitlercynie, Éditions de l'Échiquier, Lausanne-Paris, 1946, 135 pp.</li>
+<li>Mektoub, Roman argotique de la Légion Etrangère, préface de Jean des Vallières, 210 p., Éditions des Antipodes, Paris, 1948, réédition éditions du Globe, Paris, 1949 avec jacquette illustrée par Moreau Vache.</li>
+<li>Baroud à l'aube, nouvelle parue dans le numéro 119 de la revue Les Œuvres libres, Arthème Fayard, avril 1956</li>
+<li>Du haut de ma potence, recueil des chroniques parues sous ce titre dans l'hebdomadaire Le Jura Libre avec portrait photographique de l'auteur et dessins de Paul Borée, éditions du Jura Libre, Delémont, 1961, 258 pp. (1100 ex. numérotés)</li>
+</ul>
+
+<p><a href="https://www.e-periodica.ch/cntmng?pid=rms-001%3A1994%3A139%3A%3A602" target="_blank" rel="noopener">Arthur Nicolet, poète et légionnaire!</a></p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Nicolet" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

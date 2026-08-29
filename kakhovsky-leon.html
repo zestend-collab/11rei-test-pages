@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KAKHOVSKY Léon « Lev Valentinovitch » — 11e REI</title>
-<meta name="description" content="Officier russe blessé trois fois pendant la Grande Guerre, exilé de l'armée Denikine au 11e REI">
+<title>KAKHOVSKY Léon — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,54 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul,article ol{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
+  article .doc table{width:100%;border-collapse:collapse;margin:.6rem 0;font-size:.85rem}
+  article .doc td{padding:.15rem .4rem;border-bottom:1px solid var(--border)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,31 +78,229 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Officier russe blanc</div>
-  <h1>KAKHOVSKY Léon « Lev Valentinovitch »</h1>
-  <div class="sub">Officier russe blessé trois fois pendant la Grande Guerre, exilé de l'armée Denikine au 11e REI</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>KAKHOVSKY Léon</h1>
+  <div class="sub">Лев Валентинович Каховский (2/2)</div>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Léon Kakhovsky, officier de cadets formé à Tachkent, combat trois ans dans les tranchées de la Première Guerre mondiale avant de rejoindre l'armée blanche de Denikine puis l'exil en France, où il sert au 11e REI en 1939-1940. Son dossier français, croisé avec des archives russes et ukrainiennes, a permis de corriger jusqu'à son lieu de naissance.</p>
-<h2>Une jeunesse d'officier de cadets</h2>
-<p>Né le 12 janvier 1895 (calendrier grégorien), baptisé le 9 février à l'église Uspensky de Berditchev — et non à Moscou, comme l'indiquaient certaines sources françaises —, il est le fils de Valentin Vladimirovitch Kakhovsky, médecin municipal de la ville, et de Maria Grigorievna. Cette précision provient d'un acte de baptême délivré par la Consistoire spirituelle de Kiev le 18 juillet 1918, en vue de son inscription à l'université. Il termine en juin 1914 sa scolarité au corps de cadets de Tachkent avec une moyenne de 8,39/20 sur dix-neuf matières — sa meilleure note, 10/20, en français — puis intègre l'école militaire Pavlovsk de Petrograd.</p>
-<h2>La Grande Guerre</h2>
-<p>Envoyé au front dès 1914 comme officier au 11e régiment de grenadiers de Phanagorie (Generalissime Prince Souvorov), il y reste trois ans dans les tranchées, blessé à trois reprises et décoré trois fois. Démobilisé après la révolution — les soldats russes étant officiellement autorisés à quitter le service à partir du 10 février 1918 — il tente de s'inscrire à l'université Saint-Vladimir de Kiev le 9 juillet 1918, comme volontaire libre à la faculté de droit, joignant à sa demande son certificat de naissance, son diplôme et son certificat de démobilisation.</p>
-<p>Sa première demande est refusée au motif que les volontaires ne sont pas acceptés cette année-là. Le 6 novembre 1918, il adresse une seconde pétition au recteur, où il retrace son parcours :</p>
-<blockquote class="testimony">« Après avoir obtenu mon diplôme du corps de cadets de Tachkent et de l'école militaire de Pavlovsk en 1914, j'ai été envoyé au front, où je suis resté dans les tranchées pendant trois ans. À ce moment, j'ai été blessé [...] dans la poitrine et blessé deux fois... Mes antécédents et les documents sur ma blessure ont disparu [...] Sur la base de ce qui précède, je vous demande sincèrement d'être admis à l'université en récompense du sang que j'ai versé en défendant honnêtement ma patrie avec mon cœur. »</blockquote>
-<p>Cette pétition, signée « Lieutenant du 11e régiment de grenadiers de Phanagorie », date d'août 1918 ses premiers engagements dans l'armée des volontaires du général Denikine — une période trouble en Ukraine, marquée par l'indépendance proclamée en janvier 1918, la paix de Brest-Litovsk, l'occupation allemande et le coup d'État d'avril 1918, rendant difficile de retracer précisément ses déplacements entre février et août de cette année-là.</p>
-<h2>L'exil et la Légion</h2>
-<p>Après la défaite de l'armée blanche, il s'exile en France en 1920. Marié à Paris et naturalisé français, il s'engage pendant la Seconde Guerre mondiale au 11e régiment étranger d'infanterie.</p>
+
+<p>Les recherches sur Léon KAKHOVSKY (voir son parcours) ont été particulièrement enrichissantes, car elles m'ont permis de croiser les sources traditionnelles des archives françaises (SHD, dossiers de naturalisation, Journaux officiels, JMO, etc.) avec les documents d'archives russes et ukrainiennes.</p>
+
+<p>N'étant pas sur place, j'ai pu profiter des travaux d'autres passionnés en Russie et en Ukraine. Trouver ces contributions a nécessité de la méthode, du temps et un soupçon de chance !</p>
+
+<p class="subhead">Étapes clés pour les recherches :</p>
+
+<ol>
+<li>Apprentissage de l'alphabet cyrillique :<br>
+Comprendre et écrire correctement les noms en cyrillique est essentiel.
+  <ul>
+  <li>Pour les prénoms, par exemple : Léon (provenant de lion) se traduit en russe par Lev (Лев).</li>
+  <li>Les noms de famille, eux, demandent des ajustements selon les translittérations historiques. Ainsi, le Kh français correspond souvent à la lettre russe Х. Pour Léon, j'ai trouvé des variantes comme Kakhovsky, Kakhowsky, et Karkovsky.</li>
+  </ul>
+</li>
+<li>Utilisation des ressources pertinentes :<br>
+Par exemple, le site de l'Ofpra peut parfois fournir des pistes avec des documents en russe, bien que l'écriture cursive puisse rendre leur lecture ardue. Dans le cas de Léon, j'ai trouvé des informations sur son père, Valentin, permettant d'établir son nom complet : Lev Valentinovitch Kakhovsky.</li>
+<li>Optimisation des recherches en ligne :<br>
+Avec un nom complet en cyrillique (prénom + patronyme + nom de famille) et des dates précises, les recherches sur Google deviennent plus efficaces. Ajouter une année de naissance est souvent plus utile que le lieu, car cela réduit les ambiguïtés des moteurs de recherche. Le lieu de naissance n'aide pas vraiment, car il faut savoir l'écrire en russe et bien réviser la géographie de l'empire russe avant de se lancer!</li>
+</ol>
+
+<p class="subhead">Leçons tirées !!</p>
+
+<ul>
+<li>Enregistrer systématiquement les liens utiles en favoris pour éviter de perdre du temps (beaucoup!) à les retrouver. Ces sites pourront servir à d'autres recherches.</li>
+</ul>
+
+<p class="subhead">Les résultats pour Léon Kakhowski:</p>
+
+<p>Après consultation de son dossier d'officier à Vincennes (GR 6 YE 10244), voici les grandes lignes de son parcours :</p>
+
+<ul>
+<li>Né en 1895 à Moscou, fils de Valentin.</li>
+<li>Cadet à l'école militaire de Tachkent, puis à l'école militaire Paul de Petrograd.</li>
+<li>Combattant de la Première Guerre mondiale (3 blessures et 3 décorations), affecté au 11e régiment des grenadiers de Pharnagorie.</li>
+<li>Engagé dans l'armée des volontaires de Denikine avant son exil en France en 1920.</li>
+<li>Marié à Paris, naturalisé, et engagé pendant la Seconde Guerre mondiale au 11e REI.</li>
+</ul>
+
+<p class="subhead">Pistes suivies pour valider ces informations :</p>
+
+<ul>
+<li>Vérification dans les listes des Russes blancs (<a href="https://forum.vgd.ru/" target="_blank" rel="noopener">forum VGD</a>).</li>
+<li>Recherche dans des bases de généalogie russes et ukrainiennes (<a href="https://ukrgenealogy.com.ua/" target="_blank" rel="noopener">UkrGenealogy</a>).</li>
+<li>Utilisation des ressources russes sur la Première Guerre mondiale (<a href="https://gwar.mil.ru/" target="_blank" rel="noopener">GWAR</a>).</li>
+</ul>
+
+<p class="subhead">Ressources utiles :</p>
+
+<ol>
+<li>GWAR : Base de données sur les soldats russes de la Première Guerre mondiale. Ce site m'a permis de confirmer les blessures et décorations de Léon. Le moteur de recherche est assez simple à utiliser et propose des résultats qui inclus les variantes orthographiques.</li>
+<li>Forum généalogique ukrainien : Une communauté aidante qui m'a soutenue dans la transcription des noms et m'a proposé des pistes intéressantes. Ils ont notamment trouvé des documents inattendus et une belle photo de Léon Kakhowski, complétant les sources disponibles.</li>
+</ol>
+
+<p>Ces recherches croisées ont offert un panorama complet de la vie de Léon Kakhowski, tout en complétants mes outils et ma méthodologie pour de futures explorations.</p>
+
+<p>- Une très belle photo. Avec celles que j'avais déjà cela donne un bel ensemble sur une période de presque 15 ans.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-2.jpg" alt="Léon Kakhovsky">
+    <figcaption>Avant 1918</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-4.jpg" alt="Léon Kakhovsky">
+    <figcaption>1921-1923</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-5.jpg" alt="Léon Kakhovsky">
+    <figcaption>1932</figcaption>
+  </figure>
+</div>
+
+<p>- Son diplôme de l'école de cadets de Tachkent (Ouzbékistan). La fin de sa scolarité date du mois de juin 1914</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-6.jpg" alt="Diplôme de l'école de cadets de Tachkent">
+</figure>
+
+<div class="doc">
+<p><strong>CERTIFICAT</strong></p>
+<p>[...], ce certificat a été remis au cadet de la classe VII Lev Valentinovich Kakhovsky, [...] en ce que le cadet nommé, avec une moralité tout à fait satisfaisante, a terminé avec succès le cours complet du corps de cadets et, sur la base des résultats des tests finaux, a reçu l'évaluation suivante :</p>
+<table>
+<tr><td>1 Selon la loi de Dieu (religion?)</td><td>9</td></tr>
+<tr><td>2 Grammaire</td><td>7</td></tr>
+<tr><td>3 Littérature</td><td>9</td></tr>
+<tr><td>4 Écrits</td><td>7</td></tr>
+<tr><td>5 Français</td><td>10</td></tr>
+<tr><td>6 Allemand</td><td>8</td></tr>
+<tr><td>7 Arithmétique</td><td>-</td></tr>
+<tr><td>8 Algèbre</td><td>8</td></tr>
+<tr><td>9 Géométries</td><td>7</td></tr>
+<tr><td>10 Trigonométrie</td><td>9</td></tr>
+<tr><td>11 Analytics</td><td>8</td></tr>
+<tr><td>12 Physique</td><td>7</td></tr>
+<tr><td>13 Chimie</td><td>9</td></tr>
+<tr><td>14 Histoire naturelle</td><td>10</td></tr>
+<tr><td>15 Géographie</td><td>10</td></tr>
+<tr><td>16 Cosmographie</td><td>6</td></tr>
+<tr><td>17 Histoires</td><td>10</td></tr>
+<tr><td>18 Analyse supérieure</td><td>8</td></tr>
+<tr><td>19 Dessin</td><td>9</td></tr>
+</table>
+<p>Total des points&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;151</p>
+<p>Note moyenne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8,39</p>
+<p>Compte tenu de cela, le cadet désigné comme ayant réussi a suivre les cours d'enseignement secondaire, peut généralement bénéficier des avantages de service liés à l'éducation qu'il a reçue, et lors de son entrée dans le service militaire - les droits de la 1ère catégorie de candidats libres ou de premier degré par tirage au sort.</p>
+<p>En foi de quoi, est remis à Lev Kakhovsky ce certificat avec la signature appropriée, [...].</p>
+<p>A Tachkent, le 3 juin 1914.<br>
+Directeur de corps, Général de division Vladimir KOCH<br>
+Inspecteur de classe, Major général FLORENTYEV<br>
+Corps secrétaire, conseiller de la cour KOLBASIN</p>
+</div>
+
+<p>- La preuve de sa démobilisation (elle est pour les soldats russes officiellement autorisée à partir du 10 février 1918).</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-7.jpg" alt="Preuve de démobilisation de Léon Kakhovsky">
+</figure>
+
+<p>document en ukrainien</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-8.jpg" alt="Document en ukrainien">
+</figure>
+
+<p>Le document mentionné est une copie d'acte de naissance de Léon Kakhovsky, qui précise que Léon est né à Berditchev, en Ukraine, et non à Moscou. Cette copie a été transcrite en russe moderne à partir du texte en russe pré-révolutionnaire et a été utilisée pour sa demande d'inscription à l'Université de Kiev.</p>
+
+<p>Le texte indique les détails suivants :</p>
+
+<ul>
+<li>Date de naissance : 12 janvier 1895 (selon le calendrier grégorien), baptisé le 9 février 1895.</li>
+<li>Lieu de naissance : Berditchev, dans l'église Uspensky.</li>
+<li>Parents : Le père, Valentin Vladimirovitch Kakhovsky, était médecin municipal à Berditchev, et la mère, Maria Grigorievna, était la femme légitime de ce dernier.</li>
+<li>Parrains et marraines : Alexandre Naumovitch Antonenko (juge de paix) et Ivan Matveevitch Berezovsky (inspecteur des impôts) et son épouse Anastasia Petrovna.</li>
+<li>Célébrant : Le prêtre Alexandre Radkevitch.</li>
+</ul>
+
+<p>Cette attestation a été délivrée par la Consistoire spirituelle de Kiev et datée du 18 juillet 1918.</p>
+
+<div class="doc">
+<p><strong>СПРАВКА</strong></p>
+<p>Дана сия (эта) справка из Киевской Духовной Консистории, за надлежащими подписями и приложением казенной печати, Льву Валентинову (Валентиновичу) Каховскому, вследствие его прошения, для представления в Киевский Университет Св. Владимира, в том, что в метрической книге, хранящейся в архивах Консистории, уездного города Бердичева Соборной Успенской церкви, под №20 оказалась статья записанною так: "тысяча восемьсот девяносто пятого года родился января двенадцатого (12.01.1895), а крещен февраля девятого (09.02.1895) чисел ЛЕВ. Родители: Городской врач г. (города) Бердичева Киевской губернии Валентин Владимирович КАХОВСКИЙ и закон. (законная) его жена Мария Григориева (Григориевна), оба православ. (православного) исповедания. Восприемники: Мировой Судья Бердичевского Судебного Мирового Округа Александр Наумович Антоненко и г. Бердичева Податного Инспектора Ивана Матвеевича Березовского жена Анастасия Петровна. Таинство крещения совершал священник Александр Радкевич с соборным причтом." - Гербовый сбор оплачен. Июля 18 дня 1918 года.</p>
+</div>
+
+<p>- Demande d'inscription à l'université de Kiev. 9 juillet 1918. Léon est domicilié au 41 rue Mariinsko-Blagoveshchenskaya à Kiev</p>
+
+<div class="doc">
+<p>Au recteur de l'Université Saint-Vladimir de Kiev<br>
+Lieutenant à la retraite<br>
+Lev Valentinovich Kakhovsky</p>
+<p><strong>Pétition</strong></p>
+<p>Présentant en même temps: 1, un certificat de naissance, 2, un diplôme d'un établissement d'enseignement secondaire, 3, un certificat d'attitude envers l'armée (démobilisation) et 2 photographies - [cartes physiques (?)], merci de m'inscrire au nombre des volontaires à l'Université de la Faculté de droit.</p>
+<p>Lev Kakhovsky<br>
+9 / VII-18<br>
+Kiev, 41 rue Mariinsko-Blagoveshchenskaya<br>
+app. 23</p>
+</div>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-9.jpg" alt="Demande d'inscription à l'université de Kiev, 9 juillet 1918">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-10.jpg" alt="Demande d'inscription à l'université de Kiev, 9 juillet 1918">
+  </figure>
+</div>
+
+<p>En novembre 1918, Léon Kakhovsky adresse une réclamation au recteur de l'Université de Kiev, précisant qu'il n'a pas pu s'inscrire comme prévu. Il souligne son statut d'ancien combattant et fait valoir ses droits pour être admis à l'université, malgré les obstacles rencontrés. Cette réclamation présente un certain flou, notamment en raison d'une divergence avec les informations présentes dans son dossier en France. Léon affirme avoir suivi les cours de l'université, bien qu'il n'y ait aucune trace de son inscription, et il mentionne avoir rejoint l'armée de Denikine dès août 1918, bien que sa demande d'inscription soit intervenue en juillet...</p>
+
+<p>Cette incohérence peut s'expliquer par le contexte tumultueux de l'année 1918 en Ukraine. Plusieurs forces se disputent le contrôle du territoire ukrainien pendant cette période, marquée par des événements comme l'indépendance de l'Ukraine proclamée en janvier 1918, la paix de Brest-Litovsk, l'occupation allemande de certaines régions ukrainiennes, ainsi que le coup d'État d'avril 1918. Ces bouleversements rendent difficile de retracer précisément les activités de Léon entre février et août 1918, période où ses déplacements et ses actions restent flous.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-11.jpg" alt="Léon Kakhovsky">
+</figure>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-12.jpg" alt="Pétition du 6 novembre 1918 au recteur de l'université de Kiev">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-13.jpg" alt="Pétition du 6 novembre 1918 au recteur de l'université de Kiev">
+  </figure>
+</div>
+
+<div class="doc">
+<p>6 novembre 1918 Au Recteur de l'Université de Kiev de Saint Saint Vladimir<br>
+Lieutenant Lev Valentinovich Kakhovsky</p>
+<p><strong>Pétition</strong></p>
+<p>Compte tenu du refus de m'admettre à l'Université de Saint-Vladimir au motif que les volontaires ne sont pas acceptés cette année, j'estime nécessaire de porter à votre attention ce qui suit:</p>
+<p>Après avoir obtenu mon diplôme du corps de cadets de Tachkent et de l'école militaire de Pavlovsk en 1914, j'ai été envoyé au front, où je suis resté dans les tranchées pendant trois ans. A ce moment, j'ai été blessé par un vol (? tir, balle, éclat??) dans la poitrine et blessé deux fois.... Mes antécédents et les documents sur ma blessure ont disparu (dans le régiment pendant les bolcheviks). C'est avec difficulté que j'ai reçu une copie du certificat de Tachkent, et le ministre de la Guerre, le général Ragoza, [...], peut témoigner de ma blessure à la poitrine.</p>
+<p>Sur la base de ce qui précède, je vous demande sincèrement d'être admis à l'Université en récompense du sang que j'ai versé en défendant honnêtement ma patrie avec mon coeur.</p>
+<p>Lieutenant du 11e Regiment de Grenadier Fangoria (Generalissime Prince Suvorov) Lev Kakhovsky</p>
+</div>
+
+<p>En conclusion, la mise en ligne des archives DAK 16-464-4592 par le site <a href="https://ukrgenealogy.com.ua/" target="_blank" rel="noopener">https://ukrgenealogy.com.ua/</a> confirme le récit de Léon Kakhovsky. Ces documents apportent une précision importante : Léon est né à Berdytchiv (dans l'Empire russe, aujourd'hui en Ukraine), et non à Moscou, comme mentionné dans certaines sources. Cette correction de son état civil vient corroborer et compléter les éléments trouvés dans les archives françaises, et ajoute une dimension internationale et "exotique" à son parcours.</p>
+
+<p>Les archives ukrainiennes complètent efficacement les informations françaises. En parallèle, d'autres sources en ligne fournissent des détails supplémentaires sur des figures similaires :</p>
+
+<ul>
+<li>Première Guerre mondiale et Légion étrangère : Vous pouvez consulter des archives de la Première Guerre mondiale concernant des légionnaires nés avant 1900 sur <a href="https://gwar.mil.ru/" target="_blank" rel="noopener">gwar.mil.ru</a>.</li>
+<li>Répression politique en URSS : Pour en savoir plus sur les membres de familles restées en URSS, le site <a href="https://ru.openlist.wiki/" target="_blank" rel="noopener">OpenList</a> est une ressource précieuse.</li>
+</ul>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources utiles</h3>
+  <p>D'autres résultats intéressants peuvent être trouvés via les archives en ligne des Archives nationales et les forums sur <a href="https://ukrgenealogy.com.ua/" target="_blank" rel="noopener">ukrgenealogy.com.ua</a> (Дякую Дякую+++), qui permettent également d'explorer des informations géographiques à l'aide d'anciens atlas.</p>
+  <p>Les recherches montrent aussi les parcours de plusieurs autres légionnaires du 11e REI originaires de l'Empire russe :</p>
   <ul>
-    <li>SHD Vincennes, dossier d'officier GR 6 YE 10244</li>
-    <li>Ukrgenealogy.com.ua, archives DAK 16-464-4592</li>
-    <li>GWAR (gwar.mil.ru), base des soldats russes de la Première Guerre mondiale</li>
-    <li>Forum généalogique ukrainien VGD (Russes blancs)</li>
+    <li>Vétéran de la 1ère GM : PRAVOSSOUDOVITCH Jean (Правосудович Иван Павлович)</li>
+    <li>Exilés : RAIEWSKY Nicolas (Раевский Николай Иванович), KLEBNIKOFF Wladimir (Хлебников Владимир Сергеевич)</li>
+    <li>Volontaires de l'armée blanche : FOKINE Alexandre (Фокин Александр), VOTCHEL Michel (Вочель Михаил Михайлович)</li>
+  </ul>
+  <ul>
+    <li>Recherche en Ukraine: <a href="https://ukrgenealogy.com.ua/" target="_blank" rel="noopener">https://ukrgenealogy.com.ua/</a> — Дякую Дякую+++</li>
+    <li>Première Guerre mondiale (cibler les légionnaires nés avant 1900): <a href="https://gwar.mil.ru/" target="_blank" rel="noopener">https://gwar.mil.ru/</a></li>
+    <li>sur la répression politique en URSS (pour connaître le destin des membres de leurs familles restés en URSS): <a href="https://ru.openlist.wiki/" target="_blank" rel="noopener">https://ru.openlist.wiki/</a></li>
   </ul>
 </div>
 

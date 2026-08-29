@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MONDON Pierre — 11e REI</title>
-<meta name="description" content="Évadé manqué de l'Oflag VI A, transféré au château de Colditz, reconnu interné-résistant en 1979">
+<title>Pierre MONDON — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,49 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article ol,article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +73,78 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA1 · Officier · Interné résistant</div>
-  <h1>MONDON Pierre</h1>
-  <div class="sub">Évadé manqué de l'Oflag VI A, transféré au château de Colditz, reconnu interné-résistant en 1979</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Pierre MONDON</h1>
+  <div class="sub">lieutenant 11è REI, interné résistant (DIR)</div>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Pierre Mondon, officier de la CA1 du 11e REI, tente de s'évader de l'Oflag VI A en 1941 et se retrouve transféré au château de Colditz, le camp disciplinaire réputé infranchissable. Il faudra près de quarante ans pour que son statut d'interné-résistant soit officiellement reconnu.</p>
-<p>Officier de réserve depuis 1932, il est mobilisé en septembre 1939 et affecté le 21 mars 1940 à la compagnie d'accompagnement du 1er bataillon du 11e REI. Fait prisonnier au bois d'Ochey le 23 juin 1940, il est interné à l'Oflag VI A de Soest.</p>
-<p>Fin décembre 1940, il crochète une serrure et découvre un souterrain menant hors du camp. En janvier 1941, il tente de rejoindre la Suisse, mais une carte imprécise le conduit tout droit sur des gardes-frontières allemands à Stühlingen, à quinze minutes de marche de la frontière. Condamné à un mois de cellule, il est transféré début mars 1941 au château de Colditz (Oflag VI C), célèbre camp disciplinaire où les évasions étaient réputées impossibles. Il y côtoie Alain Le Ray, premier évadé du camp, futur premier chef militaire du maquis du Vercors.</p>
-<p>Transféré ensuite dans plusieurs camps jusqu'à sa libération par les troupes soviétiques le 23 avril 1945, il dépose en 1977 une demande de statut d'interné-résistant, la loi de 1948 exigeant de prouver qu'une tentative d'évasion visait à rejoindre la Résistance et non de simples raisons personnelles. Plusieurs anciens du 11e REI témoignent en sa faveur, dont le lieutenant Nicolas Raiewsky et le colonel Charles Klein, qui avait lui-même tenté de s'évader de Colditz en 1942. Le statut lui est finalement accordé le 1er mars 1979.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mondon-pierre-2.jpg" alt="Pierre Mondon">
+  </figure>
+  <div class="side-text">
+<p>Pierre Mondon est incorporé le 15 octobre 1931 au 15e régiment d'infanterie algérien (RIA) comme soldat de 2e classe. Il obtient le grade de caporal-chef à compter du 21 avril 1932.
+Il devient élève officier de réserve (JO du 1er avril 1932) et arrive à l'école de Saint-Maixent le 9 avril 1932. Il obtient le grade de sous-lieutenant de réserve et est affecté au 27e régiment de tirailleurs algériens le 20 septembre 1932 (JO du 5 octobre 1932).</p>
+
+<p>Le 30 juillet 1936, il est nommé lieutenant de réserve et affecté au centre de mobilisation n°145.</p>
+
+<p>Mobilisé en septembre 1939, il arrive à Belley le 2 septembre 1939 et intègre le 11e régiment de Zouaves. Par ordre de mutation du 21 mars 1940, il est affecté au 11e régiment étranger d'infanterie à la compagnie d'accompagnement du 1er bataillon.
+Pierre Mondon est fait prisonnier avec son régiment le 23 juin 1940 au bois d'Ochey. Avec les officiers du 11e REI, il est interné à Nancy, puis, le 31 juillet 1940, il est envoyé en Allemagne à l'Oflag VI A (Soest).
+Le 13 mars 1977, Pierre Mondon dépose une demande auprès du ministère des Anciens Combattants et Victimes de Guerre pour l'attribution du titre d'interné résistant. Le Service historique de la Défense (SHD) de Caen conserve les dossiers de demande de statut de déporté/interné politique ou résistant. Sous la côte AC 21 P 599841, on trouve le formulaire original déposé par Pierre Mondon, expliquant les circonstances de son arrestation et de son internement.</p>
+  </div>
+</div>
+
+<p>La loi n° 48-1251 du 6 août 1948 établit le statut des déportés et internés de la Résistance, précisant les titres de « Déporté-résistant » et « Interné-résistant ». Ce titre est attribué à toute personne ayant subi, quel que soit le lieu, une détention d'au moins trois mois pour acte qualifié de résistance à l'ennemi. L'article 2 mentionne les cas de transfert hors du territoire national, d'incarcération et d'internement dans un camp de concentration ou tout autre territoire administré par l'ennemi. L'article 3 stipule que la détention et l'internement doivent être d'une durée minimale de trois mois pour qu'un acte soit qualifié de résistance à l'ennemi, sauf dans les cas mentionnés à l'article 2.</p>
+
+<p>Le décret n° 49-427 du 25 mars 1949 définit le règlement d'administration publique pour l'application de la loi du 6 août 1948, établissant le statut définitif des déportés et internés de la Résistance.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mondon-pierre-4.jpg" alt="Document Pierre Mondon">
+</figure>
+
+<p>Pendant sa captivité à l'Oflag VI A de Soest, Pierre Mondon se lance dans la recherche et l'organisation d'une voie d'évasion.</p>
+
+<p>Fin décembre 1940, il réussit à "sauter une serrure" et découvre un souterrain menant à l'extérieur du camp.</p>
+
+<p>En janvier 1941, il tente une évasion en direction de la Suisse. Cependant, trompé par une carte imprécise, il se retrouve face à des gardes-frontières allemands le 28 janvier 1941 à Stühlingen. Cette ville est située à seulement 15 minutes à pied de la frontière suisse.
+Fin février 1941, Pierre Mondon est jugé par un tribunal militaire de la région de Münster, qui le condamne à un mois de cellule pour évasion et complot d'évasion. Le 3 mars 1941, il est transféré à l'Oflag VI C, situé au Château de Colditz, un camp disciplinaire réputé pour sa sécurité renforcée, où les évasions sont supposées être impossibles en raison du nombre élevé de gardiens par rapport aux prisonniers.</p>
+
+<p>Le 12 mars 1943, il est transféré à l'Oflag IV D, puis déplacé dans divers camps jusqu'à sa libération le 23 avril 1945 par les troupes russes. Rapatrié le 23 juillet 1945, Pierre Mondon bénéficie d'un congé de convalescence du 1er août au 23 septembre 1945 et est démobilisé le 10 octobre 1945 par le centre démobilisateur de Sathonay.
+Pierre Mondon se trouve dans la situation définie au paragraphe "i" de l'article 4 du décret n° 49-427 du 25 mars 1949 : "i) La tentative de quitter un territoire occupé par l'ennemi ou placé sous le contrôle de l'autorité de fait se disant gouvernement de l'État français, ou le passage dans un pays non-belligérant, pour rejoindre soit les Forces françaises libres..."</p>
+
+<p>Le transfert d'un prisonnier de guerre dans un camp disciplinaire pour tentative d'évasion n'est pris en compte pour l'attribution du titre d'interné résistant que si la preuve est faite que l'intéressé, en s'évadant, n'agissait pas pour des raisons purement personnelles, mais dans l'intention de rejoindre les Forces françaises libres ou la Résistance.</p>
+
+<p>Pour étayer cette demande, Pierre Mondon présente des attestations de personnes "notoirement connues pour leur activité dans la résistance contre l'ennemi et appartenant aux FFC, FFI ou à la RIF", ainsi que des témoignages de personnes ayant assisté à l'acte de résistance, afin de prouver que son évasion visait à poursuivre la lutte contre l'ennemi.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mondon-pierre-5.jpg" alt="Document Pierre Mondon">
+</figure>
+
+<p>Edgar Laparra, maire de Cardaillac, et Michel Virenque, préfet, tous deux lieutenants au 11e REI, attestent de l'évasion de Pierre Mondon de l'Oflag VI A. Charles Klein, colonel, confirme également la présence de Mondon à Colditz. Klein lui-même tentera une évasion en novembre 1942, mais sera repris quelques jours plus tard.
+Alain Le Ray témoigne de sa présence à Colditz et relate son propre acte d'évasion le 11 avril 1941. Profitant d'un match de football dans la cour du camp, il parvient à s'évader et à rejoindre la Suisse, puis la France. Premier évadé de Colditz, Alain Le Ray deviendra par la suite le premier chef militaire du maquis du Vercors.
+<a href="https://www.11regimentetranger.com/blog/raevski-nicolas" target="_blank" rel="noopener">Nicolas Raiewsky</a>, lieutenant du 11e REI et chevalier de la Légion d'honneur, confirme l'esprit de résistance de Pierre Mondon. Son témoignage atteste de l'engagement de Mondon dans la lutte contre l'ennemi et de son rôle dans les actions de résistance, renforçant ainsi les démarches pour lui attribuer le titre d'interné résistant.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mondon-pierre-6.jpg" alt="Document Pierre Mondon">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mondon-pierre-7.jpg" alt="Document Pierre Mondon">
+  </figure>
+</div>
+
+<p>Le 1er mars 1979, il obtient le statut d'interné-résistant.
+Le dossier détenu au SHD de Vincennes côte GR 16 P 425737, concerne la suite à donner pour le versement des pensions (les informations sont sensiblement les mêmes que le dossier de Caen).</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>SHD Vincennes, GR 16 P 425737</li>
-    <li>SHD Caen, AC 21 P 599841</li>
-    <li>Émile Le Brigant, « Les Indomptables »</li>
+    <li>Service historique de la Défense, Vincennes GR 16 P 425737</li>
+    <li>Service historique de la Défense, Caen SHD/ AC 21 P 599841</li>
+    <li>Émile Le Brigant, doyen des officiers français à Colditz, regroupe souvenirs et liste de prisonniers dans Les Indomptables.</li>
   </ul>
 </div>
 

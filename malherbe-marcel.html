@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MALHERBE Marcel Toussaint — 11e REI</title>
-<meta name="description" content="Métallurgiste communiste, brigadiste à l'Ebre, réserviste au 11e REI">
+<title>Marcel MALHERBE — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,43 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +67,59 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 7e compagnie · Brigades internationales</div>
-  <h1>MALHERBE Marcel Toussaint</h1>
-  <div class="sub">Métallurgiste communiste, brigadiste à l'Ebre, réserviste au 11e REI</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Marcel MALHERBE</h1>
+  <div class="tags"><span>Brigades internationales</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Marcel Malherbe, ouvrier métallurgiste chez Citroën et militant communiste, combat trois mois dans les Brigades internationales à l'Ebre avant d'être mobilisé comme réserviste au 11e REI.</p>
-<p>Né le 5 mars 1908 à Basse-Indre, il effectue son service militaire au 8e régiment de dragons puis s'engage à la Légion étrangère, participant à la pacification du Maroc entre 1933 et 1934. Libéré en 1937 après sept ans de service, il travaille dans une blanchisserie puis chez Citroën à Saint-Ouen, où il adhère à la CGT en janvier 1937 et participe aux grèves des métallurgistes de 1938.</p>
-<p>Le 13 juillet 1938, il part pour l'Espagne avec un camarade d'usine « pour combattre le fascisme » et rejoint la XIVe brigade internationale, combattant notamment à la bataille de l'Ebre. Il est rapatrié en France le 12 novembre 1938.</p>
-<p>En septembre 1939, mobilisé comme réserviste au centre de la Légion étrangère de Sathonay, il rejoint le 11e REI et sa 7e compagnie comme 1re classe. Il se marie en permission le 9 décembre 1939. Fait prisonnier avec son régiment en juin 1940, il devient dans les années 1960 ouvrier décapeur à La Courneuve.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-malherbe-marcel-2.jpg" alt="Marcel Malherbe">
+  </figure>
+  <div class="side-text">
+<p>Marcel Toussaint Malherbe est né le 5 mars 1908 à Basse Indre. Il est le fils de Jean Louis, imprimeur sur métaux, et de Marie Catherine Parchanton. Il a pour frères et sœurs Eugène (1905), Georgette et René (1910). La famille déménage fréquemment. En 1902, son père réside à Nantes, rue des 3 Barils. En 1906, la famille est recensée à Indre, rue du Calvaire. En 1912, ils vivent impasse Paquet Merel à Lyon 9e. En 1917, ils s'installent au 175 rue du Général Gallieni à Boulogne-Billancourt. En 1919, ils retournent à Nantes, puis, en 1921, ils habitent de nouveau à Lyon.</p>
+  </div>
+</div>
+
+<p>À 20 ans, Marcel Malherbe est recensé dans la classe 1928 du 2e bureau de la Seine, sous le matricule 2691.
+En 1928, il effectue son service militaire au 8e régiment de dragons. À l'issue de ses deux ans de service, il s'engage volontairement dans la Légion étrangère. Il est affecté successivement au 1er et au 3e régiment étranger d'infanterie et participe à la pacification du Maroc entre 1933 et 1934.</p>
+
+<p>Après sept ans de service militaire, il est libéré en 1937 et retourne en région parisienne. Il trouve un emploi dans le secteur de la blanchisserie industrielle à Vanves, puis dans les usines Citroën, situées 21 rue du Plaisir à Saint-Ouen.
+Très vite, Marcel Malherbe s'intéresse aux questions sociales. Il déclare que son père était un ancien militant et qu'il faisait partie de la Fédération Sportive et Gymnique du Travail (FSGT) à Bonneuil-sur-Marne.</p>
+
+<p>Il lit L'Humanité et des livres traitant de la vie des travailleurs, notamment Fils du Peuple de Maurice Thorez. En janvier 1937, il adhère à la CGT.
+En 1938, il participe activement aux grèves des métallurgistes d'avril et mai dans son entreprise et fréquente les militants communistes de la rue Louis Dain à Saint-Ouen.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-malherbe-marcel-4.jpg" alt="Marcel Malherbe">
+</figure>
+
+<p class="subhead">L'Espagne</p>
+
+<p>Le 13 juillet 1938, Marcel Malherbe quitte Paris en compagnie de Léon Matheron, un camarade de l'usine Citroën. Arrivant en Espagne le 18 juillet par ses propres moyens "pour combattre le fascisme", il est incorporé dans la XIVe Brigade internationale, au 9e bataillon. Il passe au total trois mois au front, participant notamment à la bataille de l'Ebre, et aux combats de Corbera.</p>
+
+<p>Au sein de la Brigade, il donne son adhésion au Parti communiste espagnol à ses camarades Vincent et Léon Matheron, qui sont également communistes.</p>
+
+<p>Il est rapatrié en France le 12 novembre 1938, avec l'appréciation suivante : "bon, nul politiquement !"</p>
+
+<p class="subhead">Avec le 11è régiment étranger d'infanterie</p>
+
+<p>En septembre 1939, Marcel Malherbe est mobilisé au centre de regroupement de la Légion étrangère à Sathonay. Il fait partie du deuxième contingent de réservistes, composé de gradés et de légionnaires, et est affecté au XIe REI. Le régiment est La Valbonne le 20 septembre et il rejoint la 7e compagnie avec le grade de 1ère classe.</p>
+
+<p>Lors d'une permission, il se marie le 9 décembre 1939 à La Courneuve avec Paulette Denise Pirochon. Léon Matheron, un camarade de l'usine Citroën et des Brigades internationales, est témoin.</p>
+
+<p>En juin 1940, Marcel Malherbe est fait prisonnier avec son régiment.</p>
+
+<p>De 1961 à 1964, il est adhérent de l'AVER, réside à La Courneuve et travaille comme ouvrier décapeur.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives RGASPI, fonds 545.6.1297</li>
-    <li>Archives du 11e REI (Aubagne)</li>
-    <li>Daniel Grason et Jean Maitron, notice « MALHERBE Marcel », Le Maitron</li>
+    <li>Archives RGASPI fond 545.6.1297</li>
+    <li>Archives 11è REI à Aubagne</li>
+    <li><a href="https://maitron.fr/spip.php?article119715" target="_blank" rel="noopener">https://maitron.fr/spip.php?article119715</a>, notice MALHERBE Marcel par Daniel Grason, Jean Maitron, version mise en ligne le 30 novembre 2010, dernière modification le 8 août 2011.</li>
   </ul>
 </div>
 

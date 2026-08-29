@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZEBRUN Piotr « Peter » — 11e REI</title>
-<meta name="description" content="Militant communiste ukrainien traqué par la police polonaise, réfugié apatride puis légionnaire">
+<title>Piotr ZEBRUN — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,48 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
+  article li ul{margin-top:.4rem}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,28 +72,142 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Apatride</div>
-  <h1>ZEBRUN Piotr « Peter »</h1>
-  <div class="sub">Militant communiste ukrainien traqué par la police polonaise, réfugié apatride puis légionnaire</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Piotr ZEBRUN</h1>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Piotr Zebrun, jeune militant communiste condamné à plusieurs reprises en Pologne, fuit sous une fausse identité, devient apatride faute de pays d'accueil, et finit par s'engager au 11e REI faute d'autre solution.</p>
-<p>Né en 1908 dans une famille ukrainienne de Tomaszów Lubelski (Pologne), issu d'une fratrie de militants communistes très surveillée par la police — son frère Aleksander et sa sœur Olga purgent tous deux plusieurs années de prison pour leurs activités politiques —, Piotr est lui-même condamné à plusieurs peines de prison entre 1932 et 1935 pour appartenance au Parti communiste d'Ukraine occidentale, accusé d'avoir œuvré à détacher des régions polonaises pour les rattacher à un autre État.</p>
-<p>Il quitte la Pologne et tente en décembre 1937 d'entrer en Suisse sous un faux passeport, au nom d'Isaak Gwifeld ; arrêté à la frontière, il se blesse volontairement pour retarder son expulsion vers l'Autriche, en vain. Dans une lettre au président suisse, il invoque son statut de réfugié politique et la position suisse dans l'affaire de l'enlèvement du journaliste Berthold Jacob par la Gestapo, pour demander l'asile — sans succès.</p>
-<p>Entré en France en février 1938 muni d'un certificat de la Ligue des droits de l'homme, il se voit néanmoins notifier un refus de séjour fin 1938. Devenu apatride après que la Pologne lui refuse sa nationalité, il essuie des refus d'émigration de la part du Royaume-Uni, du Mexique, de la Grèce, de la Suède, de la Norvège, des Pays-Bas et de l'URSS. Sans autre solution, il s'engage pour la durée de la guerre à un bureau de recrutement de la Seine peu avant la mobilisation générale.</p>
-<p>Incorporé au 11e REI, il est fait prisonnier et passe le reste de la guerre en Allemagne comme travailleur civil, cordonnier de son état. Il se marie en Allemagne le 7 mai 1945, juste avant la fin du conflit, puis retourne en Pologne, où il meurt le 29 janvier 1967 à Malanów.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-2.jpg" alt="Piotr Zebrun">
+  </figure>
+  <div class="side-text">
+<p>Piotr Zebrun est né en Pologne en 1908. Fils de Wasyl et d'Eva Żółkiewskich, il a pour frères et sœurs :</p>
+
+<ul>
+<li>Aleksander (23/02/1906 - 09/04/1973), activiste communiste polonais.</li>
+<li>Olga (12/09/1903 - 30/08/1972), militante communiste et députée du Seym de la République populaire de Pologne.</li>
+<li>Michał (07/07/1912), mentionné dans les archives polonaises sous le nom de Michał Zebruń / Żebruń, fils de Wasyl.</li>
+<li>Elżbieta Zebrun, mariée à Homziak.</li>
+</ul>
+  </div>
+</div>
+
+<p>Bien que né en Pologne, Piotr est de nationalité ukrainienne. Son père, Wasyl, était officier des gardes-frontières de l'Empire russe à Tomaszów Lubelski. Après le déclenchement de la Première Guerre mondiale et l'évacuation vers l'Est, il a vécu avec sa famille à Smolensk de 1914 à 1918. En 1918, ils sont retournés à Tomaszów Lubelski, où Piotr devient apprenti chez un cordonnier.</p>
+
+<p>En 1924, son frère Aleksander fonde une unité du Parti communiste d'Ukraine occidentale (KPZU) avec un groupe d'amis et devient secrétaire du comité de district du KPZU. À partir de 1926, il est arrêté à plusieurs reprises pour ses activités politiques. Le 21 mai 1933, près de Lviv, Aleksander est arrêté et condamné à sept ans de prison par le tribunal de district de Zamość le 25 mai 1934. Libéré après l'amnistie du 28 avril 1938, il retourne à Tomaszów et reprend contact avec les membres du KPZU.</p>
+
+<p>Sa sœur Olga rejoint le KPZU en 1928. En 1932, elle devient secrétaire de district et membre du comité régional du KPZU à Chełm. Elle poursuit ses études à l'école du parti de Kharkiv (1933-1934) puis à l'école internationale Lénine à Moscou (1934-1936). Entre 1937 et 1939, elle est emprisonnée pour ses activités communistes.</p>
+
+<p>Piotr Zebrun est également membre du PCUO. En 1932, il est condamné à un an de prison. En 1934, il est arrêté à Gniezno et condamné à quatre ans de prison pour activité communiste. Il est accusé d'avoir participé à des actions visant à renverser le régime polonais et à séparer des régions de la Pologne pour les rattacher à un autre pays « du 1er novembre 1931 au 20 février 1932 et du début de juillet 1932 jusqu'à le fin de 1932 à l'activité du parti communiste de l'Ukraine Occidentale, de concert avec d'autres personnes, en vue de provoquer par la violence un changement du régime politique et social de la Pologne et en vue de détacher de cet Etat certaines régions et de les incorporer à un autre pays ».</p>
+
+<p>Le 16 avril 1935, il est condamné à cinq ans de prison. Après ce jugement, Piotr décide probablement de quitter la Pologne, alors que son frère Aleksander purge sa peine de sept ans de prison.
+Le 22 décembre 1937, muni d'un faux passeport, sous la fausse identité d'Isaak Gwifeld, il est arrêté par la police frontière suisse à Buchs. Il est condamné à 5 jours de prison et à être renvoyé sur l'Autriche. Pour retarder son expulsion, il se blesse intentionnellement le 27 décembre 1937. Le 28 décembre, il adresse une lettre au président de la république suisse afin de faire valoir son statut de réfugié politique et demande à être exilé vers la France.</p>
+
+<p>Le 4 janvier 1938, sans ressource et sans passeport, il est finalement refoulé sur la ville de Feldkirch en Autriche et interdit de séjour en Suisse.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-4.jpg" alt="Document Piotr Zebrun">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-5.jpg" alt="Document Piotr Zebrun">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-6.jpg" alt="Document Piotr Zebrun">
+  </figure>
+</div>
+
+<p class="subhead">Lettre du 28 XII 1937</p>
+<p>Il y explique les raisons de son départ de Pologne pour raisons politique. Il indique qu'il a un frère Alexandre qui purge une peine de prison de 7 ans et une sœur Olga emprisonné pour 4 ans. Il précise avoir également été arrêté et emprisonné à plusieurs reprises.
+Il évoque la position de la Suisse lors de l'enlèvement du journaliste Jacob*. Il demande à être protégé et considéré comme un émigrant politique, et à ne pas être expulsé vers l'Autriche ou l'Allemagne mais aidé à rejoindre la France.</p>
+
+<p>* le 9 mars 1935, Berthold Jacob, journaliste juif réfugié, déchu de sa nationalité allemande en 1933, est enlevé à Bâle, par un agent de la Gestapo pour être emmené en Allemagne. Ce kidnapping indigne l'opinion publique helvétique. Il sera remis aux autorités suisse le 17 septembre 1935. Enlevé une seconde fois par la Gestapo à Lisbonne en 1941, Jacob meurt à Berlin en 1944 des suites de sa détention.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-7.jpg" alt="Document Piotr Zebrun">
+</figure>
+
+<p class="subhead">Rapports du 15 et 18 janvier 1938</p>
+<p>Peter (Piotr) Zebrun est arrêté le 22 décembre 1937 pour avoir utilisé un faux passeport au nom de Gwifeld Isaak. Après avoir purgé une peine de 5 jours de prison, il est conduit le 27 décembre 1937 à Buchs pour être expulsé vers l'Autriche. Son faux passeport est confisqué et comme il est sans ressource il n'est pas possible de l'envoyer sur la France.
+Afin d'éviter son expulsion en Autriche, Piotr Zebrun s'inflige une coupure à l'abdomen nécessitant d'être recousue et il est transporté à l'hôpital de Grabs dans lequel il reste jusqu'au 4 janvier 1938.
+A cette date il est remis à la police des frontières autrichienne à Feldkirch. Il est identifié comme étant communiste.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-8.jpg" alt="Document Piotr Zebrun">
+</figure>
+
+<p class="subhead">Rapport du 28 mars 1938</p>
+<p>publication de l'avis d'expulsion de Piotr Zebrun et interdiction de séjour en Suisse.</p>
+
+<p>Le 8 février 1938, Piotr Zebrun entre en France par la frontière belge à Jeumont. Le 9 février, la Ligue des droits de l'homme et du citoyen lui délivre un certificat de réfugié politique. Il s'installe à Paris le 10 février 1938 et, dès le 22 février 1938, fait l'objet d'une enquête pour renseignement et avis en raison de sa demande d'autorisation de séjour en France.</p>
+
+<p>Un rapport de la préfecture de police en date du 9 septembre 1938 indique que Piotr se trouve sans passeport et ne parvient pas à prouver son statut de réfugié politique. Bien qu'un avis non défavorable ait été émis, la préfecture de police lui notifie un refus de séjour le 22 décembre 1938, lui enjoignant de quitter le territoire français avant le 30 décembre 1938.
+La Ligue des droits de l'homme sollicite un report de la décision afin de permettre à Piotr de trouver une solution plus favorable. Le 12 mars 1939, il obtient une autorisation de voyage de trois mois et cherche un pays d'accueil. Entre-temps, la Pologne lui notifie un refus de nationalité, le rendant apatride. Piotr Zebrun entreprend alors des démarches pour émigrer vers plusieurs pays et essuie des refus des autorités consulaires du Royaume-Uni, du Mexique, de la Grèce, de la Suède, de la Norvège, des Pays-Bas, ainsi que de l'URSS.</p>
+
+<p>Le 26 mai 1939, n'ayant pas trouvé de solution, il demande à être assigné à résidence dans un département où il pourra trouver un travail agricole et poursuivre ses démarches pour émigrer en Amérique du Sud. Le 20 août 1939, le préfet de police propose au ministère de l'Intérieur de l'installer en Vendée en attendant que Piotr trouve un pays d'accueil.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-9.jpg" alt="Document Piotr Zebrun">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-10.jpg" alt="Document Piotr Zebrun">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-11.jpg" alt="Document Piotr Zebrun">
+  </figure>
+</div>
+
+<p>Le dossier de Piotr Zebrun dans le Fonds de Moscou ne contient plus de pièces après le 20 août 1939. La mobilisation générale ayant eu lieu 15 jours plus tard, il est possible que, soit volontairement, soit en réponse aux obligations imposées par le décret-loi du 12 avril 1939 (qui obligeait les réfugiés bénéficiant du droit d'asile à se soumettre aux mêmes obligations que les Français), Piotr se soit présenté dans un bureau de recrutement de la Seine. Il y contracte un engagement pour la durée de la guerre.</p>
+
+<p>Le fait qu'il ait un petit matricule (1261) suggère qu'il n'a pas tardé à s'engager, ce qui renforce l'idée qu'il cherchait rapidement à régulariser sa situation. Ce type d'engagement, dans un contexte où de nombreux réfugiés cherchaient à se stabiliser ou à s'intégrer en France, pourrait également être une manière pour lui de trouver un peu de stabilité et un moyen d'existence tout en attendant des possibilités d'émigration.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-12.jpg" alt="Document Piotr Zebrun">
+</figure>
+
+<p>Piotr Zebrun est incorporé au 11è REI et fait prisonnier.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-13.jpg" alt="Document Piotr Zebrun">
+</figure>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zebrun-piotr-14.jpg" alt="Document Piotr Zebrun">
+  </figure>
+  <div class="side-text">
+<p>Piotr Zebrun semble avoir passé toute la durée de la guerre en captivité en Allemagne, où il a été transformé en travailleur civil, comme cordonnier (Schumacher).</p>
+
+<p>Le 7 mai 1945, alors que la guerre touche à sa fin, Piotr se marie à Schoppenstedt, en Allemagne, avec Sofia Plociennik.</p>
+
+<p>Après la fin de la guerre, il retourne en Pologne. Il décède le 29 janvier 1967 à Malanow.</p>
+  </div>
+</div>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Fonds de Moscou, Archives nationales de Pierrefitte-sur-Seine, 19940488/38</li>
-    <li>Archives fédérales suisses</li>
-    <li>Archives Arolsen, 76906126</li>
-    <li>La Contemporaine, archives de la Ligue des droits de l'homme</li>
+    <li>Archives de Pierrefitte/Seine: fond de Moscou 19940488/38 Dossier 3276</li>
+    <li>Archives fédérales suisses:
+      <ul>
+      <li>Cote: E4320B#1991/243#617*</li>
+      <li>E4320B # C.13 Problèmes de résidence, réfugiés politiques</li>
+      <li>Cote: E4320B # C.29 Police cantonale de Saint-Gall, politique Police</li>
+      <li>E4320B # 1993/214 # 294 * Zebrun Peter, 1.12.1908, alias Gwifeld Isaak, 1909, Pole; Entrée avec un faux passeport, expulsion</li>
+      </ul>
+    </li>
+    <li>Archives Arolsen : 2.2.2.2 Certificats officiels (mariages et décès), zones ouest, général - Piotr ZEBRUN - 76906126</li>
+    <li>dans les archives de la Ligue des droits de l'homme (non consultées)</li>
   </ul>
 </div>
+
+<p>A son arrivée en France, Piotr Zebrun a pris contact avec la Ligue polonaise. Il s'agissait sûrement pour lui de faciliter les démarches dans son dossier avec le ministère de l'intérieur.
+Son nom apparaît dans l'inventaire des index nominatifs des requêtes individuelles ZEBRUN Piotr 358 / 2868
+Ce dossier est conservé à La Contemporaine dans le fond des archives rapatriées de Moscou concernant les archives de la Ligue des droits de l'homme.</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Zebrun" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

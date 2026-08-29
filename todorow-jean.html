@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TODOROW Jean Andréa « Jean le Serbe » — 11e REI</title>
-<meta name="description" content="Officier de marine yougoslave devenu légionnaire, pionnier des maquis cévenols">
+<title>Jean Andréa TODOROW — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,50 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.6rem}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,28 +74,159 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Résistant FFI</div>
-  <h1>TODOROW Jean Andréa « Jean le Serbe »</h1>
-  <div class="sub">Officier de marine yougoslave devenu légionnaire, pionnier des maquis cévenols</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Jean Andréa TODOROW</h1>
+  <div class="tags"><span>11è REI</span><span>FFI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Jean Todorow, ancien officier de la marine yougoslave devenu légionnaire du 11e REI, s'impose comme l'une des figures des maquis cévenols sous le nom de « Jean le Serbe », avant d'être arrêté et torturé par les Waffen SS en 1944.</p>
-<p>Né le 9 août 1916 à Dubrovnik, formé dans une école militaire yougoslave puis officier de la marine en 1934-1935, il quitte son pays pour l'Italie, est arrêté à Trieste, et arrive à Marseille en février 1937, où il s'engage aussitôt à la Légion étrangère. Mobilisé au 11e REI, il est fait prisonnier en septembre 1940 et s'évade de son camp de Montmédy en novembre. Naturalisé français en 1946, il sera cité pour ses états de service à la Légion (14 ans, 10 campagnes).</p>
-<p>Après avoir encadré un groupe de travailleurs étrangers dans le Gard, il prend le maquis le 22 mai 1943 et rejoint le camp d'Aire-de-Côte du maquis Bir-Hakeim, comme agent de liaison. Après l'attaque allemande qui décime ce camp en juin 1943, il participe avec René Rascalon à la reconstruction d'un maquis, celui de Lasalle, où il enseigne les rudiments militaires aux jeunes réfractaires à l'École des cadres du château de Malérargues.</p>
-<p>Il organise ensuite successivement les maquis de Pont-Saint-Esprit, du col du Mercou, du Grand Bérie et de la Vallée Borgne. Le 11 mai 1944, alors en mission, il est fait prisonnier par les Waffen SS et transféré au fort Vauban d'Alès, où il est torturé mais survit — à la différence de plusieurs compagnons exécutés durant sa détention, dont il racontera plus tard les derniers instants. Transféré à la centrale de Nîmes puis aux Baumettes à Marseille, il s'en évade lors du débarquement allié en Provence et rejoint aussitôt le maquis de Lasalle, à la tête d'une compagnie qui combat à Ganges puis à Saint-Hippolyte-du-Fort fin août 1944.</p>
-<blockquote class="testimony">Attestation du commandant Rascalon, chef des maquis Aigoual-Cévennes, 14 décembre 1944 : « Cet officier a fait preuve d'une belle énergie dans la conduite de toutes les opérations qu'il a eu à soutenir contre les ennemis de la France. Il s'est conduit en vrai patriote français. »</blockquote>
-<p>Nommé commandant de la place de Saint-Hippolyte puis capitaine instructeur à l'école des cadres d'officiers à partir d'octobre 1944, il se marie en août 1945 à Pont-Saint-Esprit et meurt le 14 juillet 2003 à Arles.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-todorow-jean-2.jpg" alt="Jean Andréa Todorow">
+</figure>
+
+<p>Jean André Todorow, né le 9 août 1916 à Dubrovnik (Yougoslavie), est le fils de Sava Todorow et de Sara Cabrich.</p>
+
+<p>Après avoir fréquenté une école militaire en Yougoslavie, il effectue son service militaire dans la marine yougoslave entre 1934 et 1935 avec le grade de lieutenant de corvette.</p>
+
+<p>Il quitte son pays pour l'Italie, mais est arrêté à Trieste avant d'arriver à Marseille le 4 février 1937. Ce jour-là, il contracte un engagement de cinq ans au sein de la Légion étrangère française.
+- Mariage: Le 21/08/1945 à Pont Saint Esprit avec Ginette Hélène Rose Marty
+- Décès : Le 14/07/2003 à Arles
+- Description physique : 1,71 m, cheveux châtains, yeux marrons</p>
+
+<p class="subhead">Naturalisation:</p>
+<p>JO 26/05/1946 naturalisé TODOROW (Jean-Andréa), employé, né le 8 août 1916 à Dubrovnik (Yougoslavie), demeurant à Nîmes (Gard).</p>
+
+<p class="subhead">Situation militaire:</p>
+<p>- Info Légion : Engagé volontaire pour 5 ans au titre de la Légion étrangère le 4/02/1937 à Marseilles</p>
+
+<p class="subhead">Campagne avec le 11è REI 1939-40:</p>
+<p>- Grade : 2è classe</p>
+
+<p class="subhead">Captivité:</p>
+<p>- liste des prisonniers du 12/09/1940
+- il est interné à Montmédy
+- évadé le 01/11/1940</p>
+
+<p class="subhead">Citations et décorations:</p>
+<p>- JO 12/12/1942 4ème liste de citations: cité à l'ordre du régiment n°1207 C
+- JO 24/03/1961 médaille militaire Todorow (Jean-Andréa), 8 août 1916, sergent ; 14 ans de services, 10 campagnes. Cité.</p>
+
+<p class="subhead">Après juin 1940: déporté, résistant...</p>
+<p>- Il rejoint le 1er REI et il quitte la Légion le 23/01/1942. Il fait partie du personnel d'encadrement du 305è groupe de travailleurs étrangers à la Grande Combe dans le Gard jusqu'au 22/05/1943 date à laquelle il prend le maquis.</p>
+<p>- résistant: Le 22/05/1943, il rejoint le maquis Aire de Cote où il est agent de liaison. Il s'occupe ensuite de l'instruction militaires des jeunes du maquis de Lasalle. Appelé Jean le Serbe, il organise les maquis de Pont Saint Esprit, du Col du Mercou, Grand Borie et de la Vallée Borgne. Le 11/05/1944, il est fait prisonnier par les Waffen SS alors qu'il était en service commandé. Interné aux Baumettes à Marseille, il arrive à s'échappé lors du débarquement allié et à rejoindre le maquis de Lasalle. A la tête d'une compagnie il participe aux combats du mois d'août 1944. En octobre, il est capitaine instructeur à l'école des cadres d'officiers.</p>
+
+<p class="subhead">Le Maquis Bir-Hakeim</p>
+<p>Aimé Vielzeuf<br>chapitre 3 décembre 1943</p>
+
+<blockquote>Au jour dit, l'équipe d'instruction de Bir Hakeim arrive. Peu avant Bagnols, la camionnette qui l'amène tombe en panne. Les mécaniciens de l'usine Wyler, d'Orsan - dont Julien Fayet est le chef du personnel - parviennent à la remettre en marche. On repart. En haut de la côte de Roquebrune, Jean le serbe attend. Un jeune homme, la tête bandée, descend de la camionnette et se présente ; c'est R. M. (Christian de Roquemaurel). La lettre qu'il tend à Jean le Serbe stipule que R. M. exercera le commandement militaire du camp, Jean le Serbe conservant le commandement général.<br><br>
+Vers les onze heures, la camionnette s'arrête à Bagnols : les hommes cassent la croûte chez Mme Ida Camproux, au "Café de l'Avenue" ; R. M., Jean le Serbe, Marty, et Crapaud chez Maurice Aurélie, dont la maison fut toujours ouverte aux proscrits : nous nous devons de rendre hommage à sa vaillante épouse qui le seconda et continua de servir la cause, après la rafle de fin février -début mars 1944, dont nous parlerons plus loin.</blockquote>
+
+<ul>
+<li>RASCALON René alias « ALAIS »</li>
+</ul>
+
+<p><a href="https://maitron.fr/spip.php?article197083" target="_blank" rel="noopener">Le Maîtron</a></p>
+
+<p>Le 28 mars 1943, Castan et Rascalon vinrent, pour la première fois, à Saumane : ils y rencontrèrent le maire, Fernand Borgne qui mit à leur disposition une de ses propriétés, le Barrel, à sept kilomètres du village, et s'engagea à ravitailler les réfractaires. Une semaine plus tard, René Rascalon accompagna les quatre réfractaires du mas Rouquette à Saumane. Pendant deux mois, il effectua plusieurs allers-retours, soit pour acheminer de nouveaux réfractaires, soit pour pourvoir au ravitaillement du camp, avec l'aide d'un grossiste du marché Saint-Charles, M. Mary. Après le déplacement du camp à Aire-de-Côte, le 15 mai 1943, les effectifs du camp augmentèrent : au 22 juin 1943, 103 réfractaires y furent rassemblés, alors que 70 autres furent cachés dans les mas des environs.</p>
+
+<p>Menacés d'arrestation, René Rascalon et sa femme Julia durent quitter Nîmes, en juin 1943, et s'installèrent à Saumane, au lieu-dit Castel-Riquet, où ils hébergèrent Jean Todorow dit "Jean le Serbe" (ancien du maquis AS Bir Hakeim, Voir Capel Jean), lui aussi en fuite. Le ravitaillement du maquis était alors la priorité du groupe : le 27 juin 1943, Rascalon, Roche, Jalabert, Boutonnet et Jean Todorow se rendirent dans la région alésienne, où ils récupérèrent feuillets et tickets d'alimentation dans les mairies de Rousson, Saint-Julien-de-Valgalgues et Les Mages.
+Quelques jours plus tard, le 30 juin 1943, René Rascalon fut appelé à Montpellier auprès de l'état-major régional de l'AS (Raymond Chauliac, André Pavelet) qui le nomma chef départemental des maquis (AS) du Gard. Mais, à son retour, alors qu'il était passé par son domicile de Nîmes, il apprit que le camp d'Aire-de-Côte a été attaqué par les troupes allemandes : sept maquisards furent tués, quinze furent blessés. Trente-neuf d'entre eux, plus F. Borgne et E. Berrière, garde forestier, furent arrêtés et déportés en Allemagne : vingt-deux y moururent dans l'enfer des camps.</p>
+
+<p>Revenu à Saumane, René Rascalon partit à la recherche des rescapés, en compagnie de Jean Todorow : ils retrouvèrent Jean Castan et Fernand Bompard, et, au bout de quelques jours, rassemblèrent vingt et un rescapés. Malgré la fin tragique du maquis qui suit l'échec du premier "réduit" mis en place par l'AS alésienne, René Rascalon ne se découragea pas et noua de nouveaux contacts, dans l'été 1943, pour monter un nouveau maquis.
+Après avoir regroupé les rescapés d'Aire-de-Côte près de Saumane, René Rascalon chercha à reconstituer un maquis ailleurs en Cévennes. Il fut alors mis en relation par Gleize, transporteur chez l'exploitant forestier Ravis et par Fougerolle, agriculteur à Lasalle (Gard), avec deux résistants de cette localité, Guy Arnault et Robert Francisque, qui cachaient déjà dix-huit réfractaires dans deux bergeries des environs. Après une prise de contact "assez froide", selon Rascalon, l'accord se fit entre ces trois hommes sur une fusion des deux groupes : le 4 août 1943, fut créé le maquis de Lasalle (devise : "la liberté ou la mort"), placé sous le commandement de René Rascalon, le plus âgé et le plus ancien dans l'Armée secrète (AS), avec R. Francisque et Guy Arnault pour adjoints.</p>
+
+<p>La première préoccupation de René Rascalon fut d'éviter que la tragédie d'Aire-de-Côte ne se reproduisît : pour cela, des points de repli furent mis en place en cas d'attaque ; des agents de liaison maintenaient le contact avec les autres groupements et les sources d'information, et le maquis changea d'emplacement tous les vingt à vingt-cinq jours. Par ailleurs, René Rascalon et les responsables du maquis s'assurèrent, par étapes, la complicité, ou du moins la passivité des gendarmes locaux au Vigan (Gard), à Saint-Hippolyte (Gard) ou Lasalle (Gard). Ils pouvaient aussi compter sur l'aide de certains policiers, notamment ceux du réseau Ajax, comme Maurice Sachan, des Renseignements généraux, qui le prévint d'une attaque des miliciens aux Fosses, à Colognac, le 23 mai 1944.</p>
+
+<p>La deuxième priorité est l'approvisionnement et l'équipement du maquis. Il s'appuya d'abord sur les commerçants et artisans cévenols ralliés à la Résistance par G. Arnault et R. Francisque à Lasalle, par E. Camplan à Saint-Hippolyte-du-Fort, par Rémézy à Soudorgues... mais aussi sur les "filières" mises en place au printemps 1943 pour Aire-de-Côte : madame Julia Rascalon et son fils Marceau Thérond faisaient des allers-retours à Nîmes pour chercher du ravitaillement chez M. Régis, épicier en gros. Enfin le maquis procéda à des réquisitions, mais celles-ci se firent parfois avec l'accord, voire l'aide des commerçants concernés, comme les deux débitants de tabac Travier à Thoiras et Verdier à Lasalle. De même, les vêtements étaient fournis, en grande partie, par les établissements Paulhan qui fabriquaient des tenues militaires, dont le patron, Pierre Paulhan, membre de l'AS, donna son accord à René Rascalon pour plusieurs "cambriolages" de son usine.</p>
+
+<p>La loi sur le Service du travail obligatoire (STO), notamment envers les jeunes sortis des Chantiers de jeunesse, et l'aggravation de la répression entraînent une augmentation du nombre de maquisards, en même temps qu'elles impliquèrent pour René Rascalon et ses deux adjoints l'obligation de structurer le camp. En octobre 1943, après discussion avec André Pavelet, responsable régional de l'AS, ils mirent en place dans le château de Malérargues une "école des cadres", confiée à R. Francisque et J. Todorow. En janvier 1944, fut constitué le groupe franc, chargé des opérations de récupération de vivres et matériel et des actions contre les collaborateurs, puis une "police spéciale du maquis", qui devait démasquer et neutraliser les traîtres. Parallèlement, en prévision des combats de la Libération, un service de santé fut créé après l'arrivée au maquis, fin 1943, du docteur Herman de Courcelles. Par ailleurs, malgré les déplacements successifs de son poste de commandement (PC) (12 emplacements différents entre août 1943 et août 1944 !), René. Rascalon gardait le contact à la fois avec les directions départementale et régionale de l'AS (le docteur Georges Salan et André Pavelet, de Montpellier (Hérault), vinrent à Lasalle, Mme Rascalon et son fils Marceau effectuèrent plusieurs missions de liaison à Nîmes), avec les groupes de la région alésienne (M. Cassagne, et A. Breschet en particulier), la brigade Montaigne (AS), que R. Rascalon appella en renfort le 30 janvier, ou encore avec les formations FTP, auprès desquelles Antonin Combarmond servit souvent d'intermédiaire.</p>
+
+<ul>
+<li>BAYLE Paul, Louis alias « Petit Louis »</li>
+</ul>
+<p><a href="https://maitron.fr/spip.php?article209845" target="_blank" rel="noopener">Le Maîtron</a></p>
+
+<p>Le 26 avril, Bayle se trouvait dans les Cévennes au camp de la Grande Borie, à Lasalle (Gard) commandé par Jean Todorow, alias « Jean le Serbe » qui s'était brouillé avec Jean Capel alias « commandant Barot », chef du maquis Bir Hakeim [du Languedoc]. Ce camp était rattaché au maquis (AS) « Aigoual-Cévennes » créé le 4 août 1943 par le Nîmois René Rascalon qui en assura le commandement jusqu'à la Libération. En mission pour son maquis à Alès avec Étienne Gervais, Paul-Bayle fut arrêté les Waffen SS français présent dans la ville depuis le 9 mai 1944. Enfermé au Fort Vauban, il y fut torturé.</p>
+
+<ul>
+<li>SAULE LANDI Marie-Caroline</li>
+</ul>
+<p><a href="https://maitron.fr/spip.php?article231064" target="_blank" rel="noopener">Le Maîtron</a></p>
+
+<p>Fille de Jean-Marie Landi, journalier, et de Marie-Joséphine Poggionovo, Marie-Caroline Saule Landi était séparée de son mari dont elle avait eu un fils et vivait seule à Nîmes (Gard). Personne sensible et serviable, bouleversée par la déportation de Paul Cassetari, son cousin qui avait été pensionnaire chez elle pendant vingt ans, elle participait à la Résistance en hébergeant des réfractaires et résistants et en fournissant de faux papiers d'identité. Elle avait hébergé en particulier Jean Todorow dit « le Serbe ».</p>
+
+<ul>
+<li>NOUVEL Gustave, Paul</li>
+</ul>
+<p><a href="https://maitron.fr/spip.php?article209838" target="_blank" rel="noopener">Le Maîtron</a></p>
+
+<p>Gustave Nouvel fut atrocement torturé par les Waffen SS. Ce fut grâce à Jean Todorow alias « Le Serbe », détenu lui aussi à Fort Vauban que l'on connait les détails du dernier jour de la vie de Gustave Nouvel. Jean Todorow, avait participé à l'action de Bir Hakeim et à sa direction avant de rompre avec Jean Capel en février 1944. Il avait été arrêté le 12 mai. Il expliqua que Lucien Belnot, maquisard de Bir Hakeim avait été extrait de sa cellule enchaîné avec d'autres condamnés eux aussi à mort, un résistant dont il ignorait le nom, de fait Gustave Nouvel, instituteur de Mages (Gard), Lagier* alias « Spada », Raynaud* alias « Bretelle » deux miliciens impitoyables à l'égard de la Résistance qui avaient trahi la cause collaborationniste. Todorow fut épargné in extremis. Belnot, enchaîné à Nouvel fut jeté dans la camionnette qui les conduisit à Servas. Ils y furent assassinés d'une balle dans la nuque. Son corps fut précipité dans le puits de la mine de lignite désaffectée de Célas, à Servas (Gard). Il fut remonté puis identifié le 14 septembre 1944.</p>
+
+<ul>
+<li>BELNOT Lucien, Maurice, Henri alias "Grand Lucien" au maquis Bir Hakeim du Languedoc</li>
+</ul>
+<p><a href="https://maitron.fr/spip.php?article194488" target="_blank" rel="noopener">Le Maîtron</a></p>
+
+<p>Le 10 mai 1944, alors qu'il effectuait une mission pour le compte de Bir Hakeim, un transport d'armes avec une camionnette des PTT, il fut arrêté entre Thoiras (Gard) et Saint-Jean-du-Gard (Gard), par des Waffen SS [Français de la 8e compagnie de la Waffen SS Brandenburg] déguisés en membres des Chantiers de jeunesse portant la croix de Lorraine. Il se trouvait alors sur la route Alès-Lassalle. Il fut interné au fort Vauban à Alès (Gard) où il fut durement interrogé et torturé, toujours par des Waffen SS de la même unité. Refusant de parler, il résista à ses tortionnaires et eut un bras cassé. Jean Todorow, alias « Jean le Serbe », un résistant qui avait participé à l'action de Bir Hakeim et à sa direction avant de rompre avec Jean Capel en février 1944, avait été arrêté le 12 mai. Il a pu raconter le calvaire vécu par Belnot, lors de sa dernière nuit au fort Vauban le 9 juin. Il expliqua que Belnot fut extrait de sa cellule enchaîné avec d'autres condamnés eux aussi à mort, Lagier alias « Spada », Raynaud alias « Bretelle » deux miliciens impitoyables à l'égard de la Résistance qui avaient trahi la cause collaborationniste et un résistant dont il ignorait le nom, de fait Gustave Nouvel, instituteur des Mages (Gard), village du bassin houiller d'Alès lui aussi sauvagement torturé. Todorow fut épargné in extremis.</p>
+
+<ul>
+<li><a href="https://maitron.fr/spip.php?article195795" target="_blank" rel="noopener">JALABERT Lucien, Aimé</a></li>
+</ul>
+<p><a href="https://maitron.fr/spip.php?article195795" target="_blank" rel="noopener">Le Maîtron</a></p>
+
+<p>Jalabert intégra le groupe franc (AS) de la région d'Alès dirigé par Alban Bernat puis par Marcel Pantel et René Pagès. Il participa avec, entre autres, Jean Todorow « le Serbe », Francis Roche et d'Amico à plusieurs actions de « récupération » de carnets et tickets d'alimentation dans des mairies de la région d'Alès ainsi que de cachets et tampons officiels utilisés ensuite par les groupes de Résistance pour fabriquer des faux papiers pour les réfractaires cachés dans les maquis cévenols.</p>
+
+<ul>
+<li>TRINTIGNANT Raoul [Louis, Timothée, François, Raoul]</li>
+</ul>
+<p><a href="https://maitron.fr/spip.php?article200509" target="_blank" rel="noopener">Le Maîtron</a></p>
+
+<p>En octobre-novembre 1943, Raoul Trintignant rencontra Jean Todorow dit "Jean le Serbe" chargé par André Pavelet dit "Villars" le chef régional (R 3) des maquis Armée secrète, de rassembler les réfractaires des pays de Cèze, avec l'aide d'instructeurs fournis par le maquis Bir Hakeim (Voir <a href="https://maitron.fr/spip.php?article18606" target="_blank" rel="noopener">Capel Jean</a>). Le Comité AS de Pont-Saint-Esprit choisit le site (la ferme de Terris, sur un plateau désertique entre Méjannes-le-Clap et Saint-André-de-Roquepertuis), aiguilla vers le camp les réfractaires du Gard, de l'Ardèche et du Vaucluse, contacta les commerçants susceptibles de fournir du ravitaillement aux maquisards.
+<a href="https://www.sommieresetsonhistoire.org/le-maquis-aigoual-cevennes-site-de-sommieres-et-son-histoire/" target="_blank" rel="noopener">https://www.sommieresetsonhistoire.org/le-maquis-aigoual-cevennes-site-de-sommieres-et-son-histoire/</a></p>
+
+<p class="subhead">L'idée de l'école</p>
+
+<p>Le maquis de Lasalle est en contact régulier avec les chefs régionaux, ce qui lui permet de bénéficier d'une grande attention. Pour illustrer notre propos, nous allons étudier l'exemple de l'Ecole des Cadres créée à la fin de l'année 1943.</p>
+
+<p>En fait, les maquisards manquent toujours cruellement d'armes et de formation. Le problème qui se pose est celui des chefs. Effectivement, le maquis se divise en groupes qui lors des attaques futures seront amenés à être séparés. Rascalon et ses deux adjoints s'occupent de l'organisation générale mais ne pouvant pas assumer toutes les fonctions, surtout celles qui sont militaires car ils n'ont pas eux non plus de formation. La nécessité de créer des sous-chefs se fait présente. C'est pourquoi, l'idée d'une école des cadres se fait jour.</p>
+
+<p>Villar, sans qui rien ne se décide est favorable à ce projet. La direction régionale fournit aux hommes du maquis deux instructeurs militaires qui sont chargés des chefs parmi les plus aptes évidemment.</p>
+
+<p>Cette école s'établit au Château de Mallerargue, près de Lasalle. Le patron de ce domaine est M. Meyrues qui est aussi l'employeur de Robert Francisque et grand patriote. Robert Francisque et Jean le Serbe sont désignés pour aider les deux instructeurs. Vingt hommes parmi ceux de Lasalle sont envoyés à cette école où ils vont suivre les cours des instructeurs.</p>
+
+<p>En réalité, l'organisation de cette école est très stricte car ses progrès doivent être rapide, vu les risques qu'une concentration d'hommes telle en un lieu fixe, peut entraîner.
+<a href="https://museedelaresistanceenligne.org/" target="_blank" rel="noopener">https://museedelaresistanceenligne.org/</a></p>
+
+<p>Robert Francisque, mobilisé en 1939, est libéré avec le grade d'adjudant après la défaite de juin 1940, retourne alors à Malérargues. Son patron se fie entièrement à lui.
+Célibataire, Robert Francisque n'accorde sa confiance qu'au compte-gouttes. Homme cultivé, il s'exprime avec facilité. Il a deux passions : l'apiculture et la philatélie. Pourtant il met en vente sa collection de timbres pour nourrir "ses maquisards". Et pour mieux les protéger, il s'engage dans la Milice et devient l'adjoint de l'anduzien Roumégous, chef de la Milice gardoise. Il pratique ainsi un dangereux double jeu pour obtenir des renseignements de première main et être informé des dangers qui menacent les résistants. Seuls ses chefs sont dans le secret.</p>
+
+<p>Les liaisons entre les caches où sont disséminés les réfractaires et le château ainsi que l'intégration des nouveaux sont assurées par le boulanger de Lasalle Guy Arnault. C'est d'ailleurs par l'intermédiaire de ce dernier que Rascalon prend contact avec lui, début juillet 1943. Il cherche un point de chute pour les rescapés d'Aire-de-Côte. Avec le groupe de Lasalle, ils vont former le maquis de Lasalle. Robert Francisque devient le chef militaire de ce maquis. Avec Jean Todorow dit "Jean le Serbe", ils enseignent aux élèves les rudiments du règlement d'infanterie : discipline, école du soldat sans arme, avec arme et école de guérilla.</p>
+
+<p>Le 10 mai 1944, alors que les responsables du maquis sont réunis près du col du Mercou, au nord de Lasalle, Robert Francisque, demeuré seul au château avec Rose Frenkiel dite "Ami", reçoit la visite d'un "homme blond, vêtu d'une veste de cuir" qui se présente comme un agent américain parachuté récemment, désireux d'entrer en contact avec la Résistance. Chose extraordinaire "Le Noir" lui fait confiance et le conduit chez Madame Rascalon à Lasalle. Cette dernière feint de tout ignorer. Lorsqu'ils reprennent le chemin de Malérargues l'homme se démasque, aussitôt d'une camionnette surgissent des hommes en civil, des Waffen SS. Torturé Robert Francisque ne parle pas.
+Il est abattu d'une balle dans la tête avec son chien. "Ami" reste cachée et assiste impuissante à cet assassinat. Les SS pillent ensuite le château et y mettent le feu.</p>
+
+<blockquote>Je soussigne Commandant RASCALON, Chef des Haquis AIGOUAL
+CEVANNES, certifie que le dénommé :
+TODOROV Jean André, dit Jean le Serbe est entré au maquis à SAUMANE le 10 juin 1943 et qu'il était affecté comme agent de liaison. Il est passé ensuite à l'Ecole des Cadres de LASALLE pour préparer les jeunes maquisards et leur donner une instruction militaire. Chargé par la suite par le Chef Régional VILLARS de la formation du NORD DU GARD.<br><br>
+D'octobre 1943 à février 1944, il a organisé le maquis de Pont-St-Esprit.<br>
+De retour à LASALLE, il a organisé le maquis de Col du Mercou, du Grand Bérie et ensuite celui de la Vallée Borgne.<br>
+Le 11 mai 1944 a été fait prisonnier au Col du Mercou par les WAFFENS S.S. alors qu'il était en service commandé.<br>
+Conduit à la prison d'ALES a subi des mauvais traitements pour qu'il lâche les renseignements qu'il connaissait, a été transféré à la Centrale de NIMES puis aux Baumettes à MARSEILLE.<br>
+S'est évadé des BAUMETTES lors du débarquement allié sur la côte méditerranéenne, a immédiatement rejoint le maquis LASALLE où il lui a été confié le commandement d'une compagnie avec laquelle il a combattu à GANGES le 24 Août 1944 et à St-Hippolyte du Fort le 25 août 1944. Il a été nommé commandant de la Place de St-Hippolyte puis a rejoint NIMES le 27 août 1944 pour prendre le commandement de la 7e compagnie.<br>
+Le 1er octobre 1944, a été détaché à l'ECOLE DES CADRES d'OFFICIERS comme CHEF INSTRUCTEUR en qualité de CAPITAINE.<br><br>
+Cet officier a fait preuve d'une belle énergie dans la conduite de toutes les opérations qu'il a eu à soutenir contre les ennemis de la FRANCE. Il s'est conduit en vrai patriote FRANÇAIS et est digne d'acquérir la qualité de FRANÇAIS qu'il sollicite.<br>
+En foi de quoi je lui ai délivré la présente attestation pour servir et valoir ce que de droit.<br><br>
+NIMES LE 14 DÉCEMBRE 1944<br>
+Le commandant RASCALON</blockquote>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>SHD Vincennes, GR 16 P 572851</li>
-    <li>Archives nationales de Pierrefitte-sur-Seine, dossier de naturalisation</li>
-    <li>Le Maitron (notices Bayle, Saule Landi, Nouvel, Belnot, Jalabert, Trintignant)</li>
-    <li>Aimé Vielzeuf, « Le Maquis Bir-Hakeim »</li>
-    <li>sommieresetsonhistoire.org, museedelaresistanceenligne.org</li>
+    <li>SHD Vincennes GR 16 P 572851 (consulté)</li>
+    <li>citation Journal Officiel</li>
+    <li>AN Pierrefitte, dossier de naturalisation (consulté)</li>
+    <li>gallica.bnf.fr Liste officielle des prisonniers de guerre français</li>
   </ul>
 </div>
 

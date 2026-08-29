@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZYGA Karol — 11e REI</title>
-<meta name="description" content="Ouvrier agricole polonais de la Meuse, prisonnier cinq ans, naturalisé pour sa valeur au travail">
+<title>Karol ZYGA — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,43 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +67,64 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Ouvrier agricole</div>
-  <h1>ZYGA Karol</h1>
-  <div class="sub">Ouvrier agricole polonais de la Meuse, prisonnier cinq ans, naturalisé pour sa valeur au travail</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Karol ZYGA</h1>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Karol Zyga, modeste ouvrier agricole polonais installé dans la Meuse depuis 1928, s'engage au 11e REI et passe près de cinq ans en captivité avant d'obtenir sa naturalisation, portée par le soutien unanime de son village d'adoption.</p>
-<p>Né le 24 septembre 1907 à Husów (Galicie orientale), il quitte la Pologne faute de travail et arrive en France le 24 juin 1928, s'installant à Savonnières-devant-Bar, près de Bar-le-Duc. Après un passage comme manœuvre à la fonderie Durenne, il devient en 1930 ouvrier agricole chez André Michelot, emploi qu'il conservera au moins jusqu'en 1946. Son seul démêlé avec la justice, une condamnation à huit jours de prison en 1933 pour ramassage de bois mort, ne ternit pas la réputation d'homme sérieux et consciencieux que lui reconnaissent son employeur et le maire de la commune.</p>
-<p>Engagé volontaire au bureau de recrutement de Bar-le-Duc le 6 octobre 1939, il rejoint le 11e REI et participe à la campagne de France avant d'être fait prisonnier à Saint-Mihiel le 22 juin 1940. Interné au Stalag XVII-A, il reste en captivité jusqu'au 19 mai 1945.</p>
-<p>De retour à Savonnières-devant-Bar, où il n'a jamais cessé d'être domicilié depuis 1928, il reprend son travail agricole et dépose en 1946 une demande de naturalisation. Célibataire et sans attaches en Pologne, il avait pris soin avant-guerre de suivre des leçons du soir auprès de l'instituteur du village pour améliorer son français — un signe de bonne volonté relevé par le préfet de la Meuse, qui appuie sa demande en soulignant à la fois sa longue captivité et l'utilité d'un bon ouvrier agricole dans une campagne en manque de main-d'œuvre.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Dossier de naturalisation, archives départementales de la Meuse</li>
-  </ul>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zyga-karol-2.jpg" alt="Karol Zyga">
+  </figure>
+  <div class="side-text">
+<p class="subhead">Identité et origines</p>
+
+<p>Karol Zyga, né le 24 septembre 1907 à Husow (Galicie orientale, Pologne), est le fils de Jacob Zyga et d'Agnaska Wiona.
+En Pologne, il a effectué son service militaire de mars 1927 à mai 1928. Par manque de travail, il quitte son pays pour la France.</p>
+
+<p>En France depuis le 24 juin 1928, il se fixe à Savonnières-devant-Bar, près de Bar-le-Duc (Meuse).</p>
+  </div>
 </div>
+
+<div class="figure-side reverse">
+  <div class="side-img" style="display:flex;flex-direction:column;gap:14px">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zyga-karol-4.jpg" alt="Document Karol Zyga" style="width:100%;border-radius:4px;display:block">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zyga-karol-5.jpg" alt="Document Karol Zyga" style="width:100%;border-radius:4px;display:block">
+  </div>
+  <div class="side-text">
+<p class="subhead">Parcours avant-guerre</p>
+
+<p>À son arrivée en France, Karol Zyga travaille d'abord comme manœuvre industriel pour la fonderie Durenne à Bar-le-Duc, avant d'être embauché, à partir de 1930, comme ouvrier agricole chez André Michelot, cultivateur à Savonnières-devant-Bar, emploi qu'il occupe au moins jusqu'en 1946. Il est recensé au domicile de son patron 16 rue de l'Eglise pour les années 1931, 1936 et 1946.
+En France, son casier judiciaire ne comporte qu'un incident : le 1ᵉʳ mars 1933, le tribunal correctionnel de Bar-le-Duc le condamne à huit jours de prison pour ramassage de bois mort dans une propriété privée, condamnation assortie d'un avertissement ministériel. Par la suite, sa probité et sa conduite sont réputées irréprochables.
+Célibataire et sans enfants, il vit modestement de son salaire d'ouvrier agricole – environ 1 500 francs par mois, logé, nourri, blanchi – et il est décrit par son employeur et par le maire comme un bon ouvrier agricole, sérieux, consciencieux, donnant entière satisfaction et parfaitement intégré à la commune.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-zyga-karol-6.jpg" alt="Document Karol Zyga">
+  </figure>
+  <div class="side-text">
+<p class="subhead">Engagement militaire, campagne de France et captivité</p>
+
+<p>À la déclaration de guerre de 1939, Karol Zyga s'engage volontairement le 6 octobre 1939 au bureau de recrutement de Bar-le-Duc, au titre de la Légion étrangère.
+Incorporé au 11ᵉ régiment étranger d'infanterie, il prend part à la campagne de France avant d'être fait prisonnier à Saint-Mihiel le 22 juin 1940. Interné au Stalag XVII-A, il reste en captivité jusqu'au 19 mai 1945.
+Cet engagement, suivi d'une longue captivité, sera plus tard explicitement pris en compte par l'administration comme un élément en sa faveur lors de l'examen de sa naturalisation.</p>
+  </div>
+</div>
+
+<p class="subhead">Retour à Savonnières-devant-Bar et naturalisation</p>
+
+<p>Revenu à Savonnières-devant-Bar, où il n'a jamais cessé d'être domicilié depuis 1928, Karol Zyga poursuit son travail d'ouvrier agricole.
+Il déclare être venu en France « pour y travailler » et « pour y gagner sa vie », avoir quitté la Pologne par manque de travail et souhaiter désormais se fixer définitivement en France. Il affirme n'entretenir plus aucun lien matériel ni familial avec son pays d'origine et dit avoir perdu tout espoir d'y retourner.
+Les enquêtes de police et les avis recueillis localement – notamment un certificat du maire indiquant qu'il est « parfaitement assimilé comme Français » – soulignent sa bonne conduite, sa moralité satisfaisante, son loyalisme et la considération dont il jouit auprès de la population.
+Avant-guerre, il suit des leçons du soir auprès de l'instituteur de Savonnières-devant-Bar afin d'améliorer son instruction et sa langue écrite. Ce travail régulier, relevé par le préfet dans son rapport, est présenté comme un signe supplémentaire de sa volonté d'intégration et de son assimilation aux usages français.
+En 1946, Karol Zyga dépose une demande de naturalisation.
+Le préfet de la Meuse émet un avis favorable : après avoir rappelé la condamnation mineure de 1933 et ses services militaires, il insiste sur les difficultés de recrutement de la main-d'œuvre agricole dans les campagnes et souligne que son utilité comme ouvrier agricole présente un intérêt évident qui mérite d'être soutenu.
+La fiche de naturalisation mentionne son état de santé « bon », son assimilation « bonne » et ses « très bons » renseignements, tout en précisant qu'il demeure célibataire et sans charges de famille.
+En septembre 1946, au titre de l'article 60-62, il est proposé à la naturalisation, l'administration invitant à « tenir compte de la longue captivité ».</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Zyga" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

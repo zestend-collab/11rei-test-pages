@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CHERAFFEDIN Radje — 11e REI</title>
-<meta name="description" content="Caporal-chef turc devenu apatride après treize ans de Légion, ballotté d'un pays à l'autre après-guerre">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,47 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,35 +71,136 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 5e compagnie · Apatride</div>
-  <h1>CHERAFFEDIN Radje</h1>
-  <div class="sub">Caporal-chef turc devenu apatride après treize ans de Légion, ballotté d'un pays à l'autre après-guerre</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>RADJE CHERAFFEDIN</h1>
+  <div class="sub">Caporal-chef apatride</div>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Radje Cheraffedin, caporal-chef de la 5e compagnie du 11e REI, avait déjà treize ans de Légion étrangère derrière lui en 1939. Son engagement lui coûte sa nationalité turque : les archives Arolsen conservent le récit, dans ses propres mots, d'un homme rendu apatride et ballotté d'un pays à l'autre pendant dix ans après la guerre.</p>
-<h2>Le 11e REI</h2>
-<p>Selon le compte rendu du lieutenant Chevillotte, Cheraffedin, affecté à la 5e compagnie, est blessé au bois d'Inor sans être évacué, avant d'être fait prisonnier le 23 juin 1940 et interné au frontstalag 240 de Verdun. Né le 21 mars 1901 à Istanbul, il s'était engagé à la Légion étrangère dès 1919, puis réengagé en 1939 au bureau de recrutement de Marseille — son grade de caporal-chef, plutôt que 2e classe, trahit ce long passé militaire.</p>
-<h2>Un homme sans pays</h2>
-<p>Le service dans une armée étrangère lui vaut de perdre sa nationalité turque : la nouvelle République turque, née de la guerre d'indépendance de 1923, refuse de reconnaître comme citoyens les Turcs ayant servi dans une armée étrangère. Fait prisonnier de guerre en 1940, il est raflé à Marseille fin 1942 et déporté comme travailleur forcé en Allemagne, condamné à neuf mois de prison après une dénonciation, puis interné au camp d'éducation ouvrière de Watenstedt-Hallendorf, dit « camp 21 ».</p>
-<p>Il s'en évade avec un compatriote, rejoint le Danemark puis la Suède, d'où un navire de la Croix-Rouge le mène à Istanbul en avril 1945 — mais ni la Turquie ni la France ne le reconnaissent comme leur ressortissant, et il est renvoyé à Marseille. Recueilli par un officier américain sensible à son sort, il travaille comme interprète pour l'armée américaine en Allemagne jusqu'en 1947, sans jamais obtenir le rapatriement qu'il réclame.</p>
-<p>Dans une longue lettre adressée aux autorités, conservée dans les archives Arolsen, il raconte ce parcours à la première personne, de son engagement forcé en 1919 à son impossible retour au pays :</p>
-<blockquote class="testimony">Très honorable Directeur Général, Je me suis fait kidnapper dans mon pays d'origine par les Français victorieux en 1919, et l'on m'a amené dans la légion étrangère. J'étais un étudiant studieux, d'environ 19 ans. Au bout de treize ans de service et après avoir été systématiquement rabaissé, privé de tout, transformé en squelette à force de combats et de travaux forcés dans les colonies françaises, j'ai été relâché avec une petite pension de deux cent dix francs tous les trois mois (cette pension s'est maintenant arrêtée pour une raison inconnue). Quand j'ai entrepris, après avoir été libéré, les procédures de rapatriement, il était déjà trop tard. Le régime au pouvoir en Turquie avait changé et la nouvelle république ne reconnaît pas les Turcs comme citoyens turcs, s'ils ont servi dans une armée étrangère lors de la Guerre d'Indépendance turque (1923). J'ai perdu ma nationalité, car j'ai fait partie de la légion étrangère française.</blockquote>
-<blockquote class="testimony">En septembre 39, j'étais à Marseille, abandonné, délaissé, sans espoir, vivant dans un misérable tripot. Il n'était pas autorisé de travailler aux membres de la légion étrangère. C'était tamponné en rouge, sur la première page de notre carte d'identité d'étranger : « Ne peut occuper un emploi salarié ». Et, pire que tout, la Justice française m'a conseillé de quitter la France. Par conséquent, je suis allé plusieurs fois au consulat de Turquie de Marseille pour expliquer ma détresse et pour obtenir, finalement, mon rapatriement. Mais le consul me répond à chaque fois : je suis désolé, les Français sont forcés de subvenir à mes besoins, car j'ai combattu dans leur armée. Honteusement abandonné par les Français, par mon propre pays, et craignant d'être envoyé dans les camps de concentration français, je suis redevenu soldat de la légion étrangère française pour défendre le prétendu pays des « droits de l'homme ».</blockquote>
-<blockquote class="testimony">Ensuite, j'ai été fait prisonnier de guerre par les Allemands, sur le front français, et interné dans le stalag 173. J'ai fui, je suis retourné à Marseille et me suis présenté au consulat turc pour chercher une possibilité de rapatriement, mais ils finissaient toujours par me répondre non. À la fin de l'année 1942, quand les Allemands sont entrés dans la France inoccupée, j'étais à Marseille [...] et je dormais dans le dortoir de l'armée du Salut. [...] J'ai été ramassé par la police française et amené chez leur chef allemand. Bien entendu, les Allemands m'ont emmené dans leur pays sous la garde stricte de leurs soldats et de leurs chiens pour les aider à gagner la guerre. Comme si cette guerre était ma guerre nationale légitime. Deux mois après mon arrivée en Allemagne dans le camp de travail forcé, j'ai été arrêté et condamné à 9 mois d'emprisonnement, après dénonciation par des immondes Français [...] Un Turc ne compte pas tellement quand les Français ont faim !!</blockquote>
-<blockquote class="testimony">Libéré de la prison, je fus interné dans le camp n°21, près de Watenstedt. Durant mon internement dans ce camp, j'ai été aidé par mon compatriote libre qui travaillait dans les environs (je ne parlerai pas ici de ce que j'ai enduré dans le légendaire camp n°21, et seul Dieu connaît la vérité !). Je me suis enfui avec mon compatriote, et nous avons atteint Helsingør au Danemark, puis Göteborg en Suède. À Göteborg, j'ai été embarqué à bord du SS Drottningholm, un navire de la Croix-Rouge, et nous avons navigué vers Istanbul, où nous sommes arrivés le 9 avril 1945. Les Turcs ont fait une enquête sur moi, puis j'ai été conduit au consulat français à Istanbul, car j'étais français. J'ai été étonné de ce traitement de la part de mon propre pays. Je suis turc, je pensais n'avoir rien à faire au consulat français.</blockquote>
-<blockquote class="testimony">Le consul français a refusé catégoriquement de me reconnaître malgré mes treize années de service dans l'armée française, de captivité et autre... Mon cas a été rapidement réglé : personne ne me reconnaît, ni mon pays d'origine, ni la France ! Le ministère de l'Intérieur turc, très austère dans son attitude et dégoûté par le geste du consul, a insisté dans son entêtement ! J'ai enfin quitté la prison et la Turquie contre mon gré, expédié une fois de plus vers cet enfer que je déteste tellement : Marseille. J'arrive ici, mais plutôt que de me laisser gagner mon pain quotidien, les Français m'emmènent jusqu'à un point de collecte DP, qui semblait animé par l'armée américaine.</blockquote>
-<blockquote class="testimony">Il y avait là un capitaine de l'armée. Son nom était Monsieur Waldner, chef des affaires civiles à la préfecture de Châlons-sur-Marne. Il était intéressé par mon cas et avait pitié de mon combat. [...] Il a convoqué le consul général turc de Paris dans son bureau [...] Il a demandé au consul de me renvoyer chez moi. Le consul, se sentant incapable de prendre une décision à l'encontre de la volonté du ministère de l'Intérieur turc, a pris congé du capitaine. Le capitaine a appelé les MP en station devant l'entrée et leur a ordonné de me conduire au poste de commandement du Bataillon de la Garde polonaise auprès des États-Unis. Je suis resté là-bas en tant qu'interprète anglais-français jusqu'en septembre 47.</blockquote>
-<blockquote class="testimony">J'ai été libéré sur ma demande pour pouvoir émigrer. Mais ça n'était pas possible pour moi. Je suis virtuellement et physiquement en ruine. J'ai seulement 49 ans, mais j'ai l'air d'en avoir 60. Bien entendu, les bureaux d'immigration de chaque pays choisissent toujours les hommes en bonne forme physique et en bonne santé pour les envoyer dans leurs pays respectifs. Mon cas ne peut être résolu que par mon propre pays. Je serais reconnaissant, donc, si vous pouviez inviter le gouvernement turc à pardonner ma faute et approuver mon rapatriement. [...] Humblement vôtre.</blockquote>
-<p>Les dernières traces retrouvées de lui, en 1951, le montrent toujours en Allemagne, employé sur une base américaine, dans l'attente d'un pays qui accepte de le reconnaître.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-2.jpg" alt="Radje Cheraffedin">
+  </figure>
+  <div class="side-text">
+    <p>Radje Cheraffedin est un caporal-chef qui apparaît dans les archives du 11e REI grâce au compte rendu du lieutenant Chevillotte. Ce document indique qu'il faisait partie de la <a href="https://www.11regimentetranger.com/blog/5e-compagnie" target="_blank" rel="noopener">5e compagnie</a>, qu'il a été blessé au bois d'Inor, mais qu'il n'a pas été évacué. Il est finalement fait prisonnier le 23 juin 1940 et interné au frontstalag 240 à Verdun.</p>
+    <p>*La fiche du lieutenant Chevillotte date probablement de janvier 1941.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-4.jpg" alt="">
+</figure>
+
+<p>On le retrouve dans les listes des prisonniers. Il est indiqué qu'il est né le 21/03/1901 à Istanbul en Turquie et qu'il est interné au fronstalag 180.</p>
+
+<figure class="size-small" style="width:min(240px,100%);margin-left:auto;margin-right:auto">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-5.jpg" alt="">
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-6.jpg" alt="">
+</figure>
+
+<p>En effectuant une recherche nominative dans les sources habituelles (Mémoire des Hommes, Gallica, etc.), Radje Cheraffedin n'apparaît que dans deux documents : le Cahier des droits de l'homme du 1er janvier 1939 et dans les listes des engagés volontaires pour la durée de la guerre.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-7.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Dans le Cahier des droits de l'homme, il est mentionné dans la rubrique "service juridique" que Radje Cheraffedin a interpellé la section de Marseille au sujet d'un dossier en lien avec les affaires étrangères.</p>
+    <p>En 1939, il se présente au bureau de recrutement de la 9e région militaire à Marseille et s'engage comme volontaire pour la durée de la guerre.</p>
+  </div>
+</div>
+
+<p>Incorporé dans la <a href="https://www.11regimentetranger.com/blog/effectif-de-la-5e-cie-2" target="_blank" rel="noopener">5e compagnie</a> du 11e régiment étranger d'infanterie, Radje Cheraffedin a le grade de caporal-chef. Le fait qu'il ne soit pas 2e classe indique qu'il possède déjà un passé militaire.</p>
+
+<p>Sa trace est retrouvée en 1945 dans les archives Arolsen, qui sont considérées comme les archives les plus complètes au monde concernant la persécution nazie. Ces documents ont été collectés pour éclaircir le sort des victimes de la persécution, y compris les prisonniers des camps de concentration, les travailleurs forcés étrangers et les survivants tentant de reconstruire leur vie en tant que personnes déplacées.</p>
+
+<p>Dans les archives, un grand nombre de documents sur Radje Cheraffedin figure dans la collection intitulée "Enregistrements et dossiers des personnes déplacées, des enfants et des personnes disparues". Cette unité d'archives contient des informations sur les personnes déplacées après la guerre, jusqu'à leur rapatriement ou leur émigration.</p>
+
+<p>Radje Cheraffedin est recensé comme une personne déplacée, mais également dans le cas particulier d'un apatride, c'est-à-dire sans nationalité, aucun État ne le reconnaissant comme ressortissant. Le service militaire effectué dans l'armée d'un autre pays ou l'engagement dans la Légion étrangère peut entraîner la perte de la nationalité d'origine, ce qui est le cas pour lui, étant d'origine turque.</p>
+
+<p>Les documents le concernant datent de 1945 à 1955, et on y voit ses démarches pour tenter de retourner en Turquie. Ils sont classés par type : il y a des cartes d'après-guerre mentionnant son identité, son état civil, et ses lieux de transit. On trouve également deux dossiers d'accompagnement des personnes déplacées, gérés par l'Organisation internationale pour les réfugiés (OIR).</p>
+
+<p>Radje Cheraffedin a effectué deux demandes de rapatriement : une depuis la zone française et l'autre depuis la zone américaine. Grâce à l'enquête menée et aux lettres qu'il a rédigées, on apprend plusieurs éléments importants concernant son parcours :</p>
+
+<ul>
+<li>Il s'est engagé dans la Légion étrangère en 1919 et n'a jamais pu retourner en Turquie depuis.</li>
+<li>Il a fait une tentative de rapatriement en Turquie en 1938.</li>
+<li>Il s'est réengagé à la Légion en 1939.</li>
+<li>Il a été fait prisonnier en 1940.</li>
+<li>Il a été raflé à Marseille en 1942 et déporté.</li>
+<li>Il a fait une nouvelle tentative de retour en Turquie en 1945.</li>
+<li>Il a mené des démarches en se faisant passer pour un Syrien en zone française et pour un Turc en zone américaine.</li>
+<li>En 1951, il se trouve toujours en Allemagne.</li>
+</ul>
+
+<blockquote>
+Très honorable Directeur Général,<br><br>
+Je me suis fait kidnapper dans mon pays d'origine par les Français victorieux en 1919, et l'on m'a amené dans la légion étrangère. J'étais un étudiant studieux, d'environ 19 ans. Au bout de treize ans de service et après avoir été systématiquement rabaissé, privé de tout, transformé en squelette à force de combats et de travaux forcés dans les colonies françaises, j'ai été relâché avec une petite pension de deux cent dix francs tous les trois mois (cette pension s'est maintenant arrêtée pour une raison inconnue).<br><br>
+Quand j'ai entrepris, après avoir été libéré, les procédures de rapatriement, il était déjà trop tard. Le régime au pouvoir en Turquie avait changé et la nouvelle république ne reconnaît pas les turcs comme citoyens Turcs, s'ils ont servis dans une armée étrangère lors de la Guerre d'Indépendance Turque (1923).<br><br>
+J'ai perdu ma nationalité, car j'ai fait partie de la légion étrangère Française.<br><br>
+En septembre 39, j'étais à Marseille, abandonné, délaissé, sans espoir, vivant dans un misérable tripot. Il n'était pas autorisé de travailler aux membres de la légion étrangère. C'était tamponné en rouge, sur la première page de notre carte d'identité d'étranger *carte de séjour ?* : « Ne peut occuper un emploi salarié ».<br><br>
+Et, pire que tout, la Justice française m'a conseillé de quitter la France. Par conséquent, je suis allé plusieurs fois au consulat de Turquie de Marseille pour expliquer ma détresse et pour obtenir, finalement, mon rapatriement. Mais le consul me répond à chaque fois : je suis désolé. Les français sont forcés de subvenir à mes besoins, car j'ai combattu dans leur armée.<br><br>
+Honteusement abandonné par les français, par mon propre pays, et craignant d'être envoyé dans les camps de concentration français, je suis devenu une fois de plus un soldat de la légion étrangère française pour défendre le prétendu pays des « droits de l'homme ».<br><br>
+Ensuite, j'ai été fait prisonnier de guerre par les allemands, sur le front français, et interné dans le stalag 173.<br><br>
+J'ai fui, je suis retourné à Marseille et me suis présenté au consulat Turc pour chercher une possibilité de rapatriement, mais ils finissaient toujours par me répondre non.<br><br>
+A la fin de l'année 1942, quand les allemands sont entrés dans la France inoccupée, j'étais à Marseille, aidé et nourri par ****** et je dormais dans le dortoir de l'armée du Salut.<br><br>
+Malheureusement, les français sont devenus très insistants et très fiers de la propagande allemande qui les aidait à *(se ?)* venger des/les étrangers (Les français ne nous ont jamais aimé et ont manifesté avant la fin de l'entre deux guerre une réserve intellectuelle envers les étrangers).<br><br>
+J'ai été ramassé par la police Française et amené chez leur chef allemand. Bien entendu, les allemands m'ont emmené dans leur pays sous la garde stricte de leurs soldats et de leurs chiens pour les aider à gagner la guerre. Comme si cette guerre était ma guerre nationale légitime. Deux mois après mon arrivée en Allemagne dans le camp de travail forcé, j'ai été arrêté et condamné à 9 mois d'emprisonnement, après dénonciation par des immondes français (ils ont eu, par les employés apprivoisés de la Gestapo, une compensation chacun, devant mes yeux : une cigarette et un bol de mauvaise soupe).<br><br>
+Un turque ne compte pas tellement quand les français ont faim !!<br><br>
+Libéré de la prison, je fus interné dans le camp N°21, près de Watenstedt.<br><br>
+Durant mon internement dans ce camp, j'ai été aidé par mon compatriote libre qui travaillait dans les environs (je ne parlerais pas ici de ce que j'ai enduré dans le légendaire camp N°21* et seul Dieu connaît la vérité !).<br><br>
+Je me suis enfui avec mon compatriote, et nous avons atteint Helsingør au Danemark, puis Göteborg en Suède.<br><br>
+A Göteborg, j'ai été embarqué à bord du SS Drottningholm, un navire de la Croix-Rouge, et nous avons navigué vers Istanbul, où nous sommes arrivés le 9 avril 1945. Les Turcs on fait une enquête sur moi, puis j'ai été conduit au consulat français à Istanbul car j'étais français. J'ai été étonné de ce traitement de la part de mon propre pays. Je suis turc, Je pensais n'avoir rien à faire au consulat français.<br><br>
+Le consul français a refusé catégoriquement de me reconnaître malgré mes treize années de service dans l'armée française, de captivité et autre… Mon cas a été rapidement réglé : personne ne me reconnaît, ni mon pays d'origine, ni la France !<br><br>
+Le ministère de l'Intérieur Turc, très austère dans son attitude et dégoûté par le geste du Consul, a insisté dans son entêtement ! J'ai enfin quitté la prison et la Turquie contre mon gré, expédié une fois de plus vers cet enfer, que je déteste tellement : Marseille.<br><br>
+J'arrive ici, mais plutôt que de me laisser gagner mon pain quotidien, les français m'emmènent jusqu'à un point de collecte DP, qui semblait animé par l'armée américaine.<br><br>
+Il y avait là un capitaine de l'armée. Son nom était Monsieur Waldner, chef des affaires civiles à la Préfecture de Châlons-sur-Marne (actuellement Châlons-en-Champagne). Il était intéressé par mon cas et avais pitié de mon combat. Il avait une profonde conception humaine, comme la plupart des citoyens américains. Il a convoqué le Consul Général Turc de Paris dans son bureau de la préfecture. J'ai été convoqué aussi. Il a demandé au Consul de me renvoyer chez moi. Le Consul, se sentant incapable de prendre une décision à l'encontre de la volonté du Ministère de l'Intérieur Turc a pris congé du Capitaine.<br><br>
+Le Capitaine a appelé les MP (Policiers Militaires ?) en station devant l'entrée et leur a ordonné de me conduire au poste de commandement du Bataillon de la Garde Polonaise auprès des Etats-Unis.<br><br>
+Je suis resté là-bas en tant qu'interprète anglais-français jusqu'en septembre 47. Ensuite je suis allé en Allemagne avec les polonais et j'ai été libéré de mon travail. J'ai fait du stop jusqu'à Hanau sur Main et j'ai trouvé du travail au Signal Depot, Photo Co et dans les services spéciaux (une installation américaine).<br><br>
+J'ai été libéré sur ma demande pour pouvoir émigrer. Mais ça n'était pas possible pour moi. Je suis virtuellement et physiquement en ruine. J'ai seulement 49 ans, mais j'ai l'air d'en avoir 60. Bien entendu, les bureaux d'immigration de chaque pays choisissent toujours les hommes en bonne forme physique et en bonne santé pour les envoyer dans leurs pays respectifs.<br><br>
+Mon cas ne peut être résolu que par mon propre pays. Je serais reconnaissant, donc, si vous pouviez inviter le gouvernement Turc à pardonner ma faute et approuver mon rapatriement.<br><br>
+Ici je suis inquiet, embêté par les français. Pour avoir prononcé quelques phrases, j'ai été convoqué au cabinet militaire du Commissaire Français de Freiburg et on m'a demandé pourquoi je faisais l'éloge chaque jour des qualités brillantes des américains et des anglais. Ils m'ont demandé si les français leurs étaient inférieurs.<br><br>
+Un alsacien et quelques autres de leurs espions leurs ont rapporté que je répétais continuellement les slogans suivants :<br><br>
+Si les USA n'avaient pas aidé ce peuple fainéant à annihiler les Nazis, nous serions brûlés dans les camps depuis longtemps et ces pays jamais libérés ;<br><br>
+Les poster du *MRP ?* en France et dans les territoires de France occupés par l'Allemagne sont très éparpillés et ceux existants eu petite quantité sont dessinés dans une taille très réduite ;<br><br>
+Certaines personnes, comme les français, n'ont pas l'air d'être redevables envers leurs libérateurs et bienfaiteurs.<br><br>
+Les français n'aiment pas votre encensement ou votre discours à propos des bénéfices des Etats Unis auprès des autres pays ou dans le leur.<br><br>
+Un français m'a agressé en disant : « tu te fais minutieusement endoctriner par les amerloques. On ne les aime pas. Ce sont des lavettes. »<br><br>
+Et j'ai répondu : « le pain que tu manges, les vêtements que tu portes, les voitures que tu conduis et la liberté que tu savoures aussi leurs appartiennent ! Que Dieu les bénissent ! N'oublie pas, des garçons américains ont fait couler leur sang pour libérer ton pays de l'esclavage et tu ne les aime pas. Sont-ce des péchés impardonnables ? Ceci est mon conseil, c'est l'indicible vérité, et elle ne peut être déniée. »<br><br>
+J'ai insisté plusieurs fois pour être loin des français. Je prédis le pire. Dans l'esprit de ces gens je suis un ennemi juré, et comme ils m'ont plongé dans ce combat impardonnable, je ne peux pas les aimer.<br><br>
+Humblement votre,
+</blockquote>
+
+<p>* Le camp d'éducation ouvrière Hallendorf à Salzgitter, également appelé camp 21 ou camp spécial 21, camp d'éducation ouvrière Watenstedt-Hallendorf, a été utilisé par le Reichswerke "Hermann Göring" en mars 1940 comme camp punitif pour les travailleurs forcés étrangers et pour dissuader et discipliner la population allemande près de la quartier actuel de Hallendorf de la ville de Salzgitter et mis gratuitement à la disposition du centre de contrôle de la Gestapo à Braunschweig</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-13.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-14.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cheraffedin-radje-15.jpg" alt="">
+  </figure>
+</div>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>SHD Vincennes, JMO du 11e REI, 34N316</li>
-    <li>Site Mémoire des Hommes</li>
-    <li>Arolsen Archives — 3.1.1.1 Fichier de cartes d'après-guerre (66776438) ; 3.2.1.4 Fichiers CM/1 (80935021)</li>
+    <li>SHD Vincennes, JMO 11è REI, 34N316</li>
+    <li>site internet: Mémoire des hommes</li>
+    <li>Arolsen Archives:
+      <ul>
+        <li>3.1.1.1 Fichier de carte d'après-guerre / 66776438 - CHERAFFÉDINE RADIQUE / ITS Digital Archive, Arolsen Archives — documents ID : 66776438 à 667764450</li>
+        <li>3.2.1.4 Fichiers CM / 1 originaires de Suisse / 80935021 / ITS Digital Archive, Arolsen Archives</li>
+      </ul>
+    </li>
   </ul>
 </div>
 

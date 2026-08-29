@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROMERO ROMERO Juan — 11e REI</title>
-<meta name="description" content="Républicain espagnol de l'Èbre à Mauthausen, kommando de la désinfection, mort centenaire en France">
+<title>Juan ROMERO ROMERO — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,42 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
-  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
-  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,23 +61,55 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Brigades internationales · EVDG · Déporté</div>
-  <h1>ROMERO ROMERO Juan</h1>
-  <div class="sub">Républicain espagnol de l'Èbre à Mauthausen, kommando de la désinfection, mort centenaire en France</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Juan ROMERO ROMERO</h1>
+  <div class="tags"><span>11è REI</span><span>Brigades internationales</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Juan Romero Romero, brigadiste espagnol de 17 ans devenu légionnaire, survit trois ans au camp de Mauthausen grâce à une affectation providentielle, et meurt en France en 2020, à cent ans passés.</p>
-<p>Né le 21 avril 1919 à Torrecampo (Cordoue), il combat dès 17 ans dans la 33e brigade de l'armée républicaine, à Guadarrama, Brunete, Guadalajara et Teruel, puis à la bataille de l'Èbre, où il traverse le fleuve sous le feu franquiste et perd de nombreux camarades. Après la chute de la Catalogne, il franchit la frontière française en février 1939 et est interné au camp du Vernet-d'Ariège, d'où il s'engage en avril à la Légion étrangère pour continuer le combat antifasciste.</p>
-<p>Fait prisonnier près d'Épinal en 1940 avec de nombreux républicains espagnols, il est interné au Stalag III-A puis déporté à Mauthausen en 1941 (matricule 3799). Après un passage éprouvant à la carrière puis un accident de travail, il obtient, grâce à l'aide d'un ancien des Brigades internationales, une place dans le petit kommando de la désinfection — douze prisonniers chargés d'acheminer les vêtements des nouveaux arrivants vers le bâtiment de désinfection, un travail à l'abri qui lui permet de trouver parfois un peu de nourriture dans les poches des arrivants, et qui le sauve pendant trois ans.</p>
-<p>Témoin du passage de milliers de déportés évacués d'autres camps en fin de guerre, il garde toute sa vie le souvenir bouleversant d'une petite fille qui lui sourit avant d'être envoyée à la chambre à gaz avec sa famille. Libéré le 5 mai 1945, il s'installe à Aÿ, dans la Marne, avec une vingtaine d'autres déportés, se marie en 1947 et travaille trente ans dans un vignoble de Champagne. Il assiste en 1958 à l'inauguration du monument aux victimes de Mauthausen au Père-Lachaise, mais ne retournera jamais sur les lieux du camp. Il meurt à Aÿ le 3 octobre 2020.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>deportados.es/romero</li>
-  </ul>
+<p><a href="https://deportados.es/romero" target="_blank" rel="noopener">https://deportados.es/romero</a></p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-romero-juan-2.jpg" alt="Juan Romero Romero">
+  </figure>
+  <div class="side-text">
+<p>Nació en Torrecampo, Córdoba, el 21 de abril de 1919.
+Deportado a Mauthausen el 5 de agosto de 1941. Nº de prisionero 3.799.
+Falleció en Ay (Francia) el 3 de octubre de 2020</p>
+  </div>
+</div>
+
+<p>Cuando comienza la guerra de España Juan tenía 17 años. Perteneció a la 33 brigada del XV Cuerpo de Ejército. Luchó en la sierra de Guadarrama, Brunete, Guadalajara y Teruel. Especialmente dura para Juan fue la batalla de El Ebro, en la que tuvo que cruzar el río en una frágil barca, mientras los soldados franquistas le disparaban desde la orilla. Muchos compañeros murieron. Juan resultó herido pero, después de recuperarse en un hospital, regresó con su brigada. Tras la caída de Cataluña, en febrero de 1939, pasó la frontera francesa por Puigcerdà.</p>
+
+<p>Las autoridades francesas le internaron en el campo de concentración de Vernet d' Ariège. Allí, en abril, se alistó a la Legión Extranjera para seguir combatiendo al fascismo ante la guerra que se avecinaba.</p>
+
+<p>Cuando un año más tarde Alemania invadió Francia, Juan fue hecho prisionero cerca de Épinal, junto a un importante número de republicanos españoles. Le trasladaron al stalag III-A. Allí permaneció un año hasta que le deportaron a Mauthausen.</p>
+
+<p>Su primer trabajo fue en la cantera. "Cuando terminaba el día subíamos una piedra por la escalera, y que no fuera pequeña… Los SS eran unos criminales. Todos los días llegaban los carros de la cantera llenos de muertos"</p>
+
+<p>También estuvo destinado en un kommando exterior, que lo comandaba el kapo español César Orquín, construyendo una carretera. Sus miembros eran todos españoles. Juan sufrió un accidente mientras cargaba unas vagonetas y resultó herido. Le trasladaron al campo central y consiguió recuperarse en la enfermería gracias a la ayuda de un compañero que había hecho la guerra de España en las Brigadas Internacionales. Entonces le llegó la oportunidad de entrar en un grupo de trabajo mejor: el kommando de la desinfección. Lo formaban doce prisioneros. Su misión consistía en recoger las ropas de las expediciones de presos que llegaban al campo y, en unas grandes parihuelas, llevarlas al edificio de la desinfección que se encontraba fuera de las alambradas. Cuando estaban listas, las recogían y las dejaban en la lavandería. Para Juan esto fue su salvación, ya que solían encontrar algo de comida en los bolsillos de los recién llegados, que se repartían entre los doce. Trabajaba a cubierto, en el edificio de la lavandería. Aquí permaneció durante tres años, hasta la liberación. Dos de sus compañeros eran también músicos en la orquesta del campo. El soldado SS que les custodiaba formaba parte del grupo encargado de fusilar a los prisioneros.</p>
+
+<p>Debido a su particular trabajo veía a todos los grupos de prisioneros que llegaban a Mauthausen. Durante los últimos meses de la guerra entraron miles de ellos, evacuados de otros campos como Auschwitz: "Si había grupos que llegaban y en vez de ir a la ducha se quedaban fuera, eso era muy malo… Esos iban directamente a la cámara de gas". Juan tiene un recuerdo que, más de 70 años después, todavía le atormenta: "Llegó al campo un grupo, había hombres, mujeres, niños muy chicos. Eran 30 o 40. Nosotros estábamos para salir; esperamos a que entraran, pasaron delante de nosotros y una niña pequeña me sonrió… la pequeñita, la pobre, ignorante no sabía que iba directa a la cámara de gas. Y eso me hizo mucho daño. Yo he visto muchos grupos, pero aquella pequeñita, la niña que me echó una sonrisa… Aún ahora por las noche me acuerdo mucho de ella".</p>
+
+<p>Al final creció tanto el número de prisioneros que no había trajes para todos y se les daba ropa civil. Para identificarlos ante una posible fuga, en la parte posterior de la chaqueta se le quitaba un pedazo y en su lugar se le ponía un cuadro de rayas.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-romero-juan-4.jpg" alt="Document Juan Romero Romero">
+</figure>
+
+<p>Juan todavía no se cree que saliera vivo de allí. En su cautiverio contempló muchas atrocidades: asesinatos, fusilamientos… Fue repatriado a Francia. Se instaló en Ay, junto a una veintena de deportados. Allí conoció a su mujer y con ella rehízo su vida. Se casaron en 1947 y tuvieron cuatro hijos. Juan trabajó durante 30 años en un viñedo y una bodega que fabricaba champagne. El ya anciano cordobés se lamenta cuando echa la vista atrás: "A España no podía volver, yo había hecho la guerra contra Franco. Regresé la primera vez en el 60, cuando tuve la nacionalidad francesa. Y fui a Barcelona a ver a mi familia".</p>
+
+<p>En mayo de 1958, en el cementerio Père-Lachaise de París, asistió a la inauguración del monumento a las víctimas de Mauthausen: una larga escalera por la que sube un deportado cargado con una gran piedra a sus espaldas. No ha querido regresar al campo de concentración. Demasiados malos recuerdos.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-romero-juan-5.jpg" alt="Juan Romero Romero">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-romero-juan-6.png" alt="Monumento a las víctimas de Mauthausen">
+  </figure>
 </div>
 
 <div class="actions">

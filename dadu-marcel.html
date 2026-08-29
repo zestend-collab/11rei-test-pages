@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DADU Marcel — 11e REI</title>
-<meta name="description" content="Sous-lieutenant chef de section à la CA3, blessé le 3 juin 1940">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,50 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,29 +69,138 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA3 · Officier</div>
   <h1>DADU Marcel</h1>
-  <div class="sub">Sous-lieutenant chef de section à la CA3, blessé le 3 juin 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="sub">S/lieutenant, chef de section à la CAB3</div>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Marcel Dadu, jeune sous-lieutenant sorti du peloton d'élèves officiers de réserve, rejoint la compagnie d'accompagnement du 3e bataillon du 11e REI fin mars 1940 et y est blessé le 3 juin, en pleine bataille du bois d'Inor.</p>
-<h2>Formation</h2>
-<p>Reçu à l'École normale d'instituteurs de Saint-Lô en 1935, il obtient le brevet supérieur en 1938 puis suit le peloton d'élèves officiers de réserve de novembre 1938 à avril 1939, dont il sort aspirant. Il reçoit d'abord une affectation au 22e régiment de tirailleurs algériens, en garnison à Toul.</p>
-<h2>Le 11e REI</h2>
-<p>Le 30 mars 1940, il est affecté au 11e REI, alors positionné derrière la ligne Maginot pour des travaux de renforcement et l'entraînement au tir. Il intègre le 1er avril la compagnie d'accompagnement du 3e bataillon (CA3) comme chef de section. Le 27 mai, lors du violent assaut allemand au bois d'Inor, sa section est mise à la disposition du capitaine Trimaille, de la 10e compagnie, pour reprendre le commandement d'un groupe de mitrailleuses particulièrement éprouvé.</p>
-<p>Le 3 juin 1940, lors d'une patrouille où il attaque un petit poste ennemi pour faire des prisonniers, il est blessé et évacué sur l'hôpital de Muret. Il est cité à l'ordre de la brigade : « officier plein d'allant [...] a été blessé le 3 juin 1940 alors qu'avec un réel mépris du danger il attaquait un petit poste adverse dans le but de faire des prisonniers. »</p>
-<p>Démobilisé à Saint-Lô le 7 octobre 1940, il conserve de ses blessures une surdité bilatérale et des séquelles d'éclats à la main et à la cuisse gauches, documentées par deux passages devant la commission de réforme. En 1962, sa citation de 1940 est remplacée par une citation à l'ordre de l'armée, signée par le ministre des Armées Pierre Messmer, comportant la croix de guerre 1939-1945 avec palme.</p>
+
+<p>Toujours avec l'idée de pouvoir connaître les hommes qui composaient le 11è REI, j'ai eu le plaisir d'entrer en contact avec les membres de la famille de Marcel Dadu qui était sous-lieutenant à la CA3 du 30 mars au 6 juin 1940.</p>
+
+<p>Grâce à Laetitia, sa petite nièce, Jacques et Jean Pierre ses enfants, nous avons pu partager les informations que nous possédions chacun de notre côté. Je les remercie d'avoir participé avec tant d'enthousiasme à mon projet.</p>
+
+<p>Avec ce mélange de documents d'archives publiques et privées, Laetitia a pu consacrer deux articles à Marcel. Je vous en présente des extraits ci-dessous.</p>
+
+<p>La version intégrale est à lire sur le blog <a href="https://mesracines.blogspot.com/" target="_blank" rel="noopener">Mes racines</a>. Si vous êtes un Dadu n'hésitez pas à consulter son blog</p>
+
+<p class="subhead">Jeunesse et formation</p>
+
+<p>A l'été 1935, Marcel est admis à l'école normale des garçons de Saint-Lô dans la Manche.</p>
+
+<p>En 1937, Marcel a 20 ans.</p>
+
+<p>L'administration militaire l'enregistre sous le numéro matricule n°369 au bureau de Poitiers. le 23 janvier 1937, Marcel aurait demandé un sursit d'incorporation car il était alors élève maître à l'Ecole Normale d'instituteurs de Saint-Lô</p>
+
+<p>Le 1er juillet 1938, il obtient le Brevet Supérieur.</p>
+
+<p>En septembre 1938, il apparait dans la liste des candidats ayant obtenu, au titre de l'infanterie et des chars de combat, le brevet de préparation militaire supérieure. (JO du 25/9/1938).</p>
+
+<p>Marcel Dadu est admis au peloton d'élèves officiers de réserve de novembre 1938 à avril 1939.</p>
+
+<p>Par décision du 27 avril 1939, il a satisfait aux examens de fin de cours, et est nommé au grade d'aspirant de réserve, à compter du 10 avril 1939. La nomination au grade de sous-lieutenant de réserve est différée de six mois. (JO du 13/5/1939)</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-2.jpg" alt="">
+  <figcaption>Journal l'Ouest Eclair: 13 juillet 1935, 1er juillet 1938, 12 juin 1939</figcaption>
+</figure>
+
+<p class="subhead">parcours militaire</p>
+
+<p>Il reçoit sa première affectation au 22è Régiment de Tirailleurs Algériens (RTA) qui est en garnison à Toul.</p>
+
+<p>En septembre 1939, Marcel est à Morville-sur-Seille (Meurthe-et-Moselle).</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-4.jpg" alt="">
+  <figcaption>Morville-sur-Seille - septembre 1939 (coll. Jean-Pierre DADU)</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-5.jpg" alt="">
+  <figcaption>Photos collection Famille Dadu<br>à gauche: avec son ordonnance Khalel Ben Mohamed - décembre 1939<br>en haut: le 15 janvier 1940, on fête l'Aïd el-Kébir, c'est le jour du sacrifice.<br>en bas: le 24 mars 1940, c'est Pâques. Un jour de repos est observé. L'après-midi, un match de football est organisé entre les compagnies du régiment. Ils sont dans le secteur de Metzervisse (Moselle).</figcaption>
+</figure>
+
+<p>Pour une raison que j'ignore, le 30 mars 1940, Marcel est affecté au 11e Régiment Étranger d'Infanterie (REI). Ce régiment est une unité provisoire de la Légion étrangère destinée à la défense de la France métropolitaine contre l'Allemagne. En mars 1940 le 11e REI est positionné derrière la ligne Maginot pour soutenir les unités stationnées en avant-postes. Les hommes effectuent des travaux de renforcement de la ligne de défense et d'entraînement au tir.</p>
+
+<p>Le 1er avril, Marcel intègre la compagnie d'accompagnement du 3è bataillon (CA3), il y est chef de section.</p>
+
+<p>Mi-avril, le régiment s'installe à Boulay (Moselle).</p>
+
+<p>Le 30 avril, à l'occasion d'une prise d'arme et d'une grande fête, le régiment reçoit son drapeau, comme seule unité de la Légion constituée pour la durée de la guerre de 1939-1940. Il compte alors 3015 hommes.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-8.jpg" alt="">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-9.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Le 27 mai, un assaut allemand est donné, il est rude, et après 12 heures de combat, même avec les baïonnettes, les légionnaires ont tenu bon, mais pas sans dégâts. La section de Marcel est mise à la disposition du capitaine Trimaille commandant la 10è compagnie pour prendre le commandement d'un groupe de mitrailleuses particulièrement éprouvé.</p>
+    <p>Lors d'une patrouille, Marcel est blessé le 3 juin 1940. Il est évacué sur l'hôpital du Muret (Haute Garonne?).</p>
+    <p>A ce moment-là, le régiment a perdu 504 hommes (tués, blessés ou disparus). L'ennemi a subi bien plus de pertes. C'était la bataille du bois d'Inor (Meuse). Le régiment et ses hommes reçoivent les félicitations du général.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-10.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Il est décoré à l'ordre de la brigade : "officier plein d'allant. S'était déjà distingué lors de l'attaque allemande au bois d'Inor le 27 mai 1940. A été blessé le 3 juin 1940 alors qu'avec un réel mépris du danger et attaquait un petit poste adverse dans le but de faire des prisonniers"</p>
+    <p>Croix de guerre 39-40 avec étoile de bronze</p>
+  </div>
+</div>
+
+<p>Le 7 octobre 1940, Marcel est démobilisé à Saint-Lô.</p>
+
+<p>La fiche matricule nous apprend que le cas de Marcel est passé devant la commission de réforme le 26 juin 1941 : il percevra une pension temporaire pour :</p>
+
+<p>- hypoacousie bilatérale consécutive à une rupture post commotionnelle des tympans. Il ne perçoit pas la voix chuchotée et perçoit mal la voix haute. Il se plaint de bourdonnements graves<br>
+- séquelles de blessure par éclats de grenade de la région externe dorsale de la main gauche cicatrices souples non adhérentes.</p>
+
+<p>Son cas a été soumis à la commission de réforme du 23 novembre 1943 pour qu'il soit radié des cadres.</p>
+
+<p>- hypoacousie bilatérale consécutive à une rupture post commotionnelle des tympans. Il ne perçoit pas la voix chuchotée et perçoit de plus en plus mal la voix haute. Il se plaint de bourdonnements aigus<br>
+- séquelles de blessure par éclats d'obus de la région externe de la cuisse gauche. cicatrices nombreuses, non adhérentes. l'une d'entre elle est douloureuse, et on palpe facilement à ce niveau un éclat inclus dans les parties molles<br>
+- semis d'éclats métalliques de petite taille intéressant les parties molles du médius gauche.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-11.png" alt="">
+</figure>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-12.jpg" alt="">
+    <figcaption>Journal Officiel de la République Française - 20 juin 1950</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>En 1962, sa citation à l'ordre de la brigade est remplacée par une citation à l'ordre de l'armée Ces citations comportent l'attribution de la Croix de Guerre 1939-1945 avec Palme.</p>
+    <blockquote>Fait à Paris, le 20 Février 1962 Signé : Pierre MES SMER</blockquote>
+  </div>
+</div>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-13.jpg" alt="">
+    <figcaption>Citation à l'ordre de l'armée - 1962<br>annule et remplace la citation à l'ordre de la brigade de 1940</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dadu-marcel-14.jpg" alt="">
+    <figcaption>coll. Jean-Pierre DADU<br>Effets personnels de Marcel<br>A droite: La veste que Marcel portait le 3 juin 1940, 8 décennies plus tard</figcaption>
+  </figure>
+</div>
 
 <div class="sources">
   <h3>Sources</h3>
-  <ul>
-    <li>Récit de Laetitia Dadu, petite-nièce de Marcel, blog « Mes racines »</li>
-    <li>Archives et photographies de la famille Dadu (Jean-Pierre et Jacques Dadu)</li>
-    <li>SHD Vincennes, JMO du 11e REI, cote 34 N316</li>
-    <li>Journal L'Ouest-Éclair (normannia.info)</li>
-  </ul>
+  <p>Un grand Merci à Laetitia, Jean Pierre et Jacques pour ce partage.</p>
+  <p>- Photos collection privée de la famille Dadu<br>
+  - Texte écrit par Laetitia Dadu. Le récit intégral est à lire ici <a href="https://mesracines.blogspot.com/2021/03/marcel-dadu-jeunesse-et-formation.html" target="_blank" rel="noopener">"jeunesse et formation"</a> et <a href="https://mesracines.blogspot.com/2021/03/marcel-dadu-parcours-militaire.html" target="_blank" rel="noopener">"parcours militaire"</a><br>
+  - pour le journal Ouest Eclair <a href="https://www.normannia.info/" target="_blank" rel="noopener">https://www.normannia.info/</a><br>
+  - extrait du JMO du 11è REI: SHD Vincennes côte 34 N316</p>
 </div>
 
 <div class="actions">

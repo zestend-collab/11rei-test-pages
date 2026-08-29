@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KLEJMAN Szmul « Simon » — 11e REI</title>
-<meta name="description" content="Engagé à Valenciennes en 1939, dont l'épouse Golda meurt en déportation en 1944">
+<title>KLEJMAN Szmul — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,38 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
-  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
-  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+  }
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,25 +57,97 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG</div>
-  <h1>KLEJMAN Szmul « Simon »</h1>
-  <div class="sub">Engagé à Valenciennes en 1939, dont l'épouse Golda meurt en déportation en 1944</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>KLEJMAN Szmul "Simon"</h1>
+  <div class="sub">(Le Maîtron)</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Szmul Klejman, tailleur juif polonais installé à Paris, s'engage à la Légion étrangère à Valenciennes dès la déclaration de guerre. C'est surtout à travers le destin tragique de sa compagne, Golda Hercberg dite Genia, résistante de la Main-d'œuvre immigrée, que son propre parcours a pu être documenté.</p>
-<p>Szmul Klejman, dit « Simon », originaire de Piotrków près de Łódź, rencontre à Paris en 1937 Golda Hercberg, dite Genia, arrivée de Pologne la même année. Le couple, qui ne peut se marier légalement, s'unit devant un rabbin début 1938 ; menacée d'expulsion, Genia fuit avec Simon à Bruxelles, où naît leur fils Edward en décembre 1938.</p>
-<p>Dès les premiers jours de la guerre, Simon repasse la frontière et s'engage à Valenciennes dans la Légion étrangère, rejoignant le 11e REI, tandis que Genia rentre à Paris avec leur bébé. Fait prisonnier en juin 1940, il est interné en Autriche au Stalag XVIII C. Son statut d'épouse de militaire français, sous le nom de Klejman, protège un temps Genia, engagée dans la résistance de la Main-d'œuvre immigrée (MOI) et du Secours populaire.</p>
-<p>Le 2 juillet 1943, Genia est arrêtée par la Brigade spéciale 2 lors du démantèlement d'un réseau de la MOI, puis internée à Drancy. Son statut de femme de prisonnier de guerre retarde sa déportation : elle est transférée au petit camp satellite de la rue de Bassano, où elle parvient à faire entrer clandestinement son fils, finalement recueilli et sauvé par des codétenus amis, les frères Geissmann. Genia elle-même est déportée par le convoi 77, le dernier grand convoi parti de Drancy, le 31 juillet 1944, et assassinée à son arrivée à Auschwitz.</p>
-<p>Revenu de captivité, Simon Klejman recherche pendant des mois sa femme sans succès et ne se remariera jamais. Après-guerre, sa demande pour faire reconnaître à titre posthume le statut de déportée politique à Golda est rejetée, faute de remplir les conditions légales requises.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Laurence Klejman, notice « KLEJMAN Golda, née Hercberg, dite Genia », Le Maitron</li>
-  </ul>
+<p><a href="https://maitron.fr/spip.php?article230800" target="_blank" rel="noopener">https://maitron.fr/spip.php?article230800</a>, notice KLEJMAN Golda, née HERCBERG, dite Genia par Laurence Klejman, version mise en ligne le 1er août 2020, dernière modification le 2 août 2020.</p>
+
+<p>L'article du Maîtron concerne Golda Hercberg la compagne de Szmul Klejman. Il permet de connaître leur histoire et de confirmer l'affection de Szmul Klejman au 11è régiment étranger d'infanterie.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-klejman-szmul-2.png" alt="Golda Hercberg dite Genia">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">KLEJMAN Golda, née HERCBERG, dite Genia</p>
+    <p>Née le 14 janvier 1914 à Lodz (Pologne), morte en déportation ; couturière ; membre de la Main-d'œuvre immigrée (MOI), arrêtée le 2 juillet 1943 par la Brigade Spéciale 2 chargée de la « traque aux ennemis intérieurs », internée à Drancy le 23 juillet 43, puis dans le camp parisien satellite de la rue de Bassano (Paris XVIe) ; déportée par le convoi 77 à Auschwitz en Pologne le 31 juillet 1944.</p>
+  </div>
 </div>
+
+<p class="subhead">Les années de jeunesse à Lodz, en Pologne</p>
+
+<p>Golda est née le 14 janvier 1914, dans une famille de la moyenne bourgeoisie juive de Lodz (Pologne), quelques mois avant le début de la Première guerre mondiale. Son père, Ali-Jozef, était musicien. Elle-même pratiquait le piano avec un certain talent, selon son mari. Les informations manquent sur sa famille. Son père, né en 1870, est mort lorsqu'elle était encore jeune. Sa mère, née en 1873, s'appelait Laja Kalenbejn ; Golda avait plusieurs sœurs et frères. Après la Première Guerre mondiale et la mort du père, une société familiale gérait un cinéma, qui était dans la famille depuis 1900, et que son frère aîné, Salomon, dirigeait : le Syrena, 37 rue Aleksandrowska, dans le district de Baluty, un des deux quartiers juifs de Lodz. Golda y travaillait parfois à la caisse.</p>
+
+<p>Golda n'aimait pas son prénom et l'avait, dit-on, échangé avec l'une de ses sœurs, Genia, dont on retrouve la trace sur une demande de recherche après-guerre et document déposé à Yad Vashem. Ainsi elle était connue sous le diminutif de Genia, prénom qu'elle a utilisé lors de ses activités de résistance dans le groupe de la M.O.I., selon l'historien et résistant David Diamant, qui l'a personnellement connue et en a gardé un vif souvenir.</p>
+
+<p class="subhead">À Paris en juillet 1937, expulsée en novembre 1938</p>
+
+<p>Genia est arrivée à Paris le 7 juillet 1937 [10]. À l'Exposition Universelle qui bat son plein, elle rencontre Szmul Klejman (dit Simon), un séduisant juif polonais arrivé de la petite ville de Piotrkow, près de Lodz, quelques années plus tôt, et qui travaille dans la confection. Amoureuse, elle décide de rester en France. Elle dépose, le 2 août 1937, une demande de prolongation de son visa de tourisme pour deux mois. Le 4 août, le Hall des étrangers fait circuler un bulletin de recherches « Urgent » pour vérifier si le visa peut être accordé. Golda est inconnue au fichier criminel et au fichier central, et il lui est accordé de rester jusqu'au 5 septembre 1937. Sur sa demande de prolongation, Golda déclare vouloir immigrer en Amérique et attendre à Paris les papiers nécessaires. Il est peu probable que cette version soit vraie.</p>
+
+<p>Golda et Simon ne peuvent pas se marier légalement et, bien que ni l'un ni l'autre n'ait été pratiquant ni même croyant, ils décident de s'unir devant un rabbin. Certainement en février-mars 1938. Peu de temps après, Genia est enceinte. Le 5 mai 1938, la préfecture de Police remplit un bulletin à son nom. L'imprimé stipule « Refus de Séjour », décision de police de ce jour. Elle est alors censée être domiciliée 20-22, rue Richer. Elle est mise en demeure de quitter le territoire à la date du 13 mai 1938, son « visa limité expiré ». L'imprimé précise : « La notification écrite de cette décision lui servira de pièce d'identité jusqu'à son départ ». Golda déclare se rendre à l'étranger. Le couple n'a probablement pas obtempéré dans les délais, car Simon a raconté ensuite qu'ils avaient dû s'enfuir en sautant par la fenêtre lors d'un contrôle de police. Il décide cependant de partir à Bruxelles où Simon (et peut-être Genia) a de la famille. C'est là que naît leur fils, Edward, le 27 décembre 1938. Simon et Golda déclarent des adresses différentes. Quand elle accouche, elle demeure « officiellement » 117, rue du Brabant (Schaerbeek), comme l'indique le bulletin que l'hôpital transmet à la police des étrangers.</p>
+
+<p>Dès les premiers jours de la guerre, Simon passe la frontière et vient s'engager à Valenciennes dans la Légion étrangère, comme de nombreux Juifs étrangers le font partout en France à ce moment-là. Genia Hercberg rentre à Paris avec leur bébé, qui porte son nom de jeune fille, le 24 décembre 1939, sous couvert de passeport polonais n° 1565/37 délivré à Lodz le 17 juillet 1937, prorogé à Bruxelles jusqu'au 27 mai 1940. Elle est mise en règle comme « Polonaise », c'est à ce titre qu'elle était titulaire d'une carte d'identité établie le 9 juin 1942, en France, valable jusqu'au 30 novembre 1943. Elle a le statut de femme de militaire français, car, miraculeusement, elle s'appelle désormais Klejman.</p>
+
+<p class="subhead">Retour à Paris après la déclaration de guerre l'engagement de Simon comme volontaire</p>
+
+<p>Golda habite dans différents endroits, notamment dans le IIIe, rue Barbette, avant de s'installer 4, rue de Varize, dans le XVIe arrondissement, où résidait un oncle de Simon, Nathan Klejman. Le soldat Szmul Klejman est fait prisonnier en juin 1940 et envoyé dans les Alpes autrichiennes, notamment à Markt Pongau dans la province de Salzburg, au stalag XVIII C [21]. Certainement grâce à ses contacts avec des militants politiques, qui lui ont fourni des « papiers » (un certificat de mariage officiel ?), Genia / Golda est donc déclarée femme de prisonnier français, un statut qui la protégera jusqu'en juillet 1944, sous le nom de Golda Klejman…</p>
+
+<p>Je ne possède aucun indice sur son engagement politique en Pologne, mais selon David Diamant, Genia militait déjà avec lui à Paris avant son départ en Belgique en 1938 : « Je vois encore Genia, de taille moyenne, vive et énergique, accomplir toutes les tâches que je lui confiais, car elle militait dans mon secteur, avant la guerre.[23] » C'était le Secours populaire. Simon, qui a survécu à la guerre et a été socialiste jusqu'à la fin de sa vie, ne m'a rien dit à ce sujet ; j'en déduis, peut-être à tort, qu'elle s'est politisée en France, au contact du monde du travail qu'elle n'avait pas connu directement en Pologne. Elle aurait été communiste et, la guerre commencée, s'est très vite engagée dans la résistance, dans le « réseau de la casquette [25] », et, après sa création en avril 1943 à l'UJRE, liée à la Main d'Œuvre Immigrée (MOI).</p>
+
+<p>Déclarée comme employée quand elle est arrivée en France, elle a travaillé dans le milieu de la confection, comme la plupart des gens de son entourage. Certainement déjà avant la guerre, et en tout cas en 1940, car, toujours selon David Diamant, dès son retour en France, « elle travaille dans une grande fabrique de mode où elle réussit à organiser des groupes syndicalistes clandestins parmi les travailleuses françaises. Elle distribue des tracts parmi les ouvrières de son métier. » Elle travaillait en réalité chez Paquin, rue de la Paix. Elle était une très bonne couturière, mais on ne sait pas quel poste elle y occupait. En tout cas, ses qualités ont été appréciées alors même qu'elle était internée à Drancy, comme nous le verrons ensuite.</p>
+
+<p class="subhead">« Deuxième filature » de la MOI et arrestation</p>
+
+<p>Le 2 juillet 1943, à 8 huit heures du matin, la police française – les Brigades Spéciales 2 (BS2) – sonne à la porte du domicile de Golda, 4 rue de Varize, au 3e étage, dans le XVIe arrondissement de Paris, près du métro Exelmans. Par bonheur, son fils de 4 ans n'est pas dans l'appartement (peut-être en nourrice ?), mais la police a connaissance de son existence. Elle est immédiatement emmenée à la préfecture, au 2e étage, où elle sera interrogée le jour-même. Golda est en possession d'une carte d'identité d'étranger valable jusqu'au 30 novembre 1943 [27].</p>
+
+<p>Golda vient d'être embarquée dans ce que l'histoire de la Résistance a retenu sous le nom de « deuxième filature » de la MOI, dite aussi « des adultes », et la préfecture de police sous le nom de « Affaire Lerner ». Soixante et onze personnes sont arrêtées, toutes suivies depuis des semaines par les inspecteurs de la Brigade spéciale 2, renforcée d'agents de police des commissariats de quartier. Pour Golda, ils étaient quatre à se relayer, dont les noms figurent sur un bel organigramme établi par une police qui se voulait scientifique. La deuxième filature portait sur la branche politique de la MOI, affiliée au parti communiste clandestin.</p>
+
+<p>En quoi consistaient exactement les activités de Golda ? On n'en sais pas plus que ce qu'en raconte David Diamant : « Elle distribue des tracts parmi les travailleurs, organise des actions et est très populaire parmi les ouvrières de son métier. Genia travaille simultanément dans le groupe syndical juif. Dans son logement ont lieu des réunions de la Commission intersyndicale juive où sont élaborés des plans de lutte contre l'occupant. » Son amie et voisine juive russe, Isabelle Izikowieff, dit que Genia l'avait à plusieurs reprises prévenue que des rafles devaient se produire et les avait ainsi protégés, elle et ses deux enfants, après la déportation de son mari. Genia disposait donc d'informations précises et fiables. Elle n'en a pas moins été arrêtée.</p>
+
+<p>L'inspecteur de la BS2 qui rédige le procès-verbal de sa « mise à disposition » précise qu'elle est « inconnue à notre Direction ainsi qu'aux Archives de la Police judiciaire. Son nom n'est pas noté aux Sommiers judiciaires ».</p>
+
+<p>Durant l'interrogatoire, pratiqué le jour même de son arrestation et qui se déroule en français qu'elle dit parler, Golda/Genia affirme ne rien savoir de menées communistes ou autres et n'a « jamais été sollicitée pour être membre d'une organisation quelconque ». En cela, elle réagit conformément aux instructions données par le parti communiste et les organes de résistance.</p>
+
+<p>Il lui est reproché d'être en contact avec deux hommes qui semblent être alors importants aux yeux de la police, Borszeczewski et Bessermann. Ils seraient venus à son domicile. Elle dit n'avoir jamais vu le premier, mais reconnaît Bessermann sur une photo. Sans doute a-t-elle compris qu'elle a avait été suivie et ne nie donc pas la rencontre avec Bessermann. Mais elle part dans une explication abracadabrante : elle l'aurait contacté, par l'intermédiaire de collègues de chez Paquin, pour faire réparer un manteau. Il serait venu la relancer chez elle le 21 ou 22 juin, mais comme il lui demandait 600 francs pour le travail, elle n'aurait pas donné suite.</p>
+
+<p>Elle a été arrêtée tôt le matin, et, au moment de l'interrogatoire, elle a déjà dû séjourner dans les minuscules cellules de la préfecture, où sont entassées les nombreuses femmes qui sont arrêtées ce jour-là, ou même avant, car l'opération dure depuis l'arrestation de Lerner, le 29 juin. Probablement battue aussi, comme le rapportent des survivants, et on l'imagine à bout de forces, elle invente une explication très peu convaincante. Étant elle-même couturière, pourquoi faire appel à un tailleur, surtout en temps de rationnement ?</p>
+
+<p>La fouille n'a rien donné, mais la visite domiciliaire chez elle, à laquelle elle a assisté, fait apparaître trois cartes de textile aux noms de Malamont, Rappoport et Hercberg, ainsi qu'un livret militaire et un passeport polonais au nom de Hercberg. Elle répond, aux questions des inspecteurs, qu'ils appartiennent à des Juifs arrêtés, et le passeport à un cousin déporté. Elle est maintenue dans les locaux de la préfecture, et peut-être transférée un moment dans une prison parisienne, mais le 14 juillet, elle est encore signalée au dépôt de la préfecture. Je n'ai trouvé qu'un interrogatoire la concernant, daté du 2 juillet. Y en eut-il d'autres avant le 22 juillet 1943 ?</p>
+
+<p class="subhead">Drancy et le convoi 77</p>
+
+<p>Golda arrive à Drancy le 22 juillet, en provenance de la Préfecture. Son numéro d'immatriculation est 3227. Le 23, elle change d'escalier, passe du 21-3 au 13-1.</p>
+
+<p>Elle n'est pas déportée immédiatement, comme le sont le plus souvent les militants passés par la BS1 ou la BS2. Au contraire, son statut de femme de prisonnier la protège un moment, sa fiche d'internement est de couleur bleue, qui met sa déportation en suspens.</p>
+
+<p>Pourquoi ? Arrêtée et suspectée d'être communiste résistante, a-t-elle réussi à convaincre le commissaire de la BS2 qu'elle n'était pas impliquée ? Elle est quand même restée vingt-deux jours à la Préfecture (et peut-être dans une prison parisienne) et est signalée comme « remise aux AA » (autorités allemandes) ! Quelques personnes arrêtées dans la même rafle sont relâchées et mises hors de cause (pour mieux être suivies ?), ce qui n'est pas son cas. Golda/Genia, avec son histoire si bête, aurait-elle bénéficié de « clémence » et être uniquement considérée comme juive ?</p>
+
+<p>En tout cas, au sein du camp, son activité de résistance ne cesse pas, selon David Diamant. « Genia est arrêtée en juillet 1943 et transférée à Drancy, où elle l'est l'une des organisatrices du travail de solidarité à l'intérieur du camp. Elle est en liaison avec la direction de l'organisation clandestine de l'extérieur. » Je n'ai pas retrouvé son nom sur l'organigramme des prisonniers remplissant une fonction « officielle » dans le camp.</p>
+
+<p>Onze mois plus tard, le 24 juin 1944, Golda/Genia quitte l'escalier 15-2 du camp et est envoyée dans un D.W., l'un des camps satellites de Drancy à Paris, celui du 2, rue de Bassano ; un petit camp (cinquante-neuf prisonniers) qui regroupe depuis le 14 mars 1944 des Juifs français, des femmes juives de prisonniers de guerre, des « conjoints d'Aryens » et des « demi-Juifs ». Dans le dossier aux Archives de Caen, se trouve une lettre à en-tête du Secours National, La Famille du Prisonnier de Guerre, avec un tampon de réception du 4 mai 1945. C'est une demande d'avis de recherche sur Mme Klejman, née Génia Arzberg (sic), pour le compte de son mari prisonnier de guerre : « Mme Klejman nous a toujours dit ne pas être israélite elle n'en a pas moins été arrêtée en juillet 1943 et mise en camp de concentration elle a été relâchée en 44 pour être prisonnière libre 2 rue de Bassano elle était reconnue non juive et ses jours de congé circulait sans étoile ». On appréciera la notion ubuesque de « prisonnière libre », « relâchée » d'un camp pour un autre ! Quant au fait qu'elle ne serait pas juive et que « les Allemands prétendaient n'attendre qu'un papier de Pologne pour la relâcher », comme le dit ensuite la lettre, c'est pour le moins bizarre. Dans la mesure où Golda/Genia est arrivée à Drancy avec d'autres résistants de la M.O.I. arrêtés dans la même rafle, et qu'elle a reconnue être juive durant son interrogatoire, cela semble très étrange. Les autorités du camp de Drancy avaient forcément des relations avec les Brigades Spéciales ! À moins que des pièces aient pu « disparaître » complaisamment. Par ailleurs, qui est à l'origine de cette affirmation ?</p>
+
+<p>Basée dans le camp Bassano, Golda/Genia travaille à la confection de vêtements pour une « importante maison de couture ». Ce que je sais a été raconté par deux amis rencontrés dans ce très petit camp : Georges et René Geissmann. Ces deux frères, des industriels et hommes d'affaires, l'un parisien et l'autre de Casablanca, originaires de Belfort, ont été arrêtés à Marseille pendant la grande rafle de janvier 1943 [39]. Golda/Genia a donc continué à travailler pour la maison Paquin, comme avant son arrestation, et était autorisée à sortir en ville. « Klejman aurait pu se sauver étant en liberté provisoire certains jours mais n'a pas voulu le faire afin de ne pas faire fusiller ses camarades », dit la lettre déjà citée (qui pourrait bien être d'un des deux frères Geissmann). En effet, les Geissmman ont raconté qu'afin d'éviter qu'elle ne s'évade, les autorités du camp de Bassano l'avaient prévenue qu'ils déporteraient ses deux amis s'il lui prenait la fantaisie de ne pas rentrer. Elle est toujours rentrée.</p>
+
+<p>Grâce à je ne sais quel système D, Genia avait pu introduire son fils dans le camp Bassano. D'autres enfants vivaient avec leur mère, femmes de prisonniers de guerre ou de Juives mariées à un « aryen », dans les combles de cet hôtel particulier du XVIe arrondissement, à deux pas des Champs-Élysées, confisqué à la famille Cahen d'Anvers. Or, Edward n'est pas enregistré officiellement. Il est « caché » à l'intérieur du camp, mais joue avec les autres enfants et même avec un jeune soldat allemand et son chien berger – allemand, lui aussi. Quand des « officiels » viennent faire une visite de contrôle, il est caché sous un tas de tissus sous des tables. Un jour de juin, Renée Primorin, la femme de Georges Geissmann, qui n'était pas juive, est venue lui rendre visite et est repartie en tenant Edward par la main. Accompagnée à la grille par ce même soldat allemand qui lui a souhaité bonne chance [40]. Genia avait confié son fils, certaine qu'elle allait bientôt le retrouver. Ses deux amis lui avaient assuré qu'ils s'occuperaient d'elle et de l'enfant après la libération, qui ne devait pas tarder. Ils lui avaient aussi donné des noms de villages normands, en zone déjà libérée, pour qu'elle puisse indiquer une adresse où se trouvait son fils, car les Allemands savaient qu'il existait et lui demandaient régulièrement où il se trouvait [41]. On notera qu'aucun prisonnier n'a dénoncé la présence d'un enfant non enregistré.</p>
+
+<p>Le convoi 77 est parti de Drancy le 31 juillet 1944. Il déportait 1310 personnes, dont plus de 300 enfants raflés dans les maisons de l'UGIF par Alois Brunner (le dirigeant du camp) et un nouveau-né, né dans le camp de Drancy. On peut imaginer que Genia a eu pour consolation de savoir que son fils « Eddy » n'était pas du nombre. Tous les enfants gardés officiellement rue de Bassano ont été déportés, la plupart à Bergen Belsen. Eddy, libre, a filé vers le sud avec sa nouvelle « maman », a vu le débarquement en Méditerranée le 15 août, les aviateurs que Renée soignait, les villageois qui refusaient un abri à Renée, sa vieille maman et ses fils parce qu'ils craignaient un retour des Allemands et des représailles. Et la joie de la Libération.</p>
+
+<p>Les deux frères Geissmann ont été ramenés au camp de Drancy le 5 août, avec les autres internés de Bassano survivants. Alois Brunner n'a pas eu le temps de les faire partir dans l'ultime convoi qu'il espérait envoyer en Pologne. Ils sont libres quand les Allemands quittent Drancy, le 18 août. Ils reviennent provisoirement à Marseille où plusieurs membres de la famille avaient une entreprise avant la guerre. Leurs biens avaient été aryanisés. Eddy est avec eux, et commença sa scolarité à Marseille.</p>
+
+<p>Pourquoi Genia, cette femme qui avait trente ans, était en relativement bonne santé et apte au travail, n'a-t-elle pas été dirigée vers les commandos de travail mais vers la chambre à gaz ? Les documents officiels stipulent qu'elle a été gazée dès son arrivée. La défaite approchant, les nazis liquidaient le plus possible de déportés.</p>
+
+<p>Pendant longtemps, mon père a voulu croire que le convoi n'était pas arrivé à destination, bombardé par des avions alliés. Son père, Simon, rentré du camp de prisonniers où il était en Autriche, est allé tous les jours pendant des semaines à l'hôtel Lutetia lire les avis, chercher des témoins. Puis il est parti en Pologne, a écumé les camps de transit ; il n'a rien appris sur Genia, mais il a retrouvé le plus jeune des frères Klejman, rescapé d'Auschwitz. Ils ont mis des mois pour revenir à Paris. De la famille de Simon, ils étaient les seuls survivants. Edward, mon père, est resté vivre avec la famille Geissmann, composée de Georges, Renée son épouse, et leurs fils François et Maurice. Il n'avait gardé aucun souvenir de Simon, parti à la guerre en 1939, mais le vit régulièrement quand la famille Geissmann est revenue s'installer à Boulogne. Simon ne s'est jamais remarié, disant attendre le retour de sa femme. Il m'a donné quelques vêtements et objets qu'il avait pu récupérer bien que l'appartement où habitait Genia ait été pillé, puis repris par une famille. Lui s'est installé dans le même immeuble, dans une petite pièce, pour attendre le retour de sa femme. Il a fini par déménager et s'installer dans un appartement à côté de celui de son frère qui s'était marié, à Levallois-Perret. Ils ont vécu côte à côte jusqu'à la mort de Simon. Simon a néanmoins gardé en location ce petit rez-de-chaussée du 4, rue de Varize, et mon père après lui, « au cas où » ; c'est là que j'ai rédigé ma thèse d'histoire.</p>
+
+<p class="subhead">En guise de conclusion</p>
+
+<p>Dans les papiers des archives à Caen, on trouve que Simon Cleman a tenté de faire reconnaître le statut de déporté-politique, à titre posthume, à Golda Klejman. Le comité d'attribution lui a répondu que c'était impossible. D'une part, parce que Golda était entrée en France après le 1er septembre 1939 (un texte de loi donne cette date butoir), d'autre part, lui, Simon, n'était pas autorisé à faire cette demande, puisqu'il avait dû reconnaître son enfant après-guerre et que cela indiquait donc qu'il n'était pas le mari de Golda. Les deux points sont incontestables. Le troisième aussi : elle était étrangère. Il ne s'agissait pas de demander autre chose que le statut de déporté politique, ce qui n'était pas la même chose que déportée résistante !</p>
+
+<p>Néanmoins, les pièces prouvant qu'elle était en France jusqu'en mai 1938 (arrêté d'expulsion) et le dossier de police prouvant son arrestation pour faits de résistance, qui constituent des pièces sur lesquelles le comité s'est appuyé pour rendre son avis, auraient pu les inciter à une plus grande tolérance. D'autant plus que les témoignages de son action ne manquaient pas parmi les survivants. Combien de Français résistants de la dernière heure ont paradé avec des rubans indûment, mais officiellement, acquis ?</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Klejman" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

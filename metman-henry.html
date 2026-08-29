@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>METMAN Henry Jules — 11e REI</title>
-<meta name="description" content="Prêtre de la paroisse de Vanves, tué en observant une patrouille ennemie le 26 mai 1940">
+<title>Henry Jules METMAN — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,56 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment-item{margin-bottom:1rem}
+  article .comment-item .who{font-weight:500}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,25 +75,91 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Prêtre · Officier · Mort pour la France</div>
-  <h1>METMAN Henry Jules</h1>
-  <div class="sub">Prêtre de la paroisse de Vanves, tué en observant une patrouille ennemie le 26 mai 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Henry Jules METMAN</h1>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Henry Metman, jeune prêtre très apprécié de sa paroisse de Vanves, meurt en 1940 en observant seul une patrouille allemande, quelques heures après avoir écrit son dernier compte rendu de section.</p>
-<p>Né le 27 février 1908 à Guernesey, brillant élève, il travaille à la Société Générale pour aider ses parents à élever ses trois jeunes frères avant d'effectuer son service militaire en Algérie et au Maroc en 1928. Entré au séminaire d'Issy-les-Moulineaux, il devient prêtre en 1934 et rejoint la paroisse Saint-François-d'Assise du Plateau, à Vanves, où il se dévoue trois ans durant à la jeunesse du quartier — patronage, colonies de vacances, cercles d'études — avant d'être appelé comme missionnaire diocésain en 1937.</p>
-<p>Mobilisé comme adjudant à la Légion étrangère (11e REI) en 1939, il commande une section dans la Meuse au printemps 1940. Le 25 mai, il rédige son dernier compte rendu : « sommes engagés dans un bois... il y a des pertes forcément, n'étant pas enterrés, installés à 30-40 m des Allemands... Ordre de ne reculer dans aucun cas. » Le 26 mai à 0h10, il s'avance seul en avant d'un de ses postes pour observer une patrouille ennemie et est tué d'un projectile au cœur.</p>
-<p>Promu sous-lieutenant et cité à l'ordre de l'armée début juin, il est d'abord inhumé au village d'Inor, pris et repris trois fois durant les combats. À Vanves, où son souvenir reste vivace, un « Cercle Henry Metman » est fondé dès 1940 et continue de publier jusqu'en 1947 ; une plaque à son nom orne la chapelle du Plateau jusqu'à sa destruction dans les années 1975-1980.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-metman-henry-2.jpg" alt="Henry Metman">
+  </figure>
+  <div class="side-text">
+<p>Henry Metman apparaît plusieurs fois dans les sources que j'utilise habituellement pour recenser les légionnaires du 11e REI. Mort pour la France le 26 mai 1940, il est cité dans le JMO comme commandant une section au début des combats du bois d'Inor, et mentionné dans le Journal officiel. Grâce au livre de René Luce Coupin, on apprend qu'Henry Jules, réserviste mobilisé avec le 1er RTA, a été versé à la Légion étrangère au camp de la Valbonne.
+En cherchant sur Internet, j'ai eu la chance d'entrer en contact avec Laurent, un membre de sa famille, qui possédait des informations et des photos. J'ai ainsi appris qu'Henry Jules Metman, issu d'une famille religieuse, avait été prêtre dans la paroisse de Vanves, où un "Cercle Henry Metman" a été fondé en 1940. Ce cercle a continué à publier des documents au moins jusqu'en 1947.
+L'article hommage trouvé sur le site Vanves au quotidien compile toutes ces informations, et il est également illustré par deux photos datant de février 1940, montrant son passage au 11e REI.
+<a href="http://vanvesauquotidien.hautetfort.com/archive/2010/05/07/vanves-se-souvient-de-ses-43-morts-de-la-campagne-de-france.html" target="_blank" rel="noopener">http://vanvesauquotidien.hautetfort.com/archive/2010/05/07/vanves-se-souvient-de-ses-43-morts-de-la-campagne-de-france.html</a></p>
+  </div>
+</div>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-metman-henry-4.jpg" alt="Document Henry Metman">
+</figure>
+
+<p class="subhead">VANVES SE SOUVIENT DE SES 43 MORTS DE LA CAMPAGNE DE FRANCE</p>
+
+<p>A l'occasion du 65éme anniversaire de la Victoire du 8 Mai 1945, le Blog Vanves au quotidien a décidé de contribuer au devoir de mémoire des vanvéens en publiant hier la liste des 43 vanvéens morts pour la France parmi les premiers et durant « la Campagne de France » entre le 10 Mai et les 22 et 24 Juin 1940. Aujourd'hui, nous rappelons le souvenir de l'un d'entre eux, Henry Metman, grâce au témoignage de Jacques Marillier qui l'a bien connu lorsqu'il fut vanvéen entre 1934 et 1937 et avait gardé un contact étroit avec lui, comme beaucoup de vanvéens</p>
+
+<p class="subhead">HENRY METMAN, UN PRETRE MORT AU COMBAT UN 26 MAI 1940</p>
+
+<p>Né le 27 février 1908 à Guernesey, il rentre en France à la veille de la guerre de 1914. Il a fait ses études au Collège St François de Sales à Dijon puis au Lycée Lakanal à Sceaux, ses parents habitant à Bourg-la-Reine. De brillantes études, dont plusieurs prix notamment un pour le Grec. Après son baccalauréat, il a travaillé à la Société Générale afin d'aider ses parents à élever ses trois jeunes frères. Au printemps 1928, il est incorporé dans un régiment de tirailleurs algériens qui l'amène en Algérie puis au Maroc.</p>
+
+<p>A son retour, il entre au séminaire d'Issy-les Moulineaux, devient prêtre en 1934 et arrive sur le Plateau, à la paroisse St François d'Assise. C'est là que pendant trois ans, il va déployer une activité intense en faveur de la population du quartier, en particulier les jeunes, avec le patronage, les colonies de vacances, les Cercles d'Etudes, etc… n'hésitant pas à contacter directement les familles et les enfants de la zone. Il est apprécié par son allant, son cœur, son langage direct et toujours amical, également son sens pratique. Il a ainsi aidé les jeunes à se construire un local. Quand en 1937, il est appelé par ses Supérieurs pour devenir missionnaire diocésain, il garde un contact étroit avec les Vanvéens, les visitant sur place ou pendant les colonies de vacances, et écrivant à ceux qui sont éloignés.</p>
+
+<p>Au début de la guerre en 1939, il est mobilisé comme Adjudant à la Légion Etrangère (XIe étrangers) où la vie est plutôt rude. Chef de section au Centre d'instructions de la Valbonne. Adjudant-Chef le 15 septembre. Au printemps 1940, il commande une section dans la Meuse. Marches de nuit, travaux de terrassement... En mai, l'ennemi attaque. Le 25 mai, il écrit son compte-rendu : « sommes engagés dans un bois... il y a des pertes forcément, n'étant pas enterrés installés à 30-40 m des Allemands.... Ordre de ne reculer dans aucun cas ». Le 26 mai, à 0 h 10 du matin, il s'avance seul à quelques mètres en avant d'un de ses postes pour suivre l'évolution d'une patrouille allemande. Il est tué d'un projectile au cœur (balle ou petit éclat) !</p>
+
+<p>La Compagnie entière et les officiers du Bataillon sont consternés car il en imposait à tous par sa dignité, sa conscience et son zèle apostolique et militaire. Tué aux environs d'Inor, il fut tout d'abord inhumé dans ce village détruit pris et repris trois fois au cours de durs combats. Au début de juin, Henry Metman est promu Sous-Lieutenant et cité à l'ordre de l'Armée.
+À Vanves, ce fut la consternation générale, tant son souvenir était resté vivace. C'est pourquoi une plaque portant son nom fut aposée dans la chapelle du Plateau jusqu'à sa destruction, plaque déposée à la cave lors de la reconstruction dans les années 1975/1980.</p>
+
+<p class="subhead">À propos des prêtres dans l'armée :</p>
+
+<p>Il peut sembler étonnant qu'un homme d'Église soit affecté à un poste de combattant, situation où il serait inévitable de prendre les armes. Toutefois, une petite explication s'impose :
+Sur les affectations des prêtres, il n'y a pas de spécificités particulières. Avant d'être des religieux, ils sont des citoyens comme les autres, soumis à l'obligation d'accomplir leur service militaire ou d'être mobilisés et de porter les armes. C'est pourquoi il n'est pas rare, au fil des lectures d'historiques régimentaires ou des témoignages d'anciens combattants, de découvrir qu'un soldat était séminariste ou prêtre avant la guerre. Par la suite, à leur demande, ils peuvent être affectés à des fonctions spécifiques telles qu'aumônier, infirmier, etc.
+Par exemple, au 99e Régiment d'Infanterie, on comptabilise au moins 20 religieux allant du grade de 2e classe au capitaine. Deux d'entre eux ont été chefs de corps francs. Toujours au 99e RI, le père Gilbert, chef du corps franc du Ier Bataillon, déclara : « Moi, prêtre, j'ai tué ! Vous entendez ? J'ai tué ! Que Dieu me pardonne ! Que ceux qui sont restés sur le champ de bataille, atteints par mes hommes, soient bientôt dans le ciel, auprès de Dieu. »</p>
+
+<p class="subhead">Légende des photos :</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-metman-henry-5.jpg" alt="Henry Jules Metman devant un igloo, février 1940">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-metman-henry-6.jpg" alt="Henry Jules Metman devant un igloo, février 1940">
+  </figure>
+</div>
+
+<p>Henry Jules Metman photographié devant un igloo en février 1940. Au dos de la photo, on trouve la mention « photo : adjt Dupouy ». La date inscrite sur l'igloo permet de confirmer qu'il se trouve bien au 11e REI à ce moment-là. Cependant, sa tenue ne correspond pas à celle qu'on pourrait attendre d'un sous-officier de Légion.
+Selon Frédéric Laîné, Henry Jules porte bien une tenue de Légion de 1940, à l'exception du béret qu'il porte, alors qu'il aurait dû porter un képi ou un calot. Cette différence pourrait s'expliquer par le fait qu'il était réserviste. En effet, le port du béret, typique des troupes alpines, était également adopté dans plusieurs unités dites de série B, composées de réservistes. Ces derniers pouvaient être équipés de matériels et équipements de complément, parfois déclassés, ce qui pouvait entraîner des tenues moins conformistes.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>René-Luce Coupin, « Vainqueurs quand même : le 11e de la Légion étrangère au feu, 1939-1940 »</li>
-    <li>Blog « Vanves au quotidien », témoignage de Jacques Marillier</li>
-    <li>Souvenirs et photographies de famille, transmis par Laurent Metman</li>
+    <li>René Luce Coupin, Vainqueurs quand même : Le 11e de la légion étrangère au feu, 1939-1940</li>
+    <li>cité dans le N° 11 écho des bouteillons</li>
+    <li>JMO</li>
+    <li>Généalogie</li>
+    <li>Souvenirs et photos de familles, un grand merci à Laurent pour le partage</li>
+    <li>Article sur le site Vanves au quotidien</li>
+    <li>L'identification des uniformes n'étant pas ma spécialité j'ai une nouvelle fois sollicité Frédéric Laîné voir son site <a href="https://fredlaine01.wordpress.com/" target="_blank" rel="noopener">https://fredlaine01.wordpress.com/</a> et sa page facebook</li>
   </ul>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-item">
+    <p class="who">MARAIS Nelly 20-03-2021 08:39</p>
+    <p>Mon père, Raymond Ferron, a fait parti du Cercle Henry Metman de la paroisse de Vanves, avec une bande d'amis qui le sont restés toute leur vie. Mes parents s'y sont connus. Le Cercle a énormément compté dans sa vie. Nous avons toujours les photos des pièces de théâtre qu'ils avaient jouées. Cet abbé n'hésitait pas à rendre visite à ses paroissiens et partager leur repas. Il a beaucoup marqué ces jeunes. Merci à lui.</p>
+  </div>
+  <div class="comment-item">
+    <p class="who">Paulat 22-03-2021 08:17</p>
+    <p>Mon père a fait partie du cercle et de l'association, j'ai encore des documents de cette époque.
+Dans les années 2000, je faisais un contrôle dans la centrale Nucléaire EDF de Brennilis (Bretagne)alors en fin de vie et je comptais faire un tour en soirée à la colonie de St Jean du doigt de la paroisse de St François que je connaissais bien. Le Directeur ,je vous passe les détails, me dit : est ce que vous savez que mon oncle est à l'origine de ces colonies de Vanves ?
+Je lui dit : l'abbé Metman ?
+Comment vous connaissez son nom ??
+Tout les dimanches je voyais son nom sur un plaque à l'église St François !</p>
+  </div>
 </div>
 
 <div class="actions">

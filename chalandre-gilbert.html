@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CHALANDRE Gilbert — 11e REI</title>
-<meta name="description" content="Sergent chef de section à la CA2, évadé du frontstalag 120 en 1940">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,57 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,25 +76,49 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA2 · Évadé</div>
   <h1>CHALANDRE Gilbert</h1>
-  <div class="sub">Sergent chef de section à la CA2, évadé du frontstalag 120 en 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Gilbert Chalandré, jeune sergent sorti de l'école de Saint-Maixent, sert à la compagnie d'appui n°2 du 11e REI. Fait prisonnier à Mirecourt puis évadé, il raconte à sa fiancée, dans une lettre du camp, la débâcle et sa capture.</p>
-<p>Né le 12 avril 1916 à Limoges, il est incorporé le 15 octobre 1938 au 107e régiment d'infanterie à Angoulême, puis suit une formation à l'école d'officiers de réserve de Saint-Maixent (novembre 1938 - avril 1939), d'où il sort sergent, breveté chef de section. À partir du 15 novembre 1939, il est affecté à la compagnie d'appui n°2 (CA2) du 11e REI.</p>
-<p>Fait prisonnier à Mirecourt le 22 juin 1940, il est interné au frontstalag n°120, d'où il s'évade le 3 octobre 1940. Dans une lettre du 21 août 1940 à sa fiancée Gisèle Banchereau, envoyée par une voie non officielle, il raconte les circonstances de sa reddition.</p>
-<blockquote class="testimony">Le 21 août 1940. Ma petite Gisèle, j'ai reçu le 19 ta carte du 10 ; tu peux deviner la joie qu'elle m'a causée ; c'était la première lettre depuis que je suis prisonnier. J'en avais envoyé par tous les moyens possibles et seule la carte officielle t'est parvenue [...] Cette lettre je te l'envoie par la voie non officielle, tu le comprendras tout de suite si tu la reçois. [...] On nous a dit que les communications avec la zone non occupée sont impossibles pour nous, c'est probablement pour cela que je n'ai pas de nouvelles de mes parents. Je ne t'ai pas sans doute dit que nous ne restons qu'une cinquantaine sur 3000, tout le reste tué ou blessé ; moi j'ai été étourdi par un obus le 17 juin et quand je suis revenu à moi, les Allemands nous avaient dépassé ; j'ai marché de nuit pendant 4 jours pour essayer de sortir de chez eux. Je ne savais pas que nous étions encerclés depuis longtemps. Le 22 juin j'ai essayé de me ravitailler chez un paysan mais il avait peur que les Allemands sachent que j'étais allé chez lui, aussi je me suis rendu. Pendant 4 jours je n'avais mangé que des cerises, maintenant je suis à peu près retapé, la seule chose c'est que les Allemands ne paraissent nullement décidés à nous relâcher. J'attends une occasion pour tâcher de leur brûler la politesse mais jusqu'ici l'occasion ne s'est pas présentée. [...] Ce qui m'a fait le plus mal quand on m'a amené dans le camp, c'est de voir des régiments entiers, des officiers avec tous leurs bagages, alors que moi, pauvre pouilleux, je n'avais même plus de lacets de soulier. J'ai pensé à tous nos officiers qui se sont fait tuer sur place plutôt que de perdre un centimètre de terrain. Enfin cela est passé, on ne parle même plus des morts. On vit dans des alternatives de joie et de tristesse suivant ce que l'on entend. [...] Comme nouvelles vous n'avez que la presse allemande ou contrôlée en conséquence, à peu près comme nous. Ceux de la légion ont été mis à part, nous pensions être expédiés en Allemagne mais jusqu'ici il n'en a rien été. Je m'arrête là pour aujourd'hui, je fais des vœux pour que ma lettre t'atteigne. [...] Mes amitiés à toute ta famille, beaucoup de baisers de ton Gilbert (toujours en entier). — P.-S. Pose-moi des questions sur tout ce que tu voudras savoir, écrire est une distraction rare dans notre vie.</blockquote>
-<p>Rappelé à l'activité en octobre 1944, Gilbert Chalandré se retire après la guerre en Isère.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Archives et documents familiaux transmis par Georges Chalandré, fils de Gilbert</li>
-  </ul>
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chalandre-gilbert-2.jpg" alt="Gilbert Chalandré">
+  </figure>
+  <div class="side-text">
+    <p>Je remercie Georges Chalandré, le fils de Gilbert, qui m'a envoyé plusieurs documents familiaux. Les raisons de la présence de Gilbert dans le 11e REI et à la Légion étrangère restent inconnues.</p>
+    <p>Gilbert Chalandré est né le 12 avril 1916 à Limoges. Il était le fils d'Henri Chalandré (1877-1965) et d'Angèle Damourette (1882-1953). Il avait un frère et une sœur, et il était le cadet de la fratrie.</p>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chalandre-gilbert-4.jpg" alt="Gilbert Chalandré">
+  </figure>
 </div>
+
+<p>En 1938, Gilbert Chalandré se fiance à Gisèle Banchereau.</p>
+
+<p>Le 15 octobre 1938, il est incorporé au 107e régiment d'infanterie à Angoulême. Du 16 novembre 1938 au 8 avril 1939, il suit une formation aux Écoles d'Officiers de Réserve (EOR) de Saint-Maixent, d'où il sort avec le grade de sergent et le brevet de chef de section.</p>
+
+<p>À partir du 15 novembre 1939, il est affecté au 11e REI dans la <a href="https://www.11regimentetranger.com/blog/ca2" target="_blank" rel="noopener">compagnie d'appui n°2 (CA2)</a>.</p>
+
+<p>Gilbert est fait prisonnier à Mirecourt le 22 juin 1940 et interné au frontstalag n°120. Il parvient à s'évader le 3 octobre 1940. Dans une lettre adressée à sa fiancée, il raconte les circonstances de sa reddition et évoque ses projets d'évasion.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chalandre-gilbert-5.jpg" alt="Gilbert Chalandré">
+</figure>
+
+<p class="subhead" style="font-weight:500">Le 21 aout 1940</p>
+
+<blockquote>Ma petite Gisèle<br><br>
+J'ai reçu le 19 ta carte du 10 ; tu peux deviner la joie qu'elle m'a causée ; c'était la première lettre depuis que je suis prisonnier. J'en avais envoyé par tous les moyen possibles et seule la carte officielle t'ai parvenu, souvent je voyais des lettres venant d'Angers qui ne mettaient que 4 jours, la tienne a fait le tour des bâtiments avant de me trouver car j'ai changé de bâtiment depuis le 15 août. Cette lettre je te l'envoie par la voie non officielle tu le comprendras tout de suite si tu la reçois. Ici beaucoup reçoivent des lettres et des colis, tu me dis que tu veux m'en envoyer 1 mais le ravitaillement doit être difficile chez vous aussi si tu ne peux pas le faire ne cherche pas. Ici nous nous serrons la ceinture mais comme nous ne faisons rien la rigueur on peut vivre. On nous a dit que les communications avec la zone non occupée sont impossibles pour nous, c'est probablement pour cela que je n'ai pas de nouvelles de mes parents. Je ne t'ai pas sans doute dit que nous ne restons qu'une cinquantaine sur 3000 tout le reste tué ou blessé ; moi j'ai été étourdi par un obus le 17 juin et quand je suis revenu à moi, les Allemands nous avaient dépassé ;j'ai marché de nuit pendant 4 jours pour essayer de sortir de chez eux. Je ne savais pas que nous étions encerclés depuis longtemps. Le 22 juin j'ai essayé de me ravitailler chez un paysan mais il avait peur que les allemands sachent que j'étais allé chez lui aussi je me suis rendu. Pendant 4 jours je n'avais mangé que des cerises maintenant je suis à peu près retapé, la seule chose c'est que les Allemands ne paraissent nullement décidés à nous relacher. J'attends une occasion pour tâcher de leur brûler la politesse mais jusqu'ici l'occasion ne s'est pas présentée. Si tu peux communiquer avec mes parents dis leurs que j'ai envoyé beaucoup de lettres à leur adresse ,toutes restées sans réponse, la dernière carte officielle (il y a 8 jours) je l'ai adressée en désespoir de cause à ma sœur à Château du Loir. Tu peux écrire à enveloppe fermée. Dis-moi un peu ce qui se passe, probablement rien que de très normal. Est-ce que les (Polonais ?) sont toujours là-bas ils ont certainement du décamper en lieu sûr comme toute la bande. Ce qui m'a fait le plus mal quand on m'a amené dans le camp c'est de voir des régiments entiers, des officiers avec tous leurs bagages alors que moi pauvre pouilleux je n'avais même plus de lacets de soulier. J'ai pensé à tous nos officiers qui se sont fait tuer sur place plutôt que de perdre un centimètre de terrain. Enfin cela est passé on ne parle même plus des morts. On vit dans des alternatives de joie et de tristesse suivant ce que l'on entend. Les informations sont de source tellement douteuse que maintenant je ne m'y arrête plus il y a un mois je croyais encore à une libération prochaine mais maintenant !!!???<br><br>
+Ecris moi avec nom et grade 11°Etranger Bâtiment 4.Je suis heureux d'apprendre que toute ta famille est en bonne santé. J'ai retrouvé Ernoux,tu sais le Gadz Arts qui était au 6° génie et qui était en pension chez le père Sol's avec moi mais il a quitté le camp pour une direction inconnue. A propos et le père Sol's il est toujours à Angers. Il doit ressasser ses souvenirs lui qui a été prisonnier pendant quatre ans en Allemagne. Son fils n'a pas été mobilisé probablement.<br><br>
+Comme nouvelles vous n'avez que la presse allemande ou contrôlée en conséquence à peu près comme nous. Ceux de la légion ont été mis à part, nous pensions être expédiés en Allemagne mais jusqu'ici il n'en a rien été. Je m'arrête là pour aujourd'hui je fais des vœux pour que ma lettre t'atteigne. Si tu m'envoie un colis et qu'il ne soit pas parti avant que ma lettre te touche, envoie moi une pipe et des pierres à briquet. Mes amitiés à toute ta famille beaucoup de baisers de ton Gilbert (toujours en entier)<br><br>
+Ps poses moi des questions sur tout ce que tu voudras savoir, écrire est une distraction rare dans notre vie.</blockquote>
+
+<p>Gilbert est rappelé à l'activité en octobre 1944.</p>
+
+<p>Après la guerre Gilbert Chalandré se retire en Isère.</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Chalandre" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

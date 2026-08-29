@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PELLEGRINI Léon Jean-Baptiste — 11e REI</title>
-<meta name="description" content="Enfant assisté engagé à 15 ans, doyen du 11e REI à 52 ans, puis résistant FFI">
+<title>PELLEGRINI Léon Jean Baptiste — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,56 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment-item{margin-bottom:1rem}
+  article .comment-item .who{font-weight:500}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,25 +75,106 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 9e compagnie · Doyen · Résistant</div>
-  <h1>PELLEGRINI Léon Jean-Baptiste</h1>
-  <div class="sub">Enfant assisté engagé à 15 ans, doyen du 11e REI à 52 ans, puis résistant FFI</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>PELLEGRINI Léon Jean Baptiste</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Léon Pellegrini, enfant assisté engagé à la Légion dès 15 ans, revient au service à 52 ans passés en 1939 comme doyen du 11e REI, avant de rejoindre la Résistance en 1944 à plus de 55 ans.</p>
-<p>Né en 1887 dans le Doubs, enfant assisté, il s'engage une première fois à la Légion étrangère le 3 décembre 1902 à seulement 15 ans, devient caporal en 1905, puis se réengage à plusieurs reprises, servant au Maroc auprès des troupes auxiliaires marocaines. Démobilisé en 1920 après 18 ans de service actif, il totalise déjà deux blessures, quatre citations, la croix de guerre et la médaille militaire.</p>
-<p>En 1939, dépassant largement la limite d'âge, il choisit néanmoins de repartir en première ligne et rejoint la 9e compagnie du 11e REI, cité à l'ordre du régiment le 27 mai 1940 et promu adjudant-chef. Fait prisonnier le 23 juin 1940, son statut d'ancien combattant de 1914-1918 lui vaut d'être libéré par les Allemands dès janvier 1941.</p>
-<p>En mai 1944, alors âgé de 57 ans, il est contacté pour former une section de résistance et devient, sous le pseudonyme « Pépé », chef de section des FFI du Jura, groupe Panthère, menant des missions de sabotage jusqu'à la libération de son secteur. Il réclamera plus tard, non sans une pointe d'humour, la reconnaissance qui lui manquait : « je n'en suis pas à une médaille près, j'en ai dix-sept, mais pour un vieux légionnaire, c'est notre gloire. »</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-2.jpg" alt="Léon Pellegrini">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-4.jpg" alt="Document Léon Pellegrini">
+  </figure>
+</div>
+
+<p>Léon Pellegrini est cité dans les listes de prisonnier, et la première chose qui m'a interpellé c'est sa date de naissance. Il est indiqué 1882... nous avons donc un (très) "vieux légionnaire", un ancien. A 57 ans, je me demande bien pourquoi il a été mobilisé.</p>
+
+<p>En consultant son acte de naissance aux archives départementales du Doubs, il s'avère que Léon est né en 1887. Il n'a finalement que 52 ans à la mobilisation!</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-5.jpg" alt="Document Léon Pellegrini">
+</figure>
+
+<p>Sa fiche matricule, que l'on aurait attendue aux archives du Doubs dans la classe 1907, se trouve finalement dans celles du Territoire de Belfort.</p>
+
+<p>Dans la partie état civil, il est précisé qu'il s'agit d'un enfant assisté du Doubs. Sa description physique et son niveau d'instruction sont masqués par une retombe.</p>
+
+<p>Léon Pellegrini s'engage pour la première fois à la Légion étrangère le 3 décembre 1902, à l'âge de 15 ans. Il devient caporal en 1905. Il est libéré du service le 3 décembre 1907, et se retire dans le Doubs avec un certificat de bonne conduite.
+En février 1908, il contracte un deuxième engagement sous sa véritable identité, puis un troisième de 5 ans en 1912. Il est promu adjudant en 1915. Il est détaché au 21e régiment d'infanterie et mis à la disposition du commissaire résident au Maroc pour l'encadrement des troupes auxiliaires marocaines. En 1919, il passe au 141e régiment d'infanterie, puis il est réintégré dans son corps d'origine.
+Démobilisé le 15 décembre 1920, à l'âge de 33 ans, il a déjà 18 ans de service actif, deux blessures, quatre citations, la croix de guerre, la médaille militaire (1917), la médaille coloniale avec agrafe Algérie (1906), agrafe Sahara (1908), et la médaille commémorative du Maroc (1910).</p>
+
+<p>Dans la revue Rouge Vert, écho des bouteillons du 11e régiment de Légion étrangère, tous les numéros commencent par un hommage aux aînés et aux traditions de la Légion. Dans le numéro 6 du 1er février 1940, un encart est consacré à la fidélité des légionnaires. Léon Pellegrini, bien qu'ayant dépassé la limite d'âge, s'engage à nouveau. Ses valeurs et son sens du devoir l'amènent à choisir de partir en première ligne.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-6.jpg" alt="Léon Pellegrini">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-7.jpg" alt="Léon Pellegrini">
+  </figure>
+</div>
+
+<p>Affecté à la 9e compagnie, il obtient une citation à l'ordre du régiment le 27 mai 1940 et est promu adjudant-chef le 1er juin 1940. Une seconde citation lui est attribuée le 26 juin 1940.
+Fait prisonnier le 23 juin 1940, il est interné au Frontstalag de Saint-Mihiel puis à l'hôpital de Lunéville. Son statut d'ancien combattant de 1914-18 lui permet d'être libéré par les Allemands le 13 janvier 1941. Il se retire alors dans sa région.</p>
+
+<p>En mai 1944, il est contacté par le capitaine Daniel Mercier alias Luc pour monter et former une section de résistance.</p>
+
+<p>Sous le pseudonyme de "Pépé", il devient chef de section dans les FFI du Jura, district de Dôle - groupe Panthère, jusqu'au 13 septembre 1944. Il mène des missions de sabotage et réquisitionne du matériel. Après la libération de son secteur, il s'engage volontairement pour la durée de la guerre au 2e bataillon FFI du Jura.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-8.jpg" alt="Léon Pellegrini FFI">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-9.jpg" alt="Document Léon Pellegrini FFI">
+  </figure>
+</div>
+
+<p>Il est nommé sous-lieutenant le 1er septembre 1944. Libéré par la limite d'âge le 1er mars 1945, il obtient une dernière citation mettant en valeur sa longue carrière.
+Dans son dossier FFI, Léon Pellegrini soumet plusieurs documents pour l'homologation de son grade FFI et la révision de sa pension. Dans une lettre manuscrite, il exprime son regret de ne pas avoir reçu la médaille de la Résistance, surtout qu'il n'a plus le certificat d'appartenance aux FFI. Il mentionne être inscrit au tableau 48 pour le titre de chevalier de la Légion d'Honneur : "Je suis navré de voir des gens qui portent la médaille de la Résistance et... Je n'en suis pas à une médaille près, j'en ai 'dix-sept', mais pour un vieux légionnaire, c'est notre gloire."</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-10.jpg" alt="Document Léon Pellegrini">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-11.jpg" alt="Document Léon Pellegrini">
+  </figure>
+</div>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-12.jpg" alt="Léon Pellegrini">
+</figure>
+
+<p>Bien que Léon Pellegrini soit le doyen* du 11e REI, il n'est pas le seul "vieux" du régiment. On trouve également le caporal Keurvel, engagé en 1906, et le "boujadi" Michel Jolyvan, âgé de 48 ans.</p>
+
+<p>*En réalité, Léon Pellegrini n'est pas le plus âgé, car <a href="https://www.11regimentetranger.com/blog/keurvels-henri" target="_blank" rel="noopener">Henri Keurvels</a> est né en 1883. Toutefois, il est le plus ancien engagé, car Keurvels ne rejoint la Légion qu'en 1906 !</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives départementales du Territoire de Belfort, fiche matricule, cote 1 R 414</li>
-    <li>SHD Vincennes, dossier de résistance GR 16 P 463854</li>
-    <li>Rouge Vert, écho des bouteillons du 11e régiment de Légion étrangère</li>
+    <li>Archives départementales du Territoire de Belfort, fiche matricule Cote 1 R 414</li>
+    <li>Archives départementales du Doubs</li>
+    <li>SHD Vincennes, Titres, homologations et services pour faits de résistance, dossier GR 16 P 463854</li>
+    <li>Le Petit Parisien, 13 mars 1940</li>
+    <li>Rouge Vert, écho des bouteillons du 11e Régt de Légion étrangère</li>
   </ul>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-item">
+    <p class="who">Jean-Yves PELLEGRINI 09-11-2020 12:29</p>
+    <p>Merci de ces archives, découverte d'une partie de la vie de mon grand père.</p>
+  </div>
+  <div class="comment-item">
+    <p class="who">Pellegrini patrick 09-11-2020 01:18</p>
+    <p>Merci pour toute cette documentation qui nous fait découvrir le passé militaire de notre grand père. Sa descendance est riche de nombreux militaires officiers et sous officiers de toutes les armes.</p>
+  </div>
 </div>
 
 <div class="actions">

@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KUS Jean — 11e REI</title>
-<meta name="description" content="Militant communiste polonais des Brigades internationales, mort dans un bombardement en 1945">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,38 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,25 +62,85 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Brigades internationales · EVDG · Mort pour la France</div>
   <h1>KUS Jean</h1>
-  <div class="sub">Militant communiste polonais des Brigades internationales, mort dans un bombardement en 1945</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>Brigades internationales</span><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Jean Kus, militant communiste polonais et mineur du Nord, combat dans les Brigades internationales avant de rejoindre le 11e REI ; il meurt en 1945, prisonnier de guerre en Autriche, lors d'un bombardement allié.</p>
-<p>Né en 1905 ou 1909 à Sokołów (Pologne), il rejoint le parti communiste polonais dès 1929 malgré son illégalité, puis émigre en France en 1931 pour travailler comme mineur dans le Nord. En septembre 1936, il rejoint les Brigades internationales et le bataillon Dombrowski, majoritairement composé de communistes polonais venus de France. Blessé lors de la bataille de Madrid en novembre 1936, il reprend le combat en mai 1937 puis travaille pour la garde du service de renseignement militaire républicain (SIM) à Figueras.</p>
-<p>Ses rapports d'évaluation successifs le décrivent comme un bon camarade discipliné, malgré une note de juillet 1938 relevant un moral affaibli et des « tendances antisémites » — un jugement isolé dans son dossier.</p>
-<p>Après son départ d'Espagne fin 1938, il ne figure ni dans les listes de rapatriement ni dans celles des camps d'internement du Sud de la France. En septembre 1939, il s'engage à Paris pour la durée de la guerre et rejoint le fort de Vancia puis le 11e REI, comme 2e classe. Fait prisonnier en juin 1940, il est interné au frontstalag 240 de Verdun.</p>
-<p>Il meurt le 19 février 1945 à Graz (Autriche), alors interné dans un réseau de camps pour travailleurs forcés et prisonniers de guerre, lors d'un bombardement. Son nom figure sur le monument aux morts de Vineuil-Saint-Firmin (Oise).</p>
+
+<p>KUS Jean est né le 25/05/1905 ou 1909 à Sokołów en Pologne. Il est le fils d'Alexandre et d'Aniela Sciuk.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kus-jean-2.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">Pologne et Arrivée en France</p>
+    <p>Il rejoint le parti communiste polonais en 1929 à Rzeszów, où il se charge de la propagande, malgré l'illégalité du parti depuis 1919.</p>
+    <p>En 1931, il arrive en France avec un passeport et travaille comme mineur dans le Nord. Résidant à Wazier, il se marie le 18 août 1933 à Flers en Escribieux avec Wladyslawa Wardega, et ils ont un fils avant septembre 1936.</p>
+    <p>En France, il adhère à la CGT entre 1932 et 1935 et au Secours rouge. Il est un lecteur assidu de l'Humanité et du quotidien communiste Dziennik Ludow, publié en France en polonais.</p>
+  </div>
+</div>
+
+<p class="subhead">L'Espagne</p>
+
+<p>En septembre 1936, il décide de rejoindre les Brigades internationales pour combattre le fascisme. Le 16 octobre, il est en Espagne et il devient soldat au bataillon Dombrowski. Ce bataillon est composé de communistes polonais venant majoritairement de France.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kus-jean-4.jpg" alt="">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kus-jean-5.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>En novembre 1936, il participe à la bataille de Madrid, où il est blessé entre le 8 et le 24 novembre lors de l'attaque de Casa de Campo. En mai 1937, il reprend sa place au front.</p>
+
+<p>Du 20 septembre au 3 novembre 1937, il bénéficie d'une permission pour la France et se rend à l'adresse de la 150, cité Villiers à Flers. À son retour, il se trouve d'abord à la base des Brigades internationales, avant d'être affecté à la délégation des Brigades internationales à Figueras. Il travaille ensuite pour la garde du Servicio de Información Militar (SIM)</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kus-jean-6.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Le 28 juillet 1938, Jan Kus rédige une biographie de militant dans le cadre de sa demande d'adhésion au Parti communiste espagnol (PCE), sa candidature étant présentée par Wladislas Wiesnieski. Dans ce document, il mentionne avoir adhéré au Secours rouge international en février 1937 et avoir été blessé une deuxième fois. Depuis son arrivée dans les Brigades internationales, il est régulièrement noté.</p>
+    <p>En mai 1938, il est décrit comme un très bon camarade, avec un excellent moral, actif, discipliné, et ayant de bonnes discussions politiques. Cependant, en juillet 1938, le comité du Parti du camp de récupération d'Olot note que Jan Kus semble un peu démoralisé, avec des tendances antisémites, bien qu'il ait été recommandé par Gustaw Rwal* pour son travail au SIM à Figueras.</p>
+    <p>*Il est probable que "RWAL" fasse référence à Gustaw Rwal, co-fondateur de la brigade Dombrowski, qui a été victime des purges staliniennes. Convoqué à Moscou en décembre 1937, arrêté par le NKVD en janvier 1938, il a été condamné pour espionnage et exécuté le 18 septembre 1938.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kus-jean-7.jpg" alt="">
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kus-jean-8.jpg" alt="">
+</figure>
+
+<p>En 1940, Edoardo d'Onofrio dit Edo conclu que Jan Kus s'est comporté en bon camarade.</p>
+
+<p class="subhead">Le XIè régiment étranger d'infanterie</p>
+
+<p>Jan Kus quitte l'Espagne après le 18 juillet 1938. Le 28 octobre 1938 marque la "Despedida", l'adieu des Brigades internationales qui quittent l'Espagne, et en février 1939 commence la "Retirada", lorsque les républicains espagnols fuient l'Espagne après la prise de Barcelone. Quelques brigadistes choisissent de rester en Espagne jusqu'à la Retirada. Cependant, Jan Kus ne figure ni dans les listes des brigadistes rapatriés fin 1938 ni dans celles des internés dans les camps du Sud de la France.</p>
+
+<p>En septembre 1939, Jean Kus se présente dans un bureau de recrutement de la Seine pour souscrire un engagement volontaire pour la durée de la guerre au titre de la Légion étrangère. Il reçoit le numéro 1413 sur la liste de recrutement. Le 25 octobre 1939, il se trouve à la sous-intendance du Fort de Vancia.</p>
+
+<p>Durant la campagne, il occupe le grade de 2e classe. Il est fait prisonnier en juin 1940 et interné au Frontstalag 240 à Verdun.</p>
+
+<p>En 1945, il se trouve dans la ville de Graz en Autriche, qui abritait un réseau de camps destinés aux travailleurs forcés étrangers et aux prisonniers de guerre. Il y meurt le 19 février 1945 lors d'un bombardement.</p>
+
+<p>Son nom figure sur le monument aux morts de Vineuil-Saint-Firmin (Oise).</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Site Mémoire des Hommes</li>
-    <li>Liste des prisonniers français (Gallica)</li>
-    <li>Archives RGASPI, 545.6.31 et 545.6.630-812 (volontaires polonais des Brigades internationales)</li>
+    <li>site internet Mémoire des Hommes</li>
+    <li>liste des prisonniers français sur Gallica.fr</li>
+    <li>archives de Moscou: RAGSPI 545.6.31 liste alphabétique des volontaires des BI ; RAGSPI 545.6.630 à 812 dossiers concernant les volontaires polonais</li>
   </ul>
 </div>
 

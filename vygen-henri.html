@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VYGEN Henri « Heinrich » — 11e REI</title>
-<meta name="description" content="Enquête d'identification : un légionnaire amputé retrouvé sous quatre prénoms différents">
+<title>Henri VYGEN — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,45 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul,article ol{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,28 +69,72 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Mutilé de guerre</div>
-  <h1>VYGEN Henri « Heinrich »</h1>
-  <div class="sub">Enquête d'identification : un légionnaire amputé retrouvé sous quatre prénoms différents</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Henri VYGEN</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">L'identification d'Henri Vygen, légionnaire amputé au bois d'Inor, aura nécessité de recouper quatre variantes de son prénom en trois langues, jusqu'à la découverte de sa tombe dans le Nord.</p>
-<p>Le Journal officiel du 2 décembre 1941 décore de la médaille militaire un légionnaire Heinrich Vyger, « jeune légionnaire modèle de courage et de bravoure », grièvement blessé au bois d'Inor le 27 mai 1940 et amputé de la cuisse gauche. Les archives du SAMHA mentionnent, à la même date et au même hôpital, un légionnaire Hans Vyger ; un décret de naturalisation de 1944 évoque quant à lui un Henrick-Johan Vyger, né à Düsseldorf de père hollandais.</p>
-<p>Un spécialiste des légionnaires néerlandais consulté pour l'enquête relève que le patronyme Vyger est extrêmement rare aux Pays-Bas, mais que ses variantes Vijgen ou Vygen sont fréquentes dans le Limbourg néerlandais, région minière — et que Heinrich/Hans/Henri et Vyger/Vijgen ne sont que les mêmes noms, transposés en allemand, néerlandais et français selon les documents.</p>
-<p>La piste aboutit finalement à Seclin, dans le Nord, où une tombe porte le nom d'Henri Vygen, né en 1916, mort en 1979, avec l'inscription : « Mort pour la France au bois d'Inor le 27 mai 1940 » — une mention post datant pourtant sa naturalisation et son mariage, suggérant qu'il avait été porté disparu ou déclaré mort par erreur administrative en 1940, avant de réapparaître. Son nom complet sur son acte de mariage de 1959, Henri Jean Vygen, confirme le rapprochement avec le Henrick-Johan naturalisé en 1944.</p>
-<p>Plusieurs zones d'ombre demeurent : les raisons de l'inscription funéraire de 1940, sa nationalité exacte au moment des faits, et l'hypothèse qu'il ait pu, comme d'autres légionnaires d'origine allemande ou néerlandaise, dissimuler ses origines une fois capturé pour éviter des représailles.</p>
+
+<p>J'ai récemment découvert l'existence du légionnaire Heinrich VYGER. Dans le Journal officiel du 2 décembre 1941, il est décoré de la médaille militaire avec la citation suivante : "VYGER (Heinrich), légionnaire au 11e régiment étranger d'infanterie : jeune légionnaire modèle de courage et de bravoure. Grièvement blessé à son poste de combat au bois d'Inor le 27 mai 1940, il a été amputé de la cuisse gauche."</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-vygen-henri-2.jpg" alt="Document Henri Vygen">
+</figure>
+
+<p>En poursuivant mes recherches, j'ai découvert des éléments intriguants au sujet d'Heinrich VYGER. Il pourrait s'agir de VYGER (Henrick-Johan), naturalisé français par décret le 29 décembre 1944. Selon ce décret, il est né le 24 juin 1916 à Düsseldorf, en Allemagne, de père hollandais, et résidait à Nice à cette époque.
+Dans les archives du SAMHA, on trouve également une trace d'un légionnaire de 2e classe nommé Hans VYGER, enregistré dans les diagnostics opératoires de l'hôpital d'Ancemont le 28 mai 1940. Cela laisse penser qu'Heinrich et Hans pourraient être une seule et même personne. Les différentes sources semblent évoquer le même légionnaire, mais en utilisant différents prénoms : Heinrich pour la médaille militaire, Hans pour le SAMHA, et Heinrick-Johan pour la naturalisation.</p>
+
+<p>Pour approfondir, je me suis intéressé au nom de famille VYGER. Frans Janssen, spécialiste des néerlandais engagés dans la Légion étrangère, a confirmé que ce nom est très rare aux Pays-Bas (seulement deux occurrences). Il a suggéré d'examiner des variantes orthographiques plus fréquentes, comme VIJGER (12 occurrences), VYGEN (248 occurrences), et surtout VIJGEN (5 272 occurrences). Ces familles se concentrent principalement dans le sud de la Hollande, dans la province du Limbourg, où de nombreux hommes travaillaient dans les mines de charbon en Belgique, en Allemagne et parfois dans le nord de la France.</p>
+
+<p>Les recherches ont aussi pris en compte les variations des prénoms :</p>
+
+<ul>
+<li>Heinrich en allemand devient Hendrick ou Henrickus en néerlandais, et Henri en français.</li>
+<li>Hans en allemand correspond à Johann ou Johannes en néerlandais, et Jean en français.</li>
+<li>Enfin, la graphie néerlandaise Vijger ou Vijgen peut facilement devenir Vyger ou Vygen en français, en raison de la contraction des lettres "ij" en "y".</li>
+</ul>
+
+<p>C'est finalement dans le nord de la France que la piste s'est précisée. À Seclin, dans le cimetière local, repose Henri VYGEN, né en 1916 et décédé en 1979. Ce qui dissipe tout doute, c'est l'inscription sur sa tombe : "Mort pour la France au bois d'Inor le 27 mai 1940". L'année de naissance correspond, et cette mention confirme qu'il s'agit bien du légionnaire décoré pour sa bravoure.</p>
+
+<p>Ainsi, les multiples variations de nom et de prénom auraient conduit à des doublons apparents dans les archives, mais toutes convergent vers une seule identité : celle d'Henri VYGEN.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-vygen-henri-4.png" alt="Tombe d'Henri Vygen, cimetière de Seclin">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-vygen-henri-5.jpg" alt="Tombe d'Henri Vygen, cimetière de Seclin">
+  </figure>
+</div>
+
+<p>Henri Vygen épouse Jeanne Descloquemant à Seclin le 31 janvier 1959. Ce mariage est confirmé par une mention marginale sur l'acte de naissance de Jeanne, où figure également le nom complet du marié : Henri Jean VYGEN. Ce détail est particulièrement significatif, car il rapproche ce Henri Jean VYGEN du Hendrick Johan Vyger naturalisé français en 1944.</p>
+
+<p>Cette concordance dans les prénoms renforce l'hypothèse selon laquelle ces différentes identités se rapportent bien à la même personne. Il est probable que les variations orthographiques et linguistiques aient contribué à des confusions dans les archives, mais elles trouvent ici une cohérence grâce à cette mention marginale.
+Au final, si je pense avoir retrouvé le légionnaire Heinrich Vyger, la pierre tombale d'Henri Vygen soulève de nouvelles interrogations.</p>
+
+<p class="subhead">1. La mention "Mort pour la France en 1940"</p>
+<p>Pourquoi une telle inscription sur une pierre tombale alors que sa naturalisation et son mariage sont postérieurs à cette date ? Cette mention pourrait indiquer qu'il a été déclaré porté disparu ou mort pendant les combats. Cela serait cohérent avec une évacuation non enregistrée à cause du chaos des combats du 27 mai 1940. Il est possible qu'un dossier de recherche ait été ouvert à cette époque, menant à une telle conclusion administrative avant qu'il ne réapparaisse ultérieurement.</p>
+
+<p class="subhead">2. La palme d'honneur d'ancien combattant</p>
+<p>La présence de cette palme renforce l'idée qu'il a bénéficié d'une reconnaissance officielle comme ancien combattant. Malheureusement, l'inscription illisible sur le cliché empêche d'en savoir plus. Un examen direct ou une recherche complémentaire pourrait éclaircir ce point.</p>
+
+<p class="subhead">3. Sa nationalité en 1940</p>
+<p>En 1940, il est difficile de déterminer s'il était considéré comme apatride, hollandais ou sous une autre nationalité. Il est plausible qu'il ait été capturé dans une formation sanitaire après avoir été gravement blessé au bois d'Inor, comme l'atteste sa citation. Dans un tel cas, et compte tenu des risques pour un légionnaire étranger d'origine allemande ou hollandaise, il aurait pu être contraint de masquer ses origines. Cette hypothèse rappelle l'exemple de Charles Hora*, qui a effectivement falsifié ses origines pour éviter des représailles en captivité.</p>
+
+<p>Ces questions montrent que, si de nombreux indices convergent vers une identification, des zones d'ombre demeurent sur le parcours d'Henri Vygen entre 1940 et les années 1950.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Journal officiel des 02/12/1941 et 31/12/1944</li>
-    <li>Archives du SAMHA</li>
-    <li>Geneanet, relevé du cimetière de Seclin</li>
-    <li>Frans Janssen, nllegioen.eu (légionnaires néerlandais)</li>
+    <li>Journal officiel du 02/12/1942 et du 31/12/1944</li>
+    <li>archives du Service des archives médicales et hospitalières des Armées (SAMHA)</li>
+    <li>Généanet: photo du cimetière de Seclin relevé par l'utilisateur chateau17</li>
+    <li><a href="https://nllegioen.eu/" target="_blank" rel="noopener">https://nllegioen.eu/</a> remerciement à Frans Janssen pour son aide et pour relayer cette recherche sur son site internet dédié aux légionnaires hollandais.</li>
   </ul>
 </div>
+
+<p>* Charles Hora, debout la Légion, page 71. Fait prisonnier à l'hôpital d'Epinal, il demande à une infirmière de la croix rouge de lui enlever sa plaque d'identité pour ne pas être identifié sous sa véritable identité. Il devient alors temporairement le légionnaire Carlos Fernandez.</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Vygen" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

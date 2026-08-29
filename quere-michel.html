@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QUÉRÉ Michel Yves Marie — 11e REI</title>
-<meta name="description" content="Légionnaire blessé au bois d'Inor, éclaireur des Rangers américains pour la libération du Conquet">
+<title>Michel QUÉRÉ — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,49 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,25 +73,95 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 2e compagnie · Résistant FFI</div>
-  <h1>QUÉRÉ Michel Yves Marie</h1>
-  <div class="sub">Légionnaire blessé au bois d'Inor, éclaireur des Rangers américains pour la libération du Conquet</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Michel QUÉRÉ</h1>
+  <div class="sub">Mémoires des Résistants et FFI de l'arrondissement de Brest</div>
+  <div class="tags"><span>11è REI</span><span>résistant</span><span>légionnaire d'active</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Michel Quéré, légionnaire d'active blessé au bois d'Inor en 1940, rejoint la Résistance bretonne en 1944 et sert de guide au 2e bataillon de Rangers américains pour réduire la poche du Conquet.</p>
-<p>Né le 29 septembre 1908 à Plougonvelin, il s'engage à 20 ans dans l'armée puis à la Légion étrangère en 1935, servant en Syrie avant de rejoindre le 11e REI naissant. Caporal-chef, il est blessé à l'avant-bras par 14 éclats de grenade au bois d'Inor le 26 mai 1940, évacué avant la capitulation du régiment, et décoré de la croix de guerre avec étoile de bronze.</p>
-<p>Renvoyé en Afrique du Nord fin 1941, il rejoint les Alliés après le débarquement de novembre 1942, sert au 3e REI, mais est fait prisonnier par les Allemands en Tunisie lors des combats du Pont du Fahs, avant d'être remis à la France en mai 1943.</p>
-<p>Après le débarquement de Normandie, il est recruté à Plougonvelin par Roger Priol pour former un groupe de résistants, participant à un sabotage de canalisation près de Trébabu en juillet 1944 puis à une tentative infructueuse de parachutage d'armes. Rejoignant le maquis de Tréouergat, il devient chef du 1er groupe de la 1re section des FFI de Saint-Renan — un choix naturel, son expérience militaire tranchant avec celle des jeunes recrues du groupe, parmi lesquelles Yves Guéna, futur ministre.</p>
-<p>Détaché avec son groupe auprès du 2e bataillon de Rangers américains comme guide et éclaireur, il participe à la libération de Locmaria-Plouzané et aux combats du verrou de Goasmeur, où il est légèrement blessé — par une betterave projetée par l'explosion d'un obus, non par un éclat, comme le racontera en riant son camarade Roger Priol. De retour à Plougonvelin après la reddition allemande, il s'interpose pour faire cesser des femmes tondues en représailles par des FFI d'un autre secteur.</p>
-<p>Cité à deux reprises pour son action dans les combats de la Libération, il réintègre l'armée après la dissolution des FFI, participe aux sièges de Lorient, Royan et La Rochelle, puis sert dans les troupes d'occupation en Allemagne avant de quitter définitivement le service.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Gildas Priol, « Mémoires des Résistants et FFI de l'arrondissement de Brest » (resistance-brest.net)</li>
-  </ul>
+<p>Les informations trouvées dans les archives du 11e régiment étranger d'infanterie, qui font état d'un sergent Yves Quéré décédé au combat le 17 juin 1940 et d'un caporal-chef Quéré de la 2è compagnie blessé le 27 mai 1940, semblaient initialement susciter la confusion en raison de l'homonymie entre les deux individus et de la proximité de leur grade.</p>
+
+<p>Cependant, grâce à l'article publié sur le site https://www.resistance-brest.net/, il est désormais évident qu'il y avait en effet une situation d'homonymie entre les deux Quéré.</p>
+
+<p>Je publie ci-dessous la fiche biographique de Michel Quere rédigée par Gildas Priol et consultable dans Mémoires des Résistants et FFI de l'arrondissement de Brest.</p>
+
+<p>Ce site internet rend hommage à l'action globale des résistants brestois qui luttèrent sans relâche de 1940 à 1944 contre l'occupant nazi.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-quere-michel-2.jpg" alt="Michel Quéré">
+  </figure>
+  <div class="side-text">
+<p class="subhead">QUÉRÉ Michel</p>
+
+<div class="doc">
+<p>Naissance : 29 septembre 1908 - Plougonvelin<br>
+Année d'entrée en résistance ou F.F.I. : 1944<br>
+Unité : <a href="https://www.resistance-brest.net/mot40.html" target="_blank" rel="noopener">F.F.I Saint-Renan</a> / <a href="https://www.resistance-brest.net/mot224.html" target="_blank" rel="noopener">S1</a> / <a href="https://www.resistance-brest.net/mot229.html" target="_blank" rel="noopener">G1</a><br>
+Secteur(s) d'action : Poche du Conquet<br>
+Décès : 4 octobre 1983 - Saint-Renan</p>
+</div>
+
+<p>Michel Yves Marie Quéré est le fils de cultivateurs de Plougonvelin. À l'âge de vingt ans, il s'engage volontairement pour trois ans dans l'armée. Il sert au 10ème Régiment d'Artillerie (R.A.D) à Rennes. À l'issue de son contrat, il retourne à la vie civile durant quatre ans avant de s'engager dans la Légion Étrangère en 1935. Il est alors affecté au 1er Régiment Étranger d'Infanterie en Syrie. Quand la Seconde Guerre mondiale éclate, son unité revient en France pour former et encadrer deux nouveaux régiments. Michel Quéré est promu Caporal-Chef et se voit affecté dans la région de Sedan avec le 11e Régiment Étranger d'Infanterie. Les combats éclatent avec l'offensive allemande à la mi mai 1940 et dans l'affrontement Michel Quéré est blessé à l'avant-bras par 14 éclats d'une grenade, le 26 mai 1940 dans le bois d'Inor.</p>
+  </div>
+</div>
+
+<p>Évacué, le plougonvelinois échappe ainsi à la capture. Pour son action au feu, il est cité à l'ordre du Régiment comme gradé énergique et courageux et se voit décoré de la Croix de Guerre 1939-1940, avec étoile de bronze. Après sa convalescence, Michel Quéré est renvoyé en Afrique-du-Nord à Sidi-Bel-Abbès en décembre 1941. Il reste en poste dans son unité et bascule avec l'Armée d'Afrique, du côté des Alliés après les débarquements de novembre 1942 au Maroc et en Algérie.</p>
+
+<p>Affecté au 3e Régiment Étranger d'Infanterie et nommé Sergent, il participe à la Campagne de Tunisie mais cette fois il est fait prisonnier par les allemands lors des combats de Pont du Fahs. Envoyé en camp de prisonniers en Italie, il est remis à la France en mai 1943. Il reste près de trois mois en convalescence dans le sud de la France avant d'être mis en permission puis en congés d'Armistice. Michel Quéré regagne alors Plougonvelin.</p>
+
+<p>Après le débarquement en Normandie en juin 1944, Michel Quéré est approché par <a href="https://www.resistance-brest.net/article256.html" target="_blank" rel="noopener">Roger Priol</a>. Ce dernier lui propose de reprendre une nouvelle fois les armes et de se joindre au groupe de combat qui se monte à Plougonvelin. Michel Quéré accepte sur le champ et se met également à recruter. Il contacte Michel Malgorn, ex matelot sur le Richelieu et François Raguénès, dit Tonton. Le recrutement va bon train mais pour l'heure il n'y a pas d'armes. Vers le 20 juillet 1944, le groupe organise un petit coup de main près de Trébabu. Roger Priol, René Raoul, Michel Malgorn et Michel Quéré démontent sur 200 mètres la tuyauterie d'alimentation en eau du train Decauville qui dessert les positions allemandes de la côte.</p>
+
+<p>Fin juillet, début août 1944, la section de Plougonvelin est mise en alerte, un parachutage d'armes doit se dérouler à Locmaria-Plouzané. Le rendez-vous est fixé vers 23 heures au café-restaurant Goardon du bourg. Guidés par François Raguénès et Michel Quéré, le groupe rejoint la zone potentielle de largage entre le calvaire de La Madeleine et la ferme de Kerzévéon. Sur place d'autres F.F.I sont déjà présents. Parmi eux, les gars du Groupe Marée de Plouzané et de Brest-Ouest. Aucun largage cette nuit là. Ce n'est qu'à la troisième reprise, dans la nuit du 2 au 3 août 1944, qu'un avion passe. La zone est cependant jugée trop dangereuse par le pilote qui ne délivre pas les conteneurs tant attendus. Seul un fumigène rouge sera lâché pour signaler l'annulation de l'opération. Les F.F.I rentrent sur Plougonvelin, le moral dans les chaussettes.</p>
+
+<p>Dans les jours qui suivent, ordre est donné aux F.F.I de Plougonvelin de rejoindre immédiatement Tréouergat pour être équipés en armes. Par petits groupes, les plougonvelinois s'exécutent. Michel Quéré part avec Jean Cam et Roger Priol, ils passent par Plouzané et Saint-Renan. Parvenu au maquis de Kergoff à Tréouergat, le groupe se reforme et se voit assigner à la Compagnie F.F.I de Saint-Renan. En prévision des combats, Roger Priol laisse sa place de chef de groupe à Michel Quéré, qui devient alors le chef du 1er Groupe de la 1ère Section. Ce choix est naturel, Roger Priol n'a aucune instruction militaire.</p>
+
+<p class="subhead">Composition du groupe :</p>
+<p>CAM Jean<br>
+DAUCHET Léonce ✝<br>
+GOALÈS Jean<br>
+GUÉNA Yves (père du Ministre)<br>
+HERVÉOU François<br>
+KERMARREC François<br>
+LAURENT Frédéric (n'a pas 16 ans)<br>
+LAURENT Pierre<br>
+MALGORN Michel<br>
+PRIOL Roger<br>
+QUÉRÉ Michel (chef de groupe)<br>
+RAGUÉNÈS François<br>
+RAOUL René</p>
+
+<p>Après une rapide instruction à ceux qui n'ont jamais touché une arme de leur vie, les premières patrouilles débutent dans la région de Plourin et de Ploudalmézeau. Direction Brélès puis retour à Lanrivoaré. La section se porte ensuite pendant plusieurs jours sur la route Milizac-Saint-Renan pour occuper le terrain. Durant ce laps de temps, un habitant du secteur viendra avertir les F.F.I que quelques parachutistes allemands sont dans un moulin assez proche. Tous les jeunes F.F.I avides d'en découdre veulent y aller mais le chef de section et Michel Quéré maintiennent l'ordre et calment les ardeurs des uns et des autres.</p>
+
+<p>Mise à part les quelques jeunes qui le compose, le 1er Groupe a une bonne expérience militaire et connaît parfaitement le secteur. C'est pourquoi il est détaché de la compagnie auprès du 2nd Ranger Battalion américain pour servir de guide et d'éclaireur. Le groupe se répartit, chacun des F.F.I est associé à deux américains. Michel Quéré lui est associé avec le capitaine d'une compagnie (E ou F) et un interprète. Avant de pousser plus à l'Ouest, le capitaine des Rangers veut se rendre à Gouesnou pour constater le massacre de civils qui lui a été remonté. Il part avec François Hervéou et Michel Quéré à bord d'une jeep.</p>
+
+<p>À leur retour, la compagnie s'ébranle et se porte sur le front Ouest, pour la réduction de la poche du Conquet. Avec cette unité, Michel Quéré et son groupe participeront à la libération de Locmaria-Plouzané, à l'isolement de la poche du Conquet vis à vis de celle de Brest. Puis ce seront les combats du verrou de Goasmeur et le ratissage de la zone jusqu'au Lannou. Michel Quéré fait preuve de grandes qualités au combat. Son analyse est appréciée par les officiers américains avec qui il est en relation. Les combats sont âpres dans ce secteur, en quelques jours le groupe a deux blessés et un tué. Près du Lannou, lors d'un bombardement part l'artillerie allemande, Michel Quéré est blessé par un projectile.</p>
+
+<p>Roger Priol témoigne de cet incident :</p>
+
+<blockquote>Il peste et pense que cette fois c'est la bonne. La plaie le brûle mais n'est que superficielle. Michel Quéré vient en fait d'être frappé par une betterave projetée par l'éclatement d'un obus dans le champ où l'on se trouve (rires).</blockquote>
+
+<p>Au 8 septembre 1944, après deux semaines en tête de ligne avec les troupes américaines, le groupe est envoyé, contre son gré, au repos au château de Quéléren où un ami de Yves Guéna les prend en photo (voir le portfolio). Ne pouvant rester sans rien faire alors que les combats sont désormais à Plougonvelin, le groupe décide de s'octroyer une nuit de sommeil et de partir au petit matin pour retrouver la compagnie ou les Américains. Le 9 septembre, ils se portent près de Trémeur en prévision de l'attaque quand l'annonce de la reddition de la batterie de Kéringar intervient.</p>
+
+<p>La compagnie fait mouvement vers Saint-Renan en prévision d'un déploiement sur Brest mais le 1er Groupe de Michel Quéré est maintenu à Plougonvelin pour assurer la police et la remise en route de la commune. À Plougonvelin, des F.F.I de Lannilis sont à l'œuvre dans l'école des garçons. Ils tondent des femmes de la commune sous le regard de nombreux spectateurs. Michel Quéré s'interpose et fait cesser ces représailles.</p>
+
+<p>Pour son action dans les combats de la Libération, Michel Quéré sera cité à deux reprises et reçoit la Croix de Guerre 1939-1945. Après la dissolution des F.F.I, il réintègre l'armée et participe aux sièges de Lorient, Royan et La Rochelle. Envoyé dans les Troupes d'Occupation de l'Allemagne (T.O.A) en fin 1945, il poursuit encore quelques années sa carrière militaire avant de retourner définitivement à la vile civile.</p>
+
+<p>Publiée le samedi 19 décembre 2020, par Gildas Priol, mise à jour jeudi 31 août 2023</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-quere-michel-4.jpg" alt="Le 1er Groupe de Michel Quéré, château de Quéléren">
+</figure>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-quere-michel-5.jpg" alt="Michel Quéré">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-quere-michel-6.jpg" alt="Michel Quéré">
+  </figure>
 </div>
 
 <div class="actions">

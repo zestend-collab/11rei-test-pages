@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOGROVEJO ARNAIZ Manuel — 11e REI</title>
-<meta name="description" content="Jeune milicien basque identifié grâce à des fouilles archéologiques, déporté à Mauthausen">
+<title>Manuel MOGROVEJO ARNAIZ — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,47 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,28 +71,139 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 3e compagnie · EVDG · Espagnol · Déporté</div>
-  <h1>MOGROVEJO ARNAIZ Manuel</h1>
-  <div class="sub">Jeune milicien basque identifié grâce à des fouilles archéologiques, déporté à Mauthausen</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Manuel MOGROVEJO ARNAIZ</h1>
+  <div class="sub">Contingent d'EVDG Fort de Vancia · Miliciano</div>
+  <div class="tags"><span>11è REI</span><span>déporté</span><span>républicain espagnol</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Manuel Mogrovejo Arnaiz, milicien basque engagé à 17 ans dans la guerre civile espagnole, doit son identification à la découverte, en 2018, de sa plaque militaire lors de fouilles archéologiques sur un site fortifié du Pays basque.</p>
-<p>Né le 6 octobre 1918 à Amorebieta, il rejoint dès octobre 1936, à 17 ans, le bataillon communiste Leandro Carro et combat en mai 1937 dans la région de Mungia. Après la chute du front nord, il franchit la frontière française le 5 avril 1939 et est interné au camp de Gurs, dans les baraquements réservés aux Basques espagnols, aux côtés de Ramón Lapeira Martínez, qui rejoindra comme lui le 11e REI.</p>
-<p>Enrôlé à la Légion étrangère en décembre 1939, il écrit le 4 décembre depuis le camp de la Valbonne à Julio Jáuregui, un compatriote basque chargé d'assister les réfugiés et exilés républicains, pour lui demander une aide financière face à sa situation précaire — une lettre conservée aux archives générales du Pays basque, signée comme légionnaire de la 3e compagnie du 1er bataillon :</p>
-<blockquote class="testimony">« La Valbonne, 4-12-39. Apreciado compatriota d. Jáuregui. Me alegraré que al recibo de estas cuatro líneas, disfrute de la más completa salud [...] Habiéndome incorporado a la Legión, por la duración de la guerra y siendo mi situación crítica en el asunto monetario, es por lo cual me dirijo a Vd. pidiéndole el favor, que creo no me lo negará [...] Sin más se despide [...] que es de Amorebieta enviándole el más afectuoso saludo que le puede enviar un camarada. Manuel Mogrovejo. »</blockquote>
-<p>Neuf jours plus tard, le régiment quitte la Valbonne pour le front devant la ligne Maginot. Le journal de marche de la 3e compagnie mentionne le 2e classe Mogrovejo en permission de détente le 4 mai 1940 ; trois semaines plus tard, il participe aux combats du bois d'Inor, où le capitaine Emanuelli trouve la mort, dans la même compagnie que son compatriote Joaquim March.</p>
-<p>Fait prisonnier le 23 juin 1940, il est interné au Stammlager XVII-B de Krems-Gneixendorf en Autriche, puis, comme de nombreux républicains espagnols, transféré au camp de Mauthausen-Gusen, où il arrive le 19 décembre 1941 avec au moins quinze autres Espagnols du 11e REI, dont Ramón Lapeira. Libéré par les Alliés le 5 mai 1945, il est rapatrié le 20 mai et démobilisé à Marseille le 24 juillet 1945.</p>
-<p>La dernière trace retrouvée de lui le situe à Barcelone en 1959 : selon le Journal officiel espagnol (BOE), la justice civile franquiste le poursuit, comme maître artisan, pour « usurpation de fonctions et tentative d'escroquerie » — des faits datés de 1942, alors qu'il était en réalité prisonnier à Mauthausen. Il passe le reste de sa vie en France et meurt à Paris (13e) le 9 février 1993, sous le nom de Mogrobejo Arnaiz selon l'état civil ; l'amicale de Mauthausen annonce son décès dans sa revue du mois suivant.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-2.jpg" alt="Manuel Mogrovejo Arnaiz">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-4.jpg" alt="Document Manuel Mogrovejo">
+  </figure>
+</div>
+
+<p>Dans la liste officielle n°18 des prisonniers français du 10 septembre 1940, je trouve le légionnaire de 2è classe MOGROVESO Manuel né le 06/10/1918 en Espagne.</p>
+
+<p>Avec son pays de naissance et son jeune âge, il n'a pas été trop difficile de penser qu'il s'agissait d'un jeune républicain espagnol.</p>
+
+<p>Il avait sûrement été contraint à s'engager dans la Légion étrangère faute d'avoir de meilleur choix pour quitter le camp d'internement. En tous cas, il avait participé à la Drôle de guerre avec le 11è régiment étranger d'infanterie.</p>
+
+<p>Après une recherche internet, j'ai trouvé qu'il s'agissait de Manuel MONGROVEJO ARNAIZ dont l'histoire est très intéressante car elle a été établie grâce à des découvertes archéologiques.
+En 2018, une campagne archéologique est menée au Mont San Pedro de Beratza, une place fortifiée par les républicains en 1936-1937. Lors des fouilles, les chercheurs exhument une plaque d'identification au nom du milicien Mogrovejo mais il n'y a de corps.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-5.jpg" alt="Fouilles archéologiques, Mont San Pedro">
+</figure>
+
+<p>L'équipe de chercheurs a alors entrepris la reconstitution de son parcours avec des documents d'archives.
+L'équipe a établi, que Manuel Mogrovejo Arnaiz était né le 6 octobre 1918 à Amorebieta.</p>
+
+<p>En octobre 1936, à seulement 17 ans, il fait déjà partie du bataillon communiste de Léandro Carro.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-6.jpg" alt="Document Manuel Mogrovejo">
+</figure>
+
+<p>Au début du mois de mai 1937, le bataillon Leandro Carro, ainsi que d'autres bataillons de la 5e brigade, ont été envoyés dans la région de Mungia afin de participer aux violents combats qui se déroulaient à cette époque. Le jeune Manuel a survécu aux combats comme le montre la liste des payes du bataillon pour le mois de juillet 1937. Manuel fait partie de la 2è compagnie du bataillon.</p>
+
+<p>Son nom réapparait dans des documents de septembre 1938. Il s'agit de listes établies par le régime franquiste à la suite de la prise de la Biscaye. Manuel y est recensé comme ayant disparu à la libération d'Amurrio. Son frère Luis qui est du même bataillon et sa soeur Juana sont également mentionnés. Ces listes serviront au régime franquiste pour identifier tous les espagnols républicains pour de futures répressions.</p>
+
+<p>Avec la chute du front nord, Manuel Mogrovejo franchit la frontière française et le 5 avril 1939, quatre jours après la fin officielle de la guerre d'Espagne, il est interné dans le camp de concentration français de Gurs. Il se trouve dans l'ilot B, 9è baraque groupe 2. Les îlots A, B, C et D servent à l'hébergement des Basques espagnols</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-7.jpg" alt="Document Manuel Mogrovejo">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-8.jpg" alt="Document Manuel Mogrovejo">
+  </figure>
+</div>
+
+<p>Au mois de juin 1939, Manuel Mogrovejo est toujours au camp de Gurs. Ce qui est intéressant, c'est que Ramon LAPEIRA MARTINEZ qui fera aussi parti du 11è régiment étranger est dans la même baraque et même groupe que Manuel. On peut imaginer qu'ils se sont engagés en même temps, ils ont presque le même âge et sont tous les deux originaires du pays basque espagnol.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-9.jpg" alt="Document Manuel Mogrovejo">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-10.jpg" alt="Lettre de Manuel Mogrovejo à Julio Jáuregui">
+  </figure>
+  <div class="side-text">
+<p>Un peu plus tard, en décembre 1939, Mogrovejo est enrôlé dans la Légion étrangère et écrit à Julio Jáuregui, un basque chargé d'assister les réfugiés et les républicains exilés, afin d'obtenir de l'argent pour faire face à leur situation précaire. La lettre datée du 4 décembre 1939, qui se trouve dans les archives générales du Pays basque, a été écrite à La Valbonne (dans sa signature il indique 11è RE 3è Cie 1er bataillon).</p>
+
+<blockquote>La Valbonne a 4-12-39
+Apreciado compatriota d. Jauregui.
+Me alegraré que al recibo de estas cuatro líneas, disfrute de la más completa salud, en compañía de sus camaradas y amistades; por el presente y para servirle, la mía es buena. El motivo de estas mis cortas líneas con el perdón de Vd. es el siguiente.
+Habiéndome incorporado a la Legión, por la duración de la guerra y siendo mi situación crítica en el asunto monetario, es por lo cual me dirijo a Vd. pidiéndole el favor, que creo no me lo negará y por anticipado le doy las gracias, al hacerme la ilusión de poder pensar, y estar en lo cierto, de que seré satisfecho en mi demanda.
+Sin más se despide J. J. que es de Amorebieta enviándole el más afectuoso saludo que le puede enviar un camarada.
+Manuel Mogrovejo.
+Señas
+11. RE 3e. Compañia 1er Batallon</blockquote>
+  </div>
+</div>
+
+<p>9 jours plus tard, le 11è régiment étranger quitte le camp de la Valbonne pour aller au front en avant de la ligne Maginot.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-11.jpg" alt="Document Manuel Mogrovejo">
+</figure>
+
+<p>Le JMO de la 3è compagnie, cite le 2è classe Mogrovejo qui part en permission de détente le 4 mai 1940.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-12.jpg" alt="Document Manuel Mogrovejo">
+</figure>
+
+<p>3 semaines plus tard, il participe aux combats du bois d'Inor, où le capitaine Emanuelli trouvera la mort. Son compatriote Joaquim March est également dans la 3è compagnie.</p>
+
+<p>Manuel est fait prisonnier avec le reste du régiment le 23 juin 1940 et il est envoyé en Autriche au Stammlager XVII-B Krems-Gneixendorf. Peu de temps après, comme beaucoup d'autres prisonniers républicains espagnols, il est transféré dans le camp de concentration de Mauthausen-Gusen. Il arrive à Mauthausen le 19/12/1941 avec au moins 15 autres espagnols du 11è REI dont Ramon Lapeira.</p>
+
+<p>Manuel sera libéré par les alliés le 5/5/1945. Il est rapatrié en France le 20/05/1945 et démobilisé le 24/07/1945 à Marseille.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-13.jpg" alt="Document Manuel Mogrovejo">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-14.jpg" alt="Document Manuel Mogrovejo">
+  </figure>
+</div>
+
+<p>Le dernier élément retrouvé sur la vie de Manuel Mogrovejo après toutes ces épreuves le situe à Barcelone, en 1959, quand, selon un numéro du Journal officiel de l'Etat (BOE), la justice civile franquiste mentionne son nom: il est maître artisan et est accusé "d'usurpation de fonctions et de tentative d'escroquerie" commis en 1942, (mais nous savons, qu'il était prisonnier à Mauthausen)</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-15.jpg" alt="Document Manuel Mogrovejo">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-mogrovejo-manuel-16.jpg" alt="Document Manuel Mogrovejo">
+  </figure>
+  <div class="side-text">
+<p>Manuel Mogrovejo, passera le reste de sa vie en France, il décède à Paris 13è le 9/2/1993. l'INSEE enregistre son décès au nom de MOGROBEJO ARNAIZ</p>
+
+<p>L'amicale de Mauthausen publie dans sa revue n°254 en date d'avril 1993 la nouvelle de son décès</p>
+  </div>
+</div>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Josu Santamarina-Otaola, rapport archéologique sur la découverte de la plaque du milicien Mogrovejo au mont San Pedro (campagne 2018)</li>
-    <li>Archives Arolsen (ITS), 1636895</li>
-    <li>Archives générales du Pays basque (Archivo General de Euskadi), fichier du camp de Gurs</li>
-    <li>deia.eus</li>
+    <li>Josu Santamarina-Otaola: informe sobre el hallazgo de una chapa identificativa del miliciano manuel mogrovejo en el monte san pedro (campaña arqueológica 2018)</li>
+    <li><a href="https://www.ehu.eus/es/-/la-historia-del-miliciano-manuel" target="_blank" rel="noopener">https://www.ehu.eus/es/-/la-historia-del-miliciano-manuel</a> — Investigador arqueólogo en la Universidad del País Vasco y director del proyecto Arqueología de la Guerra Civil y socialización del patrimonio en el monte San Pedro</li>
+    <li>Archives ITS Arolsen: 1.1.26.3 Individual Documents Regarding Male Detainees Mauthausen / 1636895 - MANUEL MOGROVEJO ARNAIZ</li>
+    <li><a href="https://www.deia.eus/bizkaia/laudio-nerbioi/2020/11/02/chapa-desvelo-vida-manuel-mogrevo/1075699.html" target="_blank" rel="noopener">https://www.deia.eus/bizkaia/laudio-nerbioi/2020/11/02/chapa-desvelo-vida-manuel-mogrevo/1075699.html</a></li>
+    <li><a href="https://www.boe.es" target="_blank" rel="noopener">https://www.boe.es</a></li>
+    <li><a href="https://www.artxibo.euskadi.eus" target="_blank" rel="noopener">https://www.artxibo.euskadi.eus</a>: Archivo General de Euskad: Fichero de internados en el Campo de Concentración de Gurs. Orden alfabético, de Martinez López a Peñalba. 982 fichas personales con detalles. Listados, fechados entre el mes de marzo y junio de 1939, formados por la Delegación de Perpignan, más tarde trasladada a Maule y finalmente a Oloron, de ciudadanos vascos internados en el campo de concentración de Gurs.</li>
+    <li><a href="http://www.campgurs.com/" target="_blank" rel="noopener">http://www.campgurs.com/</a></li>
+    <li>AN Pierrefitte sur Seine F/9/6617 Listes de prisonniers de guerre rapatriés passés par le centre de Marseille Blacarde</li>
   </ul>
 </div>
 

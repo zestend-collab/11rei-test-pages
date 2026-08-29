@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KROUKER Elie — 11e REI</title>
-<meta name="description" content="Vétéran juif deux fois volontaire, figure controversée du Comité de coordination sous l'Occupation">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,43 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,32 +67,140 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 2e bataillon · EVDG 14/18</div>
   <h1>KROUKER Elie</h1>
-  <div class="sub">Vétéran juif deux fois volontaire, figure controversée du Comité de coordination sous l'Occupation</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="sub">aspirant chef de section</div>
+  <div class="tags"><span>11è REI</span><span>EVDG 14/18</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Elie Krouker, vétéran décoré de 1914-1918 et figure de premier plan des associations juives françaises, se réengage à 46 ans en 1939 au 11e REI. Sous l'Occupation, son rôle à la tête du Comité de coordination de l'aide aux Juifs de Paris fera l'objet, après la guerre, de deux jurys d'honneur aux verdicts contradictoires.</p>
-<h2>Identification par une lettre de presse</h2>
-<p>Signalé seulement par son nom dans la revue du régiment, l'aspirant Krouker n'a pu être identifié qu'en retrouvant, dans L'Ouest-Éclair du 7 février 1940, une lettre publiée d'un officier du 2e bataillon du 11e REI, vétéran deux fois blessé et trois fois cité de la Grande Guerre, qui se présente comme le représentant de 200 000 volontaires juifs américains et évoque un congrès de volontaires étrangers tenu à Rennes en juin 1939.</p>
-<blockquote class="testimony">L'Ouest-Éclair, 7 février 1940 : « Durant 5 jours et 5 nuits nous avons occupé la lisière d'un bois à 200 mètres de l'ennemi. Par les grands froids et les nuits noires du début de cette année, cela a été dur, de l'avis même de vieux légionnaires aguerris au bled marocain. [...] Cette dure épreuve que j'ai acceptée à nouveau volontairement malgré ma classe et mon passé militaire devait servir d'exemple aux jeunesses étrangères nées ou résidant en France. »</blockquote>
-<p>Le recoupement avec la presse juive de l'époque (L'Univers israélite) permet d'identifier l'auteur : Elie Krouker, né le 22 septembre 1893 à Yampil (Ukraine).</p>
-<h2>Un vétéran devenu figure communautaire</h2>
-<p>Engagé volontaire dès le 5 septembre 1914 au 1er régiment étranger, blessé deux fois et cité trois fois, naturalisé français, il est détaché en 1917 auprès de la mission militaire française en Russie, puis passe par Saint-Cyr avant d'être chef de cabinet du président de la République de Russie du Nord de 1918 à 1921. Dans l'entre-deux-guerres, il devient une personnalité en vue de la communauté juive française : président-fondateur de l'Association des anciens combattants juifs étrangers, secrétaire général de la Fédération des sociétés juives de France (1924-1933), puis secrétaire du Comité français pour le Congrès mondial juif, décoré de la médaille militaire et de la Légion d'honneur.</p>
-<h2>Le 11e REI et l'Occupation</h2>
-<p>Il se réengage volontairement en septembre 1939 et rejoint le 11e REI, mais retourne au dépôt de la Valbonne dès février 1940, en « affectation réservée ». Sous l'Occupation, il est nommé en juin 1941 secrétaire général du Comité de coordination de l'aide aux Juifs, créé sous la pression des autorités allemandes pour contrôler les organisations caritatives juives — un poste dont il est écarté pour sa soumission jugée excessive aux autorités d'occupation.</p>
-<p>Arrêté lors de la rafle du 20 août 1941, il est interné à Drancy, où il occupe des fonctions d'encadrement interne sans jamais accéder aux postes qu'il briguait. Transféré plusieurs fois entre Drancy, Compiègne et Pithiviers, il est finalement déporté en juillet 1943 vers les îles Anglo-Normandes, d'où il s'évade en septembre 1944.</p>
-<p>Après la guerre, accusé par certains milieux juifs immigrés d'avoir appliqué les directives allemandes « avec un zèle excessif », il est jugé par deux jurys d'honneur successifs (1948 et 1950), l'un le déclarant coupable de comportement déshonorant, l'autre le déchargeant de toute faute. Il reste néanmoins une figure reconnue des anciens combattants juifs, participant en 1950 à la cérémonie de ravivage de la flamme du Soldat inconnu. Il meurt le 12 janvier 1967.</p>
+
+<p>Il est fait mention, dans le numéro 5 de "Rouge vert; écho des bouteillons du 11e Régt de Légion étrangère", de l'aspirant KROUKER.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-krouker-elie-2.jpg" alt="">
+</figure>
+
+<p>Je l'avais donc recensé sans plus d'information, sans prénom ni état-civil. Le fait qu'il soit aspirant au 2è bataillon, navigant entre les sous-officiers et les officiers donnait pour seule indication qu'il pouvait s'agir d'un légionnaire d'active ou d'un ancien réengagé pour la durée de la guerre avec le grade qu'il détenait au moment de sa libération.</p>
+
+<p>En recherchant dans la presse ancienne, j'ai finalement trouvé un article écrit par un volontaire du 2è bataillon qui allait me permettre d'identifier l'aspirant Krouker.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-krouker-elie-4.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">Le journal l'Ouest Eclair (Rennes) du 7 février 1940</p>
+  </div>
+</div>
+
+<blockquote>Une lettre émouvante nous apporte un écho du Congrès des volontaires Français et Etrangers qui se tint Rennes en juin dernier 200 délégués de 20 nations différentes s'y pressèrent à l'appel des Combattants Volontaires de l'Ouest.<br><br>
+En ces journées, dominant les étendards de 20 nations, le drapeau français, celui du 41è, lançait, le premier, l'appel contre la double barbarie de la race et de la force prêtes à l'assaut. C'était la première fois depuis 1919 que ces volontaires de France et du monde entier, unis au coude à coude de 1914 à 1918, se réunissaient en un Congrès, comme rassemblés par le grondement proche. Du bon travail fut fait là: la liberté menacée retrouvait ses fils et de nouveau les unissait dans la communauté reforgée des esprits et des volontés.<br><br>
+Aujourd'hui les volontaires ont conclu, et le monde est avec nous, c'est-à-dire tous ces peuples qui apprécient le trésor de civilisation que nous avons mission de défendre.<br><br>
+Ceux-là, qui, dans les si nobles discours prononcés à Duguesclin le dimanche soir, jetaient la parole de foi et la promesse de fidélité, nous sont revenus, les vieux de l'ancienne guerre entraînant les jeunes dans le sentier: et voici par cette lettre que nous nous devons de reproduire la plus belle conclusion donnée à ces journées émouvantes par le représentant des 200.000 volontaires Israélites américains, engagé de nouveau 49 ans, au N° régiment de marche de la Légion étrangère.<br><br>
+N° REGIMENT ETRANGER D'INFANTERIE<br>
+2è BATAILLON<br>
+Mess des officiers<br><br>
+Mon Cher Directeur et Ami,<br><br>
+Durant 5 Jours et 5 nuits nous avons occupé 1a lisière d'un bois à 200 mètres de l'ennemi. Par les grands froids et les nuits noires du début de cette année, cela a été dur, de l'avis même de vieux légionnaires aguerris au bled marocain.<br><br>
+Aujourd'hui nous sommes descendus au repos et nous bivouaquons dans une ferme en ruines et où nous pouvons enfin boire du café sans être obligés de mélanger le café moulu et le sucre à la glace coupée à la hachette.<br><br>
+Cette dure épreuve que j'ai accepté à nouveau volontairement malgré ma classe et mon passé militaire (3 citations, 3 blessures) devait servir d'exemple aux jeunesses étrangères nées ou résidant en France. J'ai tenu mettre en harmonie mes paroles et mes actes, vu les déclarations que j'ai pu faire à notre dernier Congrès national tenu à Rennes en juin dernier, sous les auspices de votre grand journal.<br><br>
+Vous vous souvenez peut-être que la confiance de 250.000 de nos camarades vétérans américains m'a valu le rôle d'interprète officiel en France, de leurs sentiments d'amitié et de solidarité avec toutes les grandes causes qui émeuvent les A. C. Français.<br><br>
+Je cru devoir par un acte exemplaire montrer à nos compatriotes d'abord et à nos autres amis aux Etats-Unis ensuite, jusqu'où pouvait aller le sentiment de sacrifice de cette partie de l'opinion publique américaine (près de six millions d'âmes) qui pourrait bien être appelée à jouer son rôle l'heure des décisions finales.<br><br>
+Certes après les épreuves dé la première Der des Der, l'effort physique à fournir s'est avéré d'importance - j'en parle en connaissance de cause après 120 heures consécutives à quelques pas de l'ennemi qui vient nous harceler jusqu'à nos fils barbelés. Mais nous avons tenu le coup avec le sourire comme il se doit, lorsqu'on revendique l'honneur de porter notre uniforme.<br><br>
+J'ai plaisir à vous dire que les souvenirs de quelques journées que dis-je, des quelques heure*s délicieuses passées en votre chère Bretagne ont fait que nous avons appris à aimer cette nouvelle capitale des amitiés françaises prédestinée à devenir le berceau de cet Empire moral français dans le monde, qu'ont proclamé unanimement les 48 délégués de 20 nations venus dans votre bonne ville.<br><br>
+Maintenant où je vous écris, je vois déjà pointer à l'horizon, les premiers étendards de la première armée volontaire mise au service de cet Empire moral à la naissance duquel nous avons assisté émus tous ensemble, et saisis d'une commune étreinte.<br><br>
+Nous nous sentons tous fraternellement unis comme jadis - il y a un quart de siècle - Chrétiens, Protestants, Juifs, Musulmans, riches et pauvres, vieux ou Jeunes, tous également animés d'une même foi dans la suprématie de la force de l'esprit sur l'esprit de la force brutale.<br><br>
+C'est à la source de cet idéal français pur comme est pure et sainte notre foi en Dieu tout puissant qu'est le Dieu d'amour et de Justice sociale entre les hommes, foi que nos soldats d'hier et ceux du temps présent puisent leur force pour servir à nouveau leur patrie bien aimée.<br><br>
+Excusez, je vous prie, si j'ai laissé libre cours aux sentiments qui nous animent, en ces heures difficiles pour mes hommes - et pourquoi le cacherai-je - dures parfois pour les volontés trempées comme la nôtre.<br><br>
+Mais j'ai pensé qu'autour de vous, vous pourriez avoir l'occasion de faire connaître à nos Jeunes camarades les mobiles vrais et profonds qui guident l'action de quelques anciens à nouveau soldats - revolontaires (ou doublement volontaires, au choix) dont l'unique devise dans la vie depuis 1914 à été et reste « plus que le devoir ».<br><br>
+Bien cordialement vous.</blockquote>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-krouker-elie-5.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Il s'agit donc d'une lettre d'un vétéran de la Première Guerre mondiale, blessé 2 fois, cité 3 fois. Il écrit du mess des officiers du 2è bataillon. Le seul régiment de Légion étrangère en ligne en janvier 1940 est le 11è REI.</p>
+    <p>Il aurait pu s'agir d'un officier mais les seuls anciens combattants sont Brissard, Rzekiecki et Pourcin, mais aucun des 3 ne correspondaient.</p>
+    <p>Un autre indice était la mention suivante "représentant des 200.000 volontaires Israélites américains", il ne restait plus qu'à trouver qui les avait représenté au congrès des volontaires étrangers qui s'était tenu à Rennes en juin 1939.</p>
+  </div>
+</div>
+
+<p class="subhead">L'Univers israélite, 23 juin 1939</p>
+
+<p>Notre réengagé en 1939 était donc l'aspirant Elie Krouker, né le 22/09/1893 à Yampil (Ukraine). Il est le fils de David Leib Schabsenton et Roulha. Il est adopté en 1901 par Haskel Haïmov Krouker et Guitla Jossifova.</p>
+
+<p>Elie Krouker, était une personnalité active de la communauté juive. Grâce à des articles parus dans la presse et en particulier dans la revue l'univers israélite, iI est possible de connaître le parcours de Krouker avant la Deuxième Guerre mondiale.</p>
+
+<p class="subhead">Première Guerre mondiale:</p>
+
+<p>Le 05/09/1914, Elie Krouker contracte un engagement volontaire pour la durée de la guerre et se trouve affecté au 1er régiment étranger. Il part aux armées le 01/12/1914. Début 1916, il est nommé à l'emploi de 1ère classe.</p>
+
+<p>Le 05/07/1916, il est blessé mais non évacué. Deux jours plus tard, il se fracture la malléole suite à un ensevelissement et est évacué.</p>
+
+<p>Il retourne aux armées le 21/12/1916. Lors de son passage au 1er régiment étranger de marche, il est blessé 2 fois et 3 fois cité. Il obtient également sa naturalisation par décret. Il est affecté au service de la mission militaire de Russie le 13/06/1917.</p>
+
+<p>Il rejoint Saint Cyr le 19/01/1918 comme élève aspirant. Il est démobilisé le 11/10/1919.</p>
+
+<p>Un article paru dans L'Univers israélite le 11 août 1933 complète son parcours: "Ayant quitté Genève en août 1914 pour s'enrôler dans l'armée française, il est désigné, en 1917, pour accompagner notre ambassadeur en Russie. Retour de mission et après un séjour à l'Ecole de Saint-Cyr, il est détaché, lors de la Conférence de la Paix, par M. Clemenceau, auprès de M. Nicolas Tchaïkousky, président de la République de la Russie du Nord, dont il reste le chef du cabinet après la démobilisation (1918-1921)."</p>
+
+<p class="subhead">L'Entre deux guerres:</p>
+
+<p>En 1920, il épouse Julienne Gay à Montigny-en-Morvan. Il est publiciste et devient président-fondateur de l'Association des anciens combattants juifs étrangers dans l'armée française. Personnalité de la communauté juive organisée, il a participé à la création de la Fédération des sociétés juives de France, dont il devient secrétaire général de 1924 à 1933. En 1934, il devient secrétaire du Comité français pour le Congrès mondial juif. En 1935, il participe à la conférence mondiale des anciens combattants juifs. En 1938, il est secrétaire fondateur du Comité de Secours aux Juifs Polonais Expulses d'Allemagne...</p>
+
+<p>Pendant cette période, il reçoit la médaille militaire et la légion d'honneur:</p>
+
+<p>- L'Univers israélite, 20 février 1931 : attribution de la médaille militaire "M. le colonel Fabry a évoqué ses souvenirs de guerre et a annoncé l'attribution de la médaille militaire à M. Krouker. « à un honnête homme qui s'était engagé dans un régiment où la bravoure est courante : la Légion étrangère. » Très ému, M. Krouker a remercié l'assistance."</p>
+
+<p>- L'Univers israélite, 11 août 1933: "On connaît l'esprit de sacrifice qui anime l'actif secrétaire du Comité français pour le Congrès mondial juif. On a pu juger à ses résultats son activité au sein de la Fédération de Sociétés Juives de France, dont il reste le secrétaire général fondateur. [...] M. Krouker est le délégué général des volontaires étrangers de l'armée française auprès des grandes associations d'anciens combattants français. La juste récompense qui lui échoit a donc une portée générale, car c'est en sa qualité de président des volontaires juifs que notre ami et collaborateur l'a reçue. Nous lui présentons nos sincères félicitations."</p>
+
+<p>Pour la période d'après 1940, Elie Krouker reste une personnalité de premier plan. Je propose ci-dessous une chronologie de sa vie pendant la période d'occupation, son internement et l'heure des comptes à la libération.</p>
+
+<p>Il s'agit d'une compilation des travaux des historiens dont il conviendrait de lire les ouvrages pour bien comprendre le contexte particulier de la création du comité de coordination, et celui de la création - après la libération - des jurys d'honneur visant à évaluer le comportement des juifs sous l'occupation.</p>
+
+<p>Pour ces sujets, j'ai consulté les ouvrages suivants:</p>
+
+<p>- Face à la persécution: Les organisations juives à Paris de 1940 à 1944, Jacques Adler<br>
+- À l'intérieur du camp de Drancy, de Michel Laffitte et Annette Wieviorka<br>
+- Anne Grynberg, « Juger l'UGIF (1944-1950) ? », dans Terres promises. Mélanges offerts à André Kaspi<br>
+- L'UGIF, collaboration ou résistance ?, Michel Laffitte, dans Revue d'Histoire de la Shoah 2006/2 (N° 185), pages 45 à 64<br>
+- Jewish Honor Courts: Revenge, Retribution, and Reconciliation in Europe and Israel after the Holocaust, ed. Laura Jockusch</p>
+
+<p class="subhead">Deuxième Guerre mondiale:</p>
+
+<p>Fidèle à ses valeurs, Elie Krouker se porte volontaire une nouvelle fois en septembre 1939. Il est incorporé au 11è régiment étranger d'infanterie. Seule une mention dans la revue du régiment permet de connaître son affectation.</p>
+
+<p>Le 27 février 1940, il rentre au dépôt de la Valbonne et est placé dans la position "affectation réservée". Il est en janvier 1941 à Paris.</p>
+
+<p>Avec l'occupation allemande et la pression exercée par Danneker, un Comité de Coordination de l'aide aux Juifs est créé. Il devait contrôler la totalité des activités de bienfaisance des organisations juives. Elie Krouker est nommé secrétaire général du Comité de coordination en juin 1941 avant d'être désavoué pour sa soumission, jugée excessive, aux autorités d'occupation.</p>
+
+<p>Elie Krouker est arrêté lors de la rafle du 20/08/1941 et interné dès le lendemain au camp de Drancy.</p>
+
+<p>Dans À l'intérieur du camp de Drancy, de Michel Laffitte et Annette Wieviorka, on trouve sur Elie Krouker les informations suivantes "Au camp, Elie Krouker entame une seconde carrière. Chef d'escalier puis chef de bloc, ses origines étrangères ont vraisemblablement entravé de plus hautes ambitions. Il échoue ainsi à diriger l'une des diverses instances qui se mettent en place. Edmond Bloch a l'idée de créer une commission chargée de recenser les internés ayant combattu dans l'une ou l'autre des deux guerres. Elie Krouker en aurait volontiers pris la tête, mais il n'y parvient pas. La commission devient le bureau militaire du camp, fondu ensuite dans le Bureau des effectifs. En revanche, il préside un temps la commission d'assistance sociale organisée par la Croix-Rouge, mais en est rapidement écarté."</p>
+
+<p>Le 14/12/1941, il est envoyé au camp de Compiègne puis ré-intégré au camp de Drancy le 19/03/1942. Transféré le 04/09/1942 au camp de Pithiviers, il est ensuite ré-intégré au camp de Drancy le 27/09/1942. Il est déporté le 16/07/1943 du camp de Drancy vers Cherbourg à destination des îles Anglo-normandes. Il s'évade le 02/09/1944 à Samer (Belgique) - (note du site <a href="http://ressources.memorialdelashoah.org/notice.php?q=krouker&spec_expand=1&start=0" target="_blank" rel="noopener">mémorial de la shoah</a>)</p>
+
+<p>En 1948, la Fédération des sociétés juives de France, essentiellement implantée parmi les Juifs immigrés, est saisie par plusieurs organisations du cas d'Elie Krouker. Il est publiquement accusé par Jules Jacoubovitch "d'avoir mis en œuvre les directives allemandes avec un zèle excessif lorsqu'il dirigeait le Comité de coordination".</p>
+
+<p>En 1948 et 1950, deux jurys d'honneur rendirent des verdicts dans les affaires portées contre Krouker, Le premier jury a jugé qu'il avait agi de manière déshonorante; le deuxième jury l'a déchargé de sa culpabilité.</p>
+
+<p class="subhead">Année 1950:</p>
+
+<p>La Gazette d'Israël. 18 mai 1950 V13 N°216: Elie Krouker, est commissaire à la Flamme lors de la cérémonie du 9 mai pendant laquelle les anciens combattants et volontaires juifs remontent les Champs Elysées pour raviver la flamme du Soldat Inconnu.</p>
+
+<p>Elias Krouker décède le 12 janvier 1967 et est inhumé dans le cimetière de Bagneux.</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>L'Ouest-Éclair et L'Univers israélite (Gallica, bibliotheque-numerique-aiu.org)</li>
-    <li>Jacques Adler, « Face à la persécution : les organisations juives à Paris de 1940 à 1944 »</li>
-    <li>Michel Laffitte et Annette Wieviorka, « À l'intérieur du camp de Drancy »</li>
-    <li>Michel Laffitte, « L'UGIF, collaboration ou résistance ? », Revue d'Histoire de la Shoah, 2006/2</li>
+    <li>Revues à consulter sur Gallica (L'ouest éclair (Rennes) numéro de juin 1939 et du 7 février 1940, l'univers Israélite numéros des années 1930)</li>
+    <li><a href="https://www.bibliotheque-numerique-aiu.org/" target="_blank" rel="noopener">https://www.bibliotheque-numerique-aiu.org/</a></li>
+    <li>Face à la persécution: Les organisations juives à Paris de 1940 à 1944, Jacques Adler</li>
+    <li>À l'intérieur du camp de Drancy, de Michel Laffitte et Annette Wieviorka</li>
+    <li>Anne Grynberg, « Juger l'UGIF (1944-1950) ? », dans Terres promises. Mélanges offerts à André Kaspi</li>
+    <li>L'UGIF, collaboration ou résistance ?, Michel Laffitte, dans Revue d'Histoire de la Shoah 2006/2 (N° 185), pages 45 à 64</li>
+    <li>Jewish Honor Courts: Revenge, Retribution, and Reconciliation in Europe and Israel after the Holocaust, ed. Laura Jockusch</li>
   </ul>
 </div>
 

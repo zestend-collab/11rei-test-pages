@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LISIK Joseph — 11e REI</title>
-<meta name="description" content="Plâtrier communiste polonais, blessé en Espagne puis engagé au 11e REI en 1940">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,45 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +69,49 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Brigades internationales · EVDG</div>
   <h1>LISIK Joseph</h1>
-  <div class="sub">Plâtrier communiste polonais, blessé en Espagne puis engagé au 11e REI en 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span><span>Brigades internationales</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Joseph Lisik, plâtrier polonais militant communiste, combat blessé dans les Brigades internationales avant de s'engager au 11e REI quelques mois avant sa capture.</p>
-<p>Né le 21 février 1904 en Pologne, il vient travailler en France dès 1920 et s'installe comme plâtrier en région parisienne, syndiqué à la CGTU puis à la CGT. Au chômage en 1933, il fréquente les réunions du comité de chômeurs et les meetings communistes ; une lettre de dénonciation anonyme l'accuse alors de posséder une arme et de frauder les aides sociales, mais l'enquête de police classe l'affaire sans suite.</p>
-<p>Au chômage depuis deux mois, il s'engage dans les Brigades internationales le 28 décembre 1936 et combat avec la XIIIe brigade Dombrowski jusqu'en 1938. Blessé, il est rapatrié par convoi sanitaire en septembre 1938 ; les autorités françaises lui notifient un refus de séjour, assorti de sursis renouvelables, tandis qu'un comité de soutien au peuple espagnol lui verse une aide hebdomadaire.</p>
-<p>Après la mort de sa compagne Marie en mai 1939, il régularise sa situation en reconnaissant leur fils Jacques, placé en colonie scolaire à l'île d'Oléron. En février 1940, il s'engage à la Légion étrangère et rejoint le 11e REI ; il est fait prisonnier en juin 1940.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Daniel Grason, notice « LISIK Joseph », Le Maitron</li>
-  </ul>
-</div>
+<p>Né le 21 février 1904 en Pologne ; plâtrier ; syndiqué à la CGTU puis à la CGT ; communiste ; volontaire en Espagne républicaine ; soldat de la Légion étrangère.</p>
+
+<p>Fils de Jan et de Julianna Urlych, Joseph Lisik vient travailler en France en 1920.</p>
+
+<p>Il a pour frères et soeurs:</p>
+
+<ul>
+<li>Marianna (1892, épouse en 1912 en Pologne Antoni Kocemba)</li>
+<li>Apolonia (1898, épouse Léon Stankiewicz). En 1927, ils habitent à Pouligue (Loire-Inférieure)</li>
+<li>Franciszek (1901 épouse en 1933 en Pologne Wacława Irena Książek)</li>
+<li>Stanislaw</li>
+<li>Feliks (1906). En 1931, il habite 55 rue Olivier de Serre à Paris 15.</li>
+</ul>
+
+<p>En situation régulière il exerce sa profession de plâtrier en 1929 à Veulette-sur-Mer dans l'arrondissement de Dieppe (Seine-Maritime). Il vient à Paris, habite 3 rue des Deux-Ponts (IV arr.). Joseph Lisik vit avec Marie Toutain originaire de Saint-Michel-des-Andaines près de Bagnoles-de-l'Orne. Un enfant Jacques naît le 2 décembre 1928.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lisik-jozef-2.jpg" alt="Document Joseph Lisik">
+</figure>
+
+<p>En 1931, il est recensé 31 rue Sadi Carnot à Bagnolet (Seine, Seine-Saint-Denis), au chômage de janvier à août 1933, il s'inscrit au fond de chômage de la ville. Pendant cette période il participe aux réunions organisées par le comité de chômeurs, et assiste à des meetings du Parti communiste. En septembre, il travaille pour une entreprise de maçonnerie à La Garenne-Colombes (Seine, Hauts-de-Seine). Il estt adhérent de la CGTU de la maçonnerie pierre, plâtriers, limousinants, briquetiers, aides et parties similaires du département de la Seine.</p>
+
+<p>Une lettre de dénonciation anonyme parvient à la Préfecture de police, Joseph Lisik était accusé de posséder « un browning », de toucher le chômage tout en travaillant, et d'être membre du Parti communiste. Son beau-frère Léon Stankiewicz subit les mêmes dénonciations calomnieuses. Après enquêtes, la lettre est classée.</p>
+
+<p>En 1936, Joseph Lisik, au chômage depuis deux mois s'engage dans les Brigades internationales le 28/12/1936. Il combat avec la XIIIe Brigade Dombrowski 52è bataillon, jusqu'en 1938. Blessé il est rapatrié par convoi sanitaire qui passe le 14 septembre 1938 par Cerbère (Pyrénées-Orientales).</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lisik-jozef-4.jpg" alt="Document Joseph Lisik">
+</figure>
+
+<p>Il se présente le 4 octobre à la préfecture de Police, il présente un certificat délivré par les autorités espagnoles sur l'origine de ses blessures. Le 9 novembre, la Préfecture lui notifie un refus de séjour. Toutefois, il est autorisé à résider sur le territoire par voie de sursis renouvelables. Le Comité international d'aide au peuple espagnol lui accorde un secours de cent francs par semaine.</p>
+
+<p>Sa femme Marie meurt le 8 mai 1939 à l'hôpital Tenon à Paris (XXe arr.). Joseph Lisik régularise sa situation, il reconnait son fils Jacques. L'enfant a été placé dans une colonie scolaire à l'île d'Oléron.
+En février 1940, il s'engage dans la Légion étrangère et est affecté au 11è régiment étranger d'infanterie. Il est fait prisonnier en juin 1940.</p>
+
+<p><a href="https://maitron.fr/spip.php?article202785" target="_blank" rel="noopener">https://maitron.fr/spip.php?article202785</a>, notice LISIK Joseph par Daniel Grason, version mise en ligne le 7 mai 2018, dernière modification le 5 septembre 2018.</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Lisik" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

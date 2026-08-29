@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CHIRON Henri Louis Victor Julien — 11e REI</title>
-<meta name="description" content="Directeur d'école et officier de réserve, commandant la CHR, mort des suites de sa déportation">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,44 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,30 +68,133 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CHR · Résistant · Déporté</div>
   <h1>CHIRON Henri Louis Victor Julien</h1>
-  <div class="sub">Directeur d'école et officier de réserve, commandant la CHR, mort des suites de sa déportation</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span><span>résistant</span><span>déporté</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Henri Chiron, ancien combattant de 1914-1918 devenu directeur d'école, commande la compagnie hors rang du 11e REI en 1940. Entré en résistance après son rapatriement de captivité, il est déporté à Mauthausen puis dans plusieurs autres camps, et meurt en 1950 des suites de son calvaire.</p>
-<h2>De la Grande Guerre à l'école</h2>
-<p>Né le 29 mars 1897, il est mobilisé dès 1916, blessé au Chemin des Dames le 19 juillet 1917 et cité pour s'être « porté courageusement à la contre-attaque ». Sorti aspirant puis sous-lieutenant en 1919, il poursuit une carrière d'officier de réserve tout en devenant instituteur en Anjou, puis directeur du groupe scolaire Bodinier à Angers.</p>
-<h2>Le 11e REI et la captivité</h2>
-<p>Rappelé à l'activité le 28 août 1939, il est affecté au dépôt de la Légion étrangère de Sathonay puis, le 1er novembre, au 11e REI, où il commande la compagnie hors rang. Fait prisonnier au bois d'Ochey le 23 juin 1940, il est interné à l'Oflag VI A de Soest, puis rapatrié comme ancien combattant le 16 août 1941.</p>
-<h2>Résistance et déportation</h2>
-<p>De retour en France, il rejoint le réseau Éleuthère, rattaché à Libération Nord, chargé de transmettre des informations à la France libre. Arrêté le 10 février 1944, il est déporté de Compiègne le 6 avril 1944 par l'un des plus importants convois directs vers Mauthausen — 1489 hommes entassés dans des wagons à bestiaux pendant trois jours sans nourriture, dont seuls 667 reviendront de déportation.</p>
-<p>Arrivé à Mauthausen le 8 avril 1944 (matricule 62154), il est successivement affecté aux kommandos de Melk, du camp central, du col de Loibl, puis transféré à Auschwitz début décembre 1944 et à Buchenwald fin janvier 1945. Début avril 1945, lors de l'évacuation du camp face à l'avancée américaine, il fait partie d'une marche forcée vers Pösing, où son groupe est libéré par une division blindée américaine le 23 avril 1945.</p>
-<p>Revenu très affaibli, Henri Chiron meurt des suites de sa captivité le 11 juin 1950. Il est fait chevalier de la Légion d'honneur par décret du 20 mars 1949. Depuis 1959, une école d'Angers porte son nom.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-2.jpg" alt="Henri Chiron">
+  </figure>
+  <div class="side-text">
+    <p>Victor Chiron est né le 29 mars 1897 et décédé le 11 juin 1950 à Angers. Il était directeur d'école.</p>
+    <p>Il était le fils d'Henri Dominique Chiron (1871-1948) et d'Eulalie Forestier (1873-1967). Il se marie le 8 août 1921 avec Madeleine Marie Renée Albert (1900-1985) et ils ont une fille, Rolande Chiron.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-4.jpg" alt="Henri Chiron">
+  </figure>
+  <div class="side-text">
+    <p>De la classe 1917, Henri Chiron est affecté le 19 janvier 1916. Il est dirigé vers le 9e bataillon du 66e Régiment d'Infanterie (RI) le 9 octobre 1916 et est nommé caporal le 16 novembre 1917.</p>
+    <p>Blessé le 19 juillet 1917 au chemin des Dames, il est cité à l'ordre du régiment (n°86 du 28 août 1917) : « Blessé le 19 juillet 1917 en se portant courageusement à la contre-attaque. Soldat très énergique, d'une humeur exemplaire. » Après son évacuation, il rejoint l'armée le 3 septembre 1917.</p>
+    <p>Nommé sergent le 26 août 1918, puis aspirant le 26 septembre 1918, Henri rejoint de nouveau le 66e RI le 25 octobre 1918. Il devient sous-lieutenant le 15 juin 1919.</p>
+    <p>Démobilisé le 29 septembre 1919, il est affecté dans la réserve au 135e RI. Il est promu lieutenant de réserve le 15 janvier 1926, puis capitaine de réserve le 25 décembre 1938.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-5.jpg" alt="">
+</figure>
+
+<p>Ancien combattant et blessé de guerre de la Première Guerre mondiale, Henri Chiron devient instituteur à son retour en Anjou, au Puiset-Doré, puis directeur du groupe scolaire Bodinier.</p>
+
+<p>Il est rappelé à l'activité le 28 août 1939 et affecté au dépôt de la Légion étrangère de Sathonay le 11 septembre 1939.</p>
+
+<p>Dirigé vers la Valbonne, il est affecté au 11e Régiment Étranger d'Infanterie (REI) le 1er novembre 1939, où il commande la compagnie hors rang (CHR).</p>
+
+<p>Il est fait prisonnier au bois d'Ochey le 23 juin 1940, puis transféré dès le lendemain au lycée Raymond Poincaré de Nancy. En octobre, il est transféré en Allemagne à l'Oflag VI A à Soest.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-6.jpg" alt="">
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-7.jpg" alt="">
+</figure>
+
+<p>Henri Chiron est rapatrié le 16 août 1941 en tant qu'ancien combattant et démobilisé le 21 août 1941.</p>
+
+<p>De retour en France, il entre dans le réseau de résistance ELEUTHERE, rattaché à Libération Nord, où il est chargé de la transmission d'informations aux forces de la France Libre (SHD Vincennes, GR 16 P 128894).</p>
+
+<p>Arrêté dans sa classe le 10 février 1944, il est incarcéré au Pré-Pigeon, puis déporté au départ de Compiègne le 6 avril 1944.</p>
+
+<p class="subhead">Convoi du 6 avril 1944</p>
+
+<p>Effectif recensé : 1 489 hommes<br>
+Matricules extrêmes : 61851 - 63336<br>
+Evadés durant le transport : 5 (0,4 %)<br>
+Décédés et disparus en déportation : 763 (51,2 %)<br>
+Rentrés de déportation : 667 (44,8 %)<br>
+Situations non-connues : 54 (3,6 %)</p>
+
+<p>Le 6 avril 1944, vers 7 heures, 1 489 hommes quittent le camp d'internement et de transit de Royallieu (Frontstalag 122) près de Compiègne. Après avoir traversé la ville en silence et par rang de cinq, ils arrivent vers 8 heures à la gare de Compiègne, située à plus d'un kilomètre du camp. Un train les attend, composé d'une douzaine de wagons à bestiaux, encadrés par un wagon de voyageurs pour l'escorte militaire allemande, et deux wagons plate-forme équipés de mitrailleuses. Devant chaque wagon, les Allemands forment des groupes d'environ 80 hommes, attendant en silence l'ordre d'y monter.</p>
+
+<p>Ce transport du 6 avril est le dernier et le plus important parmi les quatre convois directs allant de Compiègne à Mauthausen en 1943 et 1944.</p>
+
+<p>Vers 10 heures, le train quitte Compiègne pour la gare de Mauthausen en Autriche, avec un arrêt de près de trois heures en gare de Reims, où les déportés griffonnent des messages sur des bouts de papier qu'ils jettent à travers les interstices des wagons, espérant que les cheminots les transmettent.</p>
+
+<p>Le voyage est éprouvant : trois jours et deux nuits dans des wagons où les déportés sont entassés, sans nourriture et dans le froid. Malgré les menaces de représailles en cas de tentative d'évasion, plusieurs déportés, principalement les plus jeunes, tentent de s'évader en déchaussant le plancher. Cinq d'entre eux y parviennent. Dans la nuit du 6 au 7 avril, à Novéant, tous les déportés sont éjectés de leurs wagons, doivent se déshabiller et leurs vêtements sont entassés dans deux wagons vides. Ils continuent le voyage dans des conditions horribles, à 120 par wagon, dans une odeur pestilentielle.</p>
+
+<p>En gare de Würzburg, quelques infirmières de la Croix-Rouge allemande leur donnent à boire.</p>
+
+<p>Le 8 avril, vers 17 heures, le train arrive à Mauthausen, où les déportés sont accueillis par des SS et des chiens. Ils doivent se vêtir hâtivement de vêtements trouvés sur le quai, puis marchent vers le camp, encadrés tous les dix mètres par les SS et leurs chiens, traversant le village dans un silence lugubre. Une ambulance ramasse les morts du train, les invalides et les traînards. L'arrivée au camp a lieu vers 19 heures. Après un long comptage qui dure toute la nuit, vers 5 heures du matin, les déportés sont sommés de se déshabiller puis d'entrer dans la salle des douches.</p>
+
+<p>Parmi ces déportés, on compte principalement des résistants, des otages, des communistes et quelques criminels de droit commun, venus de toutes les régions de France. La majorité d'entre eux ont été arrêtés entre novembre 1943 et mars 1944, soit lors de tentatives de franchissement de la frontière espagnole, soit comme otages lors de rafles de représailles, soit dans le cadre de démantèlements de réseaux ou de maquis.</p>
+
+<p>Plus de la moitié des déportés de ce transport sont transférés au Kommando de Melk, près de 300 vers celui de Gusen, mais ils restent rattachés au KL Mauthausen.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-8.jpg" alt="">
+</figure>
+
+<p>Henri Chiron arrive à Mauthausen le 8 avril 1944, où il reçoit le matricule 62154. Il est affecté dans différentes parties du complexe concentrationnaire au fil des mois :</p>
+
+<ul>
+<li>MELK : le 21 avril 1944</li>
+<li>CAMP CENTRAL : le 5 mai 1944</li>
+<li>LOIBL PASS : le 25 août 1944</li>
+<li>CAMP CENTRAL : le 17 novembre 1944</li>
+</ul>
+
+<p>Le 3 décembre 1944, il est transféré à Auschwitz, où il reste jusqu'au 22 janvier 1945. À cette date, il est envoyé à Buchenwald.</p>
+
+<p>Au début du mois d'avril 1945, alors que l'armée américaine se rapproche, les Allemands commencent à évacuer environ un tiers des prisonniers du camp principal de Buchenwald ainsi que des camps satellites. Nombre d'entre eux meurent d'épuisement en route ou sont abattus par les SS.</p>
+
+<p>Henri Chiron fait partie d'un groupe de prisonniers évacués lors d'une ultime marche forcée vers la ville de Pösing. Le 23 avril 1945, ce groupe est libéré par une division blindée américaine qui rejoignait la colonne évacuée depuis Buchenwald. Henri Chiron est retrouvé sur une route en Bavière, marquant la fin de son calvaire.</p>
+
+<div class="figure-side">
+  <div class="side-img" style="display:flex;flex-direction:column;gap:8px">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-10.jpg" alt="">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-11.jpg" alt="">
+  </div>
+  <div class="side-text">
+    <p>Henri Chiron, revenu des camps très affaibli, décède des suites de sa captivité le 11 juin 1950.</p>
+    <p>Par décret du 20 mars 1949, Henri Chiron est fait chevalier de la Légion d'honneur.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-chiron-henri-12.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Depuis 1959, une école porte le nom d'Henri Chiron, située avenue Pasteur à Angers, en hommage à son engagement et à son sacrifice durant la Seconde Guerre mondiale.</p>
+  </div>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Geneanet, arbre d'Emmanuel Chiron</li>
-    <li>Arolsen Archives</li>
-    <li>Archives départementales de Maine-et-Loire</li>
-    <li>Association Buchenwald-Dora et Kommandos</li>
+    <li>Emmanuel Chiron, <a href="https://gw.geneanet.org/echiron?lang=fr&pz=abel&nz=chiron&ocz=1&p=rolande&n=chiron" target="_blank" rel="noopener">geneanet.org</a></li>
+    <li><a href="https://collections.arolsen-archives.org/en/archive/5670520/?p=1&s=chiron&doc_id=5670521" target="_blank" rel="noopener">collections.arolsen-archives.org</a></li>
+    <li><a href="https://www.archinoe.fr/v2/ad49/visualiseur/matricule.html?id=490058480" target="_blank" rel="noopener">archinoe.fr</a></li>
+    <li><a href="http://www2.culture.gouv.fr/LH/LH041/PG/FRDAFAN83_OL0529007v001.htm" target="_blank" rel="noopener">culture.gouv.fr — dossier Légion d'honneur</a></li>
+    <li><a href="https://asso-buchenwald-dora.com/anonyme-2/" target="_blank" rel="noopener">asso-buchenwald-dora.com</a></li>
   </ul>
 </div>
 

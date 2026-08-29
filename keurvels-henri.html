@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KEURVELS Henri — 11e REI</title>
-<meta name="description" content="Vétéran belge de 56 ans, doyen du régiment, ancien des Brigades internationales">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,46 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,28 +70,133 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Compagnie de commandement · Doyen du régiment</div>
   <h1>KEURVELS Henri</h1>
-  <div class="sub">Vétéran belge de 56 ans, doyen du régiment, ancien des Brigades internationales</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="sub">un "dur à cuire"</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Henri Keurvels, aventurier belge doyen du 11e REI à 56 ans, cumule un premier engagement à la Légion étrangère avant 1914, la Première Guerre mondiale dans l'armée belge, un capitanat d'artillerie dans les Brigades internationales, et un dernier engagement volontaire en 1939.</p>
-<h2>De l'armée belge à la Légion (1901-1919)</h2>
-<p>Né le 21 octobre 1883 à Gand, fils d'un dirigeant de la presse libérale flamande, il s'engage à 18 ans dans l'armée belge, puis rejoint la Légion étrangère en 1906 et participe à la conquête du Maroc (1907-1909), décoré de la médaille commémorative des opérations marocaines. De retour dans l'armée belge, il est promu sergent-fourrier avant la Grande Guerre, durant laquelle il est nommé officier auxiliaire, décoré de l'ordre Ouissam Alaouite puis blessé à Ramscappelle en septembre 1915. Cité pour avoir « donné à ses hommes un bel exemple de courage et de sang-froid » sous un bombardement, il passe au total 29 mois au front.</p>
-<h2>Retour à la Légion et Brigades internationales (1921-1938)</h2>
-<p>Après un mariage annulé et une demande de reprise de service rejetée par l'armée belge, il rejoint l'armée espagnole d'Afrique puis, en 1927, la Légion étrangère au Maroc, où il sert comme secrétaire du colonel Maurel pendant les campagnes du Rif et du Tafilalet. En octobre 1936, il rejoint les Brigades internationales en Espagne, où il est nommé capitaine d'artillerie de la batterie franco-belge et combat à Madrid, Guadarrama et Jarama, avant de servir comme professeur de topographie et responsable de l'habillement des troupes.</p>
-<h2>Le 11e REI</h2>
-<p>En avril 1939, à 56 ans, il propose ses services à l'armée belge en cas de guerre ; n'étant pas rappelé, il s'engage pour la durée de la guerre à la Légion étrangère et rejoint le 11e REI comme caporal à la compagnie de commandement — le plus âgé du régiment. Il rédige pour la revue du régiment deux articles sur son premier engagement à la Légion, 32 ans plus tôt. Évacué le 16 avril 1940 vers un groupe sanitaire divisionnaire, sa trace se perd ensuite.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-2.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Henri Jules Antoine Eugène Léon Keurvels est né le 21 octobre 1883 à Gand, en Belgique, dans une famille issue de la presse libérale flamande. Son père, Hendrik Eugeen Florentijn Keurvels, était président de la section de la presse belge libérale pour les Flandres. Avant 1917, il épouse Marthe Hollander de Termonde. Henri exerce divers métiers, notamment dessinateur topographe, linotypiste et gérant d'usine.</p>
+    <p>Mesurant 1,76 m, avec des cheveux blonds et des yeux bleus, il porte une cicatrice à l'index de la main gauche, souvenir d'une blessure par arme à feu. En 1939, à 56 ans, il est le plus âgé du 11e régiment étranger d'infanterie, dépassant de quatre ans <a href="https://www.11regimentetranger.com/blog/pellegrini-leon" target="_blank" rel="noopener">Léon Pellegrini</a>.</p>
+  </div>
+</div>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-4.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">1901-1904 : Premier engament dans l'armée belge</p>
+    <p>Le parcours militaire d'Henri commence le 14 novembre 1901 lorsqu'il s'engage pour huit ans au 1er régiment de ligne de l'armée belge. Après un changement de statut en octobre 1902, il subit des punitions répétées et, en décembre 1902, est affecté au corps de discipline et de correction. Son service militaire est marqué par des absences pour maladies, avec six mois d'hospitalisation au total, et des sanctions financières. Le 10 décembre 1904, il est mis en congé illimité à Wondelgem, à Gand, et obtient l'autorisation de se rendre à l'étranger, il s'installe à Ostende en 1906.</p>
+  </div>
+</div>
+
+<p class="subhead">1906-1911 : La Légion premier engagement</p>
+
+<p>Après son passage dans l'armée belge, Henri rejoint la Légion étrangère en 1906. Affecté à la 2e compagnie montée du 2e régiment étranger d'infanterie, il participe à la conquête du Maroc. En 1911, il reçoit la médaille commémorative des opérations du Maroc, avec les agrafes Oujda et Haut-Guir, en reconnaissance de sa participation à des opérations menées entre 1907 et 1909.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-5.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-6.jpg" alt="">
+  </figure>
+</div>
+
+<p class="subhead">1911-1912 : Deuxième engagement dans l'armée belge</p>
+
+<p>Durant son temps à la Légion, Henri rejoint l'armée belge pour une période d'exercice.</p>
+
+<p>En août 1907, il est considéré déserteur, mais il est réintégré et amnistié en avril 1910. En 1911, il s'engage une nouvelle fois dans l'armée belge et, en 1912, il est promu sergent puis sergent-fourrier au 5e régiment de ligne.</p>
+
+<p>Il obtient un congé illimité le 31 décembre 1912 et s'installe à Gand, rue d'Ypres.</p>
+
+<p class="subhead">1914-1917 : Première Guerre mondiale</p>
+
+<p>Lors de la mobilisation en août 1914, Henri est nommé premier sergent-major après avoir mené des reconnaissances cyclistes dans la région de Lebbeke, Buggenhout et Impde. Il est cité à l'ordre du jour du 4e secteur et commissionné officier auxiliaire d'infanterie. En avril 1915, il est fait chevalier de l'ordre Ouissam Alaouite, il est autorisé à porter la décoaration. En septembre 1915, il est blessé à Ramscappelle et évacué à l'arrière pour convalescence.</p>
+
+<p>En septembre 1915 il est blessé à Ramscappelle, puis évacué à l'arrière en convalescence au camp du Ruchard. Le 16 février 1916 il est fait une demande d'octroi d'une décoration " a au cours d'un bombardement d'un élément de tranchée occupé par son peloton, le 15 courant à Caeskerke donné à ses hommes un bel exemple de courage et de sang-froid, en quittant pendant le bombardement l'abri où il se tenait, à l'effet de mieux surveiller ses hommes, quand un instant après il fut couvert de terre et de petites pierres projetés par un obus qui éclate à côté de lui"</p>
+
+<p>Du 9 avril au 27 juin 1916 il est à l'hôpital de Calais et à l'ambulance de Salon Richelieu. A sa sortie de l'hôpital il est puni de 21 jours d'arrêt et sa commission d'officier auxiliaire lui est retirée.</p>
+
+<p>Le 20 juillet 1916 il est dirigé sur le CIAM de Fécamp en qualité de sergent au 3è régiment de chasseurs à pieds.</p>
+
+<p>Il passe successivement au 5è régiment de ligne et à la 6è compagnie du 15è régiment de ligne</p>
+
+<p>Le 5 janvier 1917 il est évacué pour maladie contractée dans un organisme bénéficiant des chevrons de front et il entre à l'hôpital Saint Emile à Calais. Sorti le 12, il rejoint le CIAM</p>
+
+<p>Le 6 mars 1917 il est évacué sur Cannes Le 24 septembre 1917 au camps d'Auvours il est déclaré inapte au service de campagne pour anémie paludéenne. Il passe ensuite en congé sans solde à Cannes chez Claude Roussel 81 rue d'Antibes.</p>
+
+<p>Le 1er janvier 1919 il est licencié de l'armée belge.</p>
+
+<p>Il aura passé 29 mois au front pendant la Première Guerre mondiale.</p>
+
+<p class="subhead">Retour à la vie civile, armée espagnole d'Afrique et deuxième engagement à la Légion étrangère</p>
+
+<p>Henri retourne à la vie civile après la guerre. En décembre 1917, il épouse Marcelle Roussel, mais le mariage est annulé en 1921.</p>
+
+<p>Le 19 novembre 1921, il sollicite la reprise de service au grade de lieutenant dans l'armée belge, mais sa demande est rejetée en raison de sa décommission pendant les hostilités pour des raisons disciplinaires et du dépassement des délais fixés pour cette requête.</p>
+
+<p>Il habite à Ypres en 1922 et 1923, puis rejoint l'armée espagnole d'Afrique de 1925 à 1926.</p>
+
+<p>En 1927, il se trouve à la Légion au Maroc, servant comme secrétaire du colonel Maurel au 4e REI et participant aux campagnes du Rif et du Tafilalet. Il est autorisé à porter ses décorations belges (Croix de guerre belge au titre de longue présence au front et médaille de l'Yser)</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-7.jpg" alt="">
+</figure>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-8.jpg" alt="">
+</figure>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-9.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">1936-1938 : Engagement dans les Brigades internationales</p>
+    <p>Le 11 octobre 1936, Henri Keurvels rejoint les Brigades internationales, un engagement facilité par l'intervention de l'ambassadeur d'Espagne à Bruxelles et de Jean Delvigne, secrétaire du Parti socialiste de Bruxelles. Dès son arrivée en Espagne, le 16 octobre, il est nommé capitaine d'artillerie par Marty et Vidal, au sein de la nouvelle batterie franco-belge de 7/7 basée à Albacete. Il participe aux combats sur le front de novembre 1936 à février 1937, prenant part aux affrontements de Madrid, Guadarrama et Jarama.</p>
+    <p>En 1937, Henri Keurvels est affecté à la compagnie de rééducation, puis il rejoint la direction de l'intendance, où il est responsable de l'habillement des troupes. Par la suite, il est intégré à la 45e division, où il sert comme professeur de topographie au sein d'un groupe d'artillerie. En mai 1938, il écrit à André Marty pour demander à reprendre le combat.</p>
+  </div>
+</div>
+
+<p>Le 7 novembre 1938, lors de la Despedida, Henri exprime son désir de se rendre en France ou au Maroc, estimant son retour en Belgique impossible. Le 13 avril 1939, il est domicilié au 54 rue Van Artevelde à Bruxelles.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-10.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">1939 : engagement volontaire pour la durée de la guerre</p>
+    <p>En avril 1939, malgré ses 56 ans, Henri Keurvels écrit au ministre de la Défense nationale belge pour se mettre volontairement à la disposition de la défense nationale en cas de guerre. N'ayant pas été rappelé par l'armée belge, il décide alors de s'engager pour la durée de la guerre à la Légion étrangère.</p>
+    <p>Il est affecté au 11e Régiment étranger d'infanterie en tant que caporal à la compagnie de commandement. Il rédige également deux articles pour la revue du régiment, relatant son passage dans la Légion 32 ans plus tôt.</p>
+    <p>Le 16 avril 1940, il est évacué vers le Groupe Sanitaire Divisionnaire n°6.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-keurvels-henri-11.jpg" alt="">
+</figure>
+
+<p>Difficile de dire ce qu'il est devenu après son évacuation, je ne trouve pas d'informations postérieures à 1940.</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>War Heritage Institute (Belgique), dossiers DO 01730 et 6270406</li>
-    <li>Archives RGASPI (Brigades internationales), 545/3/643 et 545/6</li>
-    <li>État civil de la ville de Cannes</li>
-    <li>Revue « L'Écho des bouteillons », numéros 3, 5 et 9</li>
+    <li>War heritage Institute, Belgique: dossiers DO 01730 et 6270406</li>
+    <li>archives Brigades internationales: RGASPI fonds 545/3/643 et 545/6</li>
+    <li>Etat civil de la ville de Cannes</li>
+    <li>Echo des bouteillons numéros 3, 5 et 9</li>
+    <li><a href="https://www.belgicapress.be" target="_blank" rel="noopener">https://www.belgicapress.be</a></li>
+    <li>Archives di 11è REI à Aubagne, JMO de la compagnie de commandement avril 1940.</li>
   </ul>
 </div>
 

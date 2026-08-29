@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GLIFBERG Nils Haakon — 11e REI</title>
-<meta name="description" content="Légionnaire danois disparu cinq ans sans nouvelles, mort en mer marchande en 1954">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,42 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,28 +66,289 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 5e compagnie · Marin</div>
   <h1>GLIFBERG Nils Haakon</h1>
-  <div class="sub">Légionnaire danois disparu cinq ans sans nouvelles, mort en mer marchande en 1954</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Nils Haakon Glifberg s'engage à la Légion étrangère en 1937 sans prévenir sa famille danoise, qui n'apprend son sort qu'en 1940 par une lettre envoyée du front. Après le 11e REI et une évasion de captivité, il devient marin marchand et meurt brûlé lors d'un incendie à bord en 1954.</p>
-<h2>Une disparition de cinq ans</h2>
-<p>Né le 21 janvier 1915 à Copenhague, il disparaît sans explication en 1937 : sa famille n'apprend sa présence à la Légion étrangère qu'en 1940, par une lettre reçue par son frère cadet, datée du 4 mars 1940 et signée « 11 Régiment Étranger, Glifberg 72915, 11 REI, 5 Cie, secteur 390 ».</p>
-<p>Engagé le 30 août 1937 pour cinq ans, il suit son instruction à Saïda (Algérie), où il tente une désertion de quelques jours en octobre 1937, avant d'être affecté au 2e REI au Maroc en 1938. Volontaire pour la France à la mobilisation, il rejoint le 11e REI à la Valbonne le 21 octobre 1939, affecté à la 5e compagnie du 2e bataillon.</p>
-<h2>Le 11e REI et la captivité</h2>
-<p>Lors de l'encerclement du régiment à Saint-Germain-sur-Meuse entre le 18 et le 22 juin 1940, où le 2e bataillon est sacrifié pour couvrir le repli du reste du régiment, Glifberg est fait prisonnier le 23 juin. Interné au camp de Saint-Michel, il s'en évade le 25 octobre 1940 et rejoint la zone libre après un périple de deux semaines. Renvoyé au Maroc via Fuveau, il reprend du service au 2e REI jusqu'à la fin de son contrat le 30 août 1942. Le 8 octobre 1942, il reçoit à titre différé la croix de guerre avec étoile de bronze pour son action avec le 11e REI.</p>
-<h2>La marine marchande</h2>
-<p>Après sa libération de la Légion, il rejoint l'Europe et devient marin marchand, naviguant notamment sur des cargos alliés pendant la fin de la guerre — dont l'Empire Knight, qui s'échoue et se brise en deux dans une tempête de neige en février 1944. Marié en 1951 à Rouen avec Marguerite Anne Marie Raut, il meurt le 21 mars 1954 à l'hôpital Einstein de Philadelphie, des suites de brûlures au troisième degré subies lors d'un incendie à bord du Gudrun Maersk. Son corps est rapatrié au Danemark.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-glifberg-nils-haakon-2.jpg" alt="">
+</figure>
+
+<p>Nils Haakon Glifberg est né le 21 janvier 1915 à Copenhague, au Danemark, fils de Nils Henrik et d'Emma Cecilie Nielsen.</p>
+
+<p>Il a quatre frères et sœurs : Frits Erik (1918-1992), Anna Elfrida (1916), Ellen Marie (1919) et Carl Gustav (1928).</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-glifberg-nils-haakon-4.jpg" alt="">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-glifberg-nils-haakon-5.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Selon le bureau d'enregistrement de Copenhague, Nils Haakon Glifberg a disparu en 1937 sans explication, et c'est en 1940 que sa famille apprend sa présence dans la Légion étrangère. Son frère Carl Gustav reçoit une lettre datée du 4 mars 1940, postée d'un petit coin de France. La lettre mentionne son numéro d'immatriculation militaire, 72915, et indique qu'il appartient au 11e régiment étranger d'infanterie (REI), 5e compagnie, secteur 390.</p>
+    <p>Frans Janssen a mené des recherches sur son parcours dans la Légion étrangère et a obtenu ses états de service.</p>
+  </div>
+</div><!--/-->
+
+<p>The investigation par Frans Janssen <a href="http://www.kwaak99.demon.nl/" target="_blank" rel="noopener">http://www.kwaak99.demon.nl/</a></p>
+
+<p>This reconstruction is based on the "extrait des services" of Nils GLIFBERG provided by the office of former legionnaires in Aubagne France on August 12, 2008.</p>
+
+<p>In the following reconstruction the titles of the chapters refer to the entries in the "extrait des services". The basis of the obtained "extrait des services" is a handwritten service record kept by the French Foreign Legion for each legionnaire.</p>
+
+<p>The reliability of the obtained "extrait des services" depends on the legibility of the original and the experience and accuracy of the staff members of the "Bureau of former legionnaires", who transcript the information. It is noticeable that over the last few years the number of mistakes and apparent sloppiness has increased, in particular the loss of knowledge of the meaning of old abbreviations.</p>
+
+<p class="subhead">- Engage volontaire pour 05 ans au titre de la Légion étrangère : 30.08.1937</p>
+
+<p>It is August 30, 1937 as Nils GLIFBERG voluntarily joins the French Foreign Legion. He is 22 years old. His "numero matricule legion" becomes 72915 in the year 1937. He registers under true name and signs a contract for 5 years. He makes no use of the principle "anonymat" that is, serving under a different name.</p>
+
+<p>From the recruitment office (unknown), he most likely travels by train to Fort Saint-Jean in Marseille. Fort Saint-Jean is the assembling- and transit depot for all recruitment offices. Here he has to sell his civilian clothing and is waiting for the boat to Algeria.</p>
+
+<p>The Dutch Legionnaire A. Vos who joined the Legion at about the same time writes: After a certain period we went to Marseille, the Depot of the Legion. Our illusions were gone, our heads were sheaved and we had to sell our civilian clothes to the purchasers. Life was hard, all day "corve de pierres" what meant to cut pieces of rock into gravel to stay in condition. After eight days we were prepared and received a syringe. Then we were boarded on the "Bel-Abbes´, of course, in the hold as sardines in a tin, we were about the size of a company, under the supervision of graded, with just one mission prevent desertion.</p>
+
+<p>Nils GLIFBERG departs almost a week later to Algeria.</p>
+
+<p class="subhead">- Algerie TC - 07.09.1937</p>
+
+<p>By boat they went to the port of Oran (Algeria). The crossing takes about a half day. From Oran, potentially with one overnight stay in the barracks in Oran, it went further by train to Sidi-Bel-Abbes (distance about 100km) where the headquarters of the Legion is located.</p>
+
+<p>Unfortunately I don't known the meaning of the abbreviation TC</p>
+
+<p class="subhead">- Arrive au Corps Depot et au incorpere Commun des Regiment Etrangers - 10.09.1937</p>
+
+<p>Nils GLIFBERG arrives in Sidi-Bel-Abbes in the Dépôt Commun des Étrangers Regiment. Typically a 3 months training period will follow. The training is given in on of the following Companies d'Instruction (Training companies):<br>
+1 in Ain el Hadjar<br>
+2 in Saida<br>
+3 in El-Kreider</p>
+
+<p class="subhead">- Affecte a la Compagnie de Passage No 3- 11.09.1937</p>
+
+<p>Nils GLIFBERG is assigned to the transit unit No. 3.</p>
+
+<p class="subhead">- Affecte a la Compagnie de Transit No 3 - 26.09.1937</p>
+
+<p>Fifteen days later, Nils GLIFBERG becomes a member, according to the "Extrait des services" of the transit unit No. 3. The letter T is probably a mistake. I assume that this should be the letter I from the acronym CI (Compagnie d'instruction). The note from 07.10.1937 confirms this assumption; it is a question of Compagnie d'Instruction No. 3. Nils GLIFBERG, therefore, with a high probability was a member of the instruction Company No. 3 in Saida.</p>
+
+<p>This training is depending on the age of the recruit, his nationality, previous military experience and the ability to adapt very different experience. The Germans, for example, experienced it often as less severe because they quickly find support amongst fellow countrymen. Especially the harsh penalties and also the apparent arbitrariness of penalties to maintain the discipline makes the life of the recruits unwieldy.</p>
+
+<p class="subhead">- Manquant au Appels - 03.10.1937</p>
+
+<p>Nils Glifberg is missing a week later on the roll call. He probably undertook an attempt to desert, something that was not unusual in the Legion but rarely succeeded.</p>
+
+<p>The Dutch legionnaire Houtepen writes:<br>
+"These three months lasted an eternity. Most are thought to have come and regret that they have come in the Legion. Almost everyone bears plans for desertion, but those who try are to be returned by the Arabs for a monetary reward. The punishment for the first short desertion is not so bad, especially because the absence did not last for long. For a long absence or a second attempt the penalty is rising to one year. In order to desert, the recruits come up with the craziest plans. One tried it in the uniform of on officer, for whom he cleaned the room, he got to Oran but was arrested at the port. Another one dressed up in a coverall and started to paint the kilometre markers along the road white. People let him go and brought him back, after he finished the job. Others disguised themselves as Arabs and tried to travel unnoticed. They also came back. "</p>
+
+<p class="subhead">- En absence illégale - 04.10.1937</p>
+
+<p>According to French Military law the first two times 24 hours absences were not seen as desertion but as unauthorized absence. After this period, it became desertion and the punishment was accordingly higher.</p>
+
+<p class="subhead">- Arrete à 00h30 par la Gendarmerie de Berthelot - 05.10.1937</p>
+
+<p>Two days later, Nils GLIFBERG was arrested by the gendarmerie of Berthelot or Aïn El Beida which is located 46 km from Saida.</p>
+
+<p class="subhead">- Ramené a Saïda sous escorte de Gendarmerie et rejoint la Compagnie d'Ínstruction No 3 - 07.10.1937</p>
+
+<p>Accompanied by the gendarmerie Nils GLIFBERG is brought back to his training unit in Saida. Here he got a punishment of a few days.</p>
+
+<p class="subhead">- Affecte a la Compagnie de Passage No 1 - 12.02.1938</p>
+
+<p>Nearly half a year after joining the French Foregin Legion Nils GLIFBERG completed basic training and he is temporarily assigned to transit unit No. 1.</p>
+
+<p class="subhead">- Affecte à la CIET - 24.02.1938</p>
+
+<p>Twelve days later Nils GLIFBERG becomes a member of the Compagnie d'Instruction et d'Engine. Transmission training for later use in a liaison unit to be classified. This training lasts almost 5 months.</p>
+
+<p class="subhead">- Affecte a la Compagnie de Passage No 1 - 16.07.1938</p>
+
+<p>Pending his final assignment Nils GLIFBERG temporarily placed in transit unit No. 1.</p>
+<p class="subhead">- Dirigé sur Oudjda & Maroc TC - 27.07.1938</p>
+<p>On July 27, 1938 Nils GLIFBERG departs to his new unit active in Morocco passing the border at Oudjda (Morocco).</p>
+
+<p>Legionnaire Houtepen wrote about Oujda:<br>
+"The first part of the journey went to the border town of Oujda. Here were all the troops with destination Morocco or those on their return trip, even the French, the Senegalese and the indigenous forces. This town is famous amongst the soldiers for the canteen. Not so much the canteen it selves but more the old cantiniere who waved the sceptre. She was French and she was called Madame Casse-bite. She used a language that even the most seasoned soldier would not dare to use. She used it against everyone, preferably against the officers. On the wall of the cafeteria were a few phrases. I always will remember them. One said, "If you talk about women, think of your mother, your sister and your fiancé, and you will not say stupidity.<br>
+The second motto was: " Do not drink too much, alcohol kills!" Below that someone added: "A légionnaires does not fear death!"<br>
+From Oudjda we went further on a small train through the Atlas Mountains. This train drove at a snail's pace zigzag over the mountains and it happened that after an hour of driving we were back at the same place but only a few hundred meters up the mountain slope.<br>
+Veterans made the joke to step out of the train, do their needs and board again an end higher when the train passed. All in all it was a nice trip, because the mountain landscape of Morocco is very magnificent.</p>
+
+<p class="subhead">- Affecté a la 10eme Compagnie / 2eme Régiment Etranger d'Infanterie - 27.07.1938 - 29.07.1938</p>
+
+<p>On the day of his departure for Morocco Nils GLIFBERG becomes a member of the 2nd Infantry Regiment and two days later, probably after arrival at the Headquarters of the Regiment in Meknes of the 10th Company of the Regiment.</p>
+
+<p>Legionnaire Houtepen wrote about Morocco in this period:<br>
+"In Morocco the discipline was less hard and the pay higher. Desertion was not impossible here, some succeeded. The first permanent stay in Morocco was obliged for two and half years. After those two and half years one could renew and after renewal a leave one month per year was given. The legionnaires could spend the leave in their own garrison or in a camp near the sea.<br>
+This camp was in the town of Sale, near Rabat. Rabat is the residence of the Sultan. The most of the legionnaires were now, in addition to military service, used in their earlier civilian profession. The art was, in addition to good marching and shooting, you merit to communicate with your former profession, so that your company commander, after two and half years, was reluctant to let you go. He turned often a blind eye to your offences If you had a relatively clean criminal booklet and you were caught drunk you could make your excuses, such as your birthday, homesickness, or the fact that you were not accustomed to drink. "</p>
+
+<p>The conquest of Morocco was completed in 1935. This was a relatively quiet period although it sometimes came to skirmishes with the local population when taxes had to be collected. Legionnaires were deployed for such police duties. The time was otherwise filled with barracks service and exercises.</p>
+
+<p class="subhead">- La 10eme Compagnie devient la 14eme Compagnie - 16.06.1939</p>
+
+<p>The name of the 10th Compagnie, in which Nils GLIFBERG was serving, is changed into 14th Company.</p>
+
+<p class="subhead">- Maroc TM C/Allemagne - 01.09.1939</p>
+
+<p>On September 1, 1939, the German troops invade Poland. Poland calls on its allies, France and England. France mobilizes the same day.<br>
+The date of this world event can be found in Nils GLIFBERG's "Extrait the service". His "position" note changed that day from Morocco to Morocco against Germany.</p>
+
+<p>On September 3, 1939 France declares the war to Germany. The influx of foreign volunteers to serve in the French army in these days was nearly the same as during the outbreak of the First World War. In late 1939, the total number of new recruits for the French Foreign Legion was 8300.man. The strength of the Legion grows to 37,000 men and to a historical record in may 1940, the early evening of the German attack, up to 49.000 man.</p>
+
+<p>In a hurry, new units were set up to accommodate this large influx of new recruits.<br>
+The objective reporting in North Africa on the situation in France is flawed. Many politically motivated legionnairs, refugees from the Nazi terror, were burning of desires to participate in the war in Europe. Transfer to Europe was only on a voluntary basis tough with permission of the commanding officer.</p>
+
+<p>Legionnaire A. Vos writes:<br>
+"In March 1940 volunteers are requested for France. Everyone registered to fight in Europe ".</p>
+
+<p>The 2nd Regiment supplies troops for the war in France to regiments that were created for the duration of the war. One of these regiments, the 11th Infantry Regiment Etranger was set up in the camp Valbonne on November 1, 1939 consisting of reservists, war volunteers and troops from North Africa.</p>
+
+<p class="subhead">- Affecté au 11eme Régiment Etranger d'Infanterie à Valbonne. Dirige sur son nouveau corps - 21.10.1939</p>
+
+<p>On October 20, 1939 Nils GLIFBERG leaves Morocco with direction France, where he is becomes a member of the 11th Regiment in Valbonne on the 21ste of October.</p>
+
+<p class="subhead">« AuxArmées» avec le 11eme Régiment Etranger d'Infanterie<br>15.12.1939</p>
+
+<p>After intensive preparations, the regiment departs to Lorraine and is involved in setting up advanced positions in front of the Maginot line in the Sierck region. Unfortunately it will soon show that the unit, just like almost the entire French army, cannot stand up against the much better trained and equipped German forces.<br>
+The commanders of the French army stick to outdated world-war one static defence principles. The German commanders, based on intensive studies of the events in world war one, aim for maximum mobility.</p>
+
+<p>Legionnaire HORA who also is part of the 11th regiment writes about this period:<br>
+In late November 1939 I am at the frontline. Some time later we are installing us in the advanced positions. Each section moves in the fortifications, consisting of several trenches surrounded by barbed wire coils. The winter 1939-1940 is Siberian. The thermometer shows not rarely - 30 ° C and we get our meals completely frozen. The soup, the vegetables and bread are pieces of ice. Even the wine is frozen. The commissariat provides us with pieces of charcoal to warm up our rations.</p>
+
+<p>From a small French village Nils GLIBERG sends on March 4, 1940 a letter to his youngest brother, Carl Gustav in Copenhagen, he mentions as sender<br>
+11 Regiment Etranger, Glifberg 72,915 11 REI, 5 Cie, secteur 390.<br>
+The 5 Cie is part of the 2nd Battalion.<br>
+In the no man's land the Regiment is patrolling and there are regularly clashes with the Germans leading to the first victims.<br>
+On May 10, 1940, the Regiment is integrated into the 6th North African Division in Stenay. On May 27, the enemy attacks but the attack is repulsed and stopped and the enemy is retreats.<br>
+It becomes apparent that the highly mechanized German troops are superior but traditionally the Legion is fighting on even against a force majeure.<br>
+From June 18-22 the Regiment is encircled at Saint Germain sur Meuse, where the 2nd Battalion is sacrificed to cover the retreat of the rest<br>
+Nils GLIFBERG is member of this 2nd Battalion. During the fighting the Regiment loses 75% of its troops. The unit is decorated for its fierce resistance; the original text of the justification for the distinction is given in the annex.<br>
+More than two years later also individual legionnaires who took part in these battles are decorated. Nils GLIFBERG also receives on October 8, 1942 the War Cross with bronze star, very likely for the participating in the fight with the 11th Regiment. I doubt whether this GLIFBERG Nils himself has ever known this since he was already out of the Legion by that time. The text of the reasons for the award of another legionnaire of the same unit, may be equivalent, is attached as an annex.</p>
+
+<p>In the meantime, French leaders already negotiated a termination of the fighting. On June 17 Pétain asks for the conditions of a ceasefire or, to be precise, the conditions for peace. The Spanish ambassador has to transfer the request to Hitler. Hitler does not want to talk about peace, only about surrender. On June the 22the of June a convention is signed that the ceasefire shall enter into force on June 25.</p>
+
+<p class="subhead">Fait prisonnier - 23.06.1940</p>
+<p>On June 23, 1940 Nils GLIFBERG gets into German captivity, almost immediately after the fighting in Saint Germain sur Meuse.</p>
+<p class="subhead">Interné à Saint Michel. Evade - 25.10.1940</p>
+<p>Nils GLIFBERG becomes a prisoner of war in camp Saint Michel. Four months later he is able to escape.</p>
+<p class="subhead">Se présente à Lons-le Saulnier - 09.11.1940</p>
+<p>After a journey of 14 days (distance between Saint Michel and Lons le Saulnier is approximately 350 km) Nils GLIFBERG reports himself in Lons le Saulnier in Vichy - France. (see annex Vichy France)</p>
+<p class="subhead">Dirigé sur Fuveau - 10.11.1940</p>
+<p>A day later he is send to Fuveau.</p>
+
+<p class="subhead">Se présente au BIM - 11.11.1940</p>
+<p>In Fuveau Nils GLIFBERG reports himself at the BIM.</p>
+
+<p class="subhead">Embarqué - En Mer - 15.11.1940</p>
+<p>The BIM arranges that Nils GLIFBERG four days later embarks for Algeria.</p>
+
+<p class="subhead">Affecté au 2eme Régiment Etranger d'Infanterie - 16.11.1940</p>
+<p>A day after his departure Nils GLIFBERG becomes again a member of his old unit the 2nd Infantry Regiment.</p>
+<p class="subhead">Debarqué a Oran - 18.11.1940</p>
+<p>After a journey of three days is Nils GLIFBERG disembarks in the Algerian port of Oran.</p>
+
+<p class="subhead">Rejoint le PC du 1er Régiment Etranger d'Infanterie - 21.11.1940</p>
+<p>Just as in 1937, he travels again by train to Sidi-Bel-Abbes to the headquarters of the Legion. This is very likely to bring back the administration and the equipment in order, possibly even some overdue wages are paid.<br>
+The terms of the armistice forces France to reduce the army in France from 5 million to 100,000 men and in North Africa to 120,000 men. The Legion has to reduce its strength. In the following two years two regiments that are dissolved, these are the 2 REC and the 4 REI.<br>
+The Legion uses this occasion to get rid of all volunteers for the duration of the war and other "undesirable" elements. The largest part of the volunteers for the duration of the war had received a reduced training in France. Legionnaires not trained in Algeria did not count really in the Legion. Furthermore, many volunteers for the duration of the war were politically motivated, a type of Legionnaire that had greater emancipation that was not welcome in the Legion. Another more sensitive subject are Jewish legionnairs. Recent publications indicate a clear anti-Semitic attitude of the Legion.<br>
+Nils GLIFBERG is not affected by these measures because he had signed for 5 years and there can or should stay.<br>
+The Legion in North Africa at the end of 1940 was not such a bad place for a foreigner. Foreigners without valid residence papers were housed in internment camps by the Vichy government. The conditions in these camps were bad and often heavy, very unhealthy work had to be done. To avoid these camps a lot of men were reporting back "voluntarily" to the Legion.</p>
+
+<p class="subhead">- Arrive au corps, affecté a la 11eme Compagnie Mixte - 01.12.1940</p>
+<p>Just as in July 1938, Nils GLIFBERG went to his active unit in Morocco, where he is assigned to the 11th Mixed Company.</p>
+
+<p>The Germans did not interfere a lot with the affairs of the African territories of France Representatives of several German Ministries, however, had the power to carry out inspections and ask questions. The Legion, always a closed community, did not like this kind of interest and, therefore, only cooperated to the extent to save its own survival. Systematic removal of all Germans from the Legion, given the anti-Legion propaganda in Germany for decades, was not considered unlikely.<br>
+Before the war, Germany hated the fact, that so many of their countrymen joined the army of their archenemy France. Now the Germans had a particular interest for Jewish Legionnaires and German Legionnaires. The loss of the largest source of new recruits, Germany, and the World War significantly reduced the number of recruits and made the Legion undertaking every effort not to lose Legionnaires to the Germans. Legionnaires, with the potential to be taken out of the Legion by the Germans were send to places like Tonkin or units deep in the Sahara, far out of the sight of the German controls. Despite all efforts about 2000 German Legionnaires were removed from the Legion. Because the Nazi regime, had years before the war, propagandised to the German population not to join the Legion, especially after the introduction of the compulsory military service in 1935, back in the "Heimat" those 2000 man were certainly not welcomed with open arms.</p>
+
+<p>The existence in Morocco at that time was monotonous. Centennial duty , fatigue-duty, military service, etc. Little can be found in literature about this period. Many older legionnaires past their time working in their old profession.</p>
+
+<p class="subhead">- Affecté a la 9eme Compagnie Mixte - 25.02.1941</p>
+<p>In February 1941 Nils GLIFBERG becomes a member of the 9th Mixed Company.</p>
+
+<p class="subhead">- Nommé à l'emploi de légionnaire de 1ere classe - 01.07.1941</p>
+<p>After nearly four years Nils GLIFBERG is appointed legionnaire 1st class. For a simple legionnaire still a relevant a promotion and more pay.</p>
+
+<p class="subhead">- Affecté à Section de Commandement du 3eme Bataillon/2eme<br>Groupe Transmissons et Renseignements Radio - 02.07.1941</p>
+<p>A day later, the new legionnaire 1st Class Nils GLIFBERG gets a staff function in the unit of the 3rd Battalion of the 2nd Regiment. Now he is in the group of intelligence and communication. It was not unusual in the Legion to give longer-serving legionnaires better functions, often with the idea to motivate them to sign for a following period at the end of their contract.</p>
+
+<p class="subhead">Présent à l'unité revue d'effectifs - 31.12.1941</p>
+<p>Nils GLIFBERG attends an audit of the strength of the unit.</p>
+
+<p>I have not seen this note before; it could be an inquiry by a German armistice commission.</p>
+
+<p class="subhead">Maroc TM CD - 25.02.1942 - 05.05.1942</p>
+<p>In the period from February 25 1942 to 5 May 1942 the valeur changes from Campaign Simple (CS) to Campaign Double (CD), this indicates that Nils GLIFBERG in that period is part of an active unit or even a fighting-unit.<br>
+Where his unit was active during this period requires further investigation.</p>
+
+<p class="subhead">Maroc TM CS - 6.05.1942 - 29.08.1942</p>
+<p>On May 6, the valeur set back to Campaign Simple.<br>
+Nils GLIFBERG remains in Morocco untill 29 Aug., 1942.</p>
+
+<p class="subhead">- Raye des contrôles de la Légion étrangere<br>Dirige sur le Depot Commun des Regiments Etrangers a Sidi Bel Abbes pour liberation definitive. - 30.08.1942</p>
+<p>Exactly 5 years later, Nils GLIFBERG is again a "free" man. He has served his contract. Literally translated his name is crossed out.<br>
+He is sent to the depot in Sidi Bel Abbes in order to make its final release. For his good service he gets the "Certificat de Bonne Conduit", a certificate of good behaviour.</p>
+
+<p class="subhead">Dismissed from the Legion</p>
+
+<p>Nils GLIFBERG probably had not a lot of freedom at all in a North African country under pro-German regime, during this World War.<br>
+Unwanted foreigners were interned by the Vichy government in camps and had to work</p>
+
+<p>The Swiss Widmer wrote about his release during the Second World War ". We were given civilian clothes. We got train tickets to a camp for former legionnaires in Bouraghia and simple documents such that we as former legionnaires could legitimise ourselves. A petty officer escorted us to the station. In a barrack of the camp, where several other former legionnaires were, I wondered what should happen now, several former legionnaires here were waiting for years in vain for a trip home. We got to eat but no money, the money I still had was some money that I had been given at my release. One guard supervised the camp. "</p>
+
+<p>At last Widmer went to the Swiss consulate in Algiers for help. This is an action that many Dutch Legionnaires also took at that time. It is possible that Nils GLIFBERG took up contact with the Danish consulate in Algiers. The assistance former Legionnaires got differed per country and even consulate personnel. Some pro-German consuls even tried to convince men to join the German Armed Forces. Without assistance several former Legionnaires remained, as Widmer, stuck in North Africa.</p>
+
+<p>Après son contrat avec la Légion étrangère, je retrouve la trace de Nils Glifberg dans les registres de la marine.</p>
+
+<p>Il apparaît comme marin sur le M / S Bosphore au départ de Glasgow, Royaume-Uni le 1/18/1943 et arrivé à Avonmouth, Royaume-Uni le 6/26/1943.</p>
+
+<p>Comment s'est-il retrouvé à naviguer?</p>
+<p>Hypothèse: le 30/8/1942, à la fin de son contrat avec la Légion étrangère, Nils se trouve au Maroc. Pour quitter l'Afrique du Nord et rejoindre l'Europe, il fallait traverser la Méditerranée en bateau et les départs se faisaient le plus souvent d'Alger.</p>
+<p>Le M/S Bosphorus est un navire marchand norvégien " immobilisé" depuis le 22 juin 1940 dans le port d'Alger. En effet suite à l'armistice avec la France et à la déclaration de guerre à la Norvège, les allemands ont fait immobiliser les bateaux alliés dans les ports français.</p>
+<p>Le 26 mars 1941, le capitaine Hansen est informé que le navire a été repris par la Compagnie de Navigation Mixte, le Bosphorus a été renommée Ste. Mathilde. Une protestation diplomatique officielle contre la détention continue du Bosphore a été portée par le gouvernement auprès des autorités françaises le 10 septembre 1942, par l'intermédiaire de la légation norvégienne à Lisbonne, au Portugal.</p>
+<p>Le Bosphorus et ses 26 hommes d'équipages n'ont pu quitter Alger qu'après novembre 1942 quand les alliés ont lancé l'opération Torch et débarqués en Afrique du Nord.</p>
+<p>Le 4 décembre 1942, le cap était fixé pour Gibraltar et l'Angleterre.</p>
+
+<p>Il est raisonnable de penser que Nils à la fin de son contrat a été interné dans un camp pour les étrangers et y a rencontré les marins norvégiens captifs depuis 1940. Ou alors qu'il les ait rencontré au port d'Alger quand il cherchait à regagner l'Europe.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-glifberg-nils-haakon-6.jpg" alt="">
+</figure>
+
+<p>Nils continue à naviguer dans la marine marchande jusqu'à la fin de la guerre. Il est enregistré aux USA sur 4 navires différents.</p>
+
+<p>Sur le Ss Empire Knight parti de Liverpool (Angleterre) le 1/2/1944. Le 11 février, à cause d'une tempête de neige le bateau s'échoue et le personnel navigant est évacué vers l'hôpital de Portland.</p>
+
+<blockquote>"Le 11 février 1944, le cargo britannique EMPIRE KNIGHT , en voyage de St. John, NN à New York avec une cargaison de fournitures de guerre et de 221 flacons de Mercure, a heurté l'île Boon dans une tempête de neige déchaînée. Le navire resta échoué jusqu'au lendemain, l' EMPIRE KNIGHT se brisa en deux morceaux. La partie arrière a dérivé vers le sud et a coulé dans les eaux profondes. Beaucoup plus tard, la proue a également glissé et a coulé près de l'île Boon. Au total, 24 personnes ont perdu la vie, dont le capitaine"</blockquote>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-glifberg-nils-haakon-7.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-glifberg-nils-haakon-8.jpg" alt="">
+  </figure>
+</div>
+
+<p>Il continue les traversées transatlantiques au départ d'Angleterre, Anvers, Oslo, et Le Havre...</p>
+
+<p>Il se marie le 10 février 1951 avec Marguerite Anne Marie RAUT (née le 5 octobre 1925 à Nantes). La ville de Rouen semble être son port d'attache.</p>
+
+<p>Il effectue une dernière traversée à bord du Gudrun Maersk. Le départ se fait à Rotterdam (Hollande) le 1/1/1954 pour une arrivée à New York (New York City) le 15/1/1954. Il occupe sur le bateau le poste de motorman. Un incendie se déclare sur le navire, Nils Glifberg est brûlé au 3è degré et est évacué sur l'hôpital Einstein de Philadelphie où il décède le 21/3/1954.</p>
+
+<p>Une photo de l'évènement trouver <a href="http://billedarkiv.mfs.dk/fotoweb/archives/5001-Museet-for-s%C3%B8farts-billedarkiv/archive/Arkiv-29/000038339.jpg.info" target="_blank" rel="noopener">ici</a> sur le site M/S Museet for Søfarts billedarkiv.</p>
+
+<p>Sur son acte de décès, il est indiqué qu'il habite 8 rue du quai à Rouen.</p>
+
+<p>Son corps a été rapatrié au Danemark.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Frans Janssen, recherches sur le parcours légionnaire (kwaak99.demon.nl)</li>
-    <li>krigsseilerregisteret.no — registre norvégien des marins de guerre</li>
-    <li>warsailors.com</li>
+    <li>Frans Janssen <a href="http://www.kwaak99.demon.nl/" target="_blank" rel="noopener">http://www.kwaak99.demon.nl/</a></li>
+    <li><a href="https://www.ancestry.fr/" target="_blank" rel="noopener">https://www.ancestry.fr/</a></li>
+    <li><a href="https://krigsseilerregisteret.no/en/artikkel/800975/" target="_blank" rel="noopener">https://krigsseilerregisteret.no/en/artikkel/800975/</a></li>
+    <li><a href="http://www.warsailors.com/freefleet/historier13.html" target="_blank" rel="noopener">http://www.warsailors.com/freefleet/historier13.html</a></li>
   </ul>
 </div>
 

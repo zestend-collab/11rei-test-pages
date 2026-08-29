@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEYSEN Joseph « Jim » — 11e REI</title>
-<meta name="description" content="Gymnaste luxembourgeois, 17 ans de Légion, tué à Gerstheim avec la 2e DB en 1944">
+<title>Joseph LEYSEN — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,44 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  article .figure-side .side-img.stack{display:flex;flex-direction:column;gap:10px}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,23 +68,62 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA1 · Sportif · 2e DB</div>
-  <h1>LEYSEN Joseph « Jim »</h1>
-  <div class="sub">Gymnaste luxembourgeois, 17 ans de Légion, tué à Gerstheim avec la 2e DB en 1944</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Joseph LEYSEN</h1>
+  <div class="sub">Les sportifs du 11è REI</div>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Joseph Leysen, gymnaste luxembourgeois devenu légionnaire de carrière, s'évade après sa capture en 1940 pour rejoindre la 2e DB du général Leclerc et meurt en libérant l'Alsace, quelques jours après Strasbourg.</p>
-<p>Né vers 1903 à Differdange (Luxembourg), il se distingue en gymnastique au club l'Espérance dans les années 1920, aux côtés du futur olympien Mathias Logelin. En 1928, il s'engage pour cinq ans à la Légion étrangère et participe à des campagnes au Maroc ; n'étant pas français, il n'est pas rappelé à la mobilisation de 1939, mais s'engage néanmoins pour la durée de la guerre et rejoint la CA1 du 11e REI, où il sert comme sergent chef de groupe dans la section du lieutenant Drouineau.</p>
-<p>Il participe aux combats du bois d'Inor et de Saint-Germain-sur-Meuse, cité à l'ordre de la division (JO du 7 novembre 1941). Fait prisonnier en juin 1940 et interné au frontstalag 240 de Verdun, il s'évade et rejoint l'Afrique du Nord, où il sert au 3e REI jusqu'en 1944.</p>
-<p>Il rejoint ensuite la 2e division blindée du général Leclerc, participant aux campagnes d'Afrique du Nord, de Sicile et d'Italie, puis au débarquement en France et à la Libération de Paris. Après la libération de Strasbourg le 23 novembre 1944, il est tué à Gerstheim le 3 décembre 1944 — son nom n'apparaît pas dans la base Mémoire des Hommes, mais un Luxembourgeois du même jour et du même lieu de mort, Roger Barnes, y est enregistré : il pourrait s'agir de Leysen sous une identité déclarée. Sa famille n'apprend son décès qu'en août 1945, la presse luxembourgeoise rappelant alors ses dix-sept ans de Légion étrangère et son engagement volontaire contre l'invasion allemande.</p>
+
+<p>Joseph Leysen est cité à plusieurs reprises dans les archives du 11e régiment étranger d'infanterie. Dans le JMO de la <a href="https://www.11regimentetranger.com/blog/ca1" target="_blank" rel="noopener">CA1</a> pour la journée du 22 mai 1940, il est mentionné comme étant sergent et chef de groupe dans la 4e section du lieutenant Drouineau. À cette date, les compagnies du régiment prennent position dans le <a href="https://www.11regimentetranger.com/blog/cartographie-inor" target="_blank" rel="noopener">bois d'Inor</a>. La 4e section, sous son commandement, doit appuyer la 2e compagnie. Leysen installe son groupe au nord du bois de Neudan, à l'est de la côte 232.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-leysen-joseph-2.jpg" alt="Joseph Leysen">
+</figure>
+
+<div class="figure-side">
+  <div class="side-img stack">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-leysen-joseph-4.jpg" alt="Joseph Leysen">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-leysen-joseph-5.jpg" alt="Joseph Leysen">
+  </div>
+  <div class="side-text">
+<p>Joseph Leysen est également cité dans la correspondance entre le lieutenant Drouineau et le <a href="https://www.11regimentetranger.com/blog/bosems-lambert" target="_blank" rel="noopener">sergent-chef Bosems</a> pour l'année 1942. Drouineau y mentionne avoir appris que le capitaine Clément avait revu Leysen en Afrique du Nord. Cette mention suggère que Leysen, après avoir servi au sein du 11e régiment étranger d'infanterie, a été affecté à une unité en Afrique du Nord pendant la Seconde Guerre mondiale.</p>
+
+<p>Il est également mentionné dans les pages du Journal Officiel (JO) du 7 novembre 1941, où il reçoit une citation à l'ordre de la division.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-leysen-joseph-6.jpg" alt="Joseph Leysen">
+  </figure>
+  <div class="side-text">
+<p>Le patronyme Leysen est fréquemment rencontré en Belgique, au Luxembourg et aux Pays-Bas. Le parcours de Jos Leysen semble bien documenté dans les archives et la presse ancienne du Luxembourg. Né vers 1903 à Differdange, il se distingue dans le domaine de la gymnastique, en particulier avec le club l'Espérance de Differdange, où il participe activement à des compétitions nationales entre 1925 et 1927. Il évolue dans la catégorie B, aux côtés de figures notables du sport luxembourgeois, comme Mathias "Metty" Logelin, un champion de gymnastique qui représentera le Luxembourg aux Jeux olympiques d'Amsterdam en 1928 et de Berlin en 1936.
+En 1928, Joseph dit Jim Leysen s'engage pour 5 ans à la Légion étrangère où il participe à différentes campagnes au Maroc. Il semble qu'il ait contracté un second engagement en 1933, cependant, en 1939, il n'est plus dans la Légion et, n'étant pas français, il ne fait pas partie du contingent de réservistes rappelé lors de la mobilisation.
+Il fait comme d'autres anciens légionnaires étrangers et s'engage pour la durée de la guerre. Il est alors affecté dans la CA1 du 11è REI avec laquelle il participe aux combats du bois d'Inor et de Saint Germain sur Meuse.
+Il est fait prisonnier en juin 1940 et interné au frontstalag 240 à Verdun d'où il parvient à s'échapper et à rejoindre l'Afrique du Nord.</p>
+  </div>
+</div>
+
+<p>Entre 1940 et 1944, Joseph Leysen est au 3è REI. Le 14/04/1943, il a un accident de voiture alors qu'il est en service commandé dans la région de Gafsa.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-leysen-joseph-7.jpg" alt="Joseph Leysen">
+</figure>
+
+<p>Joseph "Jim" Leysen, rejoint les forces libres et pourrait avoir servi dans plusieurs unités, comme les corps francs d'Afrique ou le régiment de tirailleurs sénégalais du Tchad, avant d'intégrer la 2e Division Blindée (2e DB) du général Leclerc. Il participe aux campagnes d'Afrique du Nord (Libye, Tunisie), ainsi qu'à celles de Sicile et d'Italie.</p>
+
+<p>En 1944, lors de la campagne de France, Leysen débarque sur les côtes françaises et participe à la Libération de Paris. Fidèle au serment de Koufra, la 2e DB poursuit sa progression, et Strasbourg est libérée le 23 novembre 1944. Le 3 décembre 1944, Jos Leysen est tué à Gerstheim.</p>
+
+<p>Il est intéressant de noter que son nom ne figure pas dans la base de données des morts pour la France sur le site Mémoire des Hommes. Cependant, un luxembourgeois, nommé Roger Barnes, né le 10 décembre 1905 à Pétange, est bien recensé comme tué à Gerstheim le 3 décembre 1944, victime d'éclats d'obus. Il est possible que ce soit Joseph Leysen sous une identité déclarée.
+Sa famille est avertie de son décès en août 1945. La presse luxembourgeoise se fait le relais de cette nouvelle en rappelant son engagement dans la légion étrangère pendant 17 ans et son volontariat pour lutter contre l'invasion allemande.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives du 11e REI (Aubagne)</li>
-    <li>Presse luxembourgeoise (eluxemburgensia.lu)</li>
+    <li>Archives du 11è REI à Aubagne</li>
+    <li>Presse luxembourgeoise <a href="https://eluxemburgensia.lu/" target="_blank" rel="noopener">eluxemburgensia.lu</a></li>
   </ul>
 </div>
 

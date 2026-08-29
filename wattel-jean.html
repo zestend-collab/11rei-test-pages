@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WATTEL Jean Lucien Marie — 11e REI</title>
-<meta name="description" content="Aumônier du 11e REI, tué en bénissant un blessé au bois d'Inor le 27 mai 1940">
+<title>Jean WATTEL — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,51 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
-  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
-  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment-item{margin-bottom:1rem}
+  article .comment-item .who{font-weight:500}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +70,81 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Aumônier · Mort pour la France</div>
-  <h1>WATTEL Jean Lucien Marie</h1>
-  <div class="sub">Aumônier du 11e REI, tué en bénissant un blessé au bois d'Inor le 27 mai 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Jean WATTEL</h1>
+  <div class="sub">aumônier du 11è REI</div>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">L'abbé Jean Wattel, aumônier venu d'une paroisse ouvrière du Nord, devient en quelques semaines la figure la plus populaire du 11e REI par sa présence constante au plus près du danger, avant d'être tué en donnant les derniers secours à un blessé.</p>
-<p>Dégagé de ses obligations militaires, il tient à rejoindre le front et arrive au 11e REI au printemps 1940, non sans appréhension face à la réputation sulfureuse de la Légion. Dès son premier sermon, il annonce vouloir « servir parmi vous en prêtre [...] et comme lui j'offre volontiers ma vie si celle-ci peut être utile à la gloire de la France et de la Légion ».</p>
-<p>Sa réputation se forge dans la nuit du 21 au 22 mai 1940, lors d'une relève menée sous un déluge de feu : au milieu du chaos, il va d'un blessé à l'autre, rassure les plus affolés et galvanise les infirmiers et brancardiers, aussi calme sous la mitraille que sur les marches d'un autel. Dès lors, chaque blessé du régiment le voit passer à son chevet, au poste de secours ou sur le terrain.</p>
-<p>Le 27 mai 1940 à deux heures du matin, alors que l'artillerie allemande déclenche un feu d'enfer sur le bois d'Inor, il se rend une nouvelle fois de civière en civière dans la clairière du poste de secours, traçant des croix sur le front des blessés. En se penchant pour bénir l'un d'eux, il est mortellement touché par un éclat d'obus, s'affaissant sur l'homme qu'il réconfortait. Il avait 42 ans.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Association des Anciens de la Légion Étrangère (AALEME), aaleme.fr</li>
-    <li>Georges Manue, agent de liaison au 11e REI</li>
-  </ul>
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean-2.jpg" alt="Jean Wattel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean-4.jpg" alt="Article AALEME sur Jean Wattel">
+  </figure>
+</div>
+
+<p>Je reprends ici un article mis en ligne par l'AALEME
+<a href="https://aaleme.fr/" target="_blank" rel="noopener">https://aaleme.fr/</a></p>
+
+<p><a href="https://issuu.com/aaleme/docs/wattel390/2?e=0" target="_blank" rel="noopener">https://issuu.com/aaleme/docs/wattel390/2?e=0</a></p>
+
+<p>La rubrique consacrée aux figures légendaires approche de son terme. Au cours de ces derniers mois, nous nous sommes faits un devoir de présenter des officiers, des sous-officiers et des hommes du rang peu connus mais qui, au plus profond d'eux-mêmes, ont été légionnaires. Les trois derniers seront un peu différents en ce sens qu'ils n'ont pas été fondus dans le creuset de la Légion, mais que venus du dehors, ils se sont si bien intégrés qu'ils sont devenus indispensables au bon fonctionnement de la communauté légionnaire</p>
+
+<p>A travers eux, il s'agira d'honorer les aumôniers, les médecins, le personnel féminin ( ambulancières, infirmières, etc. .. ) qui, sans relâche, souvent sans gloire apparente, ont fait preuve d'un dévouement inlassable allant parfois jusqu'au sacrifice suprême, laissant en partant un vide d'autant plus grand que leur présence fut discrète.</p>
+
+<p>La fonction et la place de l'aumônier dans une unité combattante sont difficiles à cerner. Son indépendance lui permet d'être partout ou le combattant se trouve, à l'arrière pour bénir les morts et réconforter les blessés, en première ligne pour soutenir le moral. Quoiqu'il arrive quelque soit sa croyance et même s'il est athée, le légionnaire sait qu'il peut tout moment frapper à la porte de l'aumônier, il y trouvera toujours quelqu'un qui saura l'écouter.</p>
+
+<p>Parmi ces hommes qui, à un moment de leur existence, ont choisi d'exercer leur sacerdoce en milieu légionnaire citons quelques grands prélats monseigneur Lanusse aumônier du Régiment Étranger au Mexique et premier historien de Camerone : monseigneur Stourm, évêque d'Arras, aumônier du 22ème R.M.V.E en 1940, monseigneur Souris, Grand Croix de la Légion d'Honneur, camérier de sa Sainteté, aumônier de la Légion Étrangère au Maroc ; monseigneur Maziers, aujourd'hui archevêque de Bordeaux. Bien d'autres noms plus humbles, moins connus pourraient prolonger cette liste à laquelle nous devons ajouter les aumôniers des autres cultes. Aumôniers protestants, orthodoxes et rabbins.</p>
+
+<p>Pour les représenter, nous avons choisi d'évoquer l'abbé Jean Wattel, aumônier au 11ème Régiment Étranger d'Infanterie, tué au bois d'Inor dans la nuit du 26 au 27 mai 1940.</p>
+
+<p>Il est arrivé au 11ème REI, venant d'une paroisse ouvrière et minière du Nord de la France, là ou le climat est rude, Ia vie pénible et les âmes difficiles à garder sur l'étroit chemin qui mène à Dieu.</p>
+
+<p>Dégagé des obligations militaires, il tient pourtant à servir au front. L'abbé Wattel arrive à la 6ème Division d'Infanterie Nord Africaine au printemps de 1940. Il est affecté au 11ème REI. Depuis près de six mois, le Régiment stationne en Lorraine et la drôle de guerre s'éternise. Cependant, ce n'est pas sans appréhension que le nouvel aumônier rejoint ses ouailles ; la réputation de la Légion n'ayant rien de rassurant On la décrit comme une « troupe de soudards, un ramassis d'ivrognes sans foi ni loi ». Et oui, dejà!</p>
+
+<p>Exercer son ministère chez de tels gens trouble quelque peu Jean Wattel. Pourtant dans sa paroisse du Nord, il a connu beaucoup d'étrangers et notamment des Polonais alors, faisant sienne la parole de l'Évangile « Il y a plus de joie au ciel pour un pécheur repenti que pour cent justes qui persévèrent », il accomplit sa mission avec allégresse et cœur. Ces quelques lignes extraites du sermon qu'il prononce le premier dimanche suivant son arrivée en témoignent :</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean-5.png" alt="L'abbé Jean Wattel">
+</figure>
+
+<blockquote>Je suis venu parmi vous en légionnaire, pour servir et pour participer à vos Joies, à vos souffrances et à vos deuils. J'entends « servir » parmi vous en prêtre, c'est-à-dire en autre Christ, et comme lui j'offre volontiers ma vie si celle-ci peut être utile à la gloire de la France et de la Légion.</blockquote>
+
+<blockquote>Dès lors on ne voit plus que lui dans tous les coins dangereux, écrit le chef de bataillon Robitaille, il ne passe pas un jour sans visiter tous les éléments les plus avancés et les plus exposés. Les légionnaires n'ont pas de meilleur ni de plus fidèle camarade que lui, mais l'endroit où on le voit toujours, c'est là ou ça barde. Qui ne se souvient, au 11 R. E. I. de cette atroce nuit du 21 au 22 mai où la relève se fit sous une pluie de fer et de feu. Pas un point de passage qui ne fut pilonné par la grosse artillerie allemande. Partout des chevaux éventrés, des véhicules renversés, des morts en travers des pistes, des blessés hurlant, des tirailleurs affolés et ayant perdu leurs guides qui se tapissent dans les buissons et attendent la mort ou l'intervention de Dieu avec fatalisme ? Au milieu de tout ce chaos, une grande silhouette noire va d'un blessé à l'autre, remettant en confiance les apeurés et les perdus, mais surtout galvanisant les équipes d'infirmiers et de brancardiers qui ne peuvent rien refuser à cet homme de Dieu aussi calme sous cette mitraille que sur les marches de l'autel.</blockquote>
+
+<p>A partir de cette nuit, sa réputation est faite au 11ème REI et pas un blessé du Régiment ne peut se vanter de ne pas avoir vu ce prêtre extraordinaire à son chevet au poste de secours ou près de lui sur le terrain là où il était tombé. Sa bonté inépuisable, sa saine gaieté, son cran extraordinaire, ont fait de lui en quelque jours la figure la plus populaire du Régiment.</p>
+
+<p>Le 26 mai 1940, le Régiment tient le bois d'Inor. La journée se passe sans événement particulier. Chacun sait pourtant que sa vigilance doit rester sans faille. Le harcèlement constant des jours précédents porte à croire que l'ennemi ne va pas tarder à se montrer. La nuit tombe. Les sentinelles veillent leur poste et tant bien que mal les légionnaires essaient de se reposer un peu. A deux heures du matin, l'artillerie allemande déclenche un feu d'enfer. Des blessés commencent à arriver au poste de secours installé dans une clairière. Très vite l'abri devient trop petit. Il faut installer les brancards dehors. L'abbé Wattel va d'une civière à l'autre, traçant des croix sur les fronts, tenant quelques instants la main du blessé. Dans la fine lueur de la nuit, son visage rayonne, illuminé par une Lumière intérieure. Il a ôté son casque et rebrousse ses cheveux. Une nouvelle fois, il s'agenouille auprès d'un blessé. Là bas, au loin vers l'est le jour point faiblement. Doucement l'abbé Wattel se plie comme pour donner un baiser à l'homme qu'il réconforte : un éclat d'obus vient d'entrer dans sa chair.</p>
+
+<blockquote>Avec l'aumônier s'éteignit, au jour, cette sereine lumière qui rayonnait dans ses yeux. Penché sur un mourant, un éclat l'avait taillé de l'épaule vers le cœur et il s'était affaissé sur celui qu'il bénissait, lui épargnant l'ultime mutilation</blockquote>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean-6.jpg" alt="Jean Wattel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean-7.jpg" alt="Article AALEME sur Jean Wattel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean-8.jpg" alt="Article AALEME sur Jean Wattel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-wattel-jean-9.jpg" alt="Article AALEME sur Jean Wattel">
+  </figure>
+</div>
+
+<p>Ainsi se termine, à 42 ans, décrite par monsieur Georges Manue, agent de liaison au 11ème R.E.I la vie terrestre de l'abbé Jean Wattel</p>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-item">
+    <p class="who">Commandoair40 29/06/2021</p>
+    <p>Un Grand merci pour ce "Padré" . Pour nous Légionnaires et Parachutistes , l'aumônier du Régiment est comme notre Papa . Merci a l'auteur pour ce magnifique article . "More Majorum" Bien Paramicalement . Commandoair40 .</p>
+  </div>
 </div>
 
 <div class="actions">

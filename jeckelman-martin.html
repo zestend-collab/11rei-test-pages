@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JECKELMANN Martin — 11e REI</title>
-<meta name="description" content="Marbrier suisse des Brigades internationales, tué à Ourches le 18 juin 1940">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,38 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,25 +62,56 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Brigades internationales · Mort pour la France</div>
   <h1>JECKELMANN Martin</h1>
-  <div class="sub">Marbrier suisse des Brigades internationales, tué à Ourches le 18 juin 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span><span>MPF</span><span>Brigades internationales</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Martin Jeckelmann, marbrier syndiqué suisse, combat dans les Brigades internationales avant de servir au 11e REI, où il meurt lors des derniers combats du régiment.</p>
-<p>Né le 30 novembre 1915 à Fribourg (Suisse), syndiqué au FOBB (bois et bâtiment), il rejoint les Brigades internationales en Espagne le 10 octobre 1936, affecté d'abord à la XIVe brigade « La Marseillaise », presque exclusivement française, puis à la XIe brigade « Thälmann ». Réformé du service militaire suisse pour un an, il quitte les Brigades le 9 juillet 1937 pour remplir ses obligations militaires dans son pays.</p>
-<p>Il s'engage ensuite à la Légion étrangère et rejoint le 11e REI. Il est tué le 18 juin 1940 lors des combats à Ourches, et repose à la nécropole nationale de Verdun.</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jeckelman-martin-2.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Martin Jeckelmann est né le 30 novembre 1915 à Fribourg, en Suisse. Il est le fils de Nicolas, manœuvre à Fribourg, et de Marie Piller.</p>
+    <p>En 1936, à l'âge de 21 ans, il travaille comme marbrier et est syndiqué au FOBB (Syndicat du bois et du bâtiment).</p>
+    <p class="subhead">L'Espagne</p>
+    <p>Le 10 octobre 1936, après un passage par Paris, Martin Jeckelmann rejoint les Brigades Internationales en Espagne.</p>
+    <p>Dans les archives du RGASPI à Moscou, il est inscrit dans la liste des brigadistes français. Il y est mentionné qu'il faisait partie d'un club ouvrier à Genève et qu'il n'avait pas de spécialité militaire.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jeckelman-martin-4.jpg" alt="">
+</figure>
+
+<p>Dans un premier temps, Martin Jeckelmann est affecté à la XIVe Brigade "La Marseillaise", composée presque exclusivement de Français.</p>
+
+<p>Par la suite, il intègre la XIe Brigade, connue sous le nom de Brigade "Thälmann".</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jeckelman-martin-5.jpg" alt="">
+</figure>
+
+<p>Réformé du service militaire suisse pour un an, Martin Jeckelmann quitte les brigades le 9 juillet 1937 pour remplir ses obligations militaires en Suisse. Il n'a pas de dossier d'insoumission, ce qui indique qu'il a respecté ses obligations militaires suisses après son passage dans les Brigades Internationales.</p>
+
+<p class="subhead">Le 11è Régiment Etranger d'Infanterie</p>
+
+<p>Martin Jeckelmann, après son service militaire en Suisse, s'engage dans la Légion étrangère, probablement pour la durée de la guerre. Il rejoint le 11e régiment étranger d'infanterie. Le 18 juin 1940, il est tué au cours des combats à Ourches. Son corps est inhumé dans la nécropole nationale de Verdun.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Site Mémoire des Hommes</li>
-    <li>Archives RGASPI (Brigades internationales) : 545.6.44/4, 545.6.1477, 545.6.1490</li>
-    <li>Daniel Grason, notice « JECKELMANN Martin », Le Maitron</li>
+    <li>Site mémoire des hommes</li>
+    <li>Archives de Moscou sur les Brigades internationales : Arch. RGASPI 545.6.44/4 ; Arch. RGASPI 545.6.1477 ; Arch. RGASPI 545.6.1490</li>
+    <li><a href="https://maitron.fr/spip.php?article189253" target="_blank" rel="noopener">https://maitron.fr/spip.php?article189253</a>, notice JECKELMANN Martin par Daniel Grason, version mise en ligne le 4 février 2017, dernière modification le 4 février 2017</li>
   </ul>
 </div>
+
+<figure class="size-small" style="width:min(240px,100%);margin-left:auto;margin-right:auto">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jeckelman-martin-6.png" alt="">
+</figure>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Jeckelmann" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

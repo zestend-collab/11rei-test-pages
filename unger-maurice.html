@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNGER Maurice « Max » — 11e REI</title>
-<meta name="description" content="Étalagiste juif réfugié en Isère, exécuté sommairement au Bourg-d'Oisans en 1944">
+<title>UNGER Maurice — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,43 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +67,66 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Victime civile</div>
-  <h1>UNGER Maurice « Max »</h1>
-  <div class="sub">Étalagiste juif réfugié en Isère, exécuté sommairement au Bourg-d'Oisans en 1944</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>UNGER Maurice, Max</h1>
+  <div class="sub">Le Maîtron, les fusillés 1940-44</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Maurice Unger, étalagiste juif engagé au 11e REI puis naturalisé, se réfugie dans l'Oisans après l'occupation de la zone libre et y est exécuté sommairement par les Allemands en août 1944.</p>
-<p>Né le 29 juin 1911 à Moravska-Ostrava (aujourd'hui Ostrava, République tchèque), il s'installe avec son frère Salo à Belfort, où tous deux travaillent pour le grand magasin Unifix. Il s'engage volontairement pour la durée de la guerre le 6 septembre 1939 et, mobilisé au 11e REI, est naturalisé français par décret en février 1940.</p>
-<p>Après la guerre, il s'installe en zone libre à Nîmes. Lorsque celle-ci est occupée par les Allemands en novembre 1942, il se réfugie probablement en Isère, département alors sous occupation italienne, plus clémente envers les Juifs — jusqu'à ce que les Allemands prennent le relais après l'armistice italien de septembre 1943. Il se cache alors au lieu-dit Vert, au Bourg-d'Oisans.</p>
-<p>Le 13 août 1944, des troupes allemandes remontant de Briançon procèdent à une vaste rafle dans la région, arrêtant environ 200 hommes de 16 à 55 ans. Après des interrogatoires menés le lendemain par la Gestapo et des membres français des Waffen SS, une trentaine de prisonniers restent détenus. Le 15 août 1944, Maurice Unger et quatre autres prisonniers sont emmenés au lieu-dit « les Ilats », au nord du Bourg-d'Oisans, et exécutés d'une balle dans la nuque avant d'être jetés dans la rivière la Rive.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-unger-maurice-2.jpg" alt="Maurice Unger">
+</figure>
+
+<p><a href="https://fusilles-40-44.maitron.fr/" target="_blank" rel="noopener">https://fusilles-40-44.maitron.fr/</a></p>
+
+<p>Né le 29 juin 1911 à Moravska-Ostrava (Autriche-Hongrie, aujourd'hui Ostrau, République tchèque), sommairement exécuté le 15 août 1944 au Bourg-d'Oisans (Isère) ; étalagiste ; victime civile</p>
+
+<p>Issu d'une famille juive, Maurice Unger était le fils d'Hermann et de Berthe Manger. Il est domicilié à Francfort sur le Main avant d'arriver en France.</p>
+
+<p>En 1936, il est recensé dans la ville de Belfort, il habite au 32 faubourg de Lyon avec son frère Salo né en 1914. Maurice est étalagiste et son frère est épicier. Ils travaillent tous les deux pour le grand magasin UNIFIX qui ouvre à Belfort en avril 1933.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-unger-maurice-4.jpg" alt="Document Maurice Unger">
+</figure>
+
+<p>Le 06/09/1939, il contracte un engagement volontaire pour la durée de la guerre au bureau de recrutement de Belfort.</p>
+
+<p>Alors qu'il est mobilisé au 11è régiment étranger d'infanterie, il est naturalisé français par décret du 14 février 1940.</p>
+
+<p>Il est possible que son frère se soit également engagé (voir engagement d'Unger Sab (le "l" et le "o" de Salo mal écrit pourrait ressembler à un "b" et donner Sab).</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-unger-maurice-5.jpg" alt="Document Maurice Unger">
+</figure>
+
+<p>Après la guerre, Maurice Unger de confession juive, s'installe en zone libre. Il est un temps domicilié 21 rue de Barcelone à Nîmes.</p>
+
+<p>En novembre 1942, la zone libre est occupée par les allemands. C'est peut être à ce moment là que Maurice se cache en Isère car ce département est occupé par les troupes italiennes qui ne s'occupent pas ou peu de la question juive.
+Après l'armistice de septembre 1943 entre l'Italie et les forces alliées, les allemands occupent le département. A ce moment là Maurice Unger est réfugié au lieu dit Vert au Bourg d'Oisans.</p>
+
+<p>Le 13 août 1944 vers 7 heures, les troupes allemandes qui remontaient de Briançon, procédèrent à une vaste rafle dans la région du Bourg-d'Oisans (Isère). Les hommes âgés de 16 à 55 ans furent arrêtés.
+Quelques 200 personnes furent enfermées dans la salle des fêtes municipale du Bourg-d'Oisans.
+Le même jour, Nông Chan-Dinh, soldat indochinois du Maquis de l'Oisans fut fait prisonnier et sommairement exécuté au hameau de la Paute, au Nord du Bourg-d'Oisans.</p>
+
+<p>Le 14 août 1944, des membres de la Gestapo et des membres des JEN (Jeunes de l'Europe Nouvelle), sous l'uniforme de Waffen-SS, vinrent de Grenoble (Isère) procéder aux interrogatoires à la suite desquels ils maintinrent l'arrestation d'une trentaine de personnes.
+Ce même jour, Lucien Natanson, qui avait échappé à la rafle de la veille, fut arrêté et sommairement exécuté sous les yeux de ses parents à La Paute.
+Pierre Weber, maquisard de l'Oisans, fait prisonnier à quelques kilomètres du Bourg-d'Oisans, y fut amené. Il fut exécuté derrière la salle des fêtes.</p>
+
+<p>Le 15 août 1944, 5 prisonniers, Bernard Brandsilber, Stanislas Halka, Adam Leliwa-Kopytinski, Stefan Martzichewski et Maurice Unger furent emmenés à un kilomètre au nord du Bourg-d'Oisans, au lieu-dit "les Ilats". Là, vers huit heures, ils furent sommairement exécutés d'une balle dans la nuque et jetés dans la rivière "La Rive", probablement par des JEN.
+Le reste des prisonniers fut emmené à Grenoble.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-unger-maurice-6.jpg" alt="Maurice Unger">
+</figure>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Le Maitron des fusillés (fusilles-40-44.maitron.fr)</li>
-    <li>d-d.natanson.pagesperso-orange.fr</li>
-    <li>Photo, Yad Vashem</li>
+    <li><a href="https://fusilles-40-44.maitron.fr/" target="_blank" rel="noopener">https://fusilles-40-44.maitron.fr/</a></li>
+    <li><a href="http://d-d.natanson.pagesperso-orange.fr" target="_blank" rel="noopener">http://d-d.natanson.pagesperso-orange.fr</a></li>
+    <li>photo Yad Vashem</li>
   </ul>
 </div>
 

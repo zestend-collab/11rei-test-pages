@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PETROCHILOS Yannis « Jean » — 11e REI</title>
-<meta name="description" content="Polyglotte grec, artilleur antichar au 11e REI, pionnier de l'ORA dans les Basses-Alpes">
+<title>Yannis « Jean » PETROCHILOS — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,52 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
+  article .doc table{width:100%;border-collapse:collapse;margin:.6rem 0;font-size:.85rem}
+  article .doc td{padding:.2rem .6rem;border-bottom:1px solid var(--border)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,29 +76,103 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Compagnie régimentaire d'engins · ORA</div>
-  <h1>PETROCHILOS Yannis « Jean »</h1>
-  <div class="sub">Polyglotte grec, artilleur antichar au 11e REI, pionnier de l'ORA dans les Basses-Alpes</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Yannis « Jean » PETROCHILOS</h1>
+  <div class="tags"><span>11è REI</span><span>FFI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Yannis Petrochilos, sous-officier grec polyglotte, se distingue comme chef de pièce antichar au 11e REI avant de devenir, après trois évasions, l'un des pionniers de la résistance militaire clandestine dans les Basses-Alpes.</p>
-<p>Né le 15 mars 1912 à Smyrne, naturalisé français en 1938, il s'engage à la Légion étrangère en 1932 et devient sous-officier de carrière. Affecté à la compagnie régimentaire d'engins du 11e REI comme sergent-chef, il se distingue le 18 juin 1940 à Ourches en infligeant des pertes appréciables aux blindés ennemis avec son canon de 25, puis en exécutant un décrochage périlleux à 800 mètres d'une batterie adverse tirant à vue directe — une action citée à l'ordre de la division.</p>
-<p>Fait prisonnier, il s'évade le 19 mars 1941 après trois tentatives ratées qui lui valent six mois en section disciplinaire, puis rejoint clandestinement la zone libre. En novembre 1942, il tente de rejoindre l'Espagne via le réseau Eric, sans succès, avant d'intégrer en avril 1943 l'Organisation de résistance de l'armée (ORA) des Basses-Alpes, sous les alias Luciano puis Jean Régis.</p>
-<p>Officier de liaison chargé du recrutement pour le maquis, il met en place les équipes parachutées venues d'Alger et établit deux liaisons avec la division italienne « Justice et Liberté ». Après les arrestations massives de septembre 1943, il contribue à rétablir les liaisons interdépartementales de l'ORA. Ses missions de parachutage sont annoncées par des phrases codées diffusées à la BBC : « Annie a dit papa » et « mon chat a des moustaches » (Basses-Alpes, juin 1944), « les edelweiss se cueillent haut » (Basses-Alpes, août 1944), aux côtés d'autres messages pour le Var et le Vaucluse dès mars-avril 1944.</p>
-<p>À partir de juin 1944, il participe activement à la libération de Barcelonnette et des principales villes des Basses-Alpes. Le colonel Simon, ex-chef FFI de la région, certifiera après-guerre son rôle exact :</p>
-<blockquote class="testimony">« Officier d'active de la Légion étrangère. Depuis l'occupation allemande du Sud-Est, il n'a pas hésité à abandonner sa situation et sa famille pour se ranger aux côtés des militants patriotes. Officier à l'E.M. de l'ORA de la XVe Région, était l'un des pionniers de cette organisation dans la région, assurant la liaison entre le chef régional ORA et les Basses-Alpes. Accomplissant les missions les plus variées, méprisant le danger, le lieutenant Petrochilos a affirmé ses qualités militaires : transport à la main de lots d'armes, recrutement de cadres pour le maquis, inspections diverses, parachutage et liaison en territoire italien avec la division « Justice et Liberté ». Après les arrestations massives de septembre 1943, il réussit à établir les liaisons interdépartementales [...] Le lieutenant Petrochilos participa activement aux combats de libération des Basses-Alpes, notamment à Barcelonnette, Allos, Mézel, Barrème, Castellane, Digne, etc. »</blockquote>
-<p>Après la guerre, il poursuit sa carrière à la Légion étrangère en Indochine, puis au 4e REI. Décoré de la médaille de la Résistance et de l'ordre Ouissam Alaouite, il meurt le 12 juillet 1994 à Toulon.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-petrochilos-yannis-2.jpg" alt="Yannis Petrochilos">
+</figure>
+
+<p class="subhead">Yannis "Jean" PETROCHILOS</p>
+<p>(15/03/1912 - Smyrne - Turquie)</p>
+
+<p class="subhead">Etat civil, famille, profession:</p>
+<ul>
+<li>Parents: Nicolas et Polyxène Emmanuelides</li>
+<li>Formation: 2è partie du baccalauréat, 2 années en électricité. Il maîtrise le grec ancien et moderne, l'allemand, l'anglais, l'italien, l'espagnol et le français</li>
+<li>Mariage: Le 26/08/1941 à Aix-en-Provence avec Lucie Léonie Charroin, divorce le 10/12/1952. Le 5/10/1964 à Thionville avec Françoise Raine Germaine Holle</li>
+<li>Décès : Le 12/07/1994 à Toulon</li>
+</ul>
+
+<p class="subhead">Naturalisation:</p>
+<p>JO 2/10/1938 naturalisé PETROCHlLOS (Jean), caporal au 4e régiment étranger d'infanterie à Marrakech (Maroc) né le 15 mars 1912 à Smyrne (Asie-Mineure)</p>
+
+<p class="subhead">Situation militaire:</p>
+<p>- Info Légion : Engagé volontaire pour 5 ans au titre de la Légion étrangère le 27/11/1932. Au 2è trimestre 1939, il est admis dans le corps des sous-officiers de carrière. Il a les brevets d'engins, anti-char et d'observation. Il fait l'EOA à Saint Maixent. Il est nommé lieutenant d'active le 25/11/1944</p>
+
+<p class="subhead">Campagne avec le 11è REI 1939-40:</p>
+<p>- Grade : sergent puis sergent chef à partir du 09/11/1939 - Affectation : Compagnie Régimentaire d'Engins</p>
+
+<p class="subhead">Captivité:</p>
+<p>- liste des prisonniers du 15/06/1941
+- il est interné au Stalag XI B, XI D et XI A
+- Il s'évade le 19/03/1941 après 3 tentatives râtées qui lui valent de passer 6 mois en section spéciales. Il est repris à ligne de démarcation à Châlon sur Saone et incarcéré. Il est libéré après 4 jours et repasse la ligne de démarcation.</p>
+
+<p class="subhead">Après juin 1940: résistant FFI</p>
+<p>- résistant: En novembre 1942 il rejoint le réseau Eric mais échoue à passer en Espagne. En avril 1943 il rejoint l'ORA (Organisation de résistance de l'Armée) des Basses Alpes - R2 groupement alpin. Alias Luciano puis Jean Régis et Antonin Roux, il est officier chargé de liaison, chargé de recrutement pour le maquis, il met en place les équipes parachutées d'Alger, il établit deux liaisons avec le maquis italien...
+A partir de juin 1944, il participe aux combats de libération de Barcelonnette et des villes du département des Basses Alpes.</p>
+
+<p>Participation aux opérations avec la phrase BBC, lieux et dates :</p>
+
+<div class="doc">
+<table>
+<tr><td>Annie a dit papa</td><td>Basses Alpes</td><td>juin 1944</td></tr>
+<tr><td>mon chat a des moustaches</td><td>Basses Alpes</td><td>juin 1944</td></tr>
+<tr><td>Les edelweis se cueillent haut</td><td>Basses Alpes</td><td>août 1944</td></tr>
+<tr><td>N de D vive la coloniale</td><td>Var</td><td>mars 1944</td></tr>
+<tr><td>Château brûle tes papiers</td><td>Vaucluse</td><td>mars 1944</td></tr>
+<tr><td>Francine aime l'armée</td><td>Vaucluse</td><td>avril 1944</td></tr>
+</table>
+</div>
+
+<p class="subhead">Après la 2nde Guerre mondiale:</p>
+<p>Après la Libération, il rejoint l'armée. Il est à la Légion en Indochine en 1947.
+En 1951, il est capitaine au 4è REI</p>
+
+<p class="subhead">Citations et décorations:</p>
+<ul>
+<li>JO du 12/12/1942 4ème liste de citation; cité à l'ordre de la division n°1206C "Sous officier de tout premier ordre. Chef de pièce de canon de 25 a fait preuve au cours d'une campagne de plus de 6 mois des plus belles qualités militaires, en infligeant des pertes appréciables aux engins motorisés ennemis notamment le 18 juin à Ourches et ensuite en exécutant magistralement à 800 mètres d'une batterie ennemie tirant à vue directe, un décrochage particulièrement délicat". Croix de guerre avec étoile de bronze</li>
+<li>cité à l'ordre de la Division n°373 du général Garbay du 01/06/1945 "le 14 avril 1945 a réussi à s'emparer d'un col particulièrement important, de trois fortins, deux casernes et plus de 36 prisonniers dont deux officiers ainsi qu'un important matériel"</li>
+<li>cité à l'ordre de la Division n°321 du général Koening du 10/07/1945 "A été l'un des pionniers de l'O.R.A. R2. A accepté les missions les plus humbles comme les plus périlleuses. Officier de liaison des Basses-Alpes, a participé à l'organisation de résistance dans ce département sans se laisser rebuter par les multiples difficultés survenant dans son travail. A obtenu d'excellents résultats."</li>
+<li>Médaille de la résistance JO de janvier 1948</li>
+<li>officier de l'ordre Ouissam Alaouite</li>
+</ul>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>SHD Vincennes, GR 16 P 472580</li>
-    <li>Rouge Vert, écho des bouteillons du 11e régiment de Légion étrangère, n°4</li>
-    <li>Liste officielle des prisonniers de guerre français (Gallica)</li>
+    <li>SHD Vincennes GR 16 P 472580 (consulté)</li>
+    <li>Rouge vert écho des bouteillons du 11e Régt de Légion étrangère, numéro 4</li>
+    <li>gallica.bnf.fr Liste officielle des prisonniers de guerre français</li>
   </ul>
 </div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-petrochilos-yannis-4.jpg" alt="Notes sur le lieutenant Petrochilos, ORA">
+</figure>
+
+<p>De l'organisme O.R.A (alias Janvier, Commandant adjoint du bataillon auprès du lieutenant-colonel BONNAIRE (alias NOEL), chef départemental FFI du département des Basses-Alpes,</p>
+
+<blockquote>
+<p><strong>NOTES SUR LE LIEUTENANT PETROCHILOS Jean (Alias Régis)</strong></p>
+<p>Officier d'active, de la Légion étrangère. Depuis l'occupation allemande du Sud-Est, il n'a pas hésité à abandonner sa situation et sa famille pour se ranger aux côtés des militants patriotes</p>
+<p>Officier à l'E.M, de l'ORA de la XVème Région était l'un des pionniers de cette organisation dans la région, assurant la liaison entre le Chef Régional ORA et le Basses-Alpes,</p>
+<p>Accomplissant les missions les plus variées, méprisant le danger, le lieutenant PETROCHILOS a affirmé ses qualités militaires :</p>
+<p>transport à la main de lots d'armes, recrutement de cadres pour le maquis, inspections diverses, parachutage et liaison en territoire italien avec la Division « Justice et Liberté ».</p>
+<p>Après les arrestations massives de septembre 1943, il réussit à établir les liaisons interdépartementales et contribua à rétablir largement à la reprise de la vie clandestine de l'ORA dans R2.
+Officier responsable de la liaison pour les Basses-Alpes participa activement à l'organisation de ce département réceptionnant et mettant en place les équipes parachutées d'Alger.
+Le Lieutenant PETROCHILOS assura en permanence toutes les liaisons nécessaires faisant ainsi preuve d'abnégation et de persévérance malgré toutes les difficultés rencontrées.
+Le Lieutenant PETROCHILOS participa activement aux combats de libération des Basses-Alpes, notamment à Barcelonnette, Allos Mezel, Barrème, Castellane, St-André, Digne, etc. au cours des mois de juin, juillet et août 1944.</p>
+<p>Durant toute la période de clandestinité et de libération, le lieutenant PETROCHILOS n'a jamais cessé de démontrer les plus belles qualités militaires d'organisateur et de chef qui l'ont toujours fait hautement estimé et apprécié de ses chefs et particulièrement de l'association F.F.I des Basses-Alpes.
+LU & APPROUVÉ : Colonel SIMON, ex-Chef F.F.I. de la Région R.
+Chef du Bureau du Liquidateur FFI de la 9ème Région (ex XVème Région)
+Signé : le general de division OLLERIS Cdt. 1º 9º RM
+LU & APPROUVÉ : Le Chef de Bataillon GILETTE, représentant l'organisation ORA de la 9ème Région (ex. XVème RM)</p>
+</blockquote>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Petrochilos" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

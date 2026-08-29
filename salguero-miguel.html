@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SALGUERO NIETO Miguel — 11e REI</title>
-<meta name="description" content="Milicien extremègne de 17 ans, déporté à Mauthausen, sujet d'une étude universitaire">
+<title>Miguel SALGUERO NIETO — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,49 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
+  article .meta{font-size:.85rem;color:var(--muted)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .footnotes{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted)}
+  article .footnotes p{margin-bottom:.6rem}
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,25 +73,142 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Espagnol · Déporté</div>
-  <h1>SALGUERO NIETO Miguel</h1>
-  <div class="sub">Milicien extremègne de 17 ans, déporté à Mauthausen, sujet d'une étude universitaire</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Miguel SALGUERO NIETO</h1>
+  <div class="sub">Un almendralejense en el infierno nazi</div>
+  <div class="tags"><span>11è REI</span><span>espgnol déporté</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Miguel Salguero Nieto, jeune milicien de la province de Badajoz qui voit son père mourir au combat en 1936, survit à la guerre d'Espagne puis à la déportation à Mauthausen ; son parcours a fait l'objet d'une étude universitaire présentée en 2022.</p>
-<p>Né le 3 novembre 1918 à Hornachos (Badajoz), il grandit à Almendralejo et milite jeune dans des organisations de gauche. Lors de la bataille d'Almendralejo, en août 1936, il voit son père Antonio mourir au combat, laissant une veuve et sept enfants ; échappant de justesse à l'encerclement de l'église où se retranchent les miliciens, il rejoint une brigade républicaine en dissimulant son âge, n'ayant pas encore 18 ans.</p>
-<p>Il combat sur plusieurs fronts, dont celui de l'Èbre, avant de franchir la frontière française en février 1939 avec l'exode républicain. Interné dans un camp français, il s'engage dans une compagnie de travailleurs étrangers pour continuer la lutte contre le fascisme. Capturé par les Allemands en 1940, il est interné au Stalag XVII-B de Gneixendorf, puis déporté à Mauthausen en décembre 1941, marqué comme les autres Espagnols du triangle bleu des apatrides — le régime franquiste ayant refusé de les reconnaître comme ressortissants.</p>
-<p>Après un passage à la carrière, il obtient un poste à la cordonnerie du camp, l'une des affectations plus favorables réservées selon les compétences des détenus, et rejoint les réseaux clandestins de solidarité organisés par les Espagnols du camp. Libéré le 5 mai 1945 par l'armée américaine, il assiste à la scène restée célèbre du camp libéré, drapeaux républicains hissés à la place des drapeaux nazis et banderole proclamant : « Los españoles antifascistas saludan a las fuerzas libertadoras ».</p>
-<p>La chute du franquisme n'ayant pas encore eu lieu, il ne peut rentrer en Espagne et s'installe à Nanterre, où il se marie et a un fils, obtenant la nationalité française. Il reprend dans les années 1960 l'habitude de passer ses vacances d'été en Espagne. Affaibli par des séquelles rénales de sa captivité, il meurt à Paris en septembre 1978.</p>
+
+<p class="subhead">MIGUEL SALGUERO NIETO. UN ALMENDRALEJENSE EN EL INFIERNO NAZI</p>
+
+<p class="meta">Autores: Pedro Manuel López Rodríguez</p>
+
+<p class="meta">Localización: XII Jornadas de Historia de Almendralejo y Tierra de Barros: Bicentenario del nacimiento de Carolina Coronado (1820-2020) / coord. por Juan Diego Carmona Barrero, Matilde Tribiño García, 2022, ISBN 978-84-09-45968-1, pág. 403</p>
+
+<p class="meta">Idioma: español</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-salguero-miguel-2.jpg" alt="Miguel Salguero Nieto">
+</figure>
+
+<p class="subhead">Introducción</p>
+
+<p>Alrededor de 35.000 españoles combatieron en la II Guerra Mundial las tropas del Tercer Reich y las de sus aliados. Como consecuencia de la Guerra Civil española y del desarrollo de la Segunda Guerra Mundial, un buen número de ellos acabaron en campos de concentración y exterminio nazis. Se traba de unos 9.161 españoles, procedentes de distintas regiones de España737, según la base de datos PARES738. Entre ellos, nos encontramos a los extremeños, los cuales, según se ha podido recoger en archivos y fuentes que fueron un total de 300. En concreto, 222 pacenses y 78 cacereños, entre hombres, mujeres y niños, y en la que figuran un total de 189 muertos. Estuvieron internados en Mauthausen y sus campos dependientes, como Ravensbrück y Gussen, entre otros. A todos ellos les movía el mismo motivo: su deseo de una España libre y una Europa democrática739. El objetivo de este trabajo es analizar y divulgar la represión nazi de ese grupo de extremeños y extremeñas, dentro del sector de la población republican española, en el periodo que comprende desde 1936 a 1945. Personas que lucharon por la libertad durante 9 años, y que se toparon con el horror del fascismo durante ese periodo de tiempo. Sus deseos de lucha por la democracia se vieron sumidos en dos luchas fratricidas: la Guerra Civil española (1936-1939) y la II Guerra Mundial (1939-1945). Como señala Manuel Pulido Mendoza:" La guerra de España sus consecuencias para una región como Extremadura y su población no pueden entenderse completamente sin establecer conexiones con el contexto histórico mundial". En estas líneas de investigación, también nos centraremos en conocer la situación por la que tuvieron pasar los grupos más vulnerables en estas situaciones bélicas, como es el caso de las mujeres y los niños. Aunque, según hemos podido ir recopilando en estos primeros compases de la tesis, la mayor parte de la población que estuvo interna en los campos de concentración fueron varones adultos. En grandes líneas, esta es la temática de investigación que se abordará en este trabajo, partiendo del análisis de la experiencia concentracionaria de los españoles en los campos nazis para profundizar posteriormente en las trayectorias de aquellos extremeños, y en especial de Miguel Salguero Nieto, internados en Alemania durante la II Guerra Mundial.</p>
+
+<p class="subhead">Estado de la cuestión</p>
+
+<p>Han sido muchos los investigadores que han centrado su trabajo en la investigación de estos republicanos en campos de concentración nazis. Debemos de tener en cuenta a los estudios realizados por David Wingeate Pike, Benito Bermejo, Sandra Checa, Eduardo Pons Prades, Montserrat Llor, Carlos Hernández de Miguel, autores fundamentales para el estudio de esta temática. Este trabajo se nutre de otros estudios muy relevantes, especialmente para el análisis del sistema concentracionario nazi y su funcionamiento: implementación, ampliación, desarrollo, políticas, fines, etapas. En este sentido resultan imprescindibles las investigaciones de Nikolaus Wachsmann, Alan Kramer, Christian Gerlach, etc.</p>
+
+<p>Por otro lado, nos encontramos con autores que han centrado sus trabajos e investigaciones en un sector concreto de la población española, es decir, a su lugar de origen: leoneses, andaluces, catalanes, etc. En este caso tenemos autores como Montserrat Roig, Ángel del Río o José Luis Gavilanes Laso. No debemos de olvidar el sistema concetracionario de los campos franceses, uno de los puntos de partida de la tragedia colectiva e individual de los españoles que llegaron al sistema concentracionario nazi. En este ámbito destacan los análisis de como Alicia Alted, Marie-Claude Rafaneau-Boj Geneviève Dreyfus-Armand, Denis Peschanski, Javier Rubio, Ángeles Egido y Matilde Eiro, o Josefina Cuesta.</p>
+
+<p>La motivación principal de la realización de este trabajo es la escasa investigación que se ha realizado sobre los extremeños y extremeñas dentro de su periodo en este tipo de campos, en las que encontramos algunos estudios como es el caso del realizado por Manuel Pulido Mendoza</p>
+
+<p class="subhead">Miguel Salguero Nieto</p>
+
+<p>El estudio de este trabajo está dirigido al estudio de un sector de la población española, concretamente en la extremeña. Para el desarrollo de esta exposición, nos centraremos en la vida de Miguel Salguero Nieto, el cual es el prototipo de ese español republicano que, por desgracia, tuvieron que soportar los horrores de la Guerra Civil Española y de la II Guerra Mundial y, que también, debemos de añadir el exilio que vivieron durante la dictadura del General Franco (1939-1975).</p>
+
+<p>La historia de Miguel Salguero Nieto es la que sufrieron muchos extremeños y extremeñas en el periodo que comprende desde 1936 a 1945. Personas que lucharon por la libertad durante 9 años, y que se toparon con el horror del fascismo durante ese periodo de tiempo. Sus deseos de lucha por la democracia se vieron sumidos en dos luchas fratricidas: la Guerra Civil Española (1936-1939) y la II Guerra Mundial (1939-1945)."La guerra de España sus consecuencias para una región como Extremadura y su población no pueden entenderse completamente sin establecer conexiones con el contexto histórico mundial"740.</p>
+
+<p>La historia personal de Miguel comienza en la localidad pacense de Hornachos, donde nació un 3 de noviembre de 1918. Al poco tiempo de nacer, se traslada a la capital de la comarca de Tierra de Barros, Almendralejo, en donde va a desarrollar su infancia y su juventud. Desde joven se interesó por la política, lo que le llevó a militar en varias organizaciones de izquierdas en la localidad.</p>
+
+<p>Vivió los cambios políticos que se dieron a lo largo de comienzos del siglo XX en España. Comenzando con la Monarquía de Alfonso XIII, siguiendo con la proclamación de la II República, el 14 de abril de 1931, y una etapa de la Historia Reciente de España que le marcaría de por vida, la Guerra Civil Española (1936-1939).</p>
+
+<p>Del 7 al 15 de agosto de 1936, luchó en lo que se conoce como "La Batalla de Almendralejo" o "La Toma de Almendralejo". Por aquel entonces, Almendralejo contaba con unos 20.000 habitantes. El 7 de agosto comenzó un bombardeo por tierra y aire, pero las fuerzas republicanas consiguieron resistir a dicho ataque. Ante la ofensiva del ejército nacional, muchos fueron los milicianos que se atrincheraron en la Iglesia de Nuestra Señora de la Purificación741, entre ellos Miguel, que incluso había visto morir a su padre, Antonio Salguero Martos, el cual dejó viuda y siete hijos.</p>
+
+<p>Unos momentos antes de que cerrasen las puertas de la iglesia, que posteriormente sería bombardeada por las tropas nacionales, consiguió salir y se dirigió con un compañero hacia la localidad de Don Benito. Allí, se integró en una brigada de milicianos engañando sobre su edad ya que todavía no había cumplido 18 años.</p>
+
+<p>Estuvo en varios frentes de Extremadura de Madrid, y participó en la batalla del Ebro. En febrero de 1939, cuando la guerra ya se estaba decantando a favor del bando nacional, pasó la frontera hacia Francia con parte del ejército y milicianos de la República, al igual que hicieron tantos y tantas extremeñas que observaban como tenían que abandonar su tierra y poner rumbo hacia otro estado, lo que los llevaría a comenzar una nueva vida. Aunque no sabían que esa nueva vida estaría marcada por otro conflicto a nivel global y por la lucha de la democracia en contra del fascismo.</p>
+
+<p>Es bien sabido que un gran número de exiliados republicanos en Francia fueron hechos prisioneros por el Tercer Reich y, posteriormente, fueron deportados a los campos de concentración alemanes742. Ante el inminente desenlace de la Guerra civil y la llegada masiva de refugiados españoles, las autoridades francesas los intentaron en campos de refugiados o campo de internamiento (más bien campos de concentración) vigilados por soldados senegaleses, que los trataban muy mal, según nos cuentan muchas fuentes. Evidentemente, los avatares del internamiento en Francia fueron compartidos también por extremeños. Desde febrero de 1939, el número de españoles que fueron internados en campos franceses alcanzó su cifra más alta, casi medio millón de españoles y españolas. Según datos oficiales en junio quedaban aproximadamente 173.000 españoles, 80.000 en diciembre y unos 30.000 en abril de 1940.</p>
+
+<p>Nos encontramos con varios factores que influyeron en el descenso de la población española en estos campos, pero fueron principalmente cinco:</p>
+
+<ul>
+<li>Volver a España haciéndose repatriar.</li>
+<li>Emigrar hacia otro país (principalmente hacia América Latina).</li>
+<li>Contratos en el exterior de los campos.</li>
+<li>Incorporarse con prestatarios militares a compañías de trabajos extranjeras (CTE).</li>
+<li>Suscribirse a un aislamiento militar, ya fuese a la Legión Extranjera Francesa o al Regimiento de Marcha de Voluntarios Extranjeros (RMVE)743</li>
+</ul>
+
+<p>Muchos combatientes extremeños republicanos acabaron como prisioneros en numerosos campos de concentración y exterminio nazis. Se trata de una realidad que conocieron altos cargos del franquismo, como es el caso del ministro Serrano Suñer, el cual se entrevistó con Himmler y con Heydrich. Durante esta entrevista, hubo un acuerdo para que los presos republicanos españoles fueran considerados como apátridas, y es por ello, que estaban señalados con el triángulo azul, ya que habían combatido por "una España soviética"744.</p>
+
+<p>Dentro del itinerario concentracionario de los extremeños y españoles, podemos señalar tres etapas de deportación a los campos de concentración nazis. El 80% del total de estos españoles, estuvo formado por republicanos procedentes de las CTE, y en un número menos de los RMVE y de la Legión. Fueron capturados durante la invasión de Francia, en mayo y junio de 1940, y fueron trasladados a los campos como prisioneros de guerras, donde fueron apartados del resto de los presos. Otra etapa fue la de 1942, en la cual los españoles participaron activamente en la resistencia contra los alemanes en tierras galas. Por último, nos encontramos con el llamado Convoy de los 927, que partió de la estación de Angulema el 24 de agosto de 1940745.</p>
+
+<p>Unos meses después de estar internado en el campo, y debido a lo mal que lo estaba pasando, Miguel, se alistó a un batallón de trabajadores extranjeros. De este modo volvió a luchar a favor de la democracia en contra del fascismo. Su lucha se centró en la zona francesa, que posteriormente sería ocupada por las tropas nazis, y que se integraría dentro del III Reich.</p>
+
+<p>En 1940 es capturado por los alemanes y enviado a la prisión XVII-B- Gneixendorf. De ahí en 1941 en el mes de diciembre es enviado al campo de concentración de Mauthausen. Muchos combatientes extremeños republicanos acabaron como prisioneros en numerosos campos de concentración y exterminio nazis. Una realidad que conocieron altos cargos del franquismo, como es el caso del ministro Serrano Suñer, el cual se entrevistó con Himmler y con Heydrich. Durante esta entrevista, hubo un acuerdo para que los presos republicanos españoles fueran considerados como apátridas, y es por ello, que estaban señalados con el triángulo azul, ya que habían combatido por "una España soviética"746.</p>
+
+<p>Estuvo unos días en la cantera y después pudo conseguir un puesto en la zapatería del campo, ya que a algunos de los presos les daban puestos de trabajo más cómodos, según las habilidades que estos tuvieran, y que fuesen necesarias dentro del campo. La vida de los españoles en el campo de concentración de Mauthausen-Gusen estuvo marcada por la penuria747. Pero a su vez también hicieron una serie de organizaciones clandestinas, con las cuales consiguieron tener una vida más llevadera dentro del campo.</p>
+
+<p>A modo de síntesis, hay que precisar que la vida de los españoles en los campos de concentración nazis, y muy especialmente en el campo de concentración de Mauthausen-Gusen, que concentró a la mayoría de ellos, estuvo marcada por las penurias, el trabajo forzado y la muerte748. Dentro de este destino trágico compartido y pese a los horrores de uno de los más mortíferos sistemas concentracionarios de la primera mitad del s. XX, también existieron espacios para la solidaridad y la lucha colectiva para la supervivencia. En este sentido, fueron emblemáticas las organizaciones clandestinas que crearon el campo, con las cuales consiguieron organizarse y tener una vida más llevadera dentro de las alambradas. Al igual que en otras categorías de presos, a los españoles les fue asignado el triángulo azul con una "S", es decir, "apátridas españoles" ante la negativa del gobierno franquista de reconocerles su nacionalidad749.</p>
+
+<p>Todos estos aspectos de la vida en el campo y muchos otros serán objeto de la presente tesis. También el proceso de liberación acaecido en mayo de 1945, en el campo de Mauthausen, con la llegada de las tropas norteamericanas, así como en otros campos de concentración y exterminio por donde pasaron españoles y extremeños. En relación con la liberación y al campo de Mauthausen, es emblemática la fotografía que perduró al paso del tiempo y a la barbarie nazi con las banderas republicanas, que sustituyeron a las banderas nazis y la puerta del campo cubierta por una gran pancarta en la que se podía leer: "Los españoles antifascistas saludan a las fuerzas libertadoras".</p>
+
+<p>Otro aspecto igual de importante y que será objeto de análisis detallado es la etapa posterior a la liberación. Ésta no supuso la vuelta inmediata de los españoles a su tierra natal, puesto que España seguía siendo franquista, además fue uno de los aliados ideológico del Tercer Reich. No obstante, algunos consiguieron volver a su patria; otros decidieron quedarse en Francia, que reconoció su estatus de excombatientes; otros emigraron a terceros países, principalmente a Latinoamérica; y algunos comenzaron a hacer su vida los lugares donde se les había deportado750.</p>
+
+<p>Fue liberado el 5 de mayo de 1945 por el ejército americano. Las banderas republicanas españolas, sustituyeron a las banderas nazis que había en el campo y la puerta del campo estaba cubierta por una gran pancarta en la que se podía leer: "Los españoles antifascistas saludan a las fuerzas libertadoras".</p>
+
+<p>La liberación del campo no supuso la vuelta de los españoles a su tierra, puesto que la España franquista había estado aliada ideológicamente con los nazis. Por ello, Miguel, se trasladó a vivir a Nanterre, alrededores de París, donde conoció a su mujer Magdalena y tuvo un hijo. Se nacionalizó francés, y en la década de los 60 comenzó a venir a España en el mes de agosto de vacaciones. Debido a las penalidades pasadas en la guerra y en el campo de concentración, tuvo muchos problemas en los riñones. Estuvo con un tratamiento de diálisis y finalmente falleció en la ciudad de París en septiembre de 1978.</p>
+
+<p class="subhead">Conclusión</p>
+
+<p>El horror fascista se extinguió, pero en la memoria nos quedan historias como éstas, de aquellos/as que consiguieron sobrevivir a la barbarie, y pueden transmitirnos su legado para aprender de las consecuencias que pueden llegar a tener los regímenes totalitarios y, como estos, pueden sacar la peor versión de los seres humanos.</p>
+
+<p>La historia de Miguel es una de tantas otras. Una historia que ha sido el reflejo de otras muchas y que, por medio de estas líneas, hemos podido conocer un testimonio directo de una de estas personas que vivieron dentro de aquel "infierno".</p>
+
+<p>Este trabajo pretendía acercar al lector de una forma más directa a uno de los testimonios y, de algún modo, poder honrar a todas aquellas personas que sufrieron este tipo de barbarie.</p>
+
+<div class="footnotes">
+<p><strong>Notes de bas de pages:</strong></p>
+<p>737 Díaz, C. "El BOE publica los hombres y apellidos de 4427 españoles republicanos fallecidos en los campos de concentración nazis". Nuestra Historia, 8. 2019.</p>
+<p>738 "Españoles deportados a los campos nazis" (http://pares.mcu.es/Deportados/servlets/ServletController)</p>
+<p>739 Pulido Mendoza, M. "Apuntes sobre la intervención extranjera en Extremadura y extremeños en campos de concentración nazis". Universidad de Birmingham. 2007.</p>
+<p>740 Ibidem</p>
+<p>741 Barragán-Lancharro, A.M. y Domínguez Núñez, M. "Imágenes de la Guerra Civil en Extremadura: Los fotogramas de la película rodada por René Brut en Almendralejo en agosto de 1936. ACTAS DE LAS II JORNADAS DE ALMENDRALEJO Y TIERRA DE BARROS. 2011.</p>
+<p>742 Iordache Carstea, L. "Españoles tras las alambras. Republicanos en los campos franceses, nazis y soviéticos." Hispania Nova, nº1 extraordinario. 2019. pp. 32-42.</p>
+<p>743 Gaspar Celaya, D. "Palabras de un exilio particular: de las CTE a los Campos de Exterminio Nazis". Universidad de Zaragoza. 2015.</p>
+<p>744 Mayor Ferrándiz, T.M. "Republicanos españoles en campos de concentración nazis". Revista Claseshistoria. Artículo Nº 414. 15 de febrero de 2014.</p>
+<p>745 Iordache Carstea, L. "Españoles tras las alambras. Republicanos en los campos franceses, nazis y soviéticos. Hispania Nova, nº1 extraordinario. 2019. pp. 32-42.</p>
+<p>746 Mayor Ferrándiz, T.M. "Republicanos españoles en campos de concentración nazis". Revista Claseshistoria. Artículo Nº 414. 15 de febrero de 2014.</p>
+<p>747 Marín-Dómine, M. "Por una epistemología de la deportación española. El legado de KL Reich de Joaquín Amat- Piniella". Quaderns de filología: Estudies Literaries XXI. 2016</p>
+<p>748 Marín-Dómine, M. "Por una epistemología de la deportación española. El legado de KL Reich de Joaquín Amat- Piniella". Quaderns de filología: Estudies Literaries XXI. 2016</p>
+<p>749 Iordache Carstea, L. "Españoles tras las alambras. Republicanos en los campos franceses, nazis y soviéticos. Hispania Nova, nº1 extraordinario. 2019. pp. 32-42.</p>
+<p>750 Ibidem.</p>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Fuentes</h3>
   <ul>
-    <li>Pedro Manuel López Rodríguez, « Miguel Salguero Nieto, un almendralejense en el infierno nazi », XII Jornadas de Historia de Almendralejo y Tierra de Barros, 2022</li>
+    <li>Barragán-Lancharro, A.M. y Domínguez Núñez, M. "Imágenes de la Guerra Civil en Extremadura: Los fotogramas de la película rodada por René Brut en Almendralejo en agosto de 1936. ACTAS DE LAS II JORNADAS DE ALMENDRALEJO Y TIERRA DE BARROS. 2011.</li>
+    <li>Datos de Miguel Salguero Nieto recogidos en el Archivo de la Memoria Histórica.</li>
+    <li>Datos del Ministerio de la Presidencia, Relaciones de las Cartas y Memoria Democrática. (mrp.gob.es)</li>
+    <li>Díaz, C. "El BOE publica los hombres y apellidos de 4427 españoles republicanos fallecidos en los campos de concentración nazis". Nuestra Historia, 8. 2019.</li>
+    <li>Gaspar Celaya, D. "Palabras de un exilio particular: de las CTE a los Campos de Exterminio Nazis". Universidad de Zaragoza. 2015.</li>
+    <li>Iordache Carstea, L. "Españoles tras las alambras. Republicanos en los campos franceses, nazis y soviéticos. Hispania Nova, nº1 extraordinario. 2019. pp. 32-42.</li>
+    <li>Marín-Dómine, M. "Por una epistemología de la deportación española. El legado de KL Reich de Joaquín Amat- Piniella". Quaderns de filología: Estudies Literaries XXI. 2016.</li>
+    <li>Mayor Ferrándiz, T.M. "Republicanos españoles en campos de concentración nazis". Revista Claseshistoria. Artículo Nº 414. 15 de febrero de 2014.</li>
+    <li>Pulido Mendoza, M. "Apuntes sobre la intervención extranjera en Extremadura y extremeños en campos de concentración nazis". Universidad de Birmingham. 2007.</li>
+    <li>Testimonios orales de los familiares de Miguel Salguero Nieto (verificados con los documentos del Archivo de la Memoria Histórica)</li>
   </ul>
 </div>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-salguero-miguel-4.jpg" alt="Miguel Salguero Nieto">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-salguero-miguel-5.jpg" alt="Miguel Salguero Nieto">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-salguero-miguel-6.jpg" alt="Miguel Salguero Nieto">
+  </figure>
+</div>
+
+<p class="subhead">Annexes:</p>
+<p><a href="https://dialnet.unirioja.es/servlet/articulo?codigo=8782632" target="_blank" rel="noopener">https://dialnet.unirioja.es/servlet/articulo?codigo=8782632</a></p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Salguero" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

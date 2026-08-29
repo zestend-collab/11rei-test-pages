@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PONCIN Marcel Gustave Lucien — 11e REI</title>
-<meta name="description" content="Ancien cambrioleur devenu sergent-chef, identifié en 2010 grâce à ses filles">
+<title>Marcel Gustave Lucien PONCIN — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,56 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment-item{margin-bottom:1rem}
+  article .comment-item .who{font-weight:500}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +75,142 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 6e compagnie · Mort pour la France</div>
-  <h1>PONCIN Marcel Gustave Lucien</h1>
-  <div class="sub">Ancien cambrioleur devenu sergent-chef, identifié en 2010 grâce à ses filles</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Marcel Gustave Lucien PONCIN</h1>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Marcel Poncin, ancien petit délinquant parisien devenu sergent-chef à la Légion étrangère, meurt au combat en Tunisie en 1943 ; sa sépulture ne sera identifiée qu'en 2010, grâce à des années de recherches menées par ses filles.</p>
-<p>Né le 11 décembre 1909 à Nouzonville, il est arrêté à Paris en 1931 pour tentative de cambriolage puis, en janvier 1932, impliqué dans une bande spécialisée dans le vol de voitures et de marchandises à Paris et en banlieue — la presse le décrit aussi comme coureur cycliste. À l'issue de cette affaire, il s'engage à la Légion étrangère, servant successivement au 2e puis au 1er REI.</p>
-<p>Sergent-chef à la 6e compagnie du 11e REI, il est mentionné dans la revue du régiment en mai 1940 à l'occasion de la naissance de sa fille Michelle. Après la reddition du régiment, il s'évade et rejoint l'Afrique du Nord, où il intègre la 8e compagnie du 3e REI après le débarquement allié. Il est tué au combat le 4 mai 1943 à la ferme de Loukanda, en Tunisie, et décoré à titre posthume de la médaille militaire.</p>
-<p>Longtemps sans sépulture identifiée, il repose parmi les 1220 soldats non identifiés du cimetière de Gammarth. En 2010, un voyage en Tunisie entrepris par ses filles Madeleine et Michelle, après de longues années de recherche, permet enfin d'identifier sa tombe.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-2.jpg" alt="Marcel Poncin">
+</figure>
+
+<p class="subhead">PONCIN Marcel Gustave Lucien</p>
+
+<p>- 11/12/1909 - Nouzonville - France
+- grade: sergent chef
+- 6è Cie
+- Mort pour la France le 04/05/1943 - Loukanda, Tunisie avec le 3è REI</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-4.jpg" alt="Marcel Poncin">
+  </figure>
+  <div class="side-text">
+<p>La source prouvant l'appartenance de Marcel Poncin au 11e REI est un article paru dans le n°12 de L'Écho des Bouteillons en mai 1940. L'article mentionne la naissance de sa fille Michelle et indique qu'il est sergent-chef à la 6e compagnie.
+Son nom n'apparaît pas dans les listes des prisonniers, mais une fiche sur le site Mémoire des Hommes fait état du décès de Marcel Gustave Lucien Poncin, sergent-chef au 3e REI, en mai 1943.
+Une recherche généalogique a permis de découvrir que Marcel Gustave Lucien, marié à Zari Zenou, était le père d'une fille prénommée Michelle, née en 1940. Cette information a été confirmée par l'arbre généalogique mis en ligne par sa deuxième fille, Madeleine. Grâce à cela, j'ai pu entrer en contact avec Madeleine et Michelle, deux des filles de Marcel Poncin, et les rencontrer via Skype. Elles m'ont parlé avec émotion de leur père, qu'elles ont malheureusement peu connu, tout en me permettant de mieux comprendre leur histoire.</p>
+  </div>
+</div>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-5.jpg" alt="Marcel Poncin, coureur cycliste">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-6.jpg" alt="Document Marcel Poncin">
+  </figure>
+</div>
+
+<p>Marcel Poncin est mentionné dans la presse en 1931 et 1932. Après son service militaire, il est arrêté à Paris pour tentative de cambriolage dans le quartier de Montmartre. Il est condamné à deux ans de prison avec sursis. Malgré la promesse de ne pas recommencer, il est de nouveau impliqué dans une affaire de vol le 19 janvier 1932. Il fait partie d'une bande de cambrioleurs spécialisée dans le vol de voitures, d'armes, d'appareils TSF et de diverses marchandises, qui sévit à Paris et en banlieue. La presse ne fait pas état de la condamnation mais précise qu'il est également coureur cycliste.</p>
+
+<p>A l'issue de sa condamnation, on retrouve Marcel Poncin à la Légion étrangère.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-7.jpg" alt="Marcel Poncin à la Légion étrangère">
+</figure>
+
+<p>Sur les pattes de col, on peut lire le chiffre 2 pour 2è REI.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-8.jpg" alt="Marcel Poncin, pattes de col 2è REI">
+</figure>
+
+<p>Sur les pattes de col, on peut lire le chiffre 1 pour 1er REI. Il a alors le grade de sergent-chef.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-9.jpg" alt="Marcel Poncin, pattes de col 1er REI">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-10.jpg" alt="Marcel Poncin">
+  </figure>
+</div>
+
+<p>Assis 2è en partant de la gauche</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-11.jpg" alt="Marcel Poncin, assis 2è en partant de la gauche">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-12.jpg" alt="Marcel Poncin">
+  </figure>
+</div>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-13.jpg" alt="Marcel Poncin">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-14.jpg" alt="Marcel Poncin">
+  </figure>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-15.jpg" alt="Marcel Poncin">
+</figure>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-16.jpg" alt="Marcel Poncin">
+</figure>
+
+<p>Marcel Poncin a un parcours similaire à celui de mon grand-père. Après la reddition du 11e REI, il s'évade et retourne en Afrique du Nord. Probablement réaffecté au 1er REI, il intègre la 8e compagnie du 3e REI à la suite de l'opération Torch et participe à la campagne de Tunisie. Il est tué au combat le 4 mai 1943 à la ferme de Loukanda.</p>
+
+<p>Bien qu'à titre posthume, Marcel Poncin reçoit la médaille militaire pour fait de guerre.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-17.jpg" alt="Michelle Poncin, remise de médaille">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-18.jpg" alt="Michelle Poncin, remise de médaille">
+  </figure>
+</div>
+
+<p>C'est sa fille, Michelle Poncin qui reçoit lors d'une cérémonie la médaille Militaire et de la croix de guerre pour Marcel PONCIN</p>
+
+<p>Après de longues années de recherche, ses filles se rendent en Tunisie et retrouve la sépulture de leur père. Il est inhumé au cimetière de Gammarth où reposent dans l'ossuaire 1220 soldats non identifiés tombés au combat.
+En 2010, ce voyage permettra d'identifier Marcel Poncin.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-19.jpg" alt="Sépulture de Marcel Poncin, Gammarth">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-poncin-marcel-20.jpg" alt="Sépulture de Marcel Poncin, Gammarth">
+  </figure>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Souvenirs et archives de Madeleine et Michelle Poncin, filles de Marcel</li>
-    <li>Rouge Vert, écho des bouteillons du 11e régiment de Légion étrangère, n°12</li>
+    <li>Souvenirs et archives de Madeleine et Michelle Poncin que je remercie encore une fois.</li>
+    <li>Rouge vert: écho des bouteillons du 11e Régt de Légion étrangère. Consultable <a href="https://argonnaute.parisnanterre.fr/ark:/14707/a011440581076gf17Eg" target="_blank" rel="noopener">https://argonnaute.parisnanterre.fr/ark:/14707/a011440581076gf17Eg</a></li>
   </ul>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-item">
+    <p class="who">Contassot Rémy 15-08-2021 09:46</p>
+    <p>Très ému de lire ce récit. Marcel poncin était mon grand père.
+Ma grand mère zary zenou et ma mère Monique poncin.
+Merci à vous et mes tantes pour ces informations
+Cordialement.
+Rémy Contassot</p>
+  </div>
 </div>
 
 <div class="actions">

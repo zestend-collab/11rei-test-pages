@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MATERNICK Pavel « Paul Maternik » — 11e REI</title>
-<meta name="description" content="Marin polonais, artilleur des Brigades internationales, blessé au bois d'Inor">
+<title>MATERNICK Pavel — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,44 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +68,70 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA3 · Brigades internationales · EVDG</div>
-  <h1>MATERNICK Pavel « Paul Maternik »</h1>
-  <div class="sub">Marin polonais, artilleur des Brigades internationales, blessé au bois d'Inor</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>MATERNICK Pavel</h1>
+  <div class="sub">Brigades Internationales: Pawel Maternik</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Paul Maternik, ancien marin polonais et légionnaire de la première heure, sert comme artilleur dans les Brigades internationales avant de rejoindre le 11e REI, où il est blessé au bois d'Inor.</p>
-<p>Né le 7 juillet 1903 à Wrzeszczyna (Pologne), il sert dans la marine allemande à Kiel en 1917-1918, puis rejoint la Légion étrangère au Maroc de 1920 à 1926, où il devient sergent. De retour en France, il est condamné en 1932 à quatre mois de prison avec sursis pour détention de trois kilogrammes d'opium, avant de reprendre son métier de marin.</p>
-<p>En mars 1937, il quitte la Pologne par bateau et rejoint l'Espagne, où il intègre les Brigades internationales le 14 mai 1937, affecté au groupe d'artillerie lourde slave « Eslavo » — le même groupe que Wladislaw Dukalski et Wladislas Piekarczyk, qui rejoindront eux aussi le 11e REI. Il participe dix-huit mois aux combats du front central, à Madrid, Pozo Blanco et au Levant.</p>
-<p>Après le retrait des Brigades, il est interné au camp de Gurs et s'engage pour la durée de la guerre au bureau de recrutement de Pau, sous le nom de Maternich. Affecté à la compagnie d'accompagnement du 3e bataillon (CA3), il est blessé le 27 mai 1940 lors de l'offensive allemande au bois d'Inor et évacué. Fait prisonnier, il est interné au Stalag II C jusqu'à son rapatriement le 19 mai 1945.</p>
+
+<p>Paul Maternik, également connu sous le nom de Pawel Maternich ou Matternich, est né le 7 juillet 1903 à Wrzeszczyna, un village du district de Czarnków-Trzcianecki, dans la commune de Wieleń, alors sous l'Empire allemand jusqu'en 1918. Il est le fils de Stanislaw Maternik et d'Ana ou Marie Sleyk.
+Après avoir reçu une éducation élémentaire, il sert dans la marine et déclare avoir participé à la guerre en 1917-1918 à Kiel.</p>
+
+<p class="subhead">Légion étrangère 1920-1926</p>
+
+<p>En 1920, il quitte légalement la Pologne via le consulat prussien de Cologne pour rejoindre la Légion étrangère au Maroc, où il reste jusqu'en 1926 et atteint le grade de sergent. Après son service à la Légion, il sert dans l'armée polonaise de 1930 à 1933, où il est promu caporal et sert à bord d'un torpilleur. Pourtant dans son dossier dans le fonds de Moscou pour la période 1932-1933, il est indiqué qu'il se trouve à Marseille où il est journalier. Il est condamné le 16/11/1932 par la Cour d'Appel d'Aix à quatre mois de prison avec sursis pour trafic et détention de stupéfiants, les circonstances évoquant la possession de trois kilogrammes d'opium. Son casier judiciaire ne fait état d'aucune condamnation antérieure et sa conduite en prison est jugée bonne.
+A la suite de sa condamnation, Paul Matternick devient passible d'expulsion du territoire français, se présentant comme indigent et incapable de financer son retour en Pologne. Le Consulat de Pologne à Marseille intervient pour solliciter la délivrance d'un billet gratuit de chemin de fer vers la frontière polonaise, conformément à la circulaire ministérielle de 1925. Matternick présente un passeport polonais et son statut de nationalité est confirmé par les autorités consulaires.
+Ensuite, il déclare avoir travaillé dans la marine marchande et déclare appartenir au syndicat des marins.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-maternick-pavel-2.jpg" alt="Document Pavel Maternick">
+</figure>
+
+<p class="subhead">L'Espagne</p>
+
+<p>En mars 1937, à bord du navire norvégien Ledaal, il quitte Gdynia et fait escale dans plusieurs ports, dont Alger, Oran, et Torrevieja, avant de rejoindre Alicante.
+Le 14 mai 1937, il intègre les Brigades internationales à Albacete et est affecté à la 181e brigade mixte, 1er bataillon, dans une compagnie de patrouille puis au 2e groupe d'artillerie lourde Skoda du groupe eslavo. Il participe aux combats du Centre, à Madrid (15 juillet - 4 août 1937), à Pozo Blanco (4 août 1937 - 3 mai 1938), et à Levant (3 mai - 15 octobre 1938).
+Dans le groupe d'artillerie lourde Skoda du groupe eslavo, auquel appartenait Pawel Maternik, deux autres volontaires des Brigades internationales, Wladislaw Dukalski et Wladislas Piekarczyk, rejoindront également le 11e Régiment étranger d'infanterie (REI).
+Bien que peu impliqué politiquement, il adhère au Secours Rouge international de 1926 à 1937 et au syndicat international des marins. Il parle polonais, allemand, français et un peu d'espagnol. Malgré sa discipline et son bon moral, son adhésion au Parti Communiste Espagnol lui est refusée en raison de son passé et du manque de connaissances sur ses antécédents.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-maternick-pavel-4.jpg" alt="Document Pavel Maternick">
+</figure>
+
+<p>Il passe 18 mois au front et participe aux combats du Centre, de Madrid 15/07 au 04/08/1937, Pozo Blanco 04/08/1937 au 03/05/1938, Levant 03/05 au 15/10/1938</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-maternick-pavel-5.jpg" alt="Document Pavel Maternick">
+</figure>
+
+<p>En avril 1938, il rédige une biographie pour adhérer au PCE. Peu investi politiquement, il déclare avoir fait partie d'une organisation dans sa jeunesse et avoir été membre du Secours rouge international de 1926 à 1937 (San Francisco et Stockholm) et du syndicat international des marins. Il parle le polonais, l'allemand, et le français</p>
+
+<p>Sa candidature est proposée par Mathias Hitzenberger et Otto Lehmann (commissaire de guerre de sa batterie).</p>
+
+<p>Il est signalé par le comité du parti de son groupe comme un bon soldat, discipliné mais ignorant au niveau politique. Il est signalé au PC polonais comme un bon volontaire ayant un bon moral mais son adhésion au parti communiste espagnol lui est refusée car la commission ne connaissait pas encore son passé.</p>
+
+<p class="subhead">Le 11è régiment étranger d'infanterie</p>
+
+<p>Après le retrait des Brigades internationales d'Espagne, Pawel Maternik demande à aller au Mexique. Son projet n'aboutit pas car il est interné dans le camp de Gurs. Pour en sortir, il contracte un engagement volontaire pour la durée de la guerre au bureau de recrutement de Pau. Son nom est orthographié Maternich et il déclare être né en 1902 en Hongrie.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-maternick-pavel-6.jpg" alt="Document Pavel Maternick">
+</figure>
+
+<p>Dans les archives du 11è REI, on trouve la mention d'un caporal Matternich appartenant à la compagnie d'accompagnement (CA3) du 3è bataillon. La CA3 dispose d'un équipement plus lourd que les autres compagnies composé de 2 canons de 25 mm Anti Char (AC), 2 mortiers de 81 mm et de 16 mitrailleuses de 8 mm. L'affectation de Pawel Maternich semble utiliser son expérience dans le groupe Eslavo.</p>
+
+<p>Il est affecté dans la 4è section du lieutenant Mossman qui déclare dans un compte rendu de 1941 qu'il y a eu 3 blessés dans sa section durement éprouvée lors de l'offensive allemande au bois d'Inor. Il est lui-même blessé le 27/05/1940 et évacué. Comme il ne rejoindra pas le régiment, on peut en déduire que les légionnaires Pariset et Garcia, et le caporal Matternich ont été blessés le 27/05/1940.</p>
+
+<p>Pawel ou Paul Maternik (Matternich) est fait prisonnier de guerre et est interné stalag II C mle 4729. Il est rapatrié le 19/05/1945 et démobilisé le 12/06/1945 à Agen.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>SHD Vincennes, archives du 11e REI, 34 N 316</li>
-    <li>Archives RGASPI, 545.6.666</li>
-    <li>Archives nationales de Pierrefitte-sur-Seine, F/9/6635</li>
+    <li>Archives 11è REI SHD Vincennes 34 N 316</li>
+    <li>Archives RGASPI 545.6.666</li>
+    <li>AN Pierrefitte sur Seine F/9/6635 Listes de prisonniers de guerre rapatriés passés par les centres départementaux (1945-1946)</li>
   </ul>
 </div>
 

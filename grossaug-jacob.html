@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GROSSAUG Jacob « Jakab » — 11e REI</title>
-<meta name="description" content="Tailleur juif hongrois cité au régiment, épouse et enfants déportés lors de la rafle de Bordeaux">
+<title>GROSSAUG Jacob — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,43 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,26 +67,84 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 3e bataillon · EVDG</div>
-  <h1>GROSSAUG Jacob « Jakab »</h1>
-  <div class="sub">Tailleur juif hongrois cité au régiment, épouse et enfants déportés lors de la rafle de Bordeaux</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>GROSSAUG Jacob</h1>
+  <div class="sub">Jakab Grossang</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>juif</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Jacob Grossaug, tailleur juif hongrois cité pour sa vaillance au 11e REI, revient de captivité pour découvrir que son épouse et ses deux enfants ont été déportés lors de la rafle de Bordeaux de juillet 1942, organisée sous l'autorité de Maurice Papon.</p>
-<h2>De Budapest à Nancy</h2>
-<p>Né le 1er janvier 1902 à Budapest, dans une famille juive nombreuse, il quitte la Hongrie en 1926 faute de travail et s'installe d'abord comme mineur à Merlebach (Moselle), puis comme tailleur à Nancy à partir de 1932. Il y épouse en 1934 Fradel Anger, jeune Polonaise, avec qui il a deux enfants, Léon (1935) et Anna (1938).</p>
-<h2>Le 11e REI</h2>
-<p>Engagé volontaire pour la durée de la guerre à Nancy, il est affecté au 3e bataillon du 11e REI. Le 23 juin 1940, il est cité à l'ordre du régiment et décoré de la croix de guerre pour avoir « fait preuve de courage, de vaillance, d'honneur et de fierté » durant les combats et la retraite du 10 au 22 juin. Fait prisonnier, il est interné au Stalag XVII-B en Autriche jusqu'à sa libération, puis démobilisé en mai 1945 à Agen.</p>
-<h2>La rafle de Bordeaux, juillet 1942</h2>
-<p>Réfugiées à Branne (Gironde) après l'exode de 1940, son épouse et ses deux enfants sont arrêtés lors de la rafle des Juifs organisée les 15 et 16 juillet 1942 dans le département, sous l'autorité du secrétaire général Maurice Papon — une opération qui précède de quelques heures celle du Vél d'Hiv à Paris. Fradel est internée au camp de Mérignac-Beaudésert puis déportée à Auschwitz via Drancy le 18 juillet. Léon et Anna, séparés de leur mère et pris en charge par l'aide sociale de Libourne, la rejoignent : Léon est déporté par le convoi n°26 du 31 août 1942, tandis que le départ d'Anna n'a pas été retrouvé dans les registres. Aucun des trois ne reviendra.</p>
-<p>Revenu seul à Nancy en 1945, Jacob Grossaug obtient la naturalisation française en 1946, le préfet de Meurthe-et-Moselle soulignant dans son avis « le drame familial qu'il a subi avec la déportation de son épouse et de ses enfants ». Il se remarie en 1956 à Metz avec Pessel Loriner.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-grossaug-jacob-2.jpg" alt="Jacob Grossaug">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">Origines et arrivée en France</p>
+    <p>Jacob Grossaug (orthographié aussi Grossang), né le 1er janvier 1902 à Budapest, est le fils d'Eisig Grossaug, décédé en 1929 à Budapest, et de Sarolta Metz.</p>
+    <p>Il appartient à une fratrie nombreuse : Jozsa Aranka (née en 1884), Armin (1900, marié en 1920 puis en 1932 en Hongrie), Aranka (1906), Ilona (1909, mariée en 1943 en Hongrie), Janka (1911) et Zita (1914).</p>
+    <p>Issu d'une famille juive d'Europe centrale, il passe son enfance à Kispest, faubourg de Budapest. Ne trouvant pas de travail stable, il quitte son pays pour la France en 1926 et s'installe d'abord à Merlebach (Moselle), au cœur du bassin minier, avant de gagner Nancy en 1932.</p>
+  </div>
+</div>
+
+<p class="subhead">Parcours professionnel et vie familiale</p>
+
+<p>En Lorraine, Jacob Grossaug travaille d'abord comme mineur à Merlebach ; il est domicilié 18, rue du Nord, cité Hochwald. À Nancy à partir de 1933, il se reconvertit comme ouvrier tailleur, et est domicilié 24, rue de l'Équitation.</p>
+
+<p>Le 6 août 1934, il épouse à Nancy Fradel Anger, née le 24 avril 1911 à Nowy Sącz (Pologne), de nationalité polonaise. Le couple a deux enfants, Léon, né le 27 mai 1935, et Anna, née le 7 juillet 1938, tous deux à Nancy et français par déclaration.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-grossaug-jacob-4.jpg" alt="Jacob Grossaug">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">Engagement au 11è REI et captivité</p>
+    <p>À la mobilisation, Jacob Grossaug s'engage volontairement pour la durée de la guerre à Nancy, où il porte le numéro 728 sur la liste matricule.</p>
+    <p>Il est affecté au 3e bataillon du 11e régiment étranger d'infanterie (11e REI). Le 23 juin 1940 il est cité à l'ordre du régiment avec attribution de la Croix de guerre : « au cours d'une série de combats et de retraite du 10 au 22 juin, a fait preuve de courage, de vaillance, d'honneur et de fierté, conformément aux traditions de la Légion ».</p>
+    <p>Fait prisonnier avec son régiment, il est interné comme prisonnier de guerre au Stalag XVII‑B, en Autriche, où il reste jusqu'à sa libération. Il est rapatrié en France et démobilisé en mai 1945 à Agen, et reprend son travail de tailleur à Nancy.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-grossaug-jacob-5.jpg" alt="Jacob Grossaug">
+  </figure>
+  <div class="side-text">
+    <p class="subhead">Rafle du 15‑16 juillet 1942 en Gironde : déportation de son épouse et de ses enfants</p>
+    <p>Sa femme et ses deux enfants qui ont fuit l'avancée allemande en 1940 sont réfugiés à Branne, en Gironde. Les 15 et 16 juillet 1942, une rafle des Juifs est orchestrée à Bordeaux par la préfecture de la Gironde, où Maurice Papon est secrétaire général ; elle précède de quelques heures la rafle du Vél' d'Hiv' à Paris. Plusieurs dizaines de policiers et de gendarmes, munis de listes, se rendent aux domiciles pour arrêter les juifs.</p>
+    <p>Les personnes arrêtées sont d'abord regroupées à Bordeaux (notamment à la « Réserve de la Permanence », rue du Maréchal‑Joffre), puis transférées au petit matin du 16 juillet au camp de Mérignac‑Beaudésert à bord des autobus réquisitionnés de la Compagnie française des tramways électriques et omnibus de Bordeaux, où commence le processus d'enregistrement. Selon les registres du camp, 142 Juifs sont internés à la suite de la rafle des 15‑16 juillet 1942 et 88,73% d'entre eux partent vers Drancy dans le convoi du 18 juillet ; ils sont, dès le lendemain, déportés vers Auschwitz par le convoi n° 7.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-grossaug-jacob-6.jpg" alt="Jacob Grossaug">
+  </figure>
+  <div class="side-text">
+    <p>Le 16 juillet, Pierre Garat, chef du service des questions juives à la préfecture de Bordeaux, adresse une note à Maurice Papon détaillant la rafle : « les opérations commencées le 15 juillet à 21 heures se sont terminées, en ce qui concerne le ramassage, le 16 juillet à 1 heure. À ce moment‑là, tous les Juifs arrêtés dans le département se trouvaient réunis à la Réserve de la Permanence, rue du Maréchal‑Joffre ». Partout, les scènes sont les mêmes : arrestations nocturnes, pleurs, cris ; les inspecteurs français emmènent les familles juives sans ménagement, puis les transfèrent vers Mérignac. Rafle et transfert ont lieu entre le coucher et le lever du soleil afin d'éviter autant que possible les réactions de la population non juive.</p>
+
+<p>Durant cette rafle, les enfants sont arrêtés avec leurs parents, mais leur sort n'est pas immédiatement tranché : Laval souhaite, selon ses propres termes, « dans une intention d'humanité », qu'ils soient transférés avec leurs parents. Les autorités allemandes, avec l'accord d'Adolf Eichmann, ne répondent positivement à cette demande que le 30 juillet. Une liste d'enfants est alors établie, vraisemblablement par la préfecture, sous le titre « Liste d'enfants juifs arrêtés dans la nuit du 15 au 16 juillet 1942 » ; elle comporte 32 noms d'enfants âgés de 13 mois à 13 ans et demi. Ces enfants sont confiés, dans la plupart des cas, à des proches, au grand rabbin Joseph Cohen ou à des institutions comme l'UGIF (Union générale des Israélites de France), via la déléguée pour la Gironde, Germaine Ferreyra.</p>
+
+<p>Le sort de ces enfants est scellé peu de temps après, comme le confirme Maurice Papon dans un courrier daté du 22 août : « de plus, il m'a été précisé que les enfants, dont les parents ont été déportés le 18 juillet dernier […] devraient partir également pour Drancy… ». Sur ces 32 enfants, quinze sont déportés par le convoi du 26 août, sept par le convoi du 30 décembre 1943. Les autres, qui n'apparaissent ni dans les registres du camp ni dans les listes de convois au départ de Mérignac, ont vraisemblablement pu être cachés et sauvés.</p>
+
+<p>Léon et Anna sont séparés de leur mère et pris en charge par une assistance sociale à Libourne. D'après les renseignements obtenus par le Comité d'assistance aux prisonniers et par le maire de Libourne, Fradel est dirigée vers l'annexe du camp de Mérignac, rue du Bacalan à Bordeaux, et les enfants doivent la rejoindre par un train spécial. Fradel est envoyée à Drancy le 18 juillet et déportée à destination d'Auschwitz dès le lendemain. Léon est déporté par le convoi n° 26, parti du camp de Drancy le 31 août 1942. Le départ d'Anna ne semble pas avoir été enregistré. Une attestation de l'Union des Juifs pour la Résistance et l'Entraide, datée du 9 août 1946, confirme que Léon et Anna Grossang ont été déportés et ne sont jamais revenus ; dans le dossier de naturalisation, ils sont mentionnés comme « déportés en Allemagne avec leur mère depuis 1942, lieu inconnu ».</p>
+
+<p>Jacob a sans doute été rapidement informé de ces événements : son dossier de naturalisation contient une lettre du 4 décembre 1942, émanant du Comité d'assistance aux prisonniers de Bordeaux, qui répond à sa demande du 4 octobre visant à retrouver la trace de sa famille.</p>
+
+<p>En Hongrie, sa sœur Zita et son frère Armin survivent à la déportation et sont rapatriés à Budapest durant l'été 1945.</p>
+  </div>
+</div>
+
+<p class="subhead">Demande de naturalisation après-guerre</p>
+
+<p>Revenu seul à Nancy en 1945, Jacob Grossaug reprend la vie civile au 24, rue de l'Équitation. Il sollicite alors la naturalisation française. Les enquêtes de police et d'administration soulignent qu'il vit en France depuis une vingtaine d'années, qu'il travaille régulièrement, qu'il est bien assimilé aux usages français et qu'il parle couramment la langue. Le commissaire central de Nancy comme le préfet de Meurthe‑et‑Moselle mettent en avant sa bonne conduite, l'absence d'antécédents judiciaires et le drame familial qu'il a subi avec la déportation de son épouse et de ses enfants. Dans son avis motivé du 18 juin 1946, le préfet estime que sa naturalisation constituerait « un apport utile à la nation » et propose de la lui accorder, sous réserve du paiement des droits de sceau. La procédure se poursuit en 1946 auprès du ministère de la Population, appuyée par les pièces attestant la disparition de sa famille, sa captivité comme prisonnier de guerre et son insertion professionnelle comme ouvrier tailleur à Nancy.</p>
+
+<p>Jacob Grossang se remarie le 24 mai 1956 à Metz avec Pessel Loriner</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Dossier de naturalisation, Archives nationales de Pierrefitte-sur-Seine</li>
+    <li>dossier de naturalisation AN Pierrefitte sur Seine</li>
     <li>Mémorial de la Shoah</li>
   </ul>
 </div>

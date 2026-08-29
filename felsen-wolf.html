@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FELSEN Wolf « Willie Kurtz » — 11e REI</title>
-<meta name="description" content="Disparu le 7 juin 1940, sa famille dispersée entre Amérique et Israël pendant la guerre">
+<title>FELSEN Wolf — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,39 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
-  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
-  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +58,52 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Mort pour la France</div>
-  <h1>FELSEN Wolf « Willie Kurtz »</h1>
-  <div class="sub">Disparu le 7 juin 1940, sa famille dispersée entre Amérique et Israël pendant la guerre</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>FELSEN Wolf</h1>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Wolf Felsen, jeune Polonais adopté par son beau-père diamantaire, disparaît sans laisser de trace avec le 11e REI le 7 juin 1940, tandis que sa mère et sa sœur fuient l'Europe pour l'Amérique.</p>
-<p>Né Wolf Kurtz le 2 avril 1914 à Brzesko (Pologne), fils de Juda Kurz et Salomea Hofsteter, il est adopté en 1928, avec ses deux sœurs, par le second mari de sa mère, le diamantaire Herman Felsen, installé en Belgique depuis 1890. Étudiant à Bruxelles au début des années 1930, il s'engage ensuite à la Légion étrangère et rejoint le 11e REI.</p>
-<p>Il est déclaré mort le 7 juin 1940, sans qu'aucun lieu ni sépulture ne soit connu ; son corps n'ayant jamais été retrouvé, un jugement du tribunal de Bar-le-Duc rendu en 1961 fixe officiellement sa disparition à cette date.</p>
-<p>Face au danger que couraient les Juifs en Europe, sa mère Salomea et sa sœur Hela embarquent à Lisbonne en juin 1941 pour New York, avant de rejoindre Montréal ; sa sœur Julia s'installe en Israël, où elle fait graver sur sa tombe un hommage à son frère « décédé pendant la Seconde Guerre mondiale ».</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-
-  </ul>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-felsen-wolf-2.jpg" alt="Wolf Felsen">
+  </figure>
+  <div class="side-text">
+    <p>Wolf Felsen est né le 2 avril 1914 à Brzesko, en Pologne, dans une famille d'origine juive. Il est le fils de Juda Kurz et de Salomea Hofsteter, née le 17 janvier 1893 à Zolynia. Il a deux sœurs : Julia, née le 20 mai 1912 à Zolynia, et Hela Pesla, née le 22 novembre 1918 à Ropczyce.</p>
+    <p>Le 22 novembre 1928, la mère de Wolf, Salomea, se remarie avec Herman Felsen. Ce dernier adopte les trois enfants de Salomea, qui prennent alors le nom de Felsen.</p>
+  </div>
 </div>
+
+<p>Herman Felsen, originaire de Pologne, a été enregistré en Belgique depuis 1890, où il exerçait la profession de diamantaire. Il vit aux États-Unis de 1914 à 1922, période durant laquelle il fait une demande de passeport américain. Il décéde à Anvers le 26 janvier 1939.</p>
+
+<p>Wolf Felsen, son fils adopté, effectue un séjour en Pologne en 1932 avant de revenir vivre avec ses parents. Un rapport d'août 1933 indique qu'il est alors étudiant dans une Hoogeschool (haute école) de Bruxelles.</p>
+
+<p>Wolf Felsen s'engage ensuite dans la Légion étrangère et est incorporé au 11e régiment étranger d'infanterie (11e REI). Il est déclaré mort le 7 juin 1940, sans précision de lieu ni de sépulture. Le tribunal de grande instance de Bar-le-Duc rend un jugement le 16 février 1961 déclarant son décès, la disparition étant jugée définitive. Le corps de Wolf Felsen n'ayant pas été retrouvé, la date de son décès est fixée au jour de sa disparition, le 7 juin 1940.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-felsen-wolf-4.jpg" alt="">
+</figure>
+
+<p>Probablement en raison du danger que courent les Juifs en restant en Europe, Salomea et Hela se trouvent au Portugal en novembre 1940. Elles entreprennent des démarches pour émigrer au Canada via les États-Unis, où elles ont de la famille et probablement des liens avec Herman, qui y a vécu et qui détenait un passeport américain. Elles embarquent depuis Lisbonne à bord du navire Nyassa le 3 juin 1941 et arrivent à New York le 13 juin 1941. Ensuite, elles sont enregistrées à Montréal et accueillies chez Lola Goldberg, la sœur de Salomea.</p>
+
+<p>En 1942, elles poursuivent leurs démarches pour se rendre en Israël, où se trouve Julia.</p>
+
+<ul>
+<li>Sa mère, Salomea, décède à New York en décembre 1969.</li>
+<li>Sa sœur Hela Pesla se marie en 1942 avec Arthur Springet à New York.</li>
+<li>Sa sœur Julia se marie avec Isaac Fuchs (Itzhak (Izi) Fuchs) et vit en Israël avant la guerre, où elle décède le 19 novembre 2005.</li>
+</ul>
+
+<p>Sur sa pierre tombale, un dernier hommage à son frère est inscrit :</p>
+
+<p dir="rtl" style="text-align:right">"לזכר אחיה וילי קורץ שנפל במלחמת העולם-השניה"</p>
+
+<p>"À la mémoire de son frère Willie Kurtz, décédé pendant la Seconde Guerre mondiale."</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-felsen-wolf-5.jpg" alt="">
+</figure>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Felsen" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DELMAS Gaston Bernard Jean — 11e REI</title>
-<meta name="description" content="Instituteur militant au Maroc, du socialisme au communisme, sergent à la 5e compagnie">
+<title>DELMAS Gaston, Bernard, Jean — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,22 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
-  article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
-  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
-    text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
-  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
-  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article a{color:var(--link)}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +41,37 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 5e compagnie · Communiste</div>
-  <h1>DELMAS Gaston Bernard Jean</h1>
-  <div class="sub">Instituteur militant au Maroc, du socialisme au communisme, sergent à la 5e compagnie</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>DELMAS Gaston, Bernard, Jean</h1>
+  <div class="sub">(Le Maîtron)</div>
+  <div class="tags"><span>11è REI</span><span>communiste</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Gaston Delmas, instituteur et militant syndical au Maroc, passe du socialisme au communisme après Munich. Sergent à la 5e compagnie du 11e REI en 1940, il retrouve à son retour au Maroc une vie de militant marquée par la répression coloniale puis par les purges internes du parti communiste marocain.</p>
-<p>Né le 29 novembre 1907 à Tarbes, fils d'un militaire alors en expédition au Tonkin, il entre à l'École normale d'instituteurs de Dax en 1923. Après son service militaire comme sergent à la Légion étrangère, il reste au Maroc comme instituteur de 1930 à 1951. Militant syndical dès 1930, il est déplacé en 1936 pour son activité antifasciste. Membre du Parti socialiste SFIO de 1930 à 1938, secrétaire général de sa fédération marocaine, il s'en éloigne après les accords de Munich pour se rapprocher des communistes.</p>
-<p>Mobilisé à la Légion étrangère, il est envoyé en janvier 1940 sur la ligne Maginot, affecté comme sergent à la 5e compagnie du 11e REI. Démobilisé en août 1940, il rentre au Maroc où il est révoqué de son poste d'instituteur et placé en résidence surveillée à Kasbah Tadla. Il rejoint le mouvement de résistance Libération puis le Parti communiste marocain vers 1941-1943, et est interné deux mois et demi lors du débarquement américain de novembre 1942.</p>
-<p>Remarié en 1948, il retrouve son poste d'instituteur à Casablanca et devient un dirigeant du PCM, avant d'être exclu de l'instance dirigeante en mai 1951 pour « déviations colonialistes ». Malade, il rentre en France en octobre 1950, enseigne dans les Landes et reprend un rôle militant local, au sein du syndicat FEN-CGT puis de la section communiste d'Aire-sur-Adour jusqu'en 1964. Il meurt le 22 juillet 1976 à Longjumeau.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Jacques Girault, notice « DELMAS Gaston, Bernard, Jean », Le Maitron</li>
-  </ul>
-</div>
+<p><a href="https://maitron.fr/" target="_blank" rel="noopener">https://maitron.fr/</a></p>
+
+<p><a href="https://maitron.fr/spip.php?article22078" target="_blank" rel="noopener">https://maitron.fr/spip.php?article22078</a>, notice DELMAS Gaston, Bernard, Jean par Jacques Girault, version mise en ligne le 25 octobre 2008, dernière modification le 10 août 2021.</p>
+
+<p>Né le 29 novembre 1907 à Tarbes (Hautes-Pyrénées), mort le 22 juillet 1976 à Longjumeau (Essonne) ; instituteur ; militant socialiste puis communiste au Maroc ; militant communiste des Landes.</p>
+
+<p>Fils d'un militaire en expédition au Tonkin au moment de sa naissance. Gaston Delmas entre à l'École normale d'instituteurs de Dax (Landes) en 1923 et obtient le brevet supérieur. Après avoir effectué son service militaire dans la Légion étrangère comme sergent, il reste au Maroc de 1930 à juillet 1951 comme instituteur à Port-Lyautey (Kenifra). Il se marie en juillet 1930 à Tarbes avec Florinda Garcia.</p>
+
+<p>Il adhére au syndicat affilié à la Fédération unitaire de l'enseignement en 1930. Il est le secrétaire de la section syndicale de Port-Lyautey jusqu'en 1936, année où il est, en, raison de son activité antifasciste déplacé à Mogador (Essaouira), avant d'être, en octobre 1936, nommé à Casablanca. Il entre alors au conseil syndical de la section marocaine du Syndicat national des instituteurs.</p>
+
+<p>Gaston Delmas est de 1930 à 1938 membre du Parti socialiste SFIO au Maroc et occupe la responsabilité de secrétaire de la section de Port-Lyautey puis de secrétaire général de la Fédération socialiste de 1934 à 1937. Militant de la Gauche révolutionnaire, proche des milieux nationalistes, il quitte le parti après les accords de Munich et se rapproche des communistes qui, souvent, sont des anciens socialistes SFIO.</p>
+
+<p>Mobilisé dans la Légion étrangère, il fut envoyé en janvier 1940 sur la Ligne Maginot. Il affecté comme sergent à la 5è compagnie du 11è REI.</p>
+
+<p>Démobilisé en août 1940, de retour au Maroc, il est révoqué de son poste d'instituteur et placé en résidence surveillée à Kasbah Tadla (Maroc central) où il exploite un lopin de terre. Proche du mouvement de résistance Libération, il rejoint le Front national puis adhére au Parti communiste marocain en 1941 (selon ses indications données en 1952) ou en 1943 selon A. Ayache. Lors du débarquement américain au Maroc, le 8 novembre 1942, il est interné à El Hadjeb pendant deux mois et demi.</p>
+
+<p>Gaston Delmas se remarie en novembre 1948 à Casablanca avec Marcelle Lemaire, militante communiste. Il retrouve son poste d'instituteur à Casablanca. Dirigeant du PCM, collaborateur de sa presse, membre du comité central, il joue alors un rôle de premier plan. En mai 1951, il est exclu de l'instance dirigeante pour "déviations colonialistes".</p>
+
+<p>Selon le jugement de Thévenin*, il aurait été victime du « groupe activiste », composé d'« agents de l'ennemi » qui éliminèrent « un élément gênant dans leur travail de liquidation du PCM ».</p>
+
+<p>Veuf, Delmas, malade, sanctionné à nouveau, quitte le Maroc en octobre 1950 et rentre en France. Instituteur à l'école de garçons de Laluque (Landes), membre de la section du SNI dans les Landes, il est le secrétaire de la section départementale de la FEN-CGT de 1951 à 1954.</p>
+
+<p>Membre du bureau, puis secrétaire à partir de 1959, de la section communiste d'Aire-sur-Adour, Gaston Delmas entre au comité de la fédération communiste en 1953 et y reste jusqu'à la conférence fédérale de 1964.</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Delmas" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

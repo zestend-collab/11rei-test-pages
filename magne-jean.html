@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAGNE Jean Léon — 11e REI</title>
-<meta name="description" content="Capitaine de réserve, tué en reprenant le pont de Void le 18 juin 1940">
+<title>Jean MAGNE — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,46 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,27 +70,104 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 6e compagnie · Officier · Mort pour la France</div>
-  <h1>MAGNE Jean Léon</h1>
-  <div class="sub">Capitaine de réserve, tué en reprenant le pont de Void le 18 juin 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Jean MAGNE</h1>
+  <div class="sub">capitaine commandant la 6è compagnie</div>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Jean Magne, capitaine de réserve commandant la 6e compagnie du 11e REI, meurt en tête de son unité lors de la tentative désespérée de reprendre le pont de Void, le 18 juin 1940.</p>
-<p>Né le 20 mai 1904 à Limoges, officier de réserve depuis 1927, il est rappelé à l'activité le 29 août 1939 et promu capitaine. Envoyé encadrer les volontaires étrangers à la Valbonne, il prend le 1er novembre le commandement de la 6e compagnie du 11e REI naissant, alors père de trois enfants.</p>
-<p>Blessé à la cheville le 13 mai 1940, il manque le début des combats du bois d'Inor ; le lieutenant Blot, qui le remplace, est blessé à son tour et remplacé par le lieutenant Forget. Magne met plus de deux jours à retrouver son régiment, ballotté entre convois sous les bombardements, avant de rejoindre sa compagnie le 2 juin 1940 — un périple que René-Luce Coupin raconte dans son livre « Vainqueur quand même ».</p>
-<blockquote class="testimony">René-Luce Coupin, « Vainqueur quand même » : « Il ne s'est jamais ménagé et est mort, comme il le souhaitait sûrement, à la légionnaire. »</blockquote>
-<p>Légèrement blessé par un éclat d'obus dans le dos le 9 juin, il conserve son commandement. Le 17 juin, des éléments du 2e bataillon couvrent le pont de Void jusqu'au passage du dernier contingent français ; le 18 juin à 4 heures du matin, la 6e compagnie de Magne, en avant-garde, est chargée de reprendre le pont. Moins d'une heure plus tard, le chef de bataillon d'Alegron et le capitaine Magne sont tués au combat ; le lieutenant Viel, chargé de porter l'ordre de repli, est tué à son tour, et la compagnie décimée se replie vers Ourches, où le lieutenant Jabouille meurt également. Seul le lieutenant Coubart, blessé en début d'opération, survit.</p>
-<p>Son corps, retrouvé par des prisonniers français à la sortie nord de Void, est d'abord inhumé au cimetière communal puis restitué à sa famille pour être inhumé à Domrémy. Il est cité à l'ordre de l'armée : « officier d'élite, d'un moral élevé et d'un courage admirable [...] glorieusement tué à son poste de combat. »</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-2.jpg" alt="Jean Magne">
+  </figure>
+  <div class="side-text">
+<p>Jean Léon Magne est né le 20 mai 1904 à Limoges.</p>
+
+<p>Appelé de la classe 1924, il est sursitaire selon l'article 23 et ajourné d'un an. (JO du 5/4/1923: Art. 23. — En temps de paix, des sursis d'incorporation d'un an, renouvelables d'année en année, jusqu'à l'âge de vingt-cinq ans, peuvent être accordés aux jeunes gens qui en font la demande, qu'ils aient été classés par les conseils de révision dans lé service armé ou dans le service auxiliaire. A cet effet, ils doivent établir que, soit à raison de leur situation de soutiens de famille, soit dans l'intérêt de leurs études, soit pour leur apprentissage, soit pour les besoins de l'exploitation agricole, industrielle, commerciale à laquelle ils appartiennent, soit à raison de leur résidence à l'étranger, il est indispensable qu'ils ne soient pas enlevés immédiatement à leurs travaux.)</p>
+
+<p>Un nouveau sursis de 6 mois, lui est accordé en 1926. Il est alors étudiant à l'école de commerce et d'industrie.</p>
+
+<p>A compter du 10 novembre 1926, il est incorporé au 107è régiment d'infanterie. Arrivé au corps le 12 novembre comme 2è classe, il part à l'école de Saint Maixent le 16 novembre 1926.
+Le 10 mai 1927, il sort de l'école en ayant satisfait aux examens de sortie. Il est nommé au grade de sous lieutenant le 15 mai 1927.</p>
+  </div>
+</div>
+
+<p>Par décret du 28 mai 1927, il est affecté au 135è régiment d'infanterie. Le 5 novembre 1927, il est renvoyé dans ses foyers, et le 10 novembre Jean Magne est affecté au centre mobilisateur d'infanterie (CMI) n°91 et passe dans la réserve. Il retourne vivre à Limoges, 2 avenue Gambetta.</p>
+
+<p>De 1927 à 1939, il accomplit régulièrement des périodes d'instruction à Angers, aux camps du Ruchard et de la Courtine. Le 25 octobre 1930, il est nommé au grade de lieutenant de réserve par décret du 12 février 1931 (Jo du 21/02/1931 page 5352)</p>
+
+<p>A la mobilisation, il est marié avec Marie Louise depuis le 25 septembre 1933 et père de 3 enfants.</p>
+
+<p>Le 29 août 1939, il est rappelé à l'activité et se rend au CMI N°91. Nouvellement promu au grade de capitaine de réserve par décret du 1 septembre 1939 (JO du 15/09/1939 page 11459), il est dirigé sur le camp de La Valbonne pour l'encadrement des engagés volontaires étrangers. Le 1er novembre, il est affecté au 11è régiment étranger d'infanterie et commande la 6è compagnie.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-5.jpg" alt="Officiers du 2è bataillon">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-8.jpg" alt="Officiers du 2è bataillon">
+    <figcaption>Des officiers du 2è bataillon avril 1940</figcaption>
+  </figure>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-6.jpg" alt="Le capitaine Magne avec des officiers et sous officiers du 11è REI">
+  <figcaption>A droite, le capitaine Magne avec des officiers et sous officiers du 11è REI</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-9.jpg" alt="Jean Magne avec des officiers">
+  <figcaption>Avec des officiers</figcaption>
+</figure>
+
+<p>En 1940, peut être avec les légionnaires de la 6è compagnie</p>
+
+<p>Le régiment quitte la Valbonne le 15 décembre 1939 pour aller en avant de la ligne Maginot. Le 13 mai 1940, alors que sa compagnie stationne dans le secteur de Boulay, le capitaine Magne est dirigé sur l'hôpital complémentaire de Grandmaison pour une entorse à la cheville.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-10.jpg" alt="Jean Magne">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-11.jpg" alt="Jean Magne">
+    <figcaption>Jean Magne, le 27 mai 1940, lors d'une permission de convalescence. Il porte l'insigne du 11è REI et vient d'être père pour la 4è fois.</figcaption>
+  </figure>
+</div>
+
+<p>Après sa convalescence, Jean Magne retrouve le 11è REI après les combats du bois d'Inor. En son absence, le lieutenant Blot qui avait pris le commandement de la 6è compagnie, est blessé le 27 mai et remplacé par le lieutenant Forget.
+Il retrouve le régiment le 2 juin, après quelques péripéties pour localiser les positions du 11è REI. C'est René Coupin, qui rapporte l'histoire dans son livre "Vainqueur quand même" à la page 137</p>
+
+<blockquote>L'arrivée du Capitaine MAGNE, passant à notre poste, de retour de sa permission de convalescence après une cheville foulée, crée une heureuse diversion à nos préoccupations. Il nous raconte ses pérégrinations, depuis un Paris agité et inquiet, un interminable parcours entrecoupé de nombreux arrêts dus aux survols incessants de l'ennemi. Celui-ci semble, comme ici, occuper seul le ciel et lâche ses bombes sans avarice aucune. De Metz à Verdun, il met plus de deux jours, à la recherche du 11ème, en empruntant les véhicules les plus invraisemblables de dix unités. Il n'obtient que des renseignements contradictoires. Au troisième jour, très inquiet de cette situation, il aboutit enfin à Dun-sur-Meuse, 15 kilomètres au-dessous de Stenay, où les officiers d'Etat-Major d'un Corps d'Armée l'orientent ... « Ah, vous êtes du 11ème R.E.I., quelle splendide unité ! La Légion continue et maintient les brillantes traditions de ses aînés. Savez-vous ce qu'ils ont fait vos camarades, au Bois d'Inor ? Arrêté cinq régiments d'élite, défait plus de 2.000 fritz, et provoqué une telle terreur que l'ennemi n'ose même plus remuer ! Vous avez beaucoup de chance d'appartenir à ce corps d'exception ! Nous allons faire immédiatement le nécessaire pour que vous retrouviez vos « hommes et vos amis, suivez-nous ». Ils l'emmènent d'abord auprès du Général de VERDILHAC. Ce dernier, sans plus attendre, met voiture personnelle et chauffeur à sa disposition, après l'avoir, lui aussi, fortement congratulé, simplement parce qu'il est du 11ème ! Nanti d'un itinéraire précis, le chauffeur venait de le déposer après une quarantaine de kilomètres, à portée de notre poste de secours. « Où est la 6ème ? », et un motocycliste le conduisit directement à son P.C. qu'occupait en son absence le lieutenant FORGET. Le Capitaine MAGNE, réserviste, appartenait à notre phalange du 1er R.T.A*. Il s'était tout à fait incorporé, grâce son énergie, aux officiers de carrière qu'il fréquentait, et où tous le considéraient pour son courage et ses brillantes qualités militaires. Il ne s'est jamais ménagé et est mort, comme il le souhaitait sûrement, " à la légionnaire ".</blockquote>
+
+<p>* Jean Magne n'a pas de lien avec ce régiment de tirailleurs algériens. Le point commun entre Coupin et Magne est en réalité le centre mobilisateur n°91 d'Angers. A la mobilisation ce centre est en surnombre, des officiers et sous officiers de réserve sont alors affectés à la formation des engagés volontaires étrangers à La Valbonne puis seront versés au 11è REI. Coupin recense 23 officiers et 40 sous officiers de réserve qui sont dans ce cas mais peu d'entres eux ont un lien avec le 1er RTA.</p>
+
+<p>Juste avant la retraite du régiment en direction de Saint Germain sur Meuse, le capitaine Magne est légèrement blessé par un éclat d'obus dans le dos le 9 juin 1940.</p>
+
+<p>Le 17 juin 1940 des éléments du 2è bataillon étaient chargés de couvrir le pont de Void jusqu'au passage du dernier contingents français. Ils devaient ensuite couvrir les équipes du génie chargées de faire sauter le pont. A l'arrivée des allemands à l'entrée de Void, l'adjudant Romanovicz faisait sauter le pont alors que le reste du 11è REI se trouvait à Saint Germain sur Meuse.
+Dans la soirée du 17 juin, ordre était donné de reprendre les positions abandonnées à Void le jour même.
+Le chef du 2è bataillon d'Alegron, en faisant une question d'honneur revendiqua pour son seul bataillon d'accomplir cette reconnaissance offensive. D'Alegron sait déjà qu'il n'en reviendra pas vivant, il donne ses dernières consignes au capitaine Lemoine qui devra le remplacer à la tête du 2è bataillon. Le capitaine Magne qui a été informé de l'action du lendemain semble résigné.
+La 6è compagnie du capitaine Magne et une section de mitrailleuse de la <a href="https://www.11regimentetranger.com/blog/ca2" target="_blank" rel="noopener">CA2</a>, constituant une avant garde prend la direction de Void le 18 juin 1940 à 4h du matin.</p>
+
+<p>Moins d'une heure après, le chef de bataillon et le capitaine Magne sont tués au combat. Le colonel Clément, donne peu après l'ordre de repli pour ce qu'il reste de la 6è compagnie. Le lieutenant Viel, chargé de porter le message est tué à son tour. Ce qu'il reste de la 6è compagnie, se replie vers Ourches où le lieutenant Jabouille est tué.
+Le seul officier à revenir vivant est le lieutenant Coubart qui blessé en début d'opération a pu être évacué sur le poste de secours.</p>
+
+<p>Après les combats du 18 juin, le corps de Jean Magne est retrouvé par des prisonniers français à 500 mètres à la sortie nord de Void sur la route de Sorcy. Son corps sera initialement inhumé dans le cimetière communal puis restitué à sa famille pour être inhumé à Domrémy.</p>
+
+<p>Il obtient une citation à l'ordre de l'armée "Officier d'élite, d'un moral élevé et d'un courage admirable. Quoique légèrement blessé par éclat d'obus le 9 juin 1940 entre INOR et MALANDRY a tenu à conserver le commandement de son unité avec laquelle il accomplit tous les combats en retraite jusqu'au 18 juin, faisant preuve d'une énergie extraordinaire. Le 18 juin 1940, chargé de reprendre avec son unité le pont du canal, aux environs de VOID, s'est heurté à des éléments ennemis occupant les lisières sud du village et a été glorieusement tué à son poste de combat"</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-magne-jean-12.jpg" alt="Jean Magne">
+</figure>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Photographies, collection famille Chapon</li>
-    <li>René-Luce Coupin, « Vainqueur quand même »</li>
-    <li>Roger Bruge, « Les combattants du 18 juin » (tome 4)</li>
-    <li>Georges Manue, « Rien n'est perdu »</li>
+    <li>photos collection famille Chapon</li>
+    <li>René Coupin, Vainqueur quand même</li>
+    <li>Roger Bruge, les combattants du 18 juin (tome 4)</li>
+    <li>Georges Manue, Rien n'est perdu</li>
   </ul>
 </div>
 

@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IDIONDO HORNES Julián — 11e REI</title>
-<meta name="description" content="Ancien combattant basque de la guerre d'Espagne, mort au camp de Gusen en 1943">
+<title>IDIONDO Julian — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,41 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,24 +65,62 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · EVDG · Espagnol · Déporté</div>
-  <h1>IDIONDO HORNES Julián</h1>
-  <div class="sub">Ancien combattant basque de la guerre d'Espagne, mort au camp de Gusen en 1943</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>JULIÁN IDIONDO HORNES</h1>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>déporté</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Julián Idiondo Hornes, ancien milicien basque de la guerre d'Espagne évadé d'un bataillon disciplinaire franquiste, rejoint la Légion étrangère depuis le camp de Gurs et meurt au camp de Gusen, annexe de Mauthausen, en avril 1943.</p>
-<p>Né le 13 mai 1908 à Santurtzi (Biscaye), benjamin d'une fratrie nombreuse, il se marie le 18 juin 1931 avec Aurea Garnacha Rodríguez. Membre du parti nationaliste basque ANV, il s'engage volontairement dans les unités d'artillerie côtière de l'armée basque pendant la guerre civile et atteint le grade de caporal.</p>
-<p>Après l'occupation de la Biscaye par les troupes franquistes, il est détenu au camp de concentration de l'université de Deusto, puis affecté à un bataillon de travailleurs à Daroca (Saragosse), dont il déserte fin 1938 pour s'enfuir en France — un acte pour lequel il est jugé en son absence par un conseil de guerre franquiste.</p>
-<p>Interné au camp de Gurs à partir de juillet 1939, il rejoint ensuite la Légion étrangère et le 11e REI. Fait prisonnier de guerre en 1940, il est interné au camp de Krems-Gneixendorf en Autriche, puis déporté à Mauthausen le 19 décembre 1941. Il meurt le 29 avril 1943 au camp de Gusen, où les prisonniers étaient utilisés comme esclaves dans les carrières de granit jusqu'à l'épuisement.</p>
+
+<p><a href="https://santurtzihistorianzehar.net/julian-idiondo-hornes/" target="_blank" rel="noopener">https://santurtzihistorianzehar.net/julian-idiondo-hornes/</a></p>
+
+<p>Julián Iriondo Hornes, nace en Santurtzi el 13 de mayo del año 1908. Víctima de los nazis fue deportado el 19 de diciembre de 1941 al Campo de concentración de Gusen dependiente del de Mauthausen en Austria, donde murió el 29 de abril de 1943 cuando contaba 34 años de edad.</p>
+
+<p>Era hijo de Victoria Hornes Burzaco y Julián Idiondo Castaños, ambos nacidos en Santurtzi, lugar donde habían contraído matrimonio el 15 de febrero de 1886. Fueron sus hermanos: María Rosario 1885, María 1886, Salvador 1888, María Concepción 1891, Eloísa 1894, Primitiva 1900, Rosa 1904, siendo Julián el benjamín. Su padre Julián Idiondo Castaños, propietario de profesión, fallece el 19 de febrero de 1908, no llegando por lo tanto a conocer a su hijo Julián, el cual es muy probable que en su recuerdo llevara su nombre.</p>
+
+<p>Su hermana María fallece en Kabiezes el 10 de febrero de 1910, y ese mismo año Victoria Hornes, con el resto de sus hijos supervivientes, (María Rosario, María Concepción y Eloísa ya habían fallecido para esa fecha) se desplaza a vivir a Portugalete, a la calle Manuel Calvo, (Muelle Viejo), figurando en el censo del año 1930 como propietaria, y con una renta de 12.000 pesetas. Esta cantidad de dinero era el resultado de las rentas producidas por el alquiler de las viviendas de seis pisos n13 y 14 de la calle Manuel Calvo.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-idiondo-julian-2.jpg" alt="">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-idiondo-julian-4.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>En este mismo censo del año 1930 en Portugalete, figura que Victoria Hornes y Julián Idiondo residen en la calle Manuel Calvo n º14 y con ellos Rosa Idiondo Hornes con su esposo, Ramón Guerrero Toledo, nacido en Algeciras (Cádiz en 1904) y sus hijos, Francisco, María y Julián.</p>
+
+<p>Julián, contrae matrimonio el 18 de junio de 1931 con Aurea Garnacha Rodríguez.</p>
+
+<p>La mayoría de los datos a continuación están recogidos del libro escrito por José Manuel López Díez, PORTUGALETE Y LAS VÍCTIMAS DEL FRANQUISMO, PRESOS Y OTROS MUERTOS (1936/1939).</p>
+
+<p>Julián Idiondo Hornes, según datos investigados aparece como de profesión escribiente, o bien como jornalero. Apareciendo su apellido en algunos casos como Idiondo Ornes -Ornos.</p>
+  </div>
+</div>
+
+<p>Según los datos que en su momento el ayuntamiento franquista de Portugalete realizaba en especial a todos los desafectos del régimen franquista, Julián pertenecía a ANV y fue voluntario al frente. Miliciano en un principio de los regimientos de Artillería de costas, 3 de Artillería Pesada y 3 de Artillería Ligera de Euzkadi, destacado en Punta Lucero, alcanzaría la graduación de cabo.</p>
+
+<p>Posteriormente, ocupada Bizkaia por las fuerzas franquistas, fue detenido y llevado preso al "campo de concentración de prisioneros Deusto" conocido también como "Prisión Militar de Deusto" que fuera creado en la Universidad de Deusto en agosto del año 1937. Posteriormente, una vez clasificado, le destinaron al Batallón de Trabajadores n68 en Daroca (Zaragoza), y del cual desertó para escapar a Francia a finales del año 1938, por lo cual fue juzgado en rebeldía en un Consejo de Guerra.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-idiondo-julian-5.jpg" alt="">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-idiondo-julian-6.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>En Francia, una vez detenido, ingresa como refugiado en el campamento de Accueil de Gurs el 5 de julio de 1939 y, desde aquí, pasa a formar parte de la Legión Extranjera. Posteriormente hecho prisionero de guerra, fue internado en Krems-Gneixendorf (Austria) y deportado a Mauthausen, ambos campos de exterminio nazis. Muere en el campo de exterminio de Gusen, dependiente este del de Mauthausen, lugar donde se utilizaba a los prisioneros como esclavos en las canteras de granito, y en la cual trabajaban hasta su muerte por extenuación.</p>
+  </div>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
   <ul>
-    <li>José Manuel López Díez, « Portugalete y las víctimas del franquismo, presos y otros muertos (1936/1939) »</li>
-    <li>santurtzihistorianzehar.net</li>
-    <li>Archives historiques de Portugalete et de la province de Salamanque</li>
+    <li>Archivo Histórico de Portugalete.</li>
+    <li>Archivo Histórico Provincial de Salamanca.</li>
+    <li>Wikipedia.</li>
   </ul>
 </div>
 

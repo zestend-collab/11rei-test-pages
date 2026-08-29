@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DERDERIAN Garabed « Gabriel » — 11e REI</title>
-<meta name="description" content="Amputé au bois de Pâques en 1940, fusillé sommairement par les Allemands en 1944">
+<title>DERDERIAN Garabed — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,42 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,23 +61,50 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 9e compagnie · EVDG · Résistant · Mort pour la France</div>
-  <h1>DERDERIAN Garabed « Gabriel »</h1>
-  <div class="sub">Amputé au bois de Pâques en 1940, fusillé sommairement par les Allemands en 1944</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>DERDERIAN Garabed</h1>
+  <div class="sub">(Le Maîtron)</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>résistant</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Garabed Derderian, réfugié arménien devenu marchand forain, perd un bras au combat au 11e REI en 1940. Résistant en Lozère, il est arrêté, torturé, puis fusillé sommairement avec vingt-neuf autres résistants à Sainte-Radegonde en août 1944.</p>
-<p>Né le 3 novembre 1909 à Erzeroum (Empire ottoman), naturalisé français en 1943, il exerce comme marchand forain en Haute-Loire et en Aveyron, domicilié au Puy-en-Velay. Mobilisé au 11e REI, il est grièvement blessé le 22 mai 1940 au bois de Pâques (Meuse) et amputé du bras droit ; il reçoit en 1941 la médaille militaire, cité comme « légionnaire courageux [...] gravement blessé sur la Meuse ».</p>
-<p>Entré en résistance, probablement dans les MUR et l'Armée secrète de Lozère, il participe à des opérations spéciales visant à établir le contact avec des supplétifs soviétiques de la Légion arménienne — une unité alors engagée aux côtés des Allemands contre le maquis Bir Hakeim, décimé sur le causse Méjean fin mai 1944. Arrêté début juillet 1944 à La Bastide-Puylaurent par des agents du SD, il est emprisonné avec son épouse à Mende puis transféré à Rodez, où il est torturé par la Sipo-SD.</p>
-<p>Extrait de la caserne Burloup de Rodez le 17 août 1944, il est exécuté sommairement à la mitrailleuse à la butte de tir de Sainte-Radegonde, avec vingt-neuf autres résistants, par un détachement de la Luftwaffe venu d'Albi. Inhumé d'abord à Rodez, il repose depuis à la nécropole nationale de la Doua, à Villeurbanne. Homologué combattant FFI, il n'obtient la carte de déporté-interné de la Résistance qu'en 1959.</p>
+
+<p><a href="https://maitron.fr/spip.php?article176987" target="_blank" rel="noopener">https://maitron.fr/spip.php?article176987</a>, notice DERDERIAN Garabed par André Balent, Éric Panthou, version mise en ligne le 27 novembre 2015, dernière modification le 29 janvier 2022.</p>
+
+<p>Né le 3 novembre 1909 à Erzeroum (Empire ottoman / Turquie) ; fusillé sommaire par les Allemands le 17 août 1944 à Sainte-Radegonde (Aveyron) ; marchand forain en Haute-Loire et en Aveyron ; résistant.</p>
+
+<p>Garabed Derderian (prénom transcrit aussi Garabet ou Gabriel), arménien naturalisé français en 1943, résidait au Puy-en-Velay (Haute-Loire), 3, rue des Tables. Il était le fils de Kallouste Derderian (décédé en 1944) et de son épouse, Loussentah, Victoria Torossian.</p>
+
+<p>Il était marchand forain en Haute-Loire, dans l'Aveyron (et en Lozère ?).</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-derderian-garabed-2.jpg" alt="">
+</figure>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-derderian-garabed-4.png" alt="">
+</figure>
+
+<p>Mobilisé au 11è REI, il est grièvement blessé le 22 mai 1940 au bois de Pâques et est amputé d'une partie de son bras droit. En 1941, il reçoit la médaille militaire avec la citation suivante: "légionnaire à la 9e compagnie du 11e rég. étranger d'infanterie: légionnaire courageux. A été gravement blessé, le 22 mai 1940, sur la Meuse, au bois de Pacq. A été amputé du bras droit."</p>
+
+<p>Résistant, il fut arrêté début juillet à La Bastide-Puylaurent (Lozère) par des agents du SD. Il était sans doute des MUR et/ou de l'AS du chef-lieu de la Lozère. Il participa à des opérations spéciales afin d'établir le contact entre la Résistance et les Soviétiques en cantonnement à Mende ; Ces derniers étaient des supplétifs de l'armée allemande. Ils faisaient partie de la Légion arménienne en garnison à Mende et à Millau. Cette unité fut engagée depuis Mende aux côtés de soldats allemands contre le maquis (AS) Bir Hakeim qui fut décimé sur le causse Méjean à La Parade (Lozère) le 28 mai 1944.</p>
+
+<p>Il fut interné du 10 juillet au 17 août 1944. Dans un premier temps, il fut emprisonné avec sa femme à la maison d'arrêt de Mende. Il fut ensuite transféré à Rodez et fut torturé par la Sipo-SD.</p>
+
+<p>Incarcéré à la caserne Burloup de Rodez entre les mains de la Sipo-SD, il en fut extrait le 17 août 1944 et exécuté sommairement à la mitrailleuse à la butte de tir de Sainte-Radegonde (Aveyron) avec vingt-neuf autres résistants par un détachement de Luftwaffe venu d'Albi (Tarn). Son acte de décès fut enregistré en mairie de Rodez.</p>
+
+<p>Inhumé d'abord au cimetière de Rodez le 18 août 1944, Il fut inhumé à Villeurbanne (Rhône) à la nécropole nationale de la Doua : carré H, rang 5, tombe 11. Son nom figure sur le monument mémorial de Sainte-Radegonde.</p>
+
+<p>Homologué combattant des FFI, Garabeb Derderian n'obtint qu'en 1959 la carte de déporté-interné de la Résistance. Il y a deux dossiers à son nom au Service historique de la défense, à Vincennes (dossier de résistant, cote GR 16 P 176592) et à Caen (victime de guerre, cote AC 21 P 633242).</p>
+
+<p>En juin 2021, Patrice Guillain a réalisé un court métrage de 12 minutes sur le massacre de Sainte Radegonde intitulé "Le 17 août à 17 heures".</p>
 
 <div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>André Balent et Éric Panthou, notice « DERDERIAN Garabed », Le Maitron des fusillés</li>
-  </ul>
+  <h3>Sources principales et pour en savoir davantage</h3>
+  <p>- Le Maitron est le nom d'usage d'un ensemble de dictionnaires biographiques du mouvement ouvrier dirigé par l'historien Jean Maitron (jusqu'à sa mort en 1987) puis par son successeur Claude Pennetier.<br>
+  - site internet les fusillés <a href="https://fusilles-40-44.maitron.fr/spip.php?article176987" target="_blank" rel="noopener">https://fusilles-40-44.maitron.fr/spip.php?article176987</a><br>
+  Le site propose d'autres notices sur les exécutés de Sainte Radegonde<br>
+  - <a href="https://www.sainteradegonde.fr/decouvrir/histoire-et-patrimoine/les-eglises-fortifiees/" target="_blank" rel="noopener">https://www.sainteradegonde.fr/decouvrir/histoire-et-patrimoine/les-eglises-fortifiees/</a></p>
 </div>
 
 <div class="actions">

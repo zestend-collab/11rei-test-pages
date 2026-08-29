@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PONIST Pavel « Paul » — 11e REI</title>
-<meta name="description" content="Caporal-chef slovaque, mort près de Blénod-lès-Toul le 18 juin 1940">
+<title>PONIST Pavel — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,53 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment-item{margin-bottom:1rem}
+  article .comment-item .who{font-weight:500}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +72,94 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Mort pour la France</div>
-  <h1>PONIST Pavel « Paul »</h1>
-  <div class="sub">Caporal-chef slovaque, mort près de Blénod-lès-Toul le 18 juin 1940</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>PONIST Pavel</h1>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Pavel Ponist, légionnaire slovaque naturalisé français en 1930, meurt le 18 juin 1940 près de Blénod-lès-Toul — une date longtemps brouillée par une erreur de saisie dans les registres officiels.</p>
-<p>Né le 19 juin 1900 à Riečnica (Slovaquie), probablement engagé à la Légion étrangère vers 1929, il est naturalisé français par décret en février 1930 alors caporal-chef au 1er régiment étranger d'infanterie à Sidi-Bel-Abbès, où il se marie la même année.</p>
-<p>Le site Mémoire des Hommes indique d'abord, par erreur, sa mort le 18 avril 1940 à Blénod-lès-Toul — une date incompatible avec la position du régiment à cette époque. La base des sépultures de guerre permet de corriger : Paul Ponist, caporal au 11e REI, est mort le 18 juin 1940, jour où le régiment se replie précisément sur Blénod. Il reçoit la médaille militaire à titre posthume par le Journal officiel du 22 octobre 1948.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-2.jpg" alt="Pavel Ponist">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-4.jpg" alt="Document Pavel Ponist">
+  </figure>
+</div>
+
+<p>Pavel Ponist est né le 19/06/1900 à Riečnica en Slovaquie</p>
+
+<p>Probablement engagé dans la Légion étrangère en 1929, il obtient la nationalité française par décret paru dans le Journal Officiel du 2/2/1930 "PONIST (Pavel), caporal-chef au 1er régiment étranger d'infanterie, né le 19 juin 1900 à Riecnice (Tchécoslovaquie), demeurant à Sidi-Bel-Abbès (Oran). — Remise totale."</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-5.jpg" alt="Document Pavel Ponist">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-6.jpg" alt="Pavel Ponist">
+  </figure>
+</div>
+
+<p>Le 28 ocotbre 1931, Pavel se marie à Sidi-Bel-Abbès avec MEURIS Angèle Rosalie.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-7.jpg" alt="Document Pavel Ponist">
+</figure>
+
+<p>Soit volontaire soit appelé Pavel Ponist participe à la guerre de 1939-1940 avec le 11è REI.</p>
+
+<p>Sur le site mémoire des hommes, dans la rubrique " Militaires décédés au cours de la Seconde Guerre mondiale" il est indiqué que Pavel Ponist est décédé le 18/04/1940 à Blénod-Lès-Toul. Il y a probablement une erreur de saisie puisque le 11è régiment étranger d'infanterie ne se trouve pas vers cette commune au mois d'avril mais plutôt à partir de la mi-juin..</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-8.jpg" alt="Document Pavel Ponist">
+</figure>
+
+<p>Par contre toujours sur le site Mémoire des hommes dans la base des Sépultures de guerre, on trouve une fiche au nom de PONIST Paul, caporal au 11è R.E décédé le 18 juin 1940.</p>
+
+<p>Ce qui correspond à la position du régiment qui entre le 18 et le 19 juin se rend à Blénod.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-9.jpg" alt="Document Pavel Ponist">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-10.jpg" alt="Document Pavel Ponist">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-11.jpg" alt="Document Pavel Ponist">
+  </figure>
+</div>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-12.jpg" alt="Document Pavel Ponist">
+</figure>
+
+<p>En 1948 dans le Journal Officiel du 22/10/1948 est attribuée la médaille militaire à titre posthume à PONIST (Paul), caporal, classe 1929, mle 3096 au recrutement d'Oran.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-ponist-pavel-13.jpg" alt="Document Pavel Ponist">
+</figure>
+
+<p>Merci à son petit neveu pour le partage de photos de famille.
+Il recherche toutes informations sur son grand oncle alors n'hésitez pas si vous en savez plus sur Pavel/Paul PONIST</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Documents familiaux</li>
-    <li>Site Mémoire des Hommes</li>
-    <li>SHD Vincennes, 34N316</li>
+    <li>documents familiaux</li>
+    <li>Mémoire des hommes</li>
+    <li><a href="https://www.geneanet.org/cimetieres/view/7314719/persons/?individu_filter=PONIST%2BPaul" target="_blank" rel="noopener">https://www.geneanet.org/cimetieres/view/7314719/persons/?individu_filter=PONIST%2BPaul</a></li>
+    <li>SHD Vincennes, côte 34N316</li>
   </ul>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-item">
+    <p class="who">Fakha Sabine 10-04-2020</p>
+    <p>Je suis sa nièce et je vous remercie pour tous ces renseignements précieux que nous cherchions depuis longtemps Merci beaucoup Sabine</p>
+  </div>
 </div>
 
 <div class="actions">

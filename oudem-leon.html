@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OUDEM Léon — 11e REI</title>
-<meta name="description" content="Radiotélégraphiste d'origine russe à l'identité mouvante, des purges soviétiques aux FFL">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,50 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ol,article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.6rem}
+  article li ul{margin-top:.4rem}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,42 +74,186 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · FFL</div>
   <h1>OUDEM Léon</h1>
-  <div class="sub">Radiotélégraphiste d'origine russe à l'identité mouvante, des purges soviétiques aux FFL</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="sub">Famille et origine géographique · Лев Маркович Удем</div>
+  <div class="tags"><span>11è REI</span><span>FFL</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Léon Oudem, radiotélégraphiste dont plusieurs frères sont exécutés ou déportés lors des purges staliniennes, sert au 11e REI puis dans les Forces françaises libres — un parcours brillant mais semé de versions contradictoires sur sa propre identité.</p>
-<h2>Une famille frappée par les purges soviétiques</h2>
-<p>Né le 30 mai 1908 à Pskov, probablement originaire d'une famille juive de Kārsava (Lettonie actuelle), il quitte la Russie alors que ses frères, engagés dans la mouvance menchevik, sont arrêtés à plusieurs reprises par la police politique soviétique. Son frère Grigori, après des années de détention et d'exil, est fusillé en 1937 lors des grandes purges, accusé de sabotage et d'activités contre-révolutionnaires ; il sera réhabilité en 1989.</p>
-<h2>Radiotélégraphiste à la Légion</h2>
-<p>Formé en Belgique puis breveté radiotélégraphiste de la marine marchande, il s'engage à la Légion étrangère fin 1929 et sert dans le réseau radio du Sahara occidental, obtenant le diplôme de radiotélégraphiste d'élite. Naturalisé français en 1933, libéré de son contrat fin 1934, il monte à Paris une entreprise de construction radiophonique, Stellor-Radio, qui fait faillite en 1939.</p>
-<h2>Le 11e REI puis les FFL</h2>
-<p>Rappelé à l'activité malgré des poursuites judiciaires pour escroquerie, il rejoint le 11e REI en 1939, cité comme arbitre de football dans la revue du régiment. Le 23 juin 1940, il est cité à l'ordre du régiment pour avoir traversé un bombardement intense afin de ravitailler sa compagnie et rechercher des camarades blessés. Fait prisonnier deux jours plus tard, il s'évade du frontstalag 240 de Verdun dès août 1940.</p>
-<p>En 1942, il quitte la France occupée pour Londres et s'engage sous le pseudonyme « Oudin » comme radio à bord de la corvette La Combattante, cité pour ses réparations effectuées au combat, puis sert comme fusilier marin dans la division Leclerc jusqu'en 1945, décoré de la médaille des évadés.</p>
-<h2>Un homme aux identités changeantes</h2>
-<p>Le rapprochement des dossiers de naturalisation et des Forces françaises libres révèle des divergences troublantes sur l'identité de Léon Oudem :</p>
-<ul>
-  <li>Identité de sa mère : « Nina Léonie Ducos, française » dans son dossier FFL de 1943, contre « Nina Léon Kalgout, d'origine russe » ailleurs — un ajustement qui pourrait viser à justifier un enracinement français ;</li>
-  <li>Religion : orthodoxe déclaré dans son dossier FFL, alors que ses frères sont identifiés comme juifs dans d'autres documents — dissimuler une origine juive pouvait être vital dans le contexte de l'époque ;</li>
-  <li>Décès de ses parents : il affirme en 1943 qu'ils sont morts avant 1919, alors que son frère Grigori déclarait en 1937 leur père vivant et invalide à Leningrad ;</li>
-  <li>Rôle dans la Résistance : une attestation de 1946 le crédite d'un réseau d'évasion organisé avec la comtesse de Ganay avant son départ pour Londres en 1942 — épisode absent de son dossier FFL officiel ;</li>
-  <li>Arrivée en Belgique et scolarité : le lycée Maurichard de Bruxelles puis Liège, mentionnés dans son dossier FFL, sont absents de son dossier de naturalisation, qui n'évoque qu'un passage en France dès 1921 ;</li>
-  <li>Langue parlée : il déclare ne parler « que peu le russe » dans son dossier FFL, en dépit d'une enfance passée à Pskov jusqu'à l'adolescence ;</li>
-  <li>Contacts avec sa famille : il affirme n'avoir eu aucun contact avec les siens pendant son service à la Légion (1934-1939), tout en semblant informé, au moins jusqu'en 1933, du sort de ses frères déportés en Sibérie.</li>
-</ul>
-<p>Ces contradictions dessinent le portrait d'un homme recomposant son passé selon les circonstances. Après la guerre, il mène plusieurs affaires au Brésil — exportation de brisures de riz, conserverie de viande sans vide. Un associé, Karlos Rischbieter, le décrira des décennies plus tard : « Léon Oudem, un Français né en Arménie, avait exercé une multitude d'activités différentes au cours de sa vie [...] Nous restâmes cependant amis. » Une autre relation le jugeait plus sévèrement : « un fumiste, une expression française qui en portugais signifierait un mélange de charlatan et d'escroc. »</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Archives de naturalisation et dossier des Forces françaises libres</li>
-    <li>Revue du régiment « Rouge et Vert », n°9</li>
-    <li>Karlos Rischbieter, « Livro Fragmentos de Memória »</li>
-  </ul>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oudem-leon-2.jpg" alt="Léon Oudem">
+  </figure>
+  <div class="side-text">
+<p>1,75m, cheveux châtains, yeux bleus. Signe particulier tâche pigmentaire front et omoplate gauche, pilosité développée
+Léon Oudem est né le 30 mai 1908 à Pskov, en Russie. Il déclare être le fils de Michel Moïse et de Nina Léon Kalgout. Ces noms semblent être des patronymes, correspondant probablement à "Michel, fils de Moïse Oudem", et "Nina, fille de Léon Kalgout".</p>
+
+<p>Léon indique également être né à Korsowka, une localité située à la frontière ouest de l'oblast de Pskov. Ce toponyme russe désigne vraisemblablement la ville de Kārsava, en Lettonie. De son côté, son frère Simon (également connu sous les prénoms Semion ou Salomon) déclare être né dans la province de Vitebsk, en Biélorussie, proche de la limite sud de l'oblast de Pskov.</p>
+
+<p>Les origines de Léon Oudem semblent cependant liées à Kārsava, en Lettonie, où l'on trouve des familles portant les noms Udem et Kalgut. Ces patronymes présentent plusieurs variantes orthographiques : Udem (Удем), Edem (Эдем), ainsi que pour sa mère, Kalkut, Kalkute, Kalguts, Gelgut.</p>
+
+<p>Léon Oudem a pour frères et sœur :</p>
+
+<ul>
+<li>Eugène (né en 1901)</li>
+<li>Simon (né en 1904), identifié sous le nom УДЕМ Соломон (Семен) Маркович (Мордкович)</li>
+<li>Grégoire (né le 10 janvier 1905), connu sous le nom Григорий Маркович УДЕМ (Удэм, Эдем)</li>
+<li>Zinaida (née en 1910).</li>
+</ul>
+  </div>
 </div>
+
+<p>Le patronyme Markovitch ne semble pas correspondre directement au prénom du père déclaré, Michel. Dans certaines variantes, il est mentionné sous la forme Mordkovitch, ce qui suggère que le prénom Markus pourrait être un kinnui de Mordechai, Mordka ou Moshé, expliquant ainsi son équivalent français, Michel.</p>
+
+<p>* La plupart des hommes juifs portaient deux noms : un nom religieux, appelé shem hakodesh, et un nom laïc, appelé kinnui en hébreu. Le nom religieux est un nom hébreu et le nom profane est utilisé dans la langue vernaculaire utilisée. Parmi les juifs d'Europe de l'Est, le yiddish était la langue courante ou laïque, ils avaient donc un nom hébreu religieux et un nom yiddish laïc. En France, le nom laïc est en français, dans l'Empire russe, la pratique pouvait varier selon les régions et les communautés.
+En 1924, son frère Grigori, étudiant en deuxième année de droit à l'université de Leningrad, résidant avant son arrestation à Leningrad, rue Bolchoï Podiazheskaïa, maison 8, appartement 14, est arrêté le 10 avril 1924 par le 3e département de l'OGPU dans le district militaire de Leningrad. Il est noté comme juif et membre du RSDLP, faction menchevik (parti travailliste social-démocrate russe). Il est accusé d'avoir commis des infractions prévues par les articles 62 et 72 du Code pénal de la RSFSR (édition de 1922), à savoir qu'à la fin de 1923 et au début de 1924, il avait commencé à fréquenter un groupe d'étudiants à tendance oppositionnelle et menchevik. Bien qu'il n'ait pas rejoint ce groupe, il avait néanmoins lu et diffusé de la littérature illégale distribuée par ce groupe et avait dissimulé des informations sur leurs activités illégales. Il est condamné le 18 juillet 1924 pour les chefs d'accusation des articles 62 et 72* du code pénal russe. Sa peine consiste en 3 ans de privation du droit de résider dans six villes universitaires.
+*Article 62 : La participation à une organisation visant les objectifs spécifiés à l'article 57 du Code pénal, en incitant la population à des troubles de masse, au non-paiement des impôts, au non-respect des obligations, ou par tout autre moyen, au détriment manifeste de la dictature de la classe ouvrière et de la révolution prolétarienne, même dans les cas où un soulèvement armé ou une invasion armée n'était pas l'objet principal d'une telle organisation, est punie des mêmes peines.
+*Article 72 : La distribution de littérature d'agitation à caractère contre-révolutionnaire, ainsi que la préparation ou le stockage de cette littérature à des fins de distribution, sont passibles d'une peine d'emprisonnement d'au moins un an.</p>
+
+<p>Grigori est arrêté à nouveau le 6 avril 1925. Le 29 mai de la même année, il est condamné à 3 ans de camp de concentration et 3 ans d'exil au Kazakhstan après sa peine de prison. De 1925 à 1928, il est détenu dans des cellules d'isolement politique à Tcheliabinsk et Verkhne-Ouralsk.</p>
+
+<p>Son frère Salomon, arrêté par l'OGPU le 10 août 1925, est également membre du RSDLP. Après avoir étudié à l'Institut polytechnique de Leningrad, il est sans emploi et domicilié à Vologda. Condamné à 3 ans de prison pour l'infraction relevée dans l'article 62 du code pénal, il est ensuite déporté au Kazakhstan le 13 juillet 1928 pour une durée de 3 ans.</p>
+
+<p>Pour une raison inconnue, mais vraisemblablement en lien avec les arrestations de ses frères, Léon Oudem quitte la Russie.</p>
+
+<p class="subhead">Départ de Russie et Légion étrangère</p>
+
+<p>Léon affirme dans sa biographie de 1943 qu'il a effectué ses études secondaires au Lycée Maurichard à Bruxelles et a poursuivi deux années d'études à l'Institut Montefior de l'Université de Liège, suivies d'une formation d'un an à l'École de radio-électricité de Bruxelles. En 1927, il obtient son brevet de radiotélégraphiste de la marine marchande. De 1927 à 1929, il représente pour la Belgique la société de construction radio-électrique de Courbevoie.</p>
+
+<p>En mai 1928, l'administration de Molenbeek en Belgique sollicite la police d'Anvers pour enquêter sur Léon Oudem, domicilié au 8 rue de Bueken. Il est alors découvert qu'il a séjourné pendant cinq jours à Anvers, chez Michel Pinkous, entre janvier et février 1928.</p>
+
+<p>De passage à Lille, il s'engage volontairement pour cinq ans dans la Légion étrangère le 17 décembre 1929. A partir du depuis le 1er janvier 1930, il est détaché au réseau Radio de l'ouest Saharien.
+Affecté au 1er REI, il obtient le diplôme de radiotélégraphiste d'élite et reçoit la médaille coloniale avec l'agrafhe Maroc. En décembre 1933, il est naturalisé français par décret.</p>
+
+<p>Le 17 décembre 1934, libéré de la Légion, il reçoit son certificat de bonne conduite et se retire à Paris.</p>
+
+<p>Pendant son engagement, Léon n'a pas de nouvelles de sa famille en Russie, car il ne recevait pas de courrier.
+Entre 1931 et 1934, son frère Grégori est interdit de résider à Kuybyshev en raison de son appartenance au mouvement menchevik. En 1937, Grégori vit à Moscou, rue Novoryazanskaya, maison 7/31, appartement 62, et travaille comme adjoint au chef du département de planification de Soiutrans (transport). Il est victime des grandes purges et est arrêté à nouveau le 1er septembre 1937. Par une décision de la troïka du NKVD de la région de Kuybyshev, en date du 7 décembre 1937, il est condamné à mort pour sabotage (art. 58-7), actes terroristes (art. 58-8), propagande ou agitation contre-révolutionnaire (art. 58-10) et activités contre-révolutionnaires (art. 58-11) du Code pénal de la RSFSR. Il est exécuté par fusillade le 21 décembre 1937 à Kuybyshev (Samara). Il sera réhabilité par le parquet de la région de Kuybyshev le 6 avril 1989.</p>
+
+<p class="subhead">Paris 1934-1939</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oudem-leon-4.jpg" alt="Document Léon Oudem">
+</figure>
+
+<p>Après son engagement à la Légion il devient monteur aux établissements Grandin (radio) à Paris puis représentant pour les établissements Charpuis rue de la chapelle à Paris.</p>
+
+<p>Le 5 novembre 1935, il s'inscrit à la chambre des commerces sous le numéro 651.547 et fonde un atelier de construction radiophonique, qu'il enregistre sous la marque Stellor-Radio. Installé à Paris, Léon Oudem est recensé en 1936 au 49 rue Petit, dans le 19e arrondissement. À cette adresse, il occupe à la fois un appartement et des locaux industriels.
+Le 8 septembre 1936, Léon Oudem se marie à Arzacq avec Héloïse Guichamans. Ensemble, ils ont une fille, Michèle, née en 1938.</p>
+
+<p>Cependant, son entreprise traverse des difficultés depuis 1937. Endetté, il ne parvient pas à régler ses fournisseurs. Le 13 juin 1939, il se déclare en faillite pour insuffisance d'actif.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oudem-leon-5.jpg" alt="Document Léon Oudem">
+</figure>
+
+<p class="subhead">Le 11è REI et engagement dans les FFL</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oudem-leon-6.jpg" alt="Léon Oudem">
+</figure>
+
+<p>Malgré sa faillite et les plaintes déposées contre lui pour escroquerie, abus de confiance et émission de chèques sans provision, Léon Oudem est rappelé à l'activité militaire. Le 23 septembre 1939, il se trouve au centre mobilisateur de Sathonay, puis au fort de Vancia, avant de rejoindre le 2e contingent de réservistes au camp de la Valbonne. Il est affecté au 11e REI. Bien que son nom n'apparaisse pas dans les archives du régiment, il est mentionné dans la revue du régiment de mars 1940.
+Dans le numéro 9 de la revue Rouge Vert, Léon Oudem est signalé comme arbitre lors d'un match de football entre la compagnie de commandement et la compagnie hors rang.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oudem-leon-7.jpg" alt="Document Léon Oudem">
+</figure>
+
+<p>Le 23 juin 1940, il obtient une citation à l'ordre du régiment signé par la chef de bataillon Clément: "belle conduite au feu, n'a pas hésité à traverser un bombardement intense d'artillerie pour porter le ravitaillement à sa compagnie. S'est occupé également de rechercher ses camarades blessés"
+Léon Oudem est fait prisonnier le 25 juin 1940 et interné au Frontstalag 240 à Verdun. Il parvient à s'évader le 5 août 1940 et est démobilisé le 21 octobre 1940.</p>
+
+<p>De retour à Paris, il doit affronter les conséquences judiciaires liées à son ancienne entreprise. Le 8 octobre 1940, il est condamné à 50 francs d'amende pour émission de chèques sans provision, et le 12 août 1941, il écope de 8 mois de prison avec sursis pour escroquerie, abus de confiance et banqueroute. Il est embauché comme agent général de la société Négrier Lagarde de Pantin et de la société Artus de Paris en octobre 1940</p>
+
+<p>En 1942, il quitte la France occupée et se rend à Londres pour rejoindre les Forces Françaises Libres (FFL). Le 16 février 1943, sous le pseudonyme « Oudin », il s'engage comme second maître radio à bord de la corvette La Combattante. Il reçoit une citation pour sa "haute compétence technique" et pour les réparations qu'il effectue au combat, permettant de maintenir les transmissions radiophoniques en service. Le 1er juillet 1944, il est affecté comme sergent aux fusiliers marins de la division Leclerc. Il est démobilisé le 1er mars 1945.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oudem-leon-8.jpg" alt="Document Léon Oudem">
+</figure>
+
+<p>Décret du 25 février 1946 portant attribution de la médaille des évadés avec citation à l'ordre de la brigade entraînant le droit au port de la Croix de guerre (JORF du 26 mars 1946 - )
+Après la guerre, Léon Oudem retourne à Paris, s'installant au 49 rue Petit. En 1945, il se sépare du fonds de commerce de sa société Stellor Radio, qu'il avait confiée en gérance libre dès 1941. L'année suivante, il devient associé dans la société Prodecol.</p>
+
+<p>Une lettre de Léon Oudem, datée de 1946, atteste qu'il avait organisé un réseau d'évasion de France avec la comtesse de Ganay. Avant de quitter le pays, il aurait laissé des consignes à Louis Dupuis ancien sergent du 11è REI, et annoncé son départ pour l'Angleterre, où il devait établir un contact avec le comité de libération.</p>
+
+<p>En 1949, il obtient un visa pour se rendre au Brésil, où il crée une nouvelle affaire, effectuant régulièrement des séjours sur place. En 1950, il se marie pour la deuxième fois avec Louise Marguerite Marie Josèphe Milcent de Missienssy, ils divorcent deux ans plus tard.
+En 1960, il est cité dans le livre de Karlos Rischbieter Livro Fragmentos de Memoria à la page 68: "Léon Oudem, que ma belle-mère adorait, mais qu'elle considérait comme un fumiste, une expression française qui en portugais signifierait un mélange de charlatan et d'escroc".</p>
+
+<blockquote>Léon Oudem, un Français né en Arménie, avait exercé une multitude d'activités différentes au cours de sa vie. Quand je suis allé travailler avec lui, il exportait des brisures de riz. L'une de mes tâches était de négocier avec l'IRGA (Institut Rio-Grandense du Riz). Cela m'a conduit à passer de nombreuses semaines à Porto Alegre, dans des négociations pénibles et épuisantes.
+En plus des brisures de riz, il développait un produit innovant : une conserve sans vide de viande ou de poisson, emballée dans du plastique avec de la gélatine. Il acheta pour cela une usine de gélatine à Monte Aprazível, dans l'intérieur de l'État de São Paulo, au-delà de São José do Rio Preto. J'y allais en Coccinelle ou en train, jusqu'à cette petite ville accueillante, pour m'informer sur le projet. Peu après, je partis pour l'Allemagne pour discuter de gélatine avec Bayer, dans une localité située au sud de Francfort. Ces négociations, bien qu'intéressantes, n'aboutirent à aucun résultat concret. Ce fut en réalité un échec. Je continuai quelque temps à travailler avec Oudem, mais nous en sommes venus à la conclusion que notre partenariat ne prospérerait pas. Nous restâmes cependant amis.</blockquote>
+
+<p>La vie de Léon Oudem présente des contradictions marquées qui questionnent la construction de son identité et de son parcours. Ses dossiers de naturalisation et des Forces françaises libres (FFL) sont les sources majeures qui éclairent son histoire, mais révèlent des divergences troublantes, renforçant le sentiment ambigu décrit par Mme Hélène Ginvert :</p>
+
+<blockquote>« Léon Oudem, que ma belle-mère adorait, mais qu'elle considérait comme un fumiste qui en portugais signifie un mélange de charlatan et d'escroc. »</blockquote>
+
+<p class="subhead">Divergences majeures :</p>
+
+<ol>
+<li>Identité et origine de sa mère
+  <ul>
+  <li>Dossier FFL (1943) : Léon déclare que sa mère s'appelle Nina Léonie Ducos et qu'elle est française.</li>
+  <li>Dossier de naturalisation et autres déclarations : Sa mère se nomme Nina Léon Kalgout, d'origine russe.</li>
+  <li>Cet écart pourrait être un ajustement stratégique pour justifier un enracinement français ou faciliter son engagement dans les FFL.</li>
+  </ul>
+</li>
+<li>Religion
+  <ul>
+  <li>Dossier FFL (1943) : Léon se déclare orthodoxe.</li>
+  <li>Pourtant, ses frères sont identifiés comme juifs dans d'autres documents, ce qui soulève des interrogations quant à la cohérence familiale. Cette déclaration pourrait être liée aux circonstances de la Seconde Guerre mondiale où dissimuler une origine juive pouvait être vital.</li>
+  </ul>
+</li>
+<li>Décès de ses parents
+  <ul>
+  <li>Léon (1943, FFL) : Il affirme que ses parents sont décédés avant 1919, justifiant son arrivée en France seul.</li>
+  <li>Frère Grigori (1937) : Dans son propre dossier, il déclare que leur père est vivant, invalide, et réside à Leningrad.</li>
+  <li>Cet élément crée une dissonance temporelle : Léon aurait-il inventé son statut d'orphelin pour simplifier son parcours ?</li>
+  </ul>
+</li>
+<li>Rôle dans la Résistance
+  <ul>
+  <li>1946, attestation pour Louis Dupuis sergent du 11è REI mort en déportation : Léon témoigne avoir organisé un réseau d'évasion avec la comtesse de Ganay avant de quitter la France en 1942.</li>
+  <li>Dossier FFL : Aucune mention d'une implication dans ce réseau. Il y présente uniquement son engagement dans les FFL à Londres en février 1943.</li>
+  <li>Cette omission pourrait indiquer soit un rôle exagéré après-guerre, soit une réelle activité clandestine non documentée officiellement.</li>
+  </ul>
+</li>
+<li>Arrivée en Belgique et scolarité
+  <ul>
+  <li>Dossier FFL : Léon affirme être arrivé en Belgique en 1919, avoir fait sa scolarité au lycée Maurichard de Bruxelles, puis étudié à Liège.</li>
+  <li>Dossier de naturalisation : Ces détails sont absents, et il ne fait mention que d'un passage en 1921 en France.</li>
+  <li>Les éléments sur ses études semblent flous ou enjolivés, servant peut-être à démontrer un parcours scolaire et professionnel honorable.</li>
+  </ul>
+</li>
+<li>Langue parlée
+  <ul>
+  <li>Dans son dossier FFL, Léon déclare ne parler que « peu le russe ».</li>
+  <li>Cet aveu peut sembler étonnant pour un homme né à Pskov et élevé en Russie jusqu'à son adolescence. Cela pourrait s'expliquer par une volonté de minimiser son lien avec la Russie, ou par une réelle perte de langue au fil des années.</li>
+  </ul>
+</li>
+<li>Relation avec sa famille en Russie
+  <ul>
+  <li>Dossier de naturalisation : Léon affirme n'avoir eu aucun contact avec sa famille pendant son service dans la Légion étrangère (1934-1939).</li>
+  <li>Pourtant, au moins jusqu'en 1933, il semble bien informé : il connaît le sort de ses frères Grigori et Salomon, déportés en Sibérie.</li>
+  <li>Ce paradoxe soulève des interrogations : soit Léon minimisait ses liens pour des raisons personnelles ou administratives, soit il avait des contacts informels, non documentés.</li>
+  </ul>
+</li>
+</ol>
+
+<p class="subhead">Analyse et hypothèses :</p>
+
+<p>Ces contradictions donnent l'image d'un homme cherchant à recomposer son passé selon les circonstances, ce qui peut expliquer des jugements contrastés à son égard.</p>
+
+<ul>
+<li>Son engagement dans la Légion étrangère et les FFL atteste d'une volonté d'intégration et d'un loyalisme affirmé, mais certains éléments laissent penser à une opportunité saisie pour fuir des difficultés financières ou identitaires.</li>
+<li>Les divergences sur l'identité de sa mère, sa religion, et le statut de ses parents traduisent peut-être un besoin de s'adapter aux attentes administratives ou sociales de chaque époque.</li>
+</ul>
+
+<p>Mme Ginvert n'a pas tort de ressentir un décalage : Léon Oudem semble avoir jonglé entre des vérités partielles, façonnant une version de lui-même qui correspondait tantôt à des exigences personnelles, tantôt aux nécessités de survie.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oudem-leon-9.jpg" alt="Document Léon Oudem">
+</figure>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Oudem" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

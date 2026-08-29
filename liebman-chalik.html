@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIEBMAN Chalik « Charles » — 11e REI</title>
-<meta name="description" content="Diamantaire de Kiev, gendre d'un dirigeant sioniste, famille dispersée entre déportation et exil">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,43 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,25 +67,142 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Prisonnier</div>
-  <h1>LIEBMAN Chalik « Charles »</h1>
-  <div class="sub">Diamantaire de Kiev, gendre d'un dirigeant sioniste, famille dispersée entre déportation et exil</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Chalik « Charles » LIEBMAN</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Chalik Liebman, membre d'une famille de diamantaires juifs originaire de Kiev, s'engage au 11e REI ; son sort après sa capture en 1940 reste incertain, tandis que plusieurs de ses frères et sœurs sont dispersés entre exil américain et déportation.</p>
-<p>Né le 5 septembre 1911 à Kiev, fils d'Aron Liebman (mort en 1914) et de Maria Bach — mariés vers 1890-1892 à Jytomyr, ils eurent au moins sept enfants —, Chalik arrive en Belgique le 15 octobre 1921 avec sa mère veuve et ses frères Jankel et Oscar, en passant par Bucarest. Les dossiers d'immigration conservés par la police d'Anvers (felixarchief.antwerpen.be) permettent de reconstituer la fratrie : Elias (1885, marié à Paris en 1936), Fanny (1899), Joseph (1891, diamantaire), Jankel dit Jacques (1908, diamantaire lui aussi) et Oscar dit Edsey (1903, courtier en diamants). Entre 1922 et 1933, Chalik lui-même est enregistré par la police de l'immigration d'Anvers comme se rendant régulièrement en Belgique pour acheter des diamants, résidant alors au 80 Plantin Moretuslei.</p>
-<p>Installé à Paris, il vit en 1931 avec son frère Joseph au square du Bois de Boulogne (16e). Il épouse en 1933 Lydia Elisabeth Jacobson, fille de Victor Jacobson, délégué du Comité exécutif de l'Organisation sioniste et directeur de l'Office permanent de l'Agence juive pour la Palestine à Genève. Avec ses frères Joseph et Jacques, il administre la bijouterie Clerc, achetée par Joseph le 26 novembre 1932 place de l'Opéra ; Charles et Jacques démissionnent de leurs fonctions le 29 décembre 1934. En 1936, domicilié rue des Vignes (16e) avec son épouse et leur fils Victor, né en 1934.</p>
-<p>Il s'engage à la Légion étrangère et rejoint le 11e REI ; il est fait prisonnier en juin 1940. Sa trace se perd ensuite, si ce n'est une piste incertaine d'internement en Espagne en 1943.</p>
-<p>Le sort de sa fratrie illustre la dispersion de nombreuses familles juives d'Europe de l'Est : son frère Joseph, propriétaire de la bijouterie devenue « entreprise juive » sous Vichy, fuit vers les États-Unis via le Portugal en 1940 ; son frère aîné Elias en fait de même en 1941. Son frère Oscar, resté en Belgique, est déporté à Auschwitz par le convoi n°30 en 1942 avec son épouse. Sa sœur Fanny, réfugiée à Nice, est arrêtée et déportée en 1943 avec sa famille. Son frère Isaac Isser reste en France ; l'épouse de ce dernier, déportée en 1942, fait partie des rares survivantes.</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-2.jpg" alt="Chalik Liebman">
+</figure>
+
+<p>Chalik Liebman est né le 5 septembre 1911 à Kiev.</p>
+
+<p>Dans les archives concernant le 11e REI, il apparaît dans la liste des prisonniers du 14 septembre 1940, où il est mentionné comme étant de 2e classe. Son prénom a été francisé : de Chalik, il devient Charles.</p>
+
+<p>Pour en savoir plus sur lui, je me suis intéressée à sa nationalité (russe) et aux fortes probabilités que lui et sa famille aient fui la Russie (Ukraine) dans les années 1920.
+Sur internet, on trouve des dossiers d'immigration compilés par la police d'Anvers, concernant les étrangers ayant séjourné en Belgique entre 1840 et 1930. Ces fichiers peuvent contenir des informations très précieuses, telles que l'état civil (date de naissance, noms des parents, frères et sœurs), l'entourage familial, la profession, parfois les raisons de l'immigration, ainsi que des photos d'identité et des empreintes digitales. Une recherche nominative est facile à effectuer sur le site suivant : <a href="https://felixarchief.antwerpen.be/" target="_blank" rel="noopener">https://felixarchief.antwerpen.be/</a>, où l'on trouve Chalik Liebman.</p>
+
+<p>Dans l'index, deux entrées sont relevées : une sous le nom de "Leibman" et une autre sous "Liebman". La composition familiale indique le nom de son père, Aaron, décédé, et celui de sa mère, Maria Bach. Viennent ensuite les noms de trois enfants : Jankel, Oscar et Chalik. En cherchant ces patronymes avec pour lieu de naissance Kiev, on trouve le reste de la fratrie : Elias, Fanny, Isaac Isser et Joseph.</p>
+
+<p>Les Liebman sont arrivés en Belgique le 15 octobre 1921, Oscar et Charles étant alors mineurs. Ils sont venus de Kiev, en passant par Bucarest (Roumanie). Dans les documents concernant Isaac Isser, il est précisé qu'il est également passé par Bucarest et a résidé au 15 Carolstraat.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-4.jpg" alt="Dossier d'immigration Liebman, Felixarchief">
+</figure>
+
+<p class="subhead">Arrivée en Belgique et Famille</p>
+
+<p>La première déclaration de Maria, faite avec Oscar, a lieu le 7 janvier 1922 dans la commune. Elle déclare avoir un passeport ukrainien et un visa du consulat belge de Bucarest "pour permettre au titulaire de transiter par la Belgique sans s'y arrêter".</p>
+
+<p>Dans un rapport manuscrit du 22 juin 1922, Maria Bach est domiciliée au 7 Lange Kievistraat à Anvers. Elle a un sixième fils, Joseph (diamantaire), qui vit au 165 boulevard Saint Michel à Bruxelles. Elle déclare être la veuve d'Aron Liebman et vivre des fonds que ses enfants lui envoient, notamment son fils à Bruxelles. Les autorités concluent qu'elles peuvent lui accorder un avis positif pour qu'elle reste en Belgique.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-5.jpg" alt="Dossier d'immigration Liebman, Felixarchief">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-6.jpg" alt="Maria Bach">
+  </figure>
+  <div class="side-text">
+<p>Maria Bach est née le 10 mai 1871 à Kiev. Elle se marie en 1890-1892 à Gytomir avec Aron Liebman (né en 1862 à Kiev et décédé en 1914). Ensemble, ils ont eu au moins sept enfants, qui ont tous quitté l'empire russe pour s'établir en Belgique puis en France, en passant par la Roumanie.</p>
+  </div>
+</div>
+
+<p>Elias, né le 15 septembre 1885, se marie le 24 décembre 1917 à Kiev avec Fenia Sack. Il apparaît avec sa femme Fenia dans le recensement de la population du 18e arrondissement de Paris en 1936, au 7/9 rue de Livingston. Il arrive aux États-Unis en 1941, et son nom figure sur la liste des passagers du bateau SS Guiné, parti de Lisbonne* pour New York.
+Il est attendu par Joseph Liebman, demeurant à l'Hotel Saint Maurice, 50 Central Park, New York.
+*Le Portugal autorisa plusieurs milliers de Juifs à se rendre dans le port de Lisbonne. Des organisations juives américaines et françaises apportèrent leur aide aux réfugiés arrivés à Lisbonne pour les acheminer aux États-Unis et en Amérique du Sud.</p>
+
+<p>En 1947, Elia Liebman domicilié 120 Central Park South attend son frère Joseph Liebman apatride né à Kiev arrivant de France sur le navire America.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-7.jpg" alt="Joseph Liebman">
+  </figure>
+  <div class="side-text">
+<p>Joseph Liebman, né le 14 novembre 1891, est lié à Chalik par un rapport de Maria Bach, qui précise qu'il résidait au 125 boulevard Saint Michel à Bruxelles et exerçait la profession de marchand de diamants. Joseph a quitté la Russie en 1913 et a séjourné en France, en Angleterre, puis en Belgique, avant de se fixer définitivement en France en 1929. Il s'est marié le 21 mars 1916 à Londres avec Mlle Sophie Van Den Lyn.
+En 1931 il est recensé avec son frère Chalik 3 square du bois de Boulogne à Paris 16.
+Grâce au site internet de Richard Jean-Jacques (<a href="https://www.richardjeanjacques.com/search?q=clerc" target="_blank" rel="noopener">https://www.richardjeanjacques.com/search?q=clerc</a>), nous savons que Joseph Liebman a acheté la bijouterie Clerc, située au 4 place de l'Opéra, le 26 novembre 1932. Né le 14 novembre 1891 à Kiev, il est mentionné dans les archives de l'entreprise. Parmi les administrateurs, on trouve également Jacques Liebman (né le 14 septembre 1908 à Kiev), Vincent André (né le 9 juin 1883) et Charles Liebman (né en 1911). Le 29 décembre 1934, Charles et Jacques Liebman démissionnent de leurs fonctions.
+À la fin de l'année 1940, la société "Clerc et Bourguignon" est déclarée juive en raison de la "personnalité" de son président du conseil d'administration et principal actionnaire, Joseph Liebman. Ce dernier quitte la France en juin 1940, transitant par le Portugal avant de se rendre aux États-Unis.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-8.jpg" alt="Isaac Isser">
+  </figure>
+  <div class="side-text">
+<p>Isaac Isser, né le 15 octobre 1894 à Kiev, se marie le 26 septembre 1920 à Kiev avec Genia Kagan.
+En 1936, il habite 8 rue du Papillon à Paris. En septembre 1939, il fait une demande de certificat de naissance à produire en justice. Genia Liebman est malheureusement recensée dans les listes des déportés. Son nom apparaît dans le convoi n°36, parti de Drancy, arrivant à Auschwitz le 23 septembre 1942 (elle est rescapée).</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-9.jpg" alt="Fanny Liebman">
+  </figure>
+  <div class="side-text">
+<p>Feni dite Fanny née le 22 août 1899, arrive en Belgique en 1921 en provenance de Bucarest. Elle est mariée à Joseph Gonikchtein (décédé en 1925) et a une fille, Esfir (Alice). Elle se remarie avec Moïse David dit Maurice Infeld.
+En 1931, elle habite 72 rue Truffaud à Paris 17 puis en 1936, elle habite 31 boulevard Suchet à Paris 16.
+La famille se réfugie en zone libre et habite à Nice 5, rue Meyerbeer. En 1943, ils sont arrêtés et déportés à Auschwitz par le convoi 62</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-10.jpg" alt="Jacques Liebman">
+  </figure>
+  <div class="side-text">
+<p>Jankel dit Jacques LEIBMAN, né le 14 septembre 1908, exerce la profession de diamantaire. Il est enregistré en 1930 comme arrivant de Paris, 9 rue Buffault. Il possède un passeport Nansen n°435 délivré en 1933 par la préfecture de Paris, avec un visa non renouvelable pour séjourner en Belgique pendant trois mois. Il est associé à Joseph et Chalik dans l'administration de la bijouterie Clerc.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-11.jpg" alt="Oscar Liebman">
+  </figure>
+  <div class="side-text">
+<p>Edsey dit Oscar LEIBMAN né le 5 novembre 1903, exerce dès 1924 la profession de "diamantmakelaar" (courtier en diamants). Il est déporté à Auschwitz par le convoi n°30, du 9 septembre 1942. Il est marié avec Rebecca Berensztejn également déportée (née le 15/05/1915, arrivée en Belgique le 27/12/1927). Ils ont une fille Marina
+Il apparaît dans la liste des entreprises belges fermées côte AJ40 247-309 : Administration et liquidation d'entreprises juives belges (dossiers d'entreprises classés par branches)
+Sur mémorial Genweb on trouve la mention suivante: "Antiquaire - Interné au Camp de Sauvaud à Casseneuil (47) - Mention « Mort en déportation » arrêté du 09/07/2019 - son nom est inscrit sur le mur des noms du Mémorial de la Shoah (LIEBAN)</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-12.jpg" alt="Chalik Liebman">
+  </figure>
+  <div class="side-text">
+<p>Chalik dit Charles LIEBMAN, né le 5 septembre 1911 à Kiev, arrive en Belgique avec sa mère et ses frères Jankel et Oscar. Il est celui qui m'intéresse particulièrement en raison de son engagement dans la Légion étrangère et de son appartenance au 11e REI.
+Dans l'industrie du diamant, il se fait enregistrer entre 1922 et 1933 par la police de l'immigration d'Anvers. Il semble avoir habité à Paris et se rendre en Belgique pour acheter des diamants, résidant alors à Plantin Morestulei n°80 à Anvers.</p>
+  </div>
+</div>
+
+<p>Il a un dossier dans le fond de Moscou pour la période 1931-1937. En 1931, il habite avec son frère Joseph au square du bois de Boulogne à Paris 16. Il fait une demande de certificat de naissance en 1933 auprès de l'OFPRA pour pouvoir se marier. Il épouse Lydia Elisabeth Jacobson le 25 novembre 1933 à Paris 16. Lydia est la fille de Victor Jacobson, délégué du Comité exécutif de l'Organisation sioniste et directeur de l'Office permanent de l'Agence juive pour la Palestine à Genève.
+En 1936, Chalik est domicilié au 38 rue des Vignes à Paris 16, où il vit avec sa femme et son fils Victor né en 1934.
+Pour une raison inconnue, Chalik Liebman s'engage dans la Légion étrangère et est affecté au 11e REI. Il est fait prisonnier en juin 1940.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-13.jpg" alt="Document Chalik Liebman">
+</figure>
+
+<p>Actuellement, jene sais pas ce qu'il est devenu après l'armistice, ni ce qu'est devenu son frère Jankel/Jacques. Une piste à explorer pourrait être son internement en Espagne en 1943, où un Charles Liebman, accompagné de Jacques, est enregistré à Miranda.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-liebman-chalik-14.jpg" alt="Document 1946, Chalik Liebman">
+</figure>
+
+<p>Enfin, un ensemble de documents datés de 1946 indique que Chalik Liebman a fait une demande auprès du chef des commissaires pour obtenir un certificat de bonne conduite pour les étrangers.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Felixarchief, archives de la police des étrangers d'Anvers</li>
-    <li>Kazerne Dossin (beeldbank.kazernedossin.eu)</li>
-    <li>Archives du Joint Distribution Committee (archives.jdc.org)</li>
+    <li><a href="https://felixarchief.antwerpen.be" target="_blank" rel="noopener">https://felixarchief.antwerpen.be</a></li>
+    <li><a href="https://beeldbank.kazernedossin.eu/" target="_blank" rel="noopener">https://beeldbank.kazernedossin.eu/</a></li>
+    <li><a href="https://archives.jdc.org/" target="_blank" rel="noopener">https://archives.jdc.org/</a></li>
   </ul>
 </div>
 

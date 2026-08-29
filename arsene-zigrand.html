@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZIGRAND Arsène — 11e REI</title>
-<meta name="description" content="Boulanger belge devenu adjudant-chef, du bois d'Ochey à l'Indochine, deux fois évadé et quatre fois cité">
+<title>Arsène ZIGRAND — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,55 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article .entry{margin-bottom:.9rem}
+  article .entry .date{font-weight:500}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
   article li{margin-bottom:.3rem}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,39 +79,625 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA3 · Officier · 13e DBLE</div>
-  <h1>ZIGRAND Arsène</h1>
-  <div class="sub">Boulanger belge devenu adjudant-chef, du bois d'Ochey à l'Indochine, deux fois évadé et quatre fois cité</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Arsène ZIGRAND</h1>
+  <div class="sub">Le 11è régiment étranger d'infanterie 1939-1940 · parcours Légion étrangère</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Arsène Zigrand, jeune boulanger belge engagé à la Légion à 21 ans, fait toute la guerre et l'après-guerre sous l'uniforme : capturé au 11e REI en 1940, évadé d'Allemagne puis d'Italie, il termine sa carrière adjudant-chef décoré, après deux campagnes d'Indochine.</p>
-<h2>De la boulangerie à la Légion</h2>
-<p>Né le 24 juillet 1914 à Martelange (Belgique), garçon boulanger, il s'engage pour cinq ans à l'intendance militaire de Metz le 5 septembre 1935 et rejoint le 3e REI au Maroc, où il gravit les échelons jusqu'au grade de caporal en 1938. Le 22 octobre 1939, il est affecté au 11e REI naissant, à la compagnie d'accompagnement du 3e bataillon (CA3), section de mitrailleuses, sous les ordres du capitaine Pravossoudovitch — ironie du sort, les Allemands envahissent son village natal de Martelange le jour même du début de l'offensive, le 10 mai 1940.</p>
-<h2>1940 : capture et première évasion</h2>
-<p>Promu caporal-chef en février 1940, il est fait prisonnier au bois d'Ochey le 23 juin 1940 et cité, sans attribution de croix de guerre, pour avoir « fait preuve de courage, vaillance, honneur et fierté » durant la retraite du régiment. Interné au frontstalag 240 de Verdun, il s'évade dès le 23 septembre 1940 et se réengage cinq ans plus tard le même mois, rejoignant le 3e REI au Maroc.</p>
-<h2>Tunisie, captivité italienne, 13e DBLE</h2>
-<p>Sergent en 1942, il est blessé et fait prisonnier le 18 janvier 1943 lors des combats de l'Oued Khebir en Tunisie, où il repousse plusieurs assauts à la grenade jusqu'à épuisement de ses munitions — une action citée à l'ordre de la division et récompensée de la croix de guerre avec étoile d'argent. Détenu dans des camps italiens, il s'évade en septembre 1943 et traverse les lignes alliées en mai 1944 pour rejoindre la 13e demi-brigade de la Légion étrangère.</p>
-<p>Il débarque en Provence en août 1944, combat dans les Vosges — nouvelle citation pour la prise des côtes 880 et du Kholwald en décembre 1944 — et se marie en permission le 17 mai 1945 avec Charlotte Chabert, avant de repartir en campagne. Naturalisé français en 1948, il avait déjà obtenu, en 1946, un avis très favorable du général Valluy : « deux fois évadé des camps de prisonniers, a fait toutes les campagnes de la Libération [...] sujet de choix pour la naturalisation ».</p>
-<h2>Première campagne d'Indochine : Tourane</h2>
-<p>Adjudant à compter du 1er juillet 1946, il débarque à Saïgon puis à Tourane le 9 décembre 1946, où il participe dès le 21 décembre aux combats de libération de la ville et de Hué avec la 5e compagnie du 2e bataillon de la 13e DBLE. Il est cité à l'ordre de l'armée par le général Valluy le 17 mai 1947 :</p>
-<blockquote class="testimony">« Brillant chef de section. Au cours du combat de Tourane du 21 au 23 décembre 1946, enlevant sa section dans un bel élan, a franchi tous les obstacles et réduit les résistances adverses pour assurer la jonction avec la 11e compagnie du 23e régiment d'infanterie coloniale, assiégée au point d'appui du terrain d'aviation de Tourane. Le 29 décembre 1946, au cours du combat de Than Khe Tay, a entraîné sa section sous un feu meurtrier, dans un combat au corps à corps. Forcé de stopper sa progression, s'est accroché au terrain et a combattu pendant 6 heures à une distance de moins de 30 mètres de l'adversaire. A permis l'installation d'une autre section qui nous assurait le contrôle d'un carrefour important. » Croix de guerre des théâtres d'opérations extérieures avec étoile de vermeil.</blockquote>
-<h2>Seconde campagne : la défense du poste de Choc My</h2>
-<p>De retour en Indochine en 1948, il prend le commandement du poste de Choc My, sur un piton dominant la rive droite du Song Bang Giang, chargé de protéger le poste voisin de Phuc Hoa. Le 29 septembre, averti que 150 à 200 combattants vietminh bien armés s'apprêtent à attaquer, il met son poste en état d'alerte et triple ses sentinelles. Le lieutenant Puiroux, commandant la compagnie, en rédige le compte rendu :</p>
-<blockquote class="testimony">« Le 30 septembre à 01 heure, des éclatements de grenades et des rafales d'armes automatiques donnent le signal de l'attaque. Grâce à une nuit très sombre [...] les V.M. ont réussi à ramper jusqu'à la murette. Ils arrosent le poste de grenades [...] La riposte est immédiate et le premier assaut rebelle sur la face nord est vigoureusement repoussé. Profitant de cette accalmie, l'adjudant Zigrand juge la situation et met tous ses moyens en œuvre [...] Deux autres assauts sont également repoussés. [...] Au bout d'une heure et demie de combat ininterrompu, les rebelles se replient. [...] Au lever du jour, 4 cadavres, 1 mousqueton, 30 grenades [...] sont retrouvés sur le terrain. » Dans la nuit du 1er au 2 octobre, le poste repousse deux nouvelles tentatives d'assaut, moins violentes, sans perte.</blockquote>
-<p>Cette défense lui vaut la médaille militaire pour services exceptionnels de guerre, décernée le 25 avril 1949 : « Debout sous le feu, a dirigé la défense avec le plus grand calme [...] a effectué une sortie, contraignant l'adversaire à se replier précipitamment avec des pertes sévères [...] A maintenu par son exemple un moral élevé parmi ses légionnaires. »</p>
-<p>Nommé adjudant-chef le 1er janvier 1949, il termine sa carrière en 1951 après seize années de service, deux évasions, quatre citations et deux campagnes d'Indochine. En 1990, il est l'accompagnateur du général Saint-Hillier lors de la cérémonie de Camerone, porteur de la main du capitaine Danjou.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-2.jpg" alt="Arsène Zigrand">
+</figure>
+
+<p>Né le 24/7/1914 à Martelange (BELGIQUE)<br>
+Fils de Guillaume Zigrand et de Marie Anne PIERRE</p>
+
+<p class="subhead">SIGNALEMENT:</p>
+<p>Cheveux châtains<br>
+Yeux marron<br>
+Front dégagé<br>
+Nez rectiligne<br>
+Visage ovale<br>
+Taille 1m70<br>
+Marque particulière : néant</p>
+
+<p>Domicile jusqu'au 20/3/1934 : 39 rue d'Arlon à Martelange (Belgique)<br>
+Domicile du 20/3/1934 au 5/9/1935 : route d'Athos à Aubange (Belgique)<br>
+Profession : de boulanger ou garçon boulanger ou pâtissier boulanger</p>
+
+<p>Marié à Charlotte Chabert, 3 enfants Jacques, Madeleine et Paulette.<br>
+Naturalisé français en 1946<br>
+1936-1939 3è REI<br>
+1939-1940 11è REI<br>
+1940-1943 3è REI<br>
+1944-1948 13è DBLE<br>
+1948-1950 3è REI</p>
+
+<p class="section">1935-1936 engagement et instruction</p>
+
+<div class="entry"><span class="date">05/09/1935</span> - Il se présente à l'intendance militaire de Metz comme engagé volontaire pour 5 ans. Il transite ensuite par le dépôt des engagés de Toul.
+2è classe</div>
+
+<div class="entry"><span class="date">16/09/1935</span> - Arrivé au corps, il est incorporé au DCREI (dépôt commun des régiment étranger d'infanterie)
+En Algérie TC ½ Campagne.</div>
+
+<div class="entry"><span class="date">17/09/1935</span> - Il est affecté à la CI 4 (compagnie d'instruction)</div>
+
+<div class="entry"><span class="date">07/01/1936</span> - Il est affecté à la CP 1 (compagnie de passage)</div>
+
+<div class="entry"><span class="date">13/02/1936</span> - passe la frontière algéro-Marocaine
+Au Maroc Campagne Simple</div>
+
+<p class="section">1936-1939 au 3è Régiment Étranger d'Infanterie</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-4.jpg" alt="Arsène Zigrand">
+</figure>
+
+<div class="entry"><span class="date">13/02/1936</span> - il est dirigé sur Oujda au Maroc TS (territoire sud) pour être affecté au 3è Régiment Etranger d'Infanterie.
+Rayé du contrôle du corps du DCREI le dit jour</div>
+
+<div class="entry"><span class="date">14/02/1936</span> - Arrivé au corps, il est affecté à la CM 1 (compagnie de mitrailleuses)</div>
+
+<div class="entry"><span class="date">21/09/1936</span> - Passe en CD (campagne double) au Maroc et est dirigé sur Territoire du Sud</div>
+
+<div class="entry"><span class="date">6/10/1936</span> - Se trouve à Boua Sidi en CS (campagne simple)</div>
+
+<div class="entry"><span class="date">1/03/1937</span> - Il est nommé au grade de 1ère Classe par ordre du régiment n°46 du 24/03/1937</div>
+
+<div class="entry"><span class="date">6/10/1937</span> - est au Maroc en CS</div>
+
+<div class="entry"><span class="date">1/09/1938</span> - il est nommé au grade de Caporal par ordre du régiment n°155 du 30 8 1938</div>
+
+<div class="entry"><span class="date">20/09/1938</span> - prolongation de séjour de 22 mois</div>
+
+<div class="entry"><span class="date">1/10/1938</span> - la CM 1 devient la CA 2 (compagnie d'accompagnement) un peu bizarre car la CM1 est devenu la CA1 soit erreur de transcription dans son dossier de naturalisation soit il a été muté à la CA2
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">04/04/1939</span> - dirigé sur Sidi BEl Abbès via Oujda</div>
+
+<div class="entry"><span class="date">1/09/1939</span> - Il passe CD contre l'Allemagne</div>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-5.jpg" alt="Document Arsène Zigrand">
+</figure>
+
+<p>Le 11/07/1937 paraît dans le numéro le Petit Journal (journal hebdomadaire québécois) des annonces de légionnaires qui recherchent des correspondant(e)s.
+On peut y lire la demande du légionnaire Arsène LEGRAND du 3è REI matricule 61846. Il s'agit bien de mon grand-père qui est immatriculé au 3è REI sous le numéro 61846. On peut imaginer que Legrand est son identité déclarée, il fera rectifier son état-civil en 1941.</p>
+
+<p class="section">1939-1940 au 11è Régiment Étranger d'Infanterie contre l'Allemagne</p>
+
+<div class="entry"><span class="date">1/09/1939</span> - Passe en campagne double contre l'Allemagne</div>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-6.jpg" alt="Document Arsène Zigrand">
+</figure>
+
+<div class="entry"><span class="date">21/10/1939</span> - Dirigé sur l'Algérie
+passe au DCRE</div>
+
+<div class="entry"><span class="date">22/10/1939</span> - Rayé du contrôle du 3ème Régiment étranger d'infanterie
+affecté au DCRE Compagnie de Passage n° 1
+affecté au Régiment Etranger de La Valbonne (Ain)</div>
+
+<div class="entry"><span class="date">03/11/1939</span> - Dirigé sur ORAN</div>
+
+<div class="entry"><span class="date">04/11/1939</span> - Rayé des contrôles du DCREI
+embarque à ORAN</div>
+
+<div class="entry"><span class="date">05/11/1939</span> - Débarqué à Marseille</div>
+
+<div class="entry"><span class="date">06/11/1939</span> - Arrive à la gare de la Valbonne. Cantonnement à Béligneux avec le 3è bataillon</div>
+
+<div class="entry"><span class="date">15/12/1939</span> - Part aux armées Campagne Double
+affecté au 11è Régiment étranger d'infanterie 3è bataillon CA3</div>
+
+<div class="entry"><span class="date">16/02/1940</span> - Nommé au grade de CAPORAL CHEF par décision n°39 du 15/02/1940</div>
+
+<div class="entry"><span class="date">23/06/1940</span> - Fait prisonnier au BOIS D'OCHEY passé en campagne simple</div>
+
+<blockquote>"Les Légionnaires avec tout leur barda se rassemblèrent à l'extérieur de la gare et reçurent leur affectation au 11e REI. Le légionnaire ZIGRAND fut affecté au IIIe Bataillon (III/11e REI), à la Compagnie d'accompagnement 3 (CA3), section de mitrailleuses. Sa compagnie, aux ordres du Capitaine PRAVOSSOUDOVITCH, cantonnait à Béligneux."<br><br>
+"Les Légionnaires avec tout leur barda se rassemblèrent à l'extérieur de la gare et reçurent leur affectation au 11e REI. Le Légionnaire ZIGRAND fut affecté au IIIe Bataillon (III/11e REI), à la Compagnie d'accompagnement 3 (CA3), section de mitrailleuses. Sa compagnie, aux ordres du Capitaine PRAVOSSOUDOVITCH, cantonnait à Béligneux."<br><br>
+Source blog Fred Lainé</blockquote>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-7.png" alt="Document Arsène Zigrand">
+</figure>
+
+<p><span class="date">10/05/1940</span> Invasion de la Belgique par les troupes allemandes « campagne des 18 jours ». Une mission retardatrice est confiée au 1er rgt de chasseur ardennais notamment à Martelange, ville où mon grand-père est né et a vécu jusqu'à son engagement à la Légion.
+Le 10 mai 1940 débute la campagne des 18 jours, qui voit notamment les Allemands envahir le Grand Duché de Luxembourg et la Belgique. Leurs troupes de la 1re Panzerdivision, qui viennent de traverser le Luxembourg tôt dans la matinée, franchissent la frontière à Martelange à 7 h 45, où se trouve la 4e compagnie du IIe bataillon du 1er régiment de Chasseurs ardennais, qui vient de détruire les ponts sur la Sûre. Ce peu de défense force les avant-gardes allemandes à attendre des renforts, qui débordent alors les positions belges. Leurs occupants, dont la mission était de réaliser les destructions pour gêner l'avancée allemande, se replient alors, laissant plusieurs prisonniers ainsi que quatre tués.
+Un monument a été érigé pour commémorer cette action. Il représente l'emblème du régiment, un sanglier en position d'attaque.</p>
+
+<div class="entry"><span class="date">23/06/1940</span> - citation</div>
+
+<div class="doc">
+<p>Zigrand Arsène – caporal-chef au 3ème Bataillon du 11ème Régiment étranger d'Infanterie « a au cours d'une série de combats en retraite du 10 au 22 juin 1940, fait preuve de courage, vaillance, honneur, et de fierté, conformément aux traditions de la Légion »<br>
+Extrait de l'ordre général « sans numéro ». Cette citation non homologuée ne comporte pas l'attribution de la Croix de Guerre.<br>
+Signé : le chef de bataillon CLEMENT, commandant le 11ème REI, le 23 juin 1940</p>
+</div>
+
+<div class="entry"><span class="date">28/06/1940</span> - dirigé sur VERDUN
+Interné au Front stalag n°240 à Verdun grade brigadier-chef</div>
+
+<div class="entry"><span class="date">23/09/1940</span> - Evadé</div>
+
+<div class="entry"><span class="date">4/10/1940</span> - se présente au centre de regroupement à Mâcon</div>
+
+<p class="section">1940-1943 au 3è Régiment Étranger d'Infanterie</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-8.jpg" alt="Document Arsène Zigrand">
+</figure>
+
+<div class="entry"><span class="date">16/10/1940</span> - Dirigé sur ORAN (embarqué à Marseille)
+EN MER 1/2C</div>
+
+<div class="entry"><span class="date">17/10/1940</span> - Débarqué à ORAN 1/2C</div>
+
+<div class="entry"><span class="date">19/10/1940</span> - Dirigé sur SIDI BEL ABBES</div>
+
+<div class="entry"><span class="date">21/10/1940</span> - Liste officielle des prisonniers n°34 21/10/1940 Source Gallica.Bnf.Fr</div>
+
+<div class="entry"><span class="date">26/10/1940</span> - Réengagé pour 5 ans en date du 5/09/1940 à l'intendance militaire de Meknès</div>
+
+<div class="entry"><span class="date">29/10/1940</span> - Dirigé sur le Maroc
+Passe la frontière algéro-Marocaine le dit jour</div>
+
+<div class="entry"><span class="date">31/10/1940</span> - Rejoint le régiment étranger
+Maroc CD
+muté au 3ème Régiment étranger d'infanterie</div>
+
+<div class="entry"><span class="date">2/11/1940</span> - à FEZ
+réaffecté au 3ème Régiment étranger d'infanterie à la 7è Compagnie</div>
+
+<div class="entry"><span class="date">30/12/1941</span> - Par application de la 2è partie ministérielle confidentielle n°2400 2/IE du 20/3/34 le LT-colonel cdt le 3è REI est autorisée la rectification de l'état civil du caporal-chef ZIGRAND Arsène n° matricule 61846 de la 7è Cie.</div>
+
+<div class="entry"><span class="date">9/11/1941</span> - Zone ½ campagne
+dirigé sur OUED ZEM</div>
+
+<div class="entry"><span class="date">26/02/1942</span> - Nommé au grade de SERGENT par ordre du régiment n°47</div>
+
+<div class="entry"><span class="date">14/06/1942</span> - Passe en Campagne double
+dirigé sur KHENIFRA</div>
+
+<div class="entry"><span class="date">8/11/1942</span> - Campagne Double contre l'AXE</div>
+
+<div class="entry"><span class="date">19/12/1942</span> - Affecté à la 5è Compagnie du 3ème Régiment étranger d'infanterie</div>
+
+<div class="entry"><span class="date">28/12/1942</span> - Part aux armées
+Passe la frontière Maroco-algérienne</div>
+
+<div class="entry"><span class="date">30/12/1942</span> - Passe la frontière algéro-tunisienne</div>
+
+<div class="entry"><span class="date">18/01/1943</span> - Participe aux combats de l'OUED KHEBIR
+Disparu au cours des combats
+Rayé des contrôles de l'unité
+Blessé à l'ennemi par éclats de grenade joue gauche et main gauche et balle de mitraillette à la fesse gauche le 18/1/1943 à l'Oued Kébir</div>
+
+<p class="section">1943-1944 en captivité</p>
+
+<div class="entry"><span class="date">19/01/1943</span> - En CAPTIVITE CS
+Rayé du contrôle</div>
+
+<div class="entry"><span class="date">1/02/1943</span> - Citation à l'ordre de la division</div>
+
+<div class="doc">
+<p>Zigrand Arsène – sergent – 5ème compagnie du 3ème Régiment Etranger d'Infanterie matricule 61.846<br>
+« Le 18 janvier 1943 dans la région de la côte 647, a repoussé à la grenade les éléments ennemis qui s'étaient introduits dans la position et avaient mis hors de combat l'équipe de tir de son F.M. A contenu une deuxième attaque à la grenade jusqu'à épuisement de ses munitions. Poursuivi et blessé par les feux des mitraillettes et éclats de grenade, a rejoint le PC du commandant de Compagnie où la résistance continuait... »<br>
+Il y a une erreur dans la citation il s'agit en fait de la côte 467<br>
+Extrait de l'ordre général n°24. Cette citation comporte l'attribution de la Croix de Guerre 1939-1945 avec étoile d'argent<br>
+Signé : le général de division BARRE, commandant supérieur des troupes de Tunisie<br>
+Au P.C. le 1er février 1943</p>
+</div>
+
+<div class="entry"><span class="date">8 03 1943</span> - Prisonnier en mains italiennes détenu au c.c n°66 P.M 3400 (selon une carte d'identification établie par l'autorité italienne. Source CICR)</div>
+
+<div class="entry"><span class="date">15 03 1943</span> - Transféré au camp de prisonniers n°77 de CAMPELLO
+(Source dossier de demande de la carte du combattant 6 oct 1950)</div>
+
+<div class="entry"><span class="date">18 03 1943</span> - Prisonnier en mains italiennes détenu au c.c n°77 (selon une liste établie par l'autorité italienne. Source CICR)</div>
+
+<div class="entry"><span class="date">20/06/1943</span> - Transféré au camp de prisonniers n°82 de LATERINA
+(Source dossier de demande de la carte du combattant 6 oct 1950)</div>
+
+<div class="entry"><span class="date">12/09/1943</span> - Evasion du camp de Laterina (source fiche matricule)<br>
+<span class="date">20/09/1943</span> - Evasion du camp de Laterina (Source dossier de demande de la carte du combattant 6 oct 1950)</div>
+
+<div class="entry"><span class="date">21/10/1943</span> - Signalé comme prisonnier en ITALIE
+Notification N°14999 EN PG/P/EG du Général Commandant en chef.
+passe au DCRE
+Application de la note de service n°858 ENGG/1 du 28/01/1944 du commissaire de la guerre et de l'air</div>
+
+<div class="entry"><span class="date">12/05/1944</span> - Traverse les lignes anglaises. Repris au 2è GOUM Marocain à CAVILLIANO (sûrement GARIGLIANO)
+CD</div>
+
+<p class="section">1944-1945 Campagne de France 13ème Demi-Brigade de Légion Étrangère</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-9.jpg" alt="Document Arsène Zigrand">
+</figure>
+
+<div class="entry"><span class="date">5/07/1944</span> - Muté à la 13ème Demi-Brigade de Légion Etrangère
+Affecté à la CM 2</div>
+
+<div class="entry"><span class="date">6/07/1944</span> - Rejoint la CM 2</div>
+
+<div class="entry"><span class="date">1er semestre 1944</span> - Nouvellement affecté à l'unité, évadé d'un camp de prisonnier, fait très bonne impression par son activité, ses connaissances techniques et son esprit militaire. Lt VAILLANT, Cdt la CM2
+Relevé des notes de l'adjudant Zigrand Mle 2.652
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">28/08/1944</span> - Participe à la deuxième vague du débarquement de Provence
+embarqué à NAPLES (destination de la France)
+EN MER CD</div>
+
+<div class="entry"><span class="date">30/08/1944</span> - Débarqué à SAINT TROPEZ
+FRANCE CD</div>
+
+<div class="entry"><span class="date">20/12/1944</span> - Citation à l'ordre de la brigade - Extrait de l'ordre général n°2bis – le colonel DELANGE, commandant la 1ère Brigade Française Libre</div>
+
+<div class="doc">
+<p>Zigrand Arsène – sergent – 2ème bataillon de Légion Etrangère<br>
+Ancien chef de Groupe de Mitrailleuses, très bon gradé, courageux et compétent, a participé aux campagnes d'Italie et de France, a permis par le tir précis de ses pièces et leur emploi judicieux la prises des côtes 880 et du KHOLWALD les 1, 2 et 3 décembre 1944.<br>
+Cette citation comporte l'attribution de la Croix de Guerre 1939-1945 avec étoile de bronze<br>
+Signé : le chef de bataillon ARNAULT, commandant adjoint<br>
+Au P.C., le 22 décembre 1944</p>
+</div>
+
+<div class="entry"><span class="date">24/12/1944</span> - Nommé au grade de SERGENT CHEF
+Par décision n°117 du chef de bataillon commandant la 13ème Demi-Brigade de Légion Etrangère</div>
+
+<div class="entry"><span class="date">2ème Semestre 1944</span> - A fait toute la campagne de France comme chef de groupe de mitrailleuses. Très bon gradé, énergique, courageux et connaissant bien son métier. A pousser
+Lt GUILLOT, Cdt la CM2
+Relevé des notes de l'adjudant Zigrand Mle 2.652
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">3/05/1945</span> - Part en PERMISSION</div>
+
+<div class="entry"><span class="date">9/05/1945</span> - ITALIE</div>
+
+<div class="entry"><span class="date">17/05/1945</span> - Marié à Charlotte CHABERT à Béligneux (01)</div>
+
+<div class="entry"><span class="date">22/05/1945</span> - FRANCE</div>
+
+<div class="entry"><span class="date">28/05/1945</span> - rejoint l'UNITE</div>
+
+<div class="entry"><span class="date">1er semestre 1945</span> - A continué la campagne de France a donné entière satisfaction. A été chef de section mitrailleuse durant les combats des Alpes. Tenue = très bonne Conduite = très bonne.
+Cne FAURE, Cdt la C.L.2
+Relevé des notes de l'adjudant Zigrand Mle 2.652
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">31/07/1945</span> - la CM 2 devient CL 2 (compagnie lourde)</div>
+
+<div class="entry"><span class="date">31/07/1945</span> - CH TEAU DE COLLINANGES
+Fait mouvement par voie ferrée le dit jour
+arrive à TOULON
+cantonne à la CASERNE DE MOUTILLION</div>
+
+<div class="entry"><span class="date">7/08/1945</span> - Embarque à TOULON sur le BEARN
+à destination de l'Algérie</div>
+
+<div class="entry"><span class="date">8/08/1945</span> - En MER ½ C</div>
+
+<div class="entry"><span class="date">10/08/1945</span> - Débarqué à ALGER</div>
+
+<div class="entry"><span class="date">13/08/1945</span> - Mouvement par route
+La Cie passe la frontière algéro-tunisienne</div>
+
+<div class="entry"><span class="date">15/08/1945</span> - Arrive à BIZERTE</div>
+
+<div class="entry"><span class="date">6 9 1945</span> - Autorisé à réengager pour 5 ans</div>
+
+<div class="entry"><span class="date">21/10/1945</span> - Part en PERMISSION de fin de campagne et rejoint MARSEILLE le dit jour</div>
+
+<div class="entry"><span class="date">2ème semestre 1945</span> - Passé s/officier adjoint de section de Mortier 81, s'y est mis très rapidement. S'y intéresse. Travailleur, intelligent, énergique, bonne conduite, bonne tenue, part en Indochine avec son unité.
+Cne FAURE, cdt la C.L.2
+Relevé des notes de l'adjudant Zigrand Mle 2.652
+Source dossier de naturalisation</div>
+
+<p class="section">1946-1947 Indochine 13è Demi-Brigade de Légion Étrangère</p>
+
+<div class="entry"><span class="date">24/01/1946</span> - Débarque du MEONIA à ALGER le dit jour
+Rejoint le DCRE le dit jour
+Rejoint l' UNITE
+Dirigé sur BIZERTE</div>
+
+<div class="entry"><span class="date">1/02/1946</span> - Nommé Chevalier de 1ère Classe de l'ordre de NICHAN IFTIKHAR
+Extrait des décisions n° 12-13-14-16 de la 13è DBLE rapport n°13 du 1/02/1946
+Brevet n°2.606</div>
+
+<div class="entry"><span class="date">16/03/1946</span> - Embarque à BIZERTE sur S/S hollandais KOTA INTERN
+à destination de l' INDOCHINE</div>
+
+<div class="entry"><span class="date">16/03/1946</span> - En MER</div>
+
+<div class="entry"><span class="date">2/04/1946</span> - Certificat de bonne conduite, vie et mœurs : le bourgmestre d'AUBANGE (Belgique) certifie de M. ZIGRAND Arsène âgé de 31 ans exerçant la profession de garçon boulanger fils de Guillaume et de PIERRE Marie Anne est de bonne conduite, vie et mœurs qu'il a habité cette commune depuis le 20/03/1934 au 28/11/1936.
+Pas de condamnation.
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">9/04/1946</span> - Débarqué à SAÏGON
+EO CD (Extrême orient)</div>
+
+<div class="entry"><span class="date">31/05/1946</span> - Extrait du casier judiciaire demandé par M. Zigrand Arsène pour lui-même au ministère de la justice, direction générale des prisons :
+Néant, signé à Bruxelles par le directeur du casier judiciaire
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">1er semestre 1946</span> - S/officier adjoint d'une section de mortier 81. A participé aux opérations en Cochinchine, non en tant que mortiers, mais comme adjoint à une section de F.V. (Fusillier voltigeur)
+Résultats obtenus = bon
+Valeur morale : très bonne
+Valeur physique : très bonne
+Valeur militaire : bonne - a une bonne instruction militaire. Intelligent
+Comme chef = T.B. A beaucoup d'autorité, connaît parfaitement les Légionnaires et sait les conduire. Respecté, très consciencieux.
+Proposé pour Adjudant le 30/06/1945
+Cne FAURE, cdt la C.L.2
+Relevé des notes de l'adjudant Zigrand Mle 2.652
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">1/07/1946</span> - Nommé au grade d'ADJUDANT
+p/c du 1/07/1946 par ordre général n°510 du Général Leclerc, commandant supérieur du T.F.E.O
+Rapport du 2è BLE n°62 en date du 17/07/1946</div>
+
+<div class="entry"><span class="date">5/07/1946</span> - Certificat de résidence de Mme Charlotte Marie Berthe Zigrand née Chabert réside à Béligneux (département de l'Ain) depuis la naissance.
+Signé par le maire de Béligneux
+Certificat de nationalité française de Mme Charlotte Marie Berthe Zigrand née Chabert.
+Signé par le maire de Béligneux
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">20/10/1946</span> - Muté à la 5è Compagnie</div>
+
+<div class="entry"><span class="date">8/11/1946</span> - Lettre de motivation pour obtenir la naturalisation française
+Relevé de punition du 5/09/1935 au 8/11/1946 : néant</div>
+
+<div class="entry"><span class="date">11/11/1946</span> - Extrait du livret médical Individuel
+Vaccination V.T.A : 27/09/1945 - 11/10/1945 - 25/10/1945
+TYPHUS : 7/11/1945 – 13/11/1945 – 23/11/1945
+ANTI CHOLERIQUE : 23 4 1946
+Indisponibilité de la chambre : néant
+Malade à l'infirmerie : néant
+Malade à l'hôpital : néant
+Signé le Médecin-Chef du 2è B.L.E.
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">16/11/1946</span> - Attestation du chef de bataillon CHEVRIER commandant le 2è BLE de la 13è DBLE certifie que l'adjudant Zigrand Arsène n'a jamais séjourné en France avant son engagement à la Légion étrangère et qu'il ne lui a jamais été délivré de carte d'identité d'étranger.
+Attestation du chef de bataillon CHEVRIER commandant le 2è BLE de la 13è DBLE certifie que l'adjudant Zigrand Arsène est effectivement de nationalité BELGE.
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">25/11/1946</span> - Attestation du chef de bataillon CHEVRIER commandant le 2è BLE certifie que l'adjudant Zigrand Arsène de son unité ne possède pas de fortune personnelle et qu'il reçoit une solde mensuelle de 23.421 francs.
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">7/12/1946</span> - Embarque à SAÏGON sur le SUFREN</div>
+
+<div class="entry"><span class="date">9/12/1946</span> - Débarque à TOURANE</div>
+
+<div class="entry"><span class="date">21/12/1946</span> - Combat pour la libération de Tourane et Hué</div>
+
+<div class="entry"><span class="date">29/12/1946</span> - Envoi du dossier de naturalisation à Monsieur le ministre de la justice, garde des sceaux, avec avis très favorable « l'intéressé, deux fois évadés des camps de prisonniers, a fait toutes les campagnes de la Libération. Blessé, deux fois cité, il n'a pas cessé de faire preuve de belles qualités militaires, et d'un parfait loyalisme. En outre, il est marié à une française. Sujet de choix pour la naturalisation. »
+A Saïgon, signé du Général de Division VALLUY, commandant supérieur des troupes françaises
+Source dossier de naturalisation</div>
+
+<div class="entry"><span class="date">22/01/1947</span> - Enregistrement de sa demande de naturalisation N° 27349x46</div>
+
+<div class="entry"><span class="date">17/05/1947</span> - Citation à l'ordre de l'armée - Extrait de l'ordre général n°214 – le général de corps de l'armée VALLUY, commandant supérieur des troupes françaises d'Extrême-Orient</div>
+
+<div class="doc">
+<p>Zigrand Arsène – adjudant – 2/13ème Demi-brigade de Légion Etrangère – 5ème Compagnie<br>
+« Brillant chef de section. Au cours du combat de Tourane du 21 au 23 décembre 1946 enlevant sa section dans un bel élan, a franchi tous les obstacles et réduit les résistances adverses pour assurer la jonction avec la 11ème compagnie du 23ème régiment d'infanterie coloniale, assiégée au point d'appui du terrain d'aviation de Tourane. Le 29 décembre 1946, au cours du combat Than Khe Tay, a entraîné sa section sous un feu meurtrier, dans un combat au corps à corps. Forcé de stopper sa progression, s'est accroché au terrain et a combattu pendant 6 heures à une distance de moins de 30 mètres de l'adversaire. A permis l'installation d'une autre section qui nous assurait le contrôle d'un carrefour important »<br>
+Cette citation comporte l'attribution de la Croix de Guerre des théâtres d'opérations extérieures avec étoile de vermeil<br>
+Signé : Valluy<br>
+A Saïgon, le 17 mai 1947</p>
+</div>
+
+<div class="entry"><span class="date">5/06/1947</span> - Rapatriable embarque à SAÏGON sur le S/S JOFFRE
+En MER ½C</div>
+
+<p class="section">1947-1948 Permission et renfort pour l'Indochine</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-10.jpg" alt="Document Arsène Zigrand">
+</figure>
+
+<div class="entry"><span class="date">27/06/1947</span> - Débarque à MARSEILLE</div>
+
+<div class="entry"><span class="date">28/06/1947</span> - Part en PERMISSION et en CFC CD</div>
+
+<div class="entry"><span class="date">20/10/1947</span> - Embarque à MARSEILLE sur le DJEBEL AMOUR</div>
+
+<div class="entry"><span class="date">20/10/1947</span> - En MER 1/2C</div>
+
+<div class="entry"><span class="date">22/10/1947</span> - Débarque à ORAN
+En Algérie 1/2C
+Rejoint SIDI BEL ABBES le dit jour</div>
+
+<div class="entry"><span class="date">16/04/1948</span> - Naturalisé français
+Par décret n°27349x46-94 du 16/4/1948 (J.0 du 25/4/1948 page 4028)</div>
+
+<div class="entry"><span class="date">5/06/1948</span> - Renfort à destination de l'Indochine quitte Sidi Bel Abbes</div>
+
+<p class="section">1948-1950 2è campagne Indochine 3è Régiment Étranger d'Infanterie</p>
+
+<div class="entry"><span class="date">6/06/1948</span> - Embarque à ORAN sur le S/S PASTEUR
+En MER 1/2C</div>
+
+<div class="entry"><span class="date">27/06/1948</span> - Débarque à HAÏPHONG
+EO CD</div>
+
+<div class="entry"><span class="date">2/07/1948</span> - Affecté au 3è Régiment Étranger d'Infanterie
+10è Compagnie</div>
+
+<div class="entry"><span class="date">10/10/1948</span> - COMPTE-RENDU 3è RÉGIMENT ÉTRANGER D'INFANTERIE - 11e Compagnie</div>
+
+<div class="doc">
+<p>Compte rendu de l'attaque du poste de CHOC MY dans la nuit du 29 au 30 Septembre 1948</p>
+<p>"Le 29 septembre dans la matinée, l'adjudant ZIGRAND, chef du poste de CHOC MY, est averti que son poste sera attaqué dans la nuit du 29 au 30, par 150 à 200 V.M. bien armés.
+Il avertit son commandant de compagnie et met son poste en état d'alerte. Il triple ses sentinelles. Tout le monde est habillé aux emplacements de combat.
+Le poste de CHOC MY se trouve sur un piton, rive droite du SONG BANG GIANG. Sa mission est de protéger le poste de PHUC HOA et ses abords. Un canon de 37, y est installé pour l'appui des postes environnants.
+Le mamelon central, occupé par le poste, domine légèrement les trois autres. Le poste, implanté depuis le 1er août, a la forme d'un quadrilatère. Un blockhaus à chaque angle, enterré et recouvert, assure le flanquement des faces. Il est entouré d'une murette haute de 1m à 1m20. Le 29 septembre, les défenses accessoires sont incomplètes. Le barbelé fait totalement défaut. Le bambou doit être pris à 1.000 - 1.200 mètres du poste. Des moyens de fortune sont employés. Les trous dans la barricade sont parsemés de tessons de bouteilles et de boîtes de conserve, cloches d'alarme.
+La face nord, devant laquelle s'étale une pente très forte (50% environ) est la moins protégée.
+Le 30 septembre à 01 heure, des éclatements de grenades et des rafales d'armes automatiques donnent le signal de l'attaque. Grâce à une nuit très sombre, où les sentinelles ne voient pas à 5 mètres, les V.M. ont réussi à ramper jusqu'à la murette. Ils arrosent le poste de grenades, dont certaines heureusement n'éclatent pas. La riposte est immédiate et le premier assaut rebelle sur la face nord est vigoureusement repoussé.
+Profitant de cet accalmie, l'adjudant ZIGRAND juge la situation et met tous ses moyens en œuvre: 3"7, mortier de 60, Piat, bazooka, lance-grenades, prennent à partie les quatre armes automatiques installées sur les trois petits mamelons. Les V.M. répondent par un tir de mortiers et de V.B. et tentent de donner un nouvel assaut sur les blockhaus Est et Ouest.
+Les gradés chefs de blocs, Sergent STARK, Caporal-Chef COUSAERT, Caporal FIEDLER, aidés de quelques voltigeurs, repoussent l'assaut à la P.M. et à la grenade. Le Brigadier CHAUVET se dépense à son 37, bien qu'ayant perdu son pointeur, et le Brigadier YAGOUB BEN MOHAMED est tué.
+Deux autres assauts sont également repoussés. Le poste de PHUC HOA, prenant les rebelles à revers, encage le poste de CHUC MY par des tirs d'armes automatiques.
+Au bout d'une heure et demie de combat ininterrompu, les rebelles se replient. Pendant tout le reste de la nuit, ils ramassent tués, blessés et armes. Le poste les harcèle au PIAT, au mortier, au bazooka et au fusil.
+Au lever du jour, 4 cadavres, 1 mousqueton, 30 grenades et 3 grenades V.B. sont retrouvés sur le terrain. De très nombreuses traces de sang marquées sur 300-400 mètres autour du poste font présager des pertes sévères.
+Les légionnaires ZANDER, pointeur au mortier, et KRUPKA, voltigeur, blessés par éclats de grenades dès le premier assaut, tiennent néanmoins leur place jusqu'au bout.
+Dans la nuit du 30 septembre au 1er octobre, le poste est harcelé par des armes automatiques lointaines. Dans la nuit du 1er au 2 octobre, il est attaqué à deux reprises, mais moins violemment que le 30 septembre. Les deux tentatives d'assaut sont facilement repoussées sans perte."</p>
+<p>S.P. 53.343, le 10 octobre 1948<br>
+Le Lieutenant PUIROUX, Commandant la 11ème Compagnie du 3ème R.E.I.<br>
+Signé : PUIROUX</p>
+</div>
+
+<div class="entry"><span class="date">1/01/1949</span> - nommé au grade d'ADJUDANT CHEF
+Ordre du régiment n°370 du colonel cdt le 3è Régiment Étranger d'Infanterie p/c du 1/1/1949
+Décision n°19</div>
+
+<div class="entry"><span class="date">25/04/1949</span> - Concession de la médaille militaire – services exceptionnels de guerre en Indochine.</div>
+
+<div class="doc">
+<p>Adjudant chef Arsène Zigrand - 3è REI<br>
+« Commandant le poste de Choc My, a prouvé au cours de l'attaque de son poste dans la nuit du 29 au 30 septembre 1948, ses très belles qualités de chef et de combattant. Connaissant la menace rebelle, a judicieusement disposé son effectif. Debout sous le feu, a dirigé la défense avec le plus grand calme, après avoir repoussé quatre tentatives d'assaut menées avec vigueur par les rebelles au F.M. et à la grenade pendant une heure et demie, a effectué une sortie, contraignant l'adversaire à se replier précipitamment avec des pertes sévères et en abandonnant sur le terrain deux cadavres, un fusil et trente grenades. A maintenu par son exemple un moral élevé parmi ses légionnaires. »</p>
+<p>Cette concession comporte l'attribution de la Croix de Guerre des théâtres d'opérations extérieures avec étoile de vermeil<br>
+Signé : Vincent Auriol<br>
+A Paris, le 25 avril 1949</p>
+</div>
+
+<div class="entry"><span class="date">13/04/1950</span> - Embarque à SAÏGON sur le s/s Calais
+Rapatrié normal
+En MER 1/2C</div>
+
+<p class="section">1950-1951 dernier engagement et retraite</p>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-11.jpg" alt="Document Arsène Zigrand">
+</figure>
+
+<div class="entry"><span class="date">13/04/1950</span> - Embarque à SAÏGON sur le s/s Calais
+Rapatrié normal
+En MER 1/2C</div>
+
+<div class="entry"><span class="date">13/05/1950</span> - Débarque à ORAN
+Algérie 1/2C
+Rejoint son corps le dit jour</div>
+
+<div class="entry"><span class="date">26/05/1950</span> - en Algérie
+Congé de fin de campagne CD</div>
+
+<div class="entry"><span class="date">5/09/1950</span> - Réengagé pour 1 an</div>
+
+<div class="entry"><span class="date">6/09/1950</span> - Embarque à Marseille</div>
+
+<div class="entry"><span class="date">8/09/1950</span> - Débarque à Oran
+En Algérie ½C</div>
+
+<div class="entry"><span class="date">15/09/1950</span> - Affecté au <a href="http://foreignlegion.info/pelotons-de-reparation-de-legion-etrangere/" target="_blank" rel="noopener">2è PRLE</a> (Peloton de Réparation de Légion Etrangère)</div>
+
+<div class="entry"><span class="date">22/09/1950</span> - Rejoint Béchar</div>
+
+<div class="entry"><span class="date">11/10/1950</span> - Reclassé en échelle de solde n°2 décision n°1945/ORG/1/DC à compter du 01/01/1948</div>
+
+<div class="entry"><span class="date">5/05/1951</span> - Dirigé sur le DCRE pour libération en congé libérable</div>
+
+<div class="entry"><span class="date">20/05/1951</span> - Libérable et retraitable
+Certificat de bonne conduite accordé
+En MER ½C</div>
+
+<div class="entry"><span class="date">30/05/1951</span> - Embarque à Oran</div>
+
+<div class="entry"><span class="date">31/05/1951</span> - Débarque à Marseille</div>
+
+<div class="entry"><span class="date">1/06/1951</span> - Bénéficie d'un congé de fin de campagne 1 mois et 6 jours</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-12.jpg" alt="Arsène Zigrand">
+</figure>
+
+<p><span class="date">1990</span> Camerone accompagnateur du Général Saint Hillier porteur de la main du capitaine Danjou</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-arsene-zigrand-13.jpg" alt="Arsène Zigrand">
+</figure>
 
 <div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Dossier de naturalisation, Archives nationales de Pierrefitte-sur-Seine</li>
-    <li>SHD Vincennes, JMO du 3e REI (34 N 314), du 11e REI (34 N 316), de la 13e DBLE (12P81)</li>
-    <li>Archives départementales de l'Ain</li>
-    <li>CAPM de Pau, citations</li>
-    <li>Blog de Fred Laîné, « 11e et 12e REI, 13e DBLE, 1939-1940 »</li>
-  </ul>
+<h3>SOURCES</h3>
+
+<p>Légion d'honneur : EN COURS, à relancer peut être ! en fait je n'ai jamais eu de réponse!
+Demande de dérogation pour consulter ou obtenir copie de son dossier</p>
+
+<p>Prisonnier de guerre :
+SHD Caen : reçu copie carte de prisonnier de 1940 mais rien pour sa captivité en Italie</p>
+
+<p>CIRC : demande par mail le 21 janvier 2019, réponse reçue le 25 avril 2019</p>
+
+<p>Blessure de guerre :
+SAMHA de Limoges : pas d'information car je ne connais pas le lieu où il a été soigné (après avoir été fait prisonnier par les allemands le 18 01 1943 à l'Oued Kebir en Tunisie et interné en Italie). Du coup qui a homologué sa blessure comme blessure de guerre ?</p>
+
+<p>Archives de l'Ain :</p>
+<ul>
+<li>Copie de sa fiche matricule</li>
+<li>Demande par écrit pour son dossier d'ancien combattant et le titre de reconnaissance de la nation de l'Ain en 1997. Reçu le 25/7/2019.</li>
+<li>Archives.departementales@ain.fr</li>
+</ul>
+
+<p>Aubagne :
+Copie de son état signalétique (très très succinct). Par contre mon grand-père avait un homonyme et parent (petit petit cousin) Arsen Zigrand né au Luxembourg en 1920 engagé le 19/12/1941 à l'intendance de Marseille.</p>
+
+<p>Archives Pierrefitte sur Seine :
+Dossier de naturalisation, très intéressant. Contenait des relevés de notes et apportait des compléments sur ses affectations successives jusqu'à 1946.</p>
+
+<p>ONACVG :
+Dossier de carte du combattant transféré dans leur service en 1979 puis aux AD01.</p>
+
+<p>CAPM de Pau :
+Demande par mail le 8 février 2019. Réponse par courrier le 24 juillet 2019 avec copie de ses citations. Dont une non homologuée avec le 11è REI</p>
+
+<p>Aix en Provence :</p>
+<ul>
+<li>Copie de sa carte du combattant obtenue en 1950 à Oran</li>
+<li>anom.aix@culture.gouv.fr</li>
+</ul>
+
+<p>SHD Vincennes archives consultées:</p>
+<ul>
+<li>JMO du 3è REI côte 34 N 314 (1935 à 1939)</li>
+<li>JMO du 11è REI côte 34 N 316 (1939-1940)</li>
+<li>JMO du 3è REI (1940-1942) armée d'armistice</li>
+<li>JMO du 3è REI côte 12P82 (1942-1943) lacunes</li>
+<li>JMO de la 13è DBLE côte 12P81 (campagne d'Italie et de France 1944-1945) lacunes</li>
+<li>DCRE 1948 côte 7 U 619</li>
+<li>Thèse de Mireille Nicoux « la légion étrangère en Indochine »</li>
+</ul>
+
+<p>Autres sources d'informations :</p>
+
+<p>- ECPAD
+<a href="http://archives.ecpad.fr" target="_blank" rel="noopener">http://archives.ecpad.fr</a></p>
+
+<p>-Blog de Fred Laîné: 11e et 12e REI,13e DBLE, 1939-1940
+<a href="https://fredlaine01.wordpress.com/" target="_blank" rel="noopener">https://fredlaine01.wordpress.com/</a></p>
+
+<p>- Les néerlandais dans la Légion Etrangère:
+<a href="http://www.kwaak99.demon.nl/" target="_blank" rel="noopener">http://www.kwaak99.demon.nl/</a>
+<a href="https://nllegioen.eu/eenheid/11-rei-1939-1940/" target="_blank" rel="noopener">https://nllegioen.eu/eenheid/11-rei-1939-1940/</a></p>
+
+<p>- Die Fremdenlegion in Indochina
+<a href="http://more-majorum.de/" target="_blank" rel="noopener">http://more-majorum.de/</a></p>
+
+<p>- camp de prisonnier en Italie
+<a href="http://campifascisti.it/" target="_blank" rel="noopener">http://campifascisti.it/</a>
+<a href="https://powcamp82laterina.weebly.com/" target="_blank" rel="noopener">https://powcamp82laterina.weebly.com/</a></p>
+
+<p>- <a href="https://gallica.bnf.fr/" target="_blank" rel="noopener">https://gallica.bnf.fr/</a> pour les listes de prisonniers et le journal officiel (naturalisés, médaillés)</p>
+
+<p>- site de généalogie pour contacter des descendants des légionnaires.</p>
+
+<p>- recherche google</p>
+
+<p>- recherches thématiques:</p>
+<ul>
+<li>Mort pour la France et EVDG: <a href="https://www.memoiredeshommes.sga.defense.gouv.fr/" target="_blank" rel="noopener">https://www.memoiredeshommes.sga.defense.gouv.fr/</a></li>
+<li>Réfugiés: <a href="https://ofpra.gouv.fr/" target="_blank" rel="noopener">https://ofpra.gouv.fr/</a></li>
+<li>Déportés/prisonniers: <a href="https://arolsen-archives.org/fr/" target="_blank" rel="noopener">https://arolsen-archives.org/fr/</a></li>
+</ul>
 </div>
 
 <div class="actions">

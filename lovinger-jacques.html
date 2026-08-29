@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOVINGER Jacques « Jakob » — 11e REI</title>
-<meta name="description" content="22 ans de Légion, trois fois blessé, amputé après Bit El Arbi, officier de la Légion d'honneur">
+<title>LOVINGER Jacques — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,56 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  article .figure-side .side-img.stack{display:flex;flex-direction:column;gap:14px}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment-item{margin-bottom:.8rem}
+  article .comment-item .who{font-weight:500}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,29 +75,170 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA1 · Officier de carrière</div>
-  <h1>LOVINGER Jacques « Jakob »</h1>
-  <div class="sub">22 ans de Légion, trois fois blessé, amputé après Bit El Arbi, officier de la Légion d'honneur</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>LOVINGER Jacques</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Jacques Lovinger, sous-officier juif hongrois de la Légion étrangère depuis 1919, combat et est blessé à deux reprises au 11e REI en 1940, avant qu'une troisième blessure, reçue en Tunisie en 1943, ne lui coûte une jambe.</p>
-<h2>Vingt ans de Légion avant le 11e REI</h2>
-<p>Né le 12 septembre 1901 à Debrecen (Hongrie), tailleur de métier, il s'engage à 18 ans à la Légion étrangère le 11 septembre 1919 depuis la Roumanie, où sa famille s'était dispersée après la Première Guerre mondiale. Il participe à de nombreux combats de la pacification du Maroc entre 1920 et 1921, puis gravit les échelons — caporal en 1921, sergent en 1924, adjudant en 1935 — en servant successivement au Maroc, au Tonkin (1927-1930) et au Levant (1931-1933). Naturalisé français en 1929, il épouse en 1930 Cécile Martinez, avec qui il aura cinq enfants.</p>
-<h2>Deux blessures au 11e REI</h2>
-<p>Affecté le 6 novembre 1939 à la CA1 du 11e REI comme adjudant-chef d'une section d'engins, il est blessé une première fois au bois d'Inor le 24 mai 1940, puis une seconde fois par éclat de grenade le 27 mai, sans être évacué — cité à l'ordre du régiment comme « sous-officier d'élite ». Fait prisonnier le 23 juin 1940 à Saint-Rémy-la-Calonne, il passe la ligne de démarcation lors de son rapatriement sanitaire en juin 1941 et rejoint l'Afrique du Nord.</p>
-<h2>Mis à la retraite, puis réengagé</h2>
-<p>À son retour, fort de 22 ans de service, il se heurte à un refus d'intégrer l'armée d'active ; on lui reproche officiellement un manque de qualification, mais il devra plus tard préciser qu'on lui avait aussi signifié qu'il n'y avait « pas besoin de juifs dans l'armée ». Mis à la retraite d'office en novembre 1941, il se réengage néanmoins pour la durée de la guerre après le débarquement allié en Tunisie fin 1942, rejoignant le 3e REI.</p>
-<p>Le 22 janvier 1943, lors de l'attaque de Bit El Arbi pour desserrer l'encerclement de son bataillon, il est grièvement blessé à la jambe gauche par une rafale de mitrailleuse, mais transmet ses consignes « avec le plus grand calme » avant d'être évacué — une action qui lui vaut la croix de guerre avec palme et la Légion d'honneur. Après des années de traitement, sa jambe est finalement amputée en novembre 1945.</p>
-<p>Réformé définitivement en 1947, il devient comptable dans une cimenterie de Meknès, puis sous-lieutenant de réserve honoraire, et enfin officier de la Légion d'honneur en 1958, reconnu « mutilé de guerre à 100 % ».</p>
+
+<div class="figure-side">
+  <div class="side-img stack">
+    <figure>
+      <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-2.jpg" alt="Jacques Lovinger">
+      <figcaption>Portrait Jacques Lovinger en 1928. Il mesure 1 mètre 63, a les cheveux châtains clairs et les yeux marrons. En signe particulier, il a une ancre marine tatouée sur l'avant bras gauche.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-4.jpg" alt="Jacques Lovinger">
+      <figcaption>Portrait Jacques Lovinger vers 1919 à Debrecen</figcaption>
+    </figure>
+  </div>
+  <div class="side-text">
+<p>Jakob Lövinger est né le 12/09/1901 à Debrecen, en Hongrie. Il est le fils de Márton ou Markusz (talmudiste), décédé en 1912 à Budapest, et de Hani Beck.
+L'orthographe hongroise est Lövinger, mais il existe de nombreux dérivés – Levinger, Löwinger, Loevinger – selon les sources et les pays d'immigration.
+Il a pour frères et sœurs :</p>
+
+<ul>
+<li>Regina Rivka Eszter, née le 05/03/1883 à Debrecen. En 1910, elle épouse Sámuel Róth à Debrecen. Elle meurt à Jérusalem en 1964.</li>
+<li>Roza Szali Rachel, née le 09/04/1885 à Debrecen.</li>
+<li>Julia, née le 23/10/1887 à Debrecen.</li>
+<li>Aranka, née le 11/02/1890 à Debrecen.</li>
+<li>Roza, née le 20/04/1891 à Valea lui Mihai. En 1926, elle épouse Jacob Mirvis à Amsterdam. Veuve d'Abraham Gluck, elle décède à Budapest en 1949.</li>
+<li>Izrael, né le 02/11/1892 à Debrecen (décédé en décembre 1892).</li>
+<li>József, né le 13/12/1893 à Debrecen.</li>
+<li>Sarolta, née le 09/06/1896 à Debrecen. En 1933, elle réside aux Pays-Bas.</li>
+<li>Roza, née le 08/12/1898 à Debrecen.</li>
+<li><a href="https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93_%D7%A9%D7%9E%D7%95%D7%90%D7%9C_%D7%9C%D7%95%D7%99%D7%A0%D7%92%D7%A8" target="_blank" rel="noopener">Samuel</a>, né le 17/02/1904 à Debrecen. Talmudiste, il devient en 1931 professeur au séminaire rabbinique de Budapest. En 1950, il quitte la Hongrie pour immigrer en Israël, où il travaille à l'Institut de photographie de manuscrits hébreux. Il meurt en 1980 à Jérusalem.</li>
+</ul>
+  </div>
+</div>
+
+<p>Jacob Lovinger a vécu un an en Autriche et parle couramment l'allemand. Tailleur de métier, il se trouve à Galatz, une ville portuaire de Moldavie en Roumanie, lorsqu'il s'engage volontairement pour cinq ans dans la Légion étrangère le 11 septembre 1919. Il rejoint l'Armée d'Orient, comprenant le 1er RMA (Régiment de Marche d'Afrique), qui inclut un bataillon de légionnaires. En juin 1919, ce régiment était stationné à Galatz.</p>
+
+<p>Les raisons de son engagement restent inconnues, mais on peut imaginer que son choix s'inscrit dans un contexte historique complexe. En 1918, la Hongrie faisait partie des nations vaincues de la Première Guerre mondiale. Le démembrement de l'Empire austro-hongrois donne naissance à un nouvel État-nation hongrois, délimité par les frontières du traité de Trianon. Au cours de cette période, une coalition socialo-communiste prend le pouvoir (1er mars 1919), suivie d'un gouvernement contre-révolutionnaire (31 août 1919). Les Juifs, qui avaient été émancipés depuis 1867 et dont la religion était officiellement reconnue depuis 1895, se retrouvent à nouveau victimes de mesures antisémites.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-5.jpg" alt="Document Jacques Lovinger">
+</figure>
+
+<p>Une partie de la famille de Jacob Lovinger quitte ou va quitter la Hongrie. Sa sœur Regina habite à Cluj, en Roumanie. Sa sœur Roza (née en 1891) est recensée aux Pays-Bas en 1924 et 1933. Sa sœur Sarolta passe 10 mois aux Pays-Bas en 1933, à la suite du veuvage de Roza. Les deux sœurs semblent être retournées à Budapest à la fin de l'année 1933.</p>
+
+<p>Sa mère reste à Debrecen, où elle décède en 1930, tandis que son frère Samuel poursuit ses études à Budapest.</p>
+
+<p class="subhead">Engagement et instruction au Maroc</p>
+
+<p>Jacques Lovinger arrive au 1er REI le 10 octobre 1919, puis il est affecté à la 10e compagnie du 3e REI nouvellement créé. L'année 1920 est consacrée à l'instruction des jeunes engagés, qui sont formés aux particularités du combat au Maroc. Jacques Lovinger participe aux combats suivants :</p>
+
+<ul>
+<li>18 avril 1920 : combat de Taka Ichiane</li>
+<li>2 mai 1920 : combat de Bou Geurgour, Aït Ishaq</li>
+<li>23 juin 1920 : combat de Ras-Tarcha (Meknès)</li>
+<li>27 au 29 août 1920 : affaire de Bekrit</li>
+<li>18 septembre 1920 : affaire de Djebel-Ougrar (Meknès)</li>
+<li>1er avril 1921 : combat de Kessarat-Khémis</li>
+<li>4 septembre 1921 : combat de l'Adjgou-Ahroun (GM Theveney)</li>
+</ul>
+
+<p class="subhead">Sous-officier de carrière</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-6.jpg" alt="Jacques Lovinger au Tonkin">
+  <figcaption>au premier plan Jacques Lovinger au Tonkin</figcaption>
+</figure>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-7.jpg" alt="Jacques Lovinger">
+</figure>
+
+<p>Jacques Lovinger est nommé caporal en 1921, puis sergent en 1924. En 1922, il suit un stage de spécialité sur les mitrailleuses Hotchkiss à Oran, et en 1924, un autre stage sur les fusils mitrailleurs. Le 1er avril 1925, il est envoyé en renfort au 2e REI au moment de la guerre du RIF. En 1928, il obtient son brevet de chef de section de mitrailleuses. Le 7 mai 1927, il est désigné en renfort pour le Tonkin avec le 9e bataillon du 1er REI, où il reste jusqu'en 1930. Le 21 février 1931, il est envoyé au Levant, où il demeure jusqu'au 12 mars 1933.</p>
+
+<p>À partir de 1925, sa tenue et sa moralité sont toujours excellentes, mais il est parfois considéré comme brouillon, gaffeur et manquant d'initiative. Le 1er avril 1930, il est admis dans le cadre des sous-officiers de carrière (SOC). Après son retour des cours de perfectionnement des SOC aux Sables d'Olonne, du 25 septembre 1934 au 20 décembre 1934, il acquiert de l'assurance et ses supérieurs commencent à mieux l'évaluer. En 1935, il se classe 13e sur 146 élèves aux cours de perfectionnement de tirs et d'armement, et il est nommé adjudant la même année. Ses notes continuent à s'améliorer considérablement, au point qu'il est qualifié d'excellent chef de section de mitrailleuses, tant à l'instruction que sur le terrain. Il est nommé adjudant-chef le 1er décembre 1938.</p>
+
+<p>au premier plan Jacques Lovinger au Tonkin</p>
+
+<p class="subhead">11è régiment étranger 1939-1940</p>
+
+<p>Il est au 2e REI lorsqu'il est désigné pour le 11e REI. Le 6 novembre 1939, il est affecté à la <a href="https://www.11regimentetranger.com/blog/ca1" target="_blank" rel="noopener">CA1</a> comme chef de section d'engins. Le 24 mai 1940, il est blessé au bois d'Inor par balle à la naissance du pouce de la main droite.</p>
+
+<p>Le 27 mai 1940, il est à nouveau blessé, cette fois par éclat de grenade au genou droit, mais il ne sera pas évacué. Il obtient une citation à l'ordre du régiment : "Sous-officier d'élite, a assuré des tirs précis de mortier sous un violent bombardement le 27 mai. A été blessé alors qu'il observait le résultat de ses tirs."</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-8.jpg" alt="Document Jacques Lovinger">
+</figure>
+
+<p>Le 23 juin 1940, il est fait prisonnier à Saint-Rémy-la-Calonne (plutôt que Saint-Rémy-Suterne) et est interné au camp de Verdun deux jours plus tard.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-9.jpg" alt="Document Jacques Lovinger">
+</figure>
+
+<p>Du 30 août 1940 au 31 mars 1941, il est détaché dans le département de la Meuse en tant qu'agriculteur. Le 1er avril 1941, il est admis à l'hôpital Saint-Julien à Nancy, où il reste jusqu'au 21 mai 1941, avant d'être rapatrié sanitaire à l'hôpital Villemin à Paris.</p>
+
+<p>Le 15 juin 1941, il passe la ligne de démarcation à Vierzon et se présente aux autorités françaises à Limoges. Il est dirigé vers Marseille le 18 juin 1941. Le 30 juin 1941, il débarque à Oran et rejoint le 1er REI.</p>
+
+<p>Pendant la campagne de 1940, il est cité à l'ordre de la division n°1206 C (décret du 20 mars 1942, JO du 12 décembre 1942, 4e liste de citations) : "Chef de section d'engins de tout premier ordre. Le 29 mai 1940, au bois d'Inor, s'est rendu spontanément sous le feu violent de l'ennemi à un observatoire d'où il a pu parfaire le réglage d'un tir de mortier d'une précision remarquable. A été blessé au cours du tir. Le 18 juin, a participé à la tête de sa section au dégagement du PC du régiment à Saint-Germain."
+Il est décoré de la Croix de guerre avec étoile d'argent.</p>
+
+<p class="subhead">Retour de captivité et armée d'armistice 1941-1942</p>
+
+<p>À son retour de captivité, Jacques Lovinger compte 22 ans de service et demande à rejoindre l'armée d'active. Cependant, le 8 août 1941, il est mis en congé d'armistice et se voit contraint de trouver un emploi pour pouvoir poursuivre sa carrière militaire. Il postule pour intégrer les cadres des corps de troupe, mais sa candidature est rejetée. Le 18 novembre 1941, il est mis à la retraite d'office, ayant atteint la limite d'âge de son grade.
+Il conteste cette décision, estimant qu'elle a été prise à la suite de deux avis arbitraires.</p>
+
+<ul>
+<li>On lui reproche de n'avoir jamais exercé les fonctions de comptable et de ne pas posséder les qualités requises pour cet emploi. Jacques Lovinger dément ces accusations, expliquant qu'il a passé l'examen pour occuper un poste de comptable à titre civil dans l'armée. Il a également occupé pendant 13 mois un emploi réservé à des agents de chancellerie à la garnison de Meknès.</li>
+<li>On lui signale qu'il n'y a pas besoin de "juifs dans l'armée". Pourtant, dans son dossier d'emploi civil, il a déclaré ne pas être israélite.</li>
+</ul>
+
+<p class="subhead">Engagé volontaire pour la durée de la guerre 1942 et réforme</p>
+
+<p>À la suite du débarquement allié en Tunisie, Jacques Lovinger contracte un engagement volontaire pour la durée de la guerre au 3e REI. Le 4 décembre 1942, il est affecté à la compagnie de commandement du 1er bataillon.</p>
+
+<p>Le 3e REI monte au front le 26 décembre 1942 et participe, entre le 18 et le 22 janvier 1943, aux combats de l'Oued Khebir et de Bit El Arbi. Le 22 janvier, cela fait 48 heures que le 1er bataillon est encerclé et décide d'attaquer en direction de Bit El Arbi pour se frayer un passage entre les lignes ennemies. Jacques Lovinger est blessé par une rafale de mitrailleuse à la jambe gauche et obtient une citation à l'ordre de l'armée : « Courageux chef de section de mitrailleuses, le 22 janvier 1943, au cours de l'attaque de Bit El Arbi, a, malgré le feu violent de l'ennemi, entraîné ses hommes par son exemple. Blessé grièvement, a passé ses consignes avec le plus grand calme. »</p>
+
+<p>Il est évacué sur l'hôpital de triage du Kef le 23 janvier 1943. Entre le 26 janvier et le 18 août 1943, il est successivement évacué sur les hôpitaux de Constantine, de Blida, de Bel Abbès, et sur le centre des fractures de Blida. Puis, il se trouve en traitement à l'hôpital militaire Louis de Meknès pour une pseudarthrose du tibia gauche en voie de consolidation.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lovinger-jacques-10.jpg" alt="Document Jacques Lovinger">
+</figure>
+
+<p>Le 19 octobre 1943, Jacques Lovinger est nommé au grade de chevalier de la Légion d'honneur par ordre n°310/D : « Brillant chef de section de mitrailleuses, dont l'attitude au feu le 22 janvier 1943, au cours de l'attaque de Bit El Arbi, a été un haut exemple pour la troupe. A entraîné fougueusement à l'attaque sa section. Blessé grièvement, a passé son commandement en plein combat avec calme, transmettant ses consignes et les renseignements sur l'ennemi avec précision et sang-froid, faisant ainsi preuve de belles qualités militaires. » Cette citation comporte la croix de guerre avec palme.</p>
+
+<p>Le 5 avril 1944, il sort de l'hôpital et passe trois mois en convalescence. Le 26 novembre 1945, il subit une intervention urgente à l'hôpital de Meknès pour une trépanation du tibia et l'amputation de la jambe gauche. Le 25 octobre 1946, il est dirigé vers le centre d'appareillage de Casablanca.</p>
+
+<p>Pendant ses hospitalisations, il est sous l'administration du DCRE et mis à disposition des troupes du Maroc à la 85e compagnie de la garnison de Meknès. Le 17 janvier 1947, il est réformé définitivement n°1 par la commission de réforme de Casablanca. Il trouve ensuite un emploi de comptable à l'établissement Charles Landel (cimenterie) à Meknès.
+Le 1er décembre 1949, Jacques Lovinger est nommé sous-lieutenant de réserve avec la mention suivante : "Très bon chef de section de mitrailleuses. Brevet de chef de section en 1928. Excellente instruction, manque cependant d'instruction générale. Tenue et moralité excellentes. Sérieux, zélé, très bonne instruction militaire. Deux fois blessé en 1940, blessé grièvement une troisième fois en 1943 comme chef de section de mitrailleuses, a dû être amputé de la jambe gauche. Chevalier de la Légion d'honneur pour faits de guerre. Trois citations dont une à l'ordre de l'armée." Il est radié des cadres de réserve le 12 septembre 1951, puis admis à l'honorariat de son grade, une mesure individuelle destinée à reconnaître les services éminents rendus par un réserviste au service de la nation lorsqu'il quitte la réserve militaire.</p>
+
+<p>Il est promu au grade d'officier de la Légion d'honneur, comme le mentionne le Journal officiel du 26 avril 1958 : "Mutilé de guerre à 100 %, Lovinger (Jacques), ancien adjudant-chef du 3e régiment étranger d'infanterie, actuellement sous-lieutenant honoraire."
+Jacques Lovinger a en effet eu une carrière militaire marquée par son engagement, ses blessures et ses distinctions. Voici un résumé de ses décorations et titres :</p>
+
+<ul>
+<li>Médaille coloniale avec agrafe Maroc (brevet n°237 510)</li>
+<li>Médaille militaire (décernée le 29 décembre 1932)</li>
+<li>Croix du combattant et carte du combattant (le 23 mars 1936)</li>
+<li>Chevalier de l'Ordre Ouissam Alaouite (brevet n°29 665, le 10 mars 1937)</li>
+<li>Croix de guerre avec étoile d'argent (le 20 mars 1942)</li>
+<li>Croix de guerre avec palme et chevalier de la Légion d'Honneur (le 19 octobre 1943)</li>
+<li>Droit au port de la médaille du combattant volontaire de la guerre 1939-1945 (le 1er février 1957)</li>
+<li>Officier de la Légion d'Honneur (le 26 avril 1958)</li>
+</ul>
+
+<p>Jacques Lovinger est naturalisé français en 1929 et se marie le 04 août 1930 à Sidi Bel Abbès avec Cécile Louise Martinez. Le couple a cinq enfants : Jacqueline (04 février 1932), Francette (26 juillet 1933), Denise (16 mars 1935), Jean-Jacques (07 septembre 1936) et Alain (03 avril 1942).</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>SHD Vincennes, GR 8YE 87234</li>
-    <li>Archives du 11e REI (CDRH-LE, Aubagne), JMO de la CA1</li>
+    <li>SHD Vincennes GR 8YE 87234</li>
+    <li>Archives du 11è REI (CDRH-LE, Aubagne) JMO de la CA1</li>
+    <li>Ressources généalogiques</li>
   </ul>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-item">
+    <p class="who">ROUX-LOVINGER Thierry</p>
+    <p>Je suis particulièrement fier de la carrière de mon bien aimé grand père maternel. J'étais son premier petit-fils et presque son fils. Je fus moi-même officier supérieur de l'armée de terre et il en fut très fier. Je le porte dans mon cœur pour toujours. Il fut l'exemple d'un honnête homme avec des valeurs morales très élevées et un engagement de chaque instant que ce relevé de carrière reflète complètement.</p>
+  </div>
 </div>
 
 <div class="actions">

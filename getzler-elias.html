@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GETZLER Elias « Eljasz » — 11e REI</title>
-<meta name="description" content="Boulanger expulsé de Belgique, mort de ses blessures à l'hôpital du Puy-en-Velay">
+<title>GETZLER Elias — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,55 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.9rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
-  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
-  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +74,64 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 2e compagnie · EVDG · Mort pour la France</div>
-  <h1>GETZLER Elias « Eljasz »</h1>
-  <div class="sub">Boulanger expulsé de Belgique, mort de ses blessures à l'hôpital du Puy-en-Velay</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>GETZLER Elias</h1>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Elias Getzler, boulanger polonais expulsé de Belgique en 1930, meurt de ses blessures après la bataille de mai 1940 ; son épouse, elle, sera déportée et assassinée à Auschwitz en 1943.</p>
-<p>Né le 10 juillet 1907 à Zmigrod (Pologne), il quitte seul son pays natal en 1926 pour travailler comme boulanger en Belgique, à Liège puis à Genk. Expulsé du royaume par arrêté royal le 13 octobre 1930, il s'installe à Paris, où il épouse Frymeta Hena Zaks entre 1936 et 1940.</p>
-<p>En septembre 1939, il s'engage à la Légion étrangère pour la durée de la guerre et est affecté à la 2e compagnie du 11e REI. Blessé par des éclats d'obus le 22 mai 1940, il est évacué sur l'hôpital d'Ancemont puis transféré à l'hôpital Émile-Roux du Puy-en-Velay, où il meurt de ses blessures le 3 juillet 1940, à 33 ans.</p>
-<p>Sa femme Frymeta, qui ne bénéficie pas du statut de veuve de guerre faute de reconnaissance officielle, est déportée le 9 février 1943 par le convoi n°46 à destination d'Auschwitz, où elle est assassinée dès son arrivée le 14 février 1943.</p>
 
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Fonds de Moscou (archives de la période 1937-1939)</li>
-  </ul>
+<figure class="size-small" style="width:min(240px,100%);margin-left:auto;margin-right:auto">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-2.jpg" alt="Elias Getzler">
+</figure>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-4.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Elias Getzler (aussi orthographié Goetzler) est né le 10 juillet 1907 à Zmigrod, fils de Nachmann Getzler et de Kleinmann Perle. En juillet 1926, il quitte seul Zmigrod pour la Belgique, où il commence à travailler comme boulanger.</p>
+    <p>Il réside successivement :</p>
+    <ul>
+    <li>De juillet 1926 à août 1927 à Liège (Luik),</li>
+    <li>D'août 1927 au 29 avril 1929 à Genk,</li>
+    <li>Du 29 avril au 31 mai 1929, à l'adresse 25 rue Blès à Liège, où il travaille comme commis de boulanger pour Hoffman Bakker.</li>
+    </ul>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-5.jpg" alt="">
+  </figure>
 </div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-6.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Le 13 octobre 1930, Elias Getzler est expulsé de Belgique par un arrêté royal. Le document stipule :</p>
+    <blockquote>"Eljasz nommé, GETZLER, né le 10 juillet 1907 à Zmigrod (Pologne), mentionné dans votre bulletin du 20 août 1929, nº 208064, a été expulsé de l'Empire par arrêté royal du 13 octobre 1930. En conséquence, si cet étranger revient dans votre ville, il doit être mis à la disposition de Monsieur le Procureur du Roi afin d'être poursuivi pour violation d'un avis d'expulsion, conformément à l'article 6 de la loi du 12 février 1897."</blockquote>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-7.jpg" alt="">
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-8.jpg" alt="">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-getzler-elias-9.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Suite à son expulsion de Belgique, Elias Getzler arrive en France, où il est domicilié en 1931 au 19 rue Louis Bonnet à Paris 11. Entre 1936 et 1940, il épouse Frymeta Hena Zaks. Il est recensé dans le fond de Moscou pour la période 1937-1939.</p>
+    <p>En septembre 1939, Elias Getzler s'engage dans la Légion étrangère pour la durée de la guerre, enregistré sous le numéro 8681 au bureau de Reuilly. Il est affecté à la 2e compagnie du 11e régiment étranger d'infanterie. Le 22 mai 1940, il est blessé par des éclats d'obus et évacué sur l'HOE1/5 d'Ancemont, puis transféré à l'hôpital Émile Roux au Puy-en-Velay, où il décède des suites de ses blessures le 3 juillet 1940 à l'âge de 33 ans.</p>
+  </div>
+</div>
+
+<p>Sa femme, Frymeta, ne bénéficie pas du statut de veuve de guerre. Elle est déportée le 9 février 1943 par le convoi n°46 à destination d'Auschwitz, où elle est assassinée dès son arrivée le 14 février 1943.</p>
 
 <div class="actions">
   <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Getzler" target="_blank" rel="noopener">💬 Laisser un commentaire</a>

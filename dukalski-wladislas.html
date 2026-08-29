@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DUKALSKI Wladislas / Vladislavs Dukaļskis — 11e REI</title>
-<meta name="description" content="Peintre letton des Brigades internationales, interné à Saint-Cyprien avant de rejoindre le 11e REI">
+<title>DUKALSKIS Vladislavs — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,55 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,25 +79,87 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Brigades internationales · EVDG</div>
-  <h1>DUKALSKI Wladislas / Vladislavs Dukaļskis</h1>
-  <div class="sub">Peintre letton des Brigades internationales, interné à Saint-Cyprien avant de rejoindre le 11e REI</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>DUKALSKI Wladislas</h1>
+  <div class="sub">Brigades Internationales</div>
+  <div class="tags"><span>11è REI</span><span>Brigades internationales</span><span>EVDG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Vladislavs Dukaļskis, peintre letton parti combattre en Espagne avec son frère aîné, s'engage à la Légion étrangère pour quitter le camp d'internement de Saint-Cyprien et se retrouve prisonnier de guerre avec le 11e REI en 1940.</p>
-<p>Né le 6 février 1917 à Léningrad mais de nationalité lettone, domicilié à Riga où il exerce comme peintre, il quitte la Lettonie le 20 décembre 1936 avec son frère Boleslav pour rejoindre les Brigades internationales, sans affiliation politique préalable. Arrivé en Espagne le 20 juin 1937, il est affecté à la 3e batterie du groupe d'artillerie lourde slave « Eslavo » et combat sur le front central puis sur le front sud à partir d'août 1937. Recommandé par le comité du parti de son unité, il adhère au Parti communiste espagnol en 1938.</p>
-<p>Lors de la dissolution des Brigades internationales en août 1938, il se retrouve avec son frère et trois autres volontaires — Juan Romero Romero, Wladislaw Piekarczik et Pawel Maternick — qui seront tous, comme lui, affectés plus tard au 11e REI. Interné en France au camp de Saint-Cyprien, où les réfugiés lettons publient leur propre journal, il choisit de s'engager à la Légion étrangère pour en sortir, tandis que son frère part pour l'URSS en mars 1940.</p>
-<p>Fait prisonnier de guerre avec le 11e REI en juin 1940, il est interné au Stalag XI (matricule 95334) jusqu'à son rapatriement le 13 mai 1945. Il s'installe en France, se marie à Marseille en 1947, est naturalisé français en 1950 et meurt le 27 février 2012 à Aix-en-Provence.</p>
+
+<p>Vladislavs Dukaļskis, est né le 6 février 1917 à Léningrad mais est de nationalité lettone. Il est le fils de Stepan et de Maria Stefanowich, il a un frère aîné Boleslav né en 1907.</p>
+
+<p>Avant 1937, Vladislavs exerce la profession de peintre et est domicilié à Riga.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas-2.jpg" alt="">
+</figure>
+
+<p class="subhead">L'Espagne</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas-4.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Wladislaw Dukalski, accompagné de son frère aîné Boleslav, quitte la Lettonie le 20 décembre 1936 pour rejoindre les Brigades internationales.</p>
+    <p>Déclarant son opposition au fascisme sans s'affilier à un parti politique, il arrive en Espagne le 20 juin 1937 via Setcases.</p>
+    <p>Il est affecté à la 3e batterie du 1er groupe d'artillerie lourde slave "Eslavo", un groupe où les unités sont nommées en hommage à des figures politiques : la batterie porte le nom du communiste bulgare Vasil Kolarov, tandis que le groupe letton honore le social-démocrate Janis Jansons-Braun.</p>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas-5.jpg" alt="">
+  </figure>
+</div><!-- /figure-flank -->
+
+<p>Il participe activement aux combats sur le front central du 15 juillet au 5 août 1937, puis sur le front Sud à partir du 6 août 1937. Tout au long de son séjour en Espagne, il est inscrit dans les listes de paiement de la 3e batterie du groupe Eslavo.</p>
+
+<p>Lors de la liquidation de son groupe en août 1938, il se retrouve avec son frère Boleslaw et trois autres hommes – <a href="https://www.11regimentetranger.com/blog/romero-juan" target="_blank" rel="noopener">Juan Romero Romero</a>, Wadislaw Piekarczik et <a href="https://www.11regimentetranger.com/blog/maternick-pavel" target="_blank" rel="noopener">Pawel Maternick</a> – qui seront tous affectés plus tard au 11e régiment étranger d'infanterie.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas-6.jpg" alt="">
+</figure>
+
+<p>Le comité du parti du groupe d'artillerie en 1937 et 1938, le recommande pour son entrée au parti. La commission accepte cette demande et Wladyslaw Dukalskis entre au PCE en 1938.</p>
+
+<p class="subhead">Le 11è Régiment étranger d'Infanterie</p>
+
+<p>Après le retrait des Brigades internationales, Wladislaw Dukalski se retrouve en France, où il est interné dans le camp de Saint-Cyprien.</p>
+
+<p>Dans ce camp, un groupe de réfugiés lettons publie un journal, et dans le numéro 2 daté de mars 1939, il est mentionné que Wladislaw participe à un concours. Ce concours pourrait être lié à des activités culturelles, artistiques ou intellectuelles organisées pour occuper les internés et maintenir un esprit de solidarité parmi eux.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas-7.jpg" alt="">
+</figure>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-dukalski-wladislas-8.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Après son internement dans le camp de Saint-Cyprien, Wladislaw Dukalski choisit d'intégrer la Légion étrangère, probablement dans le cadre d'un contrat de 5 ans ou en s'engageant pour la durée de la guerre, afin de quitter le camp. Son frère Boleslav, quant à lui, choisit de partir en URSS en mars 1940.</p>
+    <p>En juin 1940, Wladislaw est fait prisonnier de guerre avec le 11e régiment étranger d'infanterie. Il est interné au stalag XI avec le mle 95334. Il est apatrié en France le 13/05/1945 et démobilisé le 11/06/1945 à Agen.</p>
+    <p>Après la guerre, Wladislaw s'installe en France. Il se marie en 1947 à Marseille avec Blanche Besset. En 1950, il est naturalisé français par décret. Il décède le 27 février 2012 à Aix-en-Provence.</p>
+  </div>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives RGASPI, fonds 545 (Brigades internationales) : 545_3_582, 545_3_648, 545_4_21, 545_6_656</li>
     <li>Listes des prisonniers français</li>
-    <li>Ignacio de la Torre, « The Baltics within the frame of the International Brigades »</li>
-    <li>« Spanish Civil War participants in the internment camps in France: Latvian case (1939-1941) »</li>
+    <li>Archives RGASPI fond 545 sur les Brigades Internationales en particulier:
+      <ul>
+        <li>545_3_582 (et suivants) questionnaire complété par les volontaires du 1er groupe d'artillerie lourde slave</li>
+        <li>545_3_648 "Fuego" journal du 1er groupe d'artillerie lourde slave</li>
+        <li>545_4_21 Journal du groupe letton du camp de concentration de Saint-Cyprien</li>
+        <li>545_6_656 liste des volontaires polonais</li>
+      </ul>
+    </li>
+    <li>The Baltics within the frame of the International Brigades, Ignacio de la Torre</li>
+    <li>Sur la participation des lettons en Espagne <a href="https://lu-lv.academia.edu/GintaIevaBikše" target="_blank" rel="noopener">https://lu-lv.academia.edu/GintaIevaBikše</a>
+      <ul>
+        <li>Spanish Civil War participants in the internment camps in France: Latvian case (1939–1941)</li>
+      </ul>
+    </li>
   </ul>
 </div>
 

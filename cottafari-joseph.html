@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COTTAFARI Joseph « Titi » — 11e REI</title>
-<meta name="description" content="Champion de boxe luxembourgeois, 150 combats avant de rejoindre le 11e REI">
+<title>COTTAFARI Joseph — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,43 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
+  article figcaption a{color:var(--link)}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,25 +67,100 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Sportif · Prisonnier</div>
-  <h1>COTTAFARI Joseph « Titi »</h1>
-  <div class="sub">Champion de boxe luxembourgeois, 150 combats avant de rejoindre le 11e REI</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>COTTAFARI Joseph</h1>
+  <div class="sub">Les sportifs du 11è REI</div>
+  <div class="tags"><span>11è REI</span><span>sportif</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Joseph Cottafari, boxeur luxembourgeois populaire sous le surnom de « Titi », dispute près de 150 combats professionnels avant de s'engager à la Légion étrangère à la veille de la guerre.</p>
-<p>Né Joseph Biwen le 22 novembre 1911 à Rumelange (Luxembourg), il est légitimé en 1922 par le mariage de sa mère avec l'Italien Adelmo Cottafari, dont il prend le nom. À partir de 1929, il boxe au Boxing Club d'Esch-sur-Alzette, dans le bassin minier luxembourgeois, évoluant des poids plumes aux mi-lourds au fil de sa carrière. Il se distingue en 1931 face à Roger Tritz, futur quatrième des Jeux olympiques de Berlin, et devient champion du Luxembourg en 1935.</p>
-<p>En février 1939, la presse annonce son 150e combat professionnel. Trois mois plus tard, elle rapporte son absence surprise d'une tournée du club d'Esch, expliquée par un engagement à la Légion étrangère. Mobilisé au 11e REI, il est fait prisonnier en juin 1940 (frontstalag 204, puis Stalag VI B à Neu Versen) et libéré comme Alsacien-Lorrain le 8 mai 1942, sans être démobilisé avant la fin de la guerre, le 2 juillet 1945.</p>
-<p>Revenu sur le ring dès 1942 à 31 ans, en fin de carrière, il conserve une popularité durable à Esch : un poisson d'avril de 1949 annonce un match d'exhibition face à Marcel Cerdan, et il participe à une exhibition pour les 25 ans de l'Olympic en 1956. En 1976, avec ses anciens camarades légionnaires Raymond Müller et Mathias Weber, il reçoit la croix de guerre des mains du ministre de l'Armée.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-2.jpg" alt="Joseph Cottafari">
+  </figure>
+  <div class="side-text">
+    <p>Certains légionnaires du 11e régiment étranger d'infanterie ont acquis une certaine notoriété dans le sport avant de s'engager à la Légion. Après la lutte avec <a href="https://www.11regimentetranger.com/blog/agotics-sandor" target="_blank" rel="noopener">Sandor Agotics</a>, je passe à la boxe anglaise au Luxembourg.</p>
+    <p>Joseph Biwen est né le 22 novembre 1911 à Rumelange, au Luxembourg. Fils naturel de Catherine Biwen, une luxembourgeoise, il est légitimé le 4 mars 1922 par le mariage de sa mère avec Adelmo Cottafari, un italien. Ce dernier reconnaît Joseph, qui prend alors le nom de Cottafari ou Cottafavi.</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-4.jpg" alt="">
+</figure>
+
+<p>La preuve de son appartenance au 11e REI figure dans la liste des prisonniers de guerre du 18 décembre 1940, où il est enregistré sous le nom de "Cossafari Joseph". Il y est mentionné qu'il a le grade de 2e classe et qu'il est interné au frontstalag 204.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-5.jpg" alt="">
+</figure>
+
+<p>Avant son engagement dans la Légion étrangère, Joseph Cottafari pratique la boxe anglaise au Boxing Club d'Esch-sur-Alzette. Ce club a été fondé en 1921, peu après la création du premier club de boxe anglaise du Luxembourg, le BC Luxembourg, en 1910.</p>
+
+<p>En 1922, la Fédération Luxembourgeoise de Boxe (FLB) est fondée et devient membre du Comité National Olympique Luxembourgeois. Trois clubs fondateurs en faisaient partie : le BC Luxembourg, le BC Esch et le BC Differdange, tous trois actifs dans la boxe à cette époque. En 1925, la FLB rejoint la Fédération Internationale de Boxe Amateur (F.I.B.A.) et l'International Boxing Union (I.B.U.).</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-6.jpg" alt="BC Rumelange vs. BC Wonderland 1929">
+  <figcaption>BC Rumelange vs. BC Wonderland (CSO) 1929. Jos Cottafari pourrait être tout à droite<br><a href="https://christian-rinnen.squarespace.com/eschundseineboxvereine" target="_blank" rel="noopener">https://christian-rinnen.squarespace.com/eschundseineboxvereine</a></figcaption>
+</figure>
+
+<p>Entre 1929 et 1939, Joseph Cottafari, surnommé Tity ou Tid, mène une carrière de boxeur amateur. Bien qu'il touchait des bourses pour ses combats, il devait exercer une activité professionnelle parallèlement, bien que la nature de ce travail demeure inconnue. Il est plausible que son métier ait un lien avec l'industrie minière d'Esch-sur-Alzette. La région, surnommée la « Métropole du Fer », faisait partie du bassin minier luxembourgeois, où des milliers d'ouvriers, dont des Italiens, affluaient pour exploiter le fer à la fin du XIXe siècle et après la Première Guerre mondiale. Cette forte présence italienne pourrait expliquer l'arrivée d'Adelmo, le père adoptif de Joseph, dans cette commune dans les années 1920. Le grand-père maternel de Joseph, Johann Biwer, était également mineur, ou « bergmann ».</p>
+
+<p>La boxe, sport exigeant, peut être en lien avec les conditions de travail dans les mines. Les boxeurs doivent être endurants et résilients, des qualités qui peuvent se cultiver dans un environnement difficile comme celui des mines. De plus, la boxe était perçue comme un moyen d'ascension sociale, à l'instar de Georges Carpentier.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-7.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>D'après les photos et les catégories de poids dans lesquelles Joseph évolue, il semble qu'il ne soit pas très grand. Sa carrière commence en 1929, à l'âge de 18 ans, où il boxe dans la catégorie des poids plumes (moins de 57,1 kg). En 1931, il passe dans la catégorie des poids légers (moins de 61,2 kg). À partir de 1932, il évolue dans des catégories allant des mi-moyens (ou welter, moins de 66,7 kg) aux moyens (moins de 72,6 kg). En 1939, on le retrouve dans la catégorie des mi-lourds (moins de 79 kg).</p>
+    <p>Dès 1929, Joseph Cottafari participe à des meetings internationaux contre des clubs belges et français. En 1931, il se distingue en affrontant Roger Tritz, un boxeur français qui finira 4e aux Jeux Olympiques de Berlin en 1936.</p>
+    <p>Cette année-là, Joseph est également inscrit pendant un temps à la salle Blau, fondée par Johnny Blau, un ancien boxeur professionnel reconnu.</p>
+    <p>En 1935, il atteint un sommet dans sa carrière en devenant champion du Luxembourg.</p>
+  </div>
+</div>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-8.jpg" alt="">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-9.jpg" alt="">
+  </figure>
+</div>
+
+<p>Le 11 février 1939, le quotidien Le Luxembourg annonce que "Titi Cottafari disputera dimanche prochain son 150ème combat. Et comme il entend que ce 150ème fight se termine par une victoire, son adversaire Dago n'aura qu'à bien se tenir." Ce combat se soldera par un match nul, mais il témoigne d'une certaine notoriété de Joseph Cottafari dans le monde de la boxe.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-10.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>En mai 1939, alors que le club de boxe d'Esch doit effectuer une tournée en France et rencontrer un club angevin, la presse luxembourgeoise rapporte l'absence de Joseph Cottafari de cette tournée. Le Luxembourg annonce : "Comme on peut le voir, le 'boxeur olympique' le plus populaire, Cottafari, n'est pas au programme. On dit que 'Titi' s'est également lancé dans un voyage avec la Légion étrangère comme destination."</p>
+  </div>
+</div>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cottafari-joseph-11.jpg" alt="">
+</figure>
+
+<p>A la mobilisation, Joseph est affecté au XIè régiment étranger. Il est fait prisonnier en juin 1940 et son nom est présent dans la liste des prisonniers n°54 du 18/12/1940. Il est interné au frontstalag 204 puis au stalag VI B à Neu Versen.</p>
+
+<p>Le 08 mai 1942 il est libéré et rapatrié par les autorités allemandes comme alsacien lorrain. Il ne sera démobilisé qu'à la fin de la guerre, le 02 juillet 1945 à Metz.</p>
+
+<p>En 1942, le nom de Joseph Cottafari réapparaît dans la presse luxembourgeoise, indiquant qu'il est de retour sur le ring à 31 ans, bien que sa carrière de boxeur soit en déclin.</p>
+
+<p>En dépit de la fin de sa carrière pugilistique, Cottafari semble conserver une certaine notoriété à Esch, comme en témoigne un "poisson d'avril" publié en 1949, annonçant un match d'exhibition entre lui et Marcel Cerdan. En 1956, pour le 25e anniversaire de l'Olympic, Cottafari participe à un autre match d'exhibition.</p>
+
+<p>Enfin, en 1976, Jos Cottafari, ainsi que ses anciens camarades légionnaires Raymond Müller et Mathias Weber, reçoivent la Croix de Guerre des mains du ministre de l'Armée, Kriepsil, en reconnaissance de leur service.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Presse ancienne : Gallica, eluxemburgensia, Belgicapress, Limedia Kiosque</li>
-    <li>Archives nationales du Luxembourg</li>
-    <li>christian-rinnen.squarespace.com — histoire du BC Esch</li>
-    <li>Christian Dorvillé, « Un siècle de boxe anglaise dans le Nord »</li>
+    <li>Les sites de presses anciennes: gallica pour la France, eluxemburgensia pour le Luxembourg, belgicapress pour la Belgique, Limedia kiosque pour la Meuse</li>
+    <li>Acte de naissance sur le site des archives du Luxembourg <a href="https://query.an.etat.lu/Query/archivplansuche.aspx?ID=690908" target="_blank" rel="noopener">query.an.etat.lu</a></li>
+    <li>Pour l'histoire du BC d'Esch <a href="https://christian-rinnen.squarespace.com/boxingclub-esch-news" target="_blank" rel="noopener">christian-rinnen.squarespace.com</a></li>
+    <li>Un siècle de boxe anglaise dans le Nord, Christian Dorvillé</li>
   </ul>
 </div>
 

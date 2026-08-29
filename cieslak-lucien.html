@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CIESLAK Wladislas dit « Lucien » — 11e REI</title>
-<meta name="description" content="Du 11e REI au Special Air Service britannique, parachuté en France en 1944">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,48 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
-  article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.86rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment{background:var(--row);border-radius:4px;padding:.8rem 1rem;margin-bottom:.8rem}
+  article .comment .who{font-weight:500;font-size:.8rem;color:var(--muted);margin-bottom:.3rem}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,27 +67,115 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 6e compagnie · SAS</div>
   <h1>CIESLAK Wladislas dit « Lucien »</h1>
-  <div class="sub">Du 11e REI au Special Air Service britannique, parachuté en France en 1944</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Wladislas Cieslak, légionnaire cité pour son action au canon de 25 à Void en 1940, rejoint après son évasion l'escadron français du 2e SAS britannique et saute en France en août 1944, où il est grièvement blessé.</p>
-<h2>Le 11e REI</h2>
-<p>Né en juin 1917 à Popowo (Pologne), arrivé en France avec sa famille en 1924 et naturalisé en 1938, Lucien s'engage à la Légion étrangère la même année. Volontaire pour former le 11e REI en septembre 1939, il sert au 2e bataillon comme servant de canon de 25 et se distingue le 17 juin 1940 à Void en arrêtant une colonne motorisée ennemie, mettant hors de combat plusieurs engins dont un char — une action qui lui vaut une citation à l'ordre de la brigade. Fait prisonnier après l'armistice et interné à Verdun, il s'évade en janvier 1941 et rejoint le 1er REI en Algérie, puis le 3e REI au Maroc, avec lequel il participe à la campagne de Tunisie en 1943.</p>
-<h2>Le Special Air Service</h2>
-<p>À l'issue de la campagne de Tunisie, Lucien est recruté avec une douzaine d'autres légionnaires du 3e REI par le capitaine « Lee » — en réalité Raymond Couraud, ancien légionnaire devenu officier commando britannique — pour l'escadron français du 2e SAS, alors la seule unité française des SAS. Après une formation à Philippeville puis une campagne d'Italie fin 1943 (sabotages de voies ferrées et de ponts dans le secteur de Termoli), il est transféré en Angleterre début 1944 et breveté parachutiste le 17 avril, aux côtés de 160 stagiaires de treize nationalités différentes.</p>
-<p>En août 1944, il participe à l'opération Dunhill : parachuté dans la région de Nantes avec son groupe de commandos, chargé de perturber les arrières allemands pendant la percée américaine en Normandie. Le 8 août, lors de la reconnaissance d'un village occupé, il est gravement blessé par un obus après avoir riposté au feu ennemi ; évacué vers l'Angleterre deux jours plus tard, la guerre s'achève pour lui à ce moment.</p>
-<h2>Après-guerre</h2>
-<p>Démobilisé en novembre 1945 après sept ans de service à la Légion et aux SAS, cité à l'ordre de l'armée et de la brigade, décoré de la croix de guerre et de l'Africa Star britannique, il épouse une Écossaise rencontrée pendant son entraînement en Écosse. Le couple s'installe dans le nord de la France avant de revenir en Écosse en 1955 ; Lucien y travaille comme contremaître chez Dunlop et obtient la nationalité britannique en 1966. Il meurt en 1999 à Dumfries.</p>
+
+<p>Aujourd'hui un article facile car je me contente de reproduire des extraits de l'article intitulé "Légionnaires parachutistes pendant la Seconde Guerre mondiale" publié sur le site internet <a href="http://foreignlegion.info/" target="_blank" rel="noopener">http://foreignlegion.info/</a></p>
+
+<p>Je vous invite à visiter ce site qui présente tous les régiments de Légion. Il m'a été utile pour faire connaissance avec les régiments d'avant la Seconde Guerre mondiale, il possède aussi de nombreuses photos et portraits de légionnaires dont certains sont passés au 11è régiment étranger d'infanterie.</p>
+
+<p>L'article <a href="https://foreignlegion.info/legionnaires-parachutistes-pendant-la-seconde-guerre-mondiale/" target="_blank" rel="noopener">"Légionnaires parachutistes pendant la Seconde Guerre mondiale"</a> propose un historique de la création des premiers commandos parachutistes qui voient le jour après la campagne de Tunisie en mai 1943.</p>
+
+<p>La première partie raconte la création du bataillon d'Assaut qui deviendra ensuite le Bataillon Choc. Je trouve un ancien du 11è étranger ayant appartenu à cette formation.</p>
+
+<p>Il s'agit de MORAN Jihm: en 1938, il est caporal à la 9è compagnie du 3è REI où il obtient la médaille de satisfaction. En septembre 1939, il se porte volontaire pour aller former le 11è REI avec lequel il obtiendra une citation à l'ordre du régiment. Affecté à la 6è compagnie, il se trouve devant Void le 18 juin 1940. Sa compagnie désignée pour mener une reconnaissance offensive sera presque décimée ce jour-là. Le sergent Moran fera parti des quelques rescapés qui réussiront à se replier sur Ourches grâce au sacrifice du Lieutenant Viel.</p>
+
+<p>Je ne connais pas précisément son parcours, mais il a certainement fait parti des nombreux évadés qui réussirent à rejoindre l'Afrique du Nord. Comme mon grand-père, il a du être réaffecté au 3è REI et participer à la campagne de Tunisie. Il se porte volontaire pour intégrer l'unité commando du bataillon d'Assaut.</p>
+
+<p>A la Sotière dans les Vosges, le 3 novembre 1944, Jim Moran est tué au combat lors de la libération du Haut du Tôt.</p>
+
+<p>Grâce au site internet http://foreignlegion.info/ je trouve aujourd'hui un deuxième parachutiste en la personne du légionnaire de 2è classe Wladislas CIESLAK dit Lucien.</p>
+
+<p>Je l'avais recensé grâce aux listes de prisonniers et au pages CGM du JO du 12/12/1942 rapportant qu'il avait été cité à l'ordre de la brigade alors qu'il faisait parti du 11è REI.</p>
+
+<p>A la différence de Jhim Moran, Wladislaw sera recruté par le Special Air Service britannique (SAS).</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cieslak-lucien-2.jpg" alt="">
+</figure>
+
+<p class="subhead">Légionnaire des SAS</p>
+<p class="subhead">Introduction</p>
+
+<p>Il faut noter que l'ensemble de cet article sur les tous premiers légionnaires parachutistes a été initié par le Dr David Bruce, un médecin en chef retraité après 36 ans de service dans la Royal Air Force de l'armée britannique. Il m'a contacté et m'a demandé de coopérer pour découvrir les détails du parcours militaire de son grand-père. Ce dernier était en 1943 parmi les légionnaires du 3e REI qui s'étaient portés volontaires pour une aventure dans une unité de commando parachutiste. Mais le plus intéressant, c'est que le grand-père de David, ainsi que ses camarades légionnaires, n'ont pas rejoint le Bataillon de Choc ; ils sont devenus les membres du Special Air Service britannique, mieux connu sous le titre de SAS.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cieslak-lucien-4.jpg" alt="">
+</figure>
+
+<p class="subhead">Légion Etrangère 1938-1943</p>
+
+<p>Mais reprenons depuis le début. Wladislas Cieslak dit « Lucien » est né en juin 1917 à Popowo, un petit village en Pologne. En 1924, sa famille quitte le pays et s'installe en France. Naturalisé Français en 1938, Lucien s'engage dans la Légion étrangère en novembre de la même année. Il a alors 21 ans. Il part en Afrique du Nord pour y suivre son instruction en Algérie, au sein du DCRE. Ensuite, le jeune légionnaire est affecté au 1er Régiment Etranger.</p>
+
+<p>En septembre 1939, les tristes événements en Europe interrompirent la période de paix. L'ordre de la mobilisation arrive. Au sein des régiments de la Légion, des détachements de volontaires sont constitués pour rejoindre la Métropole et former les noyaux des deux nouveaux régiments (11e REI + 12e REI) ; Lucien est parmi ces volontaires et rejoint le 11e Etranger. Avec le 2e Bataillon, il participera dans la Bataille de France de 1940. Le 17 juin, comme servant de canon de 25, il se distingue à Void en arrêtant une colonne motorisée ennemie, mettant plusieurs engins – dont un char – hors de combat. Pour cette action, il sera cité à l'ordre de la brigade.</p>
+
+<p>Après l'armistice, encerclé par les Allemands, il est fait prisonnier avec la majorité de son régiment. Interné au camp de Verdun, il s'évade en janvier 1941 et rejoint le 1er REI en Algérie. Un an plus tard, en janvier 1942, Lucien est affecté au 3e REI alors stationné au Maroc. Il est nommé 1ère Classe.</p>
+
+<p>En novembre, le débarquement des Alliés se déroule en Afrique du Nord et inverse la situation politique. Les troupes françaises en Afrique reprendront le combat contre l'Allemagne. Les bataillons du 3e REI vont participer à la campagne de Tunisie, contre les forces de l'Axe. La campagne s'achève avec succès en mai 1943.</p>
+
+<p>En même temps, les recruteurs commencent à chercher des volontaires parmi les troupes françaises – les légionnaires inclus – pour des nouvelles unités de commandos parachutistes. Les uns sont affectés au Bataillon de Choc, mais ce n'est pas le cas de Lucien. Il est contacté par un certain capitaine Lee du SAS britannique. À vrai dire, c'est Raymond Couraud, un ancien légionnaire français du 3e REI et de la 13e DBLE, lui-même engagé en 1938 à l'âge de 18 ans. Couraud, alias capitaine Lee, parvient à rejoindre l'Angleterre et les Forces françaises libres en 1941 et devient officier commando quelques mois plus tard. De nationalité britannique depuis quelques semaines, il est désormais commandant du French Squadron (Escadron français) du 2e régiment de SAS.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cieslak-lucien-5.jpg" alt="Wladislas Cieslak en 1939">
+  <figcaption>Le jeune légionnaire Wladislas "Lucien" Cieslak en 1939.</figcaption>
+</figure>
+
+<p class="subhead">French Squadron du 2e SAS</p>
+
+<p>Le French Squadron (équivalent d'une compagnie) du 2e SAS a été formé en mars 1943, avec une cinquantaine de commandos français mutés du French Squadron original du 1 SAS dissous. C'est donc la seule unité française du SAS britannique à l'époque, ce dernier représentée uniquement que par le 2e SAS. Ce « régiment » (en fait, un bataillon) est commandé par le William « Bill » Stirling, frère de David Stirling, fondateur du SAS.</p>
+
+<p>La campagne de Tunisie terminée, Lucien et quelques 12 autres légionnaires du 3e REI se portent volontaires pour l'escadron du capitaine Lee. Ils sont ensuite dirigés vers Philippeville en Algérie, le quartier général des SAS en Afrique du Nord (et plus tard, pendant la guerre d'Algérie, la garnison du 2e REP). Lucien et ses camarades y suivront une formation générale de cette force spéciale.</p>
+
+<p>L'escadron du SAS est formé généralement de 8 « sticks », petites unités de combat composées de 3 à 10 hommes, selon l'effectif disponible. Le stick devait être commandé par un officier, mais à cette époque, c'est plutôt un sous-officier qui est à la tête de ces petits groupes. Leur entraînement se fait donc isolément, car en mission, le stick opère avec ses seuls moyens et en principe sans aide, ni secours extérieur.</p>
+
+<p>Entre septembre et décembre 1943, Lucien prend part à la campagne d'Italie. Le 2e SAS y mène des opérations séparées derrière les lignes ennemies, dans le secteur de Termoli, où ses commandos détruisent des voies ferrées, font sauter des ponts et bloquent le mouvement des forces allemandes.</p>
+
+<p>Fin 1943, en vue du débarquement de Normandie, de la Libération de la France et de toute l'Europe, le commandement allié décide de porter l'effectif du « Special Air Service » à celui d'une brigade formée de quatre « régiments ». Deux régiments de la nouvelle brigade resteront britanniques (les 1er et 2e SAS), deux autres seront français (3e et 4e SAS). Chacun fort d'une quarantaine de sticks de dix hommes. Plus tard, un 5e SAS belge sera intégré à la Brigade. Ce dernier compte aussi dans ses rangs un petit nombre d'anciens légionnaires venant, déjà au début de 1942, du 6e REI au Levant.</p>
+
+<p>Au début d'avril 1944, l'Escadron français du 2e SAS est donc transféré, avec Lucien, de l'Algérie à l'Angleterre pour y être réorganisé. En même temps, pour des raisons administratives, Lucien est affecté au 3e SAS français (en fait, le 3e Régiment de chasseurs parachutistes du commandant Château-Jobert dit « Conan »). Pourtant, il reste toujours détaché au 2e SAS britannique. A l'aérodrome de Ringway, un centre d'entraînement des troupes aéroportées situé près de Manchester, Lucien suit une semaine de stage en sauts. Le 17 avril, il sera officiellement breveté parachutiste et obtiendra ses Parachute wings. Pour mémoire, selon le rapport officiel, quelque 160 hommes de 13 nationalités différentes (!) participèrent au même stage.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cieslak-lucien-6.jpg" alt="Wladislas Cieslak, 2e SAS Regiment, 1944">
+  <figcaption>Wladislas Cieslak en tant que membre du 2e SAS Regiment (2 SAS), en 1944.</figcaption>
+</figure>
+
+<p>Une fois réorganisés, les SAS prendront part à partir de juin 1944 à la Libération de la France. Leur rôle principal était d'être parachutés en petits groupes de commandos sur les arrières de l'armée allemande et d'exécuter des missions de sabotage et de destruction, ainsi que des actions de reconnaissance et de harcèlement de l'ennemi.</p>
+
+<p>Lucien part en France au début d'août 1944, pour l'opération Dunhill. Les cinq sticks impliquées, totalisant quelques 60 commandos, devaient perturber l'activité des Allemands pendant la percée des troupes américaines de la Normandie. Quatre des équipes furent relevées dans les 24 heures. Le cinquième stick fournit des renseignements sur les mouvements allemands et mit en sécurité environ 200 aviateurs alliés avant de faire jonction avec les Américains trois semaines plus tard.</p>
+
+<p>Membre de ce cinquième stick, Lucien est parachuté dans la région de Nantes. Le 8 août, lors de la reconnaissance d'un village occupé par les Allemands, il est accueilli par le feu ennemi. Après avoir répondu avec sa mitraillette, il est gravement blessé par un obus de 37. Lucien est d'abord ramené à l'hôpital de Bécon-les-Granits. Mais deux jours plus tard, il doit être évacué vers l'Angleterre. La guerre est finie pour lui.</p>
+
+<p>En septembre 1945, Lucien rentre en France pour rejoindre le 3e RCP, alors commandé par le lieutenant-colonel Pâris de Bollardière, lui aussi un ancien officier de la Légion au Maroc en 1936-1940 et de la 13e DBLE en 1940-1943, et un ancien du 3e SAS.</p>
+
+<p>Puis, en novembre 1945, après sept ans de service à la Légion et au SAS, cité à l'ordre de l'armée et de la brigade, décoré de la croix de guerre et de l'Africa Star britannique, Wladislas Cieslak dit « Lucien » est démobilisé.</p>
+
+<p>Il épouse une Écossaise, qu'il avait rencontrée en 1944 alors qu'il suivait un entraînement SAS dans le sud-ouest de l'Écosse. Ils ont d'abord vécu dans le nord de la France avant de revenir en Écosse en 1955, où il travaillera comme contremaître dans l'usine locale de Dunlop. En 1966, Lucien obtient la naturalisation et devient citoyen britannique. Il est décédé en 1999.</p>
+
+<p>Cette histoire extraordinaire d'un ancien légionnaire nous a permis de découvrir une partie jusqu'alors inexplorée de l'histoire de la Légion étrangère, l'histoire des véritables ancêtres des légionnaires parachutistes de l'actuel 2e REP et des vrais précurseurs des commandos GCP d'aujourd'hui.</p>
+
+<p>Je remercie encore le Dr David Bruce pour son impulsion et son assistance, qui ont permis de rassembler ces informations extrêmement rares et intéressantes.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cieslak-lucien-7.jpg" alt="Certificat de 1942">
+  <figcaption>Certificat de 1942 qui certifie que Wladislas Cieslak a été cité à l'ordre de la brigade pour son action en juin 1940, au sein du 11e REI.</figcaption>
+</figure>
 
 <div class="sources">
   <h3>Sources</h3>
-  <ul>
-    <li>Dr David Bruce (petit-fils par alliance) et foreignlegion.info, « Légionnaires parachutistes pendant la Seconde Guerre mondiale »</li>
-  </ul>
+  <p>l'intégral de l'article est à lire sur le site internet <a href="http://foreignlegion.info/legionnaires-parachutistes-pendant-la-seconde-guerre-mondiale/" target="_blank" rel="noopener">http://foreignlegion.info/legionnaires-parachutistes-pendant-la-seconde-guerre-mondiale/</a></p>
+  <p>Je pense qu'Auguste Mattagne qui était caporal au 11è REI en 1940 rejoindra également un commando parachutiste. Sur sa pierre tombale, il est indiqué qu'il avait le grade de lieutenant parachutiste SRA (Service de Renseignement et d'Action). Il s'agit du groupement des différents réseaux de résistances belges durant la Seconde Guerre mondiale.</p>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment">
+    <div class="who">Colin Barr — 11-09-2023</div>
+    <p>I knew Lucian (Wladislas) Cieslak personally, as he was adopted by my family in South Scotland after he parted from his wife in the mid '70s and became estranged from his step-daughter (Brenda?) His step-grandson is (I assume) Dr David Bruce, whom I've never met. He never had any children of his own, as far as I know. He lived in a small flat at 180 Lockerbie Road, Dumfries, and I used to visit him regularly on Friday nights and we'd drink whisky together. He would sometimes share his war stories, but only after he'd had at least half the bottle. I was there the day he died, of natural causes, in 1999. I would be happy to pass on what I can remember of him, if you are interested.</p>
+  </div>
 </div>
 
 <div class="actions">

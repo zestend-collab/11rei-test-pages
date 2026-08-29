@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RECHAD Mehmed Suad « Bey » — 11e REI</title>
-<meta name="description" content="Diplomate turc devenu déserteur puis héros discret du 11e REI, déchu de sa nationalité par Vichy">
+<title>RECHAD Mehmed — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,44 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,32 +68,77 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 11e compagnie · Réserviste</div>
-  <h1>RECHAD Mehmed Suad « Bey »</h1>
-  <div class="sub">Diplomate turc devenu déserteur puis héros discret du 11e REI, déchu de sa nationalité par Vichy</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>RECHAD Mehmed Suad</h1>
+  <div class="tags"><span>11è REI</span><span>Brigades internationales</span><span>réserviste</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Mehmed Rechad, ancien diplomate turc et officier dégradé pour désertion après une tentative avortée de rejoindre les Brigades internationales, se distingue par des actes de bravoure répétés au 11e REI, avant que Vichy ne le déchoie de sa nationalité française.</p>
-<h2>Un diplomate devenu légionnaire</h2>
-<p>Né le 22 avril 1899 à Scutari, faubourg d'Istanbul, fils de Pacha Bey Mehmed, directeur général du commerce, et d'Hanoum (ou Harroun) Neir Emine, diplômé en 1915 du lycée de Galatasaray en lettres et en sciences, il poursuit ses études à Berlin de 1916 à 1920, spécialisé en sciences politiques. En 1922, il fait partie de la délégation turque à la conférence de Lausanne, chargée de négocier un traité remplaçant celui de Sèvres non reconnu par le gouvernement de Mustafa Kemal Atatürk ; il démissionne en 1923 pour rejoindre en Roumanie Said Molla, ancien ministre turc.</p>
-<p>Il s'engage à la Légion étrangère le 29 avril 1924 — mesurant 1,55 m, cheveux roux, yeux marron, polyglotte parlant couramment le turc, l'allemand, le français, l'anglais, l'arabe et le roumain. Nommé sergent le 12 août 1925, il participe à la campagne de Syrie avec le 4e REI et se distingue lors de la campagne des Druzes en 1926, cité à l'ordre de la division. Affecté au 1er REI en 1927, il réussit en octobre 1929 le concours d'entrée à l'école de Saint-Maixent, classé 69e sur 159 candidats, et devient sous-lieutenant le 1er octobre 1930. Il épouse Andrée Louise Faussabry le 22 mai 1931 à Niort.</p>
-<p>Promu lieutenant en 1932, chef de section d'une compagnie de fusiliers-voltigeurs, sa première demande de naturalisation est ajournée cette année-là, son séjour en Allemagne pendant la Première Guerre mondiale étant jugé incompatible avec un loyalisme total envers la France ; il l'obtient finalement en 1935. En 1937, il part en renfort au Tonkin avec le 5e REI, avant d'être rapatrié sanitaire en juin 1938 et réaffecté au 1er REI.</p>
-<h2>Désertion et tentative de rejoindre l'Espagne</h2>
-<p>Le 26 septembre 1938, il est arrêté à Paris par les gendarmes ; il avait été déclaré manquant à l'appel dès le 15 juillet, puis officiellement déserteur le 31 juillet. Son dossier militaire, le décrivant comme un homme intelligent et actif mais orgueilleux et susceptible, joueur et accablé de dettes, ne mentionne pas explicitement de tentative de rejoindre les Brigades internationales — mais un rapport du 7 août 1938 le situe à l'hôtel Montesquieu de Lyon, où il cherche à rejoindre les républicains espagnols, expliquant sa situation : son épouse l'avait quitté pour un autre officier, et se retrouvant sans ressources en absence illégale, il décide de se rendre en Espagne, se déclarant républicain sans appartenance à un parti politique.</p>
-<p>Traduit devant le tribunal militaire d'Oran, il est condamné à trois mois de prison avec sursis et à la perte de son grade pour « désertion à l'intérieur en temps de paix » ; son pourvoi en cassation est rejeté le 31 mars 1939. Le 16 mai 1939, il est placé dans la réserve comme simple légionnaire de 2e classe.</p>
-<h2>Le 11e REI</h2>
-<p>Rappelé le 5 septembre 1939, il rejoint la 11e compagnie du 11e REI, dans la section du lieutenant Levacher. Il se distingue à plusieurs reprises : cité à l'ordre de la division pour sa « très belle conduite au feu » le 24 mai 1940, lorsqu'il s'infiltre seul toute une nuit entre les lignes pour écouter une ligne téléphonique ennemie, puis de nouveau le 27 mai et lors des combats en retraite du 10 au 22 juin, se montrant fidèle « aux plus belles traditions de la Légion ». Le 22 juin 1940, il se porte volontaire pour une mission de sacrifice, finalement annulée.</p>
-<p>Fait prisonnier le lendemain, il sert d'interprète à la Kreiskommandantur de Commercy avant de s'évader le 5 février 1941 et de traverser la ligne de démarcation deux jours plus tard, rejoignant Oran le 15 février, où il est démobilisé.</p>
-<h2>Déchu de sa nationalité</h2>
-<p>En septembre 1943, le régime de Vichy retire à Mehmed Rechad sa nationalité française en vertu des lois de révision des naturalisations. Après la Libération, sa nationalité n'est pas automatiquement restaurée malgré l'abrogation de ces lois par le Comité français de libération nationale en 1944 : deux nouvelles demandes de déchéance sont examinées en 1945 et 1946, invoquant sa condamnation pour désertion, avant d'être finalement classées sans suite en 1948, faute de griefs suffisants.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rechad-mehmed-2.jpg" alt="Mehmed Rechad">
+  </figure>
+  <div class="side-text">
+<p>Mehmed Rechad, né le 22 avril 1899 à Scutari (un faubourg d'Istanbul en Turquie), est le fils de Pacha Bey Mehmed, directeur général du commerce, et d'Hanoum (ou Harroun) Neir Emine. Diplômé en 1915 du lycée de Galatasaray en lettres et en sciences, il poursuit ses études à Berlin entre 1916 et 1920, où il se spécialise en sciences politiques.</p>
+
+<p>En 1922, Mehmed Rechad fait partie de la délégation turque lors de la Conférence de Lausanne, qui visait à négocier un traité pour remplacer le traité de Sèvres, qui n'était plus reconnu par le gouvernement turc dirigé par Mustafa Kemal Atatürk. Après cette mission, il démissionne en 1923 et rejoint Said Molla, ancien ministre turc, en Roumanie.</p>
+  </div>
+</div>
+
+<p>Lors de la mobilisation générale en 1939, Mehmed Rechad est rappelé sous les drapeaux et devient légionnaire de 2e classe, bien que son nom ne figure pas dans le Journal de Marche et d'Opérations (JMO) du 11e Régiment Étranger d'Infanterie (REI). Cependant, il apparaît sous le nom de "Rechad Bey" dans une liste de citations concernant les légionnaires du 11e REI publiée au Journal Officiel du 12 décembre 1941, ainsi que dans la revue du régiment. Son parcours militaire est notable, car avant de passer dans la réserve, il avait été lieutenant, mais avait été rétrogradé à son grade de légionnaire de 2e classe.</p>
+
+<p class="subhead">A la Légion de 1924 à 1939</p>
+
+<p>Mehmed Rechad s'engage à la Légion étrangère le 29 avril 1924. Mesurant 1,55 m, il a les cheveux roux et les yeux marron. Polyglotte, il parle couramment le turc, l'allemand, le français, l'anglais, l'arabe et le roumain. Le 12 août 1925, il est nommé sergent et participe à la campagne de Syrie avec le 4e régiment étranger d'infanterie (REI). En 1926, il est cité à l'ordre de la division pour son rôle lors de la campagne des Druzes.</p>
+
+<p>En 1927, il est affecté au 1er REI et se prépare pour le concours d'entrée à l'école de Saint-Maixent. En octobre 1929, il réussit le concours, se classant 69e sur 159 candidats. Il est nommé sous-lieutenant le 1er octobre 1930. Le 22 mai 1931, il se marie avec Andrée Louise Faussabry à Niort, et ils auront deux enfants.</p>
+
+<p>En 1932, il est promu lieutenant et devient chef de section d'une compagnie de fusiliers-voltigeurs. Cette même année, sa demande de naturalisation est ajournée en raison de son séjour en Allemagne durant la Première Guerre mondiale, jugé incompatible avec un loyalisme total envers la France. Cependant, en 1935, il est finalement naturalisé français et inscrit dans la 3e partie de la liste de recrutement de 1935 du bureau de Marrakech sous le matricule 531.</p>
+
+<p>En 1937, il est désigné pour les renforts du Tonkin avec le 5e REI. Après un séjour en Indochine, il quitte Haiphong le 29 avril 1938 en tant que rapatrié sanitaire et arrive à Marseille le 2 juin 1938. Il est réaffecté au 1er REI et bénéficie d'une permission de 30 jours, valable du 14 juin au 13 juillet 1938.</p>
+
+<p class="subhead">Désertion et Brigades internationales</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rechad-mehmed-4.jpg" alt="Document Mehmed Rechad">
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rechad-mehmed-5.jpg" alt="Document Mehmed Rechad">
+</figure>
+
+<p>Le 26 septembre 1938, Mehmed Rechad est arrêté à Paris par les gendarmes. Le 17 octobre 1938, il est incarcéré à la prison militaire d'Oran. Son comportement est décrit comme celui d'un homme intelligent et actif, mais orgueilleux et susceptible, avec une tendance à être joueur. Il est aussi mentionné qu'il est accablé de dettes, dont certaines témoignent d'un manque de sens moral.</p>
+
+<p>Traduit en justice devant le tribunal militaire d'Oran, il est condamné à 3 mois de prison avec sursis et à la perte de son grade pour "désertion à l'intérieur en temps de paix". Il tente un pourvoi en cassation, mais celui-ci est rejeté le 31 mars 1939. Le 13 avril 1939, il annonce se retirer à l'hôtel Atlas, situé rue de la vieille mosquée à Oran. Enfin, le 16 mai 1939, il est placé dans la réserve en tant que légionnaire de 2e classe.</p>
+
+<p>Le 15 juillet 1938, Mehmed Rechad est déclaré manquant à l'appel du matin, puis en absence illégale à partir du 16 juillet. Le 31 juillet, à 0h00, il est officiellement déclaré déserteur. Son dossier ne mentionne cependant pas de manière explicite qu'il ait tenté de rejoindre les Brigades internationales.</p>
+
+<p>Le 7 août 1938, il se trouve à l'hôtel Montesquieu à Lyon, où il cherche à rejoindre les républicains espagnols. Il explique ses déboires personnels, précisant que sa femme l'a quitté pour un officier. Pendant sa permission, il aurait tenté de la retrouver, mais, se retrouvant sans ressources et en situation d'absence illégale, il décide de se rendre en Espagne. Il se déclare républicain, bien qu'il précise ne pas appartenir à un parti politique. Le recruteur qui le rencontre lui permet de partir, mais semble regretter sa décision en pensant avoir commis une erreur.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rechad-mehmed-6.jpg" alt="Document Mehmed Rechad">
+</figure>
+
+<p class="subhead">Mobilisé au 11è régiment étranger d'infanterie</p>
+
+<p>Le 5 septembre 1939, rappelé sous les drapeaux, Mehmed Rechad est dirigé vers le camp de la Valbonne le 21 octobre 1939. Il est affecté au 11e régiment étranger d'infanterie (11e REI), 11e compagnie, dans la section du lieutenant Levacher. Pendant les combats, il se distingue particulièrement et est cité à l'ordre de la division pour sa "très belle conduite au feu" le 24 mai 1940, lorsqu'il s'est infiltré pour écouter une ligne téléphonique ennemie, restant seul toute la nuit entre les lignes. Il se fait à nouveau remarquer le 27 mai 1940 et entre le 10 et le 22 juin 1940, durant les combats en retraite. Il est salué pour son dévouement, demeurant fidèle aux plus belles traditions de la Légion. Le 22 juin 1940, il se porte même volontaire pour une mission de sacrifice, mission qui n'a finalement pas été exécutée.</p>
+
+<p>Mehmed Rechad est fait prisonnier le 23 juin 1940, interné successivement à Saint-Mihiel puis à Commercy, où il sert d'interprète pour la Kreiskommandatur. Le 5 février 1941, il parvient à s'évader et traverse la ligne de démarcation le 7 février. Il arrive à Oran le 15 février 1941 et est démobilisé le 18 février de la même année.</p>
+
+<p>Le 18 décembre 1942, une révision de sa naturalisation est demandée par le gouvernement de Vichy, qui retire sa nationalité française par décret du 7 septembre 1943, conformément à la loi du 22 juillet 1940.</p>
+
+<p>Après le débarquement allié en Afrique du Nord, Rechad est placé en internement administratif, puis en résidence surveillée à Relizane. Le 24 mai 1944, le Comité français de Libération nationale, réuni à Alger, abroge l'acte du 22 juillet 1940, annulant pratiquement toutes les dénaturalisations opérées pendant la guerre. Cependant, après la Libération, plusieurs centaines de collaborationnistes, notamment d'origine italienne ou allemande, perdent leur nationalité française, une déchéance prononcée dans 479 cas entre 1944 et 1953.</p>
+
+<p>En 1945, une nouvelle demande de retrait de nationalité est formulée en raison de sa condamnation pour désertion en 1939, mais elle semble être rejetée, probablement en raison de son amnistie.</p>
+
+<p>Le 11 juin 1946, une autre demande de déchéance est introduite, en vertu de l'article 98, paragraphe 4 du Code de la nationalité française, qui permet de retirer la nationalité à une personne ayant agi contre les intérêts de la France au profit d'un État étranger. Toutefois, le 16 mars 1948, les griefs sont jugés insuffisants et son dossier ne contient plus d'éléments après cette date.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives RGASPI, 545/6/1021</li>
-    <li>Archives nationales de Pierrefitte-sur-Seine, BB/27/1439 (dossier de dénaturalisation)</li>
+    <li>RGASPI 545/6/1021</li>
+    <li>AN Pierrefitte sur Seine, BB/27/1439, <a href="https://www.siv.archives-nationales.culture.gouv.fr/siv/UD/FRAN_IR_057229/denat11298" target="_blank" rel="noopener">https://www.siv.archives-nationales.culture.gouv.fr/siv/UD/FRAN_IR_057229/denat11298</a></li>
   </ul>
 </div>
 

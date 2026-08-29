@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VOTCHEL Michel — 11e REI</title>
-<meta name="description" content="Ancien de l'armée blanche russe, porté disparu en 1940, retrouvé par sa famille polonaise 16 ans après sa mort">
+<title>Michel VOTCHEL — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,44 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article a{color:var(--link)}
+  article ol{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,26 +68,144 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 3e compagnie · EVDG · Mort pour la France</div>
-  <h1>VOTCHEL Michel</h1>
-  <div class="sub">Ancien de l'armée blanche russe, porté disparu en 1940, retrouvé par sa famille polonaise 16 ans après sa mort</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Michel VOTCHEL</h1>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Michel Votchel, colon allemand d'Ukraine ayant fui la révolution russe puis élevé une famille en France, disparaît au combat en mai 1940. Ce n'est qu'en 1956, par une lettre venue de Sibérie, que sa sœur apprendra enfin son sort — et lui le destin tragique de leurs frères, victimes des purges staliniennes.</p>
-<p>Né le 16 décembre 1900 dans le sud de l'actuelle Ukraine, issu d'une famille de colons allemands, il rejoint l'armée blanche pour combattre l'Armée rouge, avant d'être évacué vers la Turquie puis la Yougoslavie après la défaite de Crimée. En 1924, muni d'un certificat Nansen pour réfugiés russes, il rejoint la France et trouve du travail dans la vallée de la Fensch ou à l'usine Hutchinson de Châlette, qui employait alors massivement des réfugiés russes et ukrainiens.</p>
-<p>Installé à Corbeilles (Loiret), il épouse en 1926 une Polonaise, Katarzyna Tokarz, avec qui il a trois enfants. Vers 1932, son épouse retourne se soigner en Pologne avec les enfants et n'en revient pas ; sans nouvelles de sa famille restée en URSS depuis 1926 — son père ayant été déporté en Sibérie — Michel croit sa femme et ses enfants morts, ce qui l'aurait poussé à s'engager à la Légion étrangère en octobre 1939.</p>
-<p>Incorporé à la 3e compagnie du 11e REI, il est porté disparu en mai 1940 ; sa famille n'aura plus jamais de nouvelles directes de lui. Un dossier de recherche est ouvert, et ce n'est qu'en 1947 que ses effets personnels sont retrouvés : il repose au cimetière de Rigny-Saint-Martin, où son corps avait été inhumé sans que son identité soit transmise à temps. Il est réinhumé à Corbeilles en 1950.</p>
-<p>En 1956, trois ans après la mort de Staline, sa sœur Francisca parvient enfin à écrire depuis un village sibérien où elle a elle-même été déportée : elle raconte que leur frère Walentin a été exécuté en 1938, que Nikolay a été condamné à dix ans de camp, qu'Adam est mort en 1934 et leur sœur Katarina dès 1921. Les descendants de Michel Votchel vivent aujourd'hui en Pologne, sous le patronyme francisé Wotszel.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-2.jpg" alt="Michel Votchel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-4.png" alt="Document Michel Votchel">
+  </figure>
+</div>
+
+<p>Michel Votchel, né le 16 décembre 1900, était le fils de Michaił VOTCHEL Wotschel et d'Ekatherina Schek. Il est de confession catholique et d'origine allemande</p>
+
+<p>Michel Votchel présente des informations contradictoires concernant son lieu de naissance, selon les différentes sources disponibles :</p>
+
+<ol>
+<li>Acte de naissance : Il est indiqué qu'il est né à Grintal (actuellement Mitschurine, dans le rajon Telmanowe, oblast de Donetsk, Ukraine).</li>
+<li>Certificat d'identité (13 août 1924, Belgrade) : Il est mentionné comme étant né à Rostov, en Russie.</li>
+<li>Acte de mariage (6 février 1926) : L'acte mentionne une naissance à Staro Karan, arrondissement de Marioupol, Russie (actuellement Hranitne, Ukraine).</li>
+<li>Recensement des EVDG (1939) : Il serait également né à Rostov.</li>
+</ol>
+
+<p>Michel Votchel a été baptisé le 17 décembre 1900, et ses parrains et marraines étaient Michel Knorr et Elisabeth Votchel.</p>
+
+<p>Il avait probablement sept frères et sœurs : Jochanes, Walentin, Nikolay, Adam, Katharina, Lydia Wotchels, et Franciska Schek. Plusieurs d'entre eux ont été déportés en Sibérie entre 1937 et 1938, comme de nombreux colons allemands du sud de l'Ukraine.
+Michel Votchel a intégré l'armée des volontaires pour lutter contre l'Armée rouge, en rejoignant le 1er régiment de fusiliers de colons allemands (1 полк німецьких колоністів). Vers 1920, l'Armée blanche a été refoulée vers la Crimée, puis évacuée en Turquie.</p>
+
+<p>En 1924, Michel réside à Titel (Serbie), où il fait établir un certificat d'identité à la préfecture de Belgrade le 13 août 1924. Ce certificat est délivré conformément aux décisions de la Conférence gouvernementale organisée sous l'égide de Dr Nansen, Haut Commissaire pour les réfugiés de Russie, à Genève, du 3 au 5 juillet 1922.
+Ce document lui permet d'obtenir un visa d'un mois pour se rendre en France.</p>
+
+<p>Il est décrit dans ce certificat comme étant ouvrier, avec des cheveux bruns, des yeux bruns, un visage allongé et un nez rectiligne.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-5.jpg" alt="Certificat d'identité, Michel Votchel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-6.jpg" alt="Certificat d'identité, Michel Votchel">
+  </figure>
+</div>
+
+<p>Après avoir obtenu son visa, Michel Votchel se rend en France, transitant par Jesenica (une ville située dans le nord de la Slovénie, près de la frontière avec l'Autriche) le 16 août, puis par Buchs (ville frontalière de la Suisse) le 17 août. Le 19 août, une carte d'identité lui est délivrée au centre des travailleurs de Tours, et le 29 septembre, son visa est tamponné par la mairie de Châlette.</p>
+
+<p>À la suite de la Première Guerre mondiale et de la révolution bolchevique, des milliers d'Ukrainiens fuient les combats et l'Armée rouge, mais beaucoup sont aussi des soldats battus, ayant servi dans l'armée nationale ukrainienne jusqu'en 1920. Après la défaite, certains trouvent refuge dans les camps de prisonniers en Pologne et en Tchécoslovaquie, d'autres rejoignent les armées blanches et sont évacués par la mer Noire, en Yougoslavie, avant de parvenir en France.</p>
+
+<p>La France, fidèle à son image de Patrie des Droits de l'Homme, accueille ces réfugiés, tout en répondant à ses besoins économiques : la guerre a réduit les effectifs de travailleurs français, et il est nécessaire de renouveler la main-d'œuvre. Dès 1922-1924, les réfugiés ukrainiens, principalement originaires d'Ukraine centrale, s'installent dans des régions industrielles comme la vallée de la Fensch en Moselle, la région parisienne ou encore à l'usine Hutchinson à Vesines-Chalette.</p>
+
+<p>À la fin des années 1920, un autre groupe d'Ukrainiens, principalement issus de Pologne (Galicie), rejoint ces émigrés, s'intégrant à une grande vague migratoire polonaise. Ces jeunes paysans et paysannes cherchent à améliorer leur condition de vie et trouvent du travail dans les campagnes françaises.</p>
+
+<p>Il est fort probable que Michel Votchel ait été embauché à l'usine Hutchinson. Après la guerre, l'usine de Langlée (quartier de Châlette) recrute massivement pour combler le manque de main-d'œuvre, et parmi les ouvriers étrangers, ce sont en grande majorité des Russes et des Ukrainiens qui seront employés. En 1921, la femme du directeur de l'usine, Mme Lansoy, ayant des liens avec la haute société russe, prend contact avec des personnalités influentes, dont Nathalie de Miller, la femme du général Wrangel, pour accueillir des réfugiés russes. De 1921 à 1926, plus de 2 000 Russes et Ukrainiens arrivent à Châlette, représentant plus de 50 % des étrangers embauchés à l'usine.
+Extrait de l'ouvrage Les Ukrainiens en France. Mémoires éparpillées, de Jean-Bernard Dupont-Melnyczenko.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-7.jpg" alt="Document Michel Votchel">
+</figure>
+
+<p>En 1926, Michel Votchel est domicilié à Corbeilles, dans le Loiret, où il exerce le métier d'ouvrier d'usine. Le 6 février de cette même année, il épouse Katarzyna Tokarz, née à Zbydniów, en Pologne.</p>
+
+<p>De cette union naissent trois enfants : Eugeniusz, né à Corbeilles le 30 août 1926, Zofia, née le 4 mars 1930 à Corbeilles, et Emilia, née en Pologne le 20 septembre 1928.</p>
+
+<p>Tous leurs descendants vivent en Pologne, et leur patronyme s'écrit Wotszel.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-8.jpg" alt="Document Michel Votchel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-9.jpg" alt="Document Michel Votchel">
+  </figure>
+</div>
+
+<p>En 1932 et 1933, Michel écrit au service des réfugiés pour obtenir des certificats de naissance. Il explique que sa mère est décédée en 1921, mais qu'il ignore si son père est toujours en vie, ce dernier ayant été déporté comme travailleur forcé dans la région d'Omsk, en Sibérie. Dans un second courrier, il précise que tous ses proches ont été envoyés en travail forcé et qu'il n'a pas eu de nouvelles depuis sept ans.</p>
+
+<p>Vers 1932, sa femme, Katarzyna Tokarz, et leurs enfants retournent vivre en Pologne. Selon les souvenirs de la famille, Katarzyna serait partie pour se soigner d'un problème respiratoire.</p>
+
+<p>En 1936, Michel vit seul à Lorcy et travaille comme ouvrier pour l'Union française de fabrication d'engrais.</p>
+
+<p>Le 5 octobre 1939, Michel Votchel s'engage volontairement pour la durée de la guerre au sein de l'intendance militaire d'Orléans. Selon la mémoire familiale, il semblerait que, sans nouvelles de sa famille en Pologne, Michel ait cru que sa femme et ses enfants étaient décédés, ce qui l'aurait poussé à rejoindre la Légion étrangère.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-10.jpg" alt="Document Michel Votchel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-11.jpg" alt="Document Michel Votchel">
+  </figure>
+</div>
+
+<figure class="size-small">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-12.jpg" alt="Document Michel Votchel">
+</figure>
+
+<p>Michel Votchel est incorporé au 11e REI, au sein de la 3e compagnie. Il participe aux combats de la campagne de France et est porté disparu au mois de mai 1940. À partir de cette date, sa famille ne reçoit plus de nouvelles de lui.</p>
+
+<p>Un dossier de recherches est ouvert, accompagné d'une enquête administrative. Après la guerre, en 1946, son beau-frère, Philippe Szurgot, dépose une demande de régularisation d'état civil pour les "non-rentrés", Michel n'étant jamais revenu à son domicile.</p>
+
+<p>En mai 1947, le service des successions informe que les effets personnels de Michel Votchel avaient été envoyés en juillet 1941 par le chef de secteur de l'état civil de la Meuse. Sa succession comprenait un certificat russe, un testament, un portefeuille, un porte-monnaie et la somme de 182 francs. Il est précisé que Michel est inhumé au cimetière de Rigny-Saint-Martin, dans la tombe n°14.
+En juillet 1947, le ministère des Anciens Combattants adresse un avis de décès au consul de France à Varsovie, avec la demande de prévenir la famille de Michel Votchel en Pologne, en prenant tous les ménagements nécessaires.</p>
+
+<p>En 1950, son corps est réinhumé à Corbeilles, et son état civil est définitivement rectifié en 1953.</p>
+
+<div class="imgrow">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-13.jpg" alt="Document Michel Votchel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-14.jpg" alt="Document Michel Votchel">
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-15.jpg" alt="Document Michel Votchel">
+  </figure>
+</div>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-votchel-michel-16.jpg" alt="Document Michel Votchel">
+</figure>
+
+<p>De sa famille restée en Russie, Michel Votchel n'aura plus eu de nouvelles à partir de 1926.
+En 1956, près de 35 ans après son départ de Russie et 16 ans après sa mort, une lettre tamponnée de Barnaoul (БАРНАУЛ) lui est adressée. Grâce au premier dégel suivant la mort de Staline, sa sœur Francisca parvient à écrire depuis le village de Rasskazicha. Elle lui annonce qu'elle est veuve et qu'elle a été déportée en Sibérie. Elle évoque également le destin tragique de leurs frères : Jochanes, Walentin* et Nikolay*. Ces derniers ont été déplacés en 1937, et elle n'a plus aucune nouvelle d'eux depuis. Elle ajoute qu'Adam est décédé en 1934, tout comme leur sœur Katarina en 1921.</p>
+
+<p>* Walentin Mihailovitch Votchel (Вотчаль Валентин Михайлович), né en 1913, a été arrêté le 16 décembre 1937, condamné le 12 janvier 1938, puis exécuté le 2 février 1938.
+* Nikolay Mihailovitch Votchel (Вотчель Николай Михайлович) allemand né en 1916, forgeron, travaillant dans une usine métallurgique. Il a été arrêté le 30 décembre 1937 et condamné à 10 ans de camp de travail.</p>
+
+<p>Merci à Natalia pour les documents et les informations sur son arrière grand-père.
+Elle recherche toutes informations sur sa famille, si vous en savez un peu plus n'hésitez pas. Les descendants de Michel Votchel/Вотчель sont tous polonais et leur patronymes s'écrit Wotszel
+Mise à jour du 21/07/2022 <a href="https://www.11regimentetranger.com/blog/votchel-michel-lettres" target="_blank" rel="noopener">Lettre de Michel Votchel</a></p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Documents de la famille Wotszel (Pologne)</li>
-    <li>Archives de l'OFPRA</li>
-    <li>SHD Caen, AC 21 P 168761</li>
-    <li>Jean-Bernard Dupont-Melnyczenko, « Les Ukrainiens en France. Mémoires éparpillées »</li>
+    <li>documents de la famille Wotszel en Pologne</li>
+    <li><a href="https://archives.ofpra.gouv.fr/" target="_blank" rel="noopener">https://archives.ofpra.gouv.fr/</a></li>
+    <li>SHD Caen AC 21 P 168761</li>
   </ul>
 </div>
 

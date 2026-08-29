@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KRESCH Moïse « Monek » — 11e REI</title>
-<meta name="description" content="Brigadiste peut-être condamné pour anarchisme, marié par procuration pendant sa captivité">
+<title>KRESCH Moïse — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,44 +12,40 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article .subhead{font-weight:500;color:var(--ink)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -69,26 +64,112 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Brigades internationales · EVDG</div>
-  <h1>KRESCH Moïse « Monek »</h1>
-  <div class="sub">Brigadiste peut-être condamné pour anarchisme, marié par procuration pendant sa captivité</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>KRESCH Moïse</h1>
+  <div class="tags"><span>11è REI</span><span>Brigades internationales</span><span>prisonnier de guerre</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Moïse Kresch, dit Monek, connaît un passage mouvementé dans les Brigades internationales avant de rejoindre le 11e REI, où il se lie d'amitié avec une infirmière restée pour lui une figure marquante toute sa vie.</p>
-<p>Né le 24 septembre 1906 à Lesko (Pologne), il quitte la Pologne à 18 ans pour Prague puis la Belgique en 1920, avant de s'installer en France en 1926. Entre 1936 et 1938, il s'engage dans les Brigades internationales en Espagne. Selon ses propres souvenirs, il aurait été condamné à mort par le commissaire politique André Marty pour « anarchisme », après avoir échoué, avec un compagnon, à récupérer du matériel près d'Albacete — les deux hommes auraient alors déserté pour échapper à la sanction. Un compte-rendu d'interrogatoire d'André Marty du 25 décembre 1936, conservé dans les archives RGASPI, confirme qu'un groupe de volontaires proches de l'anarchisme ou du trotskisme s'était rebellé à cette période, rendant plausible ce récit.</p>
-<p>En septembre 1939, il s'engage à Paris pour la durée de la guerre et rejoint le camp de la Valbonne puis le 11e REI. Blessé par des éclats d'obus en mai 1940, il est vraisemblablement soigné à l'ambulance du corps d'armée n°18 de Bras-sur-Meuse, où travaillait comme infirmière Edmonde Charles-Roux — que Monek considérera toute sa vie comme « sa marraine », conservant précieusement un livre qu'elle lui avait dédicacé.</p>
-<p>Fait prisonnier en juin 1940, il est interné au frontstalag 161 de Nancy puis transféré au Stalag VII A de Moosburg (Bavière). Pendant sa captivité, il se marie par procuration en 1942 avec Simone Maudière — un « mariage blanc », expliquera-t-il plus tard à ses enfants, conclu « pour ne pas mourir pour rien et offrir une possible pension de veuve de guerre » ; le couple divorce en 1947. Libéré en août 1943 et hospitalisé jusqu'en 1944, il se remarie en 1948 à Clermont-Ferrand avec Paulette Olmer.</p>
-<p>Sa famille restée en Pologne est presque entièrement exterminée : sa mère et plusieurs frères et sœurs, avec leurs enfants, sont déportés et tués dans le ghetto de Sanok ou dans les camps. Seuls survivent, avec Monek, ses deux aînés partis aux États-Unis avant-guerre et son plus jeune frère, installé en Israël après 1945.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise-2.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Kresch Moise Moszes, surnommé Monek, est né le 24 septembre 1906 à Lesko, en Pologne, fils d'Alter et de Malka Morgenbesser.</p>
+    <p>Il a huit frères et sœurs, dont :</p>
+    <ul>
+    <li>Sara Ryfka, décédée à Lesko en 1894.</li>
+    <li>Erna Ester, née en 1896 et mariée en 1920 à Sanok avec Moses Goldschmidt.</li>
+    <li>Chana, née en 1898, mariée en 1921 à Cracovie avec Alta Morgenbesser.</li>
+    <li>Hynek Yitzkhak, né en 1899.</li>
+    <li>Dawid Khaim, son frère jumeau, marié avec Blima Rus.</li>
+    <li>Gdaliyahu ou Gedaly, né en 1909, marié en 1937 à Sanok avec Sara Fessel.</li>
+    </ul>
+    <p>À l'âge de 18 ans, Monek quitte la Pologne pour rejoindre son frère Hynek, qui habite à Prague. En 1920, il part pour la Belgique où il tente divers métiers, bien qu'il n'ait aucune expérience dans ces domaines.</p>
+    <p>En 1926, il se trouve en France, comme en témoigne l'ouverture d'un dossier par la Sûreté nationale (fonds de Moscou 19940457/254, dossier 21454 - 1926).</p>
+  </div>
+</div>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise-4.jpg" alt="">
+</figure>
+
+<p class="subhead">Espagne</p>
+
+<p>Entre 1936 et 1938, Monek Kresch s'engage dans les Brigades internationales. Bien que les archives du RGASPI ne contiennent pas de biographie détaillée de sa participation, elles confirment son passage en Espagne.</p>
+
+<p>Selon ses propres souvenirs, il aurait été condamné à mort par André Marty, prétendument en raison de son "anarchisme". L'histoire racontée par Kresch est celle où, avec un compagnon, il aurait été chargé de récupérer du matériel dans la région d'Albacete, mais ils se seraient perdus et n'auraient pas accompli leur mission. Finalement, les deux camarades auraient déserté pour échapper à la condamnation.</p>
+
+<p>Les archives RGASPI, sous la cote 545/3/562, contiennent un compte rendu de cet incident. Le 25 décembre 1936, André Marty interroge quatre volontaires — Maldonado, Garnier, Jacquemain et Kresch. Ce compte rendu indique que Monek est arrivé à Albacete le 19 novembre 1936, où il servait en tant que téléphoniste et interprète pour le commandant Miksche.</p>
+
+<p>L'interrogatoire porte notamment sur un groupe d'anarchistes qui refusent de monter au front avec la 3e batterie. Après cette rébellion, une vingtaine d'autres volontaires solidaires demandent à passer aux milices espagnoles. Bien qu'André Marty, de passage à Almansa, ait réussi à ressouder le groupe, cela n'a duré que temporairement. Il est donc plausible que Monek Kresch ait quitté les Brigades internationales s'il avait été suspecté d'être anarchiste ou trotskiste.</p>
+
+<p class="subhead">11è régiment étranger d'infanterie</p>
+
+<div class="figure-side">
+  <div class="side-img" style="display:flex;flex-direction:column;gap:8px">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise-5.jpg" alt="">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise-6.jpg" alt="">
+  </div>
+  <div class="side-text">
+    <p>En septembre 1939, Monek Kresch se trouve à Paris, où il s'engage pour la durée de la guerre. Il est dirigé vers le camp de la Valbonne et affecté au 11e régiment étranger d'infanterie.</p>
+    <p>Au mois de mai 1940, il est blessé par des éclats d'obus.</p>
+    <p>Monek est resté très attaché au souvenir d'Edmonde Charles Roux, dont il possédait un livre dédicacé. Il la considérait comme "sa marraine" et en parlait fréquemment à sa famille. Bien qu'il soit impossible de savoir exactement comment ils se sont rencontrés, on peut supposer que leur lien s'est tissé à l'ambulance médicale du corps d'armée n°18, située à Bras-sur-Meuse, où Edmonde Roux travaillait en tant qu'infirmière pour le 11e régiment étranger. C'est également dans cette formation sanitaire que les légionnaires blessés au bois d'Inor étaient évacués.</p>
+  </div>
+</div>
+
+<p class="subhead">Prisonnier de guerre</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise-7.jpg" alt="">
+  </figure>
+  <div class="side-text">
+    <p>Monek Kresch est fait prisonnier au mois de juin 1940. Son nom figure sur la liste officielle des prisonniers de guerre français du 5 septembre 1940.</p>
+    <p>Il est interné au frontstalag 161 à Nancy, où il reçoit le matricule 845. Par la suite, il est transféré en Allemagne, au stalag VII A de Moosburg, et affecté au kommando de travail n°2432. Ce kommando est ensuite intégré au stalag 383, où Monek obtient le matricule n°5012.</p>
+    <p>Le 24 août 1941, Monek témoigne auprès de la Croix-Rouge, qui cherche à recueillir des informations sur les circonstances de la disparition du sergent Derly de la 5e compagnie.</p>
+    <p>Il est libéré le 18 août 1943 et hospitalisé à l'hôpital du Val de Grâce jusqu'au 10 août 1944. Enfin, il est démobilisé le 29 août 1944 par le centre de Paris.</p>
+  </div>
+</div>
+
+<p class="subhead">Mariages</p>
+
+<p>Monek Kresch se marie pendant sa captivité avec Simone Maudière. Il s'agit d'un mariage par procuration, rendu possible par le décret-loi du 9 septembre 1939, qui permet aux militaires et marins sous les drapeaux de se marier ainsi en temps de guerre. L'acte de consentement est enregistré le 8 décembre 1942, et l'acte de mariage est dressé par l'état civil de Paris le 4 mai 1943.</p>
+
+<p>Après la guerre, ce mariage est dissous le 5 novembre 1947 par jugement de divorce.</p>
+
+<p>Le 30 avril 1948, Monek se remarie à Clermont-Ferrand avec Paulette Olmer. Le couple aura trois enfants.</p>
+
+<p>Monek expliquera plus tard à ses enfants que le premier mariage par procuration était en réalité un "mariage blanc", conclu "pour ne pas mourir pour rien et offrir une possible pension de veuve de guerre".</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kresch-moise-8.jpg" alt="">
+</figure>
+
+<p class="subhead">Famille polonaise</p>
+
+<p>Pendant la guerre, la mère de Monek, Malka (veuve), est domiciliée à Sanok. Le 10 septembre 1942, la plupart des Juifs de cette ville et des environs sont regroupés dans un ghetto provisoire avant d'être transférés à Zaslavl, où la plupart sont exterminés (shoah par balles).</p>
+
+<p>Sa sœur Esther, son mari et leurs quatre enfants sont déportés à Zaslavl et exécutés.</p>
+
+<p>Son frère Hynek, domicilié à Prague, est déporté en 1942 au camp de Majdanek (liste de Theresienstadt), où il meurt la même année.</p>
+
+<p>Sa sœur Anna, son mari et leurs trois enfants sont inscrits comme victimes de la Shoah sans autre précision.</p>
+
+<p>Son frère David, domicilié à Przemyśl, ainsi que sa femme, sont également morts pendant la Shoah.</p>
+
+<p>Un autre frère est décédé en tant que soldat.</p>
+
+<p>De sa famille, les seuls rescapés sont les deux aînés partis aux États-Unis avant la guerre, Monek et le plus jeune frère, Gedalia, qui s'installera en Israël après la guerre.</p>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Archives RGASPI, fonds 545 (Brigades internationales)</li>
-    <li>SHD Caen, AC 21 P 117653 (dossier Derly)</li>
-    <li>Yad Vashem — témoignages de Gedalia Kresch</li>
-    <li>Recherches partagées par Sophie Valence, et par Eveline et Annick, filles de Monek Kresch</li>
+    <li>remerciements: à Sophie Valence pour avoir partagé ses recherches sur Moszes. A Eveline et Annick, les filles de Monek pour les documents et les souvenirs de leur père.</li>
+    <li>RGASPI fond 545 sur les brigades internationales</li>
+    <li>SHD Caen AC 21 P 117653 (dossier Derly)</li>
+    <li>https://yvng.yadvashem.org/ fiches de témoignages de Gedalie sur la disparition des membres de sa famille pendant la Shoah</li>
   </ul>
 </div>
 

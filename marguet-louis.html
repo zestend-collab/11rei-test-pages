@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MARGUET Louis (1905-1960) — 11e REI</title>
-<meta name="description" content="33 ans de carrière et onze citations, du 11e REI au commandement de la 13e DBLE">
+<title>Général Louis MARGUET — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,54 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .subhead{font-weight:500;color:var(--ink)}
+  article a{color:var(--link)}
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .comments{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment-item{margin-bottom:1rem}
+  article .comment-item .who{font-weight:500}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -69,24 +73,127 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Officier · Général</div>
-  <h1>MARGUET Louis (1905-1960)</h1>
-  <div class="sub">33 ans de carrière et onze citations, du 11e REI au commandement de la 13e DBLE</div>
-  <a class="back" href="https://legionnaires.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Général Louis MARGUET (1905-1960)</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
-<p class="lede">Louis Marguet, jeune capitaine de compagnie à la création du 11e REI en 1939, poursuit une carrière de trente-trois ans qui le mène jusqu'au grade de général de brigade, en passant par le commandement de la 13e demi-brigade de la Légion étrangère.</p>
-<p>Né le 6 novembre 1905 à Paris, fils d'un pompier de Paris devenu officier d'infanterie pendant la Grande Guerre, il sort de Saint-Cyr en 1927 et rejoint dès 1930 la Légion étrangère, servant au 4e puis au 2e REI au Maroc, où il est décoré pour ses actions contre les rebelles.</p>
-<p>En septembre 1939, il participe à la création du 11e REI comme commandant de compagnie au centre d'instruction de la Valbonne, promu capitaine adjudant-major du 3e bataillon le 1er juin 1940. Après la reddition du régiment le 23 juin, il s'évade dès le lendemain et parcourt plus de 400 km à pied avec deux autres officiers pour rejoindre le dépôt de la Légion à Fuveau.</p>
-<p>Il sert ensuite au 2e REI au Maroc, puis au 4e régiment de tirailleurs marocains, avec lequel il participe à la libération de l'Italie et de la France jusqu'au Rhin. Après-guerre, sa carrière l'emmène en Indochine à deux reprises, où il organise notamment le retrait des forces françaises de Hoa Binh en 1952, avant de prendre en 1953 le commandement du 3e REI, promu colonel.</p>
-<p>Le 1er mars 1956, il prend la tête de la célèbre 13e demi-brigade de la Légion étrangère, implantée à Guelma (Algérie), menant de difficiles opérations dans les Aurès et les Némenchas. Il devient ensuite chef d'état-major du général commandant en chef des forces françaises en Algérie à Alger, puis général de brigade le 1er juillet 1958. Admis à l'hôpital du Val-de-Grâce pour une longue maladie, il meurt le 26 octobre 1960 à 54 ans, et est inhumé au cimetière des Pins-Francs de Bordeaux-Caudéran, titulaire de onze citations et commandeur de la Légion d'honneur.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-2.jpg" alt="Général Louis Marguet">
+  <figcaption>photo collection Roger Marguet : 1er juillet 1958 à Alger</figcaption>
+</figure>
+
+<p>Louis MARGUET est né le 06 novembre 1905 à Paris (20ème). Son père est pompier de Paris à la caserne Saint-Fargeau, et terminera la 1ère Guerre Mondiale avec le grade de lieutenant dans l'infanterie.
+Après des études effectuées à Paris, il obtient son baccalauréat en 1924 au lycée Poincaré de Nancy. En effet, il a suivi ses parents, son père occupant après la Grande Guerre la fonction de chef de la sécurité de la base aérienne d'Essey-lès-Nancy.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-4.jpg" alt="Louis Marguet à Saint-Cyr">
+  <figcaption>photo collection Roger Marguet: Années 1925-1927 à Saint-Cyr</figcaption>
+</figure>
+
+<p>Ce sont peut-être les différentes expériences de son père qui lui feront choisir la voie des armes, en préparant le concours d'entrée à l'école spéciale militaire de Saint-Cyr. Il y est admis en 1925 en intégrant la 112ème promotion « Maroc et Syrie ».
+A sa sortie de l'école en 1927, il intègre le 151ème Régiment d'Infanterie stationné en Allemagne à Coblence, avec le grade de sous-lieutenant. La France occupe alors une partie de ce pays voisin de la France, à la suite de la 1ère Guerre Mondiale.</p>
+
+<p>Il demande à partir pour le théâtre des opérations extérieures (T.O.E.) en 1930, et choisit le célèbre corps de la Légion Etrangère.
+Le 14 août 1932, affecté au 4ème Régiment Etranger d'Infanterie (4ème R.E.I.) alors stationné à Casablanca (Maroc), il obtient sa première citation à l'ordre du régiment pour des actions menées contre les rebelles marocains. Il est alors lieutenant, chef de section.
+Il rejoint en 1936 le 2ème R.E.I. alors stationné à Meknès (Maroc), et obtient le grade de capitaine le 22 décembre de la même année.</p>
+
+<p>En septembre 1939, la 2ème Guerre mondiale est déclarée. Louis MARGUET regagne la métropole et participe à la création du 11ème R.E.I. au centre d'instruction de La Valbonne (Ain) en tant que commandant de compagnie.
+Après l'attaque allemande du 10 mai 1940, le 11ème R.E.I. fait face à l'ennemi. Le 1er juin, Louis est promu capitaine adjudant-major du 3ème bataillon.
+Le 11ème R.E.I. combat durement, en particulier dans le département de la Moselle. Mais, après la signature de l'armistice le 22 juin, il faut se rendre à l'ennemi le lendemain. Mais, ce 23 juin, il s'évade et parcourt plus de 400 km avec deux autres officiers afin de rejoindre le dépôt de la Légion Etrangère du Fuveau (Bouches du Rhône).</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-5.jpg" alt="Louis Marguet">
+  <figcaption>photo collection Roger Marguet: 07 juillet 1940 à Génelard (Saône et Loire)</figcaption>
+</figure>
+
+<p>Le 16 novembre 1940, il retrouve le 2ème R.E.I. à Meknès.</p>
+
+<p>Le 17 octobre 1943, il est affecté au 4ème Régiment de Tirailleurs Marocains (4ème R.T.M.), et participe à la libération de l'Italie par les Alliés.</p>
+
+<p>Le 28 février 1944, il est promu chef de bataillon au 8ème R.T.M. et prend le commandement du 1er bataillon le 04 juillet. A la tête de son bataillon, il participe à la libération de la France et atteint le Rhin début 1945.
+Le 20 février 1945, il rejoint le 4ème bureau de l'Etat-Major de la 1ère Armée Française qui combat sur le sol allemand.</p>
+
+<p>Le 31 mars 1948, il rejoint l'Ecole Supérieure de Guerre en tant qu'instructeur adjoint, et est promu lieutenant-colonel le 1er octobre.</p>
+
+<p>Il rejoint l'Indochine le 10 avril 1951, affecté à l'état-major des Forces Terrestres du Nord-Vietnam (F.T.N.V.), s'occupant du domaine de la logistique.
+A ce poste, il se distingue en organisant seul l'opération de retrait des forces françaises de Hoa Binh et de la R.C. 6. (citation à l'ordre de l'armée datée du 25 septembre 1952).</p>
+
+<p>Le 16 janvier 1953, il prend le commandement du 3ème R.E.I. et du Groupe Mobile 5 (G.M. 5), et est nommé colonel le 31 mars.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-6.jpg" alt="Louis Marguet en Indochine">
+  <figcaption>photo collection Roger Marguet: Année 1953, en Indochine</figcaption>
+</figure>
+
+<p>Le 04 septembre 1953, il revient en Europe pour être affecté à l'état-major des Forces Françaises stationnées en Allemagne, toujours dans la logistique.
+Le 11 janvier 1954, il est élevé au rang de Commandeur de la Légion d'Honneur.</p>
+
+<p>Il retourne en Indochine le 08 octobre 1954, à l'état-major du général commandant en chef. A ce poste (logistique), il a la lourde tâche d'organiser le rapatriement du corps expéditionnaire français après la défaite.
+Il quitte la région le 15 novembre 1955.</p>
+
+<p>Le 1er mars 1956, il se voit attribuer le commandement de la 13ème Demi Brigade de la Légion Etrangère (13ème D.B.L.E.), implantée à Guelma (Algérie).
+Louis MARGUET, à la tête de cette célèbre unité, va mener de difficiles opérations dans le massif des Aurès, dans les Nemencha, et dans le Constantinois (citation à l'ordre de l'armée datée du 25 mars 1957).</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-7.jpg" alt="Louis Marguet en Algérie">
+  <figcaption>Photo collection Roger Marguet: 06 janvier 1957, en Algérie</figcaption>
+</figure>
+
+<p>Le 18 décembre 1956, il est appelé à l'état-major du général commandant en chef des forces françaises en Algérie, pour occuper le poste de sous-chef d'état-major à Alger.
+Sa mission est d'organiser entre autres la défense et les activités opérationnelles des frontières algériennes et d'assurer la mise en place du dispositif de protection des installations pétrolières (citation à l'ordre de l'armée datée du 05 mai 1958)</p>
+
+<p>Le 16 juin 1958, il accède au poste de chef d'état-major du général commandant en chef des forces françaises en Algérie, à Alger.
+Le 1er juillet 1958, il a l'honneur de se voir attribuer ses étoiles de général de brigade.
+Il quitte l'état-major le 18 décembre 1958.</p>
+
+<p>Le 31 janvier 1959, il est nommé adjoint du général commandant la 14ème Division d'Infanterie (14ème D.I.) basée à Constantine (Algérie).</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-8.jpg" alt="Louis Marguet à Constantine">
+  <figcaption>photo collection Roger Marguet: 10 mai 1959 à Constantine</figcaption>
+</figure>
+
+<p>Le 13 novembre 1959, il quitte l'Algérie pour rejoindre la ville de Pau (Pyrénées Atlantiques) dans laquelle il occupe le poste de Commandant du Groupe de Subdivisions de la région.</p>
+
+<figure class="size-medium">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-marguet-louis-9.jpg" alt="Louis Marguet à Pau">
+  <figcaption>photo collection Roger Marguet: 1960 à Pau</figcaption>
+</figure>
+
+<p>Malheureusement, il est admis le 22 juillet 1960 à l'hôpital du Val de Grâce de Paris, à la suite d'une longue maladie, et décède à l'âge de 54 ans le 26 octobre de la même année.
+Après une cérémonie funèbre à l'Hôtel des Invalides le 12 novembre 1960, il est inhumé au cimetière des Pins-Francs de Bordeaux-Caudéran (Gironde).
+Le général Louis MARGUET a pendant trente-trois années servi brillamment l'armée française, en particulier durant les trois conflits impliquant notre pays à partir de 1939. Il a occupé diverses fonctions de responsabilité, et une grande partie de sa carrière a été effectuée au sein de la Légion Etrangère, corps d'élite.
+Sa carrière a été brusquement interrompue par la maladie, alors qu'il lui restait encore de nombreuses années pour « servir ».
+Il a été titulaire de onze citations.</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Récit et photographies de Roger Marguet, petit-neveu du général Louis Marguet</li>
+    <li>Auteur : Roger MARGUET (petit-neveu du général Louis MARGUET)</li>
+    <li>Photos: collection Roger Marguet</li>
   </ul>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-item">
+    <p class="who">MARGUET 03-03-2021 10:49</p>
+    <p>Merci d'avoir publié mon exposé concernant la magnifique carrière militaire du frère de mon grand-père paternel.</p>
+  </div>
+  <div class="comment-item">
+    <p class="who">Frans Janssen 03-03-2021 07:42</p>
+    <p>Thanks again for sharing a great piece of historical research.
+Very interesting for all those interested in the history of the French Foreign Legion.
+I really like the photograph of the 3 officers with their bikes.
+I often wondered how all these évades travelled.</p>
+  </div>
+  <div class="comment-item">
+    <p class="who">Bernard Zeller 06-03-2023 04:18</p>
+    <p>Très belle carrière. Le général Marguet a succédé au général Dulac comme chef d'état-major du général Salan à Alger après les événements du 13 mai 1958. Il a quitté l'état-major au moment où le général Salan était rappelé à Paris. La 14e DI avait été la division du général de Lattre en juin 1940 et s'était particulièrement bien comportée dans cette période dramatique. Elle a été reconstituée en mars 1945 par le général Salan à la demande du général de Lattre et a pu terminer la campagne d'Allemagne. Roger Marguet est-il l'ancien de l'ONERA que j'ai connu ?</p>
+  </div>
 </div>
 
 <div class="actions">
