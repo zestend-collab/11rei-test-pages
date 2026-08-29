@@ -54,12 +54,12 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
   }
 
   function hashStable(texte) {
-    var h = 0;
-    for (var i = 0; i < texte.length; i++) {
-      h = (h * 31 + text.charCodeAt(i)) >>> 0; // Note : attention à la variable text vs texte
-    }
-    return h;
+  var h = 0;
+  for (var i = 0; i < texte.length; i++) {
+    h = (h * 31 + texte.charCodeAt(i)) >>> 0;
   }
+  return h;
+}
 
   // Correction de la variable interne dans hashStable
   function hashStable(texte) {
