@@ -32,7 +32,7 @@ Pour changer une bannière : modifier UNIQUEMENT ce fichier, pas les generateurs
     "amstutz-jean-bernard": "banniere-amstutz-groupe.jpg",
     "marguet-louis": "banniere-marguet-velos.jpg",
     "ordre-de-bataille": "banniere-ordre-de-bataille.jpg",
-    "arborescence": "banniere-arborescence.jpg",
+    "arborescence": "banniere-arborescence.jpg"
 
   };
 
