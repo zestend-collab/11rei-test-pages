@@ -24,7 +24,7 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     { href: SITE + "/portraits", label: "Portraits légionnaires" },
     { href: SITE + "/blog", label: "Thèmes et biographies, 11e REI" },
     { href: SITE, label: "Livre" },
-    { href: SITE, "/contact": "Contact" },
+    { href: SITE + "/contact", label: "Contact" }
   ];
 
   var CSS = ""
