@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La presse en parle: la création du 11è REI — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;0,400&family=Inter:wght@300;400;500;600&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--row);border:1px solid var(--border);border-top:4px solid var(--orange);
+    border-radius:6px;padding:2rem 1.8rem;margin-bottom:26px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;color:var(--ink);
+    font-size:clamp(24px,4vw,32px);line-height:1.2}
+  header .tags{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;font-weight:500;color:#8a5100;
+    background:#fff;border:1px solid var(--border);border-radius:12px;padding:.25rem .8rem}
+  header .back{display:inline-block;margin-top:1rem;font-size:.8rem;font-weight:500;
+    color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    padding:1.7rem 1.8rem;margin-bottom:1.6rem;font-size:1rem;line-height:1.8;text-align:justify}
+  .panel p{margin-bottom:1.1rem}
+  .panel p:last-child{margin-bottom:0}
+  .panel a{color:var(--link)}
+
+  h2.section-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.35rem;
+    color:var(--ink);margin:2.2rem 0 1.1rem;padding-bottom:.4rem;border-bottom:3px solid var(--orange)}
+  h2.section-title:first-of-type{margin-top:0}
+
+  /* ---- Clipping (image + source caption) ---- */
+  .clippings{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:1.6rem;justify-content:center}
+  .clipping{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.12);flex:0 1 320px;
+    transition:transform .15s ease, box-shadow .15s ease}
+  .clipping:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,0.18)}
+  .clipping img{width:100%;display:block;background:var(--row)}
+
+  /* ---- Article box (source excerpt) ---- */
+  .article-box{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    padding:1.7rem 1.9rem;margin-bottom:1.6rem;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+  .article-box .masthead{font-family:'EB Garamond',serif;font-weight:600;font-style:italic;
+    font-size:1.15rem;color:#8a5100;margin-bottom:.3rem}
+  .article-box .byline{font-family:'Inter',sans-serif;font-size:.75rem;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem}
+  .article-box p{font-family:'EB Garamond',serif;font-size:1.05rem;line-height:1.85;
+    color:var(--ink);margin-bottom:1rem;text-align:justify}
+  .article-box p:last-child{margin-bottom:0}
+  .article-box h3{font-family:'EB Garamond',serif;font-weight:600;font-style:italic;
+    font-size:1.15rem;color:var(--ink);margin:1.6rem 0 .8rem;text-align:center}
+  .article-box .dialogue{padding-left:1rem;border-left:2px solid var(--orange);margin-bottom:.3rem}
+  .article-box .footnote{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);
+    font-style:italic;margin-top:.6rem}
+
+  .quote-block{font-family:'EB Garamond',serif;font-style:italic;font-size:1.08rem;
+    color:var(--ink);background:var(--row);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;
+    padding:1rem 1.3rem;margin:1.2rem 0}
+
+  .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
+  .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  .sources ul{list-style:none;padding:0}
+  .sources li{padding:.2rem 0 .2rem 1rem;position:relative}
+  .sources li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+  .sources a{color:var(--link)}
+
+  .actions{display:flex;align-items:center;gap:14px;margin:1.6rem 0}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  .comments{margin-top:1.6rem}
+  .comments h2.section-title{margin-top:0}
+  .comment{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    padding:1.1rem 1.3rem;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+  .comment .meta{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.4rem}
+  .comment .author{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem;color:var(--ink)}
+  .comment .date{font-size:.75rem;color:var(--muted)}
+  .comment p{font-size:.92rem;line-height:1.6;color:var(--ink)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>La presse en parle: la création du 11è REI</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<div class="panel">
+<p>A l'heure actuelle, il est relativement aisé de consulter la presse ancienne. Gallica, le site internet de la BNF et le site partenaire Retronews proposent une large collection de journaux de l'époque.</p>
+<p>Avec la presse générale de la fin de l'année 1939 et des premiers mois de l'année 1940, il existe quelques articles consacrés au 11è REI mais en raison de la censure, le nom du régiment est rarement cité.</p>
+<p>Comme le 11è REI est le premier régiment étranger à être mobilisé et à monter en ligne, il n'est pas trop difficile de l'identifier. Le 12è REI, créer en février 1940, montera en ligne du côté de Soissons vers la fin du mois d'avril.</p>
+<p>Les régiments de marche (21, 22 et 23è RMVE) créer en septembre 1939, sont stationnés au camp du Barcarès et iront au front à partir du mois de mai.</p>
+<p>Deux articles du Petit Parisien des 20 et 22 janvier 1940, parlent de l'arrivée des volontaires étrangers au camp du Barcarès "plaine sablonneuse, où souffle en cette saison un vent de tempête, qui fait gémir les baraques de planches abritant les engagés volontaires étrangers formés en régiments de marche".</p>
+<p>Pour le 11è régiment étranger, il ne s'agit pas de récit de la vie au front mais d'articles faisant état de la création de ce régiment, "le premier qui eût été appelé sur le front de France pour la guerre commencée en 1939 contre l'Allemagne."</p>
+</div>
+
+<div class="panel">
+<p>Le point de départ est le souvenir du 1er RMLE de la Première Guerre mondiale: "Le régiment de marche de la légion étrangère fut cité 9 fois à l'ordre de l'armée et décoré de la double fourragère aux couleurs de la légion d'honneur et de la médaille militaire avant tout autre corps".</p>
+<p>Ces articles sonnent comme une promesse de faire comme en 1914, d'amalgamer des étrangers volontaires, les légionnaires d'actives et des réservistes pour en faire une troupe d'élite et qu'au moment du "grand baroud(...) on entendra la voix de la Légion à l'assaut".</p>
+</div>
+
+<h2 class="section-title">Le petit parisien, 31 janvier 1940 (pages 1 et 4)</h2>
+<div class="clippings">
+  <div class="clipping"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse-2.jpg" alt=""></div>
+  <div class="clipping"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse-4.jpg" alt=""></div>
+</div>
+<div class="article-box">
+<p>[...] Le commandement a prévu cet afflux de volontaires. Dès les premiers jours de la mobilisation, il a créé des camps d'instruction. C'est la vie de l'un d'eux que nous allons vous décrire et la naissance du premier régiment de légion étrangère cette année envoyé sur le front de France. [...] Il y a des Polonais, des Belges et des Suisses, des Anglais, des balkaniques et un Finlandais* et, naturellement, l'indispensable Chinois [...]</p>
+<p class="footnote">* il s'agit de NISSINEN Urho Henriet</p>
+</div>
+
+<h2 class="section-title">Le Petit Parisien, 4 février 1940 (pages 1 et 2)</h2>
+<div class="clippings">
+  <div class="clipping"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse-5.jpg" alt=""></div>
+  <div class="clipping"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse-6.jpg" alt=""></div>
+</div>
+
+<h2 class="section-title">Le petit parisien, 8 février 1940 (page 2)</h2>
+<div class="clippings">
+  <div class="clipping"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse-7.jpg" alt=""></div>
+</div>
+<div class="quote-block">
+"Dans ce camp rhodanien où j'ai vu naître un régiment de légion, cent fois j'ai parlé avec des engagés. Je voulais savoir ce que représentait pour eux la cause de la France.<br>
+L'heure était venue et d'un élan spontané ils avaient fait ce qu'ils appellent "leur devoir", sans trop réfléchir, sans se donner de haute raison"
+</div>
+
+<h2 class="section-title">Paris-soir, 27 avril 1940 (page 2)</h2>
+<div class="clippings">
+  <div class="clipping"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse-8.jpg" alt=""></div>
+</div>
+<div class="article-box">
+<p class="masthead">Article de Joseph Kessel</p>
+
+<p>[...]Ainsi se présentaient à leur chef quelques soldats du n.. régiment de la Légion étrangère, le premier qui eût été appelé sur le front de France pour la guerre commencée en 1939 contre l'Allemagne.</p>
+
+<h3>Ni bagnards- ni fils de roi.</h3>
+<p>On m'avait reçu à son état major ainsi que dans les bataillons avec une hospitalité et une courtoisie parfaites. Mais aussi avec réserve, prudence et une sorte de méfiance sourde. Je fis tout ce qu'il était en mon pouvoir pour sembler ne pas m'en rendre compte et, bientôt la vérité m'apparut : les hommes de la Légion ne voulaient point passer, une fois de plus, pour des bêtes curieuses. Et les officiers entendaient défendre la fierté, la dignité farouche de leurs hommes.</p>
+<p>Il est difficile de savoir à quel point certains articles, certains livres, certains films, certaines romances ont blessé des milliers de soldats forgés à la plus dure enclume. Ils ont de leur métier et de leur régiment un sentiment à la fois très haut et très simple. Ils ne se reconnaissent pas dans les images, dans les phrases par lesquelles on a prétendu les peindre. Ils détestent la légende populaire et facile qui leur attribue un passé clandestin; plein de tares ou de splendeurs. Ils refusent que de quelques cas particuliers on fasse une règle.</p>
+<p class="dialogue">— Nous ne sommes ni des bagnards ni des fils de roi, disent-ils avec rudesse, Nous sommes des légionnaires. Ça nous suffit. Cela suffit en effet. Et même pour l'imagination, même pour le goût du romanesque.</p>
+
+<h3>Le sceau de la solitude</h3>
+<p>Car il est plus émouvant et plus singulier de voir des hommes céder à une manière de prédestination commune qu'à des motifs strictement personnels. Et le mystère qui les entoure est d'une qualité plus forte et plus belle que celui qui consiste à fuir les gendarmes ou à ensevelir un chagrin d'amour.</p>
+<p>Désir de l'aventure ? Besoin de la discipline ? Misère ? Prestige d'une arme illustre entre toutes? Impossibilité intérieure d'une vie organisée dans les champs ou la ville ? Exil politique ? Exil moral ?</p>
+<p>Toutes ces explications sont valables, mais aucune n'est suffisante. D'autres hommes, en effet, et beaucoup plus nombreux, placés dans les mêmes circonstances, pressée par les mêmes nécessités, ont choisi d'autres solutions. C'est dans le cœur, dans la nature même de chaque légionnaire que réside le vrai secret de son destin.</p>
+<p>Je l'avais déjà senti au cours des heures que j'avais passées avec la Légion soit au Maroc, soit en Syrie. Mais jamais avec autant d'acuité que sous le ciel gris et sur la terre détrempée.</p>
+<p>Jamais les soldats du soleil cru, des cités branchée, des douars, des oasis et du bled calciné ne m'avaient paru aussi mystérieux et aussi saisissants que dans ces paysages pareils à tous les paysages du front, dans des villages semblables à tous ceux que je parcourais depuis des mois et vaquant aux tâches et aux loisirs de tous les soldats.</p>
+<p>Car ils portaient — beaucoup plus transparent qu'en Afrique ou en Asie et terriblement visible — le sceau de la solitude.</p>
+
+<h3>La loi de la Légion</h3>
+<p>Tous les autres hommes. en uniformes : artilleurs, fantassins ou cavaliers, réservistes ou du service actif, Bretons, Gascons ou Savoyards, ils avaient derrière eux leur champ, leur ville, leur usine et leur famille fixée sur le même sol, et leurs souvenirs ancestraux.</p>
+<p>Mais les soldats qui portaient au col de leur capote la grenade des régiments étrangers ne possédaient rien de tout cela. Leur seul foyer, leur seule foi, leur seul métier c'était la Légion. Leur passé commun se confondait en elle. Elle formait aussi leur existence présente et pour des mois et des mois leur vie à venir. Joies et deuils, discipline et loisirs, labeurs et combats, récompenses, amitié plus forte que l'amour, consignes morales plus exigeantes que l'instinct de la conservation — voilà ce que la Légion était pour eux.</p>
+<p>Une école pareille ne va pas sans laisser de traces. Elles se retrouvaient facilement sur ces fronts. Et les mêmes qu'à Darr-es-Zor ou dans le Haut-Laos ou au Tafilalet. C'est une sorte de gravité, de maturité dans l'effort et la souffrance. Une dure tristesse. Une densité singulière du regard à la fois attentif et absent. Et aussi une façon de porter la tête, de saluer, de présenter les armes, spéciale aux hommes pour qui le métier des camps est devenu une seconde vie.</p>
+<p>C'est pourquoi dans une zone peuplée de cantonnements innombrables et tous semblables on distinguait tout de suite ceux des légionnaires. Par leur maintien, leur expression, leur substance visible et leur reflet intérieur ces soldats ne ressemblaient pas aux autres soldats.</p>
+
+<h3>Blancs et rouges</h3>
+<p class="dialogue">— Légionnaire M., douze ans de service. Russe.<br>
+— Légionnaire Z., quinze ans de service. Russe.<br>
+— Légionnaire A.., vingt ans de service. Russe.<br>
+— Légionnaire F., trois mois de service. Catalan.</p>
+<p>La ronde se poursuivait. Mais nous étions maintenant dans l'un des petits bâtiments de l'usine qui contenait seulement quatre hommes. Là, comme partout dans le cantonnement, régnait un ordre, une propreté, un aménagement impeccables. Et ce ne fut point cette netteté du lieu qui m'étonna. Je ne pus m'empêcher de penser que les trois vieux soldats étaient d'anciens officiers blancs, et que le quatrième, le jeune, venait des milices rouges de Barcelone. Et ils vivaient ensemble, plus étroitement liés que les gens d'une même famille !</p>
+<p>Mais je m'aperçus tout de suite que j'étais le seul à faire ce rapprochement. Pour les habitants de la bâtisse et pour leurs camarades et pour leurs officiers — il n'y avait là que quatre légionnaires. Et déjà le nouveau se façonnait sur les anciens. C'est-à-dire qu'il rejetait son passé ou, s'il ne le pouvait pas, le renfermait au tréfonds de lui-même.</p>
+
+<h3>Le grand silence</h3>
+<p>Je vis ces hommes à l'instruction, au travail, au repos. Et toujours m'obsédèrent leur sérieux, leur application, leur comportement sobre et méditatif. Et surtout leur silence.</p>
+<p>On n'entendait point parmi eux ces rires éclatants, ces grasses plaisanteries, ces hâbleries joyeuses, ces controverses exaltées qui sont le propre des soldats réunis. Ils suivaient sans jamais l'interrompre le caporal qui les enseignait. Ils abattaient cinq fois plus d'ouvrage que n'importe quelle autre troupe, mais les dents serrées. Ils déambulaient taciturnes à travers les cantonnements. Et ils ne parlaient même pas de leur séjour en première ligne.</p>
+<p class="dialogue">— Il a fait froid. Il ne s'est rien passé.</p>
+<p>Voilà quelles étaient leurs réponses.</p>
+<p>Comme je les répétais au capitaine qui commandait un des bataillons, il me dit en toute simplicité :</p>
+<p class="dialogue">— C'est très naturel. L'Allemand fait pour l'instant une guerre coloniale. Aucune nouveauté pour nous.</p>
+<p>Ce capitaine, très mince et très grand, d'une allure et d'une classe magnifiques, venait de l'Est de l'Europe. Il s'était engagé comme simple légionnaire en 1913.</p>
+<p>Il poursuivit tout aussi simplement :</p>
+<p class="dialogue">— Attendons le grand baroud. Alors, on entendra la voix de la Légion à l'assaut.</p>
+<p>Il n'ajouta point qu'il désirait cet instant avec avidité. Mais l'impatience de ses hauts sourcils, de ses doigts longs et minces le montrait. Et chez tous ses hommes il en allait de même.</p>
+<p class="dialogue">— En attendant, les légionnaires travaillent et se taisent, dit le colonel du régiment, qui assistait à l'entretien.</p>
+<p>Ses yeux d'un bleu vif et limpide, d'une étonnante jeunesse et d'une bonté profonde, se posent sur moi.</p>
+<p class="dialogue">— C'est pourquoi il ne faut pas les atteindre dans leur dignité par des contes absurdes. Leur dignité — ils n'ont que cela au monde, dit encore le colonel.</p>
+<p>Je songeais qu'en effet les trois quarts de ces hommes, qui appartiennent à trente nationalités différentes, ne recevaient jamais ni un colis ni une lettre, et que, si cette solitude et ce dénuement ne leur pesaient pas trop en Afrique où leur immense famille de soldats de métier leur servait de foyer et de refuge, elle devait ici s'aggraver singulièrement par le jeu de la plus élémentaire comparaison.</p>
+
+<h3>Le salut aux couleurs</h3>
+<p>Tandis que nous conversions ainsi, une sonnerie retentit au dehors.</p>
+<p>Et j'aperçus au bout d'une longue rue déserte des légionnaires rangés devant un haut mât de fortune. Ils se tenaient raides et graves et leur file immobile se détachait puissamment sur le fond des maisons basses et sur un peu de ciel crépusculaire.</p>
+<p>Les couleurs montèrent au mât, comme chaque soir.</p>
+<p>Comme chaque soir, les soldats du régiment étranger suivaient des yeux cette ascension.</p>
+<p>Et il me semblait entendre :</p>
+<p class="dialogue">- Légionnaire X., tant d'années de service, Letton.<br>
+- Légionnaire Y. tant d'années de service, Roumain.<br>
+- Légionnaire Z., tant d'années de service, Hollandais.</p>
+</div>
+
+<h2 class="section-title">Le Petit Parisien, 7 mai 1940 (pages 1 et 2)</h2>
+<div class="clippings">
+  <div class="clipping"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-presse-9.jpg" alt=""></div>
+</div>
+<div class="article-box">
+<p>La légion est en ligne. Le fanion rouge-vert ne pouvait demeurer absent du front français. La tradition de la dernière guerre devait être maintenue. Le fameux « 1er de marche » fut, on s'en souvient, entre 1g14 et 1918, dix fois vidé de son sang et dix fois réincarné, l'esprit de chaque mort animant aussitôt un corps vivant. Ainsi, à la légion, un régiment de deux mille hommes peut avoir quatre mille tués.</p>
+<p>Par un miracle semblable, la légion a pu, sans se mutiler d'aucun bataillon africain, envoyer sur notre frontière un régiment métropolitain, authentique et complet. Aux premiers jours de septembre dernier, des légionnaires libérée, auxquels s'étaient joints des engagés volontaires, furent réunis. Ils furent si nombreux qu'une sélection s'imposa, impitoyable, lourde de déception.</p>
+</div>
+
+<div class="panel">
+<p>voir aussi un article sur les volontaires étrangers d'après une lettre de l'aspirant Krouker</p>
+</div>
+
+<div class="panel sources">
+  <h3>Sources</h3>
+  <ul>
+    <li><a href="https://gallica.bnf.fr/" target="_blank" rel="noopener">https://gallica.bnf.fr/</a></li>
+    <li><a href="https://www.retronews.fr/" target="_blank" rel="noopener">https://www.retronews.fr/</a></li>
+    <li>Le petit parisien du: 31/01/1940, 4/02/1940, 8/02/1940, 7/05/1940</li>
+    <li>Paris-soir du 27/04/1940</li>
+  </ul>
+</div>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Presse" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+<div class="comments">
+  <h2 class="section-title">Commentaires</h2>
+  <div class="comment">
+    <div class="meta"><span class="author">Commandoair40</span><span class="date">20-06-2021</span></div>
+    <p>Superbe article a la gloire de la Légion . Merci . Commandoair40 .</p>
+  </div>
+</div>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>
