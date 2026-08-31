@@ -17,7 +17,6 @@
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
   header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
   header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
   header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
     background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
@@ -28,10 +27,11 @@
     font-size:.92rem;line-height:1.7;text-align:justify}
   article p{margin-bottom:1rem}
   article .subhead{font-weight:500;color:var(--ink)}
+  article .subhead.minor{font-weight:400;font-style:italic;font-size:.85rem;color:var(--muted)}
   article a{color:var(--link)}
   article ul,article ol{margin:0 0 1rem 1.3rem}
   article li{margin-bottom:.5rem}
-  article li ul{margin-top:.4rem}
+  article li ul{margin-top:.4rem;margin-bottom:0}
   article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
     color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
     padding:.9rem 1.1rem;margin:1rem 0}
@@ -41,9 +41,7 @@
   article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:150px;margin:0}
-  article .imgrow img{width:100%}
+
   article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
   article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
   article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
@@ -51,11 +49,23 @@
   article .figure-side .side-text p{margin-bottom:1rem}
   article .figure-side .side-text p:last-child{margin-bottom:0}
   article .figure-side.reverse{flex-direction:row-reverse}
-  @media (max-width:600px){
+
+  article .figure-flank{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  article .figure-flank.reverse{flex-direction:row-reverse}
+
+  @media (max-width:700px){
     article .figure-side{flex-direction:column}
     article .figure-side .side-img{flex:none;max-width:100%}
     article .figure-side.reverse{flex-direction:column}
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
   }
+
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
@@ -85,127 +95,136 @@
 
 <article>
 
-<div class="imgrow">
-  <figure>
+<div class="figure-flank">
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-2.jpg" alt="Nicolas Raiewsky">
+    <figcaption>Nicolas Raiewsky</figcaption>
   </figure>
-  <figure>
+  <div class="side-text">
+<p style="font-style:italic;color:var(--muted)">Николай Иванович Раевский</p>
+<p>Nikolai Ivanovich Raevsky est né le 4 juillet 1909 à Nikitzkoie. Issu de la noblesse russe francophile, il s'engage dans la Légion étrangère de 1928 à 1946.</p>
+  </div>
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-4.jpg" alt="Famille Raevski">
+    <figcaption>Famille Raevski</figcaption>
   </figure>
 </div>
-
-<p>Николай Иванович Раевский</p>
-
-<p>Nikolai Ivanovich Raevsky est né le 4 juillet 1909 à Nikitzkoie. Issu de la noblesse russe francophile, il s'engage dans la Légion étrangère de 1928 à 1946.</p>
 
 <p class="subhead">Sa famille</p>
 
-<p>Ivan Raevski</p>
-<p>Dmitri Filosofov</p>
-<p>Elena</p>
-<p>les grands parents</p>
+<p class="subhead minor">les grands parents</p>
 
-<div class="imgrow">
-  <figure>
-    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-5.jpg" alt="Ivan Raevski">
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-5.jpg" alt="Ivan Ivanovitch Raevski">
+    <figcaption>Ivan Ivanovitch Raevski</figcaption>
   </figure>
-  <figure>
-    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-7.jpg" alt="Dmitri Filosofov">
+  <div class="side-text">
+<ul>
+<li>Ivan Ivanovitch <span lang="ru">Иван Иванович Раевский</span> (1835-1891)</li>
+<li>Elena Pavlovna Evreïnova <span lang="ru">Елена Павловна Евреинова</span></li>
+</ul>
+<p>Propriétaires fonciers et amis de Léon Tolstoï, ils ont ouvert des cantines publiques pour lutter contre la grande famine de 1891. Après le décès d'Ivan Ivanovitch, Tolstoï a continué à vivre dans la maison des Raevsky pendant deux ans.</p>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-7.jpg" alt="Elena Pavlovna Evreïnova">
+    <figcaption>Elena Pavlovna Evreïnova</figcaption>
   </figure>
 </div>
 
-<ul>
-<li>Ivan Ivanovitch Иван Иванович Раевский (1835-1891)</li>
-<li>Elena Pavlovna Evreïnova Елена Павловна Евреинова</li>
-</ul>
-
-<p>Propriétaires fonciers et amis de Léon Tolstoï, ils ont ouvert des cantines publiques pour lutter contre la grande famine de 1891. Après le décès d'Ivan Ivanovitch, Tolstoï a continué à vivre dans la maison des Raevsky pendant deux ans.</p>
-
-<figure class="size-small">
-  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-6.jpg" alt="Dmitri Filosofov">
-</figure>
-
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-6.jpg" alt="Dmitri Alekseevich Filosofov">
+    <figcaption>Dmitri Alekseevich Filosofov</figcaption>
+  </figure>
+  <div class="side-text">
 <ul>
 <li>Dmitri Alekseevich Filosofov. Général de division, chef de la 1re brigade de la 3e division d'infanterie de la garde</li>
 <li>Valentina Fiodorovna von der Baum</li>
 </ul>
-
-<figure class="size-medium">
-  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-8.jpg" alt="Léon Tolstoï entouré d'Ivan, Piotr et Grigori Raevski">
-</figure>
-
-<p>Léon Tolstoï entouré d'Ivan, Piort et Grigori Raevski</p>
-
-<p>les parents</p>
-
-<div class="imgrow">
-  <figure>
-    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-9.jpg" alt="Ivan Raevski (père)">
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-8.jpg" alt="Léon Tolstoï entouré d'Ivan, Piotr et Grigori Raevski">
+    <figcaption>Léon Tolstoï entouré d'Ivan, Piotr et Grigori Raevski</figcaption>
   </figure>
-  <figure>
+</div>
+
+<p class="subhead minor">les parents</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-9.jpg" alt="Ivan Ivanovitch Raevski (père)">
+    <figcaption>Ivan Ivanovitch Raevski</figcaption>
+  </figure>
+  <div class="side-text">
+<ul>
+<li>Ivan Ivanovitch <span lang="ru">Иван Иванович Раевский</span> (1871-1930)</li>
+<li>Anna Dmitrievna Filosofova <span lang="ru">Анна Дмитриевна Философова</span> (1876-1919)</li>
+</ul>
+  </div>
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-10.jpg" alt="Anna Dmitrievna Filosofova">
+    <figcaption>Anna Dmitrievna Filosofova</figcaption>
   </figure>
 </div>
 
-<ul>
-<li>Ivan Ivanovitch Иван Иванович Раевский (1871-1930)</li>
-<li>Anna Dmitrievna Filosofova Анна Дмитриевна Философова (1876-1919)</li>
-</ul>
+<p class="subhead minor">les frères et sœurs</p>
 
-<p>Artemy</p>
-<p>Ivan</p>
-<p>les frères et soeurs</p>
-
-<div class="imgrow">
-  <figure>
+<div class="figure-flank">
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-11.jpg" alt="Artemy Raevsky">
+    <figcaption>Artemy Raevsky</figcaption>
   </figure>
-  <figure>
+  <div class="side-text">
+<ul>
+<li>Valentina Ivanovna Lesnova <span lang="ru">Валентина Ивановна Раевская</span> 20/07/1898 ; épouse de Mikhaïl Ivanovitch Lesnov</li>
+<li>Elena <span lang="ru">Елена Ивановна Раевская</span> Gvozdeva 14/08/1900</li>
+<li>Anna <span lang="ru">Анна Ивановна Раевская</span> Csse. Shuvalowa 28/04/1903 à Moscou - 1991 à Londres</li>
+<li>Olga <span lang="ru">Ольга Ивановна Раевская</span> 06/08/1904 - 1968 à Moscou</li>
+</ul>
+<p>Artemy Ivanovich Raevsky <span lang="ru">Артемий Иванович Раевский</span> 14/09/1902 - 1952 à Londres. Célibataire et sans enfant. Arrêté en juin 1929 dans une affaire « d'organisation monarchiste contre-révolutionnaire », il est condamné à 5 ans de prison au camp spécial de Solovetsky. Libéré en 1931, il est placé sous la garde de sa sœur Elena à Moscou en 1934.</p>
+<p>Ivan Ivanovich Raevsky <span lang="ru">Иван Иванович Раевский</span> 29/12/1906 - 1948 à Moscou. Célibataire sans enfant. 28 avril 1936 - après son retour en Russie, il est emmené à Léningrad et en mai, emprisonné dans la DPZ. Il est libéré à la demande de la Pompolite (croix rouge politique). Il meurt en Russie en 1947.</p>
+  </div>
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-12.jpg" alt="Ivan Raevsky (frère)">
+    <figcaption>Ivan Raevsky</figcaption>
   </figure>
 </div>
 
-<ul>
-<li>Valentina Ivanovna Lesnova Валентина Ивановна Раевская 20/07/1898 ; épouse de Mikhaïl Ivanovitch Lesnov</li>
-<li>Elena Елена Ивановна Раевская Gvozdeva 14/08/1900</li>
-<li>Artemy Ivanovich Raevsky Артемий Иванович Раевский 14/09/1902 - 1952 à Londres. Célibataire et sans enfant. Arrêté en juin 1929 dans une affaire « d'organisation monarchiste contre-révolutionnaire », il est condamné à 5 ans de prison au camp spécial de Solovetsky. Libéré en 1931, il est placé sous la garde de sa sœur Elena à Moscou en 1934.</li>
-<li>Anna Анна Ивановна Раевская Csse. Shuvalowa 28/04/1903 à Moscou - 1991 à Londres</li>
-<li>Olga Ольга Ивановна Раевская 06/08/1904 - 1968 à Moscou</li>
-<li>Ivan Ivanovich Raevsky Иван Иванович Раевский 29/12/1906 - 1948 à Moscou. Célibataire sans enfant</li>
-</ul>
+<p class="subhead minor">les oncles et cousins</p>
 
-<p>28 avril 1936 - après son retour en Russie, il est emmené à Léningrad et en mai, emprisonné dans la DPZ. Il est libéré à la demande de la Pompolite (croix rouge politique) . Il meurt en Russie en 1947</p>
-
-<p>Piotr</p>
-<p>Valentina</p>
-<p>Grigori</p>
-<p>les oncles et cousins</p>
-
-<div class="imgrow">
-  <figure>
+<div class="figure-flank">
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-13.jpg" alt="Piotr Raevski">
+    <figcaption>Piotr Raevski</figcaption>
   </figure>
-  <figure>
-    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-15.jpg" alt="Valentina Dmitrievna Filosofova">
+  <div class="side-text">
+<p>Piotr Raevski (1872-1920), médecin. À l'automne 1919, il est arrêté à Toula pour « liens avec une organisation contre-révolutionnaire » et placé en détention. Il est libéré à la demande des médecins, qui le placent en liberté sous caution. En octobre 1919, il est envoyé dans le district de Bogoroditsky pour servir comme chef du poste de premiers secours Baryatinsky de l'Armée rouge. Il meurt du typhus le 28 août 1920.</p>
+<p>Ses enfants :</p>
+<ul>
+<li>Eléna. En 1937, elle est exilée avec sa mère dans le village de Mouromtsevo, dans la région d'Omsk.</li>
+<li>Sergueï (1907-2004). En 1935, il est condamné pour activités contre-révolutionnaires à 5 ans d'emprisonnement dans le camp de concentration d'Ukhta. Libéré en 1939. En 1943, il est arrêté et condamné à 10 ans de camp de travail, envoyé à Vorkoutlag. En 1956, il est libéré du camp et retourne à Moscou.</li>
+<li>Mikhaïl. En 1942, arrestation et condamnation à 10 ans de prison (décédé dans le camp le 28 août 1944).</li>
+</ul>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-15.jpg" alt="Sergueï Raevski">
+    <figcaption>Sergueï Raevski</figcaption>
   </figure>
 </div>
 
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-14.jpg" alt="Valentina Dmitrievna Filosofova">
+    <figcaption>Valentina Dmitrievna Filosofova</figcaption>
+  </figure>
+  <div class="side-text">
 <ul>
-<li>Piotr Raevski (1872-1920) médecin. À l'automne 1919, il est arrêté à Toula pour « liens avec une organisation contre-révolutionnaire » et placé en détention. Il est libéré à la demande des médecins, qui le placent en liberté sous caution. En octobre 1919, il est envoyé dans le district de Bogoroditsky pour servir comme chef du poste de premiers secours Baryatinsky de l'Armée rouge. Il meurt du typhus le 28 août 1920
-
-<figure class="size-small">
-  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-raevski-nicolas-14.jpg" alt="Sergueï Raevski">
-</figure>
-
-  <ul>
-  <li>Eléna En 1937, elle est exilée avec sa mère dans le village de Mouromtsevo, dans la région d'Omsk.</li>
-  <li>Sergueï (1907-2004) en 1935, il est condamné pour activités contre-révolutionnaires à 5 ans d'emprisonnement dans le camp de concentration d'Ukhta. Libéré en 1939. En 1943 il est arrêté, et condamné à 10 ans de camp de travail et envoyé à Vorkutlag. En 1956, il est libéré du camp et retourne à Moscou.</li>
-  <li>Mikhaïl: en 1942 arrestation et condamnation à 10 ans de prison (décédé dans le camp le 28 août 1944).</li>
-  </ul>
-</li>
 <li>Grigori Raevski (1875-1901)</li>
-<li>Valentina Dmitrievna Filosofova Валентина Дмитриевна Философова (soeur de sa mère). Chanteuse (mezzo-soprano), première interprète de plusieurs chansons de Nikolai Karlovich Medtner</li>
 </ul>
+<p>Valentina Dmitrievna Filosofova <span lang="ru">Валентина Дмитриевна Философова</span> (sœur de sa mère). Chanteuse (mezzo-soprano), première interprète de plusieurs chansons de Nikolai Karlovich Medtner.</p>
+  </div>
+</div>
 
 <p class="subhead">Révolution et départ pour la France</p>
 
@@ -238,10 +257,9 @@ Le 5 juin 1928, il arrive en Algérie et est affecté au 1er Régiment Étranger
 
 <p>Le 30 avril 1936, Nicolas Raiewski est promu sergent-chef. En tant que chef comptable à la CHR, il se distingue par ses performances exemplaires, recevant des appréciations élogieuses de ses supérieurs. Ses rapports pour 1938, signés par le commandant Pourcin, sont particulièrement remarquables :</p>
 
-<ul>
-<li>"Excellent sous-officier, très bon instructeur, intelligent, actif, énergique dans son commandement. Instruit des règlements militaires. Perfectionne continuellement son instruction générale déjà très avancée. Excellent comptable, travailleur, consciencieux, dévoué et ponctuel. Possède de réelles qualités de jugement, d'ordre et de méthode. Conduite, tenue et moralité : parfaite. Sous-officier complet, très au-dessus de la moyenne. À suivre et à pousser de manière toute particulière."</li>
-<li>"Auxiliaire très précieux qui mérite toujours les mêmes excellentes notes. Il dépense sans compter pour assurer son service particulièrement chargé. Le sergent-chef Raiewski a été et reste un sous-officier de choix, de haute valeur morale, qui ne mérite que des éloges."</li>
-</ul>
+<blockquote>"Excellent sous-officier, très bon instructeur, intelligent, actif, énergique dans son commandement. Instruit des règlements militaires. Perfectionne continuellement son instruction générale déjà très avancée. Excellent comptable, travailleur, consciencieux, dévoué et ponctuel. Possède de réelles qualités de jugement, d'ordre et de méthode. Conduite, tenue et moralité : parfaite. Sous-officier complet, très au-dessus de la moyenne. À suivre et à pousser de manière toute particulière."</blockquote>
+
+<blockquote>"Auxiliaire très précieux qui mérite toujours les mêmes excellentes notes. Il dépense sans compter pour assurer son service particulièrement chargé. Le sergent-chef Raiewski a été et reste un sous-officier de choix, de haute valeur morale, qui ne mérite que des éloges."</blockquote>
 
 <p>En parallèle, il prépare et obtient avec succès son brevet de chef de section de fusiliers-voltigeurs, tout en poursuivant ses fonctions de chef comptable. Ces performances le mènent à être inscrit au tableau d'avancement pour le grade d'adjudant.
 Naturalisé français en 1937, Nicolas Raiewski obtient son brevet de chef de section le 24 avril 1939. Il est promu adjudant le 1er juillet 1939. Un mois plus tard, il est intégré au corps des sous-officiers de carrière et occupe alors les fonctions d'adjoint de bataillon au 2e REI.</p>
@@ -284,7 +302,7 @@ Du 1er juillet au 1er septembre 1946, il est mis en non-activité et se retire �
 
 <p class="subhead">1967</p>
 <p>En juillet, il est admis à l'honorariat de son grade et rayé des cadres des officiers de réserve.
-Resté célibataire, il décède en 1989</p>
+Resté célibataire, il décède en 1989.</p>
 
 <div class="sources">
   <h3>Sources principales</h3>
