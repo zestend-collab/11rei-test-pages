@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les cimetières communaux — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,4vw,28px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article .subhead{font-weight:500;color:var(--ink);font-family:'EB Garamond',serif;font-size:1.05rem;margin:1.4rem 0 .6rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 38%;max-width:38%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:640px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:70%;margin:0 auto}
+    article .figure-side.reverse{flex-direction:column}
+  }
+
+  article .roll{columns:2;column-gap:2rem;font-size:.88rem;list-style:none;margin-left:0}
+  article .roll li{break-inside:avoid;margin-bottom:.5rem}
+  @media (max-width:640px){ article .roll{columns:1} }
+
+  article .seealso{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.88rem}
+  article .seealso h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .seealso ul{padding-left:1.1rem;margin-bottom:0}
+
+  article a{color:var(--link)}
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main>
+
+<header>
+  <h1>11è REI : les lieux de mémoire — les cimetières communaux</h1>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<article>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux-2.jpg" alt="Mireille Jabouille devant la tombe de son père, cimetière de Saint-Germain-sur-Meuse, 1948">
+    <figcaption>Photo collection Vincent Jabouille — 1948 : Mireille, la fille du lieutenant Jabouille, devant la tombe de son père au cimetière de Saint-Germain-sur-Meuse</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Les légionnaires du 11è régiment étranger d'infanterie morts au combat ont des sépultures diverses.</p>
+<p>Dans un premier temps, ils étaient inhumés sur place, éventuellement dans un cimetière de compagnie. Après les combats, les brancardiers qui avaient relevé les blessés deviennent fossoyeurs en allant chercher les corps des morts pour les enterrer dignement.</p>
+  </div>
+</div>
+
+<p>Après les combats d'Inor, les morts sont inhumés près du poste de secours, le long de la route, ou dans des petits cimetières provisoires. Pour d'autres, ils sont restés sur place, dans les bois, ensevelis à la hâte ou par les bombardements.</p>
+
+<p>La correspondance du capitaine Lanchon évoque la mort du sous-lieutenant Metman. Ce dernier est tué devant le ruisseau de Malandry le 26 mai 1940 à 00h10, alors qu'il effectue une reconnaissance devant son poste. À 4h15, le capitaine et deux brancardiers vont chercher son corps. Metman est alors enterré à 2 km de la ligne de front, près du poste de secours, le long de la route qui mène d'Inor à Olizy, sa tombe est ornée d'une croix faite de planches de bois. Il sera ensuite inhumé dans le cimetière de Martincourt puis dans la nécropole nationale du Faubourg-Pavé à Verdun.</p>
+
+<p>Pour les combats du 18 juin 1940 de Saint-Germain-sur-Meuse, les morts, quand ils n'ont pu être déplacés, sont restés sur place. Le régiment faisant route dès la nuit vers Blénod, ne peut s'occuper de ses morts. Après les combats, ils seront relevés par les prisonniers.</p>
+
+<p>Le lieutenant Jabouille de la CA2 est tué au combat le 18 juin 1940 entre Ourches et Saint-Germain-sur-Meuse. Son corps est ramené par des légionnaires vers le poste de secours du régiment puis est déplacé dans l'église. Il est ensuite inhumé dans le cimetière communal de Saint-Germain.</p>
+
+<p>Le corps du capitaine Rzekieki est trouvé par des prisonniers français, à 500 mètres de la sortie de Void. Dans un premier temps, il sera inhumé au cimetière de Void avec la mention « inconnu ».</p>
+
+<p class="section">Les tombes provisoires — exemple d'Inor</p>
+
+<p>Les corps sont enterrés dans les bois, le long de la route... ces tombes sommaires sont signalées par la présence d'une croix en bois, d'un casque... elles sont parfois anonymes.</p>
+
+<p>C'est seulement plusieurs mois après l'armistice que les corps vont être recherchés, identifiés et rassemblés dans les cimetières locaux par l'entremise des prêtres et des maires des communes concernées.</p>
+
+<p>Les comptes rendus d'exhumation contenus dans les dossiers des morts pour la France conservés à Caen donnent des indications sur leurs emplacements.</p>
+
+<p>L'abbé Wattel, inhumé dans le parc du château de Charmois à Mouzay, est exhumé en octobre 1941, placé dans un cercueil et réinhumé au même endroit. Sa tombe porte le numéro 454 et est alors munie d'une plaque. Les frères de l'abbé sont présents et identifient le corps. Il est aussi précisé que les frais sont pris en charge par la famille.</p>
+
+<p>Un petit cimetière est créé dans le parc du château de Bronelle sur la commune de Stenay. Le dossier d'Oswald Delguste contient un croquis de ce cimetière dans lequel sont inhumés 12 soldats dont 6 du 11è régiment étranger. Tué au combat le 27 mai 1940, on apprend qu'il est exhumé le 19/09/1941, placé dans un cercueil, son corps est réinhumé dans le cimetière communal de Stenay. Il est ensuite déplacé dans la nécropole de Verdun. 5 autres légionnaires seront également réinhumés dans le cimetière communal puis dans la nécropole de Verdun.</p>
+
+<p>Pour d'autres, c'est en plein bois que les corps seront retrouvés. Ils sont alors identifiés, placés dans des cercueils et enterrés dans les cimetières d'Olizy, Villy ou d'Inor. À ce sujet, voir le blog de Frédéric Laîné et son article sur les comptes rendus d'exhumation, dans lequel on remarque que des morts ont été trouvés en plein bois, près des Sept Fontaines (la position occupée par le 2è bataillon).</p>
+
+<p class="section">La sépulture définitive</p>
+
+<p>Les corps qui ont été regroupés dans les cimetières communaux sont, à partir des années 1950, rassemblés dans les nécropoles nationales.</p>
+
+<p>Si les sépultures ne sont pas dans les nécropoles, il peut s'agir :</p>
+<ul>
+<li>de portés disparus dont le corps n'a pas été retrouvé ;</li>
+<li>de légionnaires non identifiés et enterrés avec la mention « inconnu » (15 tombes anonymes pour le 11è REI dans les nécropoles de Verdun) ;</li>
+<li>de morts dont le corps a été restitué aux familles.</li>
+</ul>
+
+<p class="section">La restitution des corps aux familles</p>
+
+<p>De 1940 à 1946, le transfert des corps des soldats morts est interdit. À la fin de l'année 1940, les objets ayant appartenu aux soldats morts au champ d'honneur pourront être restitués aux familles qui en feront la demande. Elles devront s'adresser à cet effet au service des successions.</p>
+
+<p>En 1941, seuls des identificateurs peuvent commencer un travail de recherche, d'exhumation et de regroupement des corps dans les cimetières communaux proches des tombes provisoires. En 1942, un décret fixe le montant d'une prime pour les identificateurs qui effectuent un travail pénible.</p>
+
+<p>Les familles attendront le 16/10/1946 et la loi n° 46-2213, qui va autoriser la restitution des corps à titre gratuit. Les familles qui ne souhaitent pas attendre la restitution faite par l'administration prendront les frais en charge après accord du ministère des Anciens Combattants. Le décret d'application paraît le 15/07/1947, permettant le début des transferts.</p>
+
+<p>Pour retrouver les lieux de sépulture, il est utile de connaître le lieu de naissance et/ou de résidence du légionnaire et de consulter les registres d'inhumations.</p>
+
+<p>Les retours de ces combattants morts au champ d'honneur ont souvent donné lieu à des cérémonies.</p>
+
+<p>En 1948, la presse niortaise rend hommage au lieutenant André Jabouille lors de ses obsèques dans le cimetière communal de la Sablière d'Absie, ville dans laquelle il était instituteur.</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux.png" alt="Tombe de Michel Votchel, Rigny-Saint-Martin">
+    <figcaption>« Ici repose Michel Votchel, mort pour la France le 8 juin 1940 à Rigny-Saint-Martin (Meuse) à l'âge de 41 ans. Regrets. »</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Michel Votchel, engagé volontaire pour la durée de la guerre, initialement inhumé à Rigny-Saint-Martin, est réinhumé dans sa commune d'adoption le 5 juin 1950.</p>
+  </div>
+</div>
+
+<p class="subhead">À Bagneux</p>
+
+<p>Dès l'annonce de l'autorisation du transfert des défunts, l'Union des Engagés Volontaires Anciens Combattants juifs (1939-1945) achète une concession au cimetière de Bagneux. Elle porte le numéro 5CTA.</p>
+
+<p>Depuis 1948, chaque premier dimanche de juin, une cérémonie commémore le sacrifice des volontaires juifs devant le monument qui leur est dédié, sous lequel, symboliquement choisis parmi les milliers d'autres, reposent les corps de soixante-six soldats juifs, ramenés des différents champs de bataille.</p>
+
+<p>Parmi eux, du 11è régiment étranger d'infanterie : Cukier Jankiel, initialement inhumé à Ourches et transféré à Bagneux le 19/10/1948. Dalezmann Kalma, initialement inhumé à Inor et transféré le 17/10/1961.</p>
+
+<p>Rewinski Calel est transféré du cimetière de Martincourt dans le caveau familial de Bagneux le 6/10/1948. Il est enterré avec ses parents Rafal et Gitla.</p>
+
+<p class="section">Carré de corps restitués 1939-1945</p>
+
+<p>En restituant les corps aux familles, il n'est plus possible d'inhumer les combattants dans les cimetières nationaux ni dans les carrés militaires. Ils peuvent être enterrés dans un caveau familial ou dans une tombe individuelle, la mention « mort pour la France » est apposée sur la pierre tombale.</p>
+
+<ul class="roll">
+<li>ALLENDER Emile Georges — à Ivry-sur-Seine en 1948</li>
+<li>BOURGES Gaston Lucien — à Montrouge</li>
+<li>CAVAIGNAC Jacques Marie — à Montmartre</li>
+<li>CLOTUCHE Louis Jean Joseph — à Pimprez</li>
+<li>COLEN André Stanislas Emil — à Orp-Jauche (Belgique)</li>
+<li>CORDUANT Jean — à Boulogne-Billancourt en 1951</li>
+<li>CUKIER Jankiel — à Bagneux le 19/10/1948</li>
+<li>DALEZMANN Kalma — à Bagneux le 17/10/1961</li>
+<li>GIRAUDEAU Maurice Charles — à Épinay-sur-Seine</li>
+<li>HAFENSCHER Jean Ladislas — à Thiais en 1949</li>
+<li>HAUTECOEUR Marcel — au Frestoy-Vaux</li>
+<li>JABOUILLE André Robert Léon — à L'Absie</li>
+<li>JOUZEK Joseph — à Tergnier</li>
+<li>MENCHI Armand — à Dampierre-les-Bois</li>
+<li>MONTAVON Bernard Jules Laurent — à Delle</li>
+<li>MULLER Gyozo Victor — à Villeparisis</li>
+<li>PEYROT Pierre — à Grignols</li>
+<li>REWINSKI Salomon Calel — à Bagneux en 1948</li>
+<li>SERMET René François — à Saint-Ferjeux</li>
+<li>VOTCHEL Michel — à Corbeilles en 1950</li>
+</ul>
+
+<p>Certaines tombes portent la cocarde du Souvenir français. Cette association, fondée en 1887, a pour mission d'entretenir les tombes dans les cimetières communaux des soldats morts pour la France afin d'éviter qu'elles ne tombent en déshérence et ne soient supprimées.</p>
+
+<div class="seealso">
+  <h3>Voir aussi</h3>
+  <ul>
+    <li><a href="https://test.11regimentetranger.com/necropoles-nationales">Les nécropoles</a></li>
+    <li><a href="https://test.11regimentetranger.com/monuments">Les monuments</a></li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h3>Sources principales</h3>
+  <ul>
+    <li>Photo collection de la famille Jabouille</li>
+    <li>Recherche des sépultures avec le site Geneanet</li>
+    <li>Exemple de l'abbé Hubert au service des morts au combat, site internet <a href="http://www.ardennes1940aceuxquiontresiste.org/" target="_blank" rel="noopener">ardennes1940aceuxquiontresiste.org</a></li>
+    <li>Blog de Frédéric Laîné et son article sur les comptes rendus d'exhumation</li>
+    <li>Le Souvenir français</li>
+    <li>Dossier Delguste Oswald, SHD Caen AC 21 P 115789</li>
+    <li>Gallica, Journal officiel du :
+      <ul>
+        <li>22/02/1940 — décret prévoyant l'enterrement des militaires morts pour la France dans les cimetières nationaux ou les carrés militaires des cimetières communaux</li>
+        <li>22/01/1945 — circulaire maintenant l'interdiction de déplacer les corps</li>
+        <li>01/03/1946 — circulaire du 18 mars 1946 relative à la régularisation de l'état civil des prisonniers, déportés, travailleurs non rentrés</li>
+        <li>17/10/1946 — loi n° 46-2243 autorisant la restitution des corps</li>
+        <li>22/10/1946 — circulaire 1007 : formulaire à remplir par les familles demandant la restitution</li>
+        <li>17/07/1947 — décret autorisant la restitution des corps</li>
+      </ul>
+    </li>
+    <li>Le Libérateur de la région du Gâtinais, 14/06/1950, obsèques Votchel Michel</li>
+    <li>Facebook</li>
+  </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
+</div>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-CimetieresCommunaux" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>
