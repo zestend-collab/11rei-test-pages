@@ -42,6 +42,16 @@
   article .figure-side .side-text p{margin-bottom:1rem}
   article .figure-side .side-text p:last-child{margin-bottom:0}
   article .figure-side.reverse{flex-direction:row-reverse}
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 24%;max-width:24%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:70%;margin:0 auto}
+  }
   @media (max-width:640px){
     article .figure-side{flex-direction:column}
     article .figure-side .side-img{flex:none;max-width:70%;margin:0 auto}
@@ -120,7 +130,15 @@
 
 <p>L'abbé Wattel, inhumé dans le parc du château de Charmois à Mouzay, est exhumé en octobre 1941, placé dans un cercueil et réinhumé au même endroit. Sa tombe porte le numéro 454 et est alors munie d'une plaque. Les frères de l'abbé sont présents et identifient le corps. Il est aussi précisé que les frais sont pris en charge par la famille.</p>
 
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux-4.jpg" alt="Croquis du cimetière du château de Bronelle, dossier Delguste">
+    <figcaption>Croquis du cimetière du château de Bronelle, dossier de naturalisation/exhumation d'Oswald Delguste</figcaption>
+  </figure>
+  <div class="side-text">
 <p>Un petit cimetière est créé dans le parc du château de Bronelle sur la commune de Stenay. Le dossier d'Oswald Delguste contient un croquis de ce cimetière dans lequel sont inhumés 12 soldats dont 6 du 11è régiment étranger. Tué au combat le 27 mai 1940, on apprend qu'il est exhumé le 19/09/1941, placé dans un cercueil, son corps est réinhumé dans le cimetière communal de Stenay. Il est ensuite déplacé dans la nécropole de Verdun. 5 autres légionnaires seront également réinhumés dans le cimetière communal puis dans la nécropole de Verdun.</p>
+  </div>
+</div>
 
 <p>Pour d'autres, c'est en plein bois que les corps seront retrouvés. Ils sont alors identifiés, placés dans des cercueils et enterrés dans les cimetières d'Olizy, Villy ou d'Inor. À ce sujet, voir le blog de Frédéric Laîné et son article sur les comptes rendus d'exhumation, dans lequel on remarque que des morts ont été trouvés en plein bois, près des Sept Fontaines (la position occupée par le 2è bataillon).</p>
 
@@ -147,16 +165,29 @@
 
 <p>Les retours de ces combattants morts au champ d'honneur ont souvent donné lieu à des cérémonies.</p>
 
-<p>En 1948, la presse niortaise rend hommage au lieutenant André Jabouille lors de ses obsèques dans le cimetière communal de la Sablière d'Absie, ville dans laquelle il était instituteur.</p>
-
 <div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux-5.jpg" alt="Article de presse : l'inhumation du lieutenant André Jabouille suivie par une foule considérable">
+    <figcaption>Presse niortaise, 1948 : l'inhumation du lieutenant André Jabouille</figcaption>
+  </figure>
+  <div class="side-text">
+<p>En 1948, la presse niortaise rend hommage au lieutenant André Jabouille lors de ses obsèques dans le cimetière communal de la Sablière d'Absie, ville dans laquelle il était instituteur.</p>
+  </div>
+</div>
+
+<div class="figure-flank">
   <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux.png" alt="Tombe de Michel Votchel, Rigny-Saint-Martin">
     <figcaption>« Ici repose Michel Votchel, mort pour la France le 8 juin 1940 à Rigny-Saint-Martin (Meuse) à l'âge de 41 ans. Regrets. »</figcaption>
   </figure>
   <div class="side-text">
 <p>Michel Votchel, engagé volontaire pour la durée de la guerre, initialement inhumé à Rigny-Saint-Martin, est réinhumé dans sa commune d'adoption le 5 juin 1950.</p>
+<p>« Les obsèques d'un héros » : c'est au milieu d'une assistance émue et recueillie qu'ont eu lieu, le lundi 5 juin, les obsèques du soldat Michel Votchel, tué à l'ennemi lors de l'offensive allemande de mai 1940. Michel Votchel, Russe d'origine allemande, vint se réfugier en France en 1924 et fut pour défendre sa patrie d'adoption qu'il s'engagea, en 1939, dans les rangs de la Légion étrangère.</p>
   </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux-6.jpg" alt="Article de presse : les obsèques d'un héros, Michel Votchel">
+    <figcaption>Presse locale, juin 1950 : les obsèques de Michel Votchel à Corbeilles</figcaption>
+  </figure>
 </div>
 
 <p class="subhead">À Bagneux</p>
@@ -164,6 +195,16 @@
 <p>Dès l'annonce de l'autorisation du transfert des défunts, l'Union des Engagés Volontaires Anciens Combattants juifs (1939-1945) achète une concession au cimetière de Bagneux. Elle porte le numéro 5CTA.</p>
 
 <p>Depuis 1948, chaque premier dimanche de juin, une cérémonie commémore le sacrifice des volontaires juifs devant le monument qui leur est dédié, sous lequel, symboliquement choisis parmi les milliers d'autres, reposent les corps de soixante-six soldats juifs, ramenés des différents champs de bataille.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux-7.jpg" alt="Registre de transfert de Cukier Jankiel vers Bagneux, 1948">
+  <figcaption>Registre : transfert de Cukier Jankiel vers Bagneux, 1948</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-cimetieres-communaux-8.jpg" alt="Registre de transfert de Dalezmann Kalma vers Bagneux, 1961">
+  <figcaption>Registre : transfert de Dalezmann Kalma vers Bagneux, 1961</figcaption>
+</figure>
 
 <p>Parmi eux, du 11è régiment étranger d'infanterie : Cukier Jankiel, initialement inhumé à Ourches et transféré à Bagneux le 19/10/1948. Dalezmann Kalma, initialement inhumé à Inor et transféré le 17/10/1961.</p>
 
