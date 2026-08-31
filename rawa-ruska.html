@@ -34,6 +34,14 @@
   article .person{background:var(--row);border:1px solid var(--border);border-radius:4px;
     padding:1rem 1.2rem;margin-bottom:1.2rem}
   article .person .subhead{margin-top:0;margin-bottom:.5rem}
+  article .figure-side{display:flex;gap:20px;margin:0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 30%;max-width:30%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:60%}
+  }
   article ul{margin:0 0 0 1.3rem}
   article .person li{margin-bottom:.35rem;list-style:none;margin-left:-1.3rem}
   article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
@@ -79,6 +87,11 @@
 <p class="lede">Parmi les légionnaires du 11e REI prisonniers de guerre, trois ont été internés au camp 325 de Rawa-Ruska. Il s'agissait d'un camp de représailles pour les prisonniers ayant notamment tenté de s'évader.</p>
 
 <div class="person">
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rawa-ruska-2.jpg" alt="Maurice Boulanger">
+  </figure>
+  <div class="side-text">
 <p class="subhead">BOULANGER Maurice Jean Fernand</p>
 <ul>
 <li>(25/7/1906 - Châlons-sur-Marne - France)</li>
@@ -88,9 +101,16 @@
 <li>Il est interné au camp 325 de Rawa Ruska du 15/06/1942 au 23/01/1943 puis au Stalag VC</li>
 <li>Attribution du titre d'interné résistant pour avoir été interné au camp de Rawa Ruska du 12/06/1942 au 23/01/1943</li>
 </ul>
+  </div>
+</div>
 </div>
 
 <div class="person">
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-sanjorge-alphonse-2.png" alt="Alphonse Sanjorge Avistu">
+  </figure>
+  <div class="side-text">
 <p class="subhead">SANJORGE AVISTU Alphonse Mariano</p>
 <ul>
 <li>(10/5/1907 - Tarragone - Espagne)</li>
@@ -99,6 +119,8 @@
 <li>liste des prisonniers du 25/11/1940</li>
 <li>il est interné au Stalag XI-A puis au Stalag XI-B puis au camp 325 à Rawa-Ruska d'avril 1942 à janvier 1943 puis au Stalag V-C</li>
 </ul>
+  </div>
+</div>
 </div>
 
 <div class="person">
