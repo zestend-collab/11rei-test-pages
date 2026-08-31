@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Officiers du 11è REI prisonniers à l'Oflag VI A — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1100px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  /* ---- Header ---- */
+  header.page-head{
+    background:var(--row);border:1px solid var(--border);
+    border-top:4px solid var(--orange);
+    border-radius:6px;padding:2rem 1.8rem;margin-bottom:26px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  }
+  header.page-head h1{font-family:'EB Garamond',serif;font-weight:600;color:var(--ink);
+    font-size:clamp(24px,4.2vw,34px);line-height:1.2}
+  header.page-head .tags{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header.page-head .tags span{font-size:.72rem;font-family:'Inter',sans-serif;font-weight:500;color:#8a5100;
+    background:#fff;border:1px solid var(--border);border-radius:12px;padding:.25rem .8rem}
+  header.page-head .back{display:inline-block;margin-top:1rem;font-size:.8rem;font-weight:500;
+    color:var(--link);text-decoration:none}
+  header.page-head .back:hover{text-decoration:underline}
+
+  /* ---- Generic card ---- */
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    padding:1.6rem;margin-bottom:1.6rem;font-size:.92rem;line-height:1.7;text-align:justify}
+  .panel p{margin-bottom:1rem}
+  .panel p:last-child{margin-bottom:0}
+  .panel a{color:var(--link)}
+
+  /* ---- Section titles ---- */
+  h2.section-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.3rem;
+    color:var(--ink);margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:3px solid var(--orange);
+    display:flex;align-items:center;gap:.5rem}
+  h2.section-title:first-of-type{margin-top:0}
+
+  /* ---- Photo gallery (group photos) ---- */
+  .gallery-item{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    overflow:hidden;margin-bottom:1.4rem;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+  .gallery-item img{width:100%;display:block}
+  .gallery-item .caption{padding:1rem 1.3rem;border-top:3px solid var(--orange);background:var(--row)}
+  .gallery-item .caption p{margin-bottom:.4rem;font-size:.86rem;line-height:1.55}
+  .gallery-item .caption p:last-child{margin-bottom:0}
+  .gallery-item .caption .lede{font-family:'EB Garamond',serif;font-style:italic;color:var(--ink);
+    font-size:.95rem;margin-bottom:.5rem}
+  .gallery-item .caption .idlabel{font-weight:600;color:#8a5100;font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.03em;margin-bottom:.3rem}
+  .gallery-item .caption ul{list-style:none;margin:0}
+  .gallery-item .caption li{padding:.15rem 0 .15rem .9rem;position:relative;font-size:.85rem}
+  .gallery-item .caption li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+
+  /* ---- Officer grid ---- */
+  .officer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+  .officer-card{background:var(--card);border:1px solid var(--border);border-radius:8px;
+    overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.08);
+    transition:transform .15s ease, box-shadow .15s ease}
+  .officer-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.14)}
+  .officer-card .photo-wrap{width:100%;aspect-ratio:3/4;background:var(--row);
+    display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .officer-card .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+  .officer-card .photo-wrap .no-photo{font-family:'EB Garamond',serif;font-style:italic;
+    color:#a89b7f;font-size:.78rem;text-align:center;line-height:1.4}
+  .officer-card .card-body{padding:.9rem 1rem 1.1rem;border-top:3px solid var(--orange);flex:1;
+    display:flex;flex-direction:column}
+  .officer-card h3{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem;
+    color:var(--ink);margin-bottom:.5rem;line-height:1.3}
+  .officer-card ul{list-style:none;margin:0 0 .5rem}
+  .officer-card li{font-size:.78rem;line-height:1.5;padding:.12rem 0 .12rem .8rem;position:relative;color:var(--ink)}
+  .officer-card li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+  .officer-card p{font-size:.78rem;line-height:1.5;margin-bottom:.4rem;color:var(--muted)}
+  .officer-card p:last-child{margin-bottom:0}
+
+  /* ---- Sources ---- */
+  .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  .sources ul{list-style:none;padding:0}
+  .sources li{padding:.2rem 0 .2rem 1rem;position:relative;font-size:.85rem}
+  .sources li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+  .sources a{color:var(--link)}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<main>
+
+<header class="page-head">
+  <h1>Officiers du 11è REI prisonniers à l'Oflag VI A</h1>
+  <div class="tags"><span>11è REI</span><span>PG</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<div class="panel">
+<p>Après la reddition du 23 juin 1940, les officiers du 11è régiment étranger d'infanterie prisonniers sont internés à Nancy au lycée Henri Poincaré.</p>
+<p>20 d'entre eux seront envoyés dans l'Oflag VI A à Soest en Allemagne.</p>
+<p>Avec les informations contenues dans les listes de prisonniers, témoignages d'après guerre de certains officiers évadés en AFN, et avec l'Annuaire de L'OFLAG VIA par David de Beaufort René, Capitaine en retraite, Edité par les soins de l'Association des anciens prisonniers de l'OFLAG VIA (à consulter sur le site internet de l'association Mémoire et avenir, Chapelle française de Soest), voici ci-dessous la liste des 20 officiers du 11è REI envoyés à l'Oflag VI A.</p>
+<p>Avec les photos de la collection de B. Chaumelle représentant des groupes d'officiers du 11è REI à l'oflag VI A et celle tirée du livre Les combattants du 18 juin 1940 Tome 4, j'espère pouvoir identifier un certain nombre d'officiers du 11è REI.</p>
+<p>Si vous avez des informations supplémentaires ou des bons yeux n'hésitez pas...</p>
+</div>
+
+<h2 class="section-title">Photos de groupe</h2>
+
+<div class="gallery-item">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oflag-via-2.jpg" alt="Officiers du 11è REI, Nancy">
+  <div class="caption">
+    <p class="lede">Officier du 11è REI Nancy : Les combattants du 18 juin 1940 Tome 4</p>
+    <p class="idlabel">A identifier : de la gauche vers la droite</p>
+    <ul>
+      <li>Le 4è est Armand Cachat</li>
+      <li>Le 6è Frédéric Gheysens</li>
+    </ul>
+  </div>
+</div>
+
+<div class="gallery-item">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oflag-via-4.jpg" alt="Photo collection B. Chaumelle">
+  <div class="caption">
+    <p class="lede">Photo coll. B. Chaumelle, sans date, envoyée par Henry Lamor qui est resté prisonnier jusqu'à la libération du camp en 1945</p>
+    <p class="idlabel">A identifier : de la gauche vers la droite</p>
+    <ul>
+      <li>au 2è rang le 5è Henry Lamor (avec les lunettes)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="gallery-item">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oflag-via-5.jpg" alt="Officiers identifiés">
+  <div class="caption">
+    <p class="idlabel">A identifier</p>
+    <ul>
+      <li>2. BERTOT Alfred</li>
+      <li>3. GHEYSENS Frédéric</li>
+      <li>4. LAMOR Henry</li>
+      <li>6. DELMAS Georges</li>
+      <li>8. CLÉMENT René</li>
+      <li>10. CACHAT Armand</li>
+      <li>12. COQUET Jacques (identifié par son fils Bernard)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="gallery-item">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oflag-via-6.jpg" alt="Officiers identifiés">
+  <div class="caption">
+    <p class="idlabel">A identifier : de la gauche vers la droite</p>
+    <ul>
+      <li>1. DELMAS Georges</li>
+      <li>2. LAMOR Henry (avec les lunettes)</li>
+      <li>4. BERTOT Alfred (avec le béret)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="gallery-item">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-oflag-via-7.jpg" alt="Officiers identifiés">
+  <div class="caption">
+    <p class="idlabel">A identifier : de la gauche vers la droite</p>
+    <ul>
+      <li>premier rang n°3. LAMOR Henry (avec les lunettes)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel">
+<p>Liste des officiers internés à l'Oflag VI A, ils sont susceptibles d'être présents sur les photos ci-dessus. A noter que certains d'entre eux seront rapatriés dès 1941 et le décès du lieutenant Corduant en juillet 1941. Les autres seront libérés par les troupes alliées le 6 avril 1945.</p>
+</div>
+
+<h2 class="section-title">Les 19 officiers identifiés</h2>
+
+<div class="officer-grid">
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/bertot-alfred-aristide.jpg" alt="BERTOT Alfred Aristide"></div>
+  <div class="card-body">
+    <h3>BERTOT Alfred Aristide - (22/2/1911 - Beaumont - France)</h3>
+    <ul><li>officier de réserve (profession d&#x27;instituteur Beaumont-de-Lomagne)</li><li>Sous Lieutenant vient de la 7è Cie - 5è Cie chef de section</li><li>prisonnier liste du 4/12/1940</li><li>souvenir de famille transmis par son petit fils: Alfred Bertot sera libéré en avril 1945. Très éprouvé par sa captivité il perdra jusqu&#x27;à 30 kg. Pendant sa captivité il étudiera les sciences.</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/cachat-basile.jpg" alt="CACHAT Armand Basile"></div>
+  <div class="card-body">
+    <h3>CACHAT Armand Basile - (15/7/1901 - Meillerie - France)</h3>
+    <ul><li>officier de réserve (profession agent de construction, Saint-Jean-le-Priche, Mâcon. Puis maire de Montgeron de 1947 à 1977, député)</li></ul><p>engagé volontaire au titre de la Légion étrangère en 1925. Admis au corps des sous officiers de carrière en 1937, passé adjudant chef en 1937.</p><p>Fait valoir ses droits à la retraite proportionnelle le 15/7/1939.</p><p>Rappelé à l&#x27;activité le 4/09/1939.</p><p>Promu sous-lieutenant de réserve par décret du 25/1/1950</p><ul><li>2è Cie</li><li>prisonnier liste du 9/12/1940</li><li>fiche matricule en ligne</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/chiron-henri-louis-victor-julien.jpg" alt="CHIRON Henri Louis Victor Julien"></div>
+  <div class="card-body">
+    <h3>CHIRON Henri Louis Victor Julien</h3>
+    <ul><li>officier de réserve (profession de directeur d&#x27;école)</li><li>Capitaine Compagnie hors rang</li><li>(29/3/1897 - Cholet - France)</li><li>prisonnier liste du 7/12/1940 - rapatrié le 16/08/1941.</li></ul><p>Ancien combattant de la 1ère Guerre mondiale, après sa libération de l&#x27;oflag VIA, il entre en résistance dans le réseau Libération. Arrêté par la Gestapo, il est déporté  en février 1944 à Auschwitz, Mauthausen et Buchenwald.</p>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/clement-rene-paul.jpg" alt="CLÉMENT René Paul"></div>
+  <div class="card-body">
+    <h3>CLÉMENT René Paul</h3>
+    <ul><li>Officier d&#x27;active</li><li>Colonel chefs de corps (A)</li><li>(8/8/1891 - Valence - France )</li><li>prisonnier liste du 7/12/1940</li><li>fiche matricule en ligne</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/coquet-jacques.jpg" alt="COQUET Jacques"></div>
+  <div class="card-body">
+    <h3>COQUET Jacques</h3>
+    <ul><li>Officier d&#x27;active</li><li>capitaine 7è Cie cdt la cie</li><li>( 28/10/1911 - Reims - France)</li><li>prisonnier liste du 04/12/1940, Stalag VIA puis Oflag VI</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><div class="no-photo">portrait<br>non identifié</div></div>
+  <div class="card-body">
+    <h3>CORDUANT Jean</h3>
+    <ul><li>Officier de réserve (profession directeur commercial)</li><li>Lieutenant CHR - CA1</li><li>( 21/08/1906 - Le Quesnoy - France)</li><li>prisonnier liste du 4/12/1940</li><li>mort le : 27/07/1941 Mort en captivité Oflag VIA Soest. Son acte de décès est transcrit le 5 février 1942 dans l&#x27;état civil de la ville de Paris.</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><div class="no-photo">portrait<br>non identifié</div></div>
+  <div class="card-body">
+    <h3>COSTA Sauveur</h3>
+    <ul><li>Officier d&#x27;active</li><li>Capitaine Compagnie régimentaire d&#x27;engins</li><li>(11/10/1899 - Corsika - Maroc)</li><li>prisonnier liste 9/12/1940</li><li>PG mle 3934 du block II. Il est libéré en avril 1945 par l&#x27;armée américaine</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/delmas-georges-hippolyte-louis.jpg" alt="DELMAS Georges Hippolyte Louis"></div>
+  <div class="card-body">
+    <h3>DELMAS Georges Hippolyte Louis</h3>
+    <ul><li>officier de réserve (profession instituteur)</li><li>Lieutenant de réserve</li><li>(23/4/1914 - Florensac - France)</li><li>prisonnier liste 9/12/1940</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><div class="no-photo">portrait<br>non identifié</div></div>
+  <div class="card-body">
+    <h3>FAVRE Gaston Joseph Gabriel Ernest Polycarpe</h3>
+    <ul><li>officier de réserve (profession Magistrat Juge de paix)</li><li>Sous Lieutenant CRE – section anti char</li><li>( 11/09/1910 - Laon - France)</li><li>mort le:  28/05/1945 - Saint Mandé (probablement hôpital Bégin?)</li><li>prisonnier liste du 4/12/1940 - Stalag VI A Oflag VI A</li><li>JO 12/7/1939 nommé sous lieutenant de réserve</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/gheysens-frederic-yvan-camille-francois.jpg" alt="GHEYSENS Frédéric Yvan Camille François"></div>
+  <div class="card-body">
+    <h3>GHEYSENS Frédéric Yvan Camille François</h3>
+    <ul><li>Officier d&#x27;active</li><li>Lieutenant CRE puis 3è Cie</li><li>(23/03/1908 – Pont de Roide - France)</li><li>prisonnier liste 9/12/1940</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lamor-henry-auguste-fernand-2.jpg" alt="LAMOR Henry"></div>
+  <div class="card-body">
+    <h3>LAMOR Henry</h3>
+    <ul><li>officier de réserve (profession viticulteur)</li><li>Lieutenant officier &#x27;&#x27;Z&#x27;&#x27; CRE</li><li>( 20/7/1909 - Cravencères - France)</li><li>prisonnier liste 9/12/1940. Pendant sa captivité, il donne des cours d&#x27;économie politique et il écrira des pièces de théatre.</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><div class="no-photo">portrait<br>non identifié</div></div>
+  <div class="card-body">
+    <h3>LAPARRA Edgard Jean</h3>
+    <ul><li>officier de réserve (profession notaire)</li><li>Lieutenant officier de ravitaillement CRE</li><li>(2/3/1910 - Cardaillac - France)</li><li>prisonnier liste 9/12/1940</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/lignez-andre-robert.jpg" alt="LIGNEZ André Robert"></div>
+  <div class="card-body">
+    <h3>LIGNEZ André Robert</h3>
+    <ul><li>officier d&#x27;active</li><li>capitaine Compagnie de commandement</li><li>(10/10/1899 - Pontoise - France)</li><li>prisonnier liste du 9/12/1940 - Oflag VIA, block II 3è classe matricule 3882. Libéré par les troupes alliées le 6/4/1945</li><li>Légion d&#x27;honneur</li><li>Fiche matricule  en ligne</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/malaud-andre-henri-marie.jpg" alt="MALAUD André Henri Marie"></div>
+  <div class="card-body">
+    <h3>MALAUD André Henri Marie</h3>
+    <ul><li>officier de réserve (profession industriel, usine de Portillon, Saint Cyr sur Loire)</li><li>Lieutenant chef des éclaireurs motos CRE</li><li>(26/4/1911 - Neuvic - France)</li><li>prisonnier liste 9/12/1940</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><div class="no-photo">portrait<br>non identifié</div></div>
+  <div class="card-body">
+    <h3>MARTIN Edmond Marcel</h3>
+    <ul><li>officier de réserve (profession ?)</li><li>lieutenant Cie Cdt</li><li>( 5/10/1907 - Saivres - France )</li><li>prisonnier liste du 4/12/1940 - Oflag VIA</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/mondon-pierre-francois-julien.jpg" alt="MONDON Pierre François Julien"></div>
+  <div class="card-body">
+    <h3>MONDON Pierre François Julien</h3>
+    <ul><li>officier de réserve (profession notaire)</li><li>Lieutenant CRE</li><li>(23/7/1909 – Grenoble – France)</li><li>prisonnier liste 9/12/1940. Transféré à l&#x27;oflag VI C après sa tentative d&#x27;évasion de Soest en janvier 1941.</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/raiewsky-nicolas.jpg" alt="RAIEWSKY Nicolas"></div>
+  <div class="card-body">
+    <h3>RAIEWSKY Nicolas</h3>
+    <ul><li>Officier d&#x27;active</li><li>Sous lieutenant CRE</li><li>(4/7/1909 – Nikitzkoie – Russie)</li><li>prisonnier liste 9/12/1940. Déplacé de l&#x27;oflag VIA à l&#x27;oflag IVD</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><div class="no-photo">portrait<br>non identifié</div></div>
+  <div class="card-body">
+    <h3>VIALLON Auguste Gabriel</h3>
+    <ul><li>Officier d&#x27;active</li><li>Sous lieutenant CRE</li><li>(3/10/1904 - Fraisses - France)</li><li>prisonnier liste 9/12/1940</li><li>témoignage de son passage au 11è REI (sept 1945)</li></ul>
+  </div>
+</div>
+<div class="officer-card">
+  <div class="photo-wrap"><div class="no-photo">portrait<br>non identifié</div></div>
+  <div class="card-body">
+    <h3>VIRENQUE Michel</h3>
+    <ul><li>officier de réserve (profession préfet)</li><li>Lieutenant officier de renseignement CRE</li><li>(16/1/1911 - Orléans - France)</li><li>prisonnier liste 9/12/1940</li></ul>
+  </div>
+</div>
+</div>
+
+<div class="panel sources">
+  <h3>Sources principales</h3>
+  <ul>
+    <li>photo collection B. Chaumelle (famille Lamor), collection famille Malaud</li>
+    <li>Les combattants du 18 juin 1940 Tome 4 (extrait aimablement transmis par Frédéric Laîné <a href="https://fredlaine01.wordpress.com/" target="_blank" rel="noopener">https://fredlaine01.wordpress.com/</a>)</li>
+    <li>annuaire de l'Oflag VI A <a href="http://www.memoireetavenir.fr/" target="_blank" rel="noopener">http://www.memoireetavenir.fr/</a></li>
+    <li>SHD Vincennes archives 11è REI côte 34 N 316 (1939-1940)</li>
+  </ul>
+  <div class="actions">
+    <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-OflagVIA" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+  </div>
+</div>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>
