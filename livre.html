@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livre — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.4rem}
+  article a{color:var(--link)}
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 32%;max-width:32%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:60%;margin:0 auto}
+    article .figure-side.reverse{flex-direction:column}
+  }
+  article .cta{display:inline-block;margin-top:.4rem;font-family:'Inter',sans-serif;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;padding:.6rem 1.2rem;border-radius:20px}
+  article .cta:hover{background:var(--link);color:#fff}
+  article .updated{margin-top:1.4rem;font-size:.78rem;color:var(--muted);font-style:italic}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main>
+
+<header>
+  <h1>S'ENGAGER — Le XIe Régiment Étranger d'Infanterie</h1>
+  <div class="sub">Campagne de France — Novembre 1939 - Juin 1940</div>
+  <div class="tags"><span>11è REI</span><span>Livre</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<article>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/livre-2.jpg" alt="Couverture de S'ENGAGER - Le XIe Régiment Étranger d'Infanterie, par Jean-Michel Houssin">
+  </figure>
+  <div class="side-text">
+<p class="lede">Un ouvrage inédit entièrement consacré au 11e régiment étranger d'infanterie, qui rassemble pour la première fois son histoire et ses hommes grâce à un long travail de collecte dans des archives et sources jusque-là dispersées.</p>
+<p class="section" style="margin-top:.6rem">Description</p>
+<p>C'est à la demande du chef de corps du groupement de recrutement de la Légion étrangère (GRLE), que nous découvrons aujourd'hui l'histoire du XIe régiment étranger d'infanterie. Le GRLE est aujourd'hui dépositaire des traditions du XIe REI. Il en détient le drapeau et organise de multiples évènements pour honorer la mémoire de sa trop courte histoire, écrite par ces hommes avec leur sang sur les terres de la Meuse.</p>
+  </div>
+</div>
+
+<p>Cet ouvrage, sans en être l'aboutissement, est au centre de toutes ces commémorations qui prennent bien des couleurs différentes. Depuis 2018, expositions, conférences, crèches de Noël, cérémonies militaires se succèdent pour faire connaître leur histoire.</p>
+
+<p>Régiment éphémère dans le maelstrom et la débâcle des armées françaises de 39-40, amalgame improbable d'hommes issus de diverses provenances, légionnaires d'active de tous grades, réservistes de la Légion ou non, engagés volontaires pour la durée de la guerre formeront une unité solide qui ne rompra pas sous les assauts violents de la Wehrmacht. Combattants soudés et réunis dans un même esprit de corps, ils ne seront jamais vaincus. Seule la capitulation signée par les autorités aura raison de ces légionnaires qui suivront bien d'autres destinées pour poursuivre le combat.</p>
+
+<p class="section">À propos de l'auteur</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/livre-4.jpg" alt="Jean-Michel Houssin">
+  </figure>
+  <div class="side-text">
+<p>Jean-Michel Houssin a servi durant un peu plus de trente-sept années au sein de la Légion étrangère. Ayant commencé sa carrière comme simple légionnaire, il a gravi les différents échelons pour atteindre le grade sommital de la catégorie des sous-officiers en étant nommé major le 1er janvier 2001. Poursuivant ses services dans différentes fonctions, il quitte l'institution et l'active en février 2019 pour s'engager alors dans la réserve opérationnelle où il sert encore à ce jour.</p>
+  </div>
+</div>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/livre-6.png" alt="Couverture de Le recrutement à la Légion étrangère, histoire et évolutions 1831-2024, par Jean-Michel Houssin">
+  </figure>
+  <div class="side-text">
+<p>Après une première expérience éditoriale au 2e REI en collaboration avec M. André-Paul Comor, il écrit un premier ouvrage en 2020 : « <a href="https://legion-arts-editions.com/fr/bd_livres_legionarts.html#anchor-54aeb320" target="_blank" rel="noopener">Histoire et évolutions du recrutement à la Légion étrangère 1831-2011</a> ». Cette étude inédite et minutieuse du recrutement et des différents aspects du légionnaire et de la Légion dans ce périmètre lui vaudra l'attribution du titre d'historien de l'armée de Terre en 2022, alors qu'il travaillait sur un second ouvrage.</p>
+  </div>
+</div>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/livre-5.png" alt="Couverture de Sous-officier de la Légion étrangère de 1831 à nos jours, par Jean-Michel Houssin">
+  </figure>
+  <div class="side-text">
+<p>Lors du premier trimestre 2023 intervient la publication d'une étude, une nouvelle fois inédite, sur la catégorie des sous-officiers et plus particulièrement à la Légion étrangère, sous le titre « <a href="https://legion-arts-editions.com/fr/bd_livres_legionarts.html#anchor-54aeb320" target="_blank" rel="noopener">Sous-officier de la Légion étrangère de 1831 à nos jours</a> ».</p>
+  </div>
+</div>
+
+<p class="section">Rencontrer l'auteur</p>
+
+<p>Pour échanger sur l'histoire du 11è régiment étranger d'infanterie, acheter le livre ou parler de la Légion étrangère, vous pourrez rencontrer Jean-Michel Houssin au :</p>
+
+<ul>
+<li>portes ouvertes du GRLE (Fort de Nogent) les 30 et 31 mai 2026 ;</li>
+<li>Salon du livre du château d'Effiat (63260) le samedi 6 juin 2026 ;</li>
+<li>conférence à Saint-Germain-sur-Meuse le 19 ou 20 juin 2026 ;</li>
+<li>Salon de l'écrivain combattant à Orange (84100) les 12 et 13 septembre 2026 ;</li>
+<li>Salon du livre militaire aux Invalides à Paris les 19 et 20 septembre 2026.</li>
+</ul>
+
+<p class="section">Commander l'ouvrage</p>
+
+<p><a class="cta" href="https://www.librairie-du-collectionneur.fr/recherche?controller=search&orderby=position&orderway=desc&submit_search=&search_query=S%E2%80%99ENGAGER+-+Le+XIe+R%C3%A9giment+%C3%89tranger+d%E2%80%99Infanterie+-+Campagne+de+France+-+Novembre+1939+-+Juin+1940+" target="_blank" rel="noopener">Commander la version reliée ou brochée →</a></p>
+
+<p class="updated">Mise à jour : 11/08/2026</p>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Livre" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>

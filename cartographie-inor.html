@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartographie: Inor positions du 11è REI du 21 au 28 mai 1940 — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--row);border:1px solid var(--border);border-top:4px solid var(--orange);
+    border-radius:6px;padding:1.6rem 1.8rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(19px,3.2vw,25px)}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:#fff;border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify;margin-bottom:1.4rem}
+  .panel p{margin-bottom:1rem}
+  .panel p:last-child{margin-bottom:0}
+  .panel a{color:var(--link)}
+
+  .map-figure{margin:0 0 1.6rem}
+  .map-figure img{width:100%;border-radius:6px;border:1px solid var(--border);display:block;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1)}
+  .map-figure figcaption{font-size:.8rem;color:var(--muted);font-style:italic;margin-top:.5rem;text-align:center}
+  .map-embed{margin-bottom:.8rem}
+  .map-embed iframe{width:100%;height:520px;border:1px solid var(--border);border-radius:6px;
+    display:block;box-shadow:0 3px 10px rgba(0,0,0,0.1)}
+  .map-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.4rem}
+  .map-links a{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:500;
+    color:var(--ink);background:var(--row);border:1px solid var(--border);border-radius:20px;
+    padding:.5rem 1.1rem;text-decoration:none}
+  .map-links a:hover{background:var(--orange);border-color:var(--orange)}
+  .map-note{background:var(--row);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;
+    padding:.9rem 1.1rem;font-size:.85rem;color:var(--muted);margin-bottom:1.6rem}
+
+  h2.day{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;color:var(--ink);
+    background:var(--card);border:1px solid var(--border);border-left:5px solid var(--orange);
+    border-radius:4px;padding:.55rem 1rem;margin:1.6rem 0 1rem}
+
+  .day-body{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.5rem 1.7rem;margin-bottom:.5rem;font-size:.92rem;line-height:1.75;text-align:justify}
+  .day-body p{margin-bottom:.9rem}
+  .day-body p:last-child{margin-bottom:0}
+  .day-body ul{list-style:none;margin:0 0 .9rem}
+  .day-body li{padding:.15rem 0 .15rem 1rem;position:relative}
+  .day-body li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+  .day-body .losses{display:inline-block;margin-top:.3rem;font-weight:500;color:#8a5100;
+    background:var(--row);border-radius:4px;padding:.3rem .7rem;font-size:.85rem}
+
+  .sources{font-size:.82rem}
+  .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  .sources ul{list-style:none;padding:0}
+  .sources li{padding:.15rem 0 .15rem 1rem;position:relative}
+  .sources li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+  .sources a{color:var(--link)}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>CARTOGRAPHIE: INOR POSITIONS DU 11È REI DU 21 AU 28 MAI 1940</h1>
+  <div class="tags"><span>11è REI</span></div>
+  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<div class="panel">
+<p>Le site <a href="https://www.ign.fr/" target="_blank" rel="noopener">IGN.fr</a> propose plusieurs outils gratuits pour faire de la cartographie et aider à localiser les lieux où est passé le 11è régiment étranger d'infanterie.</p>
+<p>Le site "remonter le temps" permet de consulter des données anciennes, les photos aériennes et les cartes ign...</p>
+<p>Le site <a href="https://macarte.ign.fr/" target="_blank" rel="noopener">macarte.ign.fr</a> permet de créer ses cartes personnalisées.</p>
+</div>
+
+<div class="map-embed">
+  <iframe src="https://macarte.ign.fr/carte/326107b6d86b316f3dab387592efc285/Position-du-mois-de-mai-1940" allowfullscreen></iframe>
+</div>
+<div class="map-links">
+  <a href="https://macarte.ign.fr/carte/326107b6d86b316f3dab387592efc285/Position-du-mois-de-mai-1940" target="_blank" rel="noopener">🗺️ Ouvrir la carte en plein écran</a>
+</div>
+
+<div class="map-note">
+J'ai réalisé la carte ci-dessus avec les informations provenant du JMO dont les extraits sont ci-dessous.<br>
+En cliquant en haut à droite, il est possible de changer le fond de la carte, d'afficher les positions pour les dates du 21 mai et de 28 mai, de changer le fond de carte, de zoomer...
+</div>
+
+<div class="panel">
+<p>A la mi-mai, le 11è REI, avec le 21è RTA et le 9è RTM, fait partie de la 6è DINA. Ordre est reçu de relevé la 3è DINA sur les positions de 2è ligne entre Damvillers et Dun sur Meuse.</p>
+<p>Le 11è REI effectue la relève de manière échelonnée dans la nuit du 21 au 22 mai 1940.</p>
+</div>
+
+<h2 class="day">21 mai 1940</h2>
+<div class="day-body">
+<p>Les unités arrivent sur leurs emplacements, par petites fractions échelonnées, entre 4H30 et 6 Heures, et s'installent au bivouac.</p>
+<ul>
+<li>Etat-Major - Cie de Cdt - C.R.E: partie S.0.du Bois des Aisements de part et d'autre du layon séparant le bois de Pâques du Bois des Aisements.</li>
+<li>1er Bataillon: Bois de Pâques</li>
+<li>2è Bataillon: Partie ouest du bois des Pâques et partie Nord du Bois des Aisements</li>
+<li>3è Bataillon: Bois Brûlé</li>
+<li>C.H.R: Bois du Chenois, côte 201, 1Km Nord Est de Mouzay</li>
+</ul>
+<p>Le Régiment prépare la relève de la nuit du 21 au 22.</p>
+<p>La 6è D.I.N.A. relève la 3è D.I.N.A.et la 6è D.I. entre la Meuse et la Chiers. Le 11è R.E.I. est placé au centre du dispositif en liaison, à l'ouest avec le 21è R.T.A, à l'Est avec le 9è R.T.M.</p>
+<p>Limite gauche du Régiment: ligne côte 317 (2km5 Est de Aubreville St Lambert) - côte 317 (1km5 NNE d'Inor sur le chemin Inor - Malandry) côte 276 (1200 mètres N.E.de Martincourt).</p>
+<p>Limite droite: Lisière Est du bois de Neudan - côte 342 (1500 m N.O.de Olizy-sur- Chiers). Ligne droite du 342 à 256 (route de Stenay à Lamouilly) (4 Kms NNE de Stenay)</p>
+<p>Dispositif: 2 Btons en 1er échelon: 1er à droite, 2è à gauche</p>
+<p>Limite entre ces deux Btons: côte 232 - Limite S.E. du bois d'Inor (au 2è Bton).</p>
+<ul>
+<li>1er Bton en 2è échelon sur la ligne des soutiens, jalonnée par le chemin de terre venant d'Inor et passant entre les côtes 321 (bois de Ligant) et 346 (bois de Inor) et les lisières nord du bois de Ligant, jusqu'à la côte 342 (exclue).</li>
+<li>Un groupe de mortiers de 81 de la C.R.E. est mis à la disposition du 1er Bataillon. Objectifs d'atteinte: lisières N. et E. du bois d'Inor croupe environ 500 m S.E. de la ferme de Soiry.</li>
+<li>La Cie de Cdt et la C.R.E. doivent s'installer à proximité du P.C. du S / Secteur ainsi que la Section de ravitaillement avec les chenillettes,</li>
+</ul>
+<p>La C.H.R. reste bivouaquée au bois du Chénois, côte 201</p>
+<p>Les cuisines roulantes sont stationnées dans la partie Sud du Bois des Aisements.</p>
+<p>L'état de consommation des munitions l'état des pertes et les demandes de matériel doivent être fournis quotidiennement en fin de journée. Dans le courant de l'après midi les Commandants d'Unités reconnaissent leurs emplacements. La relève des éléments disparates qui sont en contact, sous les ordres du Cdt du 15è R.T.A., s'effectue à partir de 22 Heures, sous un bombardement violent.</p>
+<p>Quelques pertes sont enregistrées: 3 tués, 10 blessés.</p>
+</div>
+
+<h2 class="day">22 mai 1940</h2>
+<div class="day-body">
+<p>La relève s'achève dans la matinée:</p>
+<p><strong>Ligne principale de résistance:</strong></p>
+<p><em>Quartier Est: 1er Bataillon</em></p>
+<ul>
+<li>P.C.: Bois carré situé entre le bois de Ligant et le bois de Neudan.</li>
+<li>1ère Compagnie: 2 Sections 1/2 tiennent la partie sud de la lisière du bois de Neudan, depuis le bois Carré jusqu'a 200 m. ouest de la Fontaine de Cran. 1 section 1/2 en réserve près du PC du régiment.</li>
+</ul>
+<p>3è compagnie : 3 sections en ligne sur la face Est du bois de Neudan ; 1 section en réserve</p>
+<p>2è compagnie : 4 sections en ligne sur la face Nord du bois de Neudan, depuis la corne N.E jusqu'à 1 km à l'ouest.</p>
+<p>C.A.B.1.répartie entre les 3 Compagnies</p>
+<p>Liaison assurée: à l'Est par la 1ère Cie, avec le 9 R.T.A à l'ouest par la 2 Cie avec le 2è Bataillon</p>
+<p><em>Quartier Ouest: 2 è Bataillon</em></p>
+<ul>
+<li>P.C. 200 m Est de la côte 326 en 154-100.</li>
+</ul>
+<p>Les Unités sont disposées en ligne, du saillant du bois de Neudan 200 m O. de la côte 232, 1 Km5.O.de Malandry, à la côte 317, sur la route Inor-Malandry.</p>
+<ul>
+<li>à l'Est : 5è Cie plus 1 S.M. 1/2</li>
+<li>au centre: 6è Cie plus 1 SM</li>
+<li>à l'Ouest: 7è Cie plus 1 S.M. 1/2</li>
+</ul>
+<p>Le liaison, difficile du fait de l'étendue du front, est assurée à l'Est par la 5è Cie avec le 1er Bton, à l'ouest par un poste mixte avec le 21è.R.T.A.</p>
+<p><em>Ligne de soutien: 3è Bataillon</em></p>
+<ul>
+<li>P.C. à l'Ouest du layon Central, en 154-101</li>
+<li>La ligne est jalonnée par le grand layon menant d'Inor à Olizy: 11è Cie à gauche: 10è Cie à droite, vers le Bois Carré en liaison avec le 9è R.T.M.</li>
+<li>une Section en pointe surveillant la côte 311.</li>
+</ul>
+<p><em>Ligne d'arrêt: 9è Cie</em><br>sur la lisière Nord du Bois du Pèlerin.</p>
+<p>P.C. du Régiment: Source de Nère, avec la Cie de Cdt et la C.R.E.</p>
+<p>P.S.R.: dans la carrière située au carrefour du layon central du Bois du Pèlerin - Bois le Ligant et de la route Martincourt - Olizy.</p>
+<p>Un incident s'est produit au cours de la relève de la 2è Cie. Les guides de cette Cie ont conduit le Capitaine SEILLON à l'intérieur de la ligne ennemie, aux abords de la fontaine de Cran. Dès que la méprise est connue, le Lieutenant ROUX fait former la Compagnie en carré et effectuer des recherches pour retrouver le capitaine. Les recherches sont vaines. Le Capitaine SEILLON était porteur d'une carte renseignée (emplacement des unités et des P.C. jusqu'à l'échelon Régiment inclus).</p>
+<p>Devant le 2è Bataillon ; vifs engagements de contact à 3 H. et à 22 H.</p>
+<p>A 8H. un s/ officier Allemand est fait prisonnier par la 7è Cie. A 12 H30 un coup de main est effectué par un détachement de la 5è Cie., commandé par le S/L BERTOT: deux allemands sont tués une mitrailleuse lourde est rapportée.</p>
+<p>Dans le dispositif du 1er Bton. infiltration de patrouilles allemandes. De violents bombardements causant des pertes: 3 tués, 25 blessés, 4 disparus, dont 1 officier: le Capitaine SEILLON.</p>
+<p>Toutes les unités organisent le terrain (emplacements d'armes automatiques - abris individuels).</p>
+</div>
+
+<h2 class="day">23 mai 1940</h2>
+<div class="day-body">
+<p>Action vive de feux d'infanterie au cours de la nuit. Activité des patrouilles ennemies. Les postes sont arrosés à la mitraillette. L'artillerie amie effectue des tirs de contre batterie au cours des alertes de nuit.</p>
+<p>Les Unités aménagent des abris et des emplacements d'armes automatiques, établissent un réseau de fils de fer barbelés.</p>
+<p>Le bombardement est violent. Le Capitaine EMMANUELLI et le Lt GHEYSENS sont blessés, mais non évacués.</p>
+<p>Pertes: Tués 5: Blessé 26: disparu 1.</p>
+</div>
+
+<h2 class="day">24 mai 1940</h2>
+<div class="day-body">
+<p>Travaux d'installation sur les positions. Les Unités s'enterrent et s'entourent de fil de fer barbelé. Pendant la nuit du 23 au 24, des patrouilles ennemies harcèlent les postes des quartiers Est et ouest. Sur le front des 2 et 3è Cie l'ennemie éprouve des pertes évaluées à 25, dont 2 officiers.</p>
+<p>Violent bombardement de jour et de nuit sur tous les éléments du Régiment, en particulier sur les P.C., qui, semble - t - il, sont repérés et sur les voies de ravitaillement: chemin de la ferme Heurtebise, route de Martincourt - Olizy, layon central du bois Ligant, sur lesquels circulent les corvées du 11è, et de quelques unités du 9è R.T.M.et du 21è R.T.A., ainsi que les chenillettes du 11è R.E.I.</p>
+<p>Pertes: Pués 8 - Blessés 7.</p>
+</div>
+
+<h2 class="day">25 mai 1940</h2>
+<div class="day-body">
+<p>Les travaux de défense sont poursuivis</p>
+<p>Patrouilles ennemies et attaques peu appuyées des P.A. du quartier Est, à la grenade et à la mitrailleuse. Activité réduite de l'artillerie dans la matinée. Le Lt DROUINEAU, de la C.A.1 est grièvement blessé</p>
+<p>A 18 H. bombardement du P.C. du 3è Bataillon</p>
+<p>Vers 22 H., bombardement très violent, par 210, du P.C.du Régiment.</p>
+<p>Le Lieutenant CARDONNE est blessé et évacué.</p>
+<p>Pertes: Tués 7: Blessés 18.</p>
+</div>
+
+<h2 class="day">26 mai 1940</h2>
+<div class="day-body">
+<p>La nuit est agitée. Les postes sont attaqués à plusieurs reprises avec armes automatiques et grenades, notamment au N.E. du bois de Neudan. Dans le quartier Est, les patrouilles ne peuvent être entreprises ou doivent être interrompues par suite des tirs de l'artillerie amie dans le ravin de Malandry.</p>
+<p>Les patrouilles ennemies sont actives dans le quartier Ouest.</p>
+<p>L'Adjudant-Chef METMAN, de la 5è Cie est tué alors qu'il s'était porté en avant de son poste pour observer une patrouille ennemie.</p>
+<p>Dans l'après midi une patrouille est effectuée par le Lt FORGET sur le front de la 7è Cie. Les travaux d'installation et de défense sont continués, ainsi que la récupération du matériel abandonné dans les bois par les unités relevées par le 11è R.E.I. Les éléments au contact sont bombardés par l'ennemi vers 22 H</p>
+<p>Le Lt DUBOIS de la 10è Cie est blessé.</p>
+<p>Pertes: Tués 10 - Blessés 29.</p>
+<p>Le Médecin auxiliaire FITSCH est affecté au 2è Bataillon.</p>
+</div>
+
+<div class="panel sources">
+  <h3>Source</h3>
+  <ul>
+    <li>JMO du 11è régiment étranger de Vincennes, SHD de Vincennes 34N316</li>
+    <li><a href="https://macarte.ign.fr/" target="_blank" rel="noopener">https://macarte.ign.fr/</a></li>
+  </ul>
+</div>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-CartographieInor" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>
