@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADAMEC Juraj « Georges » — 11e REI</title>
-<meta name="description" content="Caporal-chef à la 10e compagnie, mort au bois de Ligant le 27 mai 1940">
+<title>Adametz Juraj — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,49 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.02em}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article a{color:var(--link)}
+
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 34%;max-width:34%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:640px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:65%;margin:0 auto}
+  }
+
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -73,43 +72,70 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Mort pour la France</div>
-  <h1>ADAMEC Juraj « Georges »</h1>
-  <div class="sub">Caporal-chef à la 10e compagnie, mort au bois de Ligant le 27 mai 1940</div>
-  <a class="back" href="https://test.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Adametz Juraj</h1>
+  <p class="subtitle">11e REI, Mort pour la France</p>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span><span>Bois de Ligant</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
 </header>
 
 <article>
-<p class="lede">Juraj Adamec, caporal-chef à la 10e compagnie du 11e régiment étranger d'infanterie, est mort au combat le 27 mai 1940 au bois de Ligant. Ce parcours est connu grâce au témoignage de son frère Imre Adamec.</p>
-<h2>État civil et engagement</h2>
-<ul>
-  <li>Né le 6 février 1911 à Detva (Tchécoslovaquie)</li>
-  <li>Fils de Jan et Magdalena Kucbelova</li>
-  <li>Frère : Imrick « Emeric » (ou Emile ?), domicilié à Cerdon (Loiret), marié à Roberte Lavenet</li>
-  <li>Recrutement : classe 1930, bureau de Chartres, matricule 256 (n°10C)</li>
-  <li>Matricule au corps de la Légion étrangère : 87167 — en 1940, dix ans de service selon sa belle-sœur</li>
-  <li>Engagé sous une fausse identité américaine, se disant né le 5 février 1911 à Johnston (États-Unis)</li>
-</ul>
-<h2>Campagne 1939-40 avec le 11e REI</h2>
-<p>Il provient des effectifs du 3e REI. En 1939, il est caporal à la 10e compagnie et obtient la médaille de satisfaction. Il est ensuite promu caporal-chef, toujours affecté à la 10e compagnie.</p>
-<h2>Mort et sépulture</h2>
-<ul>
-  <li>Mort le 27 mai 1940 (SHD Caen, AC 21 P 2201)</li>
-  <li>Lieu du décès : bois de Ligant</li>
-  <li>Cause : tué par éclats d'obus ou par balle</li>
-  <li>Avis de décès transmis à la mairie de Cerdon en 1940, puis au consulat de France à Prague en 1951</li>
-</ul>
-<p>Inhumé sur place au lieu-dit Nerre, dans une tombe nominative. Sa tombe est découverte le 18 décembre 1940 par le maire de Malandry, Pierre Pognon. Il est réinhumé à Martincourt le 2 juillet 1941, tombe 42. Sa sépulture définitive se trouve à Verdun, Nécropole nationale du Faubourg Pavé, carré 1939-1945, tombe 213.</p>
+
+<p class="lede">Juraj Adametz naît le 6 février 1911 à Detva, en Tchécoslovaquie. Engagé à la Légion étrangère sous une fausse identité américaine, il sert au 11e régiment étranger d'infanterie et meurt au combat le 27 mai 1940, dans le bois de Ligant.</p>
+
+<p class="section">État civil, famille et profession</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-adametz-juraj-2.jpg" alt="Imre Adamec, frère de Juraj Adametz">
+    <figcaption>Son frère, Imre Adamec</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Fils de Jan et Magdalena Adametz (née Kucbelova), Juraj Adametz a un frère, Imrick — dit « Emeric » ou peut-être « Emile » —, domicilié à Cerdon, dans le Loiret, et marié à Roberte Lavenet. C'est par l'intermédiaire de sa belle-sœur que l'on connaît une partie de son parcours militaire.</p>
+  </div>
+</div>
+
+<p class="section">Service militaire</p>
+
+<p>Juraj Adametz appartient à la classe 1930 et relève du bureau de recrutement de Chartres, où il est inscrit sous le matricule 256 (n°10C). Engagé à la Légion étrangère sous le matricule au corps 87167, il se déclare alors né le 5 février 1911 à Johnston, aux États-Unis — une identité américaine forgée pour dissimuler ses origines tchécoslovaques. En 1940, sa belle-sœur estime qu'il totalise une dizaine d'années de service.</p>
+
+<p class="section">Campagne 1939-1940 avec le 11e REI</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-adametz-juraj-4.jpg" alt="Liste des médaillés de satisfaction citant le caporal Adametz Georges">
+    <figcaption>Liste des médaillés de la satisfaction citant « Adametz Georges, Caporal »</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Juraj Adametz rejoint le 11e régiment étranger d'infanterie en provenance des effectifs du 3e REI. En 1939, il sert comme caporal à la 10e compagnie et se voit décerner la médaille de satisfaction. Il est ensuite promu caporal-chef, toujours affecté à la 10e compagnie.</p>
+  </div>
+</div>
+
+<p class="section">Mort avec le 11e REI</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-adametz-juraj-5.jpg" alt="Dossier de décès de Georges Juraj Adametz, SHD Caen, AC 21 P 2201">
+    <figcaption>Dossier de décès, SHD Caen, AC 21 P 2201</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Juraj Adametz est tué le 27 mai 1940 dans le bois de Ligant, par éclats d'obus ou par balle (source : SHD Caen, AC 21 P 2201). L'avis de son décès est transmis à la mairie de Cerdon dès 1940, puis au consulat de France à Prague en 1951 — une transcription tardive qui témoigne de la difficulté à retracer l'état civil réel des légionnaires engagés sous une fausse nationalité.</p>
+  </div>
+</div>
+
+<p>Il est d'abord inhumé sur place, au lieu-dit Nerre, dans une tombe nominative. Sa sépulture est découverte le 18 décembre 1940 par le maire de Malandry, Pierre Pognon. Georges Adamec — l'orthographe de son nom varie selon les documents — est réinhumé à Martincourt le 2 juillet 1941, tombe 42. Sa sépulture définitive se trouve à la nécropole nationale du Faubourg Pavé, à Verdun, carré 1939-1945, tombe 213.</p>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>SHD Caen, AC 21 P 2201</li>
+    <li>Service historique de la Défense, Caen — AC 21 P 2201</li>
+    <li>Registre d'état civil, mairie de Cerdon (Loiret)</li>
+    <li>Consulat de France à Prague</li>
   </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
 </div>
 
 <div class="actions">
-  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Adamec" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-AdametzJuraj" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
 </div>
 
 </article>
