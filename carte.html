@@ -39,6 +39,38 @@
     border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin-bottom:.8rem}
   .map-embed iframe{width:100%;height:520px;border:1px solid var(--border);border-radius:6px;display:block}
 
+  .etat-section{margin:1.6rem 0}
+  .etat-section h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin-bottom:.8rem}
+  .etat-flank{display:flex;gap:22px;align-items:flex-start;margin-bottom:1.2rem}
+  .etat-flank .side-img{flex:0 0 30%;max-width:30%;margin:0}
+  .etat-flank .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  .etat-flank .side-img figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+  .etat-flank .side-text{flex:1;min-width:0}
+  .etat-flank .side-text p{margin-bottom:0}
+
+  .etat-tables{display:flex;flex-wrap:wrap;gap:1.4rem}
+  .etat-tables .etat-col{flex:1;min-width:260px}
+  .etat-tables h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.03em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;min-height:2.6em;line-height:1.3;
+    display:flex;align-items:flex-end}
+  table.etat{width:100%;border-collapse:collapse;font-size:.85rem;table-layout:fixed}
+  table.etat col.col-nat{width:60%}
+  table.etat col.col-num{width:20%}
+  table.etat th{text-align:left;font-family:'Inter',sans-serif;font-weight:500;font-size:.72rem;
+    letter-spacing:.03em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--orange);
+    padding:.4rem .5rem}
+  table.etat td{padding:.4rem .5rem;border-bottom:1px solid var(--border)}
+  table.etat tr.total td{font-weight:600;border-top:2px solid var(--border);border-bottom:none}
+  table.etat td.num{text-align:right}
+  .etat-note{font-size:.78rem;color:var(--muted);font-style:italic;margin-top:.6rem}
+
+  @media (max-width:640px){
+    .etat-flank{flex-direction:column}
+    .etat-flank .side-img{max-width:60%;margin:0 auto}
+  }
+
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
     font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
@@ -48,6 +80,10 @@
 </style>
 </head>
 <body>
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
 <main>
 
 <header>
@@ -57,6 +93,64 @@
 </header>
 
 <article>
+
+<div class="etat-section">
+  <h2>Composition du régiment par nationalité</h2>
+
+  <div class="etat-flank">
+    <figure class="side-img">
+      <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/etat-numerique.png" alt="Page de garde de l'état numérique du régiment par nationalité, daté du 20 avril 1940">
+      <figcaption>État numérique du régiment par nationalité, 20 avril 1940</figcaption>
+    </figure>
+    <div class="side-text">
+      <p>Il existe un état numérique du régiment par nationalité, daté et signé du 20 avril 1940, dont les chiffres — rapportés par l'historien André-Paul Comor — permettent de comparer la composition officielle du 11e REI à cette date avec les nationalités effectivement retrouvées à ce jour dans le cadre de mon propre recensement.</p>
+    </div>
+  </div>
+
+  <div class="etat-tables">
+    <div class="etat-col">
+      <h3>État numérique du 11e REI, 20 avril 1940 (d'après André-Paul Comor)</h3>
+      <table class="etat">
+        <colgroup><col class="col-nat"><col class="col-num"><col class="col-num"></colgroup>
+        <thead><tr><th>Nationalité</th><th class="num">Nombre</th><th class="num">%</th></tr></thead>
+        <tbody>
+          <tr><td>Polonais</td><td class="num">914</td><td class="num">30</td></tr>
+          <tr><td>Espagnols</td><td class="num">664</td><td class="num">22</td></tr>
+          <tr><td>Français</td><td class="num">545</td><td class="num">18</td></tr>
+          <tr><td>Italiens</td><td class="num">290</td><td class="num">9,6</td></tr>
+          <tr><td>Divers</td><td class="num">275</td><td class="num">9,5</td></tr>
+          <tr><td>Belges</td><td class="num">112</td><td class="num">3,7</td></tr>
+          <tr><td>Suisses</td><td class="num">105</td><td class="num">3,6</td></tr>
+          <tr><td>Russes</td><td class="num">62</td><td class="num">2</td></tr>
+          <tr><td>Tchèques</td><td class="num">24</td><td class="num">0,8</td></tr>
+          <tr><td>Hongrois</td><td class="num">24</td><td class="num">0,8</td></tr>
+          <tr class="total"><td>Total général</td><td class="num">3015</td><td class="num">100</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="etat-col">
+      <h3>Mon recensement personnel (trouvés au 24 janvier 2026)</h3>
+      <table class="etat">
+        <colgroup><col class="col-nat"><col class="col-num"></colgroup>
+        <thead><tr><th>Nationalité</th><th class="num">Nombre</th></tr></thead>
+        <tbody>
+          <tr><td>Polonais</td><td class="num">282</td></tr>
+          <tr><td>Espagnols</td><td class="num">183</td></tr>
+          <tr><td>Français*</td><td class="num">623</td></tr>
+          <tr><td>Italiens</td><td class="num">26</td></tr>
+          <tr><td>Divers</td><td class="num">150</td></tr>
+          <tr><td>Belges</td><td class="num">132</td></tr>
+          <tr><td>Suisses</td><td class="num">56</td></tr>
+          <tr><td>Russes</td><td class="num">66</td></tr>
+          <tr><td>Tchèques</td><td class="num">41</td></tr>
+          <tr><td>Hongrois</td><td class="num">26</td></tr>
+          <tr class="total"><td>Total</td><td class="num">1585</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="etat-note">* y compris les légionnaires naturalisés français avant guerre.</p>
+</div>
 
 <div class="map-links">
   <a href="https://umap.openstreetmap.fr/fr/map/11e-rei_1195516" target="_blank" rel="noopener">🗺️ Voir sur Umap Open Street</a>
