@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lanchon (né Lefebvre) Louis Charles — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.02em}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article a{color:var(--link)}
+
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 34%;max-width:34%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 28%;max-width:28%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-flank .side-text{flex:1;min-width:0}
+
+  article .figure-pair{display:flex;gap:16px;margin:1.2rem 0}
+  article .figure-pair figure{flex:1;margin:0}
+  article .figure-pair img{border:1px solid var(--border)}
+
+  @media (max-width:640px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:65%;margin:0 auto}
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:65%;margin:0 auto}
+    article .figure-pair{flex-direction:column}
+  }
+
+  article .quote{font-family:'EB Garamond',serif;font-style:italic;font-size:.95rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:4px;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .quote .src{display:block;margin-top:.5rem;font-family:'Inter',sans-serif;
+    font-style:normal;font-size:.72rem;letter-spacing:.02em;color:var(--muted);text-align:right}
+  article .note{font-size:.85rem;color:var(--muted);font-style:italic}
+
+  article .comment-block{background:var(--row);border-radius:4px;padding:1rem 1.2rem;margin:1rem 0;font-size:.88rem}
+  article .comment-block .who{font-weight:500;color:var(--ink);font-size:.78rem;margin-bottom:.4rem}
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main>
+
+<header>
+  <h1>Lanchon, né Lefebvre, Louis Charles</h1>
+  <p class="subtitle">Capitaine, 5e compagnie, 11e REI — Mort pour la France</p>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span><span>Saint-Germain-sur-Meuse — 18 juin 1940</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
+</header>
+
+<article>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles.jpg" alt="Portrait du capitaine Louis Charles Lanchon en uniforme">
+    <figcaption>Le capitaine Louis Charles Lanchon</figcaption>
+  </figure>
+  <div class="side-text">
+<p class="lede">Louis Charles Lanchon, né Lefebvre le 15 juillet 1897 à Paris, est déjà un vétéran décoré de la Légion étrangère lorsqu'éclate la Seconde Guerre mondiale. Officier de réserve, père de huit enfants, il aurait pu se voir confier un poste à l'arrière : il insiste pour commander une compagnie au front. Il trouve la mort le 18 juin 1940 à Saint-Germain-sur-Meuse, en refusant d'abandonner ses hommes.</p>
+  </div>
+</div>
+
+<p class="section">La Grande Guerre et la Légion étrangère</p>
+
+<p>Incorporé en janvier 1916, Louis Lanchon est envoyé au front dès le mois de juillet de la même année. Promu caporal en novembre 1916, puis sergent en mai 1917, il se distingue rapidement au combat et obtient quatre citations avant d'être désigné élève aspirant en novembre 1917.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-4.jpg" alt="Extrait de fiche matricule listant les citations de Louis Lanchon en 1917">
+    <figcaption>Ses citations de 1917, fiche matricule</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Ces citations successives saluent tour à tour un « très bon caporal » à l'attitude belle sous le feu, un jeune sous-officier ayant donné de nouvelles preuves de sa vaillance au cours d'un coup de main, puis un officier d'une bravoure exemplaire s'étant porté à l'assaut d'un poste allemand pour y relever un camarade blessé.</p>
+  </div>
+</div>
+
+<p>À partir du 15 janvier 1918, Louis Lanchon rejoint le 1er régiment de marche de la Légion étrangère (RMLE). Promu aspirant le 25 avril 1918, il est affecté aux armées dès le 18 juillet. En août, sous le commandement du colonel Rollet, le RMLE retrouve sa pleine capacité avec 48 officiers et 2 540 légionnaires, renforcés par des recrues venues du dépôt de Lyon et des cadres en provenance du Maroc. Le 2 septembre, le régiment participe à l'assaut de la ligne Hindenburg près de Terny-Sorny — un affrontement d'une violence extrême qui coûte au RMLE la moitié de ses effectifs : 275 morts, dont 10 officiers, et 1 118 blessés, dont 15 officiers.</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-5.jpg" alt="Cinquième citation de Louis Lanchon, à l'ordre du régiment de marche de la Légion étrangère, pour l'attaque de Terny-Sorny">
+    <figcaption>Sa cinquième citation, pour l'attaque de Terny-Sorny</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Louis Lanchon est blessé et évacué le 3 septembre 1918, obtenant à cette occasion une cinquième citation : « Aspirant Lanchon. A brillamment commandé sa section de mitrailleuses pendant l'attaque de Terny-Sorny, le 2 septembre 1918. A été blessé le 3 septembre. » Il est pris en charge à l'hôpital auxiliaire n°227, à Paris, du 4 septembre au 1er octobre 1918, avant de rejoindre le dépôt puis de repartir aux armées le 20 décembre 1918.</p>
+  </div>
+</div>
+
+<p>Promu sous-lieutenant de réserve à titre temporaire par décision ministérielle du 26 juin 1919, il est démobilisé et placé en congé illimité le 30 septembre 1919.</p>
+
+<p class="section">L'entre-deux-guerres : négociant et officier de réserve</p>
+
+<p>Retourné à la vie civile, Louis Lanchon devient négociant. Le 20 janvier 1923, à 25 ans, il épouse Madeleine. Toujours actif comme officier de réserve, il est promu lieutenant à titre définitif par décret du 20 janvier 1925.</p>
+
+<div class="figure-pair">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-6.png" alt="Journal officiel, décembre 1928, affectation de Lefèvre dit Lanchon au dépôt du 1er régiment étranger à La Valbonne">
+    <figcaption>JO, décembre 1928 — affectation à La Valbonne</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-7.png" alt="Journal officiel citant Lefebvre dit Lanchon parmi les officiers des troupes coloniales, blessé et cité pendant la guerre">
+    <figcaption>JO, troupes coloniales — « brillante conduite pendant la guerre »</figcaption>
+  </figure>
+</div>
+
+<p>En 1928, il est rattaché au dépôt du 1er régiment étranger (RE) à La Valbonne et participe régulièrement à des périodes d'instruction à l'École de perfectionnement des officiers de réserve de Reuilly — une activité qu'il maintient jusqu'en 1939. Par décret du 10 juillet 1936, il est fait chevalier de la Légion d'honneur ; la même année, il est promu capitaine de réserve par décret (JO du 28 mai 1936), affecté au CMI 205.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-8.jpg" alt="Extrait du dossier de la Légion d'honneur détaillant les services extraordinaires du candidat : cinq citations dont une à l'ordre de l'armée, une blessure">
+    <figcaption>Dossier de la Légion d'honneur : « cinq citations dont une à l'ordre de l'armée ; une blessure »</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Son dossier de légionnaire d'honneur contient également une lettre manuscrite de 1931, qui laisse entrevoir un peu de sa personnalité — et notamment un certain sens de l'humour. S'inquiétant auprès du secrétaire général de n'avoir rien reçu au sujet de la pension attachée à sa Légion d'honneur, il glisse malicieusement :</p>
+  </div>
+</div>
+
+<div class="quote">« N'ayant encore rien reçu au sujet de ma pension concernant ma Légion d'honneur, je me permets de me rappeler à votre bon souvenir pour le cas où, par suite d'une circonstance fortuite, j'aurais été oublié. J'ai cinq enfants, et je pense que cette pension trouvera son emploi... »
+  <span class="src">Louis Charles Lefebvre dit Lanchon, chevalier de la Légion d'honneur, 1931</span>
+</div>
+
+<p class="section">La mobilisation de 1939</p>
+
+<p>À la mobilisation, Louis Lanchon — ancien combattant de la Légion étrangère pendant la Première Guerre mondiale et officier de réserve aguerri — demande à intégrer une unité combattante, malgré ses 42 ans et sa situation familiale : il est père de huit enfants. Conscients de son âge et de ses responsabilités, ses supérieurs envisagent de l'affecter à la tête d'une section administrative. Lanchon insiste pour être traité comme les autres officiers de son grade et réclame un poste en première ligne.</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-12.jpg" alt="Fiche médicale d'incorporation, conclusion 'apte au service armé', signée du médecin-capitaine Blanc Perducet">
+    <figcaption>Fiche médicale d'incorporation, signée du médecin-capitaine Blanc Perducet</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Affecté au centre mobilisateur de La Valbonne, il rejoint le 11e régiment étranger d'infanterie. Le 20 novembre 1939, le médecin-capitaine Blanc Perducet établit sa fiche médicale d'incorporation et le déclare apte au service armé. Louis Lanchon est alors désigné pour commander la 5e compagnie du régiment.</p>
+  </div>
+</div>
+
+<p class="section">Le printemps 1940 : lettres du front</p>
+
+<p>Du 20 mai au 10 juin 1940, Louis Lanchon entretient une correspondance presque quotidienne avec son épouse, dans laquelle il relate la vie de la 5e compagnie et affirme « tâcher de faire [son] devoir ». Il y décrit les combats acharnés menés par le 11e régiment étranger d'infanterie, notamment à Inor, où sa compagnie est durement éprouvée.</p>
+
+<div class="quote">« Journée chaude, bagarre depuis 3 h du matin = Closmadeuc tué, Picquard et Brochet blessés. Positions perdues, puis en grande partie reprises. Petit éclat d'obus au bras droit qui me gêne à peine. »
+  <span class="src">Lettre à son épouse, 27 mai 1940, 20h10</span>
+</div>
+
+<p>À partir du 10 juin 1940, le régiment reçoit l'ordre de se replier sur la Woëvre, dans la région de Verdun. Le 2e bataillon, auquel appartient la 5e compagnie, a pour mission de couvrir le retrait des troupes françaises en servant d'arrière-garde. Ce même jour, Louis Lanchon écrit sa dernière lettre à sa femme :</p>
+
+<div class="quote">« Il fait encore jour ! Quel triste jour ! Magne légèrement blessé. Nous partons... Hélas ! vers l'arrière ! dans quelques instants, pour nous regrouper plus loin, pour le combat suprême.<br><br>
+Metman était nommé sous-lieutenant à la date du 1er juin. Il a été tué le 26 mai.<br><br>
+Priez pour que je sois digne de toi, de vous tous et toutes, de notre France éternelle, de tous ceux qui nous ont précédés sur cette noble terre, et du titre de chrétien. Que Dieu soutienne ma bonne volonté.<br><br>
+Je t'embrasse, ma chérie, de tout mon cœur. Je vous embrasse tous : les Parents, les sœurs, la bonne tante, les cousins, cousines, les neveux, nièces et mes gosses que je bénis.<br><br>
+Ton Louis. »
+  <span class="src">Dernière lettre à son épouse, lundi 10 juin 1940, 21h10</span>
+</div>
+
+<p class="section">Le 18 juin 1940 : le dernier combat</p>
+
+<p>Lors des combats à Saint-Germain-sur-Meuse, le 2e bataillon se sacrifie pour permettre au reste du régiment de se replier. Ce jour-là, le 11e régiment étranger d'infanterie subit des pertes lourdes, avec près des trois quarts de ses effectifs décimés. Frappé par un obus, Louis Lanchon est tué au combat. De sa compagnie, qui comptait 200 hommes au 24 mai, seuls 24 sont encore en état de combattre à la fin de la journée du 18 juin ; la 5e compagnie avait déjà perdu près d'un tiers de ses effectifs lors des combats du bois d'Inor.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-9.jpg" alt="Fiche matricule mentionnant : tué à l'ennemi à Saint-Germain-sur-Meuse le 18 juin 1940, mort pour la France">
+    <figcaption>Fiche matricule : « Tué à l'ennemi à St Germain s/Meuse le 18.6.1940 — Mort pour la France »</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Sa fiche matricule retrace ses derniers mois de service : rappelé à l'activité le 2 septembre 1939, arrivé au corps le 3, dirigé sur le camp de la Valbonne le 13, affecté au 11e régiment étranger le 1er novembre, parti aux armées le 15 décembre 1939, avant la mention finale, sobre et définitive, de sa mort à Saint-Germain-sur-Meuse.</p>
+  </div>
+</div>
+
+<p>Une sixième citation, à l'ordre de l'armée, résume la nature de son sacrifice :</p>
+
+<div class="quote">« Lanchon Louis, capitaine au 11ème Régiment Étranger d'Infanterie, est resté volontairement à la tête d'une compagnie, alors que son âge et sa situation de famille l'en auraient régulièrement dispensé. Le 18 juin 1940, à St Germain s/Meuse, a maintenu sa compagnie en place malgré des attaques ennemies appuyées d'un feu violent, a trouvé la mort dans l'accomplissement de sa mission. »
+  <span class="src">Sixième citation, à l'ordre de l'armée</span>
+</div>
+
+<p>Le témoignage du lieutenant Chevillotte, rédigé quelques mois plus tard depuis Ouargla, en Algérie, restitue les circonstances exactes de sa mort et l'estime que lui portaient ses hommes :</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lanchon-charles-14.jpg" alt="Lettre manuscrite du lieutenant Chevillotte à la famille Lanchon, 9 novembre 1940, avec un croquis du lieu de la mort du capitaine près de Saint-Germain-sur-Meuse">
+    <figcaption>Lettre du lieutenant Chevillotte, Ouargla, 9 novembre 1940, avec son croquis des lieux</figcaption>
+  </figure>
+  <div class="side-text">
+<div class="quote" style="margin-top:0">« Le Capitaine Lanchon, mon Capitaine, a été tué, le 18 juin, à quelques mètres de moi, d'un obus en plein corps. [...] Le Capitaine a eu une mort digne de toute sa vie, en pleine action, à genoux, pour que son regard et sa voix atteignent ses hommes, en train de donner ses ordres. [...] Au feu, il s'est révélé à nous magnifique, refusant de se faire évacuer pour une blessure au bras. [...] Quel magnifique héritage de courage, d'énergie, de loyauté il laisse à tous ses enfants. »
+  <span class="src">Lieutenant Chevillotte, 9 novembre 1940</span>
+</div>
+  </div>
+</div>
+
+<p>Jusqu'au dernier moment, Louis Lanchon demeure fidèle à ses valeurs : le dévouement à sa famille, la responsabilité envers les hommes placés sous son commandement, et la conviction profonde de remplir son devoir — une conviction qu'il exprimait déjà, sans savoir qu'elle le mènerait jusqu'au sacrifice, dans une lettre du 15 novembre 1939 :</p>
+
+<div class="quote">« Et si je reviens [...] tu seras fière de ton petit homme et lui aura conscience du devoir accompli. [...] En ce qui me concerne, me sentant retenu vers l'arrière, si je décide de partir à mon tour vers l'avant, c'est parce que je sens nettement mon devoir de ce côté, sans aucun doute possible. Quand on fait son devoir, on ne doit rien redouter. »
+  <span class="src">Lettre à son épouse, 15 novembre 1939</span>
+</div>
+
+<p class="note">Voir aussi, sur la 5e compagnie : Metman Henry et l'effectif de la 5e compagnie.</p>
+
+<div class="comment-block">
+  <p class="who">Vincent Jabouille, 10 novembre 2021</p>
+  <p style="margin-bottom:0">« Merci pour l'envoi de ce document. Il m'a appris comment rédiger une fiche historique. Texte personnel parsemé de documents officiels. Le capitaine Lanchon a été tué le même jour que mon père, le lieutenant André Jabouille, à quelques kilomètres l'un de l'autre. »</p>
+</div>
+
+<div class="sources">
+  <h3>Sources principales</h3>
+  <ul>
+    <li>Archives familiales — merci aux membres de sa famille, en particulier à sa fille Geneviève et à L. Aubrais, son arrière-petit-fils</li>
+    <li>Journal officiel de la République française, lois et décrets</li>
+    <li>Fiche matricule, Archives de Paris</li>
+    <li>Dossier chevalier de la Légion d'honneur, côte 19800035/23/2968</li>
+    <li>René Luce Coupin, <em>Vainqueurs quand même, le 11e de la Légion étrangère au feu (1939-1940)</em></li>
+    <li>JMO du 11e REI et témoignage du lieutenant Chevillotte : SHD Vincennes, côte 34N316</li>
+    <li>SHD Vincennes, GR 8YE 38982</li>
+    <li>Facebook</li>
+  </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
+</div>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-LanchonLouisCharles" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>

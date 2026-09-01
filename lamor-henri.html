@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lamor Henri — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.02em}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article .lede-block{display:flex;gap:26px;align-items:center;margin-bottom:1.4rem}
+  article .lede-block .portrait{flex:0 0 200px;width:200px;height:200px;border-radius:50%;overflow:hidden;
+    border:3px solid var(--orange);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  article .lede-block .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  article .lede-block .lede{margin-bottom:0;flex:1}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article a{color:var(--link)}
+
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 34%;max-width:34%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+
+  @media (max-width:640px){
+    article .lede-block{flex-direction:column;text-align:center}
+    article .lede-block .portrait{margin:0 auto}
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:65%;margin:0 auto}
+  }
+
+  article .note{font-size:.85rem;color:var(--muted);font-style:italic}
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main>
+
+<header>
+  <h1>Lamor Henri</h1>
+  <p class="subtitle">Lieutenant, officier « Z », 11e REI</p>
+  <div class="tags"><span>11è REI</span><span>Prisonnier de guerre</span><span>Oflag VI A</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
+</header>
+
+<article>
+
+<div class="lede-block">
+  <div class="portrait">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lamor-henry-2.jpg" alt="Henri Lamor en uniforme, dans un champ">
+  </div>
+  <p class="lede">Henri Auguste Fernand Lamor naît le 20 juillet 1909 à Cravencères, dans le Gers. Docteur en droit, licencié ès lettres et diplômé de l'École des sciences politiques, il sert au 11e régiment étranger d'infanterie comme officier « Z », chargé de la défense contre les gaz de combat, avant de passer cinq années de captivité en Allemagne. De retour au pays, il deviendra maire de sa commune et l'inventeur d'un apéritif resté célèbre : le Floc de Gascogne.</p>
+</div>
+
+<p class="section">Formation et débuts d'officier de réserve</p>
+
+<p>Par décret du 4 avril 1932, publié au Journal officiel du 13 avril, Henri Lamor est nommé sous-lieutenant de réserve, avec rang du 20 mars 1932, parmi les élèves officiers de réserve ayant satisfait aux examens de fin de cours. Il reçoit alors sa nouvelle affectation de sous-lieutenant de réserve au 14e régiment d'infanterie.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lamor-henry-4.jpg" alt="Portrait imprimé d'Henri Lamor en uniforme, publié dans une revue">
+    <figcaption>Henri Lamor, portrait publié dans une revue du Gers</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Henri Lamor mène de front une solide formation universitaire — droit, lettres et sciences politiques — et sa carrière d'officier de réserve. Le 30 avril 1938, il épouse Suzanne Gripon.</p>
+  </div>
+</div>
+
+<p class="section">Mobilisation et captivité</p>
+
+<p>Mobilisé en septembre 1939, Henri Lamor est affecté au 11e régiment étranger d'infanterie, où il occupe le poste d'officier « Z » — chargé au sein des unités de la défense contre les gaz de combat. Fait prisonnier le 21 juin 1940, il figure sur une liste de prisonniers du 4 décembre 1940 et passe cinq années de captivité à l'Oflag VI A de Soest, en Allemagne.</p>
+
+<p>Durant sa détention, Henri Lamor met à profit son goût des lettres : il écrit une pièce de théâtre, <em>Corysande</em>, qui sera jouée par la troupe de l'Oflag — une façon, comme tant d'officiers prisonniers, de tenir le temps long de la captivité par la création.</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lamor-henry-5.jpg" alt="Groupe d'officiers français à l'Oflag VI A en Allemagne, Henri Lamor deuxième en partant de la gauche">
+    <figcaption>À l'Oflag VI A, en Allemagne — Henri Lamor est deuxième en partant de la gauche, avec les lunettes</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Cette photographie, prise à l'Oflag VI A, montre Henri Lamor entouré de ses compagnons de captivité — un instantané de la vie collective que ces officiers français ont partagée pendant cinq longues années, loin du Gers et de l'Armagnac.</p>
+  </div>
+</div>
+
+<p class="section">Retour au pays et le Floc de Gascogne</p>
+
+<p>De retour en France, Henri Lamor devient maire de Cravencères, président de l'Union des producteurs d'Armagnac et membre de la Société archéologique, historique, littéraire et scientifique du Gers. C'est en 1954 qu'Henri Lamor, vigneron à Cravencères, baptise son apéritif le Floc de Gascogne — une traduction occitane signifiant « bouquet de fleurs ». D'abord réservée à la consommation familiale, sa vente était alors interdite.</p>
+
+<p>Henri Lamor meurt le 10 juillet 1998 à Cravencères.</p>
+
+<div class="sources">
+  <h3>Sources principales</h3>
+  <ul>
+    <li>Souvenir de famille — merci à Bertrand, son neveu, pour le partage</li>
+    <li>Journal officiel</li>
+    <li>Revue de la Société archéologique, historique, littéraire et scientifique du Gers</li>
+    <li>Facebook</li>
+  </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
+</div>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-LamorHenri" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>

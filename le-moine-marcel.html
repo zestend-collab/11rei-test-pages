@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LE MOINE Marcel Raymond Marie — 11e REI</title>
-<meta name="description" content="Officier « vieille France » de la Légion, treize ans de service, évadé de captivité en 1940">
+<title>Le Moine Marcel — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,72 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.02em}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article a{color:var(--link)}
+
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+
+  article .figure-flank{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 30%;max-width:30%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  article .figure-flank.reverse{flex-direction:row-reverse}
+
+  @media (max-width:640px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:60%;margin:0 auto}
+  }
+
+  article .quote{font-family:'EB Garamond',serif;font-style:italic;font-size:.95rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:4px;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .quote .src{display:block;margin-top:.5rem;font-family:'Inter',sans-serif;
+    font-style:normal;font-size:.72rem;letter-spacing:.02em;color:var(--muted);text-align:right}
+  article .note{font-size:.85rem;color:var(--muted);font-style:italic}
+
+  article .eulogy{font-family:'EB Garamond',serif;font-style:italic;font-size:.98rem;line-height:1.8;
+    background:var(--row);border-left:3px solid var(--orange);border-radius:4px;padding:1.2rem 1.4rem;margin:1rem 0}
+  article .eulogy p{margin-bottom:.9rem}
+  article .eulogy p:last-child{margin-bottom:0}
+  article .eulogy .signature{text-align:right;font-style:normal;font-family:'Inter',sans-serif;
+    font-size:.78rem;color:var(--muted);margin-top:.6rem}
+
+  article .comments{margin-top:1.6rem;padding-top:1rem;border-top:1px solid var(--border)}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.7rem}
+  article .comment-block{background:var(--row);border-radius:4px;padding:1rem 1.2rem;margin:0 0 .6rem;font-size:.88rem}
+  article .comment-block .who{font-weight:500;color:var(--ink);font-size:.78rem;margin-bottom:.4rem}
+  article .comment-block:last-child{margin-bottom:0}
+
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -73,35 +95,97 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · Officier · Évadé</div>
-  <h1>LE MOINE Marcel Raymond Marie</h1>
-  <div class="sub">Officier « vieille France » de la Légion, treize ans de service, évadé de captivité en 1940</div>
-  <a class="back" href="https://test.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Le Moine Marcel</h1>
+  <p class="subtitle">Capitaine, 1ère compagnie puis adjudant-major du 2e bataillon, 11e REI</p>
+  <div class="tags"><span>11è REI</span><span>Prisonnier de guerre</span><span>Saint-Cyr</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
 </header>
 
 <article>
-<p class="lede">Marcel Le Moine, officier de carrière à la Légion étrangère depuis treize ans, prend le commandement du 2e bataillon du 11e REI après la blessure du capitaine Brochet. Fait prisonnier, il s'évade avec un panache resté légendaire dans sa famille.</p>
-<p>Né le 1er octobre 1903 à Lorient, capitaine (A), officier d'active au 4e REI en 1937 puis lieutenant hors cadre au service géographique de la CHR du 5e REI en 1932, sorti de Saint-Cyr en 1925 (110e promotion, du chevalier Bayard), il rejoint rapidement la Légion étrangère, où il sert au Maroc puis en Indochine, effectuant deux longues missions topographiques périlleuses chez les Moï insoumis, qui ne l'acceptaient parmi eux qu'à la condition qu'il vienne seul, à leur merci.</p>
-<p>Capitaine à la 1re compagnie du 11e REI, il est muté le 28 mai 1940 adjudant-major du 2e bataillon pour remplacer le capitaine Brochet de Vaugrineuse, blessé la veille au bois d'Inor. Le capitaine Lanchon le décrit dans une lettre du 4 juin 1940 : « Le nouveau capitaine-adjoint au chef de bataillon [...] est très chic. Beau type d'officier d'active. Il s'appelle Lemoine, et vient du 1er bataillon. » Fait prisonnier avec le régiment le 27 septembre 1940, il s'évade peu après — rapatrié sanitaire selon les listes officielles — et rejoint la zone libre.</p>
-<h2>Éloge funèbre, prononcé par son beau-frère et camarade de promotion de Saint-Cyr</h2>
-<blockquote class="testimony">Marcel Le Moine, rappelé à Dieu le 10 août 1970. Pour qui d'entre nous ce nom ne rappellera-t-il pas les jours heureux de notre triomphe lorsque parurent les caricatures de l'album de promo ? Qu'elles nous ont fait rire ! Et alors, beaucoup découvrirent en ce camarade à l'allure un peu dilettante, au-delà de son talent de dessinateur, la force d'un humour qui ne laissait rien échapper mais qui jamais ne griffait, car il haïssait la méchanceté — mieux, il ne la comprenait pas.</blockquote>
-<blockquote class="testimony">Sorti à Cambrai, au bataillon de commandement Alphonse Juin, il rejoignit rapidement la Légion étrangère où il devait servir treize ans. Il y adopta d'emblée un mode de commandement très « vieille France », alliant un comportement aristocratique à un souci constant de la vie quotidienne de ses hommes qui lui accordèrent, en retour, une estime et une fidélité qui ne se démentit jamais. D'abord au Maroc puis en Indochine où il effectua deux longues missions topographiques extrêmement périlleuses chez les Moï insoumis qui ne l'acceptèrent parmi eux qu'à la condition d'y venir rigoureusement seul, à leur merci.</blockquote>
-<blockquote class="testimony">Puis l'Algérie, la campagne de 40 et les très durs combats du IIe Étranger. Fait prisonnier, il s'évada peu après et débarqua en zone libre dans un style bien à lui — non pas, ainsi que tant d'autres, en haillons et sous fausse barbe — mais tiré à quatre épingles, comme à son habitude, et suivi de sa cantine, ayant embarbouillé les Allemands d'horrifique manière dans une inextricable histoire.</blockquote>
-<blockquote class="testimony">Affecté aux Affaires indigènes du Maroc, sa profonde connaissance de l'anglais le fit affecter à différents états-majors internationaux ou interalliés où ses qualités naturelles de relations publiques, sa loyauté et son extrême confiance transformèrent en amis des partenaires pointilleux et méfiants. Une dure épreuve vint le frapper : l'aîné de ses six enfants, Alain, ingénieur agronome et sous-lieutenant de Spahis, tombait au champ d'honneur en Algérie.</blockquote>
-<blockquote class="testimony">Ce Breton nomade avait fini par se fixer près d'Orléans dans une gentilhommière ancienne ouverte sur un parc magnifique remis en état de ses mains, car, sur le tard, l'amour de la terre avait saisi l'artiste qui n'avait cessé de vivre en lui. Ses enfants bien lancés dans la vie, il espérait n'avoir plus, aux côtés de sa femme, qu'à soigner ses fleurs [...] quand se manifestèrent les prémisses d'un mal implacable. Et ce furent deux ans d'une lutte acharnée [...] puisant une rare force d'âme dans sa foi, dans la conscience d'une vie sans peur et sans reproche, dans le soutien constant d'une épouse au courage égal au sien.</blockquote>
-<blockquote class="testimony">Adieu, vieux frère — après tant de douleurs, tu as bien mérité le repos, toi qui ne laisses que regrets et que larmes chez tous ceux, familiers et compagnons, qui ont eu l'heureuse fortune de te connaître et de vivre auprès de toi. — Escolier</blockquote>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-le-moine-marcel-2.jpg" alt="Portrait de Marcel Le Moine en uniforme, cigarette aux lèvres">
+    <figcaption>Marcel Le Moine</figcaption>
+  </figure>
+  <div class="side-text">
+<p class="lede">Marcel Raymond Marie Le Moine naît le 1er octobre 1903 à Lorient. Officier de carrière formé à Saint-Cyr, il sert treize ans à la Légion étrangère, du Maroc à l'Indochine, avant de rejoindre le 11e régiment étranger d'infanterie en 1940. Fait prisonnier puis rapatrié sanitaire, il connaîtra encore l'Algérie et la perte d'un fils avant de s'éteindre en 1970.</p>
+  </div>
+</div>
+
+<p class="section">Formation et carrière à la Légion étrangère</p>
+
+<p>Marcel Le Moine intègre l'École spéciale militaire de Saint-Cyr au sein de la 110e promotion, dite du Chevalier Bayard (1923-1925). Sorti à Cambrai, au bataillon de commandement Alphonse Juin, il rejoint rapidement la Légion étrangère, où il devait servir treize années durant. Il y adopte d'emblée un mode de commandement très « vieille France », alliant un comportement aristocratique à un souci constant de la vie quotidienne de ses hommes — qui lui accordent, en retour, une estime et une fidélité qui ne se démentiront jamais.</p>
+
+<p>Il sert d'abord au Maroc, puis en Indochine, où il effectue deux longues missions topographiques extrêmement périlleuses chez les Moï insoumis, qui ne l'acceptent parmi eux qu'à la condition d'y venir rigoureusement seul, à leur merci. En 1932, il figure au 5e REI comme lieutenant hors cadre, au service géographique (annuaire administratif de l'Indochine). En 1937, l'annuaire des fonctionnaires et de l'armée le mentionne comme officier d'active au 4e REI.</p>
+
+<p class="section">Le 11e REI et la campagne de 1940</p>
+
+<p>Vient ensuite l'Algérie, puis la campagne de 1940 et les très durs combats du 11e régiment étranger. Affecté d'abord à la 1ère compagnie, Marcel Le Moine est muté le 28 mai 1940 comme capitaine adjudant-major au 2e bataillon, en remplacement du capitaine Brochet de Vaugrineuse, blessé la veille au bois d'Inor. Le capitaine Lanchon, dans une lettre du 4 juin 1940, témoigne de la première impression qu'il fait au régiment :</p>
+
+<div class="quote">« Le nouveau capitaine-adjoint au chef de bataillon (Brochet, étant blessé a dû être remplacé) est très chic. Beau type d'officier d'active. Il s'appelle Lemoine, et vient du 1er bataillon. »
+  <span class="src">Capitaine Lanchon, lettre du 4 juin 1940</span>
+</div>
+
+<p>Fait prisonnier — il figure sur une liste du 27 septembre 1940 —, Marcel Le Moine s'évade peu après et parvient à rejoindre la zone libre. Il le fait dans un style bien à lui : non pas, comme tant d'autres, en haillons et sous fausse barbe, mais tiré à quatre épingles, comme à son habitude, et suivi de sa cantine, ayant embrouillé les Allemands de manière proprement rocambolesque dans une inextricable histoire. Il sera par la suite rapatrié sanitaire.</p>
+
+<p class="section">Après-guerre : le Maroc, l'Algérie et l'épreuve du deuil</p>
+
+<p>Affecté aux Affaires indigènes du Maroc, sa profonde connaissance de l'anglais le fait ensuite affecter à différents états-majors internationaux ou interalliés, où ses qualités naturelles de relations publiques, sa loyauté et sa confiance transforment en amis des partenaires pourtant pointilleux et méfiants.</p>
+
+<p>Une dure épreuve vient le frapper : l'aîné de ses six enfants, Alain, ingénieur agronome et sous-lieutenant de spahis, tombe au champ d'honneur en Algérie.</p>
+
+<p class="section">La retraite et la fin de vie</p>
+
+<p>Ce Breton nomade finit par se fixer près d'Orléans, dans une gentilhommière ancienne ouverte sur un parc magnifique qu'il remet en état de ses propres mains — car, sur le tard, l'amour de la terre a fini par saisir l'artiste qui n'avait cessé de vivre en lui. Ses enfants bien lancés dans la vie, il espère alors ne plus avoir, aux côtés de son épouse, qu'à soigner ses fleurs et à classer les reliques d'une famille qui avait donné tant de bons serviteurs aux armées et aux flottes de la France sous tous les cieux du monde — quand se manifestent les prémisses d'un mal implacable.</p>
+
+<p>S'ensuivent deux années d'une lutte acharnée, menée pour les siens malgré la lassitude, puis l'épuisement, puis la douleur lancinante — une façade d'activité et d'espérance, puisant une rare force d'âme dans sa foi, dans la conscience d'une vie sans peur et sans reproche, et dans le soutien constant d'une épouse au courage égal au sien. Marcel Le Moine est rappelé à Dieu le 10 août 1970.</p>
+
+<p class="section">Éloge funèbre</p>
+
+<p>L'éloge funèbre suivant fut prononcé le jour de ses obsèques par son beau-frère et camarade de promotion de Saint-Cyr, Escolier :</p>
+
+<div class="eulogy">
+<p>Pour qui d'entre nous ce nom ne rappellera-t-il pas les jours heureux de notre triomphe lorsque parurent les caricatures de l'album de promo ? Qu'elles nous ont fait rire ! Et alors, beaucoup découvrirent en ce camarade à l'allure un peu dilettante, au-delà de son talent de dessinateur, la force d'un humour qui ne laissait rien échapper mais qui jamais ne griffait, car il haïssait la méchanceté — mieux, il ne la comprenait pas.</p>
+<p>Sorti à Cambrai, au bataillon de commandement Alphonse Juin, il rejoignit rapidement la Légion étrangère où il devait servir treize ans. Il y adopta d'emblée un mode de commandement très « vieille France », alliant un comportement aristocratique à un souci constant de la vie quotidienne de ses hommes qui lui accordèrent, en retour, une estime et une fidélité qui ne se démentit jamais.</p>
+<p>D'abord au Maroc puis en Indochine où il effectua deux longues missions topographiques extrêmement périlleuses chez les Moï insoumis qui ne l'acceptèrent parmi eux qu'à la condition d'y venir rigoureusement seul, à leur merci.</p>
+<p>Puis l'Algérie, la campagne de 40 et les très durs combats du IIème Étranger. Fait prisonnier, il s'évada peu après et débarqua en zone libre dans un style bien à lui — non pas, ainsi que tant d'autres, en haillons et sous fausse barbe — mais tiré à quatre épingles, comme à son habitude et suivi de sa cantine, ayant embarbouillé les Allemands d'horrifique manière dans une inextricable histoire.</p>
+<p>Affecté aux Affaires indigènes du Maroc, sa profonde connaissance de l'anglais le fit affecter à différents états-majors internationaux ou interalliés où ses qualités naturelles de relations publiques, sa loyauté et son extrême confiance transformèrent en amis des partenaires pointilleux et méfiants.</p>
+<p>Une dure épreuve vint le frapper : l'aîné de ses six enfants, Alain, ingénieur agronome et sous-lieutenant de Spahis tombait au champ d'honneur en Algérie.</p>
+<p>Ce Breton nomade avait fini par se fixer près d'Orléans dans une gentilhommière ancienne ouverte sur un parc magnifique remis en état de ses mains car, sur le tard, l'amour de la terre avait saisi l'artiste qui n'avait cessé de vivre en lui.</p>
+<p>Ses enfants bien lancés dans la vie, il espérait n'avoir plus, aux côtés de sa femme, qu'à soigner ses fleurs et à classer les reliques d'une famille qui avait donné tant de bons serviteurs aux armées et aux flottes de la France sous tous les cieux du monde, quand se manifestèrent les prémisses d'un mal implacable.</p>
+<p>Et ce furent deux ans d'une lutte acharnée : maintenant pour les siens malgré la lassitude puis l'épuisement puis la douleur lancinante, une façade d'activité et d'espérance ; puisant une rare force d'âme dans sa foi, dans la conscience d'une vie sans peur et sans reproche, dans le soutien constant d'une épouse au courage égal au sien.</p>
+<p>Adieu, vieux frère — après tant de douleurs, tu as bien mérité le repos, toi qui ne laisse que regrets et que larmes chez tous ceux — familiers et compagnons — qui ont eu l'heureuse fortune de te connaître et de vivre auprès de toi.</p>
+<p class="signature">Escolier</p>
+</div>
 
 <div class="sources">
   <h3>Sources</h3>
   <ul>
-    <li>Archives de la famille Le Moine</li>
-    <li>Dossier de la Légion d'honneur</li>
-    <li>Annuaire administratif de l'Indochine (1932)</li>
+    <li>Dossier Légion d'honneur</li>
+    <li>Annuaire des fonctionnaires et de l'armée, 1937 — officier d'active au 4e REI</li>
+    <li>Saint-Cyr, 110e promotion du Chevalier Bayard, 1923-1925</li>
+    <li>Annuaire administratif de l'Indochine, 1932</li>
+    <li>Archives B. Le Moine</li>
+    <li>Facebook</li>
   </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-block">
+    <p class="who">Rémy Scherer, 5 avril 2021</p>
+    <p style="margin-bottom:0">« Bonjour, et bravo pour votre site. Je reconstitue actuellement l'organigramme du 11e REI et il me semble que le capitaine Le Moine a été muté au 2e, et non 3e bataillon, le 28 mai, comme capitaine adjudant-major, à la suite du capitaine Brochet de Vaugrineuse, blessé le 27 mai 1940 au bois d'Inor. »</p>
+  </div>
+  <div class="comment-block">
+    <p class="who">Zede, 5 avril 2021</p>
+    <p style="margin-bottom:0">« Bonjour, merci pour votre commentaire, l'erreur est corrigée ! »</p>
+  </div>
 </div>
 
 <div class="actions">
-  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-LeMoine" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-LeMoineMarcel" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
 </div>
 
 </article>

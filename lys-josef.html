@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LYS Josef Herez — 11e REI</title>
+<title>Lys Josef — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -16,8 +16,8 @@
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.02em}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
   header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
   header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
     background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
@@ -27,33 +27,46 @@
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
   article p{margin-bottom:1rem}
-  article .subhead{font-weight:500;color:var(--ink)}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
   article a{color:var(--link)}
+
+  article .attribution{background:var(--row);border-left:3px solid var(--orange);border-radius:4px;
+    padding:.9rem 1.1rem;margin-bottom:1.4rem;font-size:.85rem;color:var(--muted);display:flex;gap:14px;align-items:center}
+  article .attribution strong{color:var(--ink)}
+  article .attribution img{flex:0 0 64px;width:64px;border-radius:4px}
+  article .attribution .txt{flex:1}
+  @media (max-width:480px){article .attribution{flex-direction:column;text-align:center}}
+
   article figure{margin:1.2rem 0}
   article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
-  article figure.size-medium img{width:min(420px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:150px;margin:0}
-  article .imgrow img{width:100%}
-  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
-  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
-  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
-  article .figure-side .side-text{flex:1;min-width:0}
-  article .figure-side .side-text p{margin-bottom:1rem}
-  article .figure-side .side-text p:last-child{margin-bottom:0}
-  article .figure-side.reverse{flex-direction:row-reverse}
-  @media (max-width:600px){
-    article .figure-side{flex-direction:column}
-    article .figure-side .side-img{flex:none;max-width:100%}
-    article .figure-side.reverse{flex-direction:column}
+
+  article .figure-flank{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 38%;max-width:38%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+
+  @media (max-width:640px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:75%;margin:0 auto}
   }
+
+  article .about-maitron{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+  article .about-maitron h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -71,36 +84,63 @@
 <main>
 
 <header>
-  <h1>LYS Josef Herez</h1>
-  <div class="sub">Le Maîtron</div>
-  <div class="tags"><span>11è REI</span><span>EVDG</span><span>Brigades internationales</span></div>
-  <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
+  <h1>Lys Josef, dit Herez</h1>
+  <p class="subtitle">11e REI, EVDG, Brigades internationales</p>
+  <div class="tags"><span>11è REI</span><span>Brigades internationales</span><span>Déporté — Buchenwald</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
 </header>
 
 <article>
 
-<p>Né le 10 juin 1913 à Brok région de Mazovie (Pologne) ; tailleur ; volontaire en Espagne républicaine ; déporté ; antifasciste.</p>
+<div class="attribution">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lis-josef.png" alt="Logo du Maîtron, dictionnaire biographique du mouvement ouvrier et du mouvement social">
+  <span class="txt">Cette notice reprend, avec l'aimable autorisation de sa source, le texte du <strong>Maîtron</strong>, dictionnaire biographique du mouvement ouvrier : notice « LYS Josef, Herez » par Daniel Grason, <a href="https://maitron.fr/spip.php?article137438" target="_blank" rel="noopener">maitron.fr/spip.php?article137438</a>, mise en ligne le 18 août 2011, dernière modification le 3 mars 2022.</span>
+</div>
 
-<p><a href="https://maitron.fr/spip.php?article137438" target="_blank" rel="noopener">https://maitron.fr/spip.php?article137438</a>, notice LYS Josef, Herez par Daniel Grason, version mise en ligne le 18 août 2011, dernière modification le 3 mars 2022.</p>
+<p class="lede">Josef Herez Lys naît le 10 juin 1913 à Brok, en Mazovie polonaise. Tailleur de profession, volontaire des Brigades internationales pendant la guerre d'Espagne, il rejoint ensuite le 11e régiment étranger d'infanterie à la déclaration de la Seconde Guerre mondiale, avant d'être arrêté comme ancien brigadiste, déporté à Buchenwald, et libéré en 1945.</p>
 
-<p>Josef Lys, fils de Chaïm ou Olek et d'Hélèna, née Jeleniez, combattit en Espagne dans les Brigades internationales. Il entra en France en mai 1938, sans passeport. À la déclaration de la guerre, il fut incorporé, dans le 11e Régiment de la légion étrangère, fait prisonnier par les allemands fin mai 1940, il était libéré le 18 janvier 1941. Deux jours plus tard, la sous-préfecture de Reims (Marne) lui délivrait un certificat de libération.
-Il vint habiter à Paris (Seine), 32, rue des Amandiers, XIXe arr., où il vivait avec son amie Chawa Aksébrad, née le 20 octobre 1911, à Polavy (Pologne), de confession juive. Il était titulaire d'une autorisation de séjour délivrée le 31 janvier 1941, prolongée tous les trois mois. Tailleur de profession, il avait des difficultés à vivre de son métier, son amie était femme de ménage.</p>
+<p class="section">L'Espagne, puis le 11e REI</p>
 
-<p>Les autorités d'occupation demandèrent à la préfecture de police, l'établissement d'une liste des ex-Brigadistes en Espagne. Elle fut établie par la 3e section des Renseignements généraux, elle fut prête le 19 septembre 1941. Le conseiller Karl Boemelburg, commandant SS-Sturmbannführer qui dirigeait la SIPO et la Gestapo sur le territoire français, décida d'une opération d'ensemble dans le département de la Seine. Elle se déroula le 24 décembre 1941, Josef Lys fut arrêté dans son logement, par un inspecteur de la police judiciaire. Il fut interné à la caserne des Tourelles, XXe arr., puis transféré au camp de Rouillé (Vienne).</p>
+<p>Fils de Chaïm — ou Olek — et d'Hélèna, née Jeleniez, Josef Lys combat en Espagne dans les Brigades internationales. Il entre en France en mai 1938, sans passeport. À la déclaration de la guerre, il est incorporé dans le 11e régiment étranger d'infanterie. Fait prisonnier par les Allemands fin mai 1940, il est libéré le 18 janvier 1941 ; deux jours plus tard, la sous-préfecture de Reims, dans la Marne, lui délivre un certificat de libération.</p>
 
-<p>Le 6 mai 1943, il était conduit au camp de Compiègne (Oise), le 25 juin 1943, il prenait la destination du camp de concentration de Buchenwald (Allemagne), où il arrivait quarante-huit heures plus tard. Neuf cent quatre-vingt-dix-neuf hommes étaient dans le convoi, plus de 40% n'en reviendront pas. Josef Lys matricule 14688, sera libéré par les troupes américaines le 24 avril 1945.
-En 1948, il obtient la nationalité française.
-Il s'adressa en 1958 au Ministère des anciens combattants et victimes de guerre pour obtenir une carte de déporté politique.</p>
+<p class="section">Paris, sous l'Occupation</p>
 
-<p class="subhead">Source :</p>
+<p>Il vient ensuite habiter à Paris, au 32 rue des Amandiers, dans le 19e arrondissement, où il vit avec son amie Chawa Aksébrad, née le 20 octobre 1911 à Polavy, en Pologne, de confession juive. Il est titulaire d'une autorisation de séjour délivrée le 31 janvier 1941, prolongée tous les trois mois. Tailleur de profession, il peine à vivre de son métier ; son amie est femme de ménage.</p>
 
-<p>Je n'ai pas rédigé cet article qui provient intégralement du site internet du Maîtron. D'autres anciens légionnaires du 11è REI y ont une notice. Certains sont à chercher dans le dictionnaire des Fusillés.
-Le Maitron est le nom d'usage d'un ensemble de dictionnaires biographiques du mouvement ouvrier dirigé par l'historien Jean Maitron (jusqu'à sa mort en 1987) puis par son successeur Claude Pennetier.
-Selon Claude Pennetier, le dictionnaire est « composé à la fois de biographies importantes, scientifiquement établies, et de notes plus courtes qui gardent la mémoire d'un nom »
-<a href="https://maitron.fr/" target="_blank" rel="noopener">https://maitron.fr/</a></p>
+<p class="section">L'arrestation et la déportation</p>
+
+<p>Les autorités d'occupation demandent à la préfecture de police d'établir une liste des anciens brigadistes ayant combattu en Espagne. Cette liste, dressée par la 3e section des renseignements généraux, est prête le 19 septembre 1941. Le conseiller Karl Boemelburg, commandant SS-Sturmbannführer à la tête de la Sipo et de la Gestapo sur le territoire français, décide alors d'une opération d'ensemble dans le département de la Seine. Elle se déroule le 24 décembre 1941 : Josef Lys est arrêté à son domicile par un inspecteur de la police judiciaire. Il est interné à la caserne des Tourelles, dans le 20e arrondissement, puis transféré au camp de Rouillé, dans la Vienne.</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lis-josef-2.jpg" alt="Fiche d'internement (Häftlings-Personal-Karte) de Josef Lis au camp de Buchenwald, avec photo d'identité, matricule 14688">
+    <figcaption>Fiche d'internement de Josef Lys à Buchenwald — matricule 14 688</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Le 6 mai 1943, il est conduit au camp de Compiègne, dans l'Oise. Le 25 juin 1943, il prend la direction du camp de concentration de Buchenwald, en Allemagne, où il arrive quarante-huit heures plus tard. Le convoi compte neuf cent quatre-vingt-dix-neuf hommes ; plus de 40 % d'entre eux n'en reviendront pas.</p>
+<p>Sa fiche d'internement le décrit comme un tailleur de 1,58 m, de corpulence trapue, aux yeux bleus et aux cheveux blonds, parlant polonais et français — détenu politique polonais, sans antécédent judiciaire. Josef Lys, matricule 14688, est libéré par les troupes américaines le 24 avril 1945.</p>
+  </div>
+</div>
+
+<p class="section">L'après-guerre</p>
+
+<p>En 1948, Josef Lys obtient la nationalité française. En 1958, il s'adresse au ministère des Anciens combattants et victimes de guerre pour obtenir une carte de déporté politique.</p>
+
+<div class="about-maitron">
+  <h3>À propos du Maîtron</h3>
+  <p style="margin-bottom:0">Cette notice n'a pas été rédigée pour ce site : elle provient intégralement du Maîtron, dictionnaire biographique du mouvement ouvrier, dirigé par l'historien Jean Maitron jusqu'à sa mort en 1987, puis par son successeur Claude Pennetier. D'autres anciens légionnaires du 11e REI y possèdent également une notice ; certains sont par ailleurs à rechercher dans le <em>Dictionnaire des fusillés</em>. Selon Claude Pennetier, ce dictionnaire est « composé à la fois de biographies importantes, scientifiquement établies, et de notes plus courtes qui gardent la mémoire d'un nom ». Le site du Maîtron est consultable à l'adresse <a href="https://maitron.fr/" target="_blank" rel="noopener">maitron.fr</a>.</p>
+</div>
+
+<div class="sources">
+  <h3>Source</h3>
+  <ul>
+    <li>Daniel Grason, notice « LYS Josef, Herez », <em>Le Maîtron</em>, <a href="https://maitron.fr/spip.php?article137438" target="_blank" rel="noopener">maitron.fr/spip.php?article137438</a>, mise en ligne le 18 août 2011, dernière modification le 3 mars 2022</li>
+  </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
+</div>
 
 <div class="actions">
-  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Lys" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-LysJosef" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
 </div>
 
 </article>

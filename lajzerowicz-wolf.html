@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAJZEROWICZ Wolf Wilhelm — 11e REI</title>
-<meta name="description" content="Réfugié juif d'Allemagne, éborgné en portant secours à un officier blessé">
+<title>Lajzerowicz Wolf — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,81 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.02em}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
+  article .lede-block{display:flex;gap:26px;align-items:center;margin-bottom:1.4rem}
+  article .lede-block .portrait{flex:0 0 200px;width:200px;height:200px;border-radius:50%;overflow:hidden;
+    border:3px solid var(--orange);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  article .lede-block .portrait img{width:100%;height:100%;object-fit:cover}
+  article .lede-block .lede{margin-bottom:0;flex:1}
+  @media (max-width:640px){
+    article .lede-block{flex-direction:column;text-align:center}
+    article .lede-block .portrait{margin:0 auto}
+  }
+
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article a{color:var(--link)}
+
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 34%;max-width:34%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 28%;max-width:28%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-flank .side-text{flex:1;min-width:0}
+
+  article .figure-pair{display:flex;gap:16px;margin:1.2rem 0}
+  article .figure-pair figure{flex:1;margin:0}
+  article .figure-pair img{border:1px solid var(--border)}
+
+  @media (max-width:640px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:65%;margin:0 auto}
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:65%;margin:0 auto}
+    article .figure-pair{flex-direction:column}
+    header .hgroup{flex-direction:column;text-align:center}
+  }
+
+  article .quote{font-family:'EB Garamond',serif;font-style:italic;font-size:.95rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:4px;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .quote .src{display:block;margin-top:.5rem;font-family:'Inter',sans-serif;
+    font-style:normal;font-size:.72rem;letter-spacing:.02em;color:var(--muted);text-align:right}
+  article .note{font-size:.85rem;color:var(--muted);font-style:italic}
+
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -73,29 +104,147 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · 9e compagnie · EVDG</div>
-  <h1>LAJZEROWICZ Wolf Wilhelm</h1>
-  <div class="sub">Réfugié juif d'Allemagne, éborgné en portant secours à un officier blessé</div>
-  <a class="back" href="https://test.11regimentetranger.com/index.html">← Retour</a>
+  <h1>Lajzerowicz Wolf</h1>
+  <p class="subtitle">Engagé volontaire pour la durée de la guerre (EVDG), 9e compagnie, 11e REI</p>
+  <div class="tags"><span>11è REI</span><span>Blessé de guerre</span><span>Shoah</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
 </header>
 
 <article>
-<p class="lede">Wolf Lajzerowicz, réfugié juif ayant fui l'Allemagne nazie en 1931, perd un œil au combat en portant secours à un officier blessé. Réfugiée dans le Cher après la rafle du Vél d'Hiv, sa famille échappe à la déportation — au contraire de sa sœur, arrêtée à Lyon.</p>
-<p>Né le 14 septembre 1901 à Aleksandrów (Pologne russe), il quitte la Pologne à trois ans pour l'Allemagne, où sa famille s'installe durablement, avant de fuir la montée du nazisme pour la France en 1931. Établi à Paris, il vit en concubinage avec Reizléa Poleac, ressortissante roumaine, qu'il épouse le 26 octobre 1939, quelques semaines après son engagement volontaire au 11e REI, où il rejoint la 9e compagnie.</p>
-<p>Le 17 juin 1940, lors d'un combat de rue, il est grièvement blessé par balle en portant secours à son lieutenant, lui aussi blessé — vraisemblablement le lieutenant Léon Kakhovsky de la même compagnie — et perd l'œil droit avant d'être fait prisonnier. Rapatrié en décembre 1940 après plusieurs hospitalisations, il est réformé à 65 % d'invalidité et reçoit la médaille militaire et la croix de guerre : « légionnaire courageux et dévoué [...] a été fait prisonnier alors qu'il portait secours à son lieutenant également blessé. A perdu l'œil droit. »</p>
-<p>Après la rafle du Vél d'Hiv de juillet 1942, Wolf et son épouse quittent Paris pour Châteaumeillant (Cher), une commune qui accueille alors environ 500 réfugiés, dont 142 Juifs sauvés pour la plupart par un réseau organisé autour d'un gendarme qui prévenait discrètement la population des rafles à venir. Sa sœur Klara, devenue allemande par son mariage, n'a pas cette chance : arrêtée à Lyon avec ses deux enfants le 5 août 1944, elle est déportée par le convoi 78 vers Auschwitz, où elle meurt avec sa fille — seul son fils Dimitri survit.</p>
-<p>Revenu à Paris fin 1944, Wolf reprend son métier de marchand forain et obtient la naturalisation française après-guerre, se présentant dans sa demande comme quelqu'un qui pense avoir « bien servi la France », qu'il considère comme sa patrie.</p>
+
+<div class="lede-block">
+  <div class="portrait">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf.jpg" alt="Portrait de Wolf Lajzerowicz">
+  </div>
+  <p class="lede">Wolf Wilhelm Lajzerowicz naît le 14 septembre 1901 à Aleksandrów, en Pologne russe, dans une famille juive originaire de Bedkow. Après une jeunesse partagée entre l'Allemagne et l'Angleterre, il s'installe à Paris en 1931 pour fuir la montée du nazisme. Engagé volontaire au 11e régiment étranger d'infanterie en 1939, il est grièvement blessé et fait prisonnier lors des combats de juin 1940, avant de se réfugier dans le Cher pendant l'Occupation et de demander, après la guerre, la nationalité française.</p>
+</div>
+
+<p class="section">Origines et famille</p>
+
+<p>Fils de Chejnoch Hejnich — dit Heinrich, puis Henry — Lajzerowicz (également orthographié Leizerowitz) et de Masza Martha, née Braun, Wolf Wilhelm Lajzerowicz a deux sœurs, nées comme lui à Aleksandrów : Klara, née en 1903, qui épouse à Vienne en 1925 un Autrichien et devient de nationalité allemande, et Ela, née en 1906, restée de nationalité polonaise. Une tante, Szejwa Feiga, mariée à Gersz Najztat, s'est installée après 1919 au 282 Godwin Street, à Paterson, dans le New Jersey.</p>
+
+<p class="section">Enfance et carrières en Allemagne</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-4.jpg" alt="Liste manuscrite des résidences successives de Wolf Lajzerowicz, de 1901 à 1937">
+    <figcaption>Ses résidences successives, de Łódź à Paris (dossier de naturalisation)</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Wolf Wilhelm quitte la Pologne à l'âge de trois ans : la famille s'installe en 1904 à Barmen, en Allemagne, puis vit à Londres de 1909 à 1910, avant de retourner en Allemagne. De 1910 à 1923, la famille réside à Elberfeld, où Wolf est successivement apprenti, employé puis fondé de pouvoir de banque à partir de 1918. En 1923, son père quitte l'Allemagne pour rejoindre sa sœur à Paterson, dans le New Jersey.</p>
+<p>Wolf poursuit sa carrière en Allemagne : secrétaire-interprète de grands magasins à Düsseldorf de 1924 à 1925, directeur de succursale d'une maison d'importation à Cologne de 1925 à 1927, puis gérant d'une imprimerie d'art à Elberfeld de 1927 à 1931.</p>
+  </div>
+</div>
+
+<p class="section">L'installation à Paris</p>
+
+<p>En 1931, la famille quitte l'Allemagne pour fuir un climat de plus en plus hostile. Cette année-là, les Juifs d'Allemagne sont encore citoyens à part entière — un statut acquis dès 1871 — et ne subissent pas encore les lois raciales nazies, mais la situation se dégrade nettement. Des campagnes antisémites, menées notamment par le parti nazi alors en pleine ascension électorale, visent les commerces et professions juives, avec des intimidations et des violences sporadiques encore extra-légales, mais créant un climat d'insécurité croissante. Dès 1931-1932, des militants SA organisent des piquets devant des magasins juifs, brisent des vitrines, appellent au boycott et agressent des personnes dans la rue — prélude au boycott national de 1933 et à la violence de masse qui suivra l'arrivée d'Hitler au pouvoir.</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-5.jpg" alt="Registre de recensement de Paris 1936, mentionnant Wolf Lajzerowicz et Reizléa Poleac au 181 rue de Belleville">
+    <figcaption>Recensement de Paris, 1936 — 181 rue de Belleville</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Wolf s'installe définitivement en France à partir d'octobre 1931. À Paris, il réside successivement rue Saint-Sulpice (6e), boulevard Edgar-Quinet (14e), rue Bourgeois (13e), puis rue Piat (20e), où sa mère, ses sœurs et son beau-frère sont recensés en 1936. Le 1er juillet 1935, il déménage au 181 rue de Belleville, où il est recensé avec Reizléa, avec laquelle il vit maritalement. À partir du 1er juillet 1937, le couple s'installe au 44 rue du Pré-Saint-Gervais, dans le 19e arrondissement — une adresse qu'ils conserveront après la guerre.</p>
+  </div>
+</div>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-6.jpg" alt="Manifeste de passagers du navire Westphalia, listant Heinrich Leizerowitz parmi les émigrants vers New York en 1928">
+    <figcaption>Manifeste du S.S. Westphalia, 1928 — Heinrich Leizerowitz en route pour Paterson</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Le père de Wolf n'est quant à lui jamais recensé à Paris : parti pour les États-Unis en 1923, il s'installe à Paterson, dans le New Jersey, où il est attesté en 1928 par ce manifeste de passagers du S.S. Westphalia, en route depuis Hambourg, recevant la visite d'un ami originaire de Barmen, Ernest Stang. Il se rend en France en 1939 pour le mariage de son fils, puis reprend le bateau pour les États-Unis le 15 avril 1940. Devenu citoyen américain, il meurt en 1944 et est inhumé au cimetière de Saddle Brook, dans le New Jersey, sous le nom d'Harry Leizerowitz. La mère de Wolf meurt quant à elle le 23 avril 1939, à l'hôpital Tenon, à Paris.</p>
+  </div>
+</div>
+
+<p class="section">Engagement au 11e REI</p>
+
+<p>En septembre 1939, Wolf s'engage volontairement dans un corps de l'armée française ; il est incorporé le 6 octobre au 11e régiment étranger d'infanterie et rejoint le dépôt de la Légion étrangère à La Valbonne, dans l'Ain. Le 26 octobre 1939, il épouse Reizléa Poleac, ressortissante roumaine née le 26 octobre 1908 à Chișinău et arrivée en France en 1929 ; son père, présent à la cérémonie, est alors domicilié villa Verlaine — son nom étant orthographié Leizerowitz sur l'acte.</p>
+
+<p class="section">Blessé et prisonnier, juin 1940</p>
+
+<p>Le 17 juin 1940, lors d'un combat de rue, Wolf Lajzerowicz est grièvement blessé par balle, perd l'œil droit, et est fait prisonnier. Il est hospitalisé notamment à Verdun, au Luxembourg et en Belgique, puis interné en Allemagne, au stalag XII C, avant d'être transféré au frontstalag 130, à Amboise. Il est libéré et ramené à Paris le 18 décembre 1940.</p>
+
+<p>Réformé avec un taux d'invalidité de 65 %, le 28 février 1941, il perçoit une pension annuelle de 15 500 francs. Le 12 juillet 1941, il reçoit la médaille militaire ainsi que la croix de guerre avec palme, accompagnées de la citation suivante :</p>
+
+<div class="quote">« Légionnaire courageux et dévoué. A été grièvement blessé par balle, le 17 juin 1940 au cours d'un combat de rue à Lagny-sur-Meuse (Meuse). A été fait prisonnier alors qu'il portait secours à son lieutenant également blessé. A perdu l'œil droit. »
+  <span class="src">Citation à la croix de guerre, 12 juillet 1941</span>
+</div>
+
+<p class="note">Il est très probable, sans que cela soit documenté par les archives, que Wolf ait en réalité été blessé sur le territoire de Void plutôt qu'à Pagny, en portant secours au lieutenant Léon Kakhowski, de la 9e compagnie, lui-même blessé le 17 juin.</p>
+
+<p class="section">1942-1944 : l'exil dans le Cher</p>
+
+<p>Après la grande rafle du Vél' d'Hiv des 16 et 17 juillet 1942, organisée par la police française pour le compte des autorités allemandes et qui touche principalement les Juifs étrangers et apatrides de Paris et de sa région, Wolf et sa femme quittent la capitale. Ils s'installent, du 19 septembre 1942 au 16 décembre 1944, à Châteaumeillant, dans le Cher — d'abord à l'Hôtel du Nord, dans la Grande Rue, puis chez un certain M. Ferron, rue des Abattoirs.</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-7.jpg" alt="Plaque commémorative « Merci » à Châteaumeillant, posée en 2004 en hommage aux habitants ayant sauvé des familles juives">
+    <figcaption>Plaque commémorative, Châteaumeillant, novembre 2004</figcaption>
+  </figure>
+  <div class="side-text">
+<p>La commune de Châteaumeillant a hébergé environ 500 réfugiés entre 1940 et 1945, dont près de 142 Juifs. Quatre d'entre eux furent arrêtés puis déportés sans retour ; tous les autres furent sauvés par un réseau organisé principalement par des communistes locaux. Un gendarme, informé des instructions d'arrestation émanant de la sous-préfecture, prévenait un commerçant, qui prévenait à son tour d'autres habitants, afin que les Juifs du village puissent se cacher le temps que dure la mission des gendarmes. En 2004, Ida Apeloig-Rozenberg organise à Châteaumeillant une cérémonie pour remercier l'ensemble des habitants d'avoir sauvé tant de Juifs, avec la pose de cette plaque commémorative.</p>
+  </div>
+</div>
+
+<p>La famille de Wolf n'est pas épargnée par la persécution : sa sœur Klara, dite Claire, devenue allemande après son mariage viennois avec Bruno Falkenheim, se réfugie à Lyon avec son mari et leurs deux enfants nés à Francfort, Dimitri (1925) et Jeannette (1927). Le 5 août 1944, au 22 rue Mazenod, à Lyon, Klara et ses enfants sont arrêtés par la police française, puis déportés le 11 août 1944 par le convoi 78 vers Auschwitz. Seul Dimitri reviendra de déportation ; sa mère et sa sœur n'ont pas survécu.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-8.jpg" alt="Fiche de renseignements concernant Claire Falkenheim, née Lajzerowicz, arrêtée à Lyon le 5 août 1944">
+    <figcaption>Fiche de renseignements, Claire Falkenheim, arrêtée le 5 août 1944 à Lyon</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Cette fiche établie après-guerre retrace l'arrestation de Claire (Klara) Falkenheim, née Lajzerowicz, à son domicile du 22 rue Mazenod à Lyon, et son départ par le convoi du 11 août 1944 — le convoi 78 vers Auschwitz, d'où elle ne reviendra pas.</p>
+  </div>
+</div>
+
+<p class="section">Naturalisation, 1945-1947</p>
+
+<p>De retour au 44 rue du Pré-Saint-Gervais en décembre 1944, Wolf reprend son activité de marchand forain, inscrit au registre du commerce de la Seine depuis 1934, puis devient marchand ambulant de tissus, linge de maison, vêtements de travail, bonneterie et laine à tricoter. Il vend notamment sur les marchés de Saint-Ouen et de Beaumont, et réalise en 1946 un chiffre d'affaires de plus de 600 000 francs.</p>
+
+<div class="figure-pair">
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-9.jpg" alt="Première page de la demande de naturalisation manuscrite de Wolf Lajzerowicz au ministre de la Justice">
+    <figcaption>Demande de naturalisation, adressée au ministre de la Justice</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-10.jpg" alt="Fin de la demande de naturalisation, signée Lajzerowicz, avec l'adhésion de son épouse Reizléa">
+    <figcaption>Fin de la lettre, signée par Wolf et Reizléa Lajzerowicz</figcaption>
+  </figure>
+</div>
+
+<p>Dans sa demande manuscrite, Wolf Lajzerowicz retrace brièvement son parcours — né à Aleksandrów, venu en France en octobre 1931, engagé volontaire le 6 octobre 1939 au 11e régiment étranger d'infanterie, blessé et fait prisonnier le 17 juin 1940 à Pagny-sur-Meuse, énucléation de l'œil droit, rentré en France comme grand blessé le 18 décembre 1940, réformé à 65 %, médaille militaire et croix de guerre avec palmes — avant de conclure :</p>
+
+<div class="quote">« ...je crois donc avoir bien servi la France, que je considère comme ma patrie. J'ose espérer que vous accueillerez favorablement ma demande, et avec respect, Monsieur le Ministre, je vous prie de recevoir l'assurance de mes sentiments dévoués. »
+  <span class="src">Wolf Lajzerowicz — « Je me joins à la demande de mon mari » : R. Lajzerowicz</span>
+</div>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-lajzerowicz-wolf-3.jpg" alt="Formulaire de demande de naturalisation de la préfecture de police, état civil et situation de famille de Wolf et Reizléa Lajzerowicz">
+    <figcaption>Formulaire d'enquête de la préfecture de police, 1945</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Polyglottes et parlant couramment le français, sans activité politique connue, inconnus des fichiers judiciaires et bien considérés dans leur entourage, Wolf et son épouse sont décrits par l'administration comme pleinement assimilés aux mœurs françaises. Le couple, marié sans enfant, sollicite ensemble l'honneur d'être admis à la nationalité française.</p>
+  </div>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
-    <li>Dossier de naturalisation, Archives nationales de Pierrefitte-sur-Seine, 19780030/134</li>
-    <li>Registres de recensement de Paris, 19e arrondissement, 1936</li>
+    <li>Dossier de naturalisation, Archives nationales, Pierrefitte-sur-Seine — 19780030/134</li>
+    <li>Registres de recensement de Paris, 1936, 19e arrondissement</li>
+    <li>Facebook</li>
   </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
 </div>
 
 <div class="actions">
-  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Lajzerowicz" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-LajzerowiczWolf" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
 </div>
 
 </article>

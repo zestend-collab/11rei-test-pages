@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JABOUILLE André Robert Léon — 11e REI</title>
-<meta name="description" content="Instituteur devenu lieutenant à la CA2, tué le 18 juin 1940 entre Ourches et Saint-Germain">
+<title>André Jabouille, lieutenant à la CA2 — 11e REI</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,49 +12,66 @@
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
-  header .tag{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--link);margin-bottom:.4rem}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);margin-bottom:.3rem}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.02em}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
-  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);
-    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.6rem}
-  article h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.25rem;
-    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
-  article h2:first-of-type{margin-top:0}
-  article h3.subhead{font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .6rem}
-  article blockquote.testimony{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;
-    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
-    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
-  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
-  article .gallery img{width:100%;border-radius:4px;display:block}
   article p{margin-bottom:1rem}
-  article ul{margin:0 0 1rem 1.2rem}
-  article li{margin-bottom:.3rem}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article a{color:var(--link)}
+
   article figure{margin:1.2rem 0}
-  article img{max-width:100%;border-radius:4px;display:block}
-  article figure.size-full{width:100%}
-  article figure.size-medium{width:min(420px,100%);margin-left:auto;margin-right:auto}
-  article figure.size-small{width:min(240px,100%);margin-left:auto;margin-right:auto}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
-  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
-  article .imgrow figure{flex:1;min-width:160px;margin:0}
-  article .imgrow img{width:100%}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 34%;max-width:34%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 28%;max-width:28%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+
+  @media (max-width:640px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:65%;margin:0 auto}
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:65%;margin:0 auto}
+  }
+
+  article .quote{font-family:'EB Garamond',serif;font-style:italic;font-size:.95rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:4px;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .quote .src{display:block;margin-top:.5rem;font-family:'Inter',sans-serif;
+    font-style:normal;font-size:.72rem;letter-spacing:.02em;color:var(--muted);text-align:right}
+
+  article .note{font-size:.85rem;color:var(--muted);font-style:italic}
+
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
 
   .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
   .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
@@ -73,38 +89,218 @@
 <main>
 
 <header>
-  <div class="tag">11e REI · CA2 · Officier · Mort pour la France</div>
-  <h1>JABOUILLE André Robert Léon</h1>
-  <div class="sub">Instituteur devenu lieutenant à la CA2, tué le 18 juin 1940 entre Ourches et Saint-Germain</div>
-  <a class="back" href="https://test.11regimentetranger.com/index.html">← Retour</a>
+  <h1>André Jabouille</h1>
+  <p class="subtitle">Lieutenant à la CA2, 11e REI — Mort pour la France</p>
+  <div class="tags"><span>11è REI</span><span>Mort pour la France</span><span>Void — 18 juin 1940</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
 </header>
 
 <article>
-<p class="lede">André Jabouille, instituteur des Deux-Sèvres devenu officier de réserve, commande une section de la CA2 du 11e REI. Tué le 18 juin 1940 lors du dernier baroud du régiment, son fils Vincent, âgé de dix-huit mois au moment des faits, a consacré plus d'une décennie à retracer les circonstances de sa mort.</p>
-<h2>De l'instituteur à l'officier de réserve</h2>
-<p>Né le 3 décembre 1910 à Secondigny (Deux-Sèvres), il entame son service militaire en 1931 puis, repéré pour ses qualités, intègre en 1932 l'École spéciale militaire de Saint-Cyr, d'où il sort 34e sur 410. Nommé sous-lieutenant de réserve, il devient instituteur en Deux-Sèvres tout en poursuivant sa carrière militaire par des périodes d'exercice régulières, jugées élogieuses par ses supérieurs. Il épouse Madeleine Tendron en 1933 ; le couple a deux enfants, Mireille (1934) et Vincent (1939).</p>
-<h2>La formation du 11e REI</h2>
-<p>Rappelé à l'activité le 30 août 1939, il est envoyé encadrer les volontaires étrangers du régiment en formation. Dans une lettre à son épouse du 13 septembre 1939, il décrit son arrivée harassante au fort de Vancia et sa découverte de sa mission :</p>
-<blockquote class="testimony">« Nous sommes appelés pour encadrer et instruire, avec des officiers et sous-officiers d'active, un régiment en formation composé de légionnaires réservistes et de volontaires étrangers. Ce régiment doit s'appeler « Le 11e Étrangers ». [...] Si tu voyais ces têtes ! Ce sont beaucoup d'ex-miliciens des Brigades internationales. »</blockquote>
-<p>Affecté le 1er novembre 1939 à la CA2, il part aux armées en décembre en direction de Rombas, puis participe aux combats du bois d'Inor à partir de mai 1940.</p>
-<h2>Le 18 juin 1940</h2>
-<p>Le 17 juin, des éléments du 2e bataillon couvrent le pont de Void jusqu'au passage du dernier contingent français. Le 18 juin au matin, le régiment lance un baroud désespéré pour reprendre les positions de Void : le chef de bataillon d'Alegron et le capitaine Magne sont tués vers 4 heures, le lieutenant Viel vers 5h30 en portant l'ordre de repli à la 6e compagnie. Selon le témoignage de Georges Manue, qui croise Jabouille près d'un carrefour vers 6-7 heures, l'officier, habituellement jovial, paraît étrangement silencieux — sans doute déjà informé de ces pertes.</p>
-<p>Les circonstances précises de sa mort restent floues et diversement rapportées selon les sources : reprenant le commandement de sa compagnie après la mort du lieutenant Viel, Jabouille aurait organisé un tir de contre-batterie et réussi à faire replier son unité en bon ordre sous un bombardement d'une violence inouïe, avant d'être tué net par un obus au moment où il achevait sa mission. Sa veuve, elle, recueille de ses camarades une autre version : blessé à la cuisse par un éclat d'obus, il aurait été mortellement touché par deux balles de mitrailleuse en étant transporté vers le poste de secours.</p>
-<blockquote class="testimony">Madeleine Jabouille, à propos de son pèlerinage sur la tombe de son mari en octobre 1940 : « Ce pèlerinage si pénible me procura une petite consolation de pouvoir le revoir pour la dernière fois. »</blockquote>
-<p>Son corps, transporté l'après-midi même à l'église de Saint-Germain-sur-Meuse, y est inhumé au cimetière communal. Sa veuve s'y recueille dès octobre 1940, puis y revient avec ses enfants en 1948, année où le corps d'André Jabouille est réinhumé au cimetière des Sablières de Niort ; ce même jour, il est décoré à titre posthume de la Légion d'honneur, remise à son fils Vincent, alors âgé de neuf ans.</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre.jpg" alt="Portrait du lieutenant André Jabouille en uniforme">
+    <figcaption>Le lieutenant André Jabouille</figcaption>
+  </figure>
+  <div class="side-text">
+<p class="lede">Au cours de mes recherches, j'ai eu le plaisir d'échanger avec Vincent Jabouille, le fils du lieutenant André Jabouille de la CA2. Ce dernier est tué au combat le 18 juin 1940, alors que Vincent n'a que 18 mois. Depuis plus d'une décennie, Vincent cherche à retracer les derniers mois de la vie de son père, et plus particulièrement les événements de cette journée tragique qui feront de lui un pupille de la nation.</p>
+  </div>
+</div>
+
+<p class="section">Jeunesse et engagement</p>
+
+<p>André Jabouille naît le 3 décembre 1910 à Secondigny, dans les Deux-Sèvres. Fils unique de Léon Théodore, ajusteur, et d'Alcidie Thouin, il est incorporé à partir du 15 octobre 1931 au 146e régiment d'infanterie en tant que soldat de 2e classe. Le 21 octobre, il intègre la compagnie de mitrailleuses du 3e bataillon (CM3).</p>
+
+<p>Son livret militaire contient une dictée, un exercice de mathématiques ainsi qu'une narration. Il répond également à un questionnaire où il indique parler anglais, ne savoir ni nager ni conduire, mais savoir jouer du violon et du piston, et avoir pratiqué le rugby, l'athlétisme et le tennis.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-4.jpg" alt="Extrait du livret militaire d'André Jabouille, mention 'susceptible de faire un officier de réserve'">
+    <figcaption>Extrait de son livret militaire, Metz, octobre 1931</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Bien qu'il ne soit pas titulaire du brevet de préparation militaire, André Jabouille souhaite suivre un peloton pour devenir gradé. Le commandant du 146e régiment d'infanterie le juge capable de devenir un bon officier de réserve.</p>
+  </div>
+</div>
+
+<p class="section">Saint-Cyr et les débuts d'officier de réserve</p>
+
+<p>Le 16 avril 1932, André Jabouille est nommé caporal-chef. Il réussit avec succès les épreuves écrites et orales du concours des élèves officiers de réserve (JO du 1er avril 1932) et est admis à l'École spéciale militaire de Saint-Cyr. Il y arrive le 20 avril 1932 et y reste cinq mois. À l'issue de sa formation, il est classé 34e sur 410, avec une moyenne générale de 16,23/20. Pendant cette période, il passe dix jours au 32e régiment d'infanterie à Tours, où il commande « très honorablement une section ».</p>
+
+<p>Le 20 septembre 1932, il est nommé sous-lieutenant de réserve au 32e régiment d'infanterie (décret du 30 septembre 1932, paru au JO du 5 octobre 1932). À partir du 7 octobre 1932, il est affecté temporairement au centre mobilisateur d'infanterie (CMI) n°91, puis regagne ses foyers au 100 rue Chabauty à Niort, où il exerce le métier d'instituteur dans la campagne environnante. Le 15 décembre 1932, il est définitivement affecté au CMI n°91 (JO du 18 décembre 1932).</p>
+
+<p class="section">Vie de famille et carrière d'instituteur</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-6.jpg" alt="André, Madeleine et Vincent Jabouille, en permission, avril 1940">
+    <figcaption>André, Madeleine et Vincent Jabouille, en permission, avril 1940</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Le 5 juin 1933, André Jabouille épouse Madeleine Tendron à Saint-Laurs. Le couple a deux enfants : Mireille, née en 1934, et Vincent, né en 1939. À partir de 1935, la famille est domiciliée à L'Absie. Madeleine travaille comme postière, tandis qu'André poursuit sa carrière d'instituteur.</p>
+<p>Jusqu'à la mobilisation, André Jabouille satisfait régulièrement à ses obligations militaires en accomplissant des périodes d'exercice pour les officiers de réserve.</p>
+  </div>
+</div>
+
+<p>À partir du 30 août 1934, il effectue une période d'exercice de 23 jours au camp du Ruchard, sur la commune d'Azay-le-Rideau. Le 23 septembre 1934, le lieutenant Vignes rend le jugement suivant :</p>
+
+<div class="quote">« Jeune officier consciencieux et dévoué, d'une belle tenue et semblant animé d'un très bon esprit. A bien commandé une section de mitrailleuses. S'est beaucoup intéressé à tous les exercices. A dû, vers la fin, interrompre la période à la suite d'un accident. Très vigoureux. »
+  <span class="src">Lieutenant Vignes, 23 septembre 1934</span>
+</div>
+
+<p>En 1933 et 1934, il n'accomplit que trois séances d'exercices et ne peut être jugé sur la base de ces seules expériences ; il semble « être peu expansif et ne pas tenter de s'imposer » (Saint-Maixent, 25 juillet 1934, signé lieutenant-colonel Compagnon). En 1936, du 23 août au 11 septembre, l'appréciation est plus favorable : « Bon officier mitrailleur qui a travaillé avec entrain et a montré de bonnes connaissances dans l'exercice de ses fonctions. Apte à commander une section de mitrailleuses en campagne. »</p>
+
+<p>Le 30 juillet 1936, il est nommé lieutenant de réserve (décret du 14 octobre 1936, paru au JO du 21 octobre 1936).</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-5.jpg" alt="Journal officiel annonçant la nomination d'André Jabouille au grade de lieutenant de réserve">
+    <figcaption>Journal officiel, nomination au grade de lieutenant</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Du 23 août au 11 septembre 1937, André Jabouille accomplit une période d'exercices de 20 jours avec le 14e régiment de tirailleurs algériens (RTA), au camp du Ruchard. Il y est jugé bon officier, apte à diriger une section de mitrailleuses en campagne.</p>
+  </div>
+</div>
+
+<p class="section">La mobilisation et l'arrivée au 11e étranger</p>
+
+<p>Rappelé à l'activité, André Jabouille se présente le 30 août 1939 au centre mobilisateur d'infanterie n°91, à Cholet. Ce centre, en surnombre, lui affecte, en vertu de la DM 4118-BT/05 du 1er septembre 1939, le dépôt de la Légion étrangère, pour y encadrer les volontaires étrangers.</p>
+
+<p>Dans une lettre adressée à son épouse le 13 septembre 1939, il raconte son départ pour le camp de Sathonay :</p>
+
+<div class="quote">« Nous avons fait un voyage très fatigant. Partis de Cholet comme tu le sais vers 21 heures, nous étions à Angers vers 22h30. Départ mouvementé à 23h40 environ : un de nos camarades faillit rester sur le quai, sa cantine sur les bras. Nous avons ensuite traîné des heures durant, nous arrêtant à tout moment : Tours, Bourges, Nevers, Roanne, Saint-Étienne, et enfin Lyon où nous avons débarqué lundi soir à 20h30, sales, éreintés et pas contents. Évidemment, nous n'étions pas attendus. Il a fallu réquisitionner deux cars pour nous rendre à Sathonay-camp, à une dizaine de kilomètres. Là, stupeur ! On ne nous attendait pas non plus ! « Débrouillez-vous et retournez à Lyon ! » nous a-t-on dit. Après maintes discussions à la place militaire, nous avons couché dans deux palaces de la ville, le « Bordeaux » et le « Terminus ». Nuit divine comme tu peux le penser... Mardi matin, en car, nous sommes allés au fort de Vancia où nous avons enfin appris ce que l'on attendait de nous. Nous sommes appelés pour encadrer et instruire, avec des officiers et sous-officiers d'active, un régiment en formation composé de légionnaires réservistes et de volontaires étrangers. Ce régiment doit s'appeler « Le 11e Étrangers ». Pour le moment, nous sommes à Sathonay Village, nous attendons que tous ces étrangers soient arrivés et équipés pour partir au camp de Valbonne. Encore huit jours à tuer les heures dans ce bled infâme, quelque part comme Largeasse. Nous couchons chez l'habitant. Cette première nuit a été très mauvaise : puces, moustiques et même des punaises. Le camarade qui couche avec moi a les yeux gonflés. Moi, je suis couvert de piqûres. Ce matin, les sous-officiers sont à deux kilomètres, parqués au fort de Vancia où l'on attend les volontaires étrangers. Si tu voyais ces têtes ! Ce sont beaucoup d'ex-miliciens des Brigades internationales. L'instruction doit se poursuivre pendant trois mois au camp de Valbonne. C'est toujours autant de pris... »
+  <span class="src">Lettre à Madeleine Jabouille, 13 septembre 1939</span>
+</div>
+
+<p>Le 1er novembre 1939, André Jabouille est affecté à la 2e compagnie d'assaut (CA2) du 11e régiment étranger d'infanterie. Le 6 novembre, les bataillons nouvellement constitués partent en stationnement dans les villages autour du camp de Valbonne, et le 2e bataillon s'installe à Bressolles. Le 13 décembre 1939, le régiment part « aux armées », en direction de Rombas.</p>
+
+<p class="section">Le front, l'hiver 1939-1940 et Sainte-Marguerite</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-2.jpg" alt="Panneau de la rue André Jabouille à Niort et portrait du lieutenant en uniforme">
+    <figcaption>La rue André Jabouille, à Niort</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Entre le 4 mars et le 12 avril 1940, André Jabouille est photographié avec Madeleine et Vincent lors d'une permission. Pour contourner la censure, il indique sur le courrier accompagnant la photo un lieu fictif, « Saint Belle Mère » — en réalité le village de Sainte-Marguerite, prénom de sa belle-mère.</p>
+<p>Aujourd'hui, une rue de Niort porte son nom, en mémoire de l'instituteur devenu officier, mort pour la France à 29 ans.</p>
+  </div>
+</div>
+
+<p>Le 1er mai 1940, alors que sa compagnie stationne à Sainte-Marguerite, André Jabouille écrit à nouveau à sa femme et lui transmet des photographies de son bataillon :</p>
+
+<div class="quote">« ...Je joins à ma lettre deux petites photos prises à Sainte Belle Mère, le jour du repas offert à notre colonel, et une autre représentant le toubib sur le sentier de la guerre (absente du courrier). Sur la photo n°1, de profil le médecin-chef avec son bouc, de face le capitaine aux 8 enfants, au fond ouvrant la bouche, l'œil inquiet, Delmas. La photo n°2, prise devant l'école transformée en infirmerie, représente le colonel et mon chef de bataillon... »
+  <span class="src">Lettre à Madeleine Jabouille, 1er mai 1940</span>
+</div>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-7.jpg" alt="Officiers du 11e REI réunis devant un bâtiment, Sainte-Marguerite, printemps 1940">
+    <figcaption>Le colonel et le chef de bataillon, devant l'école transformée en infirmerie</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Cette scène correspond à la « photo n°2 » décrite par André Jabouille dans sa lettre du 1er mai 1940 : le colonel du régiment entouré d'officiers, devant l'école du village réquisitionnée comme infirmerie.</p>
+  </div>
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-9.jpg" alt="Deux officiers devant l'école transformée en infirmerie, croix rouge visible sur la façade">
+    <figcaption>L'école, croix rouge visible sur la façade</figcaption>
+  </figure>
+</div>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-8.jpg" alt="Carte d'état-major annotée, secteur de Sainte-Marguerite et Kalembourg">
+    <figcaption>Carte annotée du secteur, avec « Sainte Marguerite » entourée</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Une carte d'état-major du secteur, conservée par la famille, situe précisément Sainte-Marguerite ainsi que les compagnies du régiment alentour — confirmant le lieu que le lieutenant Jabouille avait maquillé en « Saint Belle Mère » pour tromper la censure postale.</p>
+  </div>
+</div>
+
+<p class="section">Les combats d'Inor</p>
+
+<p>André Jabouille participe activement aux combats d'Inor, où sa section se trouve sur la ligne principale de résistance. Les compagnies d'appui de chaque bataillon, dont celle de Jabouille, sont composées de quatre sections réparties entre les compagnies de fusiliers-voltigeurs du bataillon.</p>
+
+<p>À partir du 10 juin 1940, le régiment quitte les positions d'Inor, chèrement défendues, et se replie à pied jusqu'à Saint-Germain-sur-Meuse. Le 17 juin, des éléments du 2e bataillon sont chargés de couvrir le pont de Void jusqu'au passage du dernier contingent français, puis de couvrir les équipes du génie chargées de le faire sauter. À l'arrivée des Allemands à l'entrée de Void, l'adjudant Romanovicz fait sauter le pont, tandis que le reste du 11e REI se trouve à Saint-Germain-sur-Meuse.</p>
+
+<p>À 21h, l'ordre est donné de reprendre les positions abandonnées à Void le jour même. Le colonel Robert décide l'envoi immédiat de quatre reconnaissances, chacune forte d'une compagnie, d'une section de mitrailleuses et d'un canon de 25. Le chef du 2e bataillon, d'Alegron, revendique la responsabilité de ces reconnaissances offensives pour son seul bataillon. Conscient de son sort, d'Alegron sait qu'il ne reviendra pas vivant et donne ses dernières consignes au capitaine Lemoine, qui devra le remplacer à la tête du bataillon. Le 11e REI se prépare à livrer son dernier baroud.</p>
+
+<p class="section">Le 18 juin 1940</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-10.png" alt="Carte détaillée des positions du 2e bataillon le 18 juin 1940, secteur Void, Ourches, Saint-Germain-sur-Meuse">
+    <figcaption>Positions du 2e bataillon le 18 juin 1940 (Void, Ourches, Saint-Germain-sur-Meuse)</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Au matin du 18 juin 1940, la 6e compagnie du capitaine Magne doit se rendre à Void en avant-garde, avec à sa tête le chef de bataillon Henryk Rzekiecki d'Alegron. La 2e compagnie du lieutenant Roux se poste en soutien au milieu du bois de Void, au carrefour de l'Étoile. La 7e compagnie du capitaine Coquet défend le pont du canal de la Marne au Rhin à Villeroy, tandis que la 5e compagnie reste en réserve à la côte 292, en avant de Saint-Germain-sur-Meuse.</p>
+  </div>
+</div>
+
+<p>Il reste cependant difficile de préciser la localisation exacte des sections de la CA2. Une section se trouve en réserve avec le capitaine Lemoine, dont le PC est installé sur la lèvre du ravin qui domine la Meuse entre Saint-Germain et Ourches, à environ 600 mètres au sud de la côte 292, dans un bouquet d'arbres. Le long de la Meuse, à moins d'un kilomètre au nord du pont de Saint-Germain, se trouvent la section Marchetti et celle du sergent-chef Stevens, qui commande des mitrailleuses. À 6h, le lieutenant Viel, probablement successeur du capitaine Urvoy de Closmadeuc à la tête de la CA2, est appelé au PC du régiment à Saint-Germain. À 9h, une section de mitrailleurs accompagne la 5e compagnie à la côte 292.</p>
+
+<p>La seule mention de la position de la section du lieutenant Jabouille provient de Georges Manue, envoyé depuis Saint-Germain porter une liaison au PC du 2e bataillon. Après avoir franchi le pont de Saint-Germain, il longe la Meuse en direction d'Ourches et croise le lieutenant Jabouille « près du carrefour », vers 6 ou 7 heures du matin — vraisemblablement le croisement de la D144 et de la D144A. Manue le trouve étrangement silencieux, lui qui se souvenait d'un lieutenant toujours jovial. On peut imaginer qu'à cette heure, Jabouille avait déjà appris la mort de son chef de bataillon, et qu'il venait de voir partir son ami le lieutenant Viel tenter de sauver ce qui pouvait encore l'être de la 6e compagnie. Chacun savait déjà que l'ordre de tenir jusqu'à 21h, coûte que coûte, avec un régiment fatigué et manquant de munitions, ne se ferait pas sans casse.</p>
+
+<p>Vers 4h, d'Alegron est tué à Void, ainsi que le capitaine Magne. Vers 5h30, le lieutenant Viel est envoyé porter l'ordre de repli à la 6e compagnie ; il est tué devant Void en accomplissant sa mission. Vers 7h, le capitaine Lemoine s'avance sur Ourches, où se replie ce qui reste de l'avant-garde de la 6e compagnie. Selon Roger Bruge, c'est là qu'on lui apprend la mort du lieutenant Jabouille — sans doute une confusion avec celle du lieutenant Viel, car une autre source précise :</p>
+
+<div class="quote">« Le lieutenant Jabouille succéda au lieutenant Viel. Se rendant compte de la situation tragique de la compagnie, cet officier, avec un mépris absolu de la mort, se rendit en première ligne pour observer les tirs de l'artillerie ennemie et préparer un tir de contre-batterie avec ses mortiers. Au moment où il venait de mettre en batterie ses engins dans des conditions particulièrement délicates, l'ordre de repli lui fut donné. Se dépensant sans compter et de la façon la plus intelligente, le lieutenant Jabouille parvint, malgré un personnel des plus réduits, à faire replier toute son unité, à emporter toutes ses armes et ses munitions, et cela dans un ordre parfait, sous un bombardement d'une violence inouïe. Son unité gagna Saint-Germain n'ayant subi qu'un minimum de pertes, mais avait pour la troisième fois perdu son chef. Un obus tuait net le lieutenant Jabouille alors qu'il venait d'achever sa mission. »
+</div>
+
+<p class="note">Cette dernière phrase pourrait elle-même correspondre à une autre confusion, cette fois avec la mort du capitaine Lanchon, tué net par un obus tombé à ses pieds. Vers 11h, les ordres de repli sont portés à la 7e et à la 2e compagnie. À midi, le capitaine Lemoine reçoit l'ordre de faire replier les éléments lourds, et tente également de faire reculer la 5e compagnie de Lanchon, très exposée sur la côte 292 — les Allemands tirent à vue depuis la lisière du bois de Void, à 1 200 mètres de distance.</p>
+
+<p class="section">Trois versions d'une même mort</p>
+
+<p>Les informations recueillies par Madeleine Jabouille donnent une troisième version des circonstances de la mort de son époux. Elle apprend, par les camarades de son mari faits prisonniers, qu'il a d'abord été blessé par un éclat d'obus à la cuisse gauche ; dirigé vers le poste de secours, il aurait ensuite été mortellement touché par deux balles de mitrailleuse.</p>
+
+<div class="quote">« Bien que je ne sois pas avisée officiellement du décès, j'ai réussi, par ses camarades qui sont prisonniers, à obtenir des détails suffisants pour retrouver sa tombe (tombe n°25, rangée 2, dans le cimetière de Saint-Germain). Le 13 octobre 1940, je suis arrivée sur ce petit coin de terre où il repose. Ce pèlerinage si pénible me procura une petite consolation de pouvoir le revoir pour la dernière fois. Le 18 juin dernier, mon mari tombait blessé par un éclat d'obus à la cuisse gauche, lors d'un combat qui avait lieu dans un petit village non évacué... [un camarade] se précipitait pour le ramasser et le ramener dans une maison toute proche quand deux balles de mitrailleuse le blessent mortellement, l'une à la tempe, l'autre au cœur. Quelques secondes auraient suffi pour le sauver. »
+  <span class="src">Madeleine Jabouille</span>
+</div>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-11.jpg" alt="Lettre manuscrite du capitaine Lemoine à Madeleine Jabouille, juillet 1941">
+    <figcaption>Lettre du capitaine Lemoine à Madeleine Jabouille, juillet 1941</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Dans un courrier de juillet 1941, le capitaine Lemoine apporte à Madeleine Jabouille quelques précisions sur le décès de son mari :</p>
+<div class="quote" style="margin-top:0">« Votre mari a dû tomber à midi 15 ou midi 20. Il était entre Ourches et Saint-Germain, sur la rive gauche de la Meuse. Son corps est resté jusqu'à 15h dans un restaurant bordant la route où ses légionnaires l'avaient placé. Vers 15h, on l'a transporté à l'église de Saint-Germain. »
+  <span class="src">Capitaine Lemoine, juillet 1941</span>
+</div>
+  </div>
+</div>
+
+<p>Un rapport sur la mort du capitaine Lanchon fait par ailleurs mention de vives fusillades et de tirs d'artillerie sur la côte 292, ce qui viendrait confirmer la nature des blessures reçues par le lieutenant Jabouille — éclat d'obus puis balles de mitrailleuse —, ainsi que le lieu et l'heure de son décès.</p>
+
+<p>Il reste difficile de retracer avec exactitude le déroulement d'une journée dont les combats commencent à 4h du matin pour s'achever vers 21h. En résumé, bien que les circonstances précises demeurent floues, tout indique qu'André Jabouille s'est trouvé en première ligne, autour du carrefour et de la côte 292, jouant pleinement son rôle de commandant et aidant ses hommes à tenir face à l'ennemi, jusqu'à sa mort.</p>
+
+<p class="section">Sépulture et mémoire</p>
+
+<p>Dans l'après-midi du 18 juin, le corps du lieutenant Jabouille est transporté jusqu'à l'église de Saint-Germain-sur-Meuse. Après la fin des combats, il est inhumé dans le cimetière communal. Sa femme pourra s'y recueillir pour la première fois en octobre 1940.</p>
+
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-jabouille-andre-12.jpg" alt="Mireille Jabouille devant la tombe de son père, cimetière de Saint-Germain-sur-Meuse, 1948">
+    <figcaption>Mireille Jabouille devant la tombe de son père, 1948</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Madeleine Jabouille retourne se recueillir sur la tombe de son mari avec ses enfants en 1948. Le 28 octobre de cette même année, le corps d'André Jabouille est réinhumé dans le cimetière des Sablières, à Niort. Ce jour-là, il est décoré de la Légion d'honneur à titre posthume : c'est son fils Vincent, âgé de neuf ans, qui reçoit la médaille au nom de son père.</p>
+  </div>
+</div>
 
 <div class="sources">
-  <h3>Sources</h3>
+  <h3>Sources principales</h3>
   <ul>
     <li>Archives et photographies de la famille Jabouille</li>
     <li>Archives des familles Lanchon et Metman</li>
-    <li>Roger Bruge, « Les combattants du 18 juin »</li>
-    <li>Georges Manue, « Rien n'est perdu »</li>
+    <li>Roger Bruge, <em>Les combattants du 18 juin</em></li>
+    <li>Georges Manue, <em>Rien n'est perdu</em></li>
+    <li>Facebook</li>
   </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
 </div>
 
 <div class="actions">
-  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Jabouille" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-JabouilleAndre" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
 </div>
 
 </article>
