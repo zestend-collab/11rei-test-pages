@@ -33,8 +33,9 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     + "transition:background .25s ease,box-shadow .25s ease}"
     + ".gsite-nav.scrolled{background:#f1f3f4;box-shadow:0 1px 6px rgba(0,0,0,.15)}"
     + ".gsite-nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:0 24px;height:64px}"
-    + ".gsite-logo{font-size:1.05rem;font-weight:500;color:#ffffff;white-space:nowrap;margin-right:8px;text-decoration:none;transition:color .25s ease}"
-    + ".gsite-nav.scrolled .gsite-logo{color:#202124}"
+    + ".gsite-logo{display:flex;align-items:center;white-space:nowrap;margin-right:8px;text-decoration:none}"
+    + ".gsite-logo img{height:36px;width:auto;display:block;transition:height .25s ease}"
+    + ".gsite-nav.scrolled .gsite-logo img{height:30px}"
     + ".gsite-links{display:flex;align-items:center;gap:26px;flex:1;overflow-x:auto}"
     + ".gsite-links a{font-size:.86rem;color:#ffffff;text-decoration:none;white-space:nowrap;padding:22px 0;border-bottom:3px solid transparent;transition:color .25s ease}"
     + ".gsite-nav.scrolled .gsite-links a{color:#3c4043}"
@@ -59,7 +60,10 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     var logo = document.createElement("a");
     logo.className = "gsite-logo";
     logo.href = SITE;
-    logo.textContent = "11è REI";
+    var logoImg = document.createElement("img");
+    logoImg.src = "https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/accueil-1.png";
+    logoImg.alt = "11è REI";
+    logo.appendChild(logoImg);
     inner.appendChild(logo);
 
     var linksWrap = document.createElement("div");
