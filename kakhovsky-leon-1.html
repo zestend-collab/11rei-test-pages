@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Léon Kakhovsky (1/2) — 11e REI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+  }
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.2rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article a{color:var(--link)}
+  article .note{font-size:.85rem;color:var(--muted);font-style:italic}
+
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+
+  article .figure-flank{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 30%;max-width:30%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  article .figure-flank.reverse{flex-direction:row-reverse}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 36%;max-width:36%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block;border:1px solid var(--border)}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+
+  @media (max-width:640px){
+    article .figure-flank,article .figure-side{flex-direction:column}
+    article .figure-flank .side-img,article .figure-side .side-img{flex:none;max-width:60%;margin:0 auto}
+  }
+
+  article .quote{font-family:'EB Garamond',serif;font-style:italic;font-size:.95rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:4px;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article .quote .src{display:block;margin-top:.5rem;font-family:'Inter',sans-serif;
+    font-style:normal;font-size:.72rem;letter-spacing:.02em;color:var(--muted);text-align:right}
+
+  article .continues{margin-top:1.8rem;padding:1rem 1.2rem;background:var(--row);border-radius:4px;
+    font-family:'EB Garamond',serif;font-style:italic;text-align:center}
+  article .continues a{color:var(--link);font-weight:500}
+
+  article .comments{margin-top:1.6rem;padding-top:1rem;border-top:1px solid var(--border)}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.7rem}
+  article .comment-block{background:var(--row);border-radius:4px;padding:1rem 1.2rem;margin:0 0 .6rem;font-size:.88rem}
+  article .comment-block .who{font-weight:500;color:var(--ink);font-size:.78rem;margin-bottom:.4rem}
+  article .comment-block:last-child{margin-bottom:0}
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem}
+  article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+
+  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
+  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
+    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
+  .comment-link:hover{background:var(--link);color:#fff}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main>
+
+<header>
+  <h1>Léon Kakhovsky <span style="font-family:'Inter',sans-serif;font-weight:300;font-size:.8rem;color:var(--muted)">— Лев Валентинович Каховский</span></h1>
+  <p class="subtitle">Lieutenant de réserve, 9e compagnie, 11e REI — Partie 1/2</p>
+  <div class="tags"><span>11è REI</span><span>Armée impériale russe</span><span>Guerre civile russe</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/recensement-11e-rei">← Retour au recensement</a>
+</header>
+
+<article>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon-2.jpg" alt="Léon Kakhovsky en uniforme de l'armée impériale russe, photo signée, datée entre 1914 et 1918">
+    <figcaption>Léon Kakhovsky, photo signée, entre 1914 et 1918</figcaption>
+  </figure>
+  <div class="side-text">
+<p class="lede">Léon Kakhovsky naît le 12 janvier 1895 à Moscou, dans une famille de la noblesse héréditaire du gouvernement de Kiev. Officier de l'armée impériale russe blessé à trois reprises pendant la Grande Guerre, il traverse ensuite la guerre civile russe dans les rangs de l'armée blanche, avant de trouver refuge en France en 1920 et de s'engager, vingt ans plus tard, comme lieutenant de réserve à la 9e compagnie du 11e régiment étranger d'infanterie.</p>
+  </div>
+</div>
+
+<p class="note">Cette notice a pu être établie grâce à l'aimable participation du forum <a href="https://ukrgenealogy.com" target="_blank" rel="noopener">ukrgenealogy.com</a>, spécialisé dans la recherche généalogique sur la famille Kakhovsky.</p>
+
+<p class="section">Origines et formation militaire dans l'Empire russe</p>
+
+<p>Fils de Valentin Vladimirovitch Kakhovski, conseiller d'État actuel et médecin militaire, et de Marie Grigoroff, Léon Kakhovsky est issu d'une famille appartenant à la noblesse héréditaire du gouvernement de Kiev. Il fait ses études au corps des cadets du tsarévitch, le grand-duc héritier Alexis Nicolaévitch, à Tachkent — une école secondaire en internat que les enfants intègrent entre 7 et 15 ans, et qui avait été placée sous le patronage du jeune héritier le 1er août 1904. Son père y exerçait alors comme médecin, en 1905-1906.</p>
+
+<p>Il poursuit sa formation à l'école militaire Paul, à Petrograd, où il entre en temps de guerre. C'est également dans le cercle de ce corps de cadets qu'il rencontrera son futur beau-père : Léon épouse en effet Olga Castagné à Paris en 1924, fille de Joseph-Antoine Castagné, qui enseignait le français au corps de cadets de Tachkent depuis 1912.</p>
+
+<p class="section">La Première Guerre mondiale</p>
+
+<p>Diplômé en temps de guerre de l'école Pavlov de Petrograd le 1er décembre 1914 avec le grade d'adjudant, Léon Kakhovsky accède le même jour à son premier grade d'officier. Affecté au 11e régiment des grenadiers de Phanagorie, il est aussitôt rattaché à titre provisoire au 30e régiment de fusiliers sibériens, où il prend le commandement d'une compagnie et participe aux combats de la retraite de Prusse-Orientale vers la forteresse de Grodno, avec la 10e armée russe.</p>
+
+<p>Blessé une première fois en février 1915, il est évacué à Moscou. Une fois rétabli, il retourne au front en mai dans son régiment d'origine, le 11e des grenadiers de Phanagorie, et reprend le commandement d'une compagnie pendant la retraite des armées russes à travers la Pologne, l'été suivant. Blessé une deuxième fois en juillet 1915, il est de nouveau évacué à Moscou, avant de revenir au régiment en septembre. Ses faits d'armes lui valent d'être promu successivement sous-lieutenant puis lieutenant, ainsi que plusieurs décorations.</p>
+
+<p>L'année 1916 le voit continuer à commander sa compagnie à travers les combats de l'été et de l'automne. Blessé une troisième fois en septembre, il est évacué à Kiev — une fiche datée du 15 octobre 1916 évoque cette fois une « maladie » plutôt qu'une blessure, ce qui pourrait indiquer une complication indirecte de ses blessures précédentes. De retour au régiment en novembre, il commande provisoirement un bataillon jusqu'en février 1917, avant d'être promu capitaine et décoré à nouveau.</p>
+
+<div class="quote">« Au cours de la guerre contre l'Allemagne et l'Autriche, de décembre 1914 à novembre 1917, l'ancien capitaine Léon Kakhovski fut blessé trois fois — à la poitrine, au ventre et à la jambe —, promu sous-lieutenant, lieutenant et capitaine, et décoré des ordres, avec glaives, de Saint-Stanislas (28 novembre 1916), de Sainte-Anne (6 juin 1916) et de Saint-Vladimir. »
+  <span class="src">États de service certifiés par le lieutenant-colonel Sialsky (août 1920) et le général-major Netchvolodov (19 avril 1921)</span>
+</div>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon1-4.jpg" alt="Liste des blessés évacués à l'hôpital de la Croix-Rouge de Slonim, mars 1915, mentionnant Kakhovsky Lev Valentinovitch">
+    <figcaption>Liste des évacués, hôpital de la Croix-Rouge de Slonim, mars 1915</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Cette liste d'hôpital atteste sa première évacuation, en mars 1915, parmi d'autres officiers blessés du front. Une seconde fiche, celle-ci datée d'octobre 1916, évoque plutôt une « maladie » — une neurasthénie — que la blessure mentionnée dans son état de service certifié, ce qui pourrait indiquer une complication indirecte de ses blessures précédentes.</p>
+  </div>
+</div>
+
+<p>Après la révolution de février 1917, il reprend le commandement d'une compagnie et participe aux combats de Tarnopol, en juin et juillet. Au moment du coup d'État bolchevique, Léon Kakhovsky refuse de reconnaître le pouvoir des soviets ainsi que la paix séparée de Brest-Litovsk. Il quitte son régiment pour Kiev. Pendant l'occupation de la Russie méridionale par les Allemands, il s'intègre à une organisation militaire clandestine vouée à la formation de détachements volontaires et à la lutte contre les bolcheviks et les forces d'occupation allemandes en Ukraine.</p>
+
+<p class="section">Dans les rangs de l'armée blanche</p>
+
+<p>Au début du mois d'août 1918, Léon Kakhovsky entre dans les rangs de l'armée volontaire du général Dénikine. Il est envoyé en mission secrète en Russie soviétique afin d'y transmettre à une organisation analogue une somme d'argent et de réunir des renseignements sur la situation et les mouvements des armées bolcheviques. En décembre, lors des combats livrés sous Kiev par les volontaires contre les troupes de Petlioura, il remplit une mission de confiance pour le compte du général Lomnovski, commandant des formations volontaires en Ukraine.</p>
+
+<p>En janvier 1919, il est attaché à la mission militaire de l'armée volontaire auprès du gouvernement tchécoslovaque et quitte la Russie. En février, il est envoyé à Bucarest auprès du général Gueroys, représentant de l'armée volontaire auprès du haut commandement d'Orient. En mars, il revient à Prague avant d'être dépêché à Paris auprès du général Tcherbatcheff, représentant militaire qui le retient dans la capitale française — où, en attendant, il travaille sous la direction de Vladimir Savitsky, représentant du commerce, de l'industrie et du ravitaillement du gouvernement de l'armée volontaire.</p>
+
+<p>En octobre 1919, il rentre en Russie méridionale, à Rostov, où il est attaché à l'état-major du généralissime, avant d'être mis à la disposition du général Alferoff, président du conseil des ministres des cosaques du Don. Lors de la retraite des armées volontaires de Rostov vers Novorossiisk, il contracte successivement le typhus récurrent puis le typhus exanthématique. Gravement malade, il est évacué à l'étranger en mars 1920, échappant ainsi à la défaite et à l'évacuation de l'armée de Wrangel.</p>
+
+<p class="note">Léon Kakhovsky passe par Kiev à plusieurs reprises durant cette période trouble — la partie 2 de cette notice revient en détail sur cet épisode kiévien, éclairé par des archives ukrainiennes retrouvées grâce au forum ukrgenealogy.com.</p>
+
+<p class="section">1920 : l'arrivée en France</p>
+
+<p>Léon Kakhovsky s'établit à Paris en 1920. Peu de temps après son arrivée, il est autorisé à rejoindre l'armée française comme sous-lieutenant à titre étranger et intègre le 1er régiment étranger le 6 mai 1921.</p>
+
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon1.jpg" alt="Portrait du lieutenant Léon Kakhowsky, avec ses dates 12-1-1895 – 16-8-1968">
+    <figcaption>Lieutenant Léon Kakhowsky (12-1-1895 – 16-8-1968)</figcaption>
+  </figure>
+  <div class="side-text">
+<p>Un relevé de notes du 1er régiment étranger, daté de 1921, dresse le portrait administratif du jeune sous-lieutenant : célibataire, de constitution et de santé « très bonnes », il « monte bien » à cheval et est jugé « apte » à faire campagne.</p>
+  </div>
+</div>
+
+<p>Il est rapidement remarqué par ses supérieurs, mais cette reconnaissance reste teintée de méfiance : si ses états de service dans l'armée impériale et son expérience militaire sont salués, sa loyauté envers la France est perçue avec une certaine froideur. Le colonel Boulet-Desbareau, commandant le 1er régiment étranger, consigne ainsi son appréciation dans les notes de l'année 1921 :</p>
+
+<div class="quote">« Donne l'impression d'un officier bien élevé, correct et s'efforçant de bien faire. Sort d'une école de cadets russes. A besoin de travailler. A parmi ses compatriotes la réputation d'avoir été un bon officier russe mais de ne pas aimer la France. Aucun fait précis ne m'a permis de vérifier cette dernière appréciation. »
+  <span class="src">Colonel Boulet-Desbareau, commandant le 1er régiment étranger, Sidi-Bel-Abbès, 13 septembre 1921</span>
+</div>
+
+<p>Ce double regard — respect pour ses compétences militaires, doute sur son attachement aux intérêts français, sans qu'aucun fait précis ne vienne jamais l'étayer — reflète sans doute les tensions culturelles et politiques de l'époque, ainsi que l'ambiguïté vécue par de nombreux officiers étrangers intégrés dans l'armée française, souvent issus de contextes complexes liés aux guerres civiles et à l'exil.</p>
+
+<p>Affecté au 4e régiment étranger d'infanterie, Kakhovsky regagne la confiance de ses supérieurs par ses actions au Maroc en 1921, où on le décrit « résistant à la fatigue [...] très actif, très consciencieux, très dévoué ». Son comportement change cependant en 1923 : il se rapproche des légionnaires russes de son bataillon et les rallie autour d'une déclaration proposant de mettre leurs forces à la disposition d'une future autorité russe, en vue d'un éventuel retour pour « relever leur patrie ». Ce geste — qui traduit un espoir partagé par nombre d'émigrés russes de renverser le régime soviétique, mais menace de désorganiser un bataillon dont les légionnaires russes sont engagés pour cinq ans — lui vaut trente jours d'arrêts simples. Son commandant note qu'il conserve des « sentiments d'émigré » et ne semble envisager son service à la Légion que comme provisoire.</p>
+
+<p>En janvier 1924, Léon Kakhovsky démissionne de la Légion étrangère. En septembre de la même année, il se marie à Paris et devient secrétaire particulier. L'idée d'un retour en Russie semble alors s'éloigner : en 1927, il entame des démarches pour obtenir la nationalité française, qu'il obtient par décret en 1928, alors qu'il exerce comme chauffeur de taxi.</p>
+
+<p class="section">Officier de réserve dans les années 1930</p>
+
+<div class="figure-flank reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-kakhovsky-leon1-9.jpg" alt="Lettre manuscrite de Léon Kakhowsky sollicitant son affectation dans les cadres des officiers de réserve, 1930">
+    <figcaption>Sa demande manuscrite d'affectation aux officiers de réserve, 1930</figcaption>
+  </figure>
+  <div class="side-text">
+<p>En 1930, Léon Kakhovsky exprime le souhait d'intégrer le corps des officiers de réserve afin de servir la France en cas de besoin — un tournant dans son engagement envers son pays d'accueil. Dans sa lettre au ministre, il sollicite « l'honneur de [son] affectation dans les cadres des officiers de réserve pour [qu'il] puisse, dans le cas de nécessité, servir la France d'après [ses] connaissances et [son] expérience de la vie militaire ».</p>
+  </div>
+</div>
+
+<p>Affecté au centre mobilisateur n°211 dès 1931, il suit régulièrement des périodes de perfectionnement militaire et est promu lieutenant de réserve en 1935. Ses supérieurs soulignent ses compétences et le jugent capable de commander une section de fusiliers-voltigeurs, comme le confirment les évaluations de son dernier stage, en mars 1939.</p>
+
+<p class="section">La mobilisation de 1939 et le 11e REI</p>
+
+<p>Lors de la mobilisation générale du 1er septembre 1939, Léon Kakhovsky est rappelé à l'activité. En novembre, il rejoint le 11e régiment étranger d'infanterie et participe à la campagne de France comme chef de section à la 9e compagnie. Le 17 juin 1940, il est grièvement blessé par dix-sept éclats d'obus et évacué à l'hôpital de Nancy.</p>
+
+<p>Confronté à la perspective d'être envoyé en Allemagne comme prisonnier de guerre, il s'évade de l'hôpital le 30 juillet 1940, rejoint la zone libre et arrive à Vichy le 7 août, où il achève son rétablissement. Le 2 septembre 1940, il est cité à l'ordre de la division et reçoit la croix de guerre avec étoile d'argent :</p>
+
+<div class="quote">« A participé avec son régiment aux combats au Nord de l'Argonne, du 21 mai au 12 juin 1940, puis au repli du 12 au 17 juin jusque dans la région de Void. A été blessé et fait prisonnier. Non encore guéri, s'est évadé de l'hôpital et a réussi à rejoindre la zone libre. »
+  <span class="src">Citation à l'ordre de la division, 2 septembre 1940</span>
+</div>
+
+<div class="continues"><a href="https://test.11regimentetranger.com/kakhovsky-leon">La suite de cette notice — deuxième partie →</a></div>
+
+<div class="sources">
+  <h3>Sources principales</h3>
+  <ul>
+    <li>Les Combattants officiers étrangers au service de la France : 1914-1918, 1939-1945</li>
+    <li>SHD Vincennes, JMO 11e REI, 34N316</li>
+    <li>SHD Vincennes, dossier individuel, GR 8YE 72876</li>
+    <li>Sites de recherche généalogique russes et ukrainiens (traduction assistée par outil automatique)</li>
+    <li><a href="https://gwar.mil.ru/" target="_blank" rel="noopener">gwar.mil.ru</a> — Première Guerre mondiale</li>
+    <li><a href="https://ukrgenealogy.com.ua/" target="_blank" rel="noopener">ukrgenealogy.com.ua</a> — recherches généalogiques en Ukraine</li>
+    <li>Journal officiel de la République française, lois et décrets : JO 21/5/1921, JO 13/6/1923, JO 10/1/1924, JO 20/5/1928, JO 16/10/1931, JO 28/10/1935</li>
+    <li>Facebook</li>
+  </ul>
+  <p class="updated">Mise à jour : 11/08/2026</p>
+</div>
+
+<div class="comments">
+  <h3>Commentaires</h3>
+  <div class="comment-block">
+    <p class="who">Nikolai Nikolaev-Rodriguez</p>
+    <p style="margin-bottom:0">« Merci beaucoup pour vos recherches. Léon Kakhovsky est le frère de mon arrière-grand-mère. Il n'a pu retrouver sa famille qu'en 1964. J'ai conservé sa première lettre de France à l'URSS, dans laquelle il parle un peu de son histoire et qu'il n'a jamais oublié sa famille. Malheureusement, il n'a jamais rencontré sa sœur Tatyana Kakhovskaya. Après sa mort, Karina a continué à correspondre avec ma grand-mère. Plusieurs lettres et photographies signées par lui personnellement ont été conservées. »</p>
+  </div>
+  <div class="comment-block">
+    <p class="who">Lena Rönnmark, 15-03-2022</p>
+    <p style="margin-bottom:0">« Hey, I'm so glad to read this article. My aunt Karin Kakhowski later married — she was born in 1927 and was married to this man. He was 30 years older than her. I heard so many stories about him. I met him in 1967 when I was 7 years old. He married my aunt from Sweden when she was only 20 and he was around 50. Karin is today 95 years old and in good shape. She lives in the north of Sweden. We have so many photos of Leff / Leon. If you would like to speak to Karin, you're welcome — she speaks French and Swedish. »</p>
+  </div>
+</div>
+
+<div class="actions">
+  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-KakhovskyLeon1" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+</body>
+</html>
