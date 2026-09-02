@@ -55,6 +55,16 @@
   .rei-evdg .page-intro p:last-child{margin-bottom:0;}
   .rei-evdg .page-intro ul{margin:0 0 10px 1.3em;padding:0;}
   .rei-evdg .page-intro li{margin-bottom:4px;}
+  .rei-evdg .page-intro .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem;text-align:left}
+  .rei-evdg .page-intro .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  .rei-evdg .page-intro .note{font-size:.85rem;color:var(--muted);font-style:italic;text-align:left}
+  .rei-evdg .page-intro .stat-row{display:flex;flex-wrap:wrap;gap:12px;margin:1.2rem 0}
+  .rei-evdg .page-intro .stat{flex:1;min-width:120px;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:.8rem 1rem;text-align:center}
+  .rei-evdg .page-intro .stat .n{font-family:'EB Garamond',serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
+  .rei-evdg .page-intro .stat .l{font-size:.72rem;color:var(--muted);margin-top:.15rem}
   .rei-evdg .page-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.6rem;color:var(--ink);
     margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--orange);}
   .rei-evdg .toolbar{max-width:820px;margin:0 auto 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
@@ -8057,7 +8067,7 @@ function toggleCard(btn){
   function apply(){
     var q = normalize(search.value.trim());
     var currentFilter = select.value;
-    var currentType = typeSelect.value;
+    var currentType = typeSelect ? typeSelect.value : 'all';
     var visible = 0;
     cards.forEach(function(card){
       var affOk = (currentFilter === 'all') || (card.dataset.aff === currentFilter);
@@ -8073,7 +8083,7 @@ function toggleCard(btn){
 
   search.addEventListener('input', apply);
   select.addEventListener('change', apply);
-  typeSelect.addEventListener('change', apply);
+  if(typeSelect){ typeSelect.addEventListener('change', apply); }
   apply();
 })();
 </script>
