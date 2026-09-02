@@ -21,16 +21,11 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --bg:#cccccc;
-    --orange:#fab855;
-    --link:#ff9900;
-    --ink:#1a1a18;
-    --white:#ffffff;
-    --muted:#555555;
-    --border:#aaaaaa;
-    --row:#f7f7f7;
+    :root{
+    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
+  :root{--white:var(--card);}
   html{overflow-x:hidden}
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh;overflow-x:hidden}
 
@@ -237,7 +232,7 @@ function renderCard(p){
   const variantesHtml = p.variantes ? ' <span class="variantes-suffix">(variantes : ' + esc(p.variantes) + ')</span>' : '';
   const photoUrl = PHOTO_BASE + encodeURIComponent(p.id) + '.jpg';
   const onErr = "this.closest('.card').classList.remove('has-photo'); this.closest('.portrait-thumb,.portrait-large').style.display='none';";
-  const thumbHtml = '<div class="portrait-thumb"><img src="' + photoUrl + '" alt="" loading="lazy" onerror="' + onErr + '"></div>';
+  const thumbHtml = '<div class="portrait-thumb"><img src="' + photoUrl + '" alt="Portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErr + '"></div>';
   // Photos supplémentaires (optionnelles) : <identifiant>-2.jpg, <identifiant>-3.jpg sur le même repo GitHub.
   // Chacune a son propre onerror : si le fichier n'existe pas, seule cette vignette disparaît
   // (n'affecte ni la bulle du header, ni le portrait principal).
