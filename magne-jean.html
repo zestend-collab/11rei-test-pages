@@ -4,20 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jean MAGNE — 11e REI</title>
+<meta name="description" content="Biographie de Jean MAGNE, légionnaire au 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940) : parcours, sources.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/android-chrome-192x192.png" type="image/png" sizes="192x192">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSR3XYVTB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FKSR3XYVTB');
+</script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
-    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --bg:#eef1f4;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1c2733;--muted:#5b6b7a;--border:#c7d0d9;--row:#f7f7f7;
   }
+
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
   main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
   header{background:var(--card);border:1px solid var(--border);border-radius:4px;
     padding:1.4rem 1.6rem;margin-bottom:22px}
   header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-top:.3rem}
   header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
   header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
     background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
@@ -27,22 +42,41 @@
   article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
     font-size:.92rem;line-height:1.7;text-align:justify}
   article p{margin-bottom:1rem}
-  article .subhead{font-weight:500;color:var(--ink)}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
   article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article .entry{margin-bottom:.9rem}
+  article .entry .date{font-weight:500}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
   article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
     color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
     padding:.9rem 1.1rem;margin:1rem 0}
+  article blockquote p{margin-bottom:.6rem}
+  article blockquote p:last-child{margin-bottom:0}
+
   article figure{margin:1.2rem 0}
   article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
   article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
   article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
     text-align:center;margin-top:.4rem;font-style:italic}
+
   article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
   article .imgrow figure{flex:1;min-width:150px;margin:0}
   article .imgrow img{width:100%}
+
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+
   article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
   article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
   article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
   article .figure-side .side-text{flex:1;min-width:0}
   article .figure-side .side-text p{margin-bottom:1rem}
   article .figure-side .side-text p:last-child{margin-bottom:0}
@@ -52,21 +86,51 @@
     article .figure-side .side-img{flex:none;max-width:100%}
     article .figure-side.reverse{flex-direction:column}
   }
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
+
   article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
-  .actions{display:flex;align-items:center;gap:14px;margin-top:1.4rem}
-  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
-    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
-  .comment-link:hover{background:var(--link);color:#fff}
-
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
 </style>
 </head>
 <body>
+
 <div class="hero"></div>
 <div id="menu"></div>
 <script src="/banniere.js"></script>
@@ -175,14 +239,25 @@ Le seul officier à revenir vivant est le lieutenant Coubart qui blessé en déb
   </ul>
 </div>
 
-<div class="actions">
-  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Magne" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
-</div>
-
 </article>
 
 <footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
 
 </main>
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Magne" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();</script>
 </body>
 </html>
