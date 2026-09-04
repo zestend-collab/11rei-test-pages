@@ -4,38 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La presse en parle: la création du 11è REI — 11e REI</title>
+<meta name="description" content="La presse en parle: la création du 11è REI — 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940).">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/android-chrome-192x192.png" type="image/png" sizes="192x192">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSR3XYVTB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FKSR3XYVTB');
+</script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;0,400&family=Inter:wght@300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
-    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+    --bg:#eef1f4;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1c2733;--muted:#5b6b7a;--border:#c7d0d9;--row:#f7f7f7;
   }
-  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1100px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  /* ---- Header : variante carte a bordure superieure orange (harmonisee sur les 4 pages) ---- */
   header{background:var(--row);border:1px solid var(--border);border-top:4px solid var(--orange);
-    border-radius:6px;padding:2rem 1.8rem;margin-bottom:26px}
+    border-radius:6px;padding:1.8rem 1.8rem;margin-bottom:24px}
   header h1{font-family:'EB Garamond',serif;font-weight:600;color:var(--ink);
-    font-size:clamp(24px,4vw,32px);line-height:1.2}
+    font-size:clamp(21px,3.8vw,30px);line-height:1.2}
   header .tags{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.4rem}
   header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;font-weight:500;color:#8a5100;
     background:#fff;border:1px solid var(--border);border-radius:12px;padding:.25rem .8rem}
-  header .back{display:inline-block;margin-top:1rem;font-size:.8rem;font-weight:500;
+  header .back{display:inline-block;margin-top:.9rem;font-size:.8rem;font-weight:500;
     color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
+  /* ---- Bloc generique ---- */
   .panel{background:var(--card);border:1px solid var(--border);border-radius:6px;
-    padding:1.7rem 1.8rem;margin-bottom:1.6rem;font-size:1rem;line-height:1.8;text-align:justify}
-  .panel p{margin-bottom:1.1rem}
+    padding:1.6rem 1.7rem;margin-bottom:1.5rem;font-size:.94rem;line-height:1.75;text-align:justify}
+  .panel p{margin-bottom:1rem}
   .panel p:last-child{margin-bottom:0}
   .panel a{color:var(--link)}
 
-  h2.section-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.35rem;
-    color:var(--ink);margin:2.2rem 0 1.1rem;padding-bottom:.4rem;border-bottom:3px solid var(--orange)}
+  /* ---- Titres de rupture ---- */
+  h2.section-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.3rem;
+    color:var(--ink);margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:3px solid var(--orange)}
   h2.section-title:first-of-type{margin-top:0}
+  h2.day{font-family:'EB Garamond',serif;font-weight:600;font-size:1.4rem;color:var(--ink);
+    background:var(--card);border:1px solid var(--border);border-left:5px solid var(--orange);
+    border-radius:4px;padding:.6rem 1rem;margin:1.6rem 0 1rem}
 
-  /* ---- Clipping (image + source caption) ---- */
+  /* ---- oflag-via.html : photos de groupe a identifier ---- */
+  .gallery-item{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    overflow:hidden;margin-bottom:1.4rem;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+  .gallery-item img{width:100%;display:block}
+  .gallery-item .caption{padding:1rem 1.3rem;border-top:3px solid var(--orange);background:var(--row)}
+  .gallery-item .caption p{margin-bottom:.4rem;font-size:.86rem;line-height:1.55}
+  .gallery-item .caption p:last-child{margin-bottom:0}
+  .gallery-item .caption .lede{font-family:'EB Garamond',serif;font-style:italic;color:var(--ink);
+    font-size:.95rem;margin-bottom:.5rem}
+  .gallery-item .caption .idlabel{font-weight:600;color:#8a5100;font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.03em;margin-bottom:.3rem}
+  .gallery-item .caption ul{list-style:none;margin:0}
+  .gallery-item .caption li{padding:.15rem 0 .15rem .9rem;position:relative;font-size:.85rem}
+  .gallery-item .caption li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+
+  /* ---- oflag-via.html : grille d'officiers identifies ---- */
+  .officer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+  .officer-card{background:var(--card);border:1px solid var(--border);border-radius:8px;
+    overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.08);
+    transition:transform .15s ease, box-shadow .15s ease}
+  .officer-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.14)}
+  .officer-card .photo-wrap{width:100%;aspect-ratio:3/4;background:var(--row);
+    display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .officer-card .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+  .officer-card .photo-wrap .no-photo{font-family:'EB Garamond',serif;font-style:italic;
+    color:#a89b7f;font-size:.78rem;text-align:center;line-height:1.4}
+  .officer-card .card-body{padding:.9rem 1rem 1.1rem;border-top:3px solid var(--orange);flex:1;
+    display:flex;flex-direction:column}
+  .officer-card h3{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem;
+    color:var(--ink);margin-bottom:.5rem;line-height:1.3}
+  .officer-card ul{list-style:none;margin:0 0 .5rem}
+  .officer-card li{font-size:.78rem;line-height:1.5;padding:.12rem 0 .12rem .8rem;position:relative;color:var(--ink)}
+  .officer-card li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+  .officer-card p{font-size:.78rem;line-height:1.5;margin-bottom:.4rem;color:var(--muted)}
+  .officer-card p:last-child{margin-bottom:0}
+
+  /* ---- presse.html : coupures de presse en vignettes ---- */
   .clippings{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:1.6rem;justify-content:center}
   .clipping{background:var(--card);border:1px solid var(--border);border-radius:6px;
     overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.12);flex:0 1 320px;
@@ -43,7 +100,7 @@
   .clipping:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,0.18)}
   .clipping img{width:100%;display:block;background:var(--row)}
 
-  /* ---- Article box (source excerpt) ---- */
+  /* ---- presse.html : extrait d'article reconstitue ---- */
   .article-box{background:var(--card);border:1px solid var(--border);border-radius:6px;
     padding:1.7rem 1.9rem;margin-bottom:1.6rem;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
   .article-box .masthead{font-family:'EB Garamond',serif;font-weight:600;font-style:italic;
@@ -63,6 +120,43 @@
     color:var(--ink);background:var(--row);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;
     padding:1rem 1.3rem;margin:1.2rem 0}
 
+  /* ---- presse.html : commentaires de visiteurs (contenu reel, conserve) ---- */
+  .comments{margin-top:1.6rem}
+  .comments h2.section-title{margin-top:0}
+  .comment{background:var(--card);border:1px solid var(--border);border-radius:6px;
+    padding:1.1rem 1.3rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:1rem}
+  .comment .meta{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.4rem}
+  .comment .author{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem;color:var(--ink)}
+  .comment .date{font-size:.75rem;color:var(--muted)}
+  .comment p{font-size:.92rem;line-height:1.6;color:var(--ink)}
+
+  /* ---- cartographie-inor.html : cartes et recit journalier ---- */
+  .map-figure{margin:0 0 1.6rem}
+  .map-figure img{width:100%;border-radius:6px;border:1px solid var(--border);display:block;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1)}
+  .map-figure figcaption{font-size:.8rem;color:var(--muted);font-style:italic;margin-top:.5rem;text-align:center}
+  .map-embed{margin-bottom:.8rem}
+  .map-embed iframe{width:100%;height:520px;border:1px solid var(--border);border-radius:6px;
+    display:block;box-shadow:0 3px 10px rgba(0,0,0,0.1)}
+  .map-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.4rem}
+  .map-links a{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:500;
+    color:var(--ink);background:var(--row);border:1px solid var(--border);border-radius:20px;
+    padding:.5rem 1.1rem;text-decoration:none}
+  .map-links a:hover{background:var(--orange);border-color:var(--orange)}
+  .map-note{background:var(--row);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;
+    padding:.9rem 1.1rem;font-size:.85rem;color:var(--muted);margin-bottom:1.6rem}
+
+  .day-body{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.5rem 1.7rem;margin-bottom:.5rem;font-size:.92rem;line-height:1.75;text-align:justify}
+  .day-body p{margin-bottom:.9rem}
+  .day-body p:last-child{margin-bottom:0}
+  .day-body ul{list-style:none;margin:0 0 .9rem}
+  .day-body li{padding:.15rem 0 .15rem 1rem;position:relative}
+  .day-body li::before{content:'—';position:absolute;left:0;color:var(--orange)}
+  .day-body .losses{display:inline-block;margin-top:.3rem;font-weight:500;color:#8a5100;
+    background:var(--row);border-radius:4px;padding:.3rem .7rem;font-size:.85rem}
+
+  /* ---- Sources (bloc final, toutes pages) ---- */
   .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem}
   .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.6rem}
@@ -71,28 +165,42 @@
   .sources li::before{content:'—';position:absolute;left:0;color:var(--orange)}
   .sources a{color:var(--link)}
 
-  .actions{display:flex;align-items:center;gap:14px;margin:1.6rem 0}
-  .comment-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.82rem;
-    font-weight:500;color:var(--ink);background:var(--orange);text-decoration:none;padding:.5rem 1rem;border-radius:20px}
-  .comment-link:hover{background:var(--link);color:#fff}
-
-  .comments{margin-top:1.6rem}
-  .comments h2.section-title{margin-top:0}
-  .comment{background:var(--card);border:1px solid var(--border);border-radius:6px;
-    padding:1.1rem 1.3rem;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
-  .comment .meta{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.4rem}
-  .comment .author{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem;color:var(--ink)}
-  .comment .date{font-size:.75rem;color:var(--muted)}
-  .comment p{font-size:.92rem;line-height:1.6;color:var(--ink)}
-
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
 </style>
 </head>
 <body>
+
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
 <main>
 
 <header>
   <h1>La presse en parle: la création du 11è REI</h1>
+  
   <div class="tags"><span>11è REI</span></div>
   <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
@@ -222,10 +330,6 @@ L'heure était venue et d'un élan spontané ils avaient fait ce qu'ils appellen
   </ul>
 </div>
 
-<div class="actions">
-  <a class="comment-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Presse" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
-</div>
-
 <div class="comments">
   <h2 class="section-title">Commentaires</h2>
   <div class="comment">
@@ -237,5 +341,20 @@ L'heure était venue et d'un élan spontané ils avaient fait ce qu'ils appellen
 <footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
 
 </main>
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-Presse" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();</script>
 </body>
 </html>
