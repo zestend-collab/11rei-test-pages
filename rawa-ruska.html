@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3 du 11e REI au camp de Rawa Ruska — 11e REI</title>
-<meta name="description" content="3 du 11e REI au camp de Rawa Ruska — 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940).">
+<meta name="description" content="Biographie de 3 du 11e REI au camp de Rawa Ruska, légionnaire au 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940) : parcours, sources.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
@@ -104,71 +104,20 @@
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
-/* ==========================================================================
-   Ajouts a BIO_CSS pour les pages thematiques du Groupe A
-   (monuments, prisonniers, rawa-ruska, 11e-rei-en-photo, cimetieres-communaux,
-   necropoles, rouge-vert2, livre, medaille-militaire-1952/1953, recensement-11e-rei)
-   ========================================================================== */
-
-/* --- communes a plusieurs pages : a ajouter une seule fois --- */
-article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
-  border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
-article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
-article .seealso{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.88rem}
-
-/* --- livre.html : bouton d'appel a l'action --- */
-article .cta{display:inline-block;margin-top:.4rem;font-family:'Inter',sans-serif;font-weight:500;
-  color:var(--ink);background:var(--orange);text-decoration:none;padding:.6rem 1.2rem;border-radius:20px}
-article .cta:hover{background:var(--link);color:#fff}
-
-/* --- medaille-militaire-1952.html : citations detaillees (renommees de .citations
-   -> .citations-fiches pour ne plus entrer en collision avec la variante 1953) --- */
-ul.citations-fiches{list-style:none;margin:1.2rem 0 1.6rem;padding:0;
-  display:grid;grid-template-columns:1fr;gap:.6rem}
-ul.citations-fiches li.person{background:var(--row);border:1px solid var(--border);border-radius:4px;
-  padding:.7rem .9rem;text-align:left}
-ul.citations-fiches li.person strong{font-family:'EB Garamond',serif;font-size:1rem;display:block;margin-bottom:.3rem}
-ul.citations-fiches ul.det{list-style:none;margin:0;padding:0}
-ul.citations-fiches ul.det li{font-size:.83rem;color:var(--ink);padding:.08rem 0}
-
-/* --- medaille-militaire-1953.html : citations en lignes (renommees de .citations
-   -> .citations-lignes) --- */
-article .citations-lignes{margin:1.2rem 0 1.6rem;padding:0}
-article .citations-lignes li{list-style:none;background:var(--row);border:1px solid var(--border);
-  border-radius:4px;padding:.7rem .9rem;margin-bottom:.6rem;text-align:left}
-article .citations-lignes li strong{font-family:'EB Garamond',serif;font-size:1rem}
-article .citations-lignes li .details{display:block;margin-top:.15rem}
-article .citations-lignes li .mort{display:block;margin-top:.15rem;color:var(--muted);font-style:italic}
-
-/* --- necropoles.html : une carte par nécropole (nom, description, liste des tombes).
-   Manquait jusqu'ici malgre la page citee dans la liste du groupe ci-dessus - .necropole
-   restait donc sans aucun style (rendu par defaut du navigateur, sans carte ni espacement). --- */
-article .necropole{background:var(--row);border:1px solid var(--border);border-radius:4px;
-  padding:1.1rem 1.3rem;margin-bottom:1.2rem}
-article .necropole h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.05rem;
-  color:var(--ink);border-bottom:none;margin:0 0 .4rem;padding-bottom:0}
-article .necropole p.meta{font-size:.82rem;color:var(--muted);margin-bottom:.7rem}
-article .necropole ul.roll{list-style:none;margin:0 0 .5rem;padding:0}
-article .necropole ul.roll li{font-size:.85rem;padding:.15rem 0;border-bottom:1px dashed var(--border)}
-article .necropole ul.roll li:last-child{border-bottom:none}
-article .necropole p.note{font-size:.78rem;color:var(--muted);font-style:italic;margin:.5rem 0 0}
-
-/* --- recensement-11e-rei.html : navigation par lettre (A-Z + a-confirmer) --- */
-article .letter-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.2rem 0 1.6rem}
-article .letter-nav a{padding:.5rem 1.1rem;background:var(--row);border:1px solid var(--border);
-  border-radius:20px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.85rem}
-article .letter-nav a:hover{background:var(--orange);border-color:var(--orange)}
-
-/* --- recensement-11e-rei.html : commentaires de visiteurs conserves (meme principe
-   que .comments/.comment de generateur_pages_panel_depuis_contenu.py, pour rester
-   coherent avec presse.html) --- */
-article .comments{margin-top:1.8rem}
-article .comment{background:var(--row);border:1px solid var(--border);border-radius:6px;
-  padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem}
-article .comment .meta{margin-bottom:.4rem}
-article .comment .author{font-weight:600;color:var(--ink)}
-article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
-article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  /* --- Commentaires de visiteurs conserves sur certaines biographies (ex. lovinger-jacques,
+     le-moine-marcel, cieslak-lucien) : plusieurs noms de classes coexistent selon la page
+     (.comment, .comment-item, .comment-block ; .author/.date ou simple .who) - toutes sont
+     couvertes ici pour ne plus jamais rester sans style. --- */
+  article .comments{margin-top:1.8rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment,article .comment-item,article .comment-block{background:var(--row);border:1px solid var(--border);
+    border-radius:6px;padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem;text-align:left}
+  article .comment .meta{margin-bottom:.4rem}
+  article .comment .author{font-weight:600;color:var(--ink)}
+  article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+  article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  article .who{font-weight:600;color:var(--ink);margin-bottom:.4rem;display:block}
 
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
@@ -214,7 +163,7 @@ article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
 
 <p class="lede">Parmi les légionnaires du 11e REI prisonniers de guerre, trois ont été internés au camp 325 de Rawa-Ruska. Il s'agissait d'un camp de représailles pour les prisonniers ayant notamment tenté de s'évader.</p>
 
-<div class="person-block">
+<div class="person">
 <div class="figure-side">
   <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-rawa-ruska-2.jpg" alt="Maurice Boulanger">
@@ -233,7 +182,7 @@ article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
 </div>
 </div>
 
-<div class="person-block">
+<div class="person">
 <div class="figure-side">
   <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-sanjorge-alphonse-2.png" alt="Alphonse Sanjorge Avistu">
@@ -251,7 +200,7 @@ article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
 </div>
 </div>
 
-<div class="person-block">
+<div class="person">
 <p class="subhead">JAGERSCHMIDT Philippe Christian</p>
 <ul>
 <li>(2/5/1913 - Paris 17 - France)</li>
