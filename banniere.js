@@ -1,5 +1,5 @@
 /*
-banniere.js — Bannière visuelle par page du site 11e REI (variante de test GitHub Pages)
+banniere.js — banniere visuelle par page du site 11e REI (variante de test GitHub Pages)
 ================================================================================================
 Un seul fichier, charge par toutes les pages via <script src="/banniere.js"></script>.
 Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page courante.
@@ -9,13 +9,12 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
   var BASE = "https://raw.githubusercontent.com/zestend-collab/11rei-bannieres/main/";
 
   var PHOTOS_PERSONNELLES = {
-    "arsene-zigrand": "banniere-arsene-zigrand.jpg",
     "binsztok-mordka": "banniere-binsztok-mordka.jpg",
     "brzezinski-israel": "banniere-brzezinski-israel.jpg",
     "buhrer-emile": "banniere-buhrer-emile.jpg",
     "amstutz-jean-bernard": "banniere-amstutz-groupe.jpg",
     "marguet-louis": "banniere-marguet-velos.jpg",
-    "jmo-3e-bataillon": "bannière-saint-germain.jpg",
+    "jmo-3e-bataillon": "banniere-saint-germain.jpg",
     "ordre-de-bataille": "banniere-ordre-de-bataille.jpg",
     "arborescence": "banniere-arborescence.jpg"
   };
@@ -25,8 +24,7 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     "banniere-mitrailleuse-groupe.jpg", "banniere-cavalerie.jpg", "banniere-colonne-marche.jpg",
     "banniere-construction-abri-hd.jpg", "banniere-chantier-colline.jpg", "banniere-groupe-champ.jpg",
     "banniere-infirmerie.jpg", "banniere-interieur-equipement.jpg", "banniere-neige-feu.jpg",
-    "banniere-porte-drapeau-marche.jpg", "banniere-portrait-officier.jpg", "banniere-portrait-officier-2.jpg",
-    "banniere-tanks-motos.jpg", "banniere-tanks-motos-2.jpg", "banniere-troupe-champ-drapeaux.jpg",
+    "banniere-porte-drapeau-marche.jpg", "banniere-tanks-motos.jpg", "banniere-tanks-motos-2.jpg", "banniere-troupe-champ-drapeaux.jpg",
     "banniere-balayage.jpg", "banniere-bar-alcool-tue.jpg", "banniere-deux-hommes-table.jpg",
     "banniere-general-cheval-troupe.jpg", "banniere-colonne-mitrailleuse.jpg", "banniere-5e-compagnie-salut.jpg",
     "banniere-clairons.jpg", "banniere-general-rue-face.jpg", "banniere-general-rue-profil.jpg",
@@ -34,10 +32,11 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     "banniere-colonne-contre-jour.jpg", "banniere-discours-officier.jpg", "banniere-fanfare-cymbales.jpg",
     "banniere-hiver-poele.jpg", "banniere-travaux-tranchee.jpg", "banniere-groupe-foret.jpg",
     "banniere-canon-ferroviaire.jpg", "banniere-salut-cheval-blanc.jpg", "banniere-jeu-cartes.jpg",
-    "banniere-drapeau-regimentaire.jpg", "banniere-fanfare-cour-ferme.jpg", "bannière-mort-2.jpg", "bannière-texte.jpg",
-    "bannière-fm.jpg","bannière-carte.jpg", "bannière-anglada.jpg", "bannière-inor.jpg", "banniere-amstutz-groupe.jpg",
-    "bannière-carnet.jpg", "banniere-brzezinski-israel.jpg", "bannière-saint-germain.jpg","bannière-mort.jpg",
-    "bannière-7e-compagnie.jpg","bannière-evdg.jpg", "bannière-reg.jpg","bannière-mi.jpg"
+    "banniere-drapeau-regimentaire.jpg", "banniere-fanfare-cour-ferme.jpg", "banniere-texte.jpg",
+    "banniere-fm.jpg", "banniere-carte.jpg", "banniere-anglada.jpg", "banniere-amstutz-groupe.jpg",
+    "banniere-carnet.jpg", "banniere-brzezinski-israel.jpg", "banniere-saint-germain.jpg", "banniere-mort.jpg",
+    "banniere-7e-compagnie.jpg", "banniere-evdg.jpg", "banniere-reg.jpg", "banniere-mi.jpg", "banniere-2e-bataillon.jpg", "banniere-arborescence.jpg",
+"banniere-attelages-mitrailleuses.jpg", "banniere-construction-abri", "banniere-portrait.jpg", "banniere-def.jpg"
 
   ];
 
