@@ -93,6 +93,17 @@
   article .figure-flank .side-text{flex:1;min-width:0}
   article .figure-flank .side-text p{margin-bottom:1rem}
   article .figure-flank .side-text p:last-child{margin-bottom:0}
+
+  article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+    border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+  article .lede-block{display:flex;gap:20px;align-items:flex-start;margin-bottom:1.4rem}
+  article .lede-block .portrait{flex:0 0 22%;max-width:22%}
+  article .lede-block .portrait img{width:100%;border-radius:4px;display:block}
+  article .lede-block .lede{flex:1;min-width:0;margin-bottom:0}
+  @media (max-width:600px){
+    article .lede-block{flex-direction:column}
+    article .lede-block .portrait{flex:none;max-width:180px;margin:0 auto}
+  }
   @media (max-width:700px){
     article .figure-flank{flex-direction:column}
     article .figure-flank .side-img{flex:none;max-width:100%}
@@ -154,14 +165,17 @@
 
 <header>
   <h1>Landsberg Armand</h1>
-  
-  <div class="tags"><span>11è REI</span><span>Brigades internationales</span><span>Guerre d'Espagne</span></div>
+  <div class="sub">alias Payel · Brigades internationales, EVDG</div>
+  <div class="tags"><span>11è REI</span><span>EVDG</span><span>Brigades internationales</span></div>
   <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
 </header>
 
 <article>
 
-<p class="lede">Armand Landsberg naît le 5 novembre 1898 à Żyrardów, en Pologne, dans une famille de commerçants. Militant communiste engagé, il combat pendant deux ans dans les Brigades internationales en Espagne avant de rejoindre, comme tant d'autres brigadistes internés en France, le 11e régiment étranger d'infanterie au début de la Seconde Guerre mondiale.</p>
+<div class="side-text">
+<p class="lede">Armand Landsberg, alias Payel, naît le 5 novembre 1898 à Żyrardów, en Pologne, dans une famille de commerçants. Militant communiste engagé, il combat pendant deux ans dans les Brigades internationales en Espagne avant de rejoindre, comme tant d'autres brigadistes internés en France, le 11e régiment étranger d'infanterie au début de la Seconde Guerre mondiale.</p>
+  </div>
+</div>
 
 <p class="section">Origines et identité</p>
 
@@ -181,7 +195,7 @@
 
 <p class="section">Installation en France et engagement militant</p>
 
-<p>Après son arrivée en France, Armand Landsberg exerce divers métiers : tricoteur, métallurgiste, ouvrier chez Citroën, puis dans le textile. Militant engagé, il adhère à la CGT en 1924, rejoint le Secours rouge en 1928, et devient membre du Parti communiste français en 1932, au sein de la cellule 302. Lecteur régulier de <em>L'Humanité</em>, il est également membre de la Fédération syndicale internationale — l'Internationale d'Amsterdam — ainsi que de l'ARAC, l'Association républicaine des anciens combattants, un réseau d'anciens combattants de la Première Guerre mondiale proche de la SFIO et de la SFIC. Polyglotte, il parle le français, le polonais, l'allemand et le russe.</p>
+<p>Après son arrivée en France, Armand Landsberg exerce divers métiers : tricoteur, métallurgiste, ouvrier chez Citroën, puis dans le textile. Militant engagé, il adhère à la CGT en 1924, rejoint le Secours rouge en 1928, et devient membre du Parti communiste français en 1932, au sein de la cellule 302. Lecteur régulier de <em>L'Humanité</em>, journal du PCF, Hirsch Landsberg est également membre de la Fédération syndicale internationale — l'Internationale d'Amsterdam — ainsi que de l'ARAC, l'Association républicaine des anciens combattants, un réseau d'anciens combattants de la Première Guerre mondiale proche de la SFIO et de la SFIC. Polyglotte, il parle le français, le polonais, l'allemand et le russe.</p>
 
 <div class="figure-side">
   <figure class="side-img">
@@ -215,7 +229,7 @@
 
 <p class="section">Le 11e régiment étranger d'infanterie</p>
 
-<p>Après la guerre civile espagnole, comme de nombreux volontaires des Brigades internationales, Landsberg est interné en France. Il arrive au camp de Saint-Cyprien le 6 mars 1939, puis est recensé, à partir du 2 avril 1939, au camp de Gurs — lieu d'internement administratif pour les républicains espagnols et les volontaires des Brigades internationales ayant quitté l'Espagne lors de la Retirada.</p>
+<p>Après la guerre civile espagnole, comme de nombreux volontaires des Brigades internationales, Hirsz « Armand » Landsberg est interné en France. Il arrive au camp de Saint-Cyprien le 6 mars 1939, puis est recensé, à partir du 2 avril 1939, au camp de Gurs — lieu d'internement administratif pour les républicains espagnols et les volontaires des Brigades internationales ayant quitté l'Espagne lors de la Retirada.</p>
 
 <div class="figure-flank">
   <figure class="side-img">
@@ -237,7 +251,6 @@
     <li>Archives de Paris, recensement</li>
     <li>Archives RGASPI, fonds 545 (Brigades internationales)</li>
   </ul>
-  <p class="updated">Mise à jour : 11/08/2026</p>
 </div>
 
 </article>
