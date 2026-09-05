@@ -104,6 +104,21 @@
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
+  /* --- Commentaires de visiteurs conserves sur certaines biographies (ex. lovinger-jacques,
+     le-moine-marcel, cieslak-lucien) : plusieurs noms de classes coexistent selon la page
+     (.comment, .comment-item, .comment-block ; .author/.date ou simple .who) - toutes sont
+     couvertes ici pour ne plus jamais rester sans style. --- */
+  article .comments{margin-top:1.8rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment,article .comment-item,article .comment-block{background:var(--row);border:1px solid var(--border);
+    border-radius:6px;padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem;text-align:left}
+  article .comment .meta{margin-bottom:.4rem}
+  article .comment .author{font-weight:600;color:var(--ink)}
+  article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+  article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  article .who{font-weight:600;color:var(--ink);margin-bottom:.4rem;display:block}
+
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
   .floating-comment-btn{
@@ -197,6 +212,11 @@ En 1946, Karol Zyga dépose une demande de naturalisation.
 Le préfet de la Meuse émet un avis favorable : après avoir rappelé la condamnation mineure de 1933 et ses services militaires, il insiste sur les difficultés de recrutement de la main-d'œuvre agricole dans les campagnes et souligne que son utilité comme ouvrier agricole présente un intérêt évident qui mérite d'être soutenu.
 La fiche de naturalisation mentionne son état de santé « bon », son assimilation « bonne » et ses « très bons » renseignements, tout en précisant qu'il demeure célibataire et sans charges de famille.
 En septembre 1946, au titre de l'article 60-62, il est proposé à la naturalisation, l'administration invitant à « tenir compte de la longue captivité ».</p>
+
+<div class="sources">
+  <h3>Source</h3>
+  <p>Archives nationales, dossier de naturalisation</p>
+</div>
 
 </article>
 

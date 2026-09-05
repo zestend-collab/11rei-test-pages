@@ -107,7 +107,7 @@
 /* ==========================================================================
    Ajouts a BIO_CSS pour les pages thematiques du Groupe A
    (monuments, prisonniers, rawa-ruska, 11e-rei-en-photo, cimetieres-communaux,
-   necropoles, rouge-vert2, livre, medaille-militaire-1952/1953)
+   necropoles, rouge-vert2, livre, medaille-militaire-1952/1953, recensement-11e-rei)
    ========================================================================== */
 
 /* --- communes a plusieurs pages : a ajouter une seule fois --- */
@@ -152,6 +152,23 @@ article .necropole ul.roll{list-style:none;margin:0 0 .5rem;padding:0}
 article .necropole ul.roll li{font-size:.85rem;padding:.15rem 0;border-bottom:1px dashed var(--border)}
 article .necropole ul.roll li:last-child{border-bottom:none}
 article .necropole p.note{font-size:.78rem;color:var(--muted);font-style:italic;margin:.5rem 0 0}
+
+/* --- recensement-11e-rei.html : navigation par lettre (A-Z + a-confirmer) --- */
+article .letter-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.2rem 0 1.6rem}
+article .letter-nav a{padding:.5rem 1.1rem;background:var(--row);border:1px solid var(--border);
+  border-radius:20px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.85rem}
+article .letter-nav a:hover{background:var(--orange);border-color:var(--orange)}
+
+/* --- recensement-11e-rei.html : commentaires de visiteurs conserves (meme principe
+   que .comments/.comment de generateur_pages_panel_depuis_contenu.py, pour rester
+   coherent avec presse.html) --- */
+article .comments{margin-top:1.8rem}
+article .comment{background:var(--row);border:1px solid var(--border);border-radius:6px;
+  padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem}
+article .comment .meta{margin-bottom:.4rem}
+article .comment .author{font-weight:600;color:var(--ink)}
+article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
 
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
