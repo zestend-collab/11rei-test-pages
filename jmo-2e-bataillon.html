@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal de marche — II° Bataillon, XI° R.E.I. (16 avril – 31 mai 1940)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=EB+Garamond:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* palette du site (identique a generateur_page_compagnie.py) */
+    --bg:#cccccc; --card:#ffffff; --orange:#fab855; --link:#ff9900;
+    --site-ink:#1a1a18; --muted:#555555; --border:#aaaaaa; --row:#f7f7f7;
+    /* palette propre au "papier" du carnet, laissee telle quelle */
+    --paper:#e7dcb9;
+    --paper2:#ddd0a4;
+    --ink:#39304a;
+    --ink-soft:#4c4160;
+    --accent:#7b2c33;
+    --binding:#5b4636;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0; padding:0; min-height:100vh;
+    background:var(--bg);
+    color:var(--site-ink);
+    font-family:'Inter', sans-serif;
+  }
+  .stage{
+    display:flex; flex-direction:column; align-items:center;
+    padding:28px 14px 46px;
+    min-height:100vh;
+    gap:14px;
+  }
+  .masthead{ text-align:center; margin-top:8px; }
+  .masthead .crest{
+    color:var(--muted); font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+    margin:0 0 4px;
+  }
+  .masthead h1{
+    color:var(--site-ink); font-size:clamp(16px,2.2vw,21px); letter-spacing:.02em;
+    margin:0 0 4px; font-weight:600;
+  }
+  .masthead p{
+    color:var(--muted); font-size:12.5px; margin:0; font-family:'EB Garamond', serif; font-style:italic;
+  }
+
+  .book-wrap{
+    position:relative;
+    perspective:2600px;
+    margin-top:6px;
+  }
+  .spine{
+    position:absolute; left:-14px; top:-6px; bottom:-6px; width:24px;
+    background:linear-gradient(90deg, #3d2e22, var(--binding) 55%, #4a382a);
+    border-radius:6px 2px 2px 6px;
+    box-shadow:inset -3px 0 6px rgba(0,0,0,.35), 0 4px 12px rgba(0,0,0,.25);
+    z-index:0;
+  }
+  .spine::before{
+    content:''; position:absolute; inset:8px 5px;
+    background-image:repeating-linear-gradient(180deg, rgba(230,210,170,.15) 0 2px, transparent 2px 14px);
+  }
+
+  .book{
+    position:relative;
+    width:min(92vw,600px);
+    height:min(84vh,820px);
+    transform-style:preserve-3d;
+    filter:drop-shadow(6px 12px 22px rgba(0,0,0,.28));
+  }
+
+  .leaf{
+    position:absolute; inset:0;
+    transform-style:preserve-3d;
+    transform-origin:left center;
+    transition:transform 1.05s cubic-bezier(.63,.02,.28,1);
+  }
+  .leaf.flipped{ transform:rotateY(-178deg); }
+  @media (prefers-reduced-motion: reduce){
+    .leaf{ transition:transform .01s linear; }
+  }
+
+  .face{
+    position:absolute; inset:0;
+    backface-visibility:hidden;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(120,90,45,.10), transparent 22%),
+      radial-gradient(circle at 85% 76%, rgba(120,90,45,.09), transparent 26%),
+      radial-gradient(circle at 70% 12%, rgba(120,90,45,.06), transparent 20%),
+      linear-gradient(135deg, var(--paper), var(--paper2));
+    border:1px solid rgba(70,50,20,.3);
+    border-radius:2px 8px 8px 2px;
+    box-shadow:2px 6px 14px rgba(0,0,0,.22), inset 0 0 40px rgba(120,90,45,.12);
+    padding:20px 20px 16px 24px;
+    overflow:hidden;
+  }
+  .face.back{
+    transform:rotateY(180deg);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .face.back::after{
+    content:'XI° R.E.I.';
+    font-family:'Special Elite', monospace;
+    font-size:46px; color:rgba(70,55,30,.08); letter-spacing:.2em;
+    transform:rotate(-8deg);
+  }
+
+  .page-chrome-top{
+    font-family:'Special Elite', monospace;
+    font-size:9.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:rgba(70,55,35,.55); border-bottom:1px solid rgba(70,55,35,.25);
+    padding-bottom:6px; margin-bottom:10px;
+  }
+  .page-content{
+    height:calc(100% - 46px);
+    overflow:hidden;
+    font-family:'Special Elite', monospace;
+    font-size:13.5px;
+    line-height:1.55;
+    color:var(--ink);
+  }
+
+  .page-content p{ margin:0 0 12px; text-align:justify; }
+  .date{
+    font-weight:700; text-decoration:underline; text-underline-offset:2px;
+    color:var(--ink-soft); margin-right:4px;
+  }
+  .note{ font-style:italic; font-weight:400; text-decoration:none; font-size:11px; color:rgba(70,55,35,.6); }
+
+  .letterhead{ text-align:center; margin-bottom:6px; }
+  .letterhead .regiment{
+    font-weight:700; letter-spacing:.06em; font-size:12.5px; margin:0 0 2px;
+  }
+  .letterhead.small .regiment{ font-size:10.5px; letter-spacing:.03em; }
+  .letterhead .battalion{ font-size:11px; margin:0; }
+  .doc-title{
+    text-align:center; font-size:14px; font-weight:400; text-transform:uppercase;
+    letter-spacing:.05em; margin:10px 0 16px; line-height:1.5;
+    border-top:1px solid rgba(70,55,35,.35); border-bottom:1px solid rgba(70,55,35,.35);
+    padding:8px 0;
+  }
+  .doc-sub{ display:block; font-size:12px; margin-top:3px; }
+
+  blockquote{
+    margin:0 0 10px; padding:6px 0 6px 14px; border-left:2px solid var(--accent);
+    font-style:italic; color:var(--ink-soft);
+  }
+  .ref{ font-size:11px; color:rgba(70,55,35,.65); }
+  .poignant{ color:var(--accent); }
+
+  .sign-block{ margin-top:10px; text-align:right; }
+  .sign-block p{ margin:0 0 4px; text-align:right; }
+  .signature{ font-style:italic; font-size:15px; margin-top:6px !important; }
+
+  ul.dispositif{ margin:0 0 12px; padding-left:16px; }
+  ul.dispositif li{ margin-bottom:6px; }
+
+  .pertes-title{ font-weight:700; text-decoration:underline; margin-bottom:6px !important; }
+  ul.pertes{
+    list-style:none; margin:0 0 14px; padding:0;
+    font-size:12px; line-height:1.55;
+  }
+  ul.pertes li{ padding:1px 0; border-bottom:1px dotted rgba(70,55,35,.25); }
+  ul.pertes.two-col{ columns:2; column-gap:18px; }
+  ul.pertes.two-col li{ break-inside:avoid; }
+
+  /* la couleur des folios reste celle du carnet, inchangee */
+  .folio{
+    position:absolute; bottom:8px; right:16px; font-size:10px;
+    font-family:'Special Elite', monospace;
+    color:rgba(70,55,35,.55); letter-spacing:.1em;
+  }
+
+  .corner-fold{
+    position:absolute; width:34px; height:34px; cursor:pointer;
+    bottom:0; right:0;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 52%, rgba(120,95,55,.35) 100%);
+    border-radius:0 0 6px 0;
+  }
+  .corner-fold.left{
+    right:auto; left:0; bottom:0;
+    background:linear-gradient(225deg, transparent 50%, rgba(0,0,0,.18) 52%, rgba(120,95,55,.35) 100%);
+    border-radius:0 0 0 6px;
+  }
+  .corner-fold:hover{ filter:brightness(1.2); }
+
+  .controls{
+    display:flex; align-items:center; gap:18px; margin-top:4px;
+  }
+  .nav-btn{
+    width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);
+    background:var(--card); color:var(--site-ink); font-size:1rem; cursor:pointer;
+    font-family:inherit; display:flex; align-items:center; justify-content:center;
+    transition:background .15s ease, color .15s ease;
+  }
+  .nav-btn:hover:not(:disabled){ background:var(--orange); }
+  .nav-btn:disabled{ opacity:.35; cursor:default; }
+  .folio-label{
+    color:var(--muted); font-size:.75rem; letter-spacing:.04em; min-width:110px; text-align:center;
+    font-variant-numeric:tabular-nums;
+  }
+  .hint{
+    color:var(--muted); font-size:11px; font-family:'EB Garamond', serif; font-style:italic;
+    margin-top:2px; text-align:center;
+  }
+
+  /* bouton commentaire, meme style que le reste du site */
+  .floating-comment-btn{
+    position:fixed; bottom:18px; right:18px; z-index:100;
+    display:flex; align-items:center; gap:.4rem;
+    font-family:'Inter', sans-serif; font-size:.78rem; font-weight:500;
+    color:var(--site-ink); background:var(--orange);
+    padding:.6rem 1rem; border-radius:20px; text-decoration:none;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  .floating-comment-btn:hover{ background:var(--link); color:#fff; }
+</style>
+</head>
+<body>
+
+<script src="/menu.js"></script>
+<script src="/banniere.js"></script>
+
+<!-- Lien vers le formulaire de commentaire du site (meme systeme que les autres pages), cle : JMO-2eBataillon -->
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=JMO-2eBataillon" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+
+<div class="stage">
+  <div class="masthead">
+    <p class="crest">XI° Régiment Étranger d'Infanterie — II° Bataillon</p>
+    <h1>Journal de marche du 2e Bataillon</h1>
+    <p>16 avril – 31 mai 1940 · Capitaine d'Alegron</p>
+  </div>
+
+  <div class="book-wrap">
+    <div class="spine"></div>
+    <div class="book" id="book"></div>
+  </div>
+
+  <div class="controls">
+    <button class="nav-btn" id="prevBtn" aria-label="Page précédente">‹</button>
+    <span class="folio-label" id="folioLabel"></span>
+    <button class="nav-btn" id="nextBtn" aria-label="Page suivante">›</button>
+  </div>
+  <p class="hint">cliquez sur le coin d'une page, ou utilisez les flèches du clavier, pour la tourner</p>
+</div>
+
+<script>
+// Chaque entree du journal est decoupee en blocs distincts (un bloc = un <p>, une <ul>, un
+// <blockquote>...). La pagination assemble ensuite ces blocs automatiquement, page par page,
+// a taille de police FIXE : jamais de mot coupe, jamais de changement brutal de taille.
+// S'il y a plus de pages que dans le carnet original, ce n'est pas un probleme.
+const blocks = [
+
+`<div class="letterhead">
+  <p class="regiment">XI° RÉGIMENT ÉTRANGER<br>D'INFANTERIE</p>
+  <p class="battalion">II° BATAILLON</p>
+</div>
+<h2 class="doc-title">Extrait du journal de marche du II/11° R.E.I.<span class="doc-sub">Lieu de stationnement le 16 avril 1940 : Drogny, Bockange et Hestroff</span></h2>
+<p>Encadrement du 2° Bataillon :</p>
+<ul class="dispositif">
+  <li>M.M. les Capitaines d'ALEGRON, Cdt le II/11° R.E.I.</li>
+  <li>le Lieutenant BROCHET, officier adjoint</li>
+  <li>Le S/Lt ROUSSON, Médecin du 2° Bataillon</li>
+  <li>le Capitaine LANCHON, Cdt la 5° Compagnie</li>
+  <li>le Capitaine MAGNE, Cdt la 6° Compagnie</li>
+  <li>le Lieutenant COQUET, Cdt la 7° Compagnie</li>
+  <li>le Capitaine de CLOSMADEUC, Cdt la C.A.B.2</li>
+</ul>`,
+
+`<p>Effectif du 2° Bataillon à la date du 16 avril 1940 : 17 officiers, 53 sous-officiers, 76 caporaux-chefs et caporaux, 685 légionnaires, 63 chevaux (dont présents : 12 officiers, 45 sous-officiers, 67 caporaux-chefs et caporaux, 560 légionnaires, 63 chevaux ; absents : 5 officiers, 8 sous-officiers, 9 caporaux-chefs et caporaux, 125 légionnaires).</p>
+<p>Mutations d'Officiers : Lt JABOUILLE rentre de permission le 24.4.40. Médecin-S/Lt ROUSSON rentre de permission le 27.4.40. Lt COQUET affecté 7° Cie le 24.4.40 ; S/Lt BERTOT affecté 5° Cie le 24.4.40. Lt FORGET part en permission le 26.4.40. Lt CHEVILLOTTE rentre de permission le 21.4.40.</p>
+<p>État sanitaire : très bon. Circonstances atmosphériques : pluies persistantes, mauvaises conditions de travail sauf les derniers 4 jours où le soleil est revenu. Nature du terrain : détrempé, mais en bonne voie d'assèchement depuis 2 jours. État moral et physique de la troupe : très bon.</p>`,
+
+`<h2 class="doc-title">Journal de marche<span class="doc-sub">du 16 au 30 avril 1940</span></h2>
+<p><span class="date">16 Avril</span> – Installation des unités dans les cantonnements de Drogny, Bockange et Hestroff. Reconnaissance et occupation des emplacements de combat. Envoi au D.A. d'un groupe-franc sous le commandement du Lieutenant HAFENSCHER — 1 section.</p>`,
+
+`<p><span class="date">17 Avril</span> – Travaux au fossé antichars et travailleur au profit du Génie.</p>`,
+
+`<p><span class="date">18 Avril</span> – Travaux.</p>`,
+
+`<p><span class="date">19 Avril</span> – Travaux.</p>`,
+
+`<p><span class="date">20 Avril</span> – Travaux le matin. Soir à la disposition des unités.</p>`,
+
+`<p><span class="date">21 Avril</span> – Repos.</p>`,
+
+`<p><span class="date">22 Avril</span> – Travaux — Douches à Bockange. Visite du Général de Division.</p>`,
+
+`<p><span class="date">23 Avril</span> – Travaux — Douches — Visite du Général Cdt le C.A.</p>`,
+
+`<p><span class="date">24 Avril</span> – Passage des consignes du quartier Sud au 151° R.I.</p>
+<p>Le Bataillon fait mouvement de Hestroff-Drogny-Bockange sur Volmerange lès Boulay. Départ 20h.30. Arrivée le 25 avril à 0h.30. La 6° Cie cantonne provisoirement à Loutremange. Les autres unités et le P.C. à Volmerange.</p>
+<p>Retour du Lieutenant JABOUILLE et du Médecin-S/lieutenant ROUSSON de permission.</p>`,
+
+`<p><span class="date">25 Avril</span> – Installation du Bataillon. Prise de commandement de la 7° Cie par le Lieutenant COQUET. Prise d'armes à la 7° Cie. Le Lieutenant BERTOT rentre de permission. Il est muté de la 7° Cie à la 5° Cie en remplacement du Lieutenant COQUET.</p>`,
+
+`<p><span class="date">26 Avril</span> – Installation et mutation dans le cantonnement. Après-midi nettoyage d'armes et du matériel. Le Lieutenant FORGET part en permission.</p>`,
+
+`<p><span class="date">27 Avril</span> – Instruction par Compagnie. Exercice de défilé en vue du 30 avril. Reconnaissance des chantiers par les Commandants d'unités.</p>`,
+
+`<p><span class="date">28 Avril</span> – Dimanche — Repos.</p>`,
+
+`<p><span class="date">29 Avril</span> – Le matin : Instruction. Soir : Fête sportive avec 1000 francs de prix. Soir après dîner : Cinéma, jazz et numéros. Appel 23 heures.</p>`,
+
+`<p><span class="date">30 Avril</span> – Prise d'armes régimentaire à Boulay. Présentation et remise du Drapeau au XI° R.E.I. par le Colonel ROBERT. Assistaient à la revue les Généraux d'Armée, de C.A., de Division.</p>
+<p>Défilé après la lecture du combat de « Camerone ». Apéritif offert par les sous-officiers aux Officiers. Visite des cuisines par le Général de VERDILHAC. Repas de Corps des Officiers à Boulay. À 15h.30, matinée théâtrale et musicale à Boulay. Le soir : Jazz à Volmerange.</p>
+<div class="sign-block">
+  <p>S.P. 12956, le 1° mai 1940.</p>
+  <p>Le Capitaine d'ALEGRON, Commandant le II/11° R.E.I.</p>
+  <p class="signature">signé : d'Alegron</p>
+</div>`,
+
+`<div class="letterhead small">
+  <p class="regiment">RÉGIMENT ÉTRANGER D'INFANTERIE — 2° BATAILLON</p>
+</div>
+<h2 class="doc-title">Extrait du journal de marche du II/11° Régt Étr. d'Inf.<span class="doc-sub">Lieu de stationnement le 1° mai 1940 : commune de Volmerange (Moselle)</span></h2>
+<p>Encadrement du 2° Bataillon :</p>
+<ul class="dispositif">
+  <li>M.M. le Capitaine d'ALEGRON, Cdt le II/11° R.E.I.</li>
+  <li>le Lieutenant BROCHET, officier adjoint</li>
+  <li>le S/Lieutenant ROUSSON, Médecin du 2° Bataillon</li>
+  <li>le Capitaine LANCHON, Cdt la 5° Cie</li>
+  <li>le Capitaine MAGNE, Cdt la 6° Cie</li>
+  <li>le Lieutenant COQUET, Cdt la 7° Cie</li>
+  <li>le Capitaine de CLOSMADEUC, Cdt la C.A.B.2</li>
+</ul>`,
+
+`<p>Effectif du 2° Bataillon à la date du 1° mai 1940 : 17 officiers, 56 sous-officiers, 88 caporaux-chefs et caporaux, 663 légionnaires (dont présents : 15 officiers, 41 sous-officiers, 78 caporaux-chefs et caporaux, 562 légionnaires ; absents : 2 officiers, 15 sous-officiers, 10 caporaux-chefs et caporaux, 101 légionnaires).</p>
+<p>Mutations d'Officiers : Lt FORGET rentre de permission le 8.5.40. Lt COQUET part en permission le 9.5.40. Lt COQUET rentre de permission le 11.5.40. Lt HAFENSCHER blessé et évacué le 15.5.40. Capitaine MAGNE, évacué sur G.S.D. le 13.5.40. Lt BLOT prend le Cdt de la 6° Cie.</p>
+<p>État sanitaire : Bon. Circonstances atmosphériques : normales. Nature du terrain : Bon. État moral et physique de la troupe : Très bon.</p>
+<div class="sign-block">
+  <p>S.P. 12956, le 16 mai 1940.</p>
+  <p>Le Capitaine d'ALEGRON, Commandant le II/11° Régiment Étranger d'Infanterie.</p>
+  <p class="signature">signé : d'Alegron</p>
+</div>`,
+
+`<h2 class="doc-title">Journal de marche<span class="doc-sub">du 1er au 15 mai 1940</span></h2>
+<p><span class="date">1 Mai</span> – Travaux.</p>`,
+
+`<p><span class="date">2 Mai</span> – Travail au cantonnement — exercice — solde et prêt.</p>`,
+
+`<p><span class="date">3 Mai</span> – Travaux.</p>`,
+
+`<p><span class="date">4 Mai</span> – Travaux.</p>`,
+
+`<p><span class="date">5 Mai</span> – Dimanche — repos, football.</p>`,
+
+`<p><span class="date">6 Mai</span> – Travaux.</p>`,
+
+`<p><span class="date">7 Mai</span> – Travaux — école de clique.</p>`,
+
+`<p><span class="date">8 Mai</span> – Travaux le matin — Soir instruction — douches — Théâtre aux armées à Boulay — le Lt FORGET rentre de permission.</p>`,
+
+`<p><span class="date">9 Mai</span> – Travaux — instruction des spécialistes — le Lt COQUET part en permission de 10 jours.</p>`,
+
+`<p><span class="date">10 Mai</span> – Travaux — reconnaissance sur le terrain en vue d'exercice de contre-attaque n°1. Reçu l'ordre d'appliquer mesure 33.</p>`,
+
+`<p><span class="date">11 Mai</span> – Instruction à l'extérieur — préparatifs en cas de départ — vérification des masques — douches — instruction des sous-officiers — le Lt COQUET, Cdt la 7° Cie, rentre de permission.</p>`,
+
+`<p><span class="date">12 Mai</span> – Repos.</p>`,
+
+`<p><span class="date">13 Mai</span> – Travaux.</p>`,
+
+`<p><span class="date">14 Mai</span> – Départ à 4 heures — le Bataillon fait étape sur Laquenexy. Arrivée à 7h.30. La 7° Cie est détachée à Villiers-Laquenexy. Le Bataillon fait mouvement sur Corny — Départ à 9 heures. Arrivée à 3 heures.</p>`,
+
+`<p class="poignant"><span class="date">15 Mai</span> – Le groupe franc rejoint par camion à 3 heures. Le Lieutenant HAFENSCHER a été blessé par balle à la poitrine — il est évacué — le caporal PEYROT est tué. 2 légionnaires ont été évacués pour blessure.</p>`,
+
+`<div class="letterhead small">
+  <p class="regiment">EXTRAIT DU JOURNAL DE MARCHE DU 2°/XI° ÉTRANGER D'INF.</p>
+</div>
+<h2 class="doc-title">Rapport d'effectifs<span class="doc-sub">Lieu de stationnement le 15 mai 1940 : Corny</span></h2>
+<p>Encadrement du 2° Bataillon :</p>
+<ul class="dispositif">
+  <li>le Chef de Bataillon d'ALEGRON, Cdt le 2/XI R.E.I.</li>
+  <li>le Lieutenant BROCHET, officier adjoint</li>
+  <li>le S/Lieutenant ROUSSON, médecin du 2° Btn</li>
+  <li>le Capitaine LANCHON, Cdt la 5° Cie</li>
+  <li>le Capitaine COQUET, Cdt la 7° Cie</li>
+  <li>le Capitaine de CLOSMADEUC, Cdt la C.A.B.2</li>
+  <li>le Lieutenant BLOT, Cdt la 6° Cie</li>
+</ul>`,
+
+`<p>Effectifs du 2° Bataillon à la date du 15 mai 1940 : 16 officiers, 58 sous-officiers, 88 caporaux-chefs et caporaux, 656 légionnaires, 63 chevaux (dont présents : 14 officiers, 54 sous-officiers, 85 caporaux-chefs et caporaux, 618 légionnaires, 63 chevaux ; absents : 2 officiers, 4 sous-officiers, 3 caporaux-chefs et caporaux, 38 légionnaires).</p>
+<p class="note">(Les mutations ci-dessous, datées du 27 et 28 mai, figurent ainsi dans le document original malgré l'intitulé « au 15 mai ».)</p>
+<p>Mutations d'Officiers : 27/5 : Capitaine de CLOSMADEUC, C.A.2, tué. Le Lieutenant VIEL prend le Cdt de la C.A.2. Lt PIQUART blessé — évacué. Capitaine BROCHET blessé — évacué. Lieutenant BLOT blessé — évacué. Lieutenant FORGET prend le Cdt de la 6° Cie. 28/5 : Le Capitaine LE MOINE du 1° Btn passe Adjt-Major du 2° Btn.</p>
+<p>État sanitaire : très bon. Circonstances atmosphériques : bonnes. Nature du terrain : favorable. État moral et physique de la troupe : T.B.</p>`,
+
+`<h2 class="doc-title">Journal de marche<span class="doc-sub">du 16 au 19 mai 1940</span></h2>
+<p><span class="date">16 Mai</span> – Cantonnement à Corny — 21 heures, départ par route sur Xonville — 20 km — arrivée à 2 heures.</p>`,
+
+`<p><span class="date">17 Mai</span> – Repos — préparatifs du mouvement du Btn pour être enlevé par camions en direction générale du Dun-sur-Meuse. Les lieutenants COQUET et BROCHET sont nommés capitaines à c. du 1° mai.</p>`,
+
+`<p><span class="date">18 Mai</span> – Le Bataillon bivouaque sur les positions — sur les hauteurs Ouest de Brécheville.</p>`,
+
+`<p><span class="date">19 Mai</span> – Bivouac — reconnaissance — mise en place du dispositif de défense, observation, liaison et travaux.</p>`,
+
+`<h2 class="doc-title">Journal de marche<span class="doc-sub">du 20 au 27 mai 1940</span></h2>
+<p><span class="date">20 Mai</span> – Idem — à 22 heures le bataillon fait mouvement sur le bois de Pâques (1 km S.E. de Nepvant).</p>`,
+
+`<p><span class="date">21 Mai</span> – À 5 heures arrivée au bois d'Inor — sur la route Inor-Malandry le bataillon monte en ligne au dispositif suivant :</p>
+<ul class="dispositif">
+  <li>7° Cie</li>
+  <li>6° Cie</li>
+  <li>5° Cie, avec le P.C. du Btn</li>
+  <li>+ 1 section de mitrailleuses et demie pour la 7° Cie, + 1 section de mitrailleuses pour la 6° Cie, + 1 section de mitrailleuses et demie pour la 5° Cie</li>
+</ul>
+<p>Il est en liaison à droite avec le 1° Btn, à gauche avec le 21° R.T.A. Le 11° R.E.I. relève des éléments des 14° et 15° R.T.A. et du 36° R.I. récemment éprouvés par de durs combats.</p>`,
+
+`<p><span class="date">22 Mai</span> – Vifs engagements de contact vers 3 heures. Les légionnaires s'emploient activement à organiser le terrain. La Compagnie BERTOT prend une mitrailleuse à l'ennemi, lui tuant deux hommes. La Compagnie COQUET fait prisonnier un officier allemand. Vifs engagements de contact vers 22 heures. Au cours de la journée, vers midi, un violent bombardement nous cause des pertes.</p>
+<p class="pertes-title">Pertes de la journée :</p>
+<ul class="pertes">
+  <li>Tués : 1</li>
+  <li>Blessés évacués : 8</li>
+  <li>Blessés soignés sur place : 4</li>
+</ul>`,
+
+`<p><span class="date">23 Mai</span> – Gros bombardements du P.C. Btn de 18h. à 19h.15 et de 21h. à 22h.30. La journée est cependant relativement calme. Quelques escarmouches de nuit, les patrouilles allemandes exécutent des feux d'harcèlement à la mitraillette sur nos postes.</p>
+<p class="pertes-title">Pertes de la journée :</p>
+<ul class="pertes">
+  <li>Tués : 2</li>
+  <li>Blessés évacués : 8</li>
+  <li>Blessés soignés sur place : 1</li>
+  <li>Disparus : 1</li>
+</ul>`,
+
+`<p><span class="date">24 Mai</span> – Même physionomie que la veille. Activité de patrouille de nuit. Bombardement de jour. La ligne de résistance s'organise et se ravitaille. L'observation aérienne ennemie est très active. Un caporal brancardier allemand prisonnier.</p>
+<p class="pertes-title">Pertes de la journée :</p>
+<ul class="pertes">
+  <li>Tués : 2</li>
+  <li>Blessés évacués : 4</li>
+  <li>Blessés soignés sur place : 2</li>
+</ul>`,
+
+`<p><span class="date">25 Mai</span> – Même activité que la veille.</p>
+<p class="pertes-title">Pertes de la journée :</p>
+<ul class="pertes">
+  <li>Tués : 1</li>
+  <li>Blessés évacués : 1</li>
+  <li>Blessés soignés sur place : —</li>
+</ul>`,
+
+`<p class="poignant"><span class="date">26 Mai</span> – Vers 0h.10 l'Adjudant-Chef METMANN est tué alors qu'il s'était porté en avant de son poste pour observer une patrouille ennemie signalée par ses guetteurs (éclat de grenade au cœur). Le Lieutenant FORGET exécute une patrouille de reconnaissance dans le courant de l'après-midi.</p>`,
+
+`<p><span class="date">27 Mai</span> – À 3 heures du matin très violente préparation d'artillerie sur nos positions. L'attaque allemande, toujours appuyée par l'artillerie, se déclenche à 4h.45. La section DERLY de la 5° Compagnie perd son chef (tué ou prisonnier) et est à peu près anéantie. L'ennemi occupe l'emplacement de cette section et s'infiltre hardiment entre nos points d'appui qui causent de lourdes pertes aux assaillants. Résistance très énergique de nos postes. La 7° Cie demande des munitions, mais tient bon. À 6 heures la 6° Cie et LANCHON (5° Cie) demandent du renfort d'urgence et l'appui de notre artillerie.</p>
+<p>À 9 heures nouvel assaut ennemi extrêmement violent. La section SAUTOUR (1° Cie du 1° Btn) cherche à endiguer la progression de l'ennemi et combat pour son compte depuis 5h.30 à la droite de la 5° Cie.</p>
+<p>10h.45 — Le Capitaine BROCHET rassemble les éléments de la 5° Cie qui se sont repliés, la section SAUTOUR et 2 sections de la 6° Cie. Cet officier fait preuve de qualités exceptionnelles et sous son impulsion énergique, toutes nos positions sont reprises à 11h.50, sauf celles de la section DERLY.</p>`,
+
+`<p>À midi, nouvel assaut allemand, violent mais décousu, paraissant faire son principal effort sur la 5° Cie. Conduite héroïque de l'Adjudant-Chef EGLOFF qui lutte désespérément sur une position en glacis et dont les éléments décimés sont cernés par l'ennemi. À 15 heures le Capitaine JAYET (9° Cie) contre-attaque et vient occuper les positions de la 5° Cie.</p>
+<p class="poignant">Au cours de la matinée le bataillon a été très éprouvé dans ses cadres. Le Capitaine de CLOSMADEUC (C.A.2) est tué d'une balle de mitraillette en plein front par des Allemands faisant le simulacre de se rendre (6h.30).</p>
+<p class="poignant">Le Lieutenant PICQUART est blessé à l'épaule à 9h.45. Le Capitaine BROCHET a la poitrine perforée par balle à 10 heures. Le Lieutenant BLOT est blessé par éclat d'obus à 11 heures (le Lt FORGET prend le commandement de la 6° Cie).</p>`,
+
+`<p>L'après-midi, les assaillants qui sont eux aussi épuisés luttent de toute leur énergie. L'artillerie fait rage des deux côtés. L'Adjudant-Chef EGLOFF, qui tient toujours, est grièvement blessé à 16h.35. Le Lieutenant SAUTOUR également. Mais le colmatage est fait. Le Capitaine LHUISSET exécute un ratissage en arrière des lignes. À 20h.30 le Chef de Bataillon d'ALEGRON rend compte par message au Colonel que le front du bataillon est intact.</p>
+<p>Au cours de cette journée le 2° bataillon a résisté aux assauts d'éléments de 3 régiments différents. Les actions d'éclat individuelles et collectives sont si nombreuses qu'il est impossible de les mentionner toutes. Toutefois la conduite du Capitaine BROCHET a fait l'objet de l'admiration enthousiaste de tous les légionnaires ayant combattu à ses côtés. Le redressement de la situation lui est dû en grande part. La Cie COQUET a également, sous la clairvoyante et énergique direction de son chef, fait des prodiges. Les brancardiers des bataillons se sont montrés dignes des combattants de 1° ligne, évacuant et soignant les blessés sous des rafales d'obus, venant à bout, sans aucune défaillance, d'une tâche surhumaine.</p>
+<p>À 20 heures, le silence total se fait sur le front.</p>`,
+
+`<p><span class="date">29 Mai</span> – À 6 heures, l'ordre de repli (rectification du front) parvient aux unités. Le bataillon vient sur la route Martincourt-Olizy où il tient la ligne d'arrêt. Les pertes de la veille [28 mai] s'établissent comme suit :</p>
+<p class="pertes-title">Pertes du 28 mai :</p>
+<ul class="pertes two-col">
+  <li>Tués : 14</li>
+  <li>Blessés évacués : 66</li>
+  <li>Blessés soignés sur place : 8</li>
+  <li>Disparus : 7</li>
+</ul>
+<p>Il a été fait 25 prisonniers dont un officier, pris de nombreuses armes et un matériel non encore dénombré.</p>
+<p>Le bataillon a perdu 4 officiers : Capitaine de CLOSMADEUC tué ; Capitaine BROCHET blessé ; Lieutenant PICQUART blessé ; Lieutenant BLOT blessé. Le Capitaine LE MOINE du 1° bataillon est affecté au 2° Bataillon comme Adjudant-Major.</p>
+<p>La 7° Compagnie est en flanc garde gauche du 3° bataillon.</p>
+<p class="pertes-title">Pertes du 28 mai 40 :</p>
+<ul class="pertes">
+  <li>Tués : —</li>
+  <li>Blessés évacués : 4</li>
+  <li>Blessés soignés sur place : —</li>
+</ul>`,
+
+`<p><span class="date">29 Mai</span> – Aménagement des positions. Un tir de harcèlement nous cause :</p>
+<ul class="pertes">
+  <li>Tués : 2</li>
+  <li>Blessés évacués : 5</li>
+  <li>Blessés soignés sur place : —</li>
+</ul>`,
+
+`<p><span class="date">30 Mai</span> – Journée calme. Quelques obus sont échangés par les artilleries adverses. Organisation des positions. Ravitaillement et approvisionnement des unités :</p>
+<ul class="pertes">
+  <li>Tués : —</li>
+  <li>Blessés évacués : 2</li>
+  <li>Blessés soignés sur place : —</li>
+</ul>`,
+
+`<p><span class="date">31 Mai</span> – Journée sans incidents — Travaux d'organisation.</p>
+<p class="pertes-title">Blessés évacués : 4.</p>`,
+
+];
+
+const book = document.getElementById('book');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const folioLabel = document.getElementById('folioLabel');
+let current = 0;
+let pages = [];
+
+// Fenetre de rendu : on ne monte dans le DOM que les feuillets proches de la
+// page courante (au lieu des ~80-100 pages du carnet d'un coup). Chaque
+// feuillet rendu porte des transforms 3D + drop-shadow ; en garder autant
+// en meme temps sature la memoire du compositeur sur mobile et fait crasher
+// l'onglet ("Impossible d'ouvrir cette page"). Les feuillets deja tournes ou
+// pas encore atteints n'ont de toute facon aucun rendu visible distinct
+// (memes dimensions, position absolute, inset:0), donc ne pas les monter ne
+// change rien a l'affichage.
+const RENDER_BEHIND = 1;
+const RENDER_AHEAD = 2;
+const leafEls = []; // tableau creux : index de page -> element .leaf ou undefined
+
+// Assemble les blocs en pages, a taille de police FIXE, en mesurant sur une feuille cachee
+// qui a exactement les memes dimensions/police que les vraies pages.
+function computePages(){
+  const measureLeaf = document.createElement('div');
+  measureLeaf.className = 'leaf';
+  measureLeaf.style.visibility = 'hidden';
+  measureLeaf.style.zIndex = '-1';
+  measureLeaf.innerHTML = `<div class="face front">
+      <div class="page-chrome-top">XI° R.E.I. — I° Bataillon</div>
+      <div class="page-content" id="__measure__"></div>
+    </div>`;
+  book.appendChild(measureLeaf);
+  const mc = measureLeaf.querySelector('#__measure__');
+
+  const result = [];
+  let currentHtml = '';
+
+  blocks.forEach(blockHtml => {
+    const attempt = currentHtml + blockHtml;
+    mc.innerHTML = attempt;
+    const overflows = mc.scrollHeight > mc.clientHeight + 1;
+
+    if (!overflows) {
+      currentHtml = attempt;
+    } else if (currentHtml === '') {
+      // un seul bloc, deja trop grand pour une page : on le garde seul, sans le couper
+      result.push(blockHtml);
+      currentHtml = '';
+    } else {
+      result.push(currentHtml);
+      mc.innerHTML = blockHtml;
+      currentHtml = mc.scrollHeight > mc.clientHeight + 1 ? blockHtml : blockHtml;
+    }
+  });
+  if (currentHtml) result.push(currentHtml);
+
+  book.removeChild(measureLeaf);
+  return result;
+}
+
+function leafContent(i){
+  return `
+      <div class="face front">
+        <div class="page-chrome-top">XI° R.E.I. — I° Bataillon</div>
+        <div class="page-content">${pages[i]}</div>
+        <div class="folio">${i + 1}</div>
+        <div class="corner-fold" data-dir="next"></div>
+      </div>
+      <div class="face back">
+        <div class="corner-fold left" data-dir="prev"></div>
+      </div>`;
+}
+
+// Cree (si besoin) et positionne le feuillet i ; ne fait rien s'il est deja
+// monte et a jour.
+function ensureLeaf(i){
+  if (i < 0 || i >= pages.length) return null;
+  let leaf = leafEls[i];
+  if (!leaf){
+    leaf = document.createElement('div');
+    leaf.className = 'leaf';
+    leaf.dataset.index = i;
+    leaf.innerHTML = leafContent(i);
+    leafEls[i] = leaf;
+    book.appendChild(leaf);
+  }
+  if (i < current){
+    leaf.classList.add('flipped');
+    leaf.style.zIndex = i;
+  } else {
+    leaf.classList.remove('flipped');
+    leaf.style.zIndex = pages.length - i;
+  }
+  return leaf;
+}
+
+// Retire du DOM les feuillets sortis de la fenetre de rendu autour de current.
+function pruneLeaves(){
+  leafEls.forEach((leaf, i) => {
+    if (!leaf) return;
+    if (i < current - RENDER_BEHIND || i > current + RENDER_AHEAD){
+      leaf.remove();
+      leafEls[i] = undefined;
+    }
+  });
+}
+
+function refreshWindow(){
+  const from = Math.max(0, current - RENDER_BEHIND);
+  const to = Math.min(pages.length - 1, current + RENDER_AHEAD);
+  for (let i = from; i <= to; i++) ensureLeaf(i);
+  pruneLeaves();
+}
+
+function buildBook(){
+  book.innerHTML = '';
+  leafEls.length = 0;
+  refreshWindow();
+}
+
+function updateUI(){
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === pages.length;
+  folioLabel.textContent = `Folio ${Math.min(current + 1, pages.length)} / ${pages.length}`;
+}
+
+function goNext(){
+  if (current >= pages.length) return;
+  const leaf = ensureLeaf(current);
+  leaf.classList.add('flipped');
+  leaf.style.zIndex = current;
+  current++;
+  refreshWindow();
+  updateUI();
+}
+
+function goPrev(){
+  if (current <= 0) return;
+  current--;
+  const leaf = ensureLeaf(current);
+  leaf.classList.remove('flipped');
+  leaf.style.zIndex = pages.length - current;
+  refreshWindow();
+  updateUI();
+}
+
+function rebuild(){
+  const wasCurrent = current;
+  pages = computePages();
+  current = Math.min(wasCurrent, pages.length);
+  buildBook();
+  updateUI();
+}
+
+function init(){
+  pages = computePages();
+  buildBook();
+  updateUI();
+}
+
+init();
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(rebuild);
+}
+
+let resizeTimer;
+let lastInnerHeight = window.innerHeight;
+window.addEventListener('resize', () => {
+  // Sur mobile, l'apparition/disparition de la barre d'adresse declenche un
+  // 'resize' pour quelques dizaines de pixels de hauteur ; ignorer ces
+  // micro-variations evite de relancer inutilement computePages()+buildBook()
+  // (couteux) a chaque scroll.
+  const h = window.innerHeight;
+  if (Math.abs(h - lastInnerHeight) < 100) return;
+  lastInnerHeight = h;
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(rebuild, 200);
+});
+
+nextBtn.addEventListener('click', goNext);
+prevBtn.addEventListener('click', goPrev);
+
+book.addEventListener('click', (e) => {
+  const corner = e.target.closest('.corner-fold');
+  if (!corner) return;
+  if (corner.dataset.dir === 'next') goNext();
+  else goPrev();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') goNext();
+  if (e.key === 'ArrowLeft') goPrev();
+});
+</script>
+</body>
+</html>
