@@ -33,7 +33,11 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     "banniere-colonne-contre-jour.jpg", "banniere-discours-officier.jpg", "banniere-fanfare-cymbales.jpg",
     "banniere-hiver-poele.jpg", "banniere-travaux-tranchee.jpg", "banniere-groupe-foret.jpg",
     "banniere-canon-ferroviaire.jpg", "banniere-salut-cheval-blanc.jpg", "banniere-jeu-cartes.jpg",
-    "banniere-drapeau-regimentaire.jpg", "banniere-fanfare-cour-ferme.jpg"
+    "banniere-drapeau-regimentaire.jpg", "banniere-fanfare-cour-ferme.jpg", "bannière-mort-2.jpg", "bannière-texte.jpg",
+    "bannière-fm.jpg","bannière-carte.jpg", "bannière-anglada.jpg", "bannière-inor.jpg", "banniere-amstutz-groupe.jpg",
+    "bannière-carnet.jpg", "banniere-brzezinski-israel.jpg", "bannière-saint-germain.jpg","bannière-mort.jpg",
+    "bannière-7e-compagnie.jpg","bannière-evdg.jpg"
+
   ];
 
   // Fonction de secours pour transformer "nom-du-slug" en "Nom Du Slug" si le H1 est absent
