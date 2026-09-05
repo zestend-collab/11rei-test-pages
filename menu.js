@@ -61,7 +61,7 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     logo.className = "gsite-logo";
     logo.href = SITE;
     var logoImg = document.createElement("img");
-    logoImg.src = "https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/accueil-1.png";
+    logoImg.src = "https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/logo.png";
     logoImg.alt = "11è REI";
     logo.appendChild(logoImg);
     inner.appendChild(logo);
