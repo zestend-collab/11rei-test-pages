@@ -104,6 +104,21 @@
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
+  /* --- Commentaires de visiteurs conserves sur certaines biographies (ex. lovinger-jacques,
+     le-moine-marcel, cieslak-lucien) : plusieurs noms de classes coexistent selon la page
+     (.comment, .comment-item, .comment-block ; .author/.date ou simple .who) - toutes sont
+     couvertes ici pour ne plus jamais rester sans style. --- */
+  article .comments{margin-top:1.8rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment,article .comment-item,article .comment-block{background:var(--row);border:1px solid var(--border);
+    border-radius:6px;padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem;text-align:left}
+  article .comment .meta{margin-bottom:.4rem}
+  article .comment .author{font-weight:600;color:var(--ink)}
+  article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+  article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  article .who{font-weight:600;color:var(--ink);margin-bottom:.4rem;display:block}
+
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
   .floating-comment-btn{
@@ -169,6 +184,12 @@
 <p>Veuf, Delmas, malade, sanctionné à nouveau, quitte le Maroc en octobre 1950 et rentre en France. Instituteur à l'école de garçons de Laluque (Landes), membre de la section du SNI dans les Landes, il est le secrétaire de la section départementale de la FEN-CGT de 1951 à 1954.</p>
 
 <p>Membre du bureau, puis secrétaire à partir de 1959, de la section communiste d'Aire-sur-Adour, Gaston Delmas entre au comité de la fédération communiste en 1953 et y reste jusqu'à la conférence fédérale de 1964.</p>
+
+<div class="sources">
+  <h3>Source</h3>
+  <p>Le Maitron est le nom d'usage d'un ensemble de dictionnaires biographiques du mouvement ouvrier dirigé par l'historien Jean Maitron (jusqu'à sa mort en 1987) puis par son successeur Claude Pennetier.<br>
+  <a href="https://maitron.fr/spip.php?article22078" target="_blank" rel="noopener">https://maitron.fr/spip.php?article22078</a>, notice DELMAS Gaston, Bernard, Jean par Jacques Girault, version mise en ligne le 25 octobre 2008, dernière modification le 10 août 2021.</p>
+</div>
 
 </article>
 

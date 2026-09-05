@@ -104,6 +104,21 @@
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
+  /* --- Commentaires de visiteurs conserves sur certaines biographies (ex. lovinger-jacques,
+     le-moine-marcel, cieslak-lucien) : plusieurs noms de classes coexistent selon la page
+     (.comment, .comment-item, .comment-block ; .author/.date ou simple .who) - toutes sont
+     couvertes ici pour ne plus jamais rester sans style. --- */
+  article .comments{margin-top:1.8rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment,article .comment-item,article .comment-block{background:var(--row);border:1px solid var(--border);
+    border-radius:6px;padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem;text-align:left}
+  article .comment .meta{margin-bottom:.4rem}
+  article .comment .author{font-weight:600;color:var(--ink)}
+  article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+  article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  article .who{font-weight:600;color:var(--ink);margin-bottom:.4rem;display:block}
+
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
   .floating-comment-btn{
@@ -152,21 +167,46 @@
 
 <p>Fils de Charles Aguet et de Marie-Louise Gaudard, Paul Aguet mesure 1 m 88 et a les cheveux et les yeux bruns. Avant son engagement à la Légion, son parcours en Suisse n'est pas exempt de démêlés avec la justice : recherché en 1932 pour le vol d'une vache, il fait l'objet d'un mandat d'arrêt de la police suisse, qui précise qu'il a franchi la frontière avec la France à Perly. Dès 1933, la police helvétique le signale comme engagé à la Légion étrangère, à Sidi-Bel-Abbès.</p>
 
+<div class="imgrow">
+  <figure class="size-small">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-aguet-paul-2.jpg" alt="Archive de la police suisse concernant Paul Aguet">
+    <figcaption>Archives de la police suisse</figcaption>
+  </figure>
+  <figure class="size-small">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-aguet-paul-4.jpg" alt="Archive de la police suisse concernant Paul Aguet">
+    <figcaption>Archives de la police suisse</figcaption>
+  </figure>
+</div>
+
 <p class="section">Campagne 1939-1940 avec le 11e REI</p>
 
 <p>À la mobilisation, Paul Aguet est incorporé au 11e régiment étranger d'infanterie avec le grade de caporal-chef. Il est fait prisonnier le 23 juin 1940, dans les jours qui suivent l'armistice.</p>
 
-<p class="section">Captivité</p>
+<div class="figure-flank">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-aguet-paul-5.jpg" alt="Liste des prisonniers mentionnant Paul Aguet">
+    <figcaption>Liste des prisonniers</figcaption>
+  </figure>
+  <div class="side-text">
+    <p class="section">Captivité</p>
+    <p>Paul Aguet est d'abord interné au frontstalag 161, sous le matricule 802, avant d'être transféré au Stalag VII A. En 1942, il se trouve à Landshut, en Bavière, où il est enregistré pour s'être fracturé une jambe ; il y est alors employé dans la ferme d'Alfons Hirsch.</p>
+  </div>
+</div>
 
-<p>Paul Aguet est d'abord interné au frontstalag 161, sous le matricule 802, avant d'être transféré au Stalag VII A. En 1942, il se trouve à Landshut, en Bavière, où il est enregistré pour s'être fracturé une jambe ; il y est alors employé dans la ferme d'Alfons Hirsch.</p>
-
-<div class="sources">
-  <h3>Sources</h3>
-  <ul>
-    <li>Collection Arolsen — 69996122</li>
-    <li>Archives de la police suisse</li>
-  </ul>
-  <p class="updated">Mise à jour : 11/08/2026</p>
+<div class="figure-flank reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-aguet-paul-6.jpg" alt="Fiche de la collection Arolsen concernant Paul Aguet">
+    <figcaption>Collection Arolsen</figcaption>
+  </figure>
+  <div class="side-text">
+    <div class="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li>Collection Arolsen — 69996122</li>
+        <li>Archives de la police suisse</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 </article>

@@ -104,6 +104,21 @@
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
+  /* --- Commentaires de visiteurs conserves sur certaines biographies (ex. lovinger-jacques,
+     le-moine-marcel, cieslak-lucien) : plusieurs noms de classes coexistent selon la page
+     (.comment, .comment-item, .comment-block ; .author/.date ou simple .who) - toutes sont
+     couvertes ici pour ne plus jamais rester sans style. --- */
+  article .comments{margin-top:1.8rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment,article .comment-item,article .comment-block{background:var(--row);border:1px solid var(--border);
+    border-radius:6px;padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem;text-align:left}
+  article .comment .meta{margin-bottom:.4rem}
+  article .comment .author{font-weight:600;color:var(--ink)}
+  article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+  article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  article .who{font-weight:600;color:var(--ink);margin-bottom:.4rem;display:block}
+
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
   .floating-comment-btn{
@@ -145,6 +160,11 @@
 </header>
 
 <article>
+
+<figure style="float:right;width:38%;max-width:260px;margin:0 0 1.2rem 1.5rem">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binoche-11e-rei-2.gif" alt="Portrait">
+  <figcaption>Portrait</figcaption>
+</figure>
 
 <p class="citation">François Binoche, un officier de parole<br>
 Philippe Vial<br>
@@ -222,9 +242,14 @@ Mis en ligne sur Cairn.info le 21/06/2019<br>
 <p>François Binoche n'est pas seul. D'autres officiers de sa génération ont fait à leur manière un choix identique. Certains ont suivi un chemin parallèle, comme Jacques Pâris de Bollardière. D'autres ont pris des options opposées, au moment de la guerre d'Algérie en particulier : Hélie Denoix de Saint-Marc, par exemple. Dans leur diversité, ces parcours donnent la mesure du bouleversement induit dans les consciences militaires par l940. En refusant radicalement la défaite et en choisissant de le dire publiquement pour inventer une nouvelle légitimité politique, Charles de Gaulle a durablement rebattu les cartes de l'obéissance militaire. L'onde de choc s'est prolongée à l'échelle de la vie du jeune lieutenant qu'était François Binoche. Dans sa singularité, son parcours est celui d'une génération.</p>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binoche-11e-rei-2.gif" alt="Cérémonie de départ du général de division François Binoche 1967">
+  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binoche-11e-rei.jpg" alt="Cérémonie de départ du général de division François Binoche 1967">
   <figcaption>Cérémonie de départ du général de division François Binoche 1967</figcaption>
 </figure>
+
+<div class="sources">
+  <h3>Source</h3>
+  <p>Philippe Vial, « François Binoche, un officier de parole », <em>Inflexions</em>, 2018/3 (N° 39), pages 35 à 47, Éditions Armée de terre. Mis en ligne sur Cairn.info le 21/06/2019. <a href="https://doi.org/10.3917/infle.039.0035" target="_blank" rel="noopener">https://doi.org/10.3917/infle.039.0035</a></p>
+</div>
 
 <div class="notes">
   <h3>Notes</h3>

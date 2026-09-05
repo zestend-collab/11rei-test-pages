@@ -104,6 +104,21 @@
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
+  /* --- Commentaires de visiteurs conserves sur certaines biographies (ex. lovinger-jacques,
+     le-moine-marcel, cieslak-lucien) : plusieurs noms de classes coexistent selon la page
+     (.comment, .comment-item, .comment-block ; .author/.date ou simple .who) - toutes sont
+     couvertes ici pour ne plus jamais rester sans style. --- */
+  article .comments{margin-top:1.8rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment,article .comment-item,article .comment-block{background:var(--row);border:1px solid var(--border);
+    border-radius:6px;padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem;text-align:left}
+  article .comment .meta{margin-bottom:.4rem}
+  article .comment .author{font-weight:600;color:var(--ink)}
+  article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+  article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  article .who{font-weight:600;color:var(--ink);margin-bottom:.4rem;display:block}
+
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
   .floating-comment-btn{
@@ -214,54 +229,60 @@
 
 <p class="subhead">Idessa et Maurice</p>
 
-<p>La famille Binsztock est profondément touchée par les déportations durant la Seconde Guerre mondiale.</p>
-
-<p>Lors de la rafle du Vel d'Hiv, l'épouse de Maurice, Idesa (Idessa) Luzerowicz Lerner, est arrêtée avec son fils Robert. Elle est déportée à Auschwitz depuis le camp de Pithiviers par le convoi n°14 du 3 août 1942. Leur fils Robert, fait partie des 360 enfants détenus à Pithiviers après la rafle du 16 juillet 1942, il est transféré à Drancy le 25 août. Il est finalement déporté le 26 août 1942 par le convoi n°24, wagon 9.</p>
-
-<div class="imgrow">
-  <figure>
+<div class="figure-flank">
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-7.jpg" alt="Idessa et Maurice">
     <figcaption>Idessa et Maurice</figcaption>
   </figure>
-  <figure>
+  <div class="side-text">
+    <p>La famille Binsztock est profondément touchée par les déportations durant la Seconde Guerre mondiale.</p>
+    <p>Lors de la rafle du Vel d'Hiv, l'épouse de Maurice, Idesa (Idessa) Luzerowicz Lerner, est arrêtée avec son fils Robert. Elle est déportée à Auschwitz depuis le camp de Pithiviers par le convoi n°14 du 3 août 1942. Leur fils Robert, fait partie des 360 enfants détenus à Pithiviers après la rafle du 16 juillet 1942, il est transféré à Drancy le 25 août. Il est finalement déporté le 26 août 1942 par le convoi n°24, wagon 9.</p>
+  </div>
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-8.jpg" alt="Robert avec ses cousines Fanny et Lucienne">
     <figcaption>Robert avec ses cousines Fanny et Lucienne</figcaption>
   </figure>
 </div>
 
-<p>La sœur de Maurice, Szandla Mindl (Madeleine), est arrêtée à son domicile du 9 rue de Crimée dans le 19ᵉ arrondissement de Paris. Elle est déportée par le convoi n°14, le même jour que l'épouse de Maurice, le 3 août 1942. Son mari, Wolf Lerner, interné comme Maurice à Beaune-la-Rolande en 1941, avait déjà été déporté plus tôt, le 28 juin 1942, par le convoi n°5. Leurs filles, Fajga (Fanny) et Lucienne, sont déportées respectivement par le convoi n°16 du 7 août 1942 et par le convoi n°24 du 26 août 1942 dans le wagon n°9 avec son cousin Robert.</p>
-
-<p>Le frère cadet de Maurice, Icyk (Jacques), est déporté un mois plus tard, le 14 septembre 1942, par le convoi n°32.</p>
-
-<p>Aucun d'entre eux ne survivra.</p>
-
-<p>Quelques membres de la famille échappent toutefois à la mort. Son frère Lejbus (Léon), engagé dans des activités résistantes liées à la diffusion de propagande gaulliste, est arrêté puis interné successivement à Beaune-la-Rolande et à Drancy. Il est déporté à Dachau par le convoi n°59 du 2 septembre 1943, où il survit.</p>
-
-<p>Sa sœur Chaja Sura (Hélène) survit également après avoir été déportée par le convoi n°68 du 10 février 1944.</p>
-
-<p>Son père n'a pas été arrêté et son frère Abram Ojzer (Albert), est prisonnier de guerre en Allemagne.</p>
-
-<div class="imgrow">
-  <figure>
+<div class="figure-flank">
+  <figure class="side-img">
     <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-9.jpg" alt="Wolf Lerner, Madeleine, Fanny et Lucienne">
     <figcaption>Wolf Lerner, Madeleine, Fanny et Lucienne</figcaption>
   </figure>
-  <figure>
-    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-10.jpg" alt="Léon">
-    <figcaption>Léon</figcaption>
-  </figure>
+  <div class="side-text">
+    <p>La sœur de Maurice, Szandla Mindl (Madeleine), est arrêtée à son domicile du 9 rue de Crimée dans le 19ᵉ arrondissement de Paris. Elle est déportée par le convoi n°14, le même jour que l'épouse de Maurice, le 3 août 1942. Son mari, Wolf Lerner, interné comme Maurice à Beaune-la-Rolande en 1941, avait déjà été déporté plus tôt, le 28 juin 1942, par le convoi n°5. Leurs filles, Fajga (Fanny) et Lucienne, sont déportées respectivement par le convoi n°16 du 7 août 1942 et par le convoi n°24 du 26 août 1942 dans le wagon n°9 avec son cousin Robert.</p>
+    <p>Le frère cadet de Maurice, Icyk (Jacques), est déporté un mois plus tard, le 14 septembre 1942, par le convoi n°32.</p>
+    <p>Aucun d'entre eux ne survivra.</p>
+    <p>Quelques membres de la famille échappent toutefois à la mort. Son frère Lejbus (Léon), engagé dans des activités résistantes liées à la diffusion de propagande gaulliste, est arrêté puis interné successivement à Beaune-la-Rolande et à Drancy. Il est déporté à Dachau par le convoi n°59 du 2 septembre 1943, où il survit.</p>
+    <p>Sa sœur Chaja Sura (Hélène) survit également après avoir été déportée par le convoi n°68 du 10 février 1944.</p>
+    <p>Son père n'a pas été arrêté et son frère Abram Ojzer (Albert), est prisonnier de guerre en Allemagne.</p>
+  </div>
+  <div class="side-img">
+    <figure>
+      <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-10.jpg" alt="Léon">
+      <figcaption>Léon</figcaption>
+    </figure>
+    <figure style="margin-top:.8rem">
+      <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-11.jpg" alt="Chaja Hélène">
+      <figcaption>Chaja Hélène</figcaption>
+    </figure>
+  </div>
 </div>
 
-<figure>
-  <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-binsztok-mordka-11.jpg" alt="Chaja Hélène">
-  <figcaption>Chaja Hélène</figcaption>
-</figure>
 
 <p class="subhead">Après-guerre</p>
 
 <p>Maurice revient à Paris et reprend une vie d'artisan. Il adhère à l'Union des engagés volontaires, anciens combattants juifs – leurs enfants et amis, association dédiée aux anciens combattants et aux déportés juifs et obtient la nationalité française en 1948.</p>
 
 <p>Il meurt à Paris 19ᵉ, le 26 décembre 1978, il est toujours domicilié 99 rue Compans.</p>
+
+<div class="sources">
+  <h3>Sources</h3>
+  <ul>
+    <li>Archives nationales, dossier de naturalisation</li>
+    <li>Mémorial de la Shoah</li>
+  </ul>
+</div>
 
 </article>
 

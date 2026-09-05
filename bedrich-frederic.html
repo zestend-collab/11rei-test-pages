@@ -104,6 +104,21 @@
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
   article .sources li{margin-bottom:.3rem}
 
+  /* --- Commentaires de visiteurs conserves sur certaines biographies (ex. lovinger-jacques,
+     le-moine-marcel, cieslak-lucien) : plusieurs noms de classes coexistent selon la page
+     (.comment, .comment-item, .comment-block ; .author/.date ou simple .who) - toutes sont
+     couvertes ici pour ne plus jamais rester sans style. --- */
+  article .comments{margin-top:1.8rem}
+  article .comments h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.6rem}
+  article .comment,article .comment-item,article .comment-block{background:var(--row);border:1px solid var(--border);
+    border-radius:6px;padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem;text-align:left}
+  article .comment .meta{margin-bottom:.4rem}
+  article .comment .author{font-weight:600;color:var(--ink)}
+  article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+  article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+  article .who{font-weight:600;color:var(--ink);margin-bottom:.4rem;display:block}
+
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 
   .floating-comment-btn{
@@ -228,7 +243,6 @@
     <li>René Luce Coupin, <em>Vainqueurs quand même, le 11e de la Légion étrangère au feu (1939-1940)</em>, p. 192-193, 196</li>
     <li>Roger Bruge, <em>Les combattants du 18 juin</em>, T.1 : <em>Le Sang versé</em>, p. 496</li>
   </ul>
-  <p class="updated">Mise à jour : 11/08/2026</p>
 </div>
 
 </article>
