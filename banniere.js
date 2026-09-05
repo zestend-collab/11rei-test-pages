@@ -15,6 +15,7 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     "buhrer-emile": "banniere-buhrer-emile.jpg",
     "amstutz-jean-bernard": "banniere-amstutz-groupe.jpg",
     "marguet-louis": "banniere-marguet-velos.jpg",
+    "jmo-3e-bataillon": "bannière-saint-germain.jpg",
     "ordre-de-bataille": "banniere-ordre-de-bataille.jpg",
     "arborescence": "banniere-arborescence.jpg"
   };
