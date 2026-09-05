@@ -278,7 +278,7 @@ function render(rows){
 
     // Nom
     const ap = d.LettreDossier || (d.Nom.replace(/^\?/,'').charAt(0).toLowerCase());
-    const aURL = `https://zestend-collab.github.io/-11rei-recensement/recensement-${ap}.html${d.Identifiant ? '#'+d.Identifiant : ''}`;
+    const aURL = `https://test.11regimentetranger.com/recensement-${ap}${d.Identifiant ? '#'+d.Identifiant : ''}`;
     let nomHTML = d.URL
       ? `<a class="fiche" href="${d.URL}" target="_blank" rel="noopener">${d.Nom}</a>`
       : `<a class="alpha" href="${aURL}" target="_blank" rel="noopener">${d.Nom}</a>`;
