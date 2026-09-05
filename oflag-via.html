@@ -107,34 +107,22 @@
     font-size:1.15rem;color:#8a5100;margin-bottom:.3rem}
   .article-box .byline{font-family:'Inter',sans-serif;font-size:.75rem;letter-spacing:.04em;
     text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem}
-  .article-box p{font-family:'EB Garamond',serif;font-size:1.05rem;line-height:1.85;
-    color:var(--ink);margin-bottom:1rem;text-align:justify}
-  .article-box p:last-child{margin-bottom:0}
-  .article-box h3{font-family:'EB Garamond',serif;font-weight:600;font-style:italic;
-    font-size:1.15rem;color:var(--ink);margin:1.6rem 0 .8rem;text-align:center}
-  .article-box .dialogue{padding-left:1rem;border-left:2px solid var(--orange);margin-bottom:.3rem}
-  .article-box .footnote{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);
-    font-style:italic;margin-top:.6rem}
+  .article-box .dialogue{font-style:italic}
+  .article-box .footnote{margin-top:1rem;font-size:.78rem;color:var(--muted)}
+  .quote-block{background:var(--row);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;
+    padding:1rem 1.3rem;margin:1.2rem 0;font-family:'EB Garamond',serif;font-style:italic;
+    font-size:.98rem;color:var(--ink)}
 
-  .quote-block{font-family:'EB Garamond',serif;font-style:italic;font-size:1.08rem;
-    color:var(--ink);background:var(--row);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;
-    padding:1rem 1.3rem;margin:1.2rem 0}
-
-  /* ---- presse.html : commentaires de visiteurs (contenu reel, conserve) ---- */
+  /* ---- presse.html : commentaires de visiteurs conserves ---- */
   .comments{margin-top:1.6rem}
-  .comments h2.section-title{margin-top:0}
-  .comment{background:var(--card);border:1px solid var(--border);border-radius:6px;
-    padding:1.1rem 1.3rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:1rem}
-  .comment .meta{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.4rem}
-  .comment .author{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem;color:var(--ink)}
-  .comment .date{font-size:.75rem;color:var(--muted)}
-  .comment p{font-size:.92rem;line-height:1.6;color:var(--ink)}
+  .comment{background:var(--row);border:1px solid var(--border);border-radius:6px;
+    padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem}
+  .comment .meta{margin-bottom:.4rem}
+  .comment .author{font-weight:600;color:var(--ink)}
+  .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
 
-  /* ---- cartographie-inor.html : cartes et recit journalier ---- */
-  .map-figure{margin:0 0 1.6rem}
-  .map-figure img{width:100%;border-radius:6px;border:1px solid var(--border);display:block;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1)}
-  .map-figure figcaption{font-size:.8rem;color:var(--muted);font-style:italic;margin-top:.5rem;text-align:center}
+  /* ---- cartographie-inor.html : cartes ---- */
+  .map-figure{margin-bottom:1.4rem}
   .map-embed{margin-bottom:.8rem}
   .map-embed iframe{width:100%;height:520px;border:1px solid var(--border);border-radius:6px;
     display:block;box-shadow:0 3px 10px rgba(0,0,0,0.1)}
@@ -428,11 +416,10 @@
   </ul>
 
 </div>
-
 <footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
 
 </main>
-<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-OflagVIA" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<a class="floating-comment-btn" href="https://test.11regimentetranger.com/commentaire?page=Blog-OflagVIA" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
 <button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
 <script>(function(){
   var btn = document.getElementById('floating-top-btn');
