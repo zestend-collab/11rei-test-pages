@@ -37,7 +37,7 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     "banniere-drapeau-regimentaire.jpg", "banniere-fanfare-cour-ferme.jpg", "bannière-mort-2.jpg", "bannière-texte.jpg",
     "bannière-fm.jpg","bannière-carte.jpg", "bannière-anglada.jpg", "bannière-inor.jpg", "banniere-amstutz-groupe.jpg",
     "bannière-carnet.jpg", "banniere-brzezinski-israel.jpg", "bannière-saint-germain.jpg","bannière-mort.jpg",
-    "bannière-7e-compagnie.jpg","bannière-evdg.jpg"
+    "bannière-7e-compagnie.jpg","bannière-evdg.jpg", "bannière-reg.jpg","bannière-mi.jpg"
 
   ];
 
