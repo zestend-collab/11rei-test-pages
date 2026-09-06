@@ -102,7 +102,8 @@
   article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--muted);margin-bottom:.5rem}
   article .sources ul{padding-left:1.1rem;margin-bottom:0}
-  article .sources li{margin-bottom:.3rem}
+  article .sources li{margin-bottom:.3rem;overflow-wrap:break-word;word-break:break-word}
+  article .sources a{overflow-wrap:break-word;word-break:break-word}
 
 /* ==========================================================================
    Ajouts a BIO_CSS pour les pages thematiques du Groupe A
@@ -124,12 +125,17 @@ article .cta:hover{background:var(--link);color:#fff}
 /* --- medaille-militaire-1952.html : citations detaillees (renommees de .citations
    -> .citations-fiches pour ne plus entrer en collision avec la variante 1953) --- */
 ul.citations-fiches{list-style:none;margin:1.2rem 0 1.6rem;padding:0;
-  display:grid;grid-template-columns:1fr;gap:.6rem}
+  display:grid;grid-template-columns:1fr;gap:.6rem;min-width:0}
 ul.citations-fiches li.person{background:var(--row);border:1px solid var(--border);border-radius:4px;
-  padding:.7rem .9rem;text-align:left}
+  padding:.7rem .9rem;text-align:left;min-width:0;overflow-wrap:break-word;word-break:break-word}
 ul.citations-fiches li.person strong{font-family:'EB Garamond',serif;font-size:1rem;display:block;margin-bottom:.3rem}
-ul.citations-fiches ul.det{list-style:none;margin:0;padding:0}
-ul.citations-fiches ul.det li{font-size:.83rem;color:var(--ink);padding:.08rem 0}
+ul.citations-fiches ul.det{list-style:none;margin:0;padding:0;min-width:0}
+ul.citations-fiches ul.det li{font-size:.83rem;color:var(--ink);padding:.08rem 0;overflow-wrap:break-word;word-break:break-word}
+@media (max-width:600px){
+  ul.citations-fiches li.person{padding:.6rem .7rem}
+  ul.citations-fiches li.person strong{font-size:.92rem}
+  ul.citations-fiches ul.det li{font-size:.78rem}
+}
 
 /* --- medaille-militaire-1953.html : citations en lignes (renommees de .citations
    -> .citations-lignes) --- */
