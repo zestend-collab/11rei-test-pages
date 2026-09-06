@@ -42,7 +42,25 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     + ".gsite-links a:hover{opacity:.8}"
     + ".gsite-nav.scrolled .gsite-links a:hover{color:#202124;opacity:1}"
     + ".gsite-links a.active{font-weight:500;border-bottom-color:#fab855}"
-    + "@media (max-width:760px){.gsite-links{gap:16px}.gsite-nav-inner{gap:14px;padding:0 12px}}";
+    + ".gsite-burger{display:none;flex-shrink:0;width:34px;height:34px;border:none;background:transparent;"
+    + "cursor:pointer;padding:6px;margin-left:auto;-webkit-tap-highlight-color:transparent}"
+    + ".gsite-burger span{display:block;width:100%;height:2px;background:#ffffff;margin:6px 0;"
+    + "transition:transform .2s ease,opacity .2s ease}"
+    + ".gsite-nav.scrolled .gsite-burger span{background:#3c4043}"
+    + ".gsite-nav.menu-open .gsite-burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}"
+    + ".gsite-nav.menu-open .gsite-burger span:nth-child(2){opacity:0}"
+    + ".gsite-nav.menu-open .gsite-burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}"
+    + "@media (max-width:760px){"
+    + ".gsite-nav-inner{gap:14px;padding:0 12px}"
+    + ".gsite-burger{display:block}"
+    + ".gsite-links{position:fixed;top:64px;left:0;right:0;bottom:0;height:auto;"
+    + "flex-direction:column;align-items:stretch;gap:0;overflow-y:auto;overflow-x:hidden;"
+    + "background:#ffffff;padding:8px 0;transform:translateX(100%);transition:transform .25s ease;"
+    + "box-shadow:-2px 0 10px rgba(0,0,0,.15)}"
+    + ".gsite-nav.menu-open .gsite-links{transform:translateX(0)}"
+    + ".gsite-links a{color:#3c4043 !important;padding:16px 24px;width:100%;border-bottom:1px solid #eee;white-space:normal}"
+    + ".gsite-links a.active{border-bottom:1px solid #eee;border-left:3px solid #fab855;padding-left:21px}"
+    + "}";
 
   function construireMenu() {
     var chemin = window.location.pathname;
@@ -61,7 +79,7 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     logo.className = "gsite-logo";
     logo.href = SITE;
     var logoImg = document.createElement("img");
-    logoImg.src = "https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/logo.png";
+    logoImg.src = "https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/accueil-1.png";
     logoImg.alt = "11è REI";
     logo.appendChild(logoImg);
     inner.appendChild(logo);
@@ -80,6 +98,33 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
       linksWrap.appendChild(a);
     });
     inner.appendChild(linksWrap);
+
+    var burger = document.createElement("button");
+    burger.className = "gsite-burger";
+    burger.setAttribute("aria-label", "Ouvrir le menu");
+    burger.setAttribute("aria-expanded", "false");
+    burger.innerHTML = "<span></span><span></span><span></span>";
+    burger.addEventListener("click", function () {
+      var ouvert = nav.classList.toggle("menu-open");
+      burger.setAttribute("aria-expanded", ouvert ? "true" : "false");
+      burger.setAttribute("aria-label", ouvert ? "Fermer le menu" : "Ouvrir le menu");
+    });
+    inner.appendChild(burger);
+
+    // Ferme le tiroir automatiquement si on clique un lien ou si l'ecran repasse
+    // en format desktop (redimensionnement ou rotation de l'appareil).
+    linksWrap.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
+        nav.classList.remove("menu-open");
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 760) {
+        nav.classList.remove("menu-open");
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
 
     nav.appendChild(inner);
     // Insere la nav tout en haut du body : si une banniere (.hero) existe deja ou est
