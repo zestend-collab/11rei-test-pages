@@ -58,12 +58,67 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     return dernierMorceau.replace(/\.html?$/i, "");
   }
 
+  var SESSION_KEY = "banniere-generique-session";
+
+  function melanger(tableau) {
+    var copie = tableau.slice();
+    for (var i = copie.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = copie[i]; copie[i] = copie[j]; copie[j] = tmp;
+    }
+    return copie;
+  }
+
+  function lireEtatSession() {
+    try {
+      var brut = sessionStorage.getItem(SESSION_KEY);
+      if (!brut) return null;
+      var etat = JSON.parse(brut);
+      if (!etat || !Array.isArray(etat.ordre) || typeof etat.next !== "number" || !etat.map) return null;
+      return etat;
+    } catch (e) {
+      return null; // stockage indisponible ou contenu corrompu : on repart de zero
+    }
+  }
+
+  function ecrireEtatSession(etat) {
+    try {
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(etat));
+    } catch (e) {
+      // stockage indisponible (navigation privee stricte, quota...) : le tirage de cette
+      // page reste valable a l'affichage, simplement sans persister pour les pages suivantes
+    }
+  }
+
+  // Attribue une banniere generique par page (stable si on revient sur la meme page pendant
+  // la session), differente d'une page a l'autre, en piochant sans repetition dans un ordre
+  // melange tire une fois par session. Si toutes les bannieres ont deja ete distribuees a
+  // d'autres pages pendant cette session, on remelange et on recommence a piocher (une page
+  // peut alors, dans de tres grands sites, recevoir la meme image qu'une autre deja vue).
+  function choisirBanniereGenerique(slug) {
+    var etat = lireEtatSession();
+    if (!etat) {
+      etat = { ordre: melanger(BANNIERES_GENERIQUES), next: 0, map: {} };
+    }
+    if (etat.map[slug]) {
+      return etat.map[slug];
+    }
+    if (etat.next >= etat.ordre.length) {
+      etat.ordre = melanger(BANNIERES_GENERIQUES);
+      etat.next = 0;
+    }
+    var choix = etat.ordre[etat.next];
+    etat.next += 1;
+    etat.map[slug] = choix;
+    ecrireEtatSession(etat);
+    return choix;
+  }
+
   function choisirBanniere(slug) {
     if (PHOTOS_PERSONNELLES[slug]) {
       return PHOTOS_PERSONNELLES[slug];
     }
-    var index = Math.floor(Math.random() * BANNIERES_GENERIQUES.length);
-    return BANNIERES_GENERIQUES[index];
+    return choisirBanniereGenerique(slug);
   }
 
   function injecterStyleParDefaut() {
