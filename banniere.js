@@ -34,9 +34,10 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     "banniere-canon-ferroviaire.jpg", "banniere-salut-cheval-blanc.jpg", "banniere-jeu-cartes.jpg",
     "banniere-drapeau-regimentaire.jpg", "banniere-fanfare-cour-ferme.jpg", "banniere-texte.jpg",
     "banniere-fm.jpg", "banniere-carte.jpg", "banniere-anglada.jpg", "banniere-amstutz-groupe.jpg",
-    "banniere-carnet.jpg", "banniere-brzezinski-israel.jpg", "banniere-saint-germain.jpg", "banniere-mort.jpg",
-    "banniere-7e-compagnie.jpg", "banniere-evdg.jpg", "banniere-reg.jpg", "banniere-mi.jpg", "banniere-2e-bataillon.jpg", "banniere-arborescence.jpg",
-"banniere-attelages-mitrailleuses.jpg", "banniere-construction-abri.jpg", "banniere-portrait.jpg", "banniere-def.jpg"
+    "banniere-carnet.jpg", "banniere-saint-germain.jpg", "banniere-mort.jpg",
+    "banniere-7e-compagnie.jpg", "banniere-evdg.jpg", "banniere-reg.jpg", "banniere-mi.jpg", "banniere-2e-bataillon.jpg", 
+    "banniere-arborescence.jpg", "banniere-construction-abri.jpg", "banniere-magne.jpg",
+    "banniere-portrait.jpg", "banniere-def.jpg", "banniere-inor.jpg", "banniere-mort-2.jpg"
 
   ];
 
@@ -57,28 +58,11 @@ Insere ou met a jour l'image de fond du bloc <div class="hero"> selon la page co
     return dernierMorceau.replace(/\.html?$/i, "");
   }
 
-  function hashStable(texte) {
-  var h = 0;
-  for (var i = 0; i < texte.length; i++) {
-    h = (h * 31 + texte.charCodeAt(i)) >>> 0;
-  }
-  return h;
-}
-
-  // Correction de la variable interne dans hashStable
-  function hashStable(texte) {
-    var h = 0;
-    for (var i = 0; i < texte.length; i++) {
-      h = (h * 31 + texte.charCodeAt(i)) >>> 0;
-    }
-    return h;
-  }
-
   function choisirBanniere(slug) {
     if (PHOTOS_PERSONNELLES[slug]) {
       return PHOTOS_PERSONNELLES[slug];
     }
-    var index = hashStable(slug) % BANNIERES_GENERIQUES.length;
+    var index = Math.floor(Math.random() * BANNIERES_GENERIQUES.length);
     return BANNIERES_GENERIQUES[index];
   }
 
