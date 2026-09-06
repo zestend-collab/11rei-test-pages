@@ -202,14 +202,10 @@
   .eff-chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
   .eff-count{font-size:.74rem;color:var(--muted);margin:-2px 0 10px}
 
-  .eff-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:.5rem}
   table.eff-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);font-size:.82rem}
   table.eff-table thead th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
     color:var(--muted);background:var(--row);padding:.6rem .7rem;cursor:pointer;white-space:normal;
     border-bottom:2px solid var(--orange)}
-  @media (max-width:560px){
-    table.eff-table thead th{font-size:.62rem;padding:.5rem .4rem;line-height:1.25}
-  }
   table.eff-table thead th:hover{color:var(--ink)}
   table.eff-table thead th .arrow{opacity:.5;font-size:.6rem;margin-left:.2rem}
   table.eff-table tbody td{padding:.55rem .7rem;border-top:1px solid var(--border);vertical-align:top}
@@ -235,12 +231,13 @@
   a.eff-fiche:hover{text-decoration:underline}
   .eff-nofiche{color:#c9c3af;font-size:.74rem}
 
-  .ci-table{width:100%;border-collapse:collapse;margin:.3rem 0 1.2rem;font-size:.82rem}
+  .ci-table{width:100%;border-collapse:collapse;margin:.3rem 0 1.2rem;font-size:.82rem;table-layout:fixed}
   .ci-table caption{caption-side:top;text-align:left;font-family:'EB Garamond',serif;font-style:italic;
-    color:var(--muted);margin-bottom:.4rem;font-size:.85rem}
+    color:var(--muted);margin-bottom:.4rem;font-size:.85rem;white-space:normal}
   .ci-table th{background:var(--row);border-bottom:2px solid var(--orange);padding:.5rem .6rem;
-    text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
-  .ci-table td{padding:.5rem .6rem;border-top:1px solid var(--border)}
+    text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);
+    overflow-wrap:break-word;word-break:break-word}
+  .ci-table td{padding:.5rem .6rem;border-top:1px solid var(--border);overflow-wrap:break-word;word-break:break-word}
   .ci-table tr.total-row td{font-weight:600;border-top:2px solid var(--border)}
 
   @media (max-width:900px){
@@ -251,11 +248,19 @@
     .eff-stats{grid-template-columns:repeat(2,1fr)}
   }
   @media (max-width:700px){
-    /* Les tableaux fixes ecrits a la main dans le texte (7e, 2e compagnie...) ont souvent
-       trop de colonnes pour un ecran de telephone : plutot que d'ecraser les colonnes au
-       point de les rendre illisibles, on transforme le tableau en bloc scrollable horizontal. */
-    .ci-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;max-width:100%}
-    .ci-table caption{white-space:normal}
+    /* Objectif : tenir sur l'ecran sans scroll horizontal, en resserrant plutot qu'en
+       masquant les colonnes. table-layout:fixed + overflow-wrap force chaque cellule (y
+       compris les intitules multi-mots comme "Cx-chefs et Caporaux") a revenir a la ligne
+       au lieu de pousser le tableau plus large que l'ecran. */
+    .ci-table{font-size:.66rem}
+    .ci-table th,.ci-table td{padding:.35rem .3rem}
+    .ci-table caption{font-size:.78rem}
+
+    table.eff-table thead th{font-size:.6rem;padding:.45rem .35rem;line-height:1.2}
+    table.eff-table tbody td{padding:.45rem .35rem;font-size:.76rem}
+    td.eff-nom{white-space:normal;font-size:.78rem}
+    a.eff-fiche{white-space:normal;font-size:.68rem}
+    .eff-badge{font-size:.58rem;padding:.05rem .35rem}
   }
 </style>
 <script src="/menu.js"></script>
@@ -329,7 +334,6 @@
 </div>
 <div class="eff-count" id="effCount"></div>
 
-<div class="eff-table-wrap">
 <table class="eff-table" id="effTable">
   <thead>
     <tr>
@@ -342,7 +346,6 @@
   </thead>
   <tbody id="effBody"></tbody>
 </table>
-</div>
 
 <footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
 
