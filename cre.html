@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compagnie Régimentaire d'Engins (C.R.E.) — 11e REI</title>
+<meta name="description" content="Compagnie Régimentaire d'Engins (C.R.E.), 11e régiment étranger d'infanterie : organisation, encadrement et effectif recensé.">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon.ico" sizes="any">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/site.webmanifest">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,400;1,600&family=Caveat:wght@500;600&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+    --bg:#eef1f4;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1c2733;--muted:#5b6b7a;--border:#c7d0d9;--row:#f7f7f7;
+  }
+  :root{--paper:#faf6ec;--paper2:#f3ecd9;--rule:#d8cdb0;--margin-line:#e0847a;}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.6rem;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+  header .flag{width:180px;height:auto;flex-shrink:0;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  header .htext{flex:1;text-align:center}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(20px,3.6vw,28px);margin-bottom:.3rem}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem}
+  header .back{display:inline-block;margin-top:.5rem;font-size:.78rem;color:var(--link);text-decoration:none}
+  @media (max-width:560px){header{flex-wrap:wrap;justify-content:center}header .htext{order:3;flex-basis:100%}}
+
+  .ci-intro{max-width:900px;margin:0 auto 20px;padding:1.2rem 1.4rem;background:var(--card);
+    border:1px solid var(--border);border-radius:4px;font-size:.85rem;line-height:1.65;color:var(--ink)}
+  .ci-intro p{margin:0 0 .7rem}
+  .ci-lede{font-style:italic;color:#4a4030;border-left:3px solid var(--orange);padding-left:1rem}
+  .ci-intro ul{margin:0 0 .7rem 1.2rem}
+  .ci-intro li{margin-bottom:.3rem}
+  .ci-h2{font-family:inherit;font-size:1.2rem;font-weight:600;border-bottom:2px solid var(--orange);
+    padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .ci-h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+    color:var(--muted);margin:1.1rem 0 .5rem}
+  .ci-fig{margin:1rem 0}
+  .ci-fig img{border-radius:4px;display:block}
+  .ci-size-medium img{width:min(420px,100%);margin:0 auto}
+  .ci-size-small img{width:min(240px,100%);margin:0 auto}
+  .ci-size-full img{width:100%}
+  .ci-fig figcaption{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.4rem;font-style:italic}
+  .ci-intro blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:var(--ink);
+    background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+
+  /* --- Carnet, façon journal de terrain --- */
+  .carnet-title{font-family:'EB Garamond',serif;font-weight:600;font-size:1.2rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.6rem 0 1rem}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .suggestions{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none}
+  .suggestions.show{display:block}
+  .suggestion-item{padding:.5rem .9rem;font-size:.82rem;color:var(--ink);cursor:pointer;
+    display:flex;justify-content:space-between;gap:8px}
+  .suggestion-item:hover,.suggestion-item.active{background:var(--row)}
+  .suggestion-item .sg-meta{color:var(--muted);font-size:.72rem;white-space:nowrap}
+  .navbtn{width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--border);background:var(--card);
+    color:var(--ink);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .navbtn:hover{background:var(--orange)}
+  .pagecount{font-size:.75rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .book-stage{
+    background:
+      radial-gradient(ellipse at center, #4a3826 0%, #1c130a 78%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,.12) 0 2px, transparent 2px 6px);
+    border-radius:10px;
+    padding:2.2rem 1.4rem;
+    margin-bottom:.6rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6);
+  }
+  .book{position:relative;perspective:2200px;display:flex;max-width:720px;margin:0 auto;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .page{
+    flex:1;min-width:0;position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    min-height:260px;
+    color:#2b2013;
+    transition:transform .45s ease, opacity .45s ease;
+  }
+  .page-left{border-radius:6px 0 0 6px;padding-left:1.9rem;
+    box-shadow:inset -10px 0 18px -12px rgba(0,0,0,.45)}
+  .page-right{border-radius:0 6px 6px 0;padding-right:1.9rem;
+    box-shadow:inset 10px 0 18px -12px rgba(0,0,0,.45)}
+  .book::before{ /* reliure centrale */
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;z-index:3;
+    background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.35)),
+               repeating-linear-gradient(180deg, #2a1c0f 0 3px, #1c1108 3px 6px);
+    box-shadow:0 0 14px rgba(0,0,0,.6);
+  }
+  .page::after{ /* coin corné */
+    content:'';position:absolute;bottom:0;width:22px;height:22px;
+    background:linear-gradient(135deg, transparent 50%, rgba(0,0,0,.18) 50%);
+  }
+  .page-left::after{right:0;border-radius:0 0 6px 0}
+  .page-right::after{left:0;transform:scaleX(-1);border-radius:0 0 0 6px}
+  .page.turning-next{transform:rotateY(-14deg) translateX(-16px);opacity:0}
+  .page.turning-prev{transform:rotateY(14deg) translateX(16px);opacity:0}
+  .page-empty{display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;
+    font-size:1.3rem;color:#8a7554}
+
+  .flip{
+    position:absolute;top:0;bottom:0;width:50%;z-index:5;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(120,90,40,.10), transparent 45%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.12), transparent 40%),
+      repeating-linear-gradient(var(--paper) 0 26px, var(--rule) 26px 27px),
+      linear-gradient(120deg, #f2e6c4 0%, #e9d8ab 100%);
+    padding:1.7rem 1.3rem 1.5rem;
+    color:#2b2013;
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+    box-shadow:0 0 24px rgba(0,0,0,.45);
+    transition:transform .5s cubic-bezier(.45,.05,.35,1);
+    overflow:hidden;
+    display:none;
+  }
+  .flip::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 40%);
+    opacity:0;transition:opacity .5s}
+  .flip.showing::after{opacity:1}
+  .flip.right{right:0;transform-origin:left center;border-radius:0 6px 6px 0;padding-right:1.9rem}
+  .flip.left{left:0;transform-origin:right center;border-radius:6px 0 0 6px;padding-left:1.9rem}
+  .flip.flipping-right{transform:rotateY(-160deg)}
+  .flip.flipping-left{transform:rotateY(160deg)}
+
+  .p-header{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.2rem;
+    border-bottom:1px dashed rgba(120,90,40,.4);padding-bottom:.4rem}
+  .p-name{font-family:'EB Garamond',serif;font-weight:600;font-size:1.15rem;color:#2b2013}
+  .p-stamp{font-family:'Caveat',cursive;font-size:1rem;color:#8a1f11;border:2px solid #8a1f11;border-radius:6px;
+    padding:.05rem .45rem;transform:rotate(4deg);white-space:nowrap;opacity:.8}
+  .p-meta{font-family:'EB Garamond',serif;font-style:italic;color:#6b5a3a;font-size:.85rem;margin-bottom:.8rem}
+  .p-field{margin-bottom:.4rem;line-height:1.5;font-size:.82rem}
+  .p-field .lbl{font-family:'Caveat',cursive;font-size:1.02rem;color:#8a4a1f;margin-right:.3rem}
+  .p-link{display:inline-block;margin-top:.7rem;font-size:.76rem;color:#8a4a1f;text-decoration:none;
+    border-bottom:1px dotted #8a4a1f}
+  .p-link:hover{color:#8a1f11}
+  .pageno{position:absolute;bottom:.6rem;font-family:'Caveat',cursive;font-size:.9rem;color:#8a7554}
+  .page-left .pageno{right:1rem}
+  .page-right .pageno{left:1rem}
+  .tapzone{position:absolute;top:0;bottom:0;width:22%;cursor:pointer;z-index:2}
+  .page-left .tapzone{left:0}
+  .page-right .tapzone{right:0}
+
+    .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{bottom:74px !important;}
+  .ci-note{font-size:.8rem;font-style:italic;color:#7a5a2a;background:var(--paper2);
+    border:1px solid var(--rule);border-radius:4px;padding:.7rem 1rem;margin:.4rem 0 1rem}
+
+  .eff-stats{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin:0 0 18px}
+  .eff-stat{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--orange);
+    border-radius:4px;padding:.9rem .6rem;text-align:center}
+  .eff-stat .n{font-family:'EB Garamond',serif;font-weight:600;font-size:1.7rem;color:var(--ink)}
+  .eff-stat.mpf .n{color:#8a1f11}
+  .eff-stat .l{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:.15rem}
+
+  .eff-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;justify-content:space-between}
+  .eff-search{flex:1 1 240px}
+  .eff-search input{width:100%;padding:.55rem .9rem;border-radius:20px;border:1px solid var(--border);
+    font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)}
+  .eff-search input:focus{outline:2px solid var(--orange);outline-offset:-1px}
+  .eff-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .eff-chip{border:1px solid var(--border);background:var(--card);color:var(--muted);padding:.4rem .8rem;
+    font-size:.74rem;cursor:pointer;border-radius:20px;user-select:none;font-family:'Inter',sans-serif}
+  .eff-chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .eff-count{font-size:.74rem;color:var(--muted);margin:-2px 0 10px}
+
+  table.eff-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);font-size:.82rem}
+  table.eff-table thead th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--muted);background:var(--row);padding:.6rem .7rem;cursor:pointer;white-space:normal;
+    border-bottom:2px solid var(--orange)}
+  table.eff-table thead th:hover{color:var(--ink)}
+  table.eff-table thead th .arrow{opacity:.5;font-size:.6rem;margin-left:.2rem}
+  table.eff-table tbody td{padding:.55rem .7rem;border-top:1px solid var(--border);vertical-align:top}
+  table.eff-table tbody tr:hover{background:var(--row)}
+  td.eff-nom{font-weight:600;white-space:nowrap}
+  td.eff-nom .eff-prenom{font-weight:400;color:var(--muted)}
+  td.eff-details{color:var(--muted);font-size:.76rem;max-width:280px}
+  td.eff-section{color:var(--muted);font-size:.76rem;max-width:160px}
+
+  .eff-badge{display:inline-block;font-size:.62rem;text-transform:uppercase;letter-spacing:.02em;
+    padding:.1rem .45rem;border-radius:3px;margin:1px 3px 1px 0;white-space:nowrap;border:1px solid transparent;
+    font-family:'Inter',sans-serif}
+  .eff-badge.MPF{background:#f4e3df;color:#8a1f11;border-color:#e3bdb4}
+  .eff-badge.Prisonnier{background:#fdf1d9;color:#8a6d1f;border-color:var(--orange)}
+  .eff-badge.Blessé{background:#fbeee0;color:#9c5a1f;border-color:#edd2ac}
+  .eff-badge.Déserteur{background:#ece9f2;color:#4d4470;border-color:#d3cce4}
+  .eff-badge.Disparu{background:#eee;color:#666;border-color:#ccc}
+  .eff-badge.Évadé{background:#e3f0e0;color:#35662f;border-color:#c3dcbb}
+  .eff-badge.Rapatrié{background:#dfeaf0;color:#2c5f75;border-color:#bcd8e3}
+  .eff-badge.Démobilisé{background:#f0eee6;color:#6b6558;border-color:#ddd8c9}
+
+  a.eff-fiche{font-size:.74rem;color:var(--link);text-decoration:none;white-space:nowrap}
+  a.eff-fiche:hover{text-decoration:underline}
+  .eff-nofiche{color:#c9c3af;font-size:.74rem}
+
+  .ci-table{width:100%;border-collapse:collapse;margin:.3rem 0 1.2rem;font-size:.82rem;table-layout:fixed}
+  .ci-table caption{caption-side:top;text-align:left;font-family:'EB Garamond',serif;font-style:italic;
+    color:var(--muted);margin-bottom:.4rem;font-size:.85rem;white-space:normal}
+  .ci-table th{background:var(--row);border-bottom:2px solid var(--orange);padding:.5rem .6rem;
+    text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);
+    overflow-wrap:break-word;word-break:break-word}
+  .ci-table td{padding:.5rem .6rem;border-top:1px solid var(--border);overflow-wrap:break-word;word-break:break-word}
+  .ci-table tr.total-row td{font-weight:600;border-top:2px solid var(--border)}
+
+  @media (max-width:900px){
+    .eff-stats{grid-template-columns:repeat(3,1fr)}
+    td.eff-section{display:none}
+  }
+  @media (max-width:560px){
+    .eff-stats{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:700px){
+    /* Objectif : tenir sur l'ecran sans scroll horizontal, en resserrant plutot qu'en
+       masquant les colonnes. table-layout:fixed + overflow-wrap force chaque cellule (y
+       compris les intitules multi-mots comme "Cx-chefs et Caporaux") a revenir a la ligne
+       au lieu de pousser le tableau plus large que l'ecran. */
+    .ci-table{font-size:.66rem}
+    .ci-table th,.ci-table td{padding:.35rem .3rem}
+    .ci-table caption{font-size:.78rem}
+
+    table.eff-table thead th{font-size:.6rem;padding:.45rem .35rem;line-height:1.2}
+    table.eff-table tbody td{padding:.45rem .35rem;font-size:.76rem}
+    td.eff-nom{white-space:normal;font-size:.78rem}
+    a.eff-fiche{white-space:normal;font-size:.68rem}
+    .eff-badge{font-size:.58rem;padding:.05rem .35rem}
+  }
+</style>
+<script src="/menu.js"></script>
+<script src="/banniere.js"></script>
+</head>
+<body>
+
+<a class="floating-comment-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfBWzNnn03VGZZMiIyHEoCzAlNdUlcu7rM21kLLR5g5jVKQ-Q/viewform?usp=pp_url&entry.920954121=Blog-CRE" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
+<main>
+
+<header>
+  <div class="htext">
+    <h1>Compagnie Régimentaire d'Engins (C.R.E.)</h1>
+    <div class="sub">Effectif recensé : 39 légionnaires</div>
+    <a class="back" href="https://test.11regimentetranger.com/arborescence">← Retour</a>
+  </div>
+</header>
+
+<div class="ci-intro"><p class="ci-lede">La Compagnie Régimentaire d'Engins (C.R.E.) regroupe, au sein du 11e Régiment Étranger d'Infanterie, les moyens d'appui rattachés directement au régiment : sections de canons antichars de 25 et groupe de mortiers. Commandée par le capitaine Costa, elle est connue pour la campagne de 1939-1940 par trois extraits de son journal de marche, couvrant la période du 16 avril au 31 mai 1940, ainsi que par le journal tenu par l'un de ses chefs de section, le sous-lieutenant Colin, dont le récit, riche en détails vécus, s'arrête à sa mutation au 1er Bataillon le 31 mai 1940.</p>
+
+<h2 class="ci-h2">De Hestroff à la revue de Camerone (16-30 avril 1940)</h2>
+<p>Au 16 avril 1940, la compagnie compte trois officiers — le capitaine Costa et deux sous-lieutenants, dont Gaston Favre — pour un peu moins de quatre-vingt-dix sous-officiers et hommes de troupe. Du 16 au 26 avril, elle est stationnée à Hestroff, occupée à des travaux de campagne : organisation de la défense antichars, construction de blockhaus. Le 26 avril, elle fait mouvement sur Condé-Northen, départ à minuit, arrivée à 6h30, sans incident au cours du déplacement. Du 27 au 30 avril, en cantonnement à Condé-Northen, elle procède au nettoyage du casernement et se prépare, comme le reste du régiment, à la fête de Camerone du lendemain. Le 30 avril, plusieurs nominations sont prononcées : le sergent Kilidjian devient sergent-chef, le caporal Tinguely caporal-chef, le légionnaire Dorey caporal ; le caporal-chef Slaies est cassé et remis caporal.</p>
+
+<h2 class="ci-h2">1er-15 mai 1940 : Condé-Northen, puis départ pour Vaudoncourt</h2>
+<p>Du 1er au 2 mai, la compagnie reste à Condé-Northen, puis s'installe à la Ferme de Northen. Jusqu'au 14 mai, elle est occupée à des travaux de défense passive, au déchargement de wagons en gare de Condé-Northen et à des travaux de propreté ; les cantonnements sont consignés et les permissions de détente suspendues, le sous-lieutenant Favre, parti en permission le 4 mai, étant rappelé et ne rejoignant la compagnie que le 12. Le légionnaire de 2e classe Chevalier André est évacué le 1er mai sur l'Ambulance Chirurgicale d'Armée n°233, à la suite d'un accident de motocyclette.</p>
+<p>Le sous-lieutenant Colin, chef d'une section de canons de 25 antichars, note dans son journal l'atmosphère de ces journées d'attente. Le 10 mai au petit matin, réveillé par des vrombissements d'avions, des tirs de D.C.A. et de mitrailleuses, il assiste, depuis Condé-Northen, au passage d'escadrilles allemandes filant vers l'intérieur du pays et au bombardement de la gare de Metz ; un Messerschmitt volant à basse altitude s'abat non loin. Vers le nord, la canonnade prend une intensité extrême en direction de Koenigsmacker et de Sierck — où les Allemands viennent d'attaquer — tandis que se déclenche, plus au nord, la grande offensive sur la Belgique, la Hollande et le Luxembourg. Le 13 mai, la compagnie suit par T.S.F. les progrès de cette offensive, les lignes belges se révélant insuffisantes. Dans la nuit du 14, l'ordre de départ attendu depuis le 10 arrive enfin : départ à 2 heures pour Ars-Laquenexy, à 8 kilomètres de Metz, longue étape à pied ; l'embarquement en camions, prévu pour 20h30, n'a lieu qu'à 23h30, les transmissions se révélant, selon Colin, « au-dessous de tout ». La colonne, roulant de jour le 15 mai sans être survolée par l'aviation ennemie, traverse des lieux déjà bombardés et débarque vers 8 heures à Vaudoncourt, près de Spincourt.</p>
+
+<h2 class="ci-h2">16-31 mai 1940 : les combats du bois Le Ligant</h2>
+<p>Après deux jours de repos à Vaudoncourt, où quelques permissionnaires rejoignent la compagnie, celle-ci se remet en mouvement le 17 mai au soir pour une étape de trente-quatre kilomètres, par Damvillers — dont les effets des bombardements sont visibles —, jusqu'au bois Écurey (bois de Sarts-le-Puits), atteint sous la pluie à 3h30 le 18. La journée du 18 est consacrée au repos et au ravitaillement, en partie prélevé à la ferme d'Alger, abandonnée par ses habitants après un bombardement ; une reconnaissance est menée sur une position défensive des crêtes au sud-ouest de Bréheville, Brandeville et Écurey. Le 19 mai, la compagnie occupe les emplacements reconnus ; Colin, installé près de Brandeville avec le sous-chef Boslan et sa pièce de 25, décrit une journée de calme presque total, bien camouflée sous bois — signe, note-t-il, que la halte ne durera pas.</p>
+<p>De fait, l'ordre de repli survient dès le 20 mai — un avion d'observation allemand, le « Mouchard », est abattu par la D.C.A. de Fleury-Fonet au-dessus de la compagnie. Dans la nuit du 20 au 21, celle-ci marche jusqu'au bois des Aisements, par Baalon, en zone battue par l'artillerie et survolée par l'aviation ennemie : c'est, selon Colin, le premier contact avec « la vraie guerre ». Le soir du 21, la 6e Division d'Infanterie Nord-Africaine, dont dépend le régiment, relève la 3e D.I.N.A. et des éléments hétérogènes de huit régiments amenés en hâte pour colmater une brèche ouverte par l'abandon, sur ordre, de la ligne des casemates de la frontière belge. La relève tourne à la confusion : des Allemands infiltrés dans les bois tirent depuis les arbres, et une erreur d'itinéraire des guides fournis par les unités relevées coûte la vie ou la liberté au capitaine Seillon, de la 2e Compagnie, égaré avec son unité en plein dans les lignes ennemies — sa compagnie parvient à se dégager, mais lui-même disparaît. La C.R.E. ne peut occuper ses emplacements de combat prévus et s'arrête sous bois pour attendre le jour, son groupe de mortiers passant provisoirement à la disposition du 1er Bataillon ; installée sans le savoir tout près du P.C. du colonel, déjà repéré, elle subit son baptême du feu sous un bombardement d'artillerie qui, par miracle, ne fait aucune victime dans ses rangs.</p>
+<p>Du 22 au 25 mai, la compagnie aménage ses emplacements — pour Colin, il faut tout créer : trous individuels, abri à l'épreuve, poste pour la pièce antichar, protégé de barbelés et de sacs de terre, qui prend peu à peu « l'allure d'un petit fortin ». La mission de la 6e D.I.N.A. est de nettoyer le secteur des éléments ennemis infiltrés et d'interdire la progression entre la Meuse et la Chiers, en liaison à droite avec les premiers ouvrages de la ligne Maginot tenus par le 155e R.I.F. ; la division s'échelonne, de gauche à droite, avec le 21e R.T.A., le 11e Étranger — au bois d'Inor et au bois Le Ligant — et le 9e Marocains, le régiment tenant un saillant qui l'oblige à faire face sur trois directions.</p>
+<p>Le 25 mai au soir, un bombardement fait deux blessés évacués, les légionnaires Sadowski et Timcanik. Dans la nuit du 26 au 27, un nouveau bombardement, particulièrement intense, se poursuit jusqu'au soir du 27 : le poste de Colin, à 200 mètres du P.C. du colonel, est presque détruit et lui-même dégagé par le caporal Andrieu. Au matin du 27, une attaque allemande de grande ampleur — trois divisions engagées contre la seule 6e D.I.N.A. — se déclenche, portant son effort principal sur la zone boisée tenue par le 11e Étranger et sur la droite du 21e R.T.A. ; le rôle de la C.R.E., dépourvue de cibles blindées, reste purement passif, encaissant les tirs sans pouvoir y répondre. Dans l'après-midi, l'ennemi parvient à prendre pied dans le sous-quartier de la 5e Compagnie (commandant Lanchon), avant d'en être délogé par une contre-attaque de la 9e Compagnie (commandants Trimaille et de Hautefeuille), qui permet de récupérer les positions initiales. Le combat cesse dans la soirée : c'est un succès défensif salué par l'ordre du jour du général de Verdilhac, commandant la 6e D.I.N.A., qui adresse ses remerciements au colonel Robert et au régiment. L'artillerie française — un seul groupe d'appui direct tire 10 600 obus dans la journée — inflige à l'ennemi de lourdes pertes, confirmées par les prisonniers et, plus tard, par le journal de campagne allemand « Feldzeitung der Mosellarmee » ; 53 prisonniers sont faits. Les pertes françaises sont également sévères : l'aumônier du régiment, l'abbé Wattel, le capitaine de Closmadeuc (C.A.2), tué traîtreusement par de faux déserteurs, le capitaine Emmanuelli (3e Compagnie), de nombreux sous-officiers et légionnaires, et cinq lieutenants blessés.</p>
+<p>Le journal de marche de la compagnie enregistre pour cette période les pertes suivantes : le caporal Brasini Maggio, tué le 31 mai ; parmi les blessés, soignés sur place, les légionnaires de 1re classe Sadowski Stéphan et Tomzeack François le 26 mai, le légionnaire Geuber Guillaume, le légionnaire de 2e classe David Pierre et le caporal Dorey Roger le 27 mai, puis le légionnaire de 2e classe Simon Pierre, le légionnaire Waes Franz et le sergent Morin Roger le 31 mai. C'est également le 31 mai que le sous-lieutenant Colin — dont la mutation au 1er Bataillon, 1re Compagnie, avait été décidée par le colonel dès le 29 mai — quitte effectivement la C.R.E. pour prendre, l'après-midi même, le commandement de trois sections de la ligne de feu de sa nouvelle compagnie. Le parcours ultérieur de la C.R.E. pendant la retraite de juin 1940 reste, à ce jour, à documenter.</p>
+
+<h2 class="ci-h2">Sources</h2>
+<p>Extraits du journal de marche de la Compagnie Régimentaire d'Engins du 11e R.E.I., signés par le capitaine Costa : quinzaine du 16 au 30 avril 1940 (S.P. 12956, 30 avril 1940), quinzaine du 1er au 15 mai 1940 (S.P. 12956, 16 mai 1940) et deuxième quinzaine de mai 1940 (S.P. 15015, daté « 2 Mai 1940 » dans le texte transcrit — probable erreur du document original pour 2 juin 1940, puisque le compte rendu couvre les événements jusqu'au 31 mai). Journal de marche du sous-lieutenant Colin, C.R.E. puis 1re Compagnie, 1er Bataillon (10 mai-23 juin 1940) ; seule la partie antérieure à sa mutation du 31 mai est utilisée ici.</p></div>
+
+<h2 class="carnet-title">Effectif de la compagnie (39 fiches)</h2>
+
+<div class="eff-stats">
+  <div class="eff-stat"><div class="n">39</div><div class="l">Recensés</div></div><div class="eff-stat mpf"><div class="n">3</div><div class="l">Morts pour la France</div></div><div class="eff-stat"><div class="n">14</div><div class="l">Prisonniers</div></div><div class="eff-stat"><div class="n">10</div><div class="l">Blessés</div></div><div class="eff-stat"><div class="n">3</div><div class="l">Évadés</div></div>
+</div>
+
+<div class="eff-toolbar">
+  <div class="eff-search">
+    <input type="text" id="effSearch" placeholder="Rechercher un nom, un grade, un lieu…" autocomplete="off">
+  </div>
+  <div class="eff-chips" id="effChips">
+    <span class="eff-chip active" data-badge="">Tous</span><span class="eff-chip" data-badge="MPF">Morts pour la France</span><span class="eff-chip" data-badge="Prisonnier">Prisonniers</span><span class="eff-chip" data-badge="Blessé">Blessés</span><span class="eff-chip" data-badge="Évadé">Évadés</span>
+  </div>
+</div>
+<div class="eff-count" id="effCount"></div>
+
+<table class="eff-table" id="effTable">
+  <thead>
+    <tr>
+      <th data-key="nom">Nom <span class="arrow"></span></th>
+      <th data-key="grade_rank">Grade <span class="arrow"></span></th>
+      <th data-key="section">Section / affectation <span class="arrow"></span></th>
+      <th data-key="badges">Statut <span class="arrow"></span></th>
+      <th>Fiche</th>
+    </tr>
+  </thead>
+  <tbody id="effBody"></tbody>
+</table>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+
+<script>
+const EFF_DATA = [{"nom": "COSTA", "prenom": "Sauveur", "grade": "capitaine", "grade_rank": 1, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°50 du 09/12/1940", "url": "https://test.11regimentetranger.com/recensement-c.html#costa-sauveur"}, {"nom": "FAVRE", "prenom": "Ernest Gabriel Polycarpe Gaston Joseph", "grade": "sous lieutenant", "grade_rank": 4, "section": "section anti char", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°48 du 04/12/1940", "url": "https://test.11regimentetranger.com/recensement-f.html#favre-ernest-gabriel-polycarpe-gaston-joseph"}, {"nom": "PALLUAT", "prenom": "Du Besset Jean Marc Marie", "grade": "lieutenant", "grade_rank": 5, "section": "officier de dépannage. il est muté au 12è REI", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-p.html#palluat-du-besset-jean-marc-marie"}, {"nom": "REVOL", "prenom": "Pierre Marc", "grade": "lieutenant", "grade_rank": 5, "section": "muté en février pour encadrer un régiment étranger en voie de formation à la Valbonne", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-r.html#revol-pierre-marc"}, {"nom": "HEYER", "prenom": "Eugène Arnon", "grade": "adjudant", "grade_rank": 7, "section": "chef de section à la 9è compagnie (16/06)", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°14 du 11/09/1940 — Evadé le 12/10/1940", "url": "https://test.11regimentetranger.com/recensement-h.html#heyer-eugene-arnon"}, {"nom": "BASLAN", "prenom": "Robert Pierre Marcel", "grade": "sergent chef", "grade_rank": 8, "section": "chef de pièce de 25", "badges": ["Prisonnier", "Blessé"], "details": "Liste des prisonniers n°88 du 08/04/1941 — Blessé en service commandé le 18/06/1940, traumatisme des membres inférieurs consécutif à un écrasement par chenillette", "url": "https://test.11regimentetranger.com/recensement-b.html#baslan-robert-pierre-marcel"}, {"nom": "PETROCHILOS", "prenom": "Yannis", "grade": "sergent chef", "grade_rank": 8, "section": "", "badges": ["Prisonnier", "Évadé"], "details": "Liste des prisonniers n°100 du 15/06/1941 — Evadé le 19/03/1941 après 3 tentatives ratées qui lui valent de passer 6 mois en section spéciale", "url": "https://test.11regimentetranger.com/recensement-p.html#petrochilos-yannis"}, {"nom": "MORIN", "prenom": "Roger Jules François", "grade": "sergent", "grade_rank": 9, "section": "", "badges": ["Prisonnier", "Blessé"], "details": "Liste des prisonniers n°18 du 19/09/1940 — Il est blessé le 31/05/1940 (soigné sur place) et le 18/06/1940", "url": "https://test.11regimentetranger.com/recensement-m.html#morin-roger-jules-francois"}, {"nom": "BRASINI", "prenom": "Maggio Antonio", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["MPF"], "details": "Mort le 31/05/1940 — Lieu : Martincourt", "url": "https://test.11regimentetranger.com/recensement-b.html#brasini-maggio-antonio"}, {"nom": "DOREY", "prenom": "Roger", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 27/05/1940", "url": "https://test.11regimentetranger.com/recensement-d.html#dorey-roger"}, {"nom": "D’ANDREA", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "servant du canon de 25", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-d.html#d-andrea"}, {"nom": "GRAGNON", "prenom": "Jacques Jean Philippe", "grade": "caporal", "grade_rank": 11, "section": "", "badges": ["Prisonnier", "Rapatrié", "Blessé"], "details": "Fait prisonnier à l'hôpital Haxo d'Epinal — Réformé par les autorités allemandes et renvoyé dans ses foyers le 10/10/1940. Démobilisé le 15/10/1940 — Il est blessé le 18/06/1940 par éclats d'obus au genou droit, évacué sur l'hôpital Haxo d'Epinal", "url": "https://test.11regimentetranger.com/recensement-g.html#gragnon-jacques-jean-philippe"}, {"nom": "SLAIES", "prenom": "", "grade": "caporal", "grade_rank": 11, "section": "", "badges": [], "details": "⚠ Peut être en doublon avec Slais", "url": "https://test.11regimentetranger.com/recensement-s.html#slaies"}, {"nom": "ATLAS", "prenom": "Jacob", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°22 du 27/09/1940", "url": "https://test.11regimentetranger.com/recensement-a.html#atlas-jacob"}, {"nom": "SADOWSKI", "prenom": "Stephan", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 26/05/1940 et évacué sur l'HOE1/5 d'Ancemont — ⚠ peut être doublon du précédent", "url": "https://test.11regimentetranger.com/recensement-s.html#sadowski-stephan"}, {"nom": "TOMCZAK", "prenom": "François", "grade": "1ère classe", "grade_rank": 12, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 26/05/1940 et évacué sur l'HOE1/5 d'Ancemont", "url": "https://test.11regimentetranger.com/recensement-t.html#tomczak-francois"}, {"nom": "ARNORIAGA FERNANDEZ", "prenom": "Julian Sérafin", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°18 du 19/09/1940", "url": "https://test.11regimentetranger.com/recensement-a.html#arnoriaga-fernandez-julian-serafin"}, {"nom": "CHEVALIER", "prenom": "André", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-c.html#chevalier-andre"}, {"nom": "DAVID", "prenom": "Pierre Ernest", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["MPF", "Blessé"], "details": "Mort le 28/05/1940 — Lieu : Bras sur Meuse — Il est blessé le 27/05/1940 à la fesse et cuisse gauche, évacué sur l'HOE n°5 d'Ancemont", "url": "https://test.11regimentetranger.com/recensement-d.html#david-pierre-ernest"}, {"nom": "DAWIDSON", "prenom": "", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": [], "details": "⚠ Peut être un doublon, plusieurs Davidson", "url": "https://test.11regimentetranger.com/recensement-d.html#dawidson"}, {"nom": "DE VRIES", "prenom": "Jean", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°16 du 14/09/1940", "url": "https://test.11regimentetranger.com/recensement-d.html#de-vries-jean"}, {"nom": "KOTOWSKY", "prenom": "Antoni", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°18 du 19/09/1940", "url": "https://test.11regimentetranger.com/recensement-k.html#kotowsky-antoni"}, {"nom": "LOPEZ AVELLAN", "prenom": "Diego", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°18 du 19/09/1940", "url": "https://test.11regimentetranger.com/recensement-l.html#lopez-avellan-diego"}, {"nom": "LUGERNER", "prenom": "Chaim Wolf", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Prisonnier"], "details": "Liste des prisonniers n°20 du 23/09/1940", "url": "https://test.11regimentetranger.com/recensement-l.html#lugerner-chaim-wolf"}, {"nom": "SINON", "prenom": "Pierre", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 31/05/1940", "url": "https://test.11regimentetranger.com/recensement-s.html#sinon-pierre"}, {"nom": "VAES", "prenom": "Franz", "grade": "2è classe", "grade_rank": 13, "section": "", "badges": ["Blessé"], "details": "Il est blessé le 31/05/1940", "url": "https://test.11regimentetranger.com/recensement-uvw.html#vaes-franz"}, {"nom": "GRUBER", "prenom": "Wilhelm", "grade": "soldat", "grade_rank": 50, "section": "", "badges": ["Prisonnier", "Rapatrié", "Blessé"], "details": "Fait prisonnier — Réformé définitif n°1 et démobilisé le 15/04/1941 à Toulouse — Il est blessé le 27/05/1940 par éclats d'obus aux deux jambes", "url": "https://test.11regimentetranger.com/recensement-g.html#gruber-wilhelm"}, {"nom": "KILIDJIAN", "prenom": "", "grade": "sergent puis sergent chef", "grade_rank": 50, "section": "", "badges": [], "details": "⚠ Peut être en doublon avec le précédent", "url": "https://test.11regimentetranger.com/recensement-k.html#kilidjian"}, {"nom": "TINGUELY", "prenom": "Albert Ali", "grade": "caporal puis caporal chef", "grade_rank": 50, "section": "", "badges": ["Évadé"], "details": "Evadé le 05/04/1945", "url": "https://test.11regimentetranger.com/recensement-t.html#tinguely-albert-ali"}, {"nom": "BALTHAZAR", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-b.html#balthazar"}, {"nom": "BUELENS", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-b.html#buelens"}, {"nom": "DAVES", "prenom": "", "grade": "", "grade_rank": 99, "section": "groupe sanitaire, motocycliste", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-d.html#daves"}, {"nom": "GARCIA", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-g.html#garcia-7"}, {"nom": "KILEMDJAN", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "⚠ Peut être en doublon avec le suivant", "url": "https://test.11regimentetranger.com/recensement-k.html#kilemdjan"}, {"nom": "LACHERY", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-l.html#lachery"}, {"nom": "MARTINEZ", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-m.html#martinez"}, {"nom": "MEYER", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-m.html#meyer"}, {"nom": "SIFFERT", "prenom": "Léon", "grade": "", "grade_rank": 99, "section": "", "badges": ["MPF"], "details": "Mort le \"sans date\" — Lieu : Stenay", "url": "https://test.11regimentetranger.com/recensement-s.html#siffert-leon"}, {"nom": "VIDALLET", "prenom": "", "grade": "", "grade_rank": 99, "section": "", "badges": [], "details": "", "url": "https://test.11regimentetranger.com/recensement-uvw.html#vidallet"}];
+let effSort = { key: 'grade_rank', dir: 1 };
+let effBadge = '';
+let effSearch = '';
+
+function effBadgeHTML(b) {
+  return b.map(x => `<span class="eff-badge ${x.replace(/[^A-Za-zÀ-ÿ]/g,'')}">${x}</span>`).join('');
+}
+
+function effRender() {
+  let rows = EFF_DATA.filter(d => {
+    if (effBadge && !d.badges.includes(effBadge)) return false;
+    if (effSearch) {
+      const hay = (d.nom+' '+d.prenom+' '+d.grade+' '+d.section+' '+d.details).toLowerCase();
+      if (!hay.includes(effSearch)) return false;
+    }
+    return true;
+  });
+
+  rows.sort((a,b) => {
+    let va = a[effSort.key], vb = b[effSort.key];
+    if (effSort.key === 'badges') { va = a.badges.join(','); vb = b.badges.join(','); }
+    if (typeof va === 'string') va = va.toLowerCase();
+    if (typeof vb === 'string') vb = vb.toLowerCase();
+    if (va < vb) return -1 * effSort.dir;
+    if (va > vb) return 1 * effSort.dir;
+    return a.nom.localeCompare(b.nom);
+  });
+
+  document.getElementById('effCount').textContent = rows.length + ' légionnaire(s) affiché(s) sur ' + EFF_DATA.length;
+
+  document.getElementById('effBody').innerHTML = rows.map(d => `
+    <tr>
+      <td class="eff-nom">${d.nom}${d.prenom ? ' <span class="eff-prenom">'+d.prenom+'</span>' : ''}</td>
+      <td>${d.grade}</td>
+      <td class="eff-section">${d.section || ''}</td>
+      <td>${effBadgeHTML(d.badges)}</td>
+      <td>${d.url ? `<a class="eff-fiche" href="${d.url}" target="_blank" rel="noopener">Voir la fiche →</a>` : '<span class="eff-nofiche">—</span>'}</td>
+    </tr>
+  `).join('');
+}
+
+document.getElementById('effSearch').addEventListener('input', e => {
+  effSearch = e.target.value.trim().toLowerCase();
+  effRender();
+});
+
+document.getElementById('effChips').addEventListener('click', e => {
+  const chip = e.target.closest('.eff-chip');
+  if (!chip) return;
+  document.querySelectorAll('.eff-chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  effBadge = chip.dataset.badge;
+  effRender();
+});
+
+document.querySelectorAll('#effTable thead th[data-key]').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.key;
+    if (effSort.key === key) { effSort.dir *= -1; } else { effSort = { key, dir: 1 }; }
+    document.querySelectorAll('#effTable thead .arrow').forEach(a => a.textContent = '');
+    th.querySelector('.arrow').textContent = effSort.dir === 1 ? '▲' : '▼';
+    effRender();
+  });
+});
+
+effRender();
+
+(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
