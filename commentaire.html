@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — 11e REI</title>
+<title>Laisser un commentaire — 11e REI</title>
 <link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon.ico" sizes="any">
 <link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-16x16.png" type="image/png" sizes="16x16">
@@ -23,12 +23,12 @@
 <style>
   @import url('https://googleapis.com');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  
+
   :root{
     --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
     --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
   }
-  
+
   body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
   main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
@@ -43,19 +43,25 @@
   header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
   header .back:hover{text-decoration:underline}
 
+  /* Bandeau page commentée */
+  .target-page{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:.9rem 1.6rem;margin-bottom:22px;font-size:.9rem}
+  .target-page strong{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem}
+  .target-page.missing{color:var(--muted);font-style:italic}
+
   /* Style du Formulaire */
   .contact-form-container{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem}
   .form-group{margin-bottom:1.2rem}
   label{display:block;font-weight:500;margin-bottom:.4rem;color:var(--ink);font-size:.9rem}
-  
+
   input[type="text"], input[type="email"], textarea{
     width:100%;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:300;
     padding:.6rem .8rem;color:var(--ink);background:var(--row);
     border:1px solid var(--border);border-radius:4px;outline:none;transition:border-color 0.2s}
-    
+
   input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
     border-color:var(--link)}
-    
+
   textarea{height:150px;resize:vertical}
 
   /* Bouton d'action */
@@ -63,7 +69,7 @@
     font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;
     color:var(--ink);background:var(--orange);text-decoration:none;
     padding:.6rem 1.4rem;border-radius:20px;border:none;cursor:pointer;transition:background 0.2s, color 0.2s}
-    
+
   .submit-btn:hover{background:var(--link);color:#fff}
 
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
@@ -73,41 +79,63 @@
 <main>
 
 <header>
-  <h1>Contactez-moi</h1>
-  <div class="sub">Des questions ou des informations sur le 11è régiment étranger d'infanterie ?</div>
-  <div class="tags"><span>11è REI</span><span>Contact</span></div>
+  <h1>Laisser un commentaire</h1>
+  <div class="sub">Votre remarque, précision ou témoignage sur cette page</div>
+  <div class="tags"><span>11è REI</span><span>Commentaire</span></div>
   <a class="back" href="https://test.11regimentetranger.com">← Retour</a>
 </header>
+
+<div class="target-page" id="target-page">Chargement de la page concernée…</div>
 
 <section class="contact-form-container">
   <!-- REMPLACEZ l'adresse ci-dessous par votre email de réception -->
 <form action="https://formsubmit.co/legion3940@gmail.com" method="POST">
-    
+
     <!-- Options de configuration pour éviter le spam et personnaliser le retour -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://test.11regimentetranger.com">
+    <input type="hidden" name="_subject" value="Nouveau commentaire — 11e REI">
+    <input type="hidden" id="page-field" name="Page concernée" value="">
 
     <div class="form-group">
       <label for="nom">Nom ou Pseudonyme</label>
       <input type="text" id="nom" name="name" required>
     </div>
-    
+
     <div class="form-group">
       <label for="email">Votre adresse e-mail</label>
       <input type="email" id="email" name="email" required>
     </div>
-    
+
     <div class="form-group">
-      <label for="message">Votre message</label>
+      <label for="message">Votre commentaire</label>
       <textarea id="message" name="message" required></textarea>
     </div>
-    
-    <button type="submit" class="submit-btn">Envoyer le message</button>
+
+    <button type="submit" class="submit-btn">Envoyer le commentaire</button>
   </form>
 </section>
 
 <footer>© 11e REI — Tous droits réservés</footer>
 
 </main>
+
+<script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var page = params.get('page');
+    var targetDiv = document.getElementById('target-page');
+    var pageField = document.getElementById('page-field');
+    if (page) {
+      targetDiv.innerHTML = 'Vous commentez la page : <strong>' + page.replace(/</g,'&lt;') + '</strong>';
+      pageField.value = page;
+    } else {
+      targetDiv.textContent = "Page d'origine non précisée.";
+      targetDiv.classList.add('missing');
+      pageField.value = 'Non précisée';
+    }
+  })();
+</script>
+
 </body>
 </html>
