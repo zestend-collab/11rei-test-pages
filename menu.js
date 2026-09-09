@@ -15,7 +15,7 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
 */
 
 (function () {
-  var SITE = "https://test.11regimentetranger.com";
+  var SITE = "https://www.11regimentetranger.com";
 
   var LIENS = [
     { href: SITE + "/recensement-11e-rei", label: "Recensement 11e REI" },
