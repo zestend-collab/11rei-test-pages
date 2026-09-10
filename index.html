@@ -101,7 +101,7 @@
 
   .rei-index footer{margin-top:20px;text-align:center;font-size:.72rem;color:var(--muted);font-style:italic;}
 
-  .rei-index .floating-comment-btn{
+  .floating-comment-btn{
     position:fixed;bottom:74px;right:18px;z-index:100;
     display:flex;align-items:center;gap:.4rem;
     font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
@@ -110,8 +110,8 @@
     box-shadow:0 2px 8px rgba(0,0,0,.25);
     transition:background .15s;white-space:nowrap;
   }
-  .rei-index .floating-comment-btn:hover{background:var(--link);color:#fff;}
-  .rei-index .back-to-top{
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
     position:fixed;bottom:18px;right:18px;z-index:100;
     width:2.6rem;height:2.6rem;border-radius:50%;
     background:var(--orange);color:var(--ink);border:none;
@@ -120,12 +120,12 @@
     display:none;align-items:center;justify-content:center;
     transition:opacity .2s;
   }
-  .rei-index .back-to-top.show{display:flex;}
-  .rei-index .back-to-top:hover{background:var(--link);}
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
 </style>
 
 <a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=Index" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
-<button class="back-to-top" id="idx-top" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
 
 <div class="masthead">
   <div class="unit-tag"><span>11e REI</span> Régiment étranger d'infanterie</div>
@@ -375,7 +375,8 @@
 </div>
 <script>
 (function(){
-  var btn = document.getElementById('idx-top');
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
   function onScroll(){
     if(window.scrollY > 500){ btn.classList.add('show'); }
     else { btn.classList.remove('show'); }

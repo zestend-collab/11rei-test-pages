@@ -107,18 +107,7 @@
     padding-bottom:3px;margin:0 0 5px;display:inline-block;}
   .rei-evdg .section p{margin:0 0 3px;}
   .rei-evdg .no-results{max-width:820px;margin:0 auto;text-align:center;color:var(--muted);font-style:italic;padding:20px;display:none;}
-  .rei-evdg .back-to-top{
-    position:fixed;bottom:18px;right:18px;z-index:100;
-    width:2.6rem;height:2.6rem;border-radius:50%;
-    background:var(--orange);color:var(--ink);border:none;
-    font-size:1.2rem;line-height:1;cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,.25);
-    display:none;align-items:center;justify-content:center;
-    transition:opacity .2s;
-  }
-  .rei-evdg .back-to-top.show{display:flex;}
-  .rei-evdg .back-to-top:hover{background:var(--link);}
-  .rei-evdg .floating-comment-btn{
+  .floating-comment-btn{
     position:fixed;bottom:74px;right:18px;z-index:100;
     display:flex;align-items:center;gap:.4rem;
     font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
@@ -127,14 +116,25 @@
     box-shadow:0 2px 8px rgba(0,0,0,.25);
     transition:background .15s;white-space:nowrap;
   }
-  .rei-evdg .floating-comment-btn:hover{background:var(--link);color:#fff;}
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
   .rei-evdg .back-to-site{display:inline-block;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted);
     text-decoration:none;margin:0 auto 12px;padding:.3rem 0;transition:color .15s;max-width:820px;}
   .rei-evdg .back-to-site:hover{color:var(--link);}
 </style>
 <div class="rei-evdg">
-<button class="back-to-top" id="rei-evdg-top" title="Retour en haut" aria-label="Retour en haut">↑</button>
 <a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=EVDG-Vancia" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
 <div style="max-width:820px;margin:0 auto;">
 <a class="back-to-site" href="https://www.11regimentetranger.com/arborescence" title="Retour au site principal">← Retour au site</a>
 </div>
@@ -3572,7 +3572,7 @@ function toggleCard(btn){
   card.classList.toggle('open', !isOpen);
 }
 (function(){
-  var btn = document.getElementById('rei-evdg-top');
+  var btn = document.getElementById('floating-top-btn');
   if(!btn) return;
   function onScroll(){
     if(window.scrollY > 500){ btn.classList.add('show'); }
