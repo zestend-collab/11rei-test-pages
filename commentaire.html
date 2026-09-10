@@ -13,130 +13,111 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGECC7TJGK"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MGECC7TJGK');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MGECC7TJGK');
 </script>
-  <!-- Vos scripts se placent ici, bien rangés dans le head -->
+<!-- Vos scripts se placent ici, bien rangés dans le head -->
 <script src="/menu.js"></script>
 <script src="/banniere.js"></script>
 <style>
-  @import url('https://googleapis.com');
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-  :root{
-    --bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
-    --ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
-  }
-
-  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
-  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
-
-  /* Bandeau Header */
-  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
-    padding:1.4rem 1.6rem;margin-bottom:22px}
-  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
-  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
-  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
-  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
-    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
-  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
-  header .back:hover{text-decoration:underline}
-
-  /* Bandeau page commentée */
-  .target-page{background:var(--card);border:1px solid var(--border);border-radius:4px;
-    padding:.9rem 1.6rem;margin-bottom:22px;font-size:.9rem}
-  .target-page strong{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem}
-  .target-page.missing{color:var(--muted);font-style:italic}
-
-  /* Style du Formulaire */
-  .contact-form-container{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem}
-  .form-group{margin-bottom:1.2rem}
-  label{display:block;font-weight:500;margin-bottom:.4rem;color:var(--ink);font-size:.9rem}
-
-  input[type="text"], input[type="email"], textarea{
-    width:100%;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:300;
-    padding:.6rem .8rem;color:var(--ink);background:var(--row);
-    border:1px solid var(--border);border-radius:4px;outline:none;transition:border-color 0.2s}
-
-  input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
-    border-color:var(--link)}
-
-  textarea{height:150px;resize:vertical}
-
-  /* Bouton d'action */
-  .submit-btn{display:inline-flex;align-items:center;justify-content:center;
-    font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;
-    color:var(--ink);background:var(--orange);text-decoration:none;
-    padding:.6rem 1.4rem;border-radius:20px;border:none;cursor:pointer;transition:background 0.2s, color 0.2s}
-
-  .submit-btn:hover{background:var(--link);color:#fff}
-
-  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+@import url('https://googleapis.com');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#cccccc;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+--ink:#1a1a18;--muted:#555555;--border:#aaaaaa;--row:#f7f7f7;
+}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+/* Bandeau Header */
+header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+padding:1.4rem 1.6rem;margin-bottom:22px}
+header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-top:.3rem}
+header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+header .back:hover{text-decoration:underline}
+/* Bandeau page commentée */
+.target-page{background:var(--card);border:1px solid var(--border);border-radius:4px;
+padding:.9rem 1.6rem;margin-bottom:22px;font-size:.9rem}
+.target-page strong{font-family:'EB Garamond',serif;font-weight:600;font-size:1rem}
+.target-page.missing{color:var(--muted);font-style:italic}
+/* Style du Formulaire */
+.contact-form-container{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem}
+.form-group{margin-bottom:1.2rem}
+label{display:block;font-weight:500;margin-bottom:.4rem;color:var(--ink);font-size:.9rem}
+input[type="text"], input[type="email"], textarea{
+width:100%;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:300;
+padding:.6rem .8rem;color:var(--ink);background:var(--row);
+border:1px solid var(--border);border-radius:4px;outline:none;transition:border-color 0.2s}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
+border-color:var(--link)}
+textarea{height:150px;resize:vertical}
+/* Bouton d'action */
+.submit-btn{display:inline-flex;align-items:center;justify-content:center;
+font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;
+color:var(--ink);background:var(--orange);text-decoration:none;
+padding:.6rem 1.4rem;border-radius:20px;border:none;cursor:pointer;transition:background 0.2s, color 0.2s}
+.submit-btn:hover{background:var(--link);color:#fff}
+footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
 </style>
 </head>
 <body>
 <main>
-
 <header>
-  <h1>Laisser un commentaire</h1>
-  <div class="sub">Votre remarque, précision ou témoignage sur cette page</div>
-  <div class="tags"><span>11è REI</span><span>Commentaire</span></div>
-  <a class="back" href="https://www.11regimentetranger.com">← Retour</a>
+<h1>Laisser un commentaire</h1>
+<div class="sub">Votre remarque, précision ou témoignage sur cette page</div>
+<div class="tags"><span>11è REI</span><span>Commentaire</span></div>
+<a class="back" href="https://www.11regimentetranger.com">← Retour</a>
 </header>
 
 <div class="target-page" id="target-page">Chargement de la page concernée…</div>
 
 <section class="contact-form-container">
-  <!-- REMPLACEZ l'adresse ci-dessous par votre email de réception -->
+<!-- REMPLACEZ l'adresse ci-dessous par votre email de réception -->
 <form action="https://formsubmit.co/legion3940@gmail.com" method="POST">
-
-    <!-- Options de configuration pour éviter le spam et personnaliser le retour -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://www.11regimentetranger.com">
-    <input type="hidden" name="_subject" value="Nouveau commentaire — 11e REI">
-    <input type="hidden" id="page-field" name="Page concernée" value="">
-
-    <div class="form-group">
-      <label for="nom">Nom ou Pseudonyme</label>
-      <input type="text" id="nom" name="name" required>
-    </div>
-
-    <div class="form-group">
-      <label for="email">Votre adresse e-mail</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-
-    <div class="form-group">
-      <label for="message">Votre commentaire</label>
-      <textarea id="message" name="message" required></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn">Envoyer le commentaire</button>
-  </form>
+<!-- Options de configuration pour éviter le spam et personnaliser le retour -->
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://www.11regimentetranger.com/merci.html">
+<input type="hidden" name="_subject" value="Nouveau commentaire — 11e REI">
+<input type="hidden" id="page-field" name="Page concernée" value="">
+<div class="form-group">
+<label for="nom">Nom ou Pseudonyme</label>
+<input type="text" id="nom" name="name" required>
+</div>
+<div class="form-group">
+<label for="email">Votre adresse e-mail</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="form-group">
+<label for="message">Votre commentaire</label>
+<textarea id="message" name="message" required></textarea>
+</div>
+<button type="submit" class="submit-btn">Envoyer le commentaire</button>
+</form>
 </section>
 
 <footer>© 11e REI — Tous droits réservés</footer>
-
 </main>
 
 <script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var page = params.get('page');
-    var targetDiv = document.getElementById('target-page');
-    var pageField = document.getElementById('page-field');
-    if (page) {
-      targetDiv.innerHTML = 'Vous commentez la page : <strong>' + page.replace(/</g,'&lt;') + '</strong>';
-      pageField.value = page;
-    } else {
-      targetDiv.textContent = "Page d'origine non précisée.";
-      targetDiv.classList.add('missing');
-      pageField.value = 'Non précisée';
-    }
-  })();
+(function(){
+var params = new URLSearchParams(window.location.search);
+var page = params.get('page');
+var targetDiv = document.getElementById('target-page');
+var pageField = document.getElementById('page-field');
+if (page) {
+targetDiv.innerHTML = 'Vous commentez la page : <strong>' + page.replace(/</g,'&lt;') + '</strong>';
+pageField.value = page;
+} else {
+targetDiv.textContent = "Page d'origine non précisée.";
+targetDiv.classList.add('missing');
+pageField.value = 'Non précisée';
+}
+})();
 </script>
-
 </body>
 </html>
