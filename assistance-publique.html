@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Une enfance sous tutelle publique — 11e REI</title>
+<meta name="description" content="Une enfance sous tutelle publique — 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940).">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon.ico" sizes="any">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/site.webmanifest">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MGECC7TJGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MGECC7TJGK');
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#eef1f4;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1c2733;--muted:#5b6b7a;--border:#c7d0d9;--row:#f7f7f7;
+  }
+
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article .entry{margin-bottom:.9rem}
+  article .entry .date{font-weight:500}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article blockquote p{margin-bottom:.6rem}
+  article blockquote p:last-child{margin-bottom:0}
+
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+
+  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
+  article .imgrow img{width:100%}
+
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem;overflow-wrap:break-word;word-break:break-word}
+  article .sources a{overflow-wrap:break-word;word-break:break-word}
+
+/* ==========================================================================
+   Ajouts a BIO_CSS pour les pages thematiques du Groupe A
+   (monuments, prisonniers, rawa-ruska, 11e-rei-en-photo, cimetieres-communaux,
+   necropoles, rouge-vert2, livre, medaille-militaire-1952/1953, recensement-11e-rei)
+   ========================================================================== */
+
+/* --- communes a plusieurs pages : a ajouter une seule fois --- */
+article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+  border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+article .seealso{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.88rem}
+
+/* --- livre.html : bouton d'appel a l'action --- */
+article .cta{display:inline-block;margin-top:.4rem;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--ink);background:var(--orange);text-decoration:none;padding:.6rem 1.2rem;border-radius:20px}
+article .cta:hover{background:var(--link);color:#fff}
+
+/* --- medaille-militaire-1952.html : citations detaillees (renommees de .citations
+   -> .citations-fiches pour ne plus entrer en collision avec la variante 1953) --- */
+ul.citations-fiches{list-style:none;margin:1.2rem 0 1.6rem;padding:0;
+  display:grid;grid-template-columns:1fr;gap:.6rem;min-width:0}
+ul.citations-fiches li.person{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:.7rem .9rem;text-align:left;min-width:0;overflow-wrap:break-word;word-break:break-word}
+ul.citations-fiches li.person strong{font-family:'EB Garamond',serif;font-size:1rem;display:block;margin-bottom:.3rem}
+ul.citations-fiches ul.det{list-style:none;margin:0;padding:0;min-width:0}
+ul.citations-fiches ul.det li{font-size:.83rem;color:var(--ink);padding:.08rem 0;overflow-wrap:break-word;word-break:break-word}
+@media (max-width:600px){
+  ul.citations-fiches li.person{padding:.6rem .7rem}
+  ul.citations-fiches li.person strong{font-size:.92rem}
+  ul.citations-fiches ul.det li{font-size:.78rem}
+}
+
+/* --- medaille-militaire-1953.html : citations en lignes (renommees de .citations
+   -> .citations-lignes) --- */
+article .citations-lignes{margin:1.2rem 0 1.6rem;padding:0}
+article .citations-lignes li{list-style:none;background:var(--row);border:1px solid var(--border);
+  border-radius:4px;padding:.7rem .9rem;margin-bottom:.6rem;text-align:left}
+article .citations-lignes li strong{font-family:'EB Garamond',serif;font-size:1rem}
+article .citations-lignes li .details{display:block;margin-top:.15rem}
+article .citations-lignes li .mort{display:block;margin-top:.15rem;color:var(--muted);font-style:italic}
+
+/* --- necropoles.html : une carte par nécropole (nom, description, liste des tombes).
+   Manquait jusqu'ici malgre la page citee dans la liste du groupe ci-dessus - .necropole
+   restait donc sans aucun style (rendu par defaut du navigateur, sans carte ni espacement). --- */
+article .necropole{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:1.1rem 1.3rem;margin-bottom:1.2rem}
+article .necropole h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.05rem;
+  color:var(--ink);border-bottom:none;margin:0 0 .4rem;padding-bottom:0}
+article .necropole p.meta{font-size:.82rem;color:var(--muted);margin-bottom:.7rem}
+article .necropole ul.roll{list-style:none;margin:0 0 .5rem;padding:0}
+article .necropole ul.roll li{font-size:.85rem;padding:.15rem 0;border-bottom:1px dashed var(--border)}
+article .necropole ul.roll li:last-child{border-bottom:none}
+article .necropole p.note{font-size:.78rem;color:var(--muted);font-style:italic;margin:.5rem 0 0}
+
+/* --- recensement-11e-rei.html : navigation par lettre (A-Z + a-confirmer) --- */
+article .letter-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.2rem 0 1.6rem}
+article .letter-nav a{padding:.5rem 1.1rem;background:var(--row);border:1px solid var(--border);
+  border-radius:20px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.85rem}
+article .letter-nav a:hover{background:var(--orange);border-color:var(--orange)}
+
+/* --- recensement-11e-rei.html : commentaires de visiteurs conserves (meme principe
+   que .comments/.comment de generateur_pages_panel_depuis_contenu.py, pour rester
+   coherent avec presse.html) --- */
+article .comments{margin-top:1.8rem}
+article .comment{background:var(--row);border:1px solid var(--border);border-radius:6px;
+  padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem}
+article .comment .meta{margin-bottom:.4rem}
+article .comment .author{font-weight:600;color:var(--ink)}
+article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+</style>
+</head>
+<body>
+
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main>
+
+<header>
+  <h1>Une enfance sous tutelle publique</h1>
+  <div class="sub">Les légionnaires de l'Assistance publique</div>
+  <div class="tags"><span>11è REI</span><span>Assistance publique</span><span>Volet I</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<article>
+
+<p class="lede">Parmi les 2&nbsp;400 légionnaires du 11e REI recensés dans ce travail, un groupe de 13 se distingue par un point commun antérieur à tout engagement militaire&nbsp;: une rupture précoce, dans l'enfance, avec la cellule familiale et la société qui l'entoure. Ce déracinement n'est pas celui, souvent mis en avant par la légende légionnaire, d'un exil géographique ou d'une fuite hors de France — il s'agit ici d'hommes nés et élevés en France, mais que l'Assistance publique a pris en charge avant même qu'ils n'aient l'âge de s'engager. Ce premier volet leur est consacré&nbsp;; deux autres suivront, sur les jeunes issus de colonies pénitentiaires et sur ceux entrés très tôt dans les équipages de la flotte.</p>
+
+<p>Le lien entre engagement à la Légion et rupture sociale antérieure a été souligné par l'historiographie&nbsp;: Valérie Esclangon-Morin note que la Légion étrangère fonctionne pour beaucoup de ses recrues comme «&nbsp;une famille d'accueil pour des êtres brisés par la vie ou en quête d'une nouvelle patrie&nbsp;». Mais cette lecture, pensée pour des parcours d'exil ou d'immigration, doit être nuancée dans le cas des enfants de l'Assistance publique du 11e REI&nbsp;: le déracinement qu'ils ont connu n'est pas lié à un changement de pays, mais à un abandon vécu dans l'enfance, au sein même de la société française.</p>
+
+<h2 class="section">Qui sont les « enfants de l'Assistance publique » ?</h2>
+
+<p>Le terme recouvre en réalité plusieurs statuts juridiques distincts, qu'il convient de ne pas confondre.</p>
+
+<p><strong>Les enfants placés sous protection publique (accueil temporaire).</strong> Ces enfants sont recueillis par l'institution pour faire face à une difficulté, mais les liens familiaux ne sont pas juridiquement rompus. Ce régime, issu de la loi du 19 avril 1898, comprend&nbsp;:</p>
+<ul>
+  <li>Les enfants secourus, ou «&nbsp;temporairement recueillis&nbsp;» (TR)&nbsp;: restent dans leur famille, mais l'administration verse une aide financière aux parents — souvent la mère — pour éviter l'abandon formel.</li>
+  <li>Les enfants en dépôt (D)&nbsp;: recueillis temporairement en cas d'urgence absolue chez les parents (hospitalisation, incarcération, maladie grave).</li>
+  <li>Les enfants en garde&nbsp;: confiés temporairement par décision de justice (maltraitance, carence éducative) ou à la demande des parents traversant une crise majeure. On distingue les enfants victimes de délits (GV) et les enfants auteurs de délits (GA).</li>
+</ul>
+
+<p><strong>Les pupilles de l'Assistance publique (placements définitifs).</strong> Ces enfants n'ont plus de parents, ou ceux-ci ont été déchus de leurs droits&nbsp;; l'État, représenté par le préfet et un conseil de famille, exerce la tutelle complète, avec rupture du lien de sang. Ce régime, fixé dès le décret du 19 janvier 1811 puis complété au fil du XIXe siècle, comprend quatre profils&nbsp;:</p>
+<ul>
+  <li>Les enfants trouvés (T)&nbsp;: nés de parents inconnus, abandonnés secrètement dans un lieu public ou à l'hôpital.</li>
+  <li>Les enfants abandonnés (A)&nbsp;: de parents connus, mais délaissés volontairement par ces derniers à l'administration.</li>
+  <li>Les orphelins pauvres (O)&nbsp;: mineurs ayant perdu père et mère, sans famille capable de subvenir à leurs besoins.</li>
+  <li>Les enfants moralement abandonnés (MA)&nbsp;: catégorie née d'une initiative du département de la Seine en 1881, généralisée à l'ensemble du territoire par la loi du 24 juillet 1889, visant les mineurs errant sans ressources ou retirés par les tribunaux à des parents jugés indignes.</li>
+</ul>
+
+<p>La loi du 27 juin 1904 synthétise l'ensemble de ces statuts en deux grands régimes&nbsp;: d'un côté la tutelle complète des pupilles (T/A/O/MA), de l'autre la protection provisoire des enfants placés (D/TR/GV/GA).</p>
+
+<div class="doc">
+  <p>Le statut de <strong>pupille de la Nation</strong>, créé par la loi du 27 juillet 1917, relève d'une tout autre logique&nbsp;: il concerne les orphelins de guerre, pris en charge par la Nation en reconnaissance du sacrifice de leur père, sans que cela implique la moindre rupture avec leur famille survivante. Les deux statuts ne doivent donc jamais être confondus.</p>
+</div>
+
+<p>Aucun des légionnaires présentés dans cette page n'est un «&nbsp;enfant trouvé&nbsp;» au sens strict&nbsp;: tous ont des parents identifiés à l'état civil, la situation la plus proche étant celle de Desroziers et de Lebacq, enfants naturels non reconnus par leur père mais dont la mère est nommément connue.</p>
+
+<h2 class="section">L'Assistance publique en charge des pupilles</h2>
+
+<p>Après avoir inscrit, immatriculé et catégorisé l'enfant, l'administration ouvre un dossier à son nom. L'ancêtre du dossier est le livret où sont consignées plusieurs informations ayant trait à l'enfant.</p>
+
+<p>Ces pièces administratives contiennent au sujet du mineur une information cohérente, durable et personnelle. Il s'agit, là encore, d'une entreprise d'enregistrement et de fichage. Ce «&nbsp;dossier jamais clos&nbsp;», symptôme d'une société disciplinaire, identifierait selon Michel Foucault l'enfant assisté à d'autres catégories d'individus à contrôler&nbsp;: soldats, malades, prisonniers, déportés. Cette conception, juste à certains égards, néglige le fait que la création d'un dossier vise aussi à faire respecter les droits de la personne — l'individualisation de l'enfant au sein d'énormes effectifs, l'attribution d'un placement approprié, l'établissement de sa future retraite, etc.</p>
+
+<p>L'Assistance publique, soucieuse des intérêts financiers, moraux et affectifs du pupille, lui reconnaît donc un certain nombre de droits. Après la fin de la période de tutelle, la bienveillance du directeur ne s'interrompt pas d'un coup et celui-ci maintient les liens avec les pupilles majeurs qui le souhaitent.</p>
+
+<p>Outre le fait qu'elle reste parfois toute théorique, cette sollicitude a des limites&nbsp;: elle implique la rupture avec la famille biologique. Les droits consentis à l'enfant sans famille ont donc pour contrepartie l'interdiction de renouer avec le milieu d'origine.</p>
+
+<h2 class="section">Des parcours d'abandon, des destins de légionnaires</h2>
+
+<h3>Louis Henri Pigeassou<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">une fratrie dispersée en un jour</span></h3>
+<p>Louis Henri Pigeassou naît le 2 décembre 1903 à Fécamp.</p>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/AP_Pigeassou.jpg" alt="Fiche de pupille de Louis Henri Pigeassou, Archives départementales de la Dordogne">
+    <figcaption>Fiche de pupille de Louis Henri Pigeassou (matricule 84), Archives départementales de la Dordogne.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Le 5 novembre 1905, toute la fratrie — Louis Henri et ses trois sœurs, Gabrielle, Marguerite et Marie-Louise — entre le même jour à l'hospice de Périgueux&nbsp;; le 15 décembre suivant, chacun est déclaré «&nbsp;moralement abandonné&nbsp;» sur des fiches consécutives du registre, avant d'être dispersé chez quatre nourrices différentes, dans quatre communes distinctes de la Dordogne.</p>
+  </div>
+</div>
+<p>À 19 ans, il devance l'appel militaire en s'engageant pour 4 ans dans l'infanterie. Il a le grade de sergent quand, en octobre 1926, il passe dans la réserve (CBC accordé). Rendu à la vie civile, il s'installe vers Toulouse où il est condamné deux fois pour vol, en 1927 et 1928.</p>
+<p>À 25 ans, Louis Pigeassou s'engage à la Légion étrangère en janvier 1928 sous le nom de «&nbsp;Marco Carlo&nbsp;», se disant espagnol, une identité déclarée que l'armée régularise en 1929. Trois fois cassé de son grade pour indiscipline, ivresse et indignité, il redescend chaque fois légionnaire de 2e classe.</p>
+<p>À 30 ans, le 23 janvier 1933, il est libéré fin de contrat (CBC accordé) et passe dans la réserve.</p>
+<p><em>Pendant 26 ans, il dépend d'une institution — l'Assistance publique, puis l'armée&nbsp;:</em></p>
+<ul>
+  <li>De 2 à 19 ans, pris en charge par l'Assistance publique</li>
+  <li>De 19 à 23 ans, relève de l'Armée régulière</li>
+  <li>De 25 à 30 ans, encadré à la Légion étrangère</li>
+</ul>
+<p>Rappelé à l'activité en septembre 1939, il rejoint le dépôt de la Légion étrangère à Sathonay et est affecté au 11e REI. Il est fait prisonnier à Saint-Germain le 18 juin 1940, et interné au stalag I A. Il est rapatrié par train sanitaire le 30 juin 1941 sur le centre de triage de Roanne.</p>
+
+<hr>
+
+<h3>Georges Guilbert<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">un frère parmi d'autres</span></h3>
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/AP_Guilbert.jpg" alt="Fiche des Enfants assistés de la Somme, Georges Alfred Guilbert">
+    <figcaption>Fiche des Enfants assistés de la Somme, Georges Alfred Guilbert (matricule 774).</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Né le 11 mai 1906 à Nouvion (Somme), Georges Alfred Guilbert perd son père, suicidé par pendaison en 1908. La même année, il est placé à l'Assistance publique avec ses sept frères et sœurs comme enfant moralement abandonné et devient pupille du département de la Somme.</p>
+  </div>
+</div>
+<p>En 1911, le registre des tournées d'inspection montre les quatre premiers enfants de la fratrie dispersés dans le même village, Fontaine-sur-Somme, chacun chez une famille différente. Sa mère est recensée à Titre avec deux enfants naturels nés en 1911 et 1912.</p>
+<p>Il effectue son service militaire en 1926-1927 puis devient charretier. Guilbert s'engage à la Légion étrangère en 1930 à Amiens. En 1939, il est affecté au 11e REI et fait prisonnier en juin 1940 à Charmes&nbsp;; il reste interné plus de quatre ans au stalag XII F avant d'être rapatrié en mars 1945. Il termine sa carrière avec le grade de caporal, avec 26 ans de service, et reçoit la médaille militaire en 1953.</p>
+<p><em>Pendant 33 ans, il dépend d'une institution — l'Assistance publique, puis l'armée&nbsp;:</em></p>
+<ul>
+  <li>De 2 à 20 ans, pris en charge par l'Assistance publique</li>
+  <li>De 24 à 39 ans, relève de l'Armée</li>
+</ul>
+
+<hr>
+
+<h3>Léon Poteau<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">une vie sous tutelle administrative</span></h3>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/AP_Poteau.jpg" alt="Feuille de renseignements du Service des Enfants assistés du Pas-de-Calais concernant Léon Gaston Poteau">
+    <figcaption>Feuille de renseignements du Service des Enfants assistés du Pas-de-Calais concernant Léon Gaston Poteau.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Léon Gaston Poteau naît le 25 mars 1905 à Arras. Ses parents, Adolphe Poteau et Marie Hourdin, sont mariés depuis 1901 et ont déjà deux enfants&nbsp;: Berthe, née en 1899 puis légitimée par ce mariage, et un fils, Adolphe. Mais le père a quitté le domicile huit mois avant la naissance de Léon. Sa mère, qui accouche seule, invoque l'impossibilité de subvenir à ses besoins&nbsp;: Léon est confié à l'Assistance publique dès sa naissance et placé à Ruyaulcourt, chez Octavie Duflos, veuve Duchâtelle.</p>
+    <p>Ses parents divorcent en 1905 et la garde de son frère est confiée à son père. Le reste de la fratrie, lui, échappe à cette séparation. En 1909, alors que ses parents vivent de nouveau ensemble, naît un troisième enfant, Maurice&nbsp;; en 1915, Adolphe et Marie se remarient à Paris, réunissant la famille. De tous les enfants du couple, Léon est le seul à avoir grandi hors du foyer.</p>
+    <p>Trois documents disent ce que représente concrètement, pour lui, cette appartenance à l'Assistance publique. En 1926, au moment de son conseil de révision, sa fiche matricule militaire est établie&nbsp;: sur la ligne où devrait figurer sa filiation — «&nbsp;fils de [père] et de [mère]&nbsp;» —, l'administration a inscrit «&nbsp;Pupille de l'assistance publique du Pas-de-Calais&nbsp;». Ce n'est pas un oubli, c'est une substitution&nbsp;: dans ce document officiel de la République, son statut institutionnel remplace le nom de ses parents.</p>
+  </div>
+</div>
+<p>Douze ans plus tard, en 1938, alors qu'il prépare son premier mariage, Poteau écrit au préfet pour obtenir un acte de naissance — «&nbsp;et où je croyais être né, j'ai écrit à Ruyaulcourt&nbsp;», précise-t-il, avant qu'on lui réponde qu'il faut s'adresser à la préfecture. À 33 ans, il découvre qu'il n'est pas né à Ruyaulcourt, le village où il a grandi, mais à Arras. Rien, dans les documents qu'un enfant assisté pouvait voir grandir, ne mentionnait jamais que Ruyaulcourt&nbsp;: le lieu de son enfance avait fini par tenir lieu, dans son esprit, de lieu de naissance.</p>
+<p>Et pour obtenir ce papier, comme chaque fois qu'il en a besoin — en 1931 déjà, puis en 1938, puis pour son remariage en 1951 —, il ne s'adresse jamais directement à une mairie&nbsp;: c'est toujours l'Assistance publique qui s'interpose, sous la forme d'un «&nbsp;certificat d'origine&nbsp;». De sa naissance à son remariage, Poteau ne dispose jamais d'un accès autonome à sa propre identité civile.</p>
+<p>Ce lien administratif se prolonge d'ailleurs bien au-delà de ces seules démarches d'état civil. En 1939, jeune père de famille, il sollicite l'institution pour l'aider à financer un buffet destiné à ranger le linge du ménage. La guerre ne rompt pas ce lien&nbsp;: en 1946, tout juste rentré de captivité — il évoque une déportation «&nbsp;en Pologne&nbsp;» et une pleurésie contractée durant ces années —, il adresse ses vœux de nouvelle année à l'ancien directeur de l'Assistance publique, dans une lettre chaleureuse qui n'a rien d'une simple formalité. En 1954 encore, à près de cinquante ans, il écrit au directeur pour lui annoncer la naissance de son fils José Areski — non sans confier, dans la même lettre, que l'exiguïté de son logement, une chambre de deux mètres cinquante sur trois, l'oblige à s'arrêter à trois enfants.</p>
+<p>Engagé à la Légion étrangère à Arras en 1928, il sert cinq ans comme légionnaire de 2e classe avant de repasser dans la réserve. Rappelé en 1939, il est fait prisonnier et interné au stalag IV D. Contrairement à Guilbert ou Clairet, rien dans son dossier n'indique de promotion&nbsp;: il reste simple légionnaire tout au long de son engagement.</p>
+
+<hr>
+
+<h3>Claude André Clairet<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">l'enfant qui refusait la rupture</span></h3>
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/AP_Clairet.jpg" alt="Procès-verbal d'abandon de Claude André Clairet, Archives départementales du Rhône">
+    <figcaption>Procès-verbal d'abandon, enfant assisté n°54121, Archives départementales du Rhône (3X292/105).</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Claude André Clairet naît le 21 août 1898 à Thizy (Rhône), de Jean Jules Alphonse Clairet et de Marie Agarithe Feliza. Ses parents divorcent en 1903&nbsp;; la garde des enfants est d'abord confiée au père, jusqu'à ce que celui-ci soit déchu de ses droits — la mère, elle, ne l'est pas. Le 29 juin 1904, sur signalement de l'opinion publique de Thizy dénonçant des maltraitances régulières, Claude André est admis à l'Assistance publique de Lyon comme enfant moralement abandonné (enfant assisté n°54121, dossier 3X292/105). Il est placé à Innimond, dans l'Ain, d'abord chez les Clapot puis chez les Guiffray.</p>
+  </div>
+</div>
+<p>Sa mère, remariée, vit en 1906 à Villeurbanne avec tous ses enfants — sauf Claude André et son frère Philibert. Elle a huit enfants de ses deux unions. Mais le lien avec ses deux fils placés n'est jamais rompu de son fait&nbsp;: entre 1912 et 1913, André s'enfuit à plusieurs reprises de ses lieux de placement, précisément pour aller la retrouver. L'administration, qui ne voit dans ces fugues qu'un vice de caractère, le décrit comme brutal, fainéant, porteur d'un couteau et d'un pistolet, et estime qu'il «&nbsp;aurait besoin d'une discipline sévère&nbsp;» — sans jamais interroger ce que ces fuites répétées vers sa mère pouvaient signifier. En novembre 1912, celle-ci réclame la restitution de ses fils&nbsp;; l'Assistance publique refuse, soupçonnant qu'elle ne cherche qu'à percevoir la rente versée à André depuis la mort de son père cette même année, et invoque son alcoolisme et ses «&nbsp;mœurs déplorables&nbsp;».</p>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/AP_Clairet-contrat.jpg" alt="Contrat de placement de Claude Clairet à Beaujeu, Rhône">
+    <figcaption>Contrat de placement de Claude Clairet comme domestique agricole à Beaujeu (Rhône), Agence des Enfants assistés du Rhône, 1914.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>En 1915, à 17 ans et demi, Claude André s'engage volontairement pour la durée de la guerre&nbsp;; il est démobilisé en septembre 1919. Il retourne alors vivre à Lyon chez sa mère, 25 rue Jean-Broquin — la même dont l'Assistance publique lui avait, quelques années plus tôt, refusé la garde. En 1920, il est arrêté avec un complice pour une série de vols de musettes commis sur les chantiers du fort de Pont-Saint-Vincent&nbsp;; il avoue ces vols. Les deux hommes sont également mis en cause dans le vol d'une magnéto, et Clairet est inculpé de détention d'arme prohibée, un couteau à cran d'arrêt ayant été trouvé sur lui — écho direct des armes qu'on lui reprochait déjà de porter enfant.</p>
+    <p>Il vit ensuite en concubinage avec Marie Joséphine Bogé&nbsp;; les bans de leur mariage sont publiés le 14 février 1925. Mais Marie Joséphine meurt en 1926, avant la célébration. Le couple a eu un fils, Roger. Juste avant de s'engager à la Légion étrangère, Clairet laisse cet enfant à l'Assistance publique de Lyon — la même institution qui l'avait recueilli, lui, vingt-deux ans plus tôt.</p>
+    <p>Engagé sous le nom d'André Chioli en 1927, il devient caporal, est blessé et décoré de la médaille militaire en 1938, totalisant treize ans de service à la mobilisation.</p>
+  </div>
+</div>
+
+<hr>
+
+<h3>Antoine Joublin<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">l'enfant repris par sa mère</span></h3>
+<p>Antoine naît en 1909, suivi deux ans plus tard par sa sœur Marie Victorine. Leurs parents, Louis Joseph Joublin et Marie Augustine Stoeltzlen, les légitiment par leur mariage en 1913.</p>
+<p>La rupture survient en 1916. Alors qu'il est mobilisé depuis 1914 — il sera caporal, puis sergent, cité à deux reprises pour son comportement au feu avant d'être fait prisonnier en Allemagne en 1917 —, Louis Joseph Joublin se sépare de son épouse. En mai 1916, il place ses deux enfants en dépôt auprès de l'Assistance publique du Rhône, en prenant soin de faire consigner par écrit que leur mère n'a pas le droit de les voir pendant son absence. Ce n'est donc pas seulement la guerre qui éloigne Antoine et sa sœur de leur foyer&nbsp;: c'est une décision du père, prise dans un climat de conflit conjugal, pour tenir la mère à l'écart.</p>
+<p>Le divorce est prononcé par défaut le 6 février 1918&nbsp;; la garde des enfants, et tous les attributs de la puissance paternelle, sont confiés au père. La mère, qui n'apprendra que trop tard la portée de ce jugement, verra son opposition tardive rejetée en 1921. Pendant ce temps, selon ses propres déclarations ultérieures, elle multiplie sans succès les recherches pour retrouver la trace de ses enfants, dont le père a dissimulé l'adresse.</p>
+<p>Rapatrié de captivité en janvier 1919, Louis Joseph Joublin reprend un temps ses enfants — mais dès le 11 septembre 1919, il les replace en dépôt. Cinq mois plus tard, le 5 février 1920, un jugement homologue la cession de ses droits de puissance paternelle à l'Assistance publique&nbsp;: Antoine et Marie Victorine deviennent pupilles. Cette décision intervient alors que Louis Joseph Joublin a déjà refait sa vie&nbsp;: en concubinage avec Anaïs Ranch — pour laquelle il est condamné pour adultère en novembre 1919 —, il devient père de deux autres enfants, nés en 1920 et 1922, qu'il légitimera à son tour en épousant Anaïs le 30 décembre 1922.</p>
+<p>En 1921, un oncle maternel, parrain d'Antoine, demande à son tour la garde des enfants. Mais c'est leur mère elle-même, remariée à Alexandre Louis Brivet, qui mène la démarche jusqu'à son terme&nbsp;: le Conseil de famille des enfants assistés rend un avis favorable le 3 avril 1922, et le tribunal civil de Lyon lui restitue la garde d'Antoine et Marie Victorine par un jugement du 6 avril 1922, exécuté le mois suivant.</p>
+<p>Contrairement à la plupart des parcours réunis ici, celui d'Antoine Joublin ne se referme pas sur un abandon définitif&nbsp;: après six années de séparation, de dépôts successifs et de procédures, c'est sa mère qui le récupère.</p>
+<p>Ce que révèle ce dossier n'est donc pas une histoire simple d'indifférence paternelle, ni seulement une histoire de guerre. La captivité de 1917 à 1919 explique le placement initial de 1916&nbsp;; elle n'explique pas la décision prise par le père après son retour. Rentré libre et capable de refaire sa vie, Louis Joseph Joublin choisit d'investir dans un nouveau foyer plutôt que de reprendre les deux enfants qu'il avait eus avant la guerre — ce sera finalement leur mère, trois ans plus tard, qui les récupère.</p>
+
+<hr>
+
+<h3>Auguste Bertenant<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">la guerre au milieu de l'enfance</span></h3>
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/AP_Bertenant.jpg" alt="Décision d'admission d'Auguste Emile Bertenant comme enfant en garde, Assistance publique de Paris">
+    <figcaption>Décision d'admission d'Auguste Emile Bertenant comme enfant «&nbsp;en garde&nbsp;», Assistance publique de Paris, 3 juin 1914 (matricule 202780).</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Auguste Emile Bertenant naît le 7 juin 1901 à Créteil. À la différence de Guilbert, Clairet ou Pigeassou, il n'est pas admis comme enfant moralement abandonné, mais placé «&nbsp;en garde&nbsp;» comme mineur auteur de délits — un statut qui maintient les liens familiaux plutôt qu'il ne les rompt. Jugé responsable d'un vol commis à 12 ans, pour lequel il est finalement acquitté comme ayant agi «&nbsp;sans discernement&nbsp;», il est confié le 28 mai 1914 à un exploitant minier près de Valenciennes.</p>
+    <p>Le 3 septembre 1914, il fuit son lieu de placement devant l'avancée allemande, regagne Paris, vole à nouveau son ancienne victime, M. Arnold, et le tribunal pour enfants de la Seine le condamne cette fois à être «&nbsp;envoyé en correction jusqu'à sa majorité&nbsp;» à l'école de réforme de Saint-Hilaire, une colonie pénitentiaire agricole pour mineurs située sur la commune de Roiffé (Vienne).</p>
+  </div>
+</div>
+<p>Engagé à la Légion étrangère à Paris le 18 janvier 1926 — un temps sous le nom d'Auguste Berthenant, se disant belge, avant que son identité réelle ne soit régularisée en 1927 —, il sert treize années consécutives, de 1926 à 1939, marquées par plusieurs séjours au Maroc puis en Indochine (Tonkin, 1930-1935). Il y reçoit la médaille coloniale avec agrafe «&nbsp;Maroc 1925-26&nbsp;» et une citation à l'ordre des troupes de l'Indochine, avant d'être nommé 1ère classe le 1er octobre 1938 et libéré en janvier 1939.</p>
+<p>Rappelé à l'activité dès le 6 septembre 1939, il est fait prisonnier le 26 juin 1940 et interné au Stalag XVIII B jusqu'à son rapatriement le 14 mai 1945. Il reçoit la médaille militaire par décret du 22 juin 1939.</p>
+
+<h2 class="section">Ne pas confondre&nbsp;: orphelin et pupille de l'Assistance publique</h2>
+
+<p>L'examen des dossiers permet de nuancer un raccourci trop facile&nbsp;: la perte des deux parents ne conduit pas automatiquement à une prise en charge par l'Assistance publique. Sur huit cas d'orphelins de père et de mère identifiés dans le corpus, quatre seulement relèvent effectivement de l'Assistance publique (Baptiste, Caizergues, Clairet — mais il est déjà placé à l'Assistance publique —, Steffen)&nbsp;; les quatre autres ont été recueillis par leur famille&nbsp;: Billard Pierre Henri par M. Desvignes, Bozec Julien Jean Marie par sa grand-mère, Paulin Roger Robert par son beau-frère, et Pierrat Paul Marcel par son frère Gaston.</p>
+
+<p>Le cas de Pierrat mérite une mention particulière&nbsp;: bien que placé sous la tutelle familiale de son frère, il passe également par le Patronage Rollet, fondé en 1890 par le magistrat et avocat Henri Rollet — «&nbsp;le bon juge&nbsp;» (1860-1934) — comme alternative à l'internement pénal, destiné aux mineurs de 8 à 18 ans «&nbsp;dévoyés, vagabonds ou jeunes coupables&nbsp;». Son parcours relève ainsi davantage du volet consacré aux colonies pénitentiaires, qui fera l'objet d'une prochaine page de cette série, que du présent volet sur l'Assistance publique.</p>
+
+<p>L'Assistance publique apparaît donc bien comme un dernier recours, activé lorsque aucune solution familiale n'existe — et non comme la conséquence mécanique de la perte des deux parents.</p>
+
+<h2 class="section">D'autres parcours, moins documentés</h2>
+
+<p>Baptiste Auguste, Caizergues, Desroziers, Lebacq, <a href="https://www.11regimentetranger.com/pellegrini-leon">Pellegrini</a> et Schlichter complètent ce corpus, avec des parcours moins richement documentés par les archives consultées à ce jour. Parmi eux, le cas de Caizergues fait écho à une observation plus large sur les profils recrutés par la Légion dans l'entre-deux-guerres&nbsp;: sa fiche matricule porte la mention «&nbsp;CBC refusé&nbsp;» après une condamnation en 1927, avant un engagement à la Légion en 1930 sous une fausse nationalité suisse — une trajectoire qui rejoint l'analyse de Jean-Michel Houssin sur les soldats français «&nbsp;relativement âgés […], libérés sans certificat de bonne conduite ou trop âgés […], dont le rengagement est refusé, [et qui] tentent leur chance à la Légion&nbsp;».</p>
+
+<h2 class="section">Un mythe à interroger</h2>
+
+<p>La légende légionnaire aime à présenter l'engagement comme une seconde naissance, offerte à des hommes brisés par la vie. Jean-Michel Houssin, dans son ouvrage consacré au recrutement à la Légion étrangère, écrit&nbsp;:</p>
+<blockquote>
+  <p>«&nbsp;La Légion propose autre chose&nbsp;: elle est une famille d'accueil pour des êtres brisés par la vie ou en quête d'une nouvelle patrie. […] Chaque légionnaire est ton frère d'armes, quelles que soient sa nationalité, sa race ou sa religion&nbsp;»</p>
+</blockquote>
+<p>— une formule qui reprend les termes du deuxième article du Code d'honneur du légionnaire.</p>
+
+<p>Trois éléments viennent nuancer ce récit d'une Légion rédemptrice et substitutive. D'abord, le lien avec l'Assistance publique ne s'efface pas à l'entrée dans l'institution militaire&nbsp;: Léon Poteau continue, bien après sa majorité et jusque dans les années 1950, à solliciter l'ancien directeur de l'Assistance publique du Pas-de-Calais — pour un acte de naissance, une aide financière, ou simplement pour lui annoncer une naissance. La Légion ne s'y substitue donc pas comme une famille d'accueil exclusive&nbsp;: elle s'ajoute à un lien institutionnel antérieur, sans le remplacer. Ensuite, l'engagement ne referme pas nécessairement le cycle des comportements de l'enfance&nbsp;: Louis Pigeassou est condamné deux fois pour vol dans l'intervalle qui sépare son service militaire de son engagement à la Légion, avant d'y être lui-même cassé à trois reprises pour indiscipline, ivresse et indignité.</p>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/blog-pellegrini-leon-6.jpg" alt="Article de presse « Fidélité » consacré à l'adjudant Pellegrini">
+    <figcaption>«&nbsp;Fidélité&nbsp;», article de presse consacré à l'adjudant Pellegrini.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Enfin, le parcours de <a href="https://www.11regimentetranger.com/pellegrini-leon">Léon Pellegrini</a> élargit encore le tableau&nbsp;: engagé une première fois à quinze ans, en 1902, il se rengage en 1939 pour la durée de la guerre. Trop âgé pour servir dans l'armée active, il est d'abord affecté à une formation territoriale — mais s'y ennuie, et demande lui-même à revenir à la Légion. «&nbsp;J'ai le jarret solide et ma main ne tremble pas&nbsp;», résume-t-il alors.</p>
+  </div>
+</div>
+
+<p>Loin d'effacer les trajectoires antérieures comme une rédemption ponctuelle, la Légion les recoupe, parfois les prolonge, et s'inscrit chez certains dans la durée d'une vie entière.</p>
+
+<h2 class="section">Une légende à l'épreuve des existences réelles</h2>
+
+<p>Les treize parcours réunis dans cette page montrent la diversité des statuts recouverts par l'expression «&nbsp;enfant de l'Assistance publique&nbsp;» — moralement abandonné, enfant en garde, pupille de l'État — et la nécessité de ne pas les confondre entre eux, ni avec le statut, sans rapport, de pupille de la Nation. Ils montrent aussi que l'Assistance publique n'est pas la conséquence automatique d'un deuil précoce&nbsp;: elle intervient lorsque, et seulement lorsque, aucun lien familial ne peut prendre le relais. Enfin, ils invitent à interroger le mythe d'une Légion rédemptrice et substitutive&nbsp;: Poteau, Pigeassou et Pellegrini montrent, chacun à sa manière, que l'institution ne referme pas les parcours antérieurs aussi nettement que la légende voudrait le faire croire.</p>
+
+<h2 class="section">Tableau récapitulatif</h2>
+<div style="overflow-x:auto;margin:1rem 0">
+  <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)">
+    <caption style="text-align:left;font-style:italic;color:var(--muted);margin-bottom:.6rem;caption-side:top;font-size:.85rem">Les 13 enfants de l'Assistance publique du 11e REI</caption>
+    <thead>
+      <tr>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Nom</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Prénom(s)</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Date de naissance</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Lieu de naissance</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Placement à l'Assistance publique</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Département</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Motif (quand connu)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Pigeassou</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Louis Henri</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">02/12/1903</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Fécamp</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">05/11/1905 (déclaré moralement abandonné le 15/12/1905, avec sa fratrie)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Dordogne</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Non précisé</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Guilbert</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Georges Alfred</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">11/05/1906</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Nouvion (Somme)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">09/12/1908, moralement abandonné, avec ses 7 frères et sœurs</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Somme</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Suicide du père par pendaison (1908)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Poteau</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Léon Gaston</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">25/03/1905</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Arras</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Dès sa naissance (procès-verbal du 07/04/1905)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Pas-de-Calais</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Père parti 8 mois avant la naissance&nbsp;; mère seule, sans ressources</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Clairet</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Claude André</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">21/08/1898</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Thizy (Rhône)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">29/06/1904, moralement abandonné</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Rhône</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Parents jugés incapables&nbsp;; maltraitance signalée&nbsp;; père déchu de ses droits</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Bertenant</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Auguste Emile</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">07/06/1901</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Créteil</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">28/05/1914, enfant « en garde »</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Paris / Val-de-Marne</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mineur auteur de délit (vol), acquitté comme ayant agi sans discernement</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Baptiste</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Auguste</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">09/04/1908</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Lorient</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Pupille de l'Assistance publique</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Morbihan</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Orphelin (mère décédée en 1914, père décédé en 1921)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Caizergues</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Joseph Roger</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">26/11/1906</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Tours</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Pupille de l'Assistance publique</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Loiret</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Non précisé (père décédé en 1920, mère décédée en 1932)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Desroziers</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Henri Albert Joseph</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">20/03/1912</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Chartres</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Placé à l'Assistance publique</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Eure-et-Loir</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Enfant naturel non reconnu par son père</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Joublin</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Antoine Marius</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">28/09/1909</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Lyon (2e)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">26/05/1916 en dépôt&nbsp;; admis moralement abandonné le 10/09/1919</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Rhône</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Cession des droits paternels après démobilisation du père, séparation des parents</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Lebacq</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Gaston Fernand</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">11/04/1902</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Lille</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Pupille de l'Assistance publique</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Nord</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Enfant naturel non reconnu par son père</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Pellegrini</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Léon Jean Baptiste</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">21/01/1887</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Autechaux-Roide</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Enfant assisté</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Doubs</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Non précisé</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Schlichter</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Antonin</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">27/09/1905</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Grenoble</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Pupille de l'Assistance publique</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Isère</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Non précisé</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Steffen</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Louis</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">13/05/1905</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Saint-Denis</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">29/04/1918, après recueil par un oncle</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Seine</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Orphelin (parents décédés en 1909 et 1910)&nbsp;; abandonné par l'oncle qui l'avait recueilli</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p style="font-size:.78rem;color:var(--muted);font-style:italic;margin-top:.5rem">Le département indiqué est celui de l'Assistance publique en charge de l'enfant (parfois distinct du lieu de naissance).</p>
+
+<div class="sources">
+  <h3>Historiographie</h3>
+  <ul>
+    <li>Valérie Esclangon-Morin, « La Légion étrangère, une particularité française », <em>Hommes &amp; migrations</em>, n°1306, 2014.</li>
+    <li>Ivan Jablonka, « Les droits de l'enfant abandonné (1811-2003) », <em>Cahiers de la recherche sur les droits fondamentaux</em>, n°5, 2006, Presses universitaires de Caen.</li>
+    <li>Jean-Michel Houssin, <em>Le recrutement à la Légion étrangère</em>, Éditions D'un autre ailleurs, avril 2020.</li>
+    <li>M. Foucault, <em>Surveiller et Punir. Naissance de la prison</em>, Paris, Gallimard (Bibliothèque des histoires), 1975, p. 300 sq.</li>
+  </ul>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+<a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=Blog-AssistancePublique" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();</script>
+</body>
+</html>
