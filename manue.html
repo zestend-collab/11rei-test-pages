@@ -4,12 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rien n'est perdu — Récit, 11e Régiment Étranger</title>
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon.ico" sizes="any">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/site.webmanifest">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MGECC7TJGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MGECC7TJGK');
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
   *,*::before,*::after{box-sizing:border-box}
   :root{
     --bg:#f6f1e6; --paper:#fffdf8; --ink:#2b2620; --muted:#7a6f5e;
     --border:#e2d8c3; --accent:#a8632f; --mark:#f5d99b;
+    --orange:#fab855; --link:#ff9900;
   }
   html{-webkit-text-size-adjust:100%}
   body{margin:0;padding:0 16px;background:var(--bg);color:var(--ink);
@@ -56,17 +70,48 @@
     section.part{padding:1.4rem 1.2rem 1rem}
     .titlepage h1{font-size:2rem}
   }
+
+  .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
 </style>
 </head>
 <body>
+
+<script src="/menu.js"></script>
+<script src="/banniere.js"></script>
+
+<a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=Rien-nest-perdu" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+
 <div class="page">
+<div class="titlepage">
+<p class="eyebrow" id="p1">Récit — 11e Régiment Étranger</p>
+<h1>Rien n'est perdu</h1>
+</div>
 <p class="toc-nav">
 <a href="#part-2">Première partie — Relève en forêt des Ardennes</a>
 <a href="#part-189">Deuxième partie</a>
 <a href="#part-295">Troisième partie — La retraite</a>
 <a href="#part-470">Quatrième partie — Le baroud d'honneur</a>
 </p>
-<p id="p1">Récit — 11e Régiment Étranger</p>
 <p class="pagemark">— Page 1 du carnet —</p>
 <section class="part" id="part-2">
 <h2 class="part-title">PREMIERE PARTIE</h2>
@@ -707,5 +752,20 @@
 <p class="fin">FIN</p>
 </section>
 </div>
+
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();</script>
 </body>
 </html>
