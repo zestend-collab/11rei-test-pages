@@ -1,5 +1,5 @@
 /*
-menu.js — Menu de navigation partage du site 11e REI (variante de test GitHub Pages)
+menu.js — Menu de navigation partage du site 11e REI
 ================================================================================================
 Un seul fichier, charge par toutes les pages via <script src="/menu.js"></script>.
 Insere le menu de navigation en haut de la page au chargement, sans dependance a un
@@ -12,10 +12,14 @@ sombre pour rester lisible par-dessus n'importe quel contenu (le menu reste touj
 visible, position fixe).
 
 Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateurs Python.
+
+Icone loupe : lien simple vers la recherche plein texte (recherche-texte), separe du
+tableau LIENS pour rester visible independamment du menu deroulant mobile.
 */
 
 (function () {
   var SITE = "https://www.11regimentetranger.com";
+  var SEARCH_URL = SITE + "/recherche-texte";
 
   var LIENS = [
     { href: SITE + "/recensement-11e-rei", label: "Recensement 11e REI" },
@@ -42,8 +46,14 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
     + ".gsite-links a:hover{opacity:.8}"
     + ".gsite-nav.scrolled .gsite-links a:hover{color:#202124;opacity:1}"
     + ".gsite-links a.active{font-weight:500;border-bottom-color:#fab855}"
+    + ".gsite-search-btn{display:flex;align-items:center;justify-content:center;flex-shrink:0;"
+    + "width:34px;height:34px;margin-left:auto;color:#ffffff;text-decoration:none;"
+    + "border-radius:50%;transition:color .25s ease,background .25s ease;-webkit-tap-highlight-color:transparent}"
+    + ".gsite-nav.scrolled .gsite-search-btn{color:#3c4043}"
+    + ".gsite-search-btn:hover{background:rgba(255,255,255,.15)}"
+    + ".gsite-nav.scrolled .gsite-search-btn:hover{background:rgba(0,0,0,.06)}"
     + ".gsite-burger{display:none;flex-shrink:0;width:34px;height:34px;border:none;background:transparent;"
-    + "cursor:pointer;padding:6px;margin-left:auto;-webkit-tap-highlight-color:transparent}"
+    + "cursor:pointer;padding:6px;-webkit-tap-highlight-color:transparent}"
     + ".gsite-burger span{display:block;width:100%;height:2px;background:#ffffff;margin:6px 0;"
     + "transition:transform .2s ease,opacity .2s ease}"
     + ".gsite-nav.scrolled .gsite-burger span{background:#3c4043}"
@@ -98,6 +108,17 @@ Pour changer un lien du menu : modifier UNIQUEMENT ce fichier, pas les generateu
       linksWrap.appendChild(a);
     });
     inner.appendChild(linksWrap);
+
+    // Icone loupe : lien simple vers la recherche plein texte, toujours visible
+    // (desktop et mobile), independamment du tiroir de liens.
+    var searchBtn = document.createElement("a");
+    searchBtn.className = "gsite-search-btn";
+    searchBtn.href = SEARCH_URL;
+    searchBtn.setAttribute("aria-label", "Recherche plein texte");
+    searchBtn.innerHTML = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" '
+      + 'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+      + '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+    inner.appendChild(searchBtn);
 
     var burger = document.createElement("button");
     burger.className = "gsite-burger";
