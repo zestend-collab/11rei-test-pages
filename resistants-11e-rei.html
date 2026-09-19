@@ -124,7 +124,7 @@
   .floating-top-btn.show{display:flex}
   .floating-top-btn:hover{background:var(--link)}
 </style>
-<div class="rei-resist">
+<div class="rei-resist" data-pagefind-body>
 <a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=R%C3%A9sistants" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
 <button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
 <div style="max-width:1040px;margin:0 auto;">
@@ -144,7 +144,7 @@
 <select id="rei-resist-filter-reseau" class="filter-select"><option value="all">Tous les réseaux (9)</option><option value="reseaubuck">Réseau Buck (1)</option><option value="reseaudiplomat">Réseau Diplomat (1)</option><option value="reseaueleuthere">Réseau Eleuthere (1)</option><option value="reseaueric">Réseau Eric (1)</option><option value="reseauevasiondefrance">Réseau Evasion de France (1)</option><option value="reseaugallia">Réseau Gallia (1)</option><option value="reseaugoelette">Réseau Goelette (1)</option><option value="reseauhonneuretpatrie">Réseau Honneur et Patrie (1)</option><option value="reseauliberationnord">Réseau Libération Nord (2)</option><option value="reseaumithridate">Réseau Mithridate (2)</option></select>
 <select id="rei-resist-filter-maquis" class="filter-select"><option value="all">Tous les maquis (7)</option><option value="maquisnonprecise">Maquis (non précisé) (2)</option><option value="maquisairedecote">Maquis Aire de Cote (1)</option><option value="maquischerimont">Maquis Cherimont (1)</option><option value="maquislasalle">Maquis Lasalle (1)</option><option value="maquislot">Maquis Lot (1)</option><option value="maquisoisans">Maquis Oisans (1)</option><option value="maquispontsaintesprit">Maquis Pont Saint Esprit (1)</option><option value="maquisrosporden">Maquis Rosporden (1)</option><option value="maquisvercors">Maquis Vercors (1)</option></select>
 </div>
-<div class="count" id="rei-resist-count">91 fiches sur 91</div>
+<div class="count" id="rei-resist-count">92 fiches sur 92</div>
 <div class="grid">
 
   <div class="card has-photo" id="amand-maurice" data-open="false" data-mouvements="ffi" data-reseaux="" data-maquis="" data-search="amand maurice">
@@ -673,6 +673,22 @@ au sabotage de voies ferrées. Il est arrêté par la gestapo au mois de mai 194
     </button>
     <div class="card-body"><div class="body-content">
       <div class="section"><h4>Résistance</h4><p><b>Résistance</b> : FFL engagé volontaire au 501è RCC</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Kalfalah et Rosa Ghazala Allouche</p><p><b>Profession</b> : peintre</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Liste des prisonniers n°15 du 12/09/1940</p></div>
+    </div></div>
+  </div>
+
+  <div class="card has-photo" id="guibourdanche-marcel-henri" data-open="false" data-mouvements="" data-reseaux="" data-maquis="" data-search="guibourdanche marcel henri">
+    <div class="badges-corner"><span class="stamp stamp-resistantmort" title="Résistant mort (circonstances à préciser)">MORT (RÉSISTANT)</span></div>
+    <button class="card-head" onclick="toggleCard(this)">
+      <div class="portrait"><img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos/main/guibourdanche-marcel-henri.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.remove('has-photo'); this.closest('.portrait').style.display='none';"></div>
+      <div class="head-text">
+        <div class="name">GUIBOURDANCHE Marcel Henri</div>
+        <div class="meta">(20/12/1907 - Bourbiac - France)</div>
+        <div class="movements"></div>
+      </div>
+      <svg class="chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="card-body"><div class="body-content">
+      <div class="section"><h4>Résistance</h4><p><b>Résistant mort (circonstances à préciser)</b> : 152000</p></div><div class="section"><h4>État civil, famille, profession</h4><p><b>Parents</b> : Camille et Josephine Albertine Laura Bolard</p><p><b>Mariage</b> : le 30/05/1936 à Montrouge avec Suzanne Gabrielle Marie Tayrac, divorce en 1947. Le 12/06/1952 à Marsangy avec Henriette Caillou</p><p><b>Décès</b> : le 24/09/1962 à Armeau</p><p><b>Profession</b> : comptable</p></div><div class="section"><h4>Campagne 1939-40</h4><p><b>Capture</b> : Fait prisonnier le 17/06/1940 à Goviller</p><p><b>Lieu de captivité</b> : Il est interné au stalag XVII A mle 524</p></div>
     </div></div>
   </div>
 
@@ -1657,7 +1673,7 @@ function toggleCard(btn){
       card.classList.toggle('hide', !show);
       if(show) visible++;
     });
-    countEl.textContent = visible + ' fiche' + (visible > 1 ? 's' : '') + ' sur 91';
+    countEl.textContent = visible + ' fiche' + (visible > 1 ? 's' : '') + ' sur 92';
     noResults.style.display = (visible === 0) ? 'block' : 'none';
   }
 

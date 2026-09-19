@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Bataillons d'infanterie légère d'Afrique, une jeunesse déjà fichée — 11e REI</title>
+<meta name="description" content="Les Bataillons d'infanterie légère d'Afrique, une jeunesse déjà fichée — 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940).">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon.ico" sizes="any">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/site.webmanifest">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MGECC7TJGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MGECC7TJGK');
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#eef1f4;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1c2733;--muted:#5b6b7a;--border:#c7d0d9;--row:#f7f7f7;
+  }
+
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article .entry{margin-bottom:.9rem}
+  article .entry .date{font-weight:500}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article blockquote p{margin-bottom:.6rem}
+  article blockquote p:last-child{margin-bottom:0}
+
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+
+  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
+  article .imgrow img{width:100%}
+
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem;overflow-wrap:break-word;word-break:break-word}
+  article .sources a{overflow-wrap:break-word;word-break:break-word}
+
+/* ==========================================================================
+   Ajouts a BIO_CSS pour les pages thematiques du Groupe A
+   (monuments, prisonniers, rawa-ruska, 11e-rei-en-photo, cimetieres-communaux,
+   necropoles, rouge-vert2, livre, medaille-militaire-1952/1953, recensement-11e-rei)
+   ========================================================================== */
+
+/* --- communes a plusieurs pages : a ajouter une seule fois --- */
+article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+  border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+article .seealso{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.88rem}
+
+/* --- livre.html : bouton d'appel a l'action --- */
+article .cta{display:inline-block;margin-top:.4rem;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--ink);background:var(--orange);text-decoration:none;padding:.6rem 1.2rem;border-radius:20px}
+article .cta:hover{background:var(--link);color:#fff}
+
+/* --- medaille-militaire-1952.html : citations detaillees (renommees de .citations
+   -> .citations-fiches pour ne plus entrer en collision avec la variante 1953) --- */
+ul.citations-fiches{list-style:none;margin:1.2rem 0 1.6rem;padding:0;
+  display:grid;grid-template-columns:1fr;gap:.6rem;min-width:0}
+ul.citations-fiches li.person{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:.7rem .9rem;text-align:left;min-width:0;overflow-wrap:break-word;word-break:break-word}
+ul.citations-fiches li.person strong{font-family:'EB Garamond',serif;font-size:1rem;display:block;margin-bottom:.3rem}
+ul.citations-fiches ul.det{list-style:none;margin:0;padding:0;min-width:0}
+ul.citations-fiches ul.det li{font-size:.83rem;color:var(--ink);padding:.08rem 0;overflow-wrap:break-word;word-break:break-word}
+@media (max-width:600px){
+  ul.citations-fiches li.person{padding:.6rem .7rem}
+  ul.citations-fiches li.person strong{font-size:.92rem}
+  ul.citations-fiches ul.det li{font-size:.78rem}
+}
+
+/* --- medaille-militaire-1953.html : citations en lignes (renommees de .citations
+   -> .citations-lignes) --- */
+article .citations-lignes{margin:1.2rem 0 1.6rem;padding:0}
+article .citations-lignes li{list-style:none;background:var(--row);border:1px solid var(--border);
+  border-radius:4px;padding:.7rem .9rem;margin-bottom:.6rem;text-align:left}
+article .citations-lignes li strong{font-family:'EB Garamond',serif;font-size:1rem}
+article .citations-lignes li .details{display:block;margin-top:.15rem}
+article .citations-lignes li .mort{display:block;margin-top:.15rem;color:var(--muted);font-style:italic}
+
+/* --- necropoles.html : une carte par nécropole (nom, description, liste des tombes).
+   Manquait jusqu'ici malgre la page citee dans la liste du groupe ci-dessus - .necropole
+   restait donc sans aucun style (rendu par defaut du navigateur, sans carte ni espacement). --- */
+article .necropole{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:1.1rem 1.3rem;margin-bottom:1.2rem}
+article .necropole h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.05rem;
+  color:var(--ink);border-bottom:none;margin:0 0 .4rem;padding-bottom:0}
+article .necropole p.meta{font-size:.82rem;color:var(--muted);margin-bottom:.7rem}
+article .necropole ul.roll{list-style:none;margin:0 0 .5rem;padding:0}
+article .necropole ul.roll li{font-size:.85rem;padding:.15rem 0;border-bottom:1px dashed var(--border)}
+article .necropole ul.roll li:last-child{border-bottom:none}
+article .necropole p.note{font-size:.78rem;color:var(--muted);font-style:italic;margin:.5rem 0 0}
+
+/* --- recensement-11e-rei.html : navigation par lettre (A-Z + a-confirmer) --- */
+article .letter-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.2rem 0 1.6rem}
+article .letter-nav a{padding:.5rem 1.1rem;background:var(--row);border:1px solid var(--border);
+  border-radius:20px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.85rem}
+article .letter-nav a:hover{background:var(--orange);border-color:var(--orange)}
+
+/* --- recensement-11e-rei.html : commentaires de visiteurs conserves (meme principe
+   que .comments/.comment de generateur_pages_panel_depuis_contenu.py, pour rester
+   coherent avec presse.html) --- */
+article .comments{margin-top:1.8rem}
+article .comment{background:var(--row);border:1px solid var(--border);border-radius:6px;
+  padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem}
+article .comment .meta{margin-bottom:.4rem}
+article .comment .author{font-weight:600;color:var(--ink)}
+article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+</style>
+</head>
+<body>
+
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main data-pagefind-body>
+
+<header>
+  <h1>Les Bataillons d'infanterie légère d'Afrique, une jeunesse déjà fichée</h1>
+  <div class="sub">Les légionnaires du 11e REI passés par un BILA (1920-1935)</div>
+  <div class="tags"><span>11è REI</span><span>BILA</span><span>Volet III</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<article>
+
+<div style="display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;margin:0 0 1.5rem">
+  <figure class="side-img" style="max-width:300px;margin:0;flex:1 1 260px">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/BILA-couverture.jpg" alt="Une du Police Magazine du 19 août 1934, « Le Bataillon de la Douleur »">
+    <figcaption><em>Police Magazine</em>, n°195, 19 août 1934&nbsp;: «&nbsp;Le Bataillon de la Douleur&nbsp;».</figcaption>
+  </figure>
+  <figure class="side-img" style="max-width:300px;margin:0;flex:1 1 260px">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/BILA-rouge%20vert%205.jpg" alt="Article « Ne pas confondre » sur les Bat' d'Af' et la Légion étrangère, revue Rouge et Vert">
+    <figcaption>Revue <em>Rouge et Vert</em>, n°5.</figcaption>
+  </figure>
+</div>
+
+<p class="lede">Après les volets consacrés aux <a href="https://www.11regimentetranger.com/assistance-publique">enfants de l'Assistance publique</a> et aux mineurs passés par une <a href="https://www.11regimentetranger.com/colonies-penitentiaires">colonie pénitentiaire</a>, ce troisième volet s'intéresse à une autre filière de la délinquance juvénile&nbsp;: celle des jeunes conscrits déjà condamnés par la justice civile au moment de leur appel sous les drapeaux, et affectés pour cette raison à un Bataillon d'infanterie légère d'Afrique (BILA). Le corpus réuni ici couvre la période 1920-1935, celle où la quasi-totalité de ces affectations sont documentées chez les légionnaires du 11e REI recensés dans ce travail.</p>
+
+<h2 class="section">Historique des Bataillons d'infanterie légère d'Afrique</h2>
+
+<p>Les Bataillons d'infanterie légère d'Afrique, plus connus sous le nom de «&nbsp;Bataillons d'Afrique&nbsp;» ou «&nbsp;Bat d'Af&nbsp;», sont créés en juin 1832. Contrairement à une idée reçue, ce ne sont pas des unités disciplinaires au sens strict&nbsp;: les compagnies de discipline, elles, sanctionnaient des fautes commises pendant le service militaire. Les BILA relèvent d'une autre logique, et recrutaient leurs hommes selon deux voies bien distinctes.</p>
+
+<ul>
+  <li><strong>Première voie, les conscrits déjà condamnés dans le civil&nbsp;:</strong> le conseil de révision affectait directement à un BILA les jeunes conscrits déjà condamnés par la justice civile avant leur incorporation, en fonction de la nature de leurs antécédents judiciaires, classés selon une cinquantaine de catégories distinctes. C'est la filière la plus fréquente dans ce corpus.</li>
+  <li><strong>Seconde voie, les militaires libérés de prison militaire&nbsp;:</strong> d'autres hommes, sans antécédent civil, étaient condamnés en cours de service par un conseil de guerre, le plus souvent pour vol ou désertion&nbsp;; à leur sortie de prison militaire ou de pénitencier, ils étaient à leur tour transférés en BILA.</li>
+  <li><strong>Le recrutement (première voie)&nbsp;:</strong> délits de chasse, vols, blessures volontaires, vagabondage&nbsp;: la palette des motifs qui pouvaient valoir une affectation directe à un BILA était large, et n'impliquait pas nécessairement une condamnation grave.</li>
+  <li><strong>Le surnom&nbsp;:</strong> d'abord désignés par des noms de bataillon (Flore, Zéphyr, Chardonnet), ces soldats sont surtout connus sous le sobriquet de «&nbsp;Joyeux&nbsp;», repérables à leurs tatouages, dont la devise «&nbsp;Marche ou Crève&nbsp;» est restée célèbre.</li>
+  <li><strong>La garnison&nbsp;:</strong> cinq bataillons principaux étaient stationnés en Afrique du Nord (Algérie, Tunisie, dont Tataouine dans le sud tunisien), où la discipline était nettement plus stricte que dans l'infanterie ordinaire&nbsp;: crânes rasés, corvées de construction de routes et d'extraction de pierres.</li>
+  <li><strong>La fin des BILA&nbsp;:</strong> la plupart des bataillons sont dissous entre 1927 et 1940. Ils n'ont reçu de drapeau officiel qu'en 1952, cent vingt ans après leur création. Une dernière unité, la 3e compagnie, subsiste jusqu'à sa dissolution en 1972, à Djibouti.</li>
+</ul>
+
+<p>Fait notable pour ce corpus&nbsp;: à cette période, la majorité légale était fixée à 21 ans (elle ne sera abaissée à 18 ans qu'en 1974), tandis que l'appel sous les drapeaux intervenait autour de 20 ans. La plupart des légionnaires réunis ici avaient donc, au moment de leurs premiers démêlés avec la justice, le statut de mineur.</p>
+
+<h2 class="section">Les légionnaires du 11e REI passés par un BILA</h2>
+
+<p>Quatorze légionnaires recensés dans ce travail ont fait l'objet d'une affectation dans un BILA. Douze d'entre eux y ont effectivement servi&nbsp;; deux, déclarés insoumis, ne l'ont jamais rejoint, dans les deux cas parce que l'homme concerné s'était en réalité déjà engagé à la Légion étrangère par ailleurs, ce qui explique ce défaut de présentation à l'appel plutôt qu'une insoumission au sens propre.</p>
+
+<ul>
+  <li><a href="https://www.11regimentetranger.com/colonies-penitentiaires#balland-charles-joseph">Balland</a>, déjà présenté dans le volet consacré aux colonies pénitentiaires, est également passé par un BILA avant son premier engagement à la Légion&nbsp;: 2e bataillon d'infanterie légère d'Afrique, 1926-1927.</li>
+  <li><a href="https://www.11regimentetranger.com/recensement-b#bonnavent-andre">Bonnavent</a>, <a href="https://www.11regimentetranger.com/recensement-b#bleuse-jean-henri-clodomir">Bleuse</a>, <a href="https://www.11regimentetranger.com/recensement-d#delorme-gabriel-pierre-marie">Delorme</a>, <a href="https://www.11regimentetranger.com/recensement-g#guillemet-maurice-eugene">Guillemet</a>, <a href="https://www.11regimentetranger.com/recensement-l#laffont-marius-alexandre">Laffont</a>, <a href="https://www.11regimentetranger.com/recensement-n#neveux-charles-ernest">Neveux</a>, <a href="https://www.11regimentetranger.com/recensement-r#ramond-leon">Ramond</a>, <a href="https://www.11regimentetranger.com/recensement-s#siros-andre-adrien">Siros</a> et <a href="https://www.11regimentetranger.com/recensement-t#tourtois-jules-francois-joseph">Tourtois</a>, relevant de la première voie d'accès, ont été affectés à un BILA à raison de condamnations civiles antérieures à leur incorporation, et y ont effectivement servi entre 1921 et 1929 selon les cas.</li>
+  <li><strong>Militaires libérés de prison militaire&nbsp;:</strong> <a href="https://www.11regimentetranger.com/recensement-b#blanchet-louis-marcel">Blanchet</a>, <a href="https://www.11regimentetranger.com/recensement-d#dozier-roger-marius">Dozier</a> et <a href="https://www.11regimentetranger.com/recensement-r#rudloff-paul-ernest">Rudloff</a> relèvent, eux, de la seconde voie d'accès&nbsp;: engagés dans les équipages de la flotte, ils sont condamnés en cours de service par un conseil de guerre pour vol ou désertion, purgent leur peine en prison militaire ou en pénitencier, puis sont transférés en BILA, sans qu'aucun antécédent civil n'ait motivé cette affectation.</li>
+  <li><a href="https://www.11regimentetranger.com/recensement-b#balme-robert-julien">Balme</a> et <a href="https://www.11regimentetranger.com/recensement-r#rochet-frederic">Rochet</a> ont été affectés à un BILA mais ne l'ont jamais rejoint.</li>
+</ul>
+
+<h2 class="section">Quatorze parcours, une même filière</h2>
+
+<h3>André Bonnavent<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">délinquance juvénile, quatre bataillons d'Afrique</span></h3>
+<p><strong>Avant 21 ans — une adolescence déjà fichée.</strong> André Bonnavent naît le 12 mai 1901 à Louhans (Saône-et-Loire), fils de Léon Bonnavent, charretier, et de Marie Louise Deschamps. En 1906, la famille est recensée à Chalon-sur-Saône, rue au Change, avec sa sœur cadette Georgette (née 1903). Le 20 juillet 1918, à 17 ans, il est arrêté avec trois complices pour le vol d'environ 200 francs au préjudice d'un employé de la ville de Chalon&nbsp;; la presse locale précise que c'est lui qui a commis le vol avant de partager le butin avec les trois autres. Condamné le 23 août 1918 par le tribunal de Chalon-sur-Saône à 4 mois de prison pour ce vol, il est de nouveau condamné par le même tribunal le 7 mars 1919 à 2 mois de prison pour vol de bois, puis le 30 octobre 1919 à 1 mois de prison pour vol de récoltes non détachées du sol. Le 11 février 1921, à 19 ans, il écope d'une amende de 50 francs pour infraction à la police des chemins de fer&nbsp;; le 25 février suivant, il est condamné à 8 mois de prison et 5 ans d'interdiction de séjour pour vol, vagabondage et bris de clôture.</p>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/BILA-Bonnavent.jpg" alt="Fiche matricule militaire d'André Bonnavent, n°760">
+    <figcaption>Fiche matricule militaire d'André Bonnavent, n°760.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p><strong>Avant la Légion — quatre Bataillons d'Afrique.</strong> Appelé à l'activité le 18 avril 1921, il manque à l'appel, étant alors détenu&nbsp;; libérable le 26 septembre 1921, il est dirigé le lendemain sur le fort Saint-Jean à Marseille, puis affecté au 4e bataillon d'infanterie légère d'Afrique, où il arrive le 9 octobre 1921. Il y est fait caporal le 1er janvier 1923, avant de passer dans la disponibilité le 27 septembre 1923 avec certificat de bonne conduite accordé. Le 23 mars 1935, il est par ailleurs condamné par le tribunal correctionnel de la Seine à 6 jours d'emprisonnement et 500 francs d'amende pour détention de briquets non estampillés, la même infraction que celle relevée chez <a href="https://www.11regimentetranger.com/colonies-penitentiaires#rousseau-marcel-emile">Rousseau</a>, dans le volet consacré aux colonies pénitentiaires.</p>
+  </div>
+</div>
+<p><strong>Pendant la Légion.</strong> Sa fiche matricule indique un engagement volontaire pour 5 ans à la Légion étrangère le 10 avril 1935 devant l'intendant militaire de Paris, sous une fausse nationalité belge&nbsp;: une décision de 1937 maintient l'engagement tout en autorisant la rectification de son état civil. Affecté à un régiment étranger, il sert en Algérie et au Maroc entre novembre 1935 et octobre 1936. Passé au 1er régiment étranger le 16 septembre 1938, il est dirigé sur Oran le 3 novembre 1939 pour être affecté au 11e REI. Fait prisonnier à Sennecey le 17 juin 1940, il est interné au stalag II B (n°16497), libéré par les Alliés le 7 juin 1945 et démobilisé le 23 juin suivant par le centre démobilisateur de Dupleix, à Paris. Il se retire ensuite dans le 20e arrondissement de Paris, où il vit jusqu'à sa mort, célibataire, le 23 février 1957 à Labruyère (Oise).</p>
+
+<hr>
+
+<h3>Robert Julien Balme<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">affecté à un BILA sans jamais le rejoindre</span></h3>
+<p>Robert Julien Balme naît le 12 janvier 1905 à Sotteville-lès-Rouen, fils de Jean Pierre Balme et de Marie Ernestine Céline Duhen. Manutentionnaire de profession, il est arrêté en avril 1923, à 18 ans, pour vol et recel de marchandises dans les gares de Sotteville et de Saint-Étienne-du-Rouvray, ce qui lui vaut une condamnation à 8 mois de prison.</p>
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/BILA-Balme.jpg" alt="Extrait de la fiche matricule de Robert Julien Balme, détail des services et mutations diverses">
+    <figcaption>Détail des services et mutations diverses, fiche matricule de Robert Julien Balme.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Il s'engage volontairement pour 5 ans à la Légion étrangère dès le 17 mars 1925, à Rouen&nbsp;; appelé au 2e bataillon d'infanterie légère d'Afrique le 23 mai suivant, il ne s'y présente pas et est déclaré insoumis le 26 août 1925. Il est rayé de l'insoumission le 14 septembre 1926.</p>
+  </div>
+</div>
+<p>Affecté au 4e REI, il est libéré fin de contrat le 15 mars 1930. En 1936, il est de nouveau condamné, à 2 mois de prison, pour injures envers deux gendarmes dans la cour du palais de justice de Rouen. Rappelé comme réserviste à la mobilisation, il est affecté à la 5e compagnie du 11e REI.</p>
+
+<hr>
+
+<h3>Louis Marcel Blanchet</h3>
+<p>Louis Marcel Blanchet naît le 25 juillet 1901 à Lyon, fils de Louis Pierre Auguste Blanchet, divorcé d'Olympe Tessier, et de Marie Joséphine Alex, veuve Parret. Il exerce plusieurs métiers&nbsp;: employé à l'OTL (Omnibus et Tramways Lyonnais), manœuvre, garçon de magasin. Le 16 octobre 1918, à 17 ans, il est condamné à 10 francs d'amende avec sursis pour infraction à la police des chemins de fer.</p>
+<p>Engagé volontaire pour 7 ans au titre du 3e dépôt des équipages de la flotte à Lorient le 19 mars 1919, il est condamné le 19 mars 1923 à 8 mois de prison pour vol et purge sa peine au pénitencier de Douéra, en Algérie, dont il sort le 5 octobre 1923. Il est ensuite transféré au 4e bataillon d'infanterie légère d'Afrique et son engagement dans la marine est résilié le 19 novembre 1924. Le certificat de bonne conduite est refusé.</p>
+<p>Ce n'est qu'à 37 ans, le 25 juillet 1938, qu'il s'engage volontairement pour 5 ans à la Légion étrangère, à Valence. Affecté au 11e REI, il meurt pour la France le 11 juin 1940 à Stenay.</p>
+
+<hr>
+
+<h3>Jean Henri Clodomir Bleuse</h3>
+<p>Jean Henri Clodomir Bleuse naît le 1er janvier 1901 à Amiens, fils de Léon Henri Raoul Bleuse et d'Eugénie Jumel. Engagé volontaire pour la durée de la guerre le 19 mars 1918 à Amiens, il est renvoyé dans ses foyers le 3 décembre 1919. Incarcéré 6 mois à la prison d'Amiens pour vol à partir du 9 juin 1921, à 20 ans, il est appelé pour son service militaire le 8 septembre 1921 alors qu'il est encore détenu&nbsp;; à sa sortie de prison, le 10 octobre 1921, il est directement affecté au 1er bataillon d'infanterie légère d'Afrique. Renvoyé dans ses foyers le 18 mars 1922, certificat de bonne conduite refusé.</p>
+<p>Il s'engage volontairement pour 5 ans à la Légion étrangère le 30 novembre 1923. En septembre 1939, il est affecté à la 3e compagnie du 11e REI.</p>
+
+<hr>
+
+<h3>Gabriel Pierre Marie Delorme<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">de la prison civile au BILA</span></h3>
+<p>Gabriel Pierre Marie Delorme naît le 26 mars 1902 à Yssingeaux, fils de Jean Delorme et de Jeanne Marie Chambert. Le 11 mai 1920, à 18 ans, il est condamné par le tribunal de Saint-Mihiel à 3 mois de prison pour vol&nbsp;; le 29 avril 1921, à 19 ans, il est de nouveau condamné, par le tribunal de Vesoul cette fois, à 8 mois de prison pour vol. Appelé bon absent, il est incorporé au 5e bataillon d'infanterie légère d'Afrique le 1er juillet 1922, à 20 ans, et passe dans la disponibilité le 26 juillet 1924, certificat de bonne conduite refusé. Le 11 août 1926, il est condamné une troisième fois, par le tribunal de Melun, à 3 mois de prison pour voies de fait, violence et bris de clôture.</p>
+<div class="figure-side reverse">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/BILA-Delorme.jpg" alt="Extrait de la fiche matricule de Gabriel Pierre Marie Delorme, détail des services et mutations diverses">
+    <figcaption>Détail des services et mutations diverses, fiche matricule de Gabriel Pierre Marie Delorme.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Il s'engage volontairement pour 5 ans à la Légion étrangère le 21 septembre 1927, à Melun. En 1929, il est condamné à 1 an de prison pour outrage par parole envers un officier supérieur. En septembre 1939, il est affecté au 11e REI avant d'être muté au 12e REI en février 1940. Il meurt pour la France le 8 juin 1940 à Villeneuve-Saint-Germain.</p>
+  </div>
+</div>
+
+<hr>
+
+<h3>Roger Marius Dozier<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">des équipages de la flotte au bataillon d'Afrique</span></h3>
+<p>Roger Marius Dozier naît le 20 août 1906 à Paris, dans le 14e arrondissement, enfant naturel reconnu de Marie Louise Dozier. Il ne présente, à ce stade, aucun antécédent judiciaire connu. Engagé volontaire pour 3 ans au titre du 5e dépôt des équipages de la flotte de Toulon le 3 décembre 1924, à Paris, c'est en cours de service qu'il bascule&nbsp;: condamné le 9 juillet 1927 par le conseil de guerre maritime permanent de Toulon à 2 mois de prison pour désertion, il est affecté au 1er bataillon d'infanterie légère d'Afrique dès le 27 juillet 1927, puis au 3e, jusqu'en février 1928. Passé dans la disponibilité le 3 février 1928, certificat de bonne conduite refusé.</p>
+<p>Il s'engage ensuite volontairement à la Légion étrangère le 13 mai 1930, à Paris, pour 5 ans, libéré fin de contrat le 13 mai 1935. Il se rengage pour 5 ans le 5 mars 1936, à Marseille, cette fois sous une fausse nationalité belge. Nommé 1re classe le 1er juillet 1939, il passe au 11e REI le 19 octobre 1939. Son parcours complet, dont sa blessure de guerre en 1944 et sa médaille militaire de 1960, sera détaillé dans le volet consacré aux <a href="https://www.11regimentetranger.com/equipages-flotte">équipages de la flotte</a>.</p>
+
+<hr>
+
+<h3>Maurice Eugène Guillemet</h3>
+<p>Maurice Eugène Guillemet naît le 5 avril 1906 à Saumur, fils de Maurice Guillemet et d'Angèle Meunier. Ouvrier typographe, il se rend coupable, entre 1925 et 1928, d'une série de vols et d'infractions à la police des chemins de fer qui en font, aux yeux de la justice, un multirécidiviste avant même sa majorité. Il est incorporé au 3e bataillon d'infanterie légère d'Afrique le 10 mai 1926, à 20 ans, et passe dans la disponibilité le 10 novembre 1927, certificat de bonne conduite accordé.</p>
+<p>Il s'engage volontairement pour 5 ans à la Légion étrangère le 5 février 1929, à Tours. Arrivé au 11e REI en novembre 1939, il est affecté à la 10e compagnie. Libéré du service le 5 août 1942, il rejoint les FFC et le réseau Buck comme agent P1 puis le réseau Goelette comme agent P2. Le 7 août 1944, il est arrêté à son domicile par la Gestapo et est déporté&nbsp;; à son retour, il se rengage le 19 avril 1946, jusqu'au 13 mai 1955. Il meurt le 14 décembre 1976 à Lyon (3e arrondissement).</p>
+
+<hr>
+
+<h3>Marius Alexandre Laffont</h3>
+<p>Marius Alexandre Laffont naît le 9 mars 1903 à Saint-Étienne, fils d'Émile Elie Laffont et de Marie Jeanne Mourier. Manœuvre de profession, il est condamné le 4 août 1924, à 21 ans, à 1 mois de prison pour vol. Il est incorporé au 4e bataillon d'infanterie légère d'Afrique le 14 mai 1924 et passe dans la disponibilité le 10 novembre 1925, certificat de bonne conduite accordé.</p>
+<p>Il s'engage volontairement pour 5 ans à la Légion étrangère le 24 janvier 1927, à Saint-Étienne, et est libéré fin de contrat le 24 janvier 1932. L'année suivante, le 3 août 1933, il est condamné à 4 mois de prison pour outrages publics à la pudeur. Rappelé à l'activité en septembre 1939, il est affecté au 11e REI.</p>
+
+<hr>
+
+<h3>Charles Ernest Neveux</h3>
+<p>Charles Ernest Neveux naît le 1er août 1901 au Ban-Saint-Martin, près de Metz, fils de Charles Neveux et de Françoise Marie Laviolle. Terrassier de profession, il est appelé à l'activité le 20 avril 1921 mais manque à l'appel, étant alors détenu pour un motif que sa fiche ne précise pas. Il est affecté au 5e bataillon d'infanterie légère d'Afrique dès sa sortie de prison, le 29 juin 1921, et renvoyé dans ses foyers le 24 juin 1923, certificat de bonne conduite accordé. C'est après cette affectation, et non avant, que la presse lorraine rapporte ses démêlés judiciaires les plus documentés&nbsp;: arrêté pour vol de métaux en février 1925, il récidive dès sa sortie de prison pour un vol de 300 francs de marchandises (10 mois de prison), puis est condamné à 2 ans de prison pour vol en avril 1927.</p>
+<p>Il s'engage volontairement pour 5 ans à la Légion étrangère le 21 janvier 1929, à Metz, libéré le 21 janvier 1939, certificat de bonne conduite accordé. Il se rengage pour 5 ans le 2 février 1939, à Metz, quelques mois avant la guerre.</p>
+
+<hr>
+
+<h3>Léon Ramond<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">le seul du corpus sans antécédent judiciaire connu</span></h3>
+<p>Léon Ramond naît le 25 janvier 1905 à Rabastens, fils de Louis Ramond et de Joséphine Jeanne Magné. Boulanger de profession, il ne présente, en l'état des documents réunis ici, aucun antécédent judiciaire connu. Il est pourtant incorporé au 3e bataillon d'infanterie légère d'Afrique le 14 mai 1926, avant d'en être dispensé et affecté au 1er régiment de zouaves dès le 23 juin suivant, un cas isolé dans ce corpus, où l'affectation semble avoir été rapidement corrigée.</p>
+<p>Il se rengage pour 5 ans à terme fixe au 21e régiment d'infanterie coloniale le 10 novembre 1927, est classé service auxiliaire le 14 mars 1929, et libéré fin de contrat le 10 novembre 1932, certificat de bonne conduite accordé. Il s'engage ensuite volontairement pour 5 ans à la Légion étrangère le 6 janvier 1936, à Privas.</p>
+
+<hr>
+
+<h3>Frédéric Rochet</h3>
+<p>Frédéric Rochet naît le 13 janvier 1907 à Givors, fils d'Étienne Rochet et de Marie Louise Curinier, dont les parents divorcent en 1913 aux torts de la mère. Manœuvre de profession, il est déjà engagé volontaire à la Légion étrangère depuis le 12 février 1926, à Lyon, lorsqu'un mandat d'arrêt du parquet de Lyon le fait rechercher&nbsp;: en août 1925, la presse algéroise rapporte son arrestation pour cambriolage et vagabondage en Algérie. Sa fiche matricule indique qu'il devra être affecté le 1er mai 1927 au 4e bataillon d'infanterie légère d'Afrique en raison de ses antécédents judiciaires. Il ne le rejoindra pas car il est légionnaire.</p>
+<p>Libéré fin de contrat le 12 février 1931, il est rappelé à l'activité en septembre 1939 et est affecté au 11e REI&nbsp;: il meurt au combat le 18 juin 1940 à Saint-Germain-sur-Meuse.</p>
+
+<hr>
+
+<h3>Paul Ernest Rudloff<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">des équipages de la flotte au bataillon d'Afrique</span></h3>
+<p>Paul Ernest Rudloff naît le 5 mars 1908 à Paris, dans le 10e arrondissement. Engagé volontaire pour 3 ans au titre du 5e équipage de la flotte de Toulon le 22 mars 1926, à Versailles, il déserte dès le 13 août suivant et est arrêté par les gendarmes de Strasbourg le 27 septembre 1926. Le 27 octobre 1926, alors qu'il est toujours en fuite, le tribunal correctionnel de Strasbourg le condamne par ailleurs à 3 mois de prison pour vol, escroquerie et abus de confiance. Le 18 janvier 1927, le conseil de guerre de la Bretagne le condamne à un an de prison et aux frais envers l'État pour désertion à l'intérieur en temps de paix. Venant de la maison d'arrêt de Toulon, il est affecté au 3e bataillon d'infanterie légère d'Afrique le 27 octobre 1927, avant de passer dans la disponibilité le 6 novembre 1928, certificat de bonne conduite refusé.</p>
+<p>Les documents réunis ici ne précisent pas la date de son engagement ultérieur à la Légion étrangère ni son affectation au sein du 11e REI.</p>
+
+<hr>
+
+<h3>André Adrien Siros</h3>
+<p>André Adrien Siros naît le 5 novembre 1901 à Iron (Aisne), fils de Gustave Ovide Siros et d'Emilia Hennecent. Manouvrier de profession, il est condamné le 4 mai 1921, à 19 ans, à 1 an de prison pour vol par le tribunal de Vervins, puis le 7 juillet suivant à 40 jours de prison pour vol et vagabondage par celui de Douai. Déclaré déserteur le 3 décembre 1922, il est ramené dans son régiment par les gendarmes le 18 août 1923, incarcéré à la prison militaire d'Avesnes, d'où il s'évade dès le lendemain. Il se présente volontairement à la gendarmerie de Maubeuge le 25 janvier 1925 et purge 9 mois de prison à Amiens pour désertion. Entre-temps, il passe au 3e bataillon d'infanterie légère d'Afrique le 7 septembre 1925, dont il déserte le 13 janvier 1926&nbsp;; condamné à 1 an de prison par le tribunal militaire de Meknès, il rejoint le 2e bataillon d'infanterie légère d'Afrique le 18 novembre 1926, avant de passer dans la réserve le 27 novembre 1927, certificat de bonne conduite refusé.</p>
+<p>Il s'engage volontairement pour 5 ans à la Légion étrangère le 2 novembre 1928, à l'intendance militaire de Lille, et, libéré fin de contrat le 2 novembre 1933, certificat de bonne conduite accordé cette fois. Il se rengage pour 5 ans à Amiens le 17 décembre 1934. En novembre 1933, entre-temps, il avait été arrêté à la suite de mandats d'arrêt des parquets de Béthune et d'Avesnes, et condamné le 17 novembre par le tribunal de Béthune à 8 mois de prison pour des vols et un abus de confiance commis en 1929.</p>
+
+<hr>
+
+<h3>Jules François Joseph Tourtois</h3>
+<p>Jules François Joseph Tourtois naît le 7 juillet 1907 à Grenay, dans le bassin minier du Pas-de-Calais, fils de Jules Tourtois et d'Adèle Lenne. Mineur puis manœuvre de filature, il commet un vol le 30 juillet 1925, à 18 ans, pour lequel il n'est condamné que le 1er février 1928, à 50 francs d'amende, un jugement rendu plus de deux ans et demi après les faits. Appelé le 10 novembre 1927, déclaré insoumis, il est dirigé le 21 avril 1928 sur le 32e régiment d'artillerie en attendant son passage au 3e bataillon d'infanterie légère d'Afrique, effectif le 18 mai 1928. Libéré fin de service le 26 octobre 1929, certificat de bonne conduite refusé.</p>
+<p>Il s'engage volontairement pour 5 ans à la Légion étrangère le 18 février 1930, à Lille, libéré fin de contrat le 18 mai 1935, certificat de bonne conduite refusé une seconde fois. En 1935, il est de nouveau condamné, pour fraude douanière et vols. Il meurt le 21 octobre 1985 à Valenciennes.</p>
+
+<h2 class="section">Une distinction à ne pas perdre de vue&nbsp;: BILA et Légion étrangère</h2>
+
+<div class="figure-side">
+  <figure class="side-img">
+    <img src="https://raw.githubusercontent.com/zestend-collab/11rei-photos-blog/main/BILA-meprise-chauveau.jpg" alt="Article de presse « Méprise », le caporal Chauveau explique à une dame que les Bat' d'Af' et la Légion étrangère n'ont rien de commun">
+    <figcaption>«&nbsp;Méprise&nbsp;»&nbsp;: la confusion entre Bat' d'Af' et Légion étrangère, L'écho des bouteillons rouge vert n°6.</figcaption>
+  </figure>
+  <div class="side-text">
+    <p>Le sujet de cette page invite à une confusion fréquente entre BILA et Légion étrangère, entretenue par leur proximité chronologique (1831 pour la Légion, 1832 pour les BILA), leur garnison commune en Afrique du Nord, et jusqu'à l'uniforme&nbsp;: les bataillonnaires portaient, comme les légionnaires, le képi blanc et les épaulettes, la principale différence visible résidant dans leur pantalon légèrement bouffant. Les deux institutions n'ont pourtant rien de commun quant à leur nature. Le BILA est un mode d'exécution du service militaire obligatoire pour les français uniquement, imposé par le conseil de révision à des conscrits déjà condamnés par la justice civile, ou infligé en cours de service à des militaires sanctionnés par un conseil de guerre. La Légion étrangère est un corps de volontaires français ou étrangers, où l'on s'engage librement, indépendamment de tout passé judiciaire.</p>
+<p>Le corpus réuni ici illustre concrètement cette distinction. Pour la majorité des hommes qui ont effectivement rejoint un BILA, le passage s'y situe au moment de leur service militaire obligatoire, avant tout engagement à la Légion&nbsp;: Bonnavent sert au 4e BILA de 1921 à 1923 et n'entre à la Légion qu'en 1935, douze ans plus tard&nbsp;; Neveux sert au 5e BILA de 1921 à 1923 et ne s'engage à la Légion qu'en 1929. Ces écarts se retrouvent dans la plupart des parcours réunis ici. Trois d'entre eux, ceux de Blanchet, Dozier et Rudloff, empruntent la seconde voie d'accès au BILA&nbsp;: engagés dans les équipages de la flotte, ils y sont condamnés par un conseil de guerre pour vol ou désertion, purgent leur peine en prison militaire ou en pénitencier, puis sont transférés en BILA, sans qu'aucun antécédent civil n'ait motivé cette affectation.</p>
+
+<p>Balme et Rochet montrent même que les deux institutions pouvaient s'exclure l'une l'autre&nbsp;: déjà engagés volontairement à la Légion avant la date prévue pour leur incorporation au BILA, ils échappent à cette dernière et sont d'abord déclarés insoumis, un statut que l'armée régularise ensuite au vu de leur engagement légionnaire. Se porter volontaire pour la Légion étrangère revenait ainsi, de fait, à échapper à l'affectation en BILA et aussi à se soustraire à une peine de prison.</p>
+</div>
+</div>
+
+<div style="overflow-x:auto;margin:1rem 0">
+  <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)">
+    <thead>
+      <tr>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Caractéristique</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">BILA («&nbsp;Bat d'Af&nbsp;»)</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Légion étrangère</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Nationalité</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Uniquement des Français</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Étrangers et Français</td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Nature de l'engagement</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Forcé (unité disciplinaire / service militaire)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Volontaire (contrat de 5 ans au départ)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Surnom en usage en 1939</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">les «&nbsp;Joyeux&nbsp;», les «&nbsp;Zéphyrs&nbsp;»</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">les «&nbsp;képis blancs&nbsp;», un surnom qui ne se généralise qu'à partir du défilé du 14 juillet 1939</td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Statut actuel</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Dissous (dernière unité en 1972)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Actif</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="section">Tableau récapitulatif&nbsp;: les légionnaires du 11e REI passés par un BILA</h2>
+<div style="overflow-x:auto;margin:1rem 0">
+  <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)">
+    <caption style="text-align:left;font-style:italic;color:var(--muted);margin-bottom:.6rem;caption-side:top;font-size:.85rem">Les quatorze légionnaires du 11e REI passés par un BILA</caption>
+    <thead>
+      <tr>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Nom</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Prénom(s)</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">BILA</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">CBC</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Compagnie (11e REI)</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Tatouages</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Voir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Bonnavent</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">André</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4e BILA (1921-1923)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#bonnavent-andre">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Balland</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Charles Joseph</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2e BILA (1926-1927)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/colonies-penitentiaires#balland-charles-joseph">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Balme</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Robert Julien</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2e BILA, non rejoint (1925)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Sans objet (non rejoint)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5e compagnie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#balme-robert-julien">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Blanchet</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Louis Marcel</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4e BILA (1923-1924)*</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mort pour la France</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#blanchet-louis-marcel">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Bleuse</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Jean Henri Clodomir</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1er BILA (1921-1922)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3e compagnie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#bleuse-jean-henri-clodomir">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Delorme</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Gabriel Pierre Marie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5e BILA (1922-1924)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5e compagnie, Mort pour la France</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-d#delorme-gabriel-pierre-marie">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Dozier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Roger Marius</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1er puis 3e BILA (1927-1928)*</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">7e compagnie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-d#dozier-roger-marius">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Guillemet</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Maurice Eugène</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3e BILA (1926-1927)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">10e compagnie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-g#guillemet-maurice-eugene">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Laffont</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Marius Alexandre</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4e BILA (1924-1925)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">6e compagnie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#laffont-marius-alexandre">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Neveux</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Charles Ernest</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5e BILA (1921-1923)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">6e compagnie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-n#neveux-charles-ernest">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Ramond</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Léon</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3e BILA (1926)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Non précisé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-r#ramond-leon">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Rochet</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Frédéric</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4e BILA, non rejoint (1927)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Sans objet (non rejoint)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mort pour la France</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Oui (tête de soldat, initiales)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-r#rochet-frederic">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Rudloff</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Paul Ernest</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3e BILA (1927-1928)*</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Non précisé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-r#rudloff-paul-ernest">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Siros</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">André Adrien</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3e puis 2e BILA (1925-1927)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">6e compagnie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-s#siros-andre-adrien">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Tourtois</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Jules François Joseph</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3e BILA (1928-1929)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Oui (inscription et deux têtes)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-t#tourtois-jules-francois-joseph">Voir la fiche</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-style:italic;color:var(--muted);font-size:.8rem;margin-top:.5rem">* Accès au BILA par la seconde voie (militaires libérés de prison militaire, à la suite d'une condamnation prononcée en cours de service dans les équipages de la flotte), et non par affectation directe du conseil de révision.</p>
+</div>
+
+<div class="sources">
+  <h3>Historiographie</h3>
+  <ul>
+    <li>« Bataillons d'infanterie légère d'Afrique », Wikipédia.</li>
+    <li>« Bataillon d'infanterie légère d'Afrique », rosalielebel75.franceserv.com.</li>
+    <li>« Guerre 1914-1918 ~ Les mauvais soldats », Geneawiki.</li>
+    <li>« Histoire&nbsp;: Bataillons d'Afrique ou « Aller à Tataouine » », AASSDN, Anciens et Amis des Services Spéciaux de la Défense Nationale.</li>
+    <li>« Les "Bat'd'Af'" (1832-1972)&nbsp;: une aventure pas si joyeuse », Journal d'Histoire Militaire (jhm.fr).</li>
+  </ul>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+<a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=Blog-BILA" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();</script>
+</body>
+</html>

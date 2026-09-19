@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recherche plein texte — 11e REI</title>
+<meta name="description" content="Recherchez un mot, un lieu ou une expression dans l'ensemble des pages du site : fiches individuelles, historiques de compagnie et pages thématiques.">
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<style>
+  :root{
+    --pagefind-ui-primary: #1c2733;
+    --pagefind-ui-text: #1c2733;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #c7d0d9;
+    --pagefind-ui-tag: #eef1f4;
+    --pagefind-ui-font: 'Roboto', Arial, sans-serif;
+  }
+  body{margin:0;font-family:'Roboto',Arial,sans-serif;background:#eef1f4;color:#1c2733}
+  .recherche-texte-wrap{max-width:760px;margin:0 auto;padding:120px 24px 80px}
+  .recherche-texte-wrap h1{font-size:1.6rem;margin-bottom:.4em}
+  .recherche-texte-intro{color:#5b6b7a;line-height:1.5;margin-bottom:2em}
+  .recherche-texte-intro a{color:#ff9900}
+  .retour{display:inline-block;margin-bottom:1.5em;color:#5b6b7a;text-decoration:none;font-size:.9rem}
+  .retour:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<main>
+  <div class="recherche-texte-wrap">
+    <a class="retour" href="/arborescence">← Retour au site</a>
+    <h1>Recherche plein texte</h1>
+    <p class="recherche-texte-intro">
+      Cette recherche explore l'intégralité du contenu du site : les fiches individuelles,
+      les historiques de compagnie et les pages thématiques. Tapez un lieu, un mot de source,
+      une expression ou un fait précis, et retrouvez toutes les pages qui en parlent.
+      Pour chercher un légionnaire par son nom, son matricule, sa compagnie ou son destin,
+      utilisez plutôt la <a href="/recherche-legionnaire">recherche par nom</a>.
+    </p>
+    <div id="search"></div>
+  </div>
+</main>
+<script src="/menu.js"></script>
+<script src="/banniere.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false,
+      resetStyles: false
+    });
+  });
+</script>
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+</body>
+</html>

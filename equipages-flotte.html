@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les équipages de la flotte, l'autre service militaire — 11e REI</title>
+<meta name="description" content="Les équipages de la flotte, l'autre service militaire — 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940).">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon.ico" sizes="any">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/site.webmanifest">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MGECC7TJGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MGECC7TJGK');
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#eef1f4;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1c2733;--muted:#5b6b7a;--border:#c7d0d9;--row:#f7f7f7;
+  }
+
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article .entry{margin-bottom:.9rem}
+  article .entry .date{font-weight:500}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article blockquote p{margin-bottom:.6rem}
+  article blockquote p:last-child{margin-bottom:0}
+
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+
+  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
+  article .imgrow img{width:100%}
+
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem;overflow-wrap:break-word;word-break:break-word}
+  article .sources a{overflow-wrap:break-word;word-break:break-word}
+
+/* ==========================================================================
+   Ajouts a BIO_CSS pour les pages thematiques du Groupe A
+   (monuments, prisonniers, rawa-ruska, 11e-rei-en-photo, cimetieres-communaux,
+   necropoles, rouge-vert2, livre, medaille-militaire-1952/1953, recensement-11e-rei)
+   ========================================================================== */
+
+/* --- communes a plusieurs pages : a ajouter une seule fois --- */
+article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+  border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+article .seealso{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.88rem}
+
+/* --- livre.html : bouton d'appel a l'action --- */
+article .cta{display:inline-block;margin-top:.4rem;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--ink);background:var(--orange);text-decoration:none;padding:.6rem 1.2rem;border-radius:20px}
+article .cta:hover{background:var(--link);color:#fff}
+
+/* --- medaille-militaire-1952.html : citations detaillees (renommees de .citations
+   -> .citations-fiches pour ne plus entrer en collision avec la variante 1953) --- */
+ul.citations-fiches{list-style:none;margin:1.2rem 0 1.6rem;padding:0;
+  display:grid;grid-template-columns:1fr;gap:.6rem;min-width:0}
+ul.citations-fiches li.person{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:.7rem .9rem;text-align:left;min-width:0;overflow-wrap:break-word;word-break:break-word}
+ul.citations-fiches li.person strong{font-family:'EB Garamond',serif;font-size:1rem;display:block;margin-bottom:.3rem}
+ul.citations-fiches ul.det{list-style:none;margin:0;padding:0;min-width:0}
+ul.citations-fiches ul.det li{font-size:.83rem;color:var(--ink);padding:.08rem 0;overflow-wrap:break-word;word-break:break-word}
+@media (max-width:600px){
+  ul.citations-fiches li.person{padding:.6rem .7rem}
+  ul.citations-fiches li.person strong{font-size:.92rem}
+  ul.citations-fiches ul.det li{font-size:.78rem}
+}
+
+/* --- medaille-militaire-1953.html : citations en lignes (renommees de .citations
+   -> .citations-lignes) --- */
+article .citations-lignes{margin:1.2rem 0 1.6rem;padding:0}
+article .citations-lignes li{list-style:none;background:var(--row);border:1px solid var(--border);
+  border-radius:4px;padding:.7rem .9rem;margin-bottom:.6rem;text-align:left}
+article .citations-lignes li strong{font-family:'EB Garamond',serif;font-size:1rem}
+article .citations-lignes li .details{display:block;margin-top:.15rem}
+article .citations-lignes li .mort{display:block;margin-top:.15rem;color:var(--muted);font-style:italic}
+
+/* --- necropoles.html : une carte par nécropole (nom, description, liste des tombes).
+   Manquait jusqu'ici malgre la page citee dans la liste du groupe ci-dessus - .necropole
+   restait donc sans aucun style (rendu par defaut du navigateur, sans carte ni espacement). --- */
+article .necropole{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:1.1rem 1.3rem;margin-bottom:1.2rem}
+article .necropole h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.05rem;
+  color:var(--ink);border-bottom:none;margin:0 0 .4rem;padding-bottom:0}
+article .necropole p.meta{font-size:.82rem;color:var(--muted);margin-bottom:.7rem}
+article .necropole ul.roll{list-style:none;margin:0 0 .5rem;padding:0}
+article .necropole ul.roll li{font-size:.85rem;padding:.15rem 0;border-bottom:1px dashed var(--border)}
+article .necropole ul.roll li:last-child{border-bottom:none}
+article .necropole p.note{font-size:.78rem;color:var(--muted);font-style:italic;margin:.5rem 0 0}
+
+/* --- recensement-11e-rei.html : navigation par lettre (A-Z + a-confirmer) --- */
+article .letter-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.2rem 0 1.6rem}
+article .letter-nav a{padding:.5rem 1.1rem;background:var(--row);border:1px solid var(--border);
+  border-radius:20px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.85rem}
+article .letter-nav a:hover{background:var(--orange);border-color:var(--orange)}
+
+/* --- recensement-11e-rei.html : commentaires de visiteurs conserves (meme principe
+   que .comments/.comment de generateur_pages_panel_depuis_contenu.py, pour rester
+   coherent avec presse.html) --- */
+article .comments{margin-top:1.8rem}
+article .comment{background:var(--row);border:1px solid var(--border);border-radius:6px;
+  padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem}
+article .comment .meta{margin-bottom:.4rem}
+article .comment .author{font-weight:600;color:var(--ink)}
+article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+</style>
+</head>
+<body>
+
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main data-pagefind-body>
+
+<header>
+  <h1>Les équipages de la flotte, l'autre service militaire</h1>
+  <div class="sub">Les légionnaires du 11e REI engagés dans la marine avant la Légion (1917-1932)</div>
+  <div class="tags"><span>11è REI</span><span>Équipages de la flotte</span><span>Volet IV</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<article>
+
+<p class="lede">Après les volets consacrés aux enfants de l'Assistance publique, aux mineurs passés par une colonie pénitentiaire, puis aux légionnaires affectés dans un Bataillon d'infanterie légère d'Afrique, ce quatrième volet s'intéresse à une autre filière d'entrée dans l'armée&nbsp;: celle des jeunes gens qui accomplissent leur service militaire ou s'engagent dans la marine, au sein des équipages de la flotte, avant de rejoindre la Légion étrangère. Quarante et un légionnaires du 11e REI recensés dans ce travail sont passés par cette filière, entre 1917 et 1932.</p>
+
+<h2 class="section">Historique des équipages de la flotte</h2>
+
+<p>Les équipages de la flotte forment, depuis le XIXe siècle, le cadre administratif dans lequel la marine française encadre ses marins non officiers. Cinq dépôts principaux se partagent le territoire&nbsp;: Cherbourg, Brest, Lorient, Rochefort et Toulon, chacun rattaché à un port militaire et à une zone de recrutement géographique. Jusqu'en 1924, les conscrits affectés à la marine et les hommes qui s'y engagent volontairement relèvent de circuits administratifs distincts&nbsp;; cette année-là, la gestion des deux catégories est unifiée au sein des mêmes dépôts.</p>
+
+<p>À partir des années 1880, la formation dispensée dans ces dépôts se spécialise&nbsp;: des écoles propres à chaque filière technique (artillerie, timonerie, torpilles, puis mécanique avec l'arrivée des navires à vapeur) viennent remplacer un enseignement jusque là plus généraliste. Cette spécialisation reste toutefois jugée imparfaite par les observateurs de l'époque, qui déplorent un enseignement «&nbsp;trop théorique&nbsp;» et déconnecté des équipements réellement en service.</p>
+
+<h2 class="section">Les voies de recrutement</h2>
+
+<p>Le corpus réuni ici illustre trois voies d'entrée distinctes dans les équipages de la flotte, très inégalement représentées.</p>
+
+<ul>
+  <li><strong>L'engagement volontaire&nbsp;:</strong> de très loin la voie la plus fréquente dans ce corpus (trente sept hommes sur quarante et un). Le candidat signe un contrat d'une durée fixe, le plus souvent de 3, 4, 5, 7 ou 10 ans, au titre d'un dépôt donné. Plusieurs légionnaires de ce corpus s'engagent ainsi dès 16 ou 17 ans, avant même l'âge normal de l'appel sous les drapeaux.</li>
+  <li><strong>L'incorporation&nbsp;:</strong> trois hommes du corpus (Combes, Gérard, Penanhoat) ne se sont pas engagés&nbsp;; ils sont incorporés d'office dans un équipage de la flotte au moment de leur service militaire obligatoire, la marine constituant alors, pour le conseil de révision, une affectation possible parmi d'autres pour un conscrit.</li>
+  <li><strong>L'inscription maritime&nbsp;:</strong> un cas isolé dans ce corpus, celui de Quère, relève d'un régime plus ancien et distinct&nbsp;: l'inscription maritime, héritée de l'Ancien Régime, qui enrôle par principe les hommes des familles de gens de mer pour le service de l'État. Sa fiche le mentionne comme «&nbsp;inscrit maritime à sa demande&nbsp;» au quartier du Conquet, sous le numéro 1616.</li>
+</ul>
+
+<p>Un livret d'engagement de 1926, contemporain de la majeure partie de ce corpus, détaille les critères retenus pour l'engagement volontaire&nbsp;: être âgé de 17 à 25 ans, mesurer au moins 1,52 mètre, être célibataire et sans enfant, être «&nbsp;sain, robuste et bien constitué&nbsp;» et apte aux travaux de force, et jouir d'une bonne conduite excluant notamment toute condamnation pour vol, escroquerie ou outrage à la pudeur. Le niveau d'instruction minimal exigé, dit de «&nbsp;3e catégorie&nbsp;» selon un arrêté du 17 avril 1923, correspond aux «&nbsp;hommes sachant lire et écrire, mais dont l'orthographe est insuffisante ou médiocre&nbsp;» et connaissant l'addition et la soustraction. Une visite médicale et, selon la spécialité visée (cuisine, armement, électricité...), un examen technique complétaient la sélection.</p>
+
+<h2 class="section">Apprendre un métier&nbsp;: les spécialités de la flotte</h2>
+
+<p>Contrairement au service dans l'infanterie ordinaire, l'engagement dans les équipages de la flotte pouvait ouvrir sur une véritable spécialisation technique. Vingt hommes de ce corpus ont une spécialité identifiée dans leur dossier&nbsp;: canonnier ou aide canonnier (les plus représentés), mécanicien, mécanicien chauffeur, timonier, gabier, arrimeur, infirmier, ou plus simplement apprenti marin pour ceux dont le parcours s'arrête avant toute qualification.</p>
+
+<p>Deux parcours illustrent bien cette possibilité, et ses limites. Le Bloch est admis le 10 octobre 1928 à l'école des apprentis mécaniciens de Lorient&nbsp;; son engagement est pourtant résilié en 1931, certificat de bonne conduite refusé, sans que le dossier précise si la formation a été menée à son terme. Petit Berghien s'engage en 1931 au titre des équipages de la flotte de Cherbourg en qualité d'infirmier, et intègre l'école d'infirmier de l'hôpital militaire de Cherbourg&nbsp;; il en est éliminé moins d'un an plus tard pour indiscipline et mauvaise conduite, puis réduit au grade d'apprenti marin. Touzeau connaît un sort comparable&nbsp;: engagé volontaire, il est lui aussi réduit au grade d'apprenti marin pour indiscipline. Dans ces trois cas, la formation professionnelle promise par l'engagement se heurte à la discipline de la vie en dépôt.</p>
+
+<h2 class="section">Le certificat de bonne conduite et le code de justice maritime</h2>
+
+<p>Comme dans l'armée de terre, le certificat de bonne conduite (CBC) sanctionne la fin d'un engagement ou d'un service militaire dans la marine. Il est refusé en cas de punitions graves touchant à la probité, à l'honneur ou à la moralité, de condamnation par un conseil de guerre, ou, à partir de 1905, d'une peine de prison régimentaire d'au moins huit jours. Dans l'armée de terre de cette époque, le refus ne concernait, selon les estimations, qu'un homme sur cinquante à cent d'une classe d'âge. Le corpus réuni ici s'en écarte radicalement&nbsp;: sur quarante et un hommes, dix neuf se voient refuser leur certificat de bonne conduite, quinze l'obtiennent, six ne sont pas documentés sur ce point, et un dernier est réformé pour inaptitude. Ce déséquilibre ne dit rien de la marine dans son ensemble&nbsp;: il tient à la nature même de ce corpus, rassemblé ici précisément parce que ces hommes ont ensuite rejoint la Légion étrangère, une trajectoire dans laquelle un passé judiciaire ou disciplinaire est surreprésenté.</p>
+
+<p>Les fautes les plus graves relevaient, dans la marine, non pas des conseils de guerre ordinaires mais des conseils de guerre maritimes, installés dans les mêmes ports que les dépôts eux-mêmes. Le corpus en offre plusieurs illustrations&nbsp;: Dozier est condamné le 9 juillet 1927 par le conseil de guerre maritime permanent de Toulon à deux mois de prison pour désertion, en application de l'article 8 de la loi du 19 juillet 1901, qui étend le bénéfice des circonstances atténuantes aux infractions du code de justice militaire. Legras, lui, est condamné à deux reprises par le conseil de guerre maritime de Cherbourg (1930 et 1932) et une fois par celui de Brest (1928), toujours pour des faits de désertion. Rudloff, enfin, illustre le chevauchement possible entre les deux justices militaires&nbsp;: engagé dans la marine, il est condamné pour désertion à l'intérieur non par un conseil de guerre maritime mais par le conseil de guerre de la Bretagne, une juridiction de l'armée de terre, avant d'être affecté à un Bataillon d'infanterie légère d'Afrique.</p>
+
+<p>Les textes régissant l'engagement lui-même apparaissent aussi ponctuellement dans les dossiers. Dupuis et Le Moënner s'engagent tous deux au titre du texte du 8 août 1913, une date qui correspond à la publication au Journal officiel de la loi du 7 août 1913, dite loi des trois ans, qui porte la durée du service militaire à trois ans et fixe les conditions de recrutement de l'armée active. Rectifiées par le décret du 30 décembre 1920 (dont la fiche de Le Moënner cite précisément l'article 2), une fois la durée du service revenue à la baisse après la guerre, ces dispositions continuent d'encadrer, pour ces deux hommes, les conditions d'engagement dans les équipages de la flotte. Boulanger, de son côté, perçoit à sa libération un pécule de 5000 francs prévu par la loi du 31 mars 1928 relative au recrutement de l'armée, dont un décret d'application du 7 avril 1928 précise les modalités.</p>
+
+<div class="doc">
+  <p><strong>Une confusion à éviter&nbsp;: la colonie pénitentiaire de Belle-Île et la marine.</strong> La section maritime de la colonie pénitentiaire de Belle-Île-en-Mer, présentée dans le volet consacré aux colonies pénitentiaires, formait ses colons aux métiers de la mer (matelotage, voilerie, corderie), sur des embarcations comme le <em>Sirena</em>. On pourrait en déduire que les enfants passés par Belle-Île étaient ensuite naturellement dirigés vers les équipages de la flotte. Ce n'est pourtant pas le cas des deux légionnaires de ce travail passés par cette colonie&nbsp;: <a href="https://www.11regimentetranger.com/colonies-penitentiaires#courtois-georges-marius">Courtois</a> est incorporé au 1er régiment d'aérostation, et <a href="https://www.11regimentetranger.com/colonies-penitentiaires#niepce-jean-marie">Niepce</a> au 12e bataillon de chasseurs à pied. Aucun des deux ne relève donc du présent volet.</p>
+</div>
+
+<h2 class="section">Trois parcours déjà croisés dans le volet des BILA</h2>
+
+<p>Trois hommes de ce corpus, Blanchet, Dozier et Rudloff, ont, après leur condamnation par un conseil de guerre maritime et un passage en prison militaire ou en pénitencier, été transférés dans un Bataillon d'infanterie légère d'Afrique. Leur portrait complet figure déjà dans le <a href="https://www.11regimentetranger.com/bila">volet consacré aux BILA</a>&nbsp;; ils sont seulement mentionnés ici, dans le tableau récapitulatif, pour que le corpus des équipages de la flotte reste complet.</p>
+
+<h2 class="section">Des engagements de jeunesse, des destins de légionnaires</h2>
+
+<h3>Raymond Norbert Raoul Legras<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">un déserteur en série, entre la marine, la Belgique et la Légion</span></h3>
+<p>Raymond Norbert Raoul Legras naît le 2 septembre 1908 à Rouen, fils de Raoul Legras, mort pour la France en 1917, et de Raymonde Emilienne Leroy. Il s'engage volontairement pour 5 ans au titre du 1er dépôt des équipages de la flotte le 6 mars 1926. Sa carrière militaire n'est plus, à partir de là, qu'une suite ininterrompue de condamnations et de désertions. Le 25 avril 1928, le conseil de guerre maritime de Brest le condamne pour fabrication de fausses permissions et pour avoir favorisé des désertions&nbsp;; libéré conditionnellement le 19 novembre 1929, il est déclaré déserteur dès le 13 décembre suivant et arrêté par les gendarmes d'Elbeuf le 18 janvier 1930. Le conseil de guerre maritime de Cherbourg le condamne alors à 5 mois de prison pour désertion en temps de paix. Sorti le 12 juin 1930 de la prison centrale de Clairvaux, il ne rejoint pas son dépôt et est de nouveau déclaré déserteur&nbsp;; arrêté un an plus tard, le 12 juin 1931, à Givet, il s'était en réalité réfugié en Belgique, où il est également arrêté pour port d'arme prohibé et vagabondage. Le 26 février 1932, le conseil de guerre d'Anvers le condamne à 8 mois de prison pour port d'arme prohibé, et celui de Cherbourg, le 10 juin suivant, à un an de prison pour désertion à l'étranger en temps de paix. Il passe finalement dans la disponibilité le 18 mai 1933, certificat de bonne conduite refusé. La presse de l'époque («&nbsp;Le Petit Ardennais&nbsp;» du 11 mai 1932) rapporte que le procès verbal de son arrestation mentionnait aussi une lettre adressée à son épouse dans laquelle il évoquait son intention de mettre fin à ses jours.</p>
+<p>Il s'engage pourtant volontairement pour 5 ans à la Légion étrangère le 9 avril 1935, à Toulouse. Le scénario se répète&nbsp;: manquant à l'appel du 5 mars 1936, il est déclaré déserteur le 12 mars suivant, arrêté le jour même, et condamné à 2 mois de prison avec sursis par le tribunal militaire permanent d'Oran. Il se marie le 29 mars 1940 à Rumaucourt avec Lucie Marie Louise Hombert. Mobilisé au 11e REI, il est fait prisonnier en 1940 (liste des prisonniers n°14 du 11 septembre 1940) et interné au stalag III A. Il meurt le 31 juillet 1985 à Provins.</p>
+
+<hr>
+
+<h3>Jean Marie Cornec<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">douze ans de service, un certificat refusé au bout du chemin</span></h3>
+<p>Jean Marie Cornec naît le 4 septembre 1903 à Plounévez Lochrist, fils de Louis Marie Cornec et de Marie Anne Rozec&nbsp;; devenu orphelin, il est placé sous la tutelle d'Hervé Cornec. Il s'engage volontairement pour 3 ans au titre du 2e dépôt des équipages de la flotte de Brest le 22 février 1923, comme chauffeur, puis se rengage pour 3 ans le 10 novembre 1925. Son parcours contraste avec la plupart des autres profils réunis ici&nbsp;: il ne s'agit pas d'un engagement de courte durée mais d'une véritable carrière de marin, qui s'étend sur douze années. Ce n'est qu'à son terme que les choses se gâtent&nbsp;: condamné le 10 octobre 1933 à une amende de 25 francs pour coups et blessures, il est renvoyé dans ses foyers le 22 août 1935 avec un certificat de bonne conduite refusé, au titre de l'article 33 bis, après ces douze années de service.</p>
+<p>Il se marie le 8 juillet 1930 à Lambézellec avec Marie Anne Benoit, dont il a un fils, Yvon&nbsp;; le couple se sépare de corps en 1936 puis divorce en 1940. Devenu tour à tour cultivateur puis directeur commercial, il est de nouveau condamné en 1936 pour bris de clôture, puis en 1949 à plus de 3 mois de prison pour outrage public à la pudeur. Entre ces deux dates, il s'engage volontairement pour 5 ans à la Légion étrangère le 22 mai 1936, à Brest. Affecté à la CA3 du 11e REI, il est fait prisonnier en 1940 (liste des prisonniers n°21 du 25 septembre 1940) et interné au stalag XII A. Il meurt le 13 janvier 1972 à Brest.</p>
+
+<hr>
+
+<h3>Guillaume Morry<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">arrimeur à Brest, capturé à un jour de chez lui</span></h3>
+<p>Guillaume Morry naît le 29 mars 1907 à Landerneau, fils de Victor Morry et de Françoise Morry. Il s'engage volontairement pour 5 ans au titre des équipages de la flotte le 13 mai 1924, à Brest, où sa spécialité est celle d'arrimeur. Il passe dans la réserve de l'armée de la mer le 13 novembre 1929, certificat de bonne conduite refusé. En 1932, il est arrêté pour ivresse&nbsp;; en 1938, «&nbsp;La Dépêche de Brest&nbsp;» rapporte sa condamnation à un an de prison pour vol et violence.</p>
+<p>Entre ces deux épisodes, il s'engage volontairement pour 5 ans à la Légion étrangère le 27 août 1932, à Rennes, et est libéré fin de contrat le 27 août 1937, certificat de bonne conduite accordé cette fois. Affecté à la 7e compagnie du 11e REI, il est blessé le 22 mai 1940 et évacué le lendemain vers l'hôpital complémentaire du lycée de garçons de Poitiers. En permission de convalescence à partir du 14 juin 1940, il ne parvient pas à rejoindre son corps avant l'armistice&nbsp;: il est fait prisonnier le 24 juin 1940 à Landerneau, sa ville natale, et interné au frontstalag 135 de Quimper puis au stalag IV B. Il se marie le 6 mars 1946 à Landerneau avec Joséphine Kerriguy, et meurt dans la même ville le 19 octobre 1967.</p>
+
+<hr>
+
+<h3>Christian Georges Laloue<span class="subhead" style="display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem">cuisinier dans la marine, puis à la section de transmission du 11e REI</span></h3>
+<p>Christian Georges Laloue naît le 15 août 1912 à Fresnay sur Sarthe, fils de Georges Laloue, mort pour la France en 1916 (ce qui lui vaut le statut de pupille de la nation, à ne pas confondre avec celui de pupille de l'Assistance publique), et d'Ernestine Joséphine Louise Foucher. Il s'engage volontairement pour 3 ans au titre d'un dépôt des équipages de la flotte le 4 juillet 1932, comme cuisinier, et passe dans la disponibilité le 4 juillet 1935, certificat de bonne conduite accordé. En 1937, il est condamné à un mois de prison par le tribunal d'Alençon pour vol&nbsp;; l'année suivante, «&nbsp;L'Ouest éclair&nbsp;» publie le jugement de son divorce d'avec Odette Renée Louise Come, prononcé par défaut faute d'adresse connue.</p>
+<p>Son nom apparaît par ailleurs dans un autre dossier de ce travail&nbsp;: il témoigne auprès de la Croix Rouge sur les circonstances de la mort de <a href="https://www.11regimentetranger.com/colonies-penitentiaires#prepoignot-georges-joseph">Georges Prépoignot</a>, dont le portrait figure dans le volet consacré aux colonies pénitentiaires. Devenu charcutier cuisinier, Laloue s'engage volontairement pour 5 ans à la Légion étrangère le 25 janvier 1938, à Tours. Affecté à la CA2 du 11e REI, à la section de transmission, il est fait prisonnier à Épinal et interné au stalag III B&nbsp;; il n'est libéré de son engagement que le 4 décembre 1948. Il meurt le 26 février 1975, au Mans.</p>
+
+<hr>
+
+<h2 class="section">Le corpus des équipages de la flotte</h2>
+
+<p>Les trente sept engagés volontaires de ce corpus sont, par ordre alphabétique&nbsp;: <a href="https://www.11regimentetranger.com/recensement-b#barny-marcel-robert">Barny</a>, <a href="https://www.11regimentetranger.com/recensement-b#baslan-robert-pierre-marcel">Baslan</a>, <a href="https://www.11regimentetranger.com/recensement-b#blanchet-louis-marcel">Blanchet</a>*, <a href="https://www.11regimentetranger.com/recensement-b#boulanger-maurice-jean-fernand">Boulanger</a>, <a href="https://www.11regimentetranger.com/recensement-c#cadet-albert-charles">Cadet</a>, <a href="https://www.11regimentetranger.com/recensement-c#cadiou-pierre-jean-marie-yvon">Cadiou</a>, <a href="https://www.11regimentetranger.com/recensement-c#cornec-jean-marie">Cornec</a>, <a href="https://www.11regimentetranger.com/recensement-c#cote-gabriel-roger-marcel">Cote</a>, <a href="https://www.11regimentetranger.com/recensement-c#croizer-joseph-louis">Croizer</a>, <a href="https://www.11regimentetranger.com/recensement-d#dozier-roger-marius">Dozier</a>*, <a href="https://www.11regimentetranger.com/recensement-d#dubois-jean-louis-adolphe-pierre">Dubois</a>, <a href="https://www.11regimentetranger.com/recensement-d#dupuis-louis-henri">Dupuis</a>, <a href="https://www.11regimentetranger.com/recensement-g#gaillac-alfred-francois-pierre">Gaillac</a>, <a href="https://www.11regimentetranger.com/recensement-g#graff-francis-marie">Graff</a>, <a href="https://www.11regimentetranger.com/recensement-g#gregoire-georges-lucien-edouard">Grégoire</a>, <a href="https://www.11regimentetranger.com/recensement-h#herve-henri-joseph-marie">Hervé</a>, <a href="https://www.11regimentetranger.com/recensement-h#hug-albert">Hug</a>, <a href="https://www.11regimentetranger.com/recensement-k#kohler-roger-charles-camille">Kohler</a>, <a href="https://www.11regimentetranger.com/recensement-l#lala-gilbert">Lala</a>, <a href="https://www.11regimentetranger.com/recensement-l#laloue-christian-georges">Laloue</a>, <a href="https://www.11regimentetranger.com/recensement-l#le-bloch-pierre">Le Bloch</a>, <a href="https://www.11regimentetranger.com/recensement-l#le-goff-paul-gabriel">Le Goff</a>, <a href="https://www.11regimentetranger.com/recensement-l#le-lan-jean-joseph-marie">Le Lan</a>, <a href="https://www.11regimentetranger.com/recensement-l#le-moenner-jean-louis">Le Moënner</a>, <a href="https://www.11regimentetranger.com/recensement-l#legras-raymond-norbert-raoul">Legras</a>, <a href="https://www.11regimentetranger.com/recensement-l#lidon-camille">Lidon</a>, <a href="https://www.11regimentetranger.com/recensement-m#marichalar-jean-baptiste">Marichalar</a>, <a href="https://www.11regimentetranger.com/recensement-m#maurin-charles-antoine">Maurin</a>, <a href="https://www.11regimentetranger.com/recensement-m#meaburn-lionel-henri">Meaburn</a>, <a href="https://www.11regimentetranger.com/recensement-m#morry-guillaume">Morry</a>, <a href="https://www.11regimentetranger.com/recensement-n#nicolas-henri-louis-joseph">Nicolas</a>, <a href="https://www.11regimentetranger.com/recensement-p#petit-berghien-rene">Petit Berghien</a>, <a href="https://www.11regimentetranger.com/recensement-q#quemar-armand-louis-desire">Quèmar</a>, <a href="https://www.11regimentetranger.com/recensement-r#renouvin-maurice-henri">Renouvin</a>, <a href="https://www.11regimentetranger.com/recensement-r#rudloff-paul-ernest">Rudloff</a>*, <a href="https://www.11regimentetranger.com/recensement-s#soeur-eugene">Sœur</a> et <a href="https://www.11regimentetranger.com/recensement-t#touzeau-andre-camille-gaston">Touzeau</a>.</p>
+
+<p>Trois hommes sont incorporés d'office&nbsp;: <a href="https://www.11regimentetranger.com/recensement-c#combes-auguste-paulin">Combes</a>, <a href="https://www.11regimentetranger.com/recensement-g#gerard-andre-eugene">Gérard</a> et <a href="https://www.11regimentetranger.com/recensement-p#penanhoat-aime-marie">Penanhoat</a>. Un dernier, <a href="https://www.11regimentetranger.com/recensement-q#quere-yves">Quère</a>, relève de l'inscription maritime.</p>
+
+<p style="font-size:.85rem;color:var(--muted);font-style:italic">* Portrait complet dans le volet consacré aux BILA.</p>
+
+<h2 class="section">Tableau récapitulatif&nbsp;: les légionnaires du 11e REI passés par les équipages de la flotte</h2>
+<div style="overflow-x:auto;margin:1rem 0">
+  <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)">
+    <caption style="text-align:left;font-style:italic;color:var(--muted);margin-bottom:.6rem;caption-side:top;font-size:.85rem">Les quarante et un légionnaires du 11e REI passés par les équipages de la flotte</caption>
+    <thead>
+      <tr>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Nom</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Prénom(s)</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Dépôt</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Voie</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Durée</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">CBC</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Spécialité</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Voir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Barny</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Marcel Robert</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è équipage de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#barny-marcel-robert">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Baslan</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Robert Pierre Marcel</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">commis aux vivres puis mécanicien</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#baslan-robert-pierre-marcel">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Blanchet*</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Louis Marcel</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3è dépôt des équipages de la flotte (Lorient)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">7 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#blanchet-louis-marcel">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Boulanger</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Maurice Jean Fernand</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è dépôt de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">timonier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-b#boulanger-maurice-jean-fernand">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Cadet</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Albert Charles</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è équipage de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">sans spécialité puis chauffeur</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-c#cadet-albert-charles">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Cadiou</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Pierre Jean Marie Yvon</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte (Brest)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">commis aux vivres</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-c#cadiou-pierre-jean-marie-yvon">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Combes</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Auguste Paulin</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è équipage de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Incorporé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">non précisée</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-c#combes-auguste-paulin">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Cornec</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Jean Marie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2è dépôt des équipages de la flotte (Brest)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">chauffeur</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-c#cornec-jean-marie">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Cote</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Gabriel Roger Marcel</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">7 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">non mentionné</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-c#cote-gabriel-roger-marcel">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Croizer</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Joseph Louis</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3è dépôt des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mécanicien</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-c#croizer-joseph-louis">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Dozier*</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Roger Marius</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è dépôt des équipages de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1 an et 8 mois</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">désertion</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-d#dozier-roger-marius">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Dubois</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Jean Louis Adolphe Pierre</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1er dépôt des équipages de la flotte (Cherbourg)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">non mentionné</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-d#dubois-jean-louis-adolphe-pierre">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Dupuis</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Louis Henri</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è dépôt des équipages de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">timonier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-d#dupuis-louis-henri">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Gaillac</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Alfred François Pierre</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è dépôt des équipages de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">non mentionné</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Canonnier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-g#gaillac-alfred-francois-pierre">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Gerard</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">André Eugène</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è dépôt des équipages de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Incorporé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mécanicien</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-g#gerard-andre-eugene">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Graff</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Francis Marie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2è dépôt des équipages de la flotte (Brest)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">10 ans réduit à 5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">non mentionné</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Aide canonnier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-g#graff-francis-marie">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Grégoire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Georges Lucien Edouard</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è dépôt des équipages de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-g#gregoire-georges-lucien-edouard">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Herve</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Henri Joseph Marie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">aide cuisinier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-h#herve-henri-joseph-marie">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Hug</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Albert</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3è équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">chauffeur</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-h#hug-albert">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Kohler</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Roger Charles Camille</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">non mentionné</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">chauffeur</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-k#kohler-roger-charles-camille">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Lala</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Gilbert</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2è dépôts des équipages de la flotte (Brest)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Canonnier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#lala-gilbert">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Laloue</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Christian Georges</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">cuisinier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#laloue-christian-georges">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Le Bloch</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Pierre</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mécanicien (école des apprentis mécaniciens de Lorient)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#le-bloch-pierre">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Le Goff</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Paul Gabriel</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">inapte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">cuisinier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#le-goff-paul-gabriel">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Le Lan</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Jean Joseph Marie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3è dépôt des équipages de la flotte (Lorient)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">non mentionné</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Canonnier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#le-lan-jean-joseph-marie">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Le Moënner</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Jean Louis</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">10 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mécanicien</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#le-moenner-jean-louis">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Legras</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Raymond Norbert Raoul</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1er dépôt des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#legras-raymond-norbert-raoul">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Lidon</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Camille</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4è dépôt des équipages de la flotte (Rochefort)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-l#lidon-camille">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Marichalar</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Jean Baptiste</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">4è équipage de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Sans spécialité</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-m#marichalar-jean-baptiste">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Maurin</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Charles Antoine</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">6è dépôt de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">télégraphiste</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-m#maurin-charles-antoine">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Meaburn</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Lionel Henri</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è équipage de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Canonnier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-m#meaburn-lionel-henri">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Morry</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Guillaume</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Arrimeur</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-m#morry-guillaume">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Nicolas</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Henri Louis Joseph</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">fusilier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-n#nicolas-henri-louis-joseph">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Penanhoat</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Aimé Marie</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1er dépôt des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Incorporé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Apprenti marin</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-p#penanhoat-aime-marie">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Petit Berghien</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">René</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Infirmier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-p#petit-berghien-rene">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Quere</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Yves</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2è équipage de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Inscrit maritime</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Conquet n°1616</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Gabier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-q#quere-yves">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Quèmar</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Armand Louis Désiré</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2è équipage de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Sans spécialité</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-q#quemar-armand-louis-desire">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Renouvin</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Maurice Henri</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1er dépôt des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Sans spécialité</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-r#renouvin-maurice-henri">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Rudloff*</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Paul Ernest</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è équipage de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Mécanicien chauffeur</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-r#rudloff-paul-ernest">Voir la fiche</a></td>
+      </tr>
+      <tr style="background:var(--row)">
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Sœur</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Eugène</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5è dépôt des équipages de la flotte (Toulon)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">7 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">accordé</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Timonier</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-s#soeur-eugene">Voir la fiche</a></td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Touzeau</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">André Camille Gaston</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Des équipages de la flotte</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Engagé volontaire</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">5 ans</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top"><strong>refusé</strong></td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Apprenti marin</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;white-space:nowrap"><a href="https://www.11regimentetranger.com/recensement-t#touzeau-andre-camille-gaston">Voir la fiche</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:.78rem;color:var(--muted);font-style:italic;margin-top:.5rem">* Portrait complet dans le volet consacré aux BILA. Le dépôt indiqué reprend la formulation de la fiche matricule ; l'absence de numéro ou de port entre parenthèses signifie que la source ne les précise pas. Ces données sont issues d'une extraction automatisée de verif_data.xlsx et n'ont pas toutes été vérifiées individuellement aux archives.</p>
+</div>
+
+<div class="sources">
+  <h3>Historiographie</h3>
+  <ul>
+    <li>Service historique de la Défense, « Je recherche un personnel de la Marine », guide d'aide à la recherche, servicehistorique.sga.defense.gouv.fr.</li>
+    <li>« L'Instruction technique des équipages de la flotte », Wikisource.</li>
+    <li>« Le certificat de bonne conduite (CdBC) », parcours-combattant14-18.fr.</li>
+    <li>« Établissements pénitentiaires de Belle-Île-en-Mer », Wikipédia.</li>
+    <li>Odile Roynette-Gland, « Les conseils de guerre en temps de paix entre réforme et suppression (1898-1928) », <em>Vingtième Siècle. Revue d'histoire</em>, 2002/1, n°73, p.&nbsp;51-66.</li>
+    <li>« Loi du 31 mars 1928 relative au recrutement de l'armée », Légifrance.</li>
+    <li>« Loi du 7 août 1913, dite loi des trois ans », Assemblée nationale, assemblee-nationale.fr/histoire/guerre_14-18/loi_3_ans.</li>
+    <li>« Loi des Trois Ans », Wikipédia.</li>
+    <li>« Engagement volontaire, équipages de la flotte », genealanille.fr.</li>
+  </ul>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+<a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=Blog-EquipagesFlotte" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();</script>
+</body>
+</html>
