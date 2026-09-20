@@ -171,9 +171,27 @@ tableau LIENS pour rester visible independamment du menu deroulant mobile.
     onScroll();
   }
 
+  // Ajoute "© 2020–<annee courante>" devant le texte existant du <footer>, quand il y
+  // en a un sur la page. Annee de fin calculee en JS pour ne plus avoir a la changer
+  // a la main chaque annee dans les generateurs ou les pages ecrites a la main.
+  function ajouterCopyright() {
+    var footer = document.querySelector("footer");
+    if (!footer) return;
+    var anneeDebut = 2020;
+    var anneeCourante = new Date().getFullYear();
+    var prefixe = anneeCourante > anneeDebut
+      ? "© " + anneeDebut + "–" + anneeCourante + " · "
+      : "© " + anneeDebut + " · ";
+    footer.textContent = prefixe + footer.textContent;
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", construireMenu);
+    document.addEventListener("DOMContentLoaded", function () {
+      construireMenu();
+      ajouterCopyright();
+    });
   } else {
     construireMenu();
+    ajouterCopyright();
   }
 })();
