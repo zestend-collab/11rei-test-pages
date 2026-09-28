@@ -1,0 +1,1013 @@
+<title>Origines du 11e REI</title>
+<style>
+  :root{
+    --bg:#f3ecdb;
+    --bg-deep:#e8dec4;
+    --ink:#2c2013;
+    --ink-soft:#5b4d3a;
+    --line:#d3c4a3;
+    --card:#fbf7ec;
+    --accent:#a63a1f;
+    --accent-ink:#fff8ee;
+    --accent-soft:#e8b9a4;
+    --focus:#1c6e63;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#1c1912;
+      --bg-deep:#141210;
+      --ink:#ece2cc;
+      --ink-soft:#b8a98c;
+      --line:#443c2c;
+      --card:#252017;
+      --accent:#e0724a;
+      --accent-ink:#1c1912;
+      --accent-soft:#5a3527;
+      --focus:#5fc9b8;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1c1912;
+    --bg-deep:#141210;
+    --ink:#ece2cc;
+    --ink-soft:#b8a98c;
+    --line:#443c2c;
+    --card:#252017;
+    --accent:#e0724a;
+    --accent-ink:#1c1912;
+    --accent-soft:#5a3527;
+    --focus:#5fc9b8;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Source Sans 3", system-ui, sans-serif;
+    height:100%;
+    overflow:hidden;
+  }
+  html{height:100%;}
+  .app{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+  }
+
+  h1{
+    font-family:"Spectral", Georgia, serif;
+    font-weight:600;
+    font-size:1.05rem;
+    margin:0;
+    letter-spacing:.01em;
+    white-space:nowrap;
+  }
+  .eyebrow{
+    font-family:"Barlow Condensed", sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.68rem;
+    color:var(--ink-soft);
+  }
+
+  header{
+    flex:0 0 auto;
+    background:var(--bg-deep);
+    border-bottom:1px solid var(--line);
+    padding:10px 16px calc(10px + env(safe-area-inset-top,0px)) 16px;
+    padding-top:calc(10px + env(safe-area-inset-top,0px));
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .titlerow{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .count{
+    font-family:"Barlow Condensed", sans-serif;
+    font-size:.78rem;
+    color:var(--ink-soft);
+    font-variant-numeric:tabular-nums;
+  }
+
+  .controls{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .yearblock{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex:1 1 260px;
+    min-width:220px;
+  }
+  .yearval{
+    font-family:"Spectral", Georgia, serif;
+    font-weight:600;
+    font-size:1.1rem;
+    min-width:3.6em;
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+  }
+  input[type="range"]{
+    flex:1;
+    -webkit-appearance:none;
+    appearance:none;
+    height:4px;
+    background:var(--line);
+    border-radius:2px;
+    outline:none;
+  }
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:16px;height:16px;border-radius:50%;
+    background:var(--accent);
+    border:2px solid var(--card);
+    box-shadow:0 0 0 1px var(--line);
+    cursor:pointer;
+    margin-top:-6px;
+  }
+  input[type="range"]::-moz-range-thumb{
+    width:16px;height:16px;border-radius:50%;
+    background:var(--accent);
+    border:2px solid var(--card);
+    cursor:pointer;
+  }
+  input[type="range"]::-moz-range-track{
+    height:4px;background:var(--line);border-radius:2px;
+  }
+
+  .searchwrap{
+    position:relative;
+    flex:0 1 220px;
+    min-width:160px;
+  }
+  input[type="search"]{
+    width:100%;
+    font:inherit;
+    font-size:.85rem;
+    padding:6px 10px;
+    border-radius:7px;
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink);
+  }
+  input[type="search"]:focus-visible, button:focus-visible, .point-btn:focus-visible{
+    outline:2px solid var(--focus);
+    outline-offset:2px;
+  }
+  .searchresults{
+    position:absolute;
+    top:calc(100% + 4px);
+    left:0; right:0;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    max-height:240px;
+    overflow-y:auto;
+    z-index:20;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+  }
+  .searchresults:empty{display:none;}
+  .searchresults button{
+    display:block;
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:7px 10px;
+    font:inherit;
+    font-size:.82rem;
+    color:var(--ink);
+    cursor:pointer;
+    border-bottom:1px solid var(--line);
+  }
+  .searchresults button:last-child{border-bottom:none;}
+  .searchresults button:hover, .searchresults button:focus-visible{background:var(--bg);}
+  .searchresults button b{color:var(--accent);}
+
+  .iconbtn{
+    font-family:"Barlow Condensed", sans-serif;
+    font-size:.78rem;
+    letter-spacing:.04em;
+    background:var(--card);
+    color:var(--ink);
+    border:1px solid var(--line);
+    border-radius:7px;
+    padding:6px 10px;
+    cursor:pointer;
+  }
+  .iconbtn:hover{border-color:var(--accent);}
+
+  main{
+    position:relative;
+    flex:1 1 auto;
+    min-height:0;
+  }
+  canvas{
+    display:block;
+    width:100%;
+    height:100%;
+    touch-action:none;
+    cursor:grab;
+  }
+  canvas.dragging{cursor:grabbing;}
+
+  .legend{
+    position:absolute;
+    left:14px;
+    top:14px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:9px;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+    width:200px;
+    max-width:60vw;
+    z-index:12;
+  }
+  .legendhead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 10px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .legendtitle{
+    font-family:"Barlow Condensed", sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.72rem;
+    color:var(--ink-soft);
+  }
+  .legendcaret{
+    font-size:.7rem;
+    color:var(--ink-soft);
+    transition:transform .15s;
+  }
+  .legend.collapsed .legendcaret{transform:rotate(-90deg);}
+  .legendbody{
+    border-top:1px solid var(--line);
+    padding:8px 10px 10px 10px;
+    max-height:44vh;
+    overflow-y:auto;
+  }
+  .legend.collapsed .legendbody{display:none;}
+  .legenditem{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:.8rem;
+    padding:2px 0;
+    line-height:1.3;
+  }
+  .legenditem.pinned{
+    font-weight:600;
+    margin-bottom:4px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--line);
+  }
+  .legenddot{
+    flex:0 0 auto;
+    width:10px;height:10px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .legendswatch{
+    flex:0 0 auto;
+    width:12px;height:12px;
+    border-radius:3px;
+  }
+  .legendcount{
+    color:var(--ink-soft);
+    font-size:.68rem;
+    padding:6px 10px 0 10px;
+  }
+
+  .hint{
+    position:absolute;
+    left:14px;
+    bottom:calc(14px + env(safe-area-inset-bottom,0px));
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:7px 10px;
+    font-size:.72rem;
+    color:var(--ink-soft);
+    max-width:230px;
+    line-height:1.4;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .hint b{color:var(--ink);}
+
+  .zoomctl{
+    position:absolute;
+    right:14px;
+    bottom:calc(14px + env(safe-area-inset-bottom,0px));
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .zoomctl button{
+    width:34px;height:34px;
+    border:none;
+    background:var(--card);
+    color:var(--ink);
+    font-size:1.1rem;
+    cursor:pointer;
+    line-height:1;
+  }
+  .zoomctl button:hover{background:var(--bg);}
+  .zoomctl button + button{border-top:1px solid var(--line);}
+
+  .hoverlabel{
+    position:absolute;
+    pointer-events:none;
+    transform:translate(-50%,-130%);
+    background:var(--ink);
+    color:var(--bg);
+    font-family:"Barlow Condensed", sans-serif;
+    letter-spacing:.03em;
+    font-size:.78rem;
+    padding:4px 9px;
+    border-radius:5px;
+    white-space:nowrap;
+    z-index:15;
+    opacity:0;
+    transition:opacity .1s;
+  }
+  .hoverlabel.show{opacity:.94;}
+
+  .panel{
+    position:absolute;
+    top:0; right:0;
+    height:100%;
+    width:320px;
+    max-width:88vw;
+    background:var(--card);
+    border-left:1px solid var(--line);
+    box-shadow:-10px 0 26px rgba(0,0,0,.16);
+    transform:translateX(105%);
+    transition:transform .22s ease;
+    z-index:30;
+    display:flex;
+    flex-direction:column;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  .panel.open{transform:translateX(0);}
+  .panelhead{
+    display:flex;
+    justify-content:flex-end;
+    padding:10px 10px 0 10px;
+  }
+  .panelclose{
+    background:none;
+    border:none;
+    font-size:1.3rem;
+    line-height:1;
+    color:var(--ink-soft);
+    cursor:pointer;
+    padding:4px 8px;
+    border-radius:6px;
+  }
+  .panelclose:hover{color:var(--ink); background:var(--bg);}
+  .panelbody{
+    padding:2px 20px 24px 20px;
+    overflow-y:auto;
+  }
+  .panelphoto{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid var(--line);
+    margin-bottom:14px;
+    background:var(--bg);
+  }
+  .panelphoto.hidden{display:none;}
+  .panelname{
+    font-family:"Spectral", Georgia, serif;
+    font-weight:600;
+    font-size:1.25rem;
+    text-wrap:balance;
+    margin:0 0 6px 0;
+  }
+  .panelgrade{
+    font-family:"Barlow Condensed", sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    font-size:.78rem;
+    color:var(--accent);
+    margin:0 0 14px 0;
+  }
+  .panelrow{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    margin-bottom:12px;
+  }
+  .panellabel{
+    font-family:"Barlow Condensed", sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.68rem;
+    color:var(--ink-soft);
+  }
+  .panelval{
+    font-size:.94rem;
+  }
+  .panellink{
+    display:inline-block;
+    margin-top:8px;
+    font-size:.88rem;
+    color:var(--accent-ink);
+    background:var(--accent);
+    padding:8px 14px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:600;
+  }
+  .panellink:hover{opacity:.9;}
+
+  .overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.15);
+    z-index:25;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .22s;
+  }
+  .overlay.open{opacity:1;pointer-events:auto;}
+
+  @media (max-width:640px){
+    .panel{width:100%;max-width:100%;}
+    .hint{display:none;}
+    .yearblock{flex:1 1 100%;}
+    .searchwrap{flex:1 1 auto;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=Barlow+Condensed:wght@500;600&display=swap" rel="stylesheet">
+
+<div class="app">
+  <header>
+    <div class="titlerow">
+      <div>
+        <div class="eyebrow">11e Régiment Étranger d'Infanterie · 1939&ndash;1940</div>
+        <h1>Lieux de naissance des légionnaires</h1>
+      </div>
+      <div class="count" id="count"></div>
+    </div>
+    <div class="controls">
+      <div class="yearblock">
+        <button class="iconbtn" id="playbtn" title="Parcourir les frontières dans le temps">&#9654;</button>
+        <input type="range" id="yearslider" min="0" max="12" step="1" value="5" aria-label="Année des frontières historiques">
+        <span class="yearval" id="yearval">1914</span>
+      </div>
+      <div class="searchwrap">
+        <input type="search" id="search" placeholder="Chercher un nom…" autocomplete="off">
+        <div class="searchresults" id="searchresults"></div>
+      </div>
+      <button class="iconbtn" id="resetbtn">Vue d'ensemble</button>
+    </div>
+  </header>
+  <main>
+    <canvas id="map"></canvas>
+    <div class="hoverlabel" id="hoverlabel"></div>
+    <div class="legend" id="legend">
+      <div class="legendhead" id="legendtoggle">
+        <span class="legendtitle" id="legendyear">Légende — 1914</span>
+        <span class="legendcaret">&#9662;</span>
+      </div>
+      <div class="legendbody" id="legendbody">
+        <div class="legenditem pinned"><span class="legenddot"></span>Lieu de naissance</div>
+        <div id="legendlist"></div>
+      </div>
+    </div>
+    <div class="zoomctl">
+      <button id="zoomin" aria-label="Zoomer">+</button>
+      <button id="zoomout" aria-label="Dézoomer">&minus;</button>
+    </div>
+    <div class="hint"><b>1585</b> lieux de naissance sur <b>2436</b> légionnaires recensés. Le curseur affiche les frontières de l'année choisie &mdash; source&nbsp;: OpenHistoricalMap / historical&#8209;basemaps.</div>
+    <div class="overlay" id="overlay"></div>
+    <aside class="panel" id="panel" aria-hidden="true">
+      <div class="panelhead"><button class="panelclose" id="panelclose" aria-label="Fermer">&times;</button></div>
+      <div class="panelbody">
+        <img class="panelphoto hidden" id="panelphoto" alt="">
+        <p class="panelname" id="panelname"></p>
+        <p class="panelgrade" id="panelgrade"></p>
+        <div class="panelrow">
+          <span class="panellabel">Lieu de naissance</span>
+          <span class="panelval" id="panelville"></span>
+        </div>
+        <div class="panelrow" id="panelunite-row">
+          <span class="panellabel">Affectation</span>
+          <span class="panelval" id="panelunite"></span>
+        </div>
+        <a class="panellink" id="panellink" href="#" target="_blank" rel="noopener">Voir la fiche &rarr;</a>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var YEARS = [1800,1815,1878,1880,1900,1914,1920,1930,1938,1945,1960,1994,2010];
+  var DEFAULT_YEAR_INDEX = YEARS.indexOf(1914);
+
+  var canvas = document.getElementById('map');
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.max(1, window.devicePixelRatio || 1);
+
+  var points = [];
+  var yearsData = {};
+  var dataReady = false;
+
+  var view = { cx: 13, cy: 0, scale: 9 }; // cx/cy in projected units, scale = px per unit
+  var W = 0, H = 0;
+
+  function project(lon, lat){
+    var latRad = Math.max(-85, Math.min(85, lat)) * Math.PI/180;
+    var y = Math.log(Math.tan(Math.PI/4 + latRad/2)) * (180/Math.PI);
+    return { x: lon, y: y };
+  }
+
+  function toScreen(lon, lat){
+    var p = project(lon, lat);
+    return {
+      x: (p.x - view.cx) * view.scale + W/2,
+      y: (view.cy - p.y) * view.scale + H/2
+    };
+  }
+
+  function screenToProj(sx, sy){
+    return {
+      x: (sx - W/2) / view.scale + view.cx,
+      y: view.cy - (sy - H/2) / view.scale
+    };
+  }
+
+  function resize(){
+    var rect = canvas.parentElement.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    canvas.width = Math.round(W*dpr);
+    canvas.height = Math.round(H*dpr);
+    canvas.style.width = W+'px';
+    canvas.style.height = H+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    draw();
+  }
+
+  function fitDefault(){
+    // Europe-centered default view
+    var lon0 = -10, lon1 = 40, lat0 = 34, lat1 = 61;
+    var p0 = project(lon0, lat0), p1 = project(lon1, lat1);
+    var sx = W / (p1.x - p0.x);
+    var sy = H / (p0.y - p1.y);
+    view.scale = Math.min(sx, sy) * 0.94;
+    view.cx = (p0.x + p1.x)/2;
+    view.cy = (p0.y + p1.y)/2;
+  }
+
+  var PALETTE = ["#c9a24b","#8fa06b","#b3745a","#7f9bab","#c07a92","#9c8a5a","#6f9e8c",
+                 "#b3855a","#8a8fb0","#a6683f","#7c9a6f","#af8fae","#7fa3c2","#bb9a6b"];
+  function colorFor(name){
+    var h = 0;
+    for (var i=0;i<name.length;i++){ h = (h*31 + name.charCodeAt(i)) >>> 0; }
+    return PALETTE[h % PALETTE.length];
+  }
+
+  function ringPath(ring){
+    ctx.moveTo.apply(ctx, [ (toScreen(ring[0][0],ring[0][1])).x, (toScreen(ring[0][0],ring[0][1])).y ]);
+  }
+
+  function drawPolygon(coords, type){
+    // coords: Polygon -> array of rings; MultiPolygon -> array of Polygon
+    var polys = type === 'MultiPolygon' ? coords : [coords];
+    for (var pi=0; pi<polys.length; pi++){
+      var rings = polys[pi];
+      for (var ri=0; ri<rings.length; ri++){
+        var ring = rings[ri];
+        if (ring.length < 3) continue;
+        ctx.beginPath();
+        var s0 = toScreen(ring[0][0], ring[0][1]);
+        ctx.moveTo(s0.x, s0.y);
+        for (var i=1;i<ring.length;i++){
+          var s = toScreen(ring[i][0], ring[i][1]);
+          ctx.lineTo(s.x, s.y);
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+  }
+
+  function currentYear(){
+    return YEARS[parseInt(document.getElementById('yearslider').value,10)];
+  }
+
+  var pointRadius = 3.2;
+
+  function visiblePoints(){
+    // culls points outside viewport with margin, returns array with screen coords
+    var out = [];
+    var margin = 40;
+    for (var i=0;i<points.length;i++){
+      var p = points[i];
+      var s = toScreen(p.lon, p.lat);
+      if (s.x < -margin || s.x > W+margin || s.y < -margin || s.y > H+margin) continue;
+      p._sx = s.x; p._sy = s.y;
+      out.push(p);
+    }
+    return out;
+  }
+
+  var activeFilter = null; // set of ids or null
+  var hoveredBoundary = null;
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--bg-deep').trim() || '#eee';
+    ctx.fillRect(0,0,W,H);
+
+    if (dataReady){
+      var yr = currentYear();
+      var fc = yearsData[yr];
+      if (fc){
+        var ink = getComputedStyle(document.body).getPropertyValue('--ink').trim();
+        ctx.lineWidth = 1;
+        for (var i=0;i<fc.features.length;i++){
+          var f = fc.features[i];
+          var nm = (f.properties && f.properties.n) || '';
+          ctx.fillStyle = colorFor(nm) + (isDark()? "55":"66");
+          ctx.strokeStyle = ink + "30";
+          drawPolygon(f.geometry.coordinates, f.geometry.type);
+        }
+      }
+
+      var vis = visiblePoints();
+      var accent = getComputedStyle(document.body).getPropertyValue('--accent').trim();
+      var card = getComputedStyle(document.body).getPropertyValue('--card').trim();
+      for (var j=0;j<vis.length;j++){
+        var p = vis[j];
+        var dim = activeFilter && !activeFilter.has(p.id);
+        ctx.beginPath();
+        ctx.arc(p._sx, p._sy, dim ? pointRadius*0.6 : pointRadius, 0, Math.PI*2);
+        ctx.fillStyle = dim ? (accent+"33") : accent;
+        ctx.fill();
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = dim ? (card+"55") : card;
+        ctx.stroke();
+      }
+    }
+  }
+
+  function isDark(){
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t === 'dark') return true;
+    if (t === 'light') return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  // ---------- interaction: pan / zoom ----------
+  var dragging = false, dragMoved = false, lastX=0, lastY=0;
+
+  function zoomAt(factor, sx, sy){
+    var before = screenToProj(sx, sy);
+    view.scale = Math.max(2, Math.min(4000, view.scale*factor));
+    var after = screenToProj(sx, sy);
+    view.cx += (before.x - after.x);
+    view.cy += (before.y - after.y);
+    draw();
+  }
+
+  canvas.addEventListener('wheel', function(e){
+    e.preventDefault();
+    var rect = canvas.getBoundingClientRect();
+    var sx = e.clientX-rect.left, sy = e.clientY-rect.top;
+    var factor = Math.exp(-e.deltaY*0.0016);
+    zoomAt(factor, sx, sy);
+  }, {passive:false});
+
+  var touchCount = 0;
+  canvas.addEventListener('pointerdown', function(e){
+    if (!e.isPrimary || touchCount >= 2) return;
+    dragging = true; dragMoved = false;
+    lastX = e.clientX; lastY = e.clientY;
+    canvas.setPointerCapture(e.pointerId);
+    canvas.classList.add('dragging');
+  });
+  canvas.addEventListener('pointermove', function(e){
+    if (!e.isPrimary || touchCount >= 2) return;
+    if (dragging){
+      var dx = e.clientX-lastX, dy = e.clientY-lastY;
+      if (Math.abs(dx)>2 || Math.abs(dy)>2) dragMoved = true;
+      lastX = e.clientX; lastY = e.clientY;
+      view.cx -= dx/view.scale;
+      view.cy += dy/view.scale;
+      draw();
+      hideHover();
+    } else {
+      handleHover(e);
+    }
+  });
+  window.addEventListener('pointerup', function(e){
+    if (!e.isPrimary) return;
+    if (!dragging) return;
+    dragging = false;
+    canvas.classList.remove('dragging');
+    if (!dragMoved && touchCount < 2){
+      handleClick(e);
+    }
+  });
+
+  // pinch zoom (touch) — takes over from single-finger pan once a 2nd finger lands
+  var pinch = null;
+  canvas.addEventListener('touchstart', function(e){
+    touchCount = e.touches.length;
+    if (touchCount >= 2){
+      dragging = false;
+      canvas.classList.remove('dragging');
+      pinch = touchDist(e.touches);
+    }
+  }, {passive:true});
+  canvas.addEventListener('touchmove', function(e){
+    if (e.touches.length === 2 && pinch){
+      e.preventDefault();
+      var d = touchDist(e.touches);
+      var factor = d/pinch;
+      pinch = d;
+      var rect = canvas.getBoundingClientRect();
+      var mx = (e.touches[0].clientX+e.touches[1].clientX)/2 - rect.left;
+      var my = (e.touches[0].clientY+e.touches[1].clientY)/2 - rect.top;
+      zoomAt(factor, mx, my);
+    }
+  }, {passive:false});
+  canvas.addEventListener('touchend', function(e){
+    touchCount = e.touches.length;
+    if (touchCount < 2) pinch = null;
+  });
+  function touchDist(t){
+    var dx = t[0].clientX-t[1].clientX, dy = t[0].clientY-t[1].clientY;
+    return Math.sqrt(dx*dx+dy*dy);
+  }
+
+  document.getElementById('zoomin').addEventListener('click', function(){ zoomAt(1.5, W/2, H/2); });
+  document.getElementById('zoomout').addEventListener('click', function(){ zoomAt(1/1.5, W/2, H/2); });
+  document.getElementById('resetbtn').addEventListener('click', function(){ fitDefault(); draw(); });
+
+  var hoverEl = document.getElementById('hoverlabel');
+  var hoverThrottle = false;
+  function handleHover(e){
+    if (hoverThrottle) return;
+    hoverThrottle = true;
+    requestAnimationFrame(function(){ hoverThrottle = false; });
+    var rect = canvas.getBoundingClientRect();
+    var sx = e.clientX-rect.left, sy = e.clientY-rect.top;
+
+    // point hover first
+    var vis = visiblePoints();
+    var nearest = null, best = 64;
+    for (var i=0;i<vis.length;i++){
+      var p = vis[i];
+      var d = (p._sx-sx)*(p._sx-sx) + (p._sy-sy)*(p._sy-sy);
+      if (d < best){ best = d; nearest = p; }
+    }
+    if (nearest){
+      showHover(nearest.n, sx, sy);
+      canvas.style.cursor = dragging ? 'grabbing' : 'pointer';
+      return;
+    }
+    canvas.style.cursor = dragging ? 'grabbing' : 'grab';
+
+    // boundary hover
+    var proj = screenToProj(sx, sy);
+    var name = boundaryAt(proj.x, proj.y);
+    if (name){ showHover(name, sx, sy); } else { hideHover(); }
+  }
+  function showHover(text, sx, sy){
+    hoverEl.textContent = text;
+    hoverEl.style.left = sx+'px';
+    hoverEl.style.top = sy+'px';
+    hoverEl.classList.add('show');
+  }
+  function hideHover(){ hoverEl.classList.remove('show'); }
+
+  function pointInRing(x, y, ring){
+    var inside = false;
+    for (var i=0, j=ring.length-1; i<ring.length; j=i++){
+      var xi = ring[i][0], yi = ring[i][1];
+      var xj = ring[j][0], yj = ring[j][1];
+      var intersect = ((yi>y) !== (yj>y)) && (x < (xj-xi)*(y-yi)/(yj-yi+1e-12)+xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+  function boundaryAt(lon, lat){
+    var yr = currentYear();
+    var fc = yearsData[yr];
+    if (!fc) return null;
+    for (var i=fc.features.length-1;i>=0;i--){
+      var f = fc.features[i];
+      var geom = f.geometry;
+      var polys = geom.type === 'MultiPolygon' ? geom.coordinates : [geom.coordinates];
+      for (var pi=0; pi<polys.length; pi++){
+        if (pointInRing(lon, lat, polys[pi][0])){
+          return (f.properties && f.properties.n) || null;
+        }
+      }
+    }
+    return null;
+  }
+
+  function handleClick(e){
+    var rect = canvas.getBoundingClientRect();
+    var sx = e.clientX-rect.left, sy = e.clientY-rect.top;
+    var vis = visiblePoints();
+    var nearest = null, best = 400;
+    for (var i=0;i<vis.length;i++){
+      var p = vis[i];
+      var d = (p._sx-sx)*(p._sx-sx) + (p._sy-sy)*(p._sy-sy);
+      if (d < best){ best = d; nearest = p; }
+    }
+    if (nearest) openPanel(nearest);
+  }
+
+  // ---------- panel ----------
+  var panel = document.getElementById('panel');
+  var overlay = document.getElementById('overlay');
+  function openPanel(p){
+    document.getElementById('panelname').textContent = p.n;
+    var gradeUnite = [p.g, p.u].filter(Boolean).join(' · ');
+    document.getElementById('panelgrade').textContent = gradeUnite;
+    var lieu = [p.v, p.p].filter(Boolean).join(' — ');
+    document.getElementById('panelville').textContent = lieu || '—';
+    var uniteRow = document.getElementById('panelunite-row');
+    if (p.u){ uniteRow.style.display=''; document.getElementById('panelunite').textContent = p.u; }
+    else { uniteRow.style.display='none'; }
+    var img = document.getElementById('panelphoto');
+    if (p.ph){ img.src = p.ph; img.alt = 'Portrait de ' + p.n; img.classList.remove('hidden'); }
+    else { img.classList.add('hidden'); img.removeAttribute('src'); }
+    var link = document.getElementById('panellink');
+    if (p.url){ link.href = p.url; link.style.display=''; } else { link.style.display='none'; }
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden','false');
+    overlay.classList.add('open');
+  }
+  function closePanel(){
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden','true');
+    overlay.classList.remove('open');
+  }
+  document.getElementById('panelclose').addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+
+  // ---------- year slider ----------
+  var slider = document.getElementById('yearslider');
+  var yearval = document.getElementById('yearval');
+  slider.value = DEFAULT_YEAR_INDEX;
+  yearval.textContent = YEARS[DEFAULT_YEAR_INDEX];
+  function onYearChanged(){
+    yearval.textContent = currentYear();
+    updateLegend();
+    draw();
+  }
+  slider.addEventListener('input', onYearChanged);
+
+  var playing = false, playTimer = null;
+  document.getElementById('playbtn').addEventListener('click', function(){
+    playing = !playing;
+    this.innerHTML = playing ? '&#10074;&#10074;' : '&#9654;';
+    if (playing){
+      playTimer = setInterval(function(){
+        var v = parseInt(slider.value,10);
+        v = (v+1) % YEARS.length;
+        slider.value = v;
+        onYearChanged();
+      }, 1400);
+    } else {
+      clearInterval(playTimer);
+    }
+  });
+
+  // ---------- legend ----------
+  var legendEl = document.getElementById('legend');
+  var legendYearEl = document.getElementById('legendyear');
+  var legendListEl = document.getElementById('legendlist');
+  document.getElementById('legendtoggle').addEventListener('click', function(){
+    legendEl.classList.toggle('collapsed');
+  });
+  if (window.innerWidth < 640) legendEl.classList.add('collapsed');
+  function updateLegend(){
+    var yr = currentYear();
+    legendYearEl.textContent = 'Légende — ' + yr;
+    if (!dataReady){ legendListEl.innerHTML = ''; return; }
+    var fc = yearsData[yr];
+    if (!fc){ legendListEl.innerHTML = ''; return; }
+    var names = [];
+    var seen = {};
+    for (var i=0;i<fc.features.length;i++){
+      var nm = (fc.features[i].properties && fc.features[i].properties.n) || '';
+      if (!nm || seen[nm]) continue;
+      seen[nm] = true;
+      names.push(nm);
+    }
+    names.sort(function(a,b){ return a.localeCompare(b, 'fr'); });
+    var html = '';
+    for (var j=0;j<names.length;j++){
+      html += '<div class="legenditem"><span class="legendswatch" style="background:'+colorFor(names[j])+'"></span>'+escapeHtml(names[j])+'</div>';
+    }
+    legendListEl.innerHTML = html;
+  }
+
+  // ---------- search ----------
+  var searchInput = document.getElementById('search');
+  var searchResults = document.getElementById('searchresults');
+  function runSearch(q){
+    searchResults.innerHTML = '';
+    q = q.trim().toLowerCase();
+    if (q.length < 2){ activeFilter = null; draw(); return; }
+    var matches = [];
+    for (var i=0;i<points.length && matches.length<40;i++){
+      if (points[i].n.toLowerCase().indexOf(q) !== -1) matches.push(points[i]);
+    }
+    activeFilter = new Set(matches.map(function(p){return p.id;}));
+    draw();
+    matches.slice(0,12).forEach(function(p){
+      var b = document.createElement('button');
+      b.innerHTML = '<b>'+escapeHtml(p.n)+'</b> — ' + escapeHtml(p.v || p.p || '');
+      b.addEventListener('click', function(){
+        flyTo(p);
+        openPanel(p);
+        searchResults.innerHTML='';
+        searchInput.value = p.n;
+      });
+      searchResults.appendChild(b);
+    });
+  }
+  function escapeHtml(s){
+    return (s||'').replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function flyTo(p){
+    var proj = project(p.lon, p.lat);
+    view.cx = proj.x; view.cy = proj.y;
+    view.scale = Math.max(view.scale, 120);
+    draw();
+  }
+  var searchDebounce = null;
+  searchInput.addEventListener('input', function(){
+    clearTimeout(searchDebounce);
+    var v = this.value;
+    searchDebounce = setTimeout(function(){ runSearch(v); }, 150);
+  });
+  searchInput.addEventListener('blur', function(){
+    setTimeout(function(){ searchResults.innerHTML=''; }, 150);
+  });
+
+  // ---------- theme change repaint ----------
+  if (window.matchMedia){
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  }
+
+  // ---------- data load ----------
+  function loadJSON(path){
+    return fetch(path).then(function(r){ return r.json(); });
+  }
+  Promise.all([loadJSON('points.json'), loadJSON('years.json')]).then(function(res){
+    points = res[0];
+    yearsData = res[1];
+    dataReady = true;
+    document.getElementById('count').textContent = points.length + ' lieux de naissance affichés';
+    resize();
+    fitDefault();
+    updateLegend();
+    draw();
+  }).catch(function(err){
+    document.getElementById('count').textContent = 'Erreur de chargement des données';
+    console.error(err);
+  });
+
+  window.addEventListener('resize', function(){ resize(); });
+  resize();
+})();
+</script>
