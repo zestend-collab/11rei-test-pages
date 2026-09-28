@@ -485,7 +485,7 @@
     <div class="controls">
       <div class="yearblock">
         <button class="iconbtn" id="playbtn" title="Parcourir les frontières dans le temps">&#9654;</button>
-        <input type="range" id="yearslider" min="0" max="12" step="1" value="5" aria-label="Année des frontières historiques">
+        <input type="range" id="yearslider" min="0" max="9" step="1" value="2" aria-label="Année des frontières historiques">
         <span class="yearval" id="yearval">1914</span>
       </div>
       <div class="searchwrap">
@@ -538,7 +538,7 @@
 (function(){
   "use strict";
 
-  var YEARS = [1800,1815,1878,1880,1900,1914,1920,1930,1938,1945,1960,1994,2010];
+  var YEARS = [1880,1900,1914,1920,1930,1938,1945,1960,1994,2010];
   var DEFAULT_YEAR_INDEX = YEARS.indexOf(1914);
 
   var canvas = document.getElementById('map');
