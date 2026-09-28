@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Origines du 11e REI</title>
 <style>
   :root{
@@ -47,15 +52,17 @@
     background:var(--bg);
     color:var(--ink);
     font-family:"Source Sans 3", system-ui, sans-serif;
-    height:100%;
-    overflow:hidden;
+    margin:0;
   }
-  html{height:100%;}
   .app{
     display:flex;
     flex-direction:column;
-    height:100%;
   }
+  /* Le site insère un bandeau (.hero) et un menu fixe (.gsite-nav) au-dessus de
+     cette page via menu.js/banniere.js. On réduit la hauteur par défaut du bandeau
+     (320px) pour laisser le plus de place possible à la carte. */
+  .hero{ min-height:140px !important; }
+  header{ position:sticky; top:64px; z-index:10; }
 
   h1{
     font-family:"Spectral", Georgia, serif;
@@ -207,10 +214,32 @@
   }
   .iconbtn:hover{border-color:var(--accent);}
 
+  .commentbtn{
+    position:fixed;
+    right:16px;
+    bottom:calc(100px + env(safe-area-inset-bottom,0px));
+    z-index:600;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#fab855;
+    color:#1a1a18;
+    font-family:"Source Sans 3", system-ui, sans-serif;
+    font-size:.84rem;
+    font-weight:600;
+    text-decoration:none;
+    padding:.6rem 1.1rem;
+    border-radius:20px;
+    box-shadow:0 4px 14px rgba(0,0,0,.22);
+  }
+  .commentbtn:hover{background:#ff9900;color:#fff;}
+
   main{
     position:relative;
     flex:1 1 auto;
-    min-height:0;
+    height:78vh;
+    min-height:420px;
+    max-height:760px;
   }
   canvas{
     display:block;
@@ -472,7 +501,8 @@
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=Barlow+Condensed:wght@500;600&display=swap" rel="stylesheet">
-
+</head>
+<body>
 <div class="app">
   <header>
     <div class="titlerow">
@@ -485,7 +515,7 @@
     <div class="controls">
       <div class="yearblock">
         <button class="iconbtn" id="playbtn" title="Parcourir les frontières dans le temps">&#9654;</button>
-        <input type="range" id="yearslider" min="0" max="9" step="1" value="2" aria-label="Année des frontières historiques">
+        <input type="range" id="yearslider" min="0" max="7" step="1" value="2" aria-label="Année des frontières historiques">
         <span class="yearval" id="yearval">1914</span>
       </div>
       <div class="searchwrap">
@@ -534,11 +564,16 @@
   </main>
 </div>
 
+<a class="commentbtn" href="https://www.11regimentetranger.com/commentaire?page=Carte%20des%20lieux%20de%20naissance" target="_blank" rel="noopener">&#128172; Laisser un commentaire</a>
+
+<script src="/menu.js"></script>
+<script src="/banniere.js"></script>
+
 <script>
 (function(){
   "use strict";
 
-  var YEARS = [1880,1900,1914,1920,1930,1938,1945,1960,1994,2010];
+  var YEARS = [1880,1900,1914,1920,1930,1938,1945,1960];
   var DEFAULT_YEAR_INDEX = YEARS.indexOf(1914);
 
   var canvas = document.getElementById('map');
@@ -589,7 +624,7 @@
     var lon0 = -10, lon1 = 40, lat0 = 34, lat1 = 61;
     var p0 = project(lon0, lat0), p1 = project(lon1, lat1);
     var sx = W / (p1.x - p0.x);
-    var sy = H / (p0.y - p1.y);
+    var sy = H / (p1.y - p0.y);
     view.scale = Math.min(sx, sy) * 0.94;
     view.cx = (p0.x + p1.x)/2;
     view.cy = (p0.y + p1.y)/2;
@@ -989,18 +1024,48 @@
   };
   function frName(n){ return FR_NAMES[n] || n; }
 
+  var namesWithPointsCache = {};
+  function namesWithPoints(yr){
+    if (namesWithPointsCache[yr]) return namesWithPointsCache[yr];
+    var fc = yearsData[yr];
+    var found = {};
+    if (fc){
+      for (var f=0; f<fc.features.length; f++){
+        var feat = fc.features[f];
+        var nm = (feat.properties && feat.properties.n) || '';
+        nm = nm.trim();
+        if (!nm || found[nm]) continue;
+        var geom = feat.geometry;
+        var polys = geom.type === 'MultiPolygon' ? geom.coordinates : [geom.coordinates];
+        outer:
+        for (var pt=0; pt<points.length; pt++){
+          var p = points[pt];
+          for (var pi=0; pi<polys.length; pi++){
+            if (pointInRing(p.lon, p.lat, polys[pi][0])){
+              found[nm] = true;
+              break outer;
+            }
+          }
+        }
+      }
+    }
+    namesWithPointsCache[yr] = found;
+    return found;
+  }
+
   function updateLegend(){
     var yr = currentYear();
     legendYearEl.textContent = 'Légende — ' + yr;
     if (!dataReady){ legendListEl.innerHTML = ''; return; }
     var fc = yearsData[yr];
     if (!fc){ legendListEl.innerHTML = ''; return; }
+    var withPts = namesWithPoints(yr);
     var names = [];
     var seen = {};
     for (var i=0;i<fc.features.length;i++){
       var nm = (fc.features[i].properties && fc.features[i].properties.n) || '';
       nm = nm.trim();
-      if (!nm || seen[nm]) continue;
+      if (!nm || seen[nm] || !withPts[nm]) continue;
       seen[nm] = true;
       names.push(nm);
     }
@@ -1097,3 +1162,6 @@
   resize();
 })();
 </script>
+
+</body>
+</html>
