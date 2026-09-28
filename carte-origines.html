@@ -608,6 +608,15 @@
     };
   }
 
+  // Inverse of project(): turns a projected (Mercator) point back into
+  // plain lon/lat degrees, matching the raw coordinates stored in the
+  // boundary rings — needed because screenToProj() returns Mercator-space
+  // coordinates, not lat/lon.
+  function unproject(px, py){
+    var latRad = 2*Math.atan(Math.exp(py*Math.PI/180)) - Math.PI/2;
+    return { lon: px, lat: latRad*180/Math.PI };
+  }
+
   function resize(){
     var rect = canvas.parentElement.getBoundingClientRect();
     W = rect.width; H = rect.height;
@@ -844,7 +853,8 @@
 
     // boundary hover
     var proj = screenToProj(sx, sy);
-    var name = boundaryAt(proj.x, proj.y);
+    var geo = unproject(proj.x, proj.y);
+    var name = boundaryAt(geo.lon, geo.lat);
     if (name){ showHover(name, sx, sy); } else { hideHover(); }
   }
   function showHover(text, sx, sy){
