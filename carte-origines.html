@@ -286,6 +286,15 @@
     width:12px;height:12px;
     border-radius:3px;
   }
+  .legendgroup{
+    font-family:"Barlow Condensed", sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.66rem;
+    color:var(--ink-soft);
+    margin:8px 0 3px 0;
+  }
+  .legendgroup:first-of-type{margin-top:0;}
   .legendcount{
     color:var(--ink-soft);
     font-size:.68rem;
@@ -831,7 +840,8 @@
       var polys = geom.type === 'MultiPolygon' ? geom.coordinates : [geom.coordinates];
       for (var pi=0; pi<polys.length; pi++){
         if (pointInRing(lon, lat, polys[pi][0])){
-          return (f.properties && f.properties.n) || null;
+          var raw = (f.properties && f.properties.n) || null;
+          return raw ? frName(raw.trim()) : null;
         }
       }
     }
@@ -916,6 +926,69 @@
     legendEl.classList.toggle('collapsed');
   });
   if (window.innerWidth < 640) legendEl.classList.add('collapsed');
+  var EMPIRES = {
+    "German Empire":1, "Austro-Hungarian Empire":1, "Austria Hungary":1,
+    "Austrian Empire":1, "Ottoman Empire":1, "Ottoman Sultanate":1, "Russian Empire":1
+  };
+  var FR_NAMES = {
+    "Afghanistan":"Afghanistan","Albania":"Albanie","Algeria":"Algérie","Algeria (FR)":"Algérie (France)",
+    "Algeria (France)":"Algérie (France)","Algiers":"Régence d'Alger","Andorra":"Andorre","Anhalt":"Anhalt",
+    "Arabia":"Arabie","Arabia (Nejd)":"Arabie (Nejd)","Armenia":"Arménie","Austria":"Autriche",
+    "Austria Hungary":"Autriche-Hongrie","Austrian Empire":"Empire d'Autriche",
+    "Austrian Netherlands":"Pays-Bas autrichiens","Austro-Hungarian Empire":"Autriche-Hongrie",
+    "Azerbaijan":"Azerbaïdjan","Baden":"Bade","Batavian Republic":"République batave","Bavaria":"Bavière",
+    "Belgium":"Belgique","Bokhara Khanate":"Khanat de Boukhara","Bosnia and Herzegovina":"Bosnie-Herzégovine",
+    "Bosnia-Herzegovina":"Bosnie-Herzégovine","Bremen":"Brême","British Protectorate":"Protectorat britannique",
+    "British Raj":"Inde britannique","Brunswick":"Brunswick","Bulgaria":"Bulgarie","Byelarus":"Biélorussie",
+    "Croatia":"Croatie","Cuxhaven":"Cuxhaven","Cyprus":"Chypre","Cyraneica (UK Lybia)":"Cyrénaïque (Libye brit.)",
+    "Cyrenaica":"Cyrénaïque","Czech Republic":"République tchèque","Czechoslovakia":"Tchécoslovaquie",
+    "Danzig":"Dantzig","Denmark":"Danemark","Denmark-Norway":"Danemark-Norvège",
+    "Dodecanese Islands":"Dodécanèse","East Germany":"Allemagne de l'Est","East Prussia":"Prusse-Orientale",
+    "Egypt":"Égypte","Electoral Hesse":"Hesse électorale","Emirate of Bin Shal'an":"Émirat des Bin Chaalan",
+    "Estonia":"Estonie","Fezzan (Frech Lybia)":"Fezzan (Libye française)","Finland":"Finlande",
+    "Finnmark":"Finnmark","Fivizzano":"Fivizzano","France":"France",
+    "French West Africa":"Afrique-Occidentale française","Georgia":"Géorgie","German Empire":"Empire allemand",
+    "Germany":"Allemagne","Germany (France)":"Allemagne (zone française)",
+    "Germany (Soviet)":"Allemagne (zone soviétique)","Germany (UK)":"Allemagne (zone britannique)",
+    "Germany (USA)":"Allemagne (zone américaine)","Grand Duchy of Hesse":"Grand-duché de Hesse",
+    "Greece":"Grèce","Greenland":"Groenland","Guanches":"Guanches","Hail":"Émirat de Ha'il",
+    "Hamburg":"Hambourg","Hanover":"Hanovre","Hejaz":"Hedjaz","Helvetic Republic":"République helvétique",
+    "Hohenzollern":"Hohenzollern","Holstein":"Holstein","Hungary":"Hongrie","Iceland":"Islande",
+    "India":"Inde","Iran":"Iran","Iraq":"Irak","Ireland":"Irlande","Israel":"Israël","Italy":"Italie",
+    "Jordan":"Jordanie","Kazakhstan":"Kazakhstan","Kingdom of Ireland":"Royaume d'Irlande",
+    "Kingdom of Italy":"Royaume d'Italie","Kingdom of Sardinia":"Royaume de Sardaigne",
+    "Kingdom of the Two Sicilies":"Royaume des Deux-Siciles","Kuwait":"Koweït","Latvia":"Lettonie",
+    "Lebanon":"Liban","Libya":"Libye","Libya (IT)":"Libye (Italie)","Liechtenstein":"Liechtenstein",
+    "Lippe-Detmold":"Lippe-Detmold","Lithuania":"Lituanie","Lombardy":"Lombardie","Lucca":"Lucques",
+    "Luxembourg":"Luxembourg","Lübeck":"Lübeck","Macedonia":"Macédoine","Malta":"Malte",
+    "Mandatory Palestine (GB)":"Palestine mandataire","Massa":"Massa","Mauritania":"Mauritanie",
+    "Mecklenburg-Schwerin":"Mecklembourg-Schwerin","Mecklenburg-Strelitz":"Mecklembourg-Strelitz",
+    "Mesopotamia (GB)":"Mésopotamie (Royaume-Uni)","Modena":"Modène","Moldova":"Moldavie",
+    "Montenegro":"Monténégro","Morocco":"Maroc","Morocco (France)":"Maroc (France)",
+    "Muscat and Oman":"Mascate et Oman","Nassau":"Nassau","Nejd":"Nejd","Netherlands":"Pays-Bas",
+    "Norway":"Norvège","Oldenburg":"Oldenbourg","Oman":"Oman","Ottoman Empire":"Empire ottoman",
+    "Ottoman Sultanate":"Sultanat ottoman","Pakistan":"Pakistan","Palatinate":"Palatinat",
+    "Papal States":"États pontificaux","Parma":"Parme","Persia":"Perse","Poland":"Pologne",
+    "Pontremoli":"Pontremoli","Portugal":"Portugal","Prussia":"Prusse","Qatar":"Qatar",
+    "Republic of Kraków":"République de Cracovie","Republic of Turkey":"Turquie","Rio De Oro":"Río de Oro",
+    "Romania":"Roumanie","Russia":"Russie","Russian Empire":"Empire russe",
+    "Saar Protectorate":"Protectorat de la Sarre","San Marino":"Saint-Marin","Saudi Arabia":"Arabie saoudite",
+    "Saxony":"Saxe","Schaumburg-Lippe":"Schaumbourg-Lippe","Schleswig":"Schleswig","Serbia":"Serbie",
+    "Slovakia":"Slovaquie","Slovenia":"Slovénie","South Russia":"Russie du Sud","Spain":"Espagne",
+    "Spanish Morocco":"Maroc espagnol","Spanish Sahara":"Sahara espagnol","Swabia":"Souabe",
+    "Sweden":"Suède","Sweden–Norway":"Suède-Norvège","Switzerland":"Suisse","Syria":"Syrie",
+    "Syria (France)":"Syrie (France)","Thuringia":"Thuringe","Tripolitana (UK Lybia)":"Tripolitaine (Libye brit.)",
+    "Tripolitania":"Tripolitaine","Trucial Oman":"États de la Trêve","Tunis":"Tunis","Tunisia":"Tunisie",
+    "Turan":"Touran","Turkey":"Turquie","Turkish Cypriot-administered area":"Zone chypriote turque",
+    "Turkmenistan":"Turkménistan","Tuscany":"Toscane","USSR":"URSS","Ukraine":"Ukraine",
+    "United Arab Emirates":"Émirats arabes unis","United Kingdom":"Royaume-Uni",
+    "United Kingdom of Great Britain and Ireland":"Royaume-Uni de Gde-Bretagne et d'Irlande",
+    "Uzbekistan":"Ouzbékistan","Venetia":"Vénétie","Waldeck":"Waldeck","West Germany":"Allemagne de l'Ouest",
+    "Western Sahara":"Sahara occidental","Wetzlar":"Wetzlar","White Russia":"Russie blanche",
+    "Württemberg":"Wurtemberg","Yugoslavia":"Yougoslavie","central Asian khanates":"Khanats d'Asie centrale"
+  };
+  function frName(n){ return FR_NAMES[n] || n; }
+
   function updateLegend(){
     var yr = currentYear();
     legendYearEl.textContent = 'Légende — ' + yr;
@@ -926,14 +999,27 @@
     var seen = {};
     for (var i=0;i<fc.features.length;i++){
       var nm = (fc.features[i].properties && fc.features[i].properties.n) || '';
+      nm = nm.trim();
       if (!nm || seen[nm]) continue;
       seen[nm] = true;
       names.push(nm);
     }
-    names.sort(function(a,b){ return a.localeCompare(b, 'fr'); });
+    var empires = names.filter(function(n){ return EMPIRES[n]; });
+    var others = names.filter(function(n){ return !EMPIRES[n]; });
+    empires.sort(function(a,b){ return frName(a).localeCompare(frName(b), 'fr'); });
+    others.sort(function(a,b){ return frName(a).localeCompare(frName(b), 'fr'); });
+
+    function row(n){
+      return '<div class="legenditem"><span class="legendswatch" style="background:'+colorFor(n)+'"></span>'+escapeHtml(frName(n))+'</div>';
+    }
     var html = '';
-    for (var j=0;j<names.length;j++){
-      html += '<div class="legenditem"><span class="legendswatch" style="background:'+colorFor(names[j])+'"></span>'+escapeHtml(names[j])+'</div>';
+    if (empires.length){
+      html += '<div class="legendgroup">Empires</div>';
+      html += empires.map(row).join('');
+    }
+    if (others.length){
+      html += '<div class="legendgroup">Autres territoires</div>';
+      html += others.map(row).join('');
     }
     legendListEl.innerHTML = html;
   }
