@@ -216,23 +216,23 @@
 
   .commentbtn{
     position:fixed;
-    right:16px;
-    bottom:calc(100px + env(safe-area-inset-bottom,0px));
+    left:50%;
+    transform:translateX(-50%);
+    bottom:calc(14px + env(safe-area-inset-bottom,0px));
     z-index:600;
-    display:inline-flex;
+    display:flex;
     align-items:center;
-    gap:7px;
+    justify-content:center;
+    width:44px;
+    height:44px;
     background:#fab855;
     color:#1a1a18;
-    font-family:"Source Sans 3", system-ui, sans-serif;
-    font-size:.84rem;
-    font-weight:600;
+    font-size:1.15rem;
     text-decoration:none;
-    padding:.6rem 1.1rem;
-    border-radius:20px;
+    border-radius:50%;
     box-shadow:0 4px 14px rgba(0,0,0,.22);
   }
-  .commentbtn:hover{background:#ff9900;color:#fff;}
+  .commentbtn:hover{background:#ff9900;}
 
   main{
     position:relative;
@@ -550,6 +550,10 @@
         <img class="panelphoto hidden" id="panelphoto" alt="">
         <p class="panelname" id="panelname"></p>
         <p class="panelgrade" id="panelgrade"></p>
+        <div class="panelrow" id="panelnaissance-row">
+          <span class="panellabel">Naissance</span>
+          <span class="panelval" id="panelnaissance"></span>
+        </div>
         <div class="panelrow">
           <span class="panellabel">Lieu de naissance</span>
           <span class="panelval" id="panelville"></span>
@@ -913,6 +917,9 @@
     document.getElementById('panelname').textContent = p.n;
     var gradeUnite = [p.g, p.u].filter(Boolean).join(' · ');
     document.getElementById('panelgrade').textContent = gradeUnite;
+    var naissanceRow = document.getElementById('panelnaissance-row');
+    if (p.d){ naissanceRow.style.display=''; document.getElementById('panelnaissance').textContent = 'Né le ' + p.d; }
+    else { naissanceRow.style.display='none'; }
     var lieu = [p.v, p.p].filter(Boolean).join(' — ');
     document.getElementById('panelville').textContent = lieu || '—';
     var uniteRow = document.getElementById('panelunite-row');
