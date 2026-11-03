@@ -142,7 +142,7 @@
       <input type="search" id="search" placeholder="Rechercher un nom… (essayez Zombro* ou Zombr?wski)" autocomplete="off">
       <button type="button" class="help-btn" id="help-btn" title="Aide sur la recherche" aria-label="Aide sur la recherche">?</button>
       <div class="help-popover" id="help-popover">
-        La recherche porte sur le nom, les variantes orthographiques, le matricule, la date, la ville de naissance, la compagnie et le destin.<br><br>
+        La recherche ignore les accents et les majuscules (<em>vavrik</em> trouve <em>Vavřík</em>). Elle porte sur le nom, les variantes orthographiques, le matricule, la date, la ville de naissance, la compagnie et le destin.<br><br>
         <strong>Caractères joker</strong> (sur le nom et la ville de naissance) :<br>
         <code>*</code> remplace une suite de caractères quelconque — ex. <em>Zombro*</em><br>
         <code>?</code> remplace un seul caractère — ex. <em>Zombr?wski</em>
@@ -200,9 +200,15 @@
   <a href="https://www.11regimentetranger.com">11regimentetranger.com</a>
 </footer>
 
-<script src="data.js?v=20260713"></script>
+<script src="data.js?v=202611031009"></script>
 <script>
 let sortCol='num', sortDir=1;
+
+// Minuscules + accents retires : "ŠÁMAL" -> "samal", "Vavřík" -> "vavrik".
+// Sert a la recherche et au tri, pour que les noms accentues se trouvent et se classent normalement.
+function norm(s){
+  return (s==null?'':String(s)).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+}
 
 // Tronque le texte de décès : ne garde que "Mort le <date>" (avec heure éventuelle)
 // ou "Porté disparu [complément court]", sans le récit/commentaire qui suit.
@@ -336,9 +342,9 @@ function wildcardToRegex(q){
 
 function filterAndRender(){
   const qRaw=document.getElementById('search').value;
-  const q=qRaw.toLowerCase();
+  const q=norm(qRaw);
   const isWildcard = qRaw.includes('*') || qRaw.includes('?');
-  const wcRegex = isWildcard ? wildcardToRegex(qRaw) : null;
+  const wcRegex = isWildcard ? wildcardToRegex(norm(qRaw)) : null;
   const lieu=document.getElementById('filter-lieu').value;
   const cie=document.getElementById('filter-cie').value;
   const dest=document.getElementById('filter-destin').value;
@@ -346,14 +352,14 @@ function filterAndRender(){
   let rows=DATA.filter(d=>{
     if(qRaw){
       if(isWildcard){
-        const nomEtVariantes=[d.Nom,d.Variantes,d.lieu].filter(Boolean).join(' ');
+        const nomEtVariantes=norm([d.Nom,d.NomFamille,d.Variantes,d.lieu].filter(Boolean).join(' '));
         if(!wcRegex.test(nomEtVariantes)) return false;
       } else {
-        const txt=[d.Nom,d.Variantes,d.Matricule,d.date,d.lieu,d.grade,d.Cie1,d.Cie2,
+        const txt=[d.Nom,d.NomFamille,d.Variantes,d.Matricule,d.date,d.lieu,d.grade,d.Cie1,d.Cie2,
           d.GroupeFranc?'Groupe franc':null,d.AutreRegiment,d.Mort,d.Dlieu,
           d.MortCaptivite,d.Evasion,d.Deporte,d.MortDeportation,
           d.Resistant,d.ResistantDeporte,d.AFN,d.nationalite
-        ].filter(Boolean).join(' ').toLowerCase();
+        ].filter(Boolean).map(norm).join(' ');
         if(!txt.includes(q)) return false;
       }
     }
@@ -383,7 +389,7 @@ function filterAndRender(){
   rows.sort((a,b)=>{
     let va=a[sortCol]??'', vb=b[sortCol]??'';
     if(sortCol==='num'){va=+va||0;vb=+vb||0;}
-    else{va=String(va).toLowerCase();vb=String(vb).toLowerCase();}
+    else{va=norm(va);vb=norm(vb);}
     return va<vb?-sortDir:va>vb?sortDir:0;
   });
 
