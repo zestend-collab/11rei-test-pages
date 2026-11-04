@@ -58,13 +58,17 @@
   }
   .floating-top-btn.show{display:flex}
   .floating-top-btn:hover{background:var(--link)}
+  __LIGHTBOX_CSS__
 
   .portrait-thumb{flex-shrink:0;width:2.5rem;height:2.5rem;border-radius:50%;overflow:hidden;border:1.5px solid var(--orange);background:var(--row);display:none}
   .portrait-thumb img{width:100%;height:100%;object-fit:cover;display:block}
   .card.has-photo .portrait-thumb{display:block}
 
   .portrait-col{flex-shrink:0;width:7.5rem;display:flex;flex-direction:column;gap:.5rem}
-  .portrait-large{text-align:center}
+  .portrait-large{text-align:center;position:relative}
+  .portrait-extra{position:relative}
+  .portrait-large .zoom-btn,.portrait-extra .zoom-btn{top:6px;right:6px;bottom:auto;width:28px;height:28px}
+  .portrait-large .zoom-btn svg,.portrait-extra .zoom-btn svg{width:15px;height:15px}
   .portrait-large img{width:100%;aspect-ratio:3/4;object-fit:cover;border:2px solid var(--white);outline:1px solid var(--border);display:block}
   .portrait-large .cap{font-size:.62rem;color:var(--muted);margin-top:.3rem;font-family:'Inter',sans-serif}
   .portrait-extra img{width:100%;aspect-ratio:3/4;object-fit:cover;border:2px solid var(--white);outline:1px solid var(--border);display:block}
@@ -237,6 +241,7 @@ function renderCard(p){
   const surnomHtml = p.surnom ? ' <span class="surnom-suffix">dit ' + esc(p.surnom) + '</span>' : '';
   const variantesHtml = p.variantes ? ' <span class="variantes-suffix">(variantes : ' + esc(p.variantes) + ')</span>' : '';
   const photoUrl = PHOTO_BASE + encodeURIComponent(p.id) + '.jpg';
+  const ZOOM_BTN = '__ZOOM_BTN_HTML__';
   const onErr = "this.closest('.card').classList.remove('has-photo'); this.closest('.portrait-thumb,.portrait-large').style.display='none';";
   const thumbHtml = '<div class="portrait-thumb"><img src="' + photoUrl + '" alt="Portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErr + '"></div>';
   // Photos supplémentaires (optionnelles) : <identifiant>-2.jpg, <identifiant>-3.jpg sur le même repo GitHub.
@@ -247,9 +252,9 @@ function renderCard(p){
   let extrasHtml = '';
   for (let i = 2; i <= EXTRA_PHOTOS_MAX + 1; i++) {
     const extraUrl = PHOTO_BASE + encodeURIComponent(p.id) + '-' + i + '.jpg';
-    extrasHtml += '<div class="portrait-extra"><img src="' + extraUrl + '" alt="Autre portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErrExtra + '"></div>';
+    extrasHtml += '<div class="portrait-extra"><img src="' + extraUrl + '" alt="Autre portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErrExtra + '">' + ZOOM_BTN + '</div>';
   }
-  const largeHtml = '<div class="portrait-col"><div class="portrait-large"><img src="' + photoUrl + '" alt="Portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErr + '"><div class="cap">Portrait</div></div>' + extrasHtml + '</div>';
+  const largeHtml = '<div class="portrait-col"><div class="portrait-large"><img src="' + photoUrl + '" alt="Portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErr + '">' + ZOOM_BTN + '<div class="cap">Portrait</div></div>' + extrasHtml + '</div>';
   return `
   <div class="card has-photo" id="${p.id}" data-id="${p.id}">
     <div class="card-head" onclick="toggleCard('${p.id}')">
@@ -340,6 +345,7 @@ function init(){
     window.scrollTo({top:0, behavior:'smooth'});
   });
 })();
+  __LIGHTBOX_JS__
 
   const qParam = new URLSearchParams(location.search).get('q');
   if(qParam){

@@ -58,13 +58,32 @@
   }
   .floating-top-btn.show{display:flex}
   .floating-top-btn:hover{background:var(--link)}
+  
+  .zoom-btn{position:absolute;right:8px;bottom:8px;width:32px;height:32px;border-radius:50%;
+    background:rgba(28,39,51,.72);color:#fff;border:1.5px solid rgba(255,255,255,.85);
+    box-shadow:0 1px 5px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;
+    cursor:zoom-in;transition:background .15s,transform .15s;user-select:none;z-index:5}
+  .zoom-btn svg{width:17px;height:17px;display:block;pointer-events:none}
+  .zoom-btn:hover,.zoom-btn:focus{background:rgba(28,39,51,.95);transform:scale(1.08);outline:none}
+  .lb-overlay{position:fixed;inset:0;z-index:100000;background:rgba(10,12,16,.88);display:flex;
+    align-items:center;justify-content:center;cursor:zoom-out;padding:2vh 2vw}
+  .lb-box{position:relative;display:flex;flex-direction:column;align-items:center;max-width:96vw}
+  .lb-img{max-width:94vw;max-height:84vh;object-fit:contain;border:4px solid #fff;
+    box-shadow:0 4px 24px rgba(0,0,0,.6);background:#222}
+  .lb-cap{color:#f1f1f1;font-family:'EB Garamond',serif;font-size:1.1rem;margin-top:.7rem;text-align:center}
+  .lb-close{position:fixed;top:12px;right:16px;width:40px;height:40px;border-radius:50%;border:0;
+    background:rgba(255,255,255,.9);font-size:26px;line-height:1;cursor:pointer}
+
 
   .portrait-thumb{flex-shrink:0;width:2.5rem;height:2.5rem;border-radius:50%;overflow:hidden;border:1.5px solid var(--orange);background:var(--row);display:none}
   .portrait-thumb img{width:100%;height:100%;object-fit:cover;display:block}
   .card.has-photo .portrait-thumb{display:block}
 
   .portrait-col{flex-shrink:0;width:7.5rem;display:flex;flex-direction:column;gap:.5rem}
-  .portrait-large{text-align:center}
+  .portrait-large{text-align:center;position:relative}
+  .portrait-extra{position:relative}
+  .portrait-large .zoom-btn,.portrait-extra .zoom-btn{top:6px;right:6px;bottom:auto;width:28px;height:28px}
+  .portrait-large .zoom-btn svg,.portrait-extra .zoom-btn svg{width:15px;height:15px}
   .portrait-large img{width:100%;aspect-ratio:3/4;object-fit:cover;border:2px solid var(--white);outline:1px solid var(--border);display:block}
   .portrait-large .cap{font-size:.62rem;color:var(--muted);margin-top:.3rem;font-family:'Inter',sans-serif}
   .portrait-extra img{width:100%;aspect-ratio:3/4;object-fit:cover;border:2px solid var(--white);outline:1px solid var(--border);display:block}
@@ -230,6 +249,7 @@ function renderCard(p){
   const surnomHtml = p.surnom ? ' <span class="surnom-suffix">dit ' + esc(p.surnom) + '</span>' : '';
   const variantesHtml = p.variantes ? ' <span class="variantes-suffix">(variantes : ' + esc(p.variantes) + ')</span>' : '';
   const photoUrl = PHOTO_BASE + encodeURIComponent(p.id) + '.jpg';
+  const ZOOM_BTN = '<span class="zoom-btn" role="button" tabindex="0" title="Agrandir la photo" aria-label="Agrandir la photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10.5" y1="7.8" x2="10.5" y2="13.2"/><line x1="7.8" y1="10.5" x2="13.2" y2="10.5"/></svg></span>';
   const onErr = "this.closest('.card').classList.remove('has-photo'); this.closest('.portrait-thumb,.portrait-large').style.display='none';";
   const thumbHtml = '<div class="portrait-thumb"><img src="' + photoUrl + '" alt="Portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErr + '"></div>';
   // Photos supplémentaires (optionnelles) : <identifiant>-2.jpg, <identifiant>-3.jpg sur le même repo GitHub.
@@ -240,9 +260,9 @@ function renderCard(p){
   let extrasHtml = '';
   for (let i = 2; i <= EXTRA_PHOTOS_MAX + 1; i++) {
     const extraUrl = PHOTO_BASE + encodeURIComponent(p.id) + '-' + i + '.jpg';
-    extrasHtml += '<div class="portrait-extra"><img src="' + extraUrl + '" alt="Autre portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErrExtra + '"></div>';
+    extrasHtml += '<div class="portrait-extra"><img src="' + extraUrl + '" alt="Autre portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErrExtra + '">' + ZOOM_BTN + '</div>';
   }
-  const largeHtml = '<div class="portrait-col"><div class="portrait-large"><img src="' + photoUrl + '" alt="Portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErr + '"><div class="cap">Portrait</div></div>' + extrasHtml + '</div>';
+  const largeHtml = '<div class="portrait-col"><div class="portrait-large"><img src="' + photoUrl + '" alt="Portrait de ' + esc(fullName) + '" loading="lazy" onerror="' + onErr + '">' + ZOOM_BTN + '<div class="cap">Portrait</div></div>' + extrasHtml + '</div>';
   return `
   <div class="card has-photo" id="${p.id}" data-id="${p.id}">
     <div class="card-head" onclick="toggleCard('${p.id}')">
@@ -333,6 +353,45 @@ function init(){
     window.scrollTo({top:0, behavior:'smooth'});
   });
 })();
+  
+  (function(){
+    var overlay = null;
+    function closeLb(){
+      if(overlay){ overlay.remove(); overlay = null; document.removeEventListener('keydown', onKey); }
+    }
+    function onKey(e){ if(e.key === 'Escape'){ closeLb(); } }
+    function openLb(src, cap){
+      closeLb();
+      overlay = document.createElement('div');
+      overlay.className = 'lb-overlay';
+      overlay.innerHTML = '<div class="lb-box"><img class="lb-img" alt=""><div class="lb-cap"></div></div>'
+        + '<button type="button" class="lb-close" aria-label="Fermer">&times;</button>';
+      overlay.querySelector('.lb-img').src = src;
+      overlay.querySelector('.lb-img').alt = cap;
+      overlay.querySelector('.lb-cap').textContent = cap;
+      overlay.addEventListener('click', closeLb);
+      document.body.appendChild(overlay);
+      document.addEventListener('keydown', onKey);
+    }
+    function zoomFrom(btn){
+      var img = btn.parentElement.querySelector('img');
+      if(img){ openLb(img.currentSrc || img.src, img.alt || ''); }
+    }
+    // phase de capture : la loupe ne doit pas declencher le lien de la carte (galerie)
+    // ni l'ouverture/fermeture de la fiche.
+    document.addEventListener('click', function(e){
+      var b = e.target.closest ? e.target.closest('.zoom-btn') : null;
+      if(!b) return;
+      e.preventDefault(); e.stopPropagation();
+      zoomFrom(b);
+    }, true);
+    document.addEventListener('keydown', function(e){
+      if((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('zoom-btn')){
+        e.preventDefault(); e.stopPropagation(); zoomFrom(e.target);
+      }
+    }, true);
+  })();
+
 
   const qParam = new URLSearchParams(location.search).get('q');
   if(qParam){
