@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le groupe franc — 11e REI</title>
+<meta name="description" content="Le groupe franc — 11e régiment étranger d'infanterie (Légion étrangère, 1939-1940).">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon.ico" sizes="any">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="https://raw.githubusercontent.com/zestend-collab/favicon/main/site.webmanifest">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MGECC7TJGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MGECC7TJGK');
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#eef1f4;--card:#ffffff;--orange:#fab855;--link:#ff9900;
+    --ink:#1c2733;--muted:#5b6b7a;--border:#c7d0d9;--row:#f7f7f7;
+  }
+
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;min-height:100vh}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+  header{background:var(--card);border:1px solid var(--border);border-radius:4px;
+    padding:1.4rem 1.6rem;margin-bottom:22px}
+  header h1{font-family:'EB Garamond',serif;font-weight:600;font-size:clamp(22px,4vw,30px)}
+  header .sub{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-top:.3rem}
+  header .tags{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  header .tags span{font-size:.72rem;font-family:'Inter',sans-serif;color:var(--muted);
+    background:var(--row);border:1px solid var(--border);border-radius:12px;padding:.2rem .7rem}
+  header .back{display:inline-block;margin-top:.8rem;font-size:.8rem;color:var(--link);text-decoration:none}
+  header .back:hover{text-decoration:underline}
+
+  article{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem;
+    font-size:.92rem;line-height:1.7;text-align:justify}
+  article p{margin-bottom:1rem}
+  article ul{margin:0 0 1rem 1.3rem}
+  article li{margin-bottom:.5rem}
+  article a{color:var(--link)}
+  article .subhead{font-weight:500;color:var(--ink)}
+
+  article .section{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;
+    border-bottom:2px solid var(--orange);padding-bottom:.3rem;margin:1.8rem 0 .8rem}
+  article .entry{margin-bottom:.9rem}
+  article .entry .date{font-weight:500}
+  article .doc{font-family:'Inter',sans-serif;font-size:.85rem;background:var(--row);border:1px solid var(--border);
+    border-radius:4px;padding:1rem 1.2rem;margin:1rem 0}
+  article blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:.88rem;
+    color:var(--ink);background:var(--row);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;
+    padding:.9rem 1.1rem;margin:1rem 0}
+  article blockquote p{margin-bottom:.6rem}
+  article blockquote p:last-child{margin-bottom:0}
+
+  article figure{margin:1.2rem 0}
+  article figure img{max-width:100%;border-radius:4px;display:block;margin:0 auto}
+  article figure.size-medium img{width:min(420px,100%)}
+  article figure.size-small img{width:min(240px,100%)}
+  article figcaption{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);
+    text-align:center;margin-top:.4rem;font-style:italic}
+
+  article .imgrow{display:flex;gap:12px;margin:1.2rem 0;flex-wrap:wrap}
+  article .imgrow figure{flex:1;min-width:150px;margin:0}
+  article .imgrow img{width:100%}
+
+  article .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:1.2rem 0}
+  article .gallery img{width:100%;border-radius:4px;display:block}
+
+  article .figure-side{display:flex;gap:22px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-side .side-img{flex:0 0 40%;max-width:40%;margin:0}
+  article .figure-side .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-side .side-img figcaption{text-align:left}
+  article .figure-side .side-text{flex:1;min-width:0}
+  article .figure-side .side-text p{margin-bottom:1rem}
+  article .figure-side .side-text p:last-child{margin-bottom:0}
+  article .figure-side.reverse{flex-direction:row-reverse}
+  @media (max-width:600px){
+    article .figure-side{flex-direction:column}
+    article .figure-side .side-img{flex:none;max-width:100%}
+    article .figure-side.reverse{flex-direction:column}
+  }
+
+  article .figure-flank{display:flex;gap:20px;margin:1.2rem 0;align-items:flex-start}
+  article .figure-flank .side-img{flex:0 0 22%;max-width:22%;margin:0}
+  article .figure-flank .side-img img{width:100%;border-radius:4px;display:block}
+  article .figure-flank .side-text{flex:1;min-width:0}
+  article .figure-flank .side-text p{margin-bottom:1rem}
+  article .figure-flank .side-text p:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    article .figure-flank{flex-direction:column}
+    article .figure-flank .side-img{flex:none;max-width:100%}
+  }
+
+  article .sources{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem}
+  article .sources h3{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:.5rem}
+  article .sources ul{padding-left:1.1rem;margin-bottom:0}
+  article .sources li{margin-bottom:.3rem;overflow-wrap:break-word;word-break:break-word}
+  article .sources a{overflow-wrap:break-word;word-break:break-word}
+
+/* ==========================================================================
+   Ajouts a BIO_CSS pour les pages thematiques du Groupe A
+   (monuments, prisonniers, rawa-ruska, 11e-rei-en-photo, cimetieres-communaux,
+   necropoles, rouge-vert2, livre, medaille-militaire-1952/1953, recensement-11e-rei)
+   ========================================================================== */
+
+/* --- communes a plusieurs pages : a ajouter une seule fois --- */
+article .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--ink);
+  border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.4rem}
+article .updated{margin-top:1rem;font-size:.78rem;color:var(--muted);font-style:italic}
+article .seealso{margin-top:1.8rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.88rem}
+
+/* --- livre.html : bouton d'appel a l'action --- */
+article .cta{display:inline-block;margin-top:.4rem;font-family:'Inter',sans-serif;font-weight:500;
+  color:var(--ink);background:var(--orange);text-decoration:none;padding:.6rem 1.2rem;border-radius:20px}
+article .cta:hover{background:var(--link);color:#fff}
+
+/* --- medaille-militaire-1952.html : citations detaillees (renommees de .citations
+   -> .citations-fiches pour ne plus entrer en collision avec la variante 1953) --- */
+ul.citations-fiches{list-style:none;margin:1.2rem 0 1.6rem;padding:0;
+  display:grid;grid-template-columns:1fr;gap:.6rem;min-width:0}
+ul.citations-fiches li.person{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:.7rem .9rem;text-align:left;min-width:0;overflow-wrap:break-word;word-break:break-word}
+ul.citations-fiches li.person strong{font-family:'EB Garamond',serif;font-size:1rem;display:block;margin-bottom:.3rem}
+ul.citations-fiches ul.det{list-style:none;margin:0;padding:0;min-width:0}
+ul.citations-fiches ul.det li{font-size:.83rem;color:var(--ink);padding:.08rem 0;overflow-wrap:break-word;word-break:break-word}
+@media (max-width:600px){
+  ul.citations-fiches li.person{padding:.6rem .7rem}
+  ul.citations-fiches li.person strong{font-size:.92rem}
+  ul.citations-fiches ul.det li{font-size:.78rem}
+}
+
+/* --- medaille-militaire-1953.html : citations en lignes (renommees de .citations
+   -> .citations-lignes) --- */
+article .citations-lignes{margin:1.2rem 0 1.6rem;padding:0}
+article .citations-lignes li{list-style:none;background:var(--row);border:1px solid var(--border);
+  border-radius:4px;padding:.7rem .9rem;margin-bottom:.6rem;text-align:left}
+article .citations-lignes li strong{font-family:'EB Garamond',serif;font-size:1rem}
+article .citations-lignes li .details{display:block;margin-top:.15rem}
+article .citations-lignes li .mort{display:block;margin-top:.15rem;color:var(--muted);font-style:italic}
+
+/* --- necropoles.html : une carte par nécropole (nom, description, liste des tombes).
+   Manquait jusqu'ici malgre la page citee dans la liste du groupe ci-dessus - .necropole
+   restait donc sans aucun style (rendu par defaut du navigateur, sans carte ni espacement). --- */
+article .necropole{background:var(--row);border:1px solid var(--border);border-radius:4px;
+  padding:1.1rem 1.3rem;margin-bottom:1.2rem}
+article .necropole h2{font-family:'EB Garamond',serif;font-weight:600;font-size:1.05rem;
+  color:var(--ink);border-bottom:none;margin:0 0 .4rem;padding-bottom:0}
+article .necropole p.meta{font-size:.82rem;color:var(--muted);margin-bottom:.7rem}
+article .necropole ul.roll{list-style:none;margin:0 0 .5rem;padding:0}
+article .necropole ul.roll li{font-size:.85rem;padding:.15rem 0;border-bottom:1px dashed var(--border)}
+article .necropole ul.roll li:last-child{border-bottom:none}
+article .necropole p.note{font-size:.78rem;color:var(--muted);font-style:italic;margin:.5rem 0 0}
+
+/* --- recensement-11e-rei.html : navigation par lettre (A-Z + a-confirmer) --- */
+article .letter-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.2rem 0 1.6rem}
+article .letter-nav a{padding:.5rem 1.1rem;background:var(--row);border:1px solid var(--border);
+  border-radius:20px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.85rem}
+article .letter-nav a:hover{background:var(--orange);border-color:var(--orange)}
+
+/* --- recensement-11e-rei.html : commentaires de visiteurs conserves (meme principe
+   que .comments/.comment de generateur_pages_panel_depuis_contenu.py, pour rester
+   coherent avec presse.html) --- */
+article .comments{margin-top:1.8rem}
+article .comment{background:var(--row);border:1px solid var(--border);border-radius:6px;
+  padding:1rem 1.2rem;margin-bottom:.9rem;font-size:.86rem}
+article .comment .meta{margin-bottom:.4rem}
+article .comment .author{font-weight:600;color:var(--ink)}
+article .comment .date{color:var(--muted);font-size:.78rem;margin-left:.5rem}
+article .comment.reponse{margin-left:1.5rem;border-left:3px solid var(--orange)}
+
+  footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:20px;font-style:italic}
+
+  .floating-comment-btn{
+    position:fixed;bottom:74px;right:18px;z-index:100;
+    display:flex;align-items:center;gap:.4rem;
+    font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;
+    color:var(--ink);background:var(--orange);text-decoration:none;
+    padding:.55rem 1rem;border-radius:24px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    transition:background .15s;white-space:nowrap;
+  }
+  .floating-comment-btn:hover{background:var(--link);color:#fff}
+  .floating-top-btn{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--orange);color:var(--ink);border:none;
+    font-size:1.2rem;line-height:1;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    display:none;align-items:center;justify-content:center;
+    transition:opacity .2s;
+  }
+  .floating-top-btn.show{display:flex}
+  .floating-top-btn:hover{background:var(--link)}
+</style>
+</head>
+<body>
+
+<div class="hero"></div>
+<div id="menu"></div>
+<script src="/banniere.js"></script>
+<script src="/menu.js"></script>
+<main data-pagefind-body>
+
+<header>
+  <h1>Le groupe franc</h1>
+  <div class="sub">Les volontaires de l'avant, avril-mai 1940</div>
+  <div class="tags"><span>11è REI</span><span>Groupe franc</span><span>Corps francs</span><span>Filstroff</span><span>Bouzonville</span><span>Drôle de guerre</span></div>
+  <a class="back" href="https://www.11regimentetranger.com/arborescence">← Retour</a>
+</header>
+
+<article>
+
+<p class="lede">Du 15&nbsp;avril au 15&nbsp;mai 1940, chacun des trois bataillons du 11e REI détache en avant de la ligne Maginot, entre Bouzonville et la frontière sarroise, une petite troupe de volontaires&nbsp;: son groupe franc. Pendant un mois, ces hommes tendent des embuscades, reconnaissent de nuit les positions allemandes et protègent les avant-postes. Ils sont les premiers du régiment à affronter l'offensive allemande, les 13 et 14&nbsp;mai, et y perdent deux de leurs trois officiers, les lieutenants Jurion et Hafenscher. Cette page définit ce qu'est un groupe franc, rappelle d'où vient la formule, puis suit jour par jour ceux du 11e REI à partir des journaux de marche, des comptes rendus et d'un témoignage écrit à Marrakech en janvier 1941.</p>
+
+<h2 class="section">Qu'est-ce qu'un groupe franc&nbsp;?</h2>
+
+<p>Un groupe franc, ou corps franc, est une petite unité de volontaires prélevés dans les compagnies d'un bataillon ou d'un régiment et placés, pour un temps, hors de l'organisation ordinaire. Le mot «&nbsp;franc&nbsp;» a ici son sens ancien de «&nbsp;libre&nbsp;»&nbsp;: ces hommes sont affranchis du service courant de leur unité (travaux, gardes, corvées) pour se consacrer à une seule tâche, le contact avec l'ennemi.</p>
+
+<p>Ses missions sont celles de la «&nbsp;petite guerre&nbsp;»&nbsp;: patrouilles et reconnaissances dans le no man's land, embuscades de nuit, coups de main destinés à ramener des prisonniers et des renseignements, protection des postes avancés et des travailleurs. Le groupe franc est légèrement équipé, mieux pourvu que la moyenne en armes automatiques et en grenades, et commandé par un jeune officier choisi pour son allant. L'effectif est celui d'une forte section&nbsp;: le ministère des Armées décrit le corps franc type de 1939 comme cinq équipes de six combattants sous les ordres d'un lieutenant.</p>
+
+<p>Les deux expressions désignent la même chose. La presse et les mémoires de l'époque parlent volontiers de «&nbsp;corps francs&nbsp;»&nbsp;; les archives du 11e REI écrivent toujours «&nbsp;groupe franc&nbsp;», abrégé «&nbsp;G.F.&nbsp;», et c'est le terme retenu ici.</p>
+
+<h2 class="section">Une tradition ancienne, une formule de la drôle de guerre</h2>
+
+<p>L'idée de confier les missions d'avant-garde à des volontaires tenus à l'écart du rang est ancienne. Les armées de l'Ancien Régime lèvent des compagnies franches pour éclairer et harceler&nbsp;; en 1870-1871, corps francs et francs-tireurs réunissent des volontaires en marge de l'armée régulière. Pendant la Grande Guerre, les régiments d'infanterie forment des groupes francs pour les coups de main sur les tranchées adverses&nbsp;: il s'agit déjà de ramener des prisonniers, donc des renseignements.</p>
+
+<p>La formule revient dès l'automne 1939. Sur un front où les deux armées s'observent sans s'attaquer, les unités en première ligne constituent leurs corps francs à partir d'octobre&nbsp;: ils cherchent le contact, patrouillent pour faire des prisonniers et harcèlent des unités allemandes qui pratiquent elles-mêmes des patrouilles intensives. En Lorraine et en Sarre, le no man's land qui s'étend en avant de la ligne Maginot devient ainsi, pendant tout l'hiver, le seul endroit où l'on se bat vraiment. Pour le commandement, c'est un moyen de se renseigner&nbsp;; pour la troupe, un exutoire à l'inaction.</p>
+
+<p>Le nom survivra à la défaite&nbsp;: il est repris par les Corps francs d'Afrique, levés en Afrique du Nord à la fin de 1942, et par les groupes francs de la Résistance intérieure. Deux anciens du 11e REI s'y retrouvent. Le caporal Justin Proc s'engage aux Corps francs d'Afrique le 8&nbsp;janvier 1943&nbsp;; le sous-lieutenant Henri Sautour, de la 1re compagnie, combat sous le pseudonyme de «&nbsp;Stofflet&nbsp;» au corps franc du Sidobre, dans l'Armée secrète.</p>
+
+<h2 class="section">Avril 1940&nbsp;: le 11e REI forme ses trois groupes</h2>
+
+<p>À la mi-avril 1940, le régiment quitte le secteur qu'il tenait depuis l'hiver et passe à la 6e division d'infanterie nord-africaine (6e D.I.N.A.), devant les ouvrages d'Anzeling, entre Boulay et Bouzonville. Les bataillons sont employés aux travaux de fortification et au creusement d'un fossé antichars&nbsp;: une vie de chantier qui pèse sur des hommes venus pour se battre. Georges Manue, officier au régiment, écrit dans <a href="livre.html"><em>Rien n'est perdu</em></a> que le commandement créa les groupes francs pour calmer cette fièvre, et que «&nbsp;le choix ne fut point aisé entre tant de candidats&nbsp;».</p>
+
+<p>Les détachements quittent leurs compagnies entre le 15 et le 17&nbsp;avril. Le capitaine Gaultier, du 3e bataillon, donne la règle de composition&nbsp;: «&nbsp;1 groupe par Compagnie de voltigeurs&nbsp;». Les journaux de marche des compagnies en gardent la trace&nbsp;:</p>
+
+<div style="overflow-x:auto;margin:1rem 0">
+  <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.82rem;background:var(--card)">
+    <caption style="text-align:left;font-style:italic;color:var(--muted);margin-bottom:.6rem;caption-side:top;font-size:.85rem">Les trois groupes francs du 11e REI, 15&nbsp;avril – 15&nbsp;mai 1940</caption>
+    <thead>
+      <tr>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Groupe franc</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Chef</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Secteur</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Ce que disent les journaux de compagnie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">1er bataillon</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Lieutenant <a href="https://www.11regimentetranger.com/recensement-r#roux-robert-louis-maurice" target="_blank" rel="noopener">Roux</a> (2e Cie), puis lieutenant <a href="https://www.11regimentetranger.com/recensement-j#jurion-marc-andre-maurice-felicien" target="_blank" rel="noopener">Jurion</a> (1re Cie) à partir du 2&nbsp;mai</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Filstroff</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">2e Cie&nbsp;: le lieutenant Roux et 12&nbsp;légionnaires. 3e Cie&nbsp;: 12 volontaires partis le 17&nbsp;avril, dont le sergent Vaclav. Trois groupes, un par compagnie.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">2e bataillon</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Lieutenant <a href="https://www.11regimentetranger.com/recensement-h#hafenscher-janos-laszlo-ladislas" target="_blank" rel="noopener">Hafenscher</a> (6e Cie)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">Nord-est de Bouzonville</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top;background:var(--row)">6e Cie&nbsp;: 1 lieutenant, 1 sergent-chef, 1 caporal-chef, 2 caporaux, 10&nbsp;légionnaires. 7e Cie&nbsp;: 1 sergent, 2 caporaux, 10&nbsp;légionnaires. 5e Cie&nbsp;: 10&nbsp;hommes. Au 14&nbsp;mai&nbsp;: 41&nbsp;hommes.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">3e bataillon</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Lieutenant <a href="https://www.11regimentetranger.com/recensement-b#boudoux-d-hautefeuille-marie-joseph-louis-etienne" target="_blank" rel="noopener">d'Hautefeuille</a> (10e Cie)</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">Alzing, bois de l'Eleiswald et de l'Eberswald</td>
+        <td style="border:1px solid var(--border);padding:.5rem .6rem;vertical-align:top">10e Cie&nbsp;: le lieutenant, le sergent Marchandisse, le caporal Vankovitch et 7&nbsp;légionnaires le 16&nbsp;avril, puis le sergent Nulens et 3&nbsp;légionnaires le 20. 11e Cie&nbsp;: une dizaine d'hommes.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Une fois formés, les groupes ne dépendent plus de leurs bataillons. Avec ceux des autres régiments de la division, ils sont mis à la disposition du détachement avancé, aux ordres du colonel commandant l'infanterie divisionnaire, et placés sous le commandement d'un même officier, le capitaine de Dampierre. Le lieutenant Levacher, de la 11e compagnie, résume&nbsp;: «&nbsp;Les groupes francs du régiment sont groupés et travaillent au profit des unités en secteur.&nbsp;» Quand les bataillons changent de cantonnement, les 24 et 25&nbsp;avril, le journal du régiment note que les groupes francs «&nbsp;ne rejoignent pas provisoirement&nbsp;»&nbsp;: ils restent en ligne. Ils manquent ainsi la fête de Camerone et la remise du drapeau, le 30&nbsp;avril près de Boulay.</p>
+
+<h2 class="section">Avril – début mai&nbsp;: embuscades et reconnaissances</h2>
+
+<p>C'est le groupe du 3e bataillon dont l'activité est la mieux connue, grâce au journal tenu par le capitaine Gaultier. Dès les premiers jours, le caporal <a href="https://www.11regimentetranger.com/recensement-l#lefevre" target="_blank" rel="noopener">Lefèvre</a> (18&nbsp;avril) puis le légionnaire <a href="https://www.11regimentetranger.com/recensement-m#mollisson-johan" target="_blank" rel="noopener">Mollisson</a> (19&nbsp;avril) sont blessés accidentellement. Dans la nuit du 19 au 20&nbsp;avril, au retour d'une reconnaissance dans les lignes ennemies, le sergent <a href="https://www.11regimentetranger.com/recensement-m#marchandise-albert" target="_blank" rel="noopener">Marchandisse</a> reçoit une balle dans la poitrine&nbsp;; il sera cité à l'ordre de la division. Le sergent <a href="https://www.11regimentetranger.com/recensement-n#nulens-albert" target="_blank" rel="noopener">Nulens</a> le remplace.</p>
+
+<p>Les nuits suivantes se ressemblent. Le 21 au soir, le groupe est en embuscade pendant qu'un poste de tirailleurs voisin repousse un coup de main, sans avoir à intervenir. Le 22, il passe la nuit dans l'Eleiswald, de 20&nbsp;heures à 6&nbsp;heures, et reconnaît six éléments d'abris et de boyaux à 400&nbsp;mètres des points d'appui. Le 25, nouvelle embuscade en lisière nord du bois, en liaison avec le groupe franc du 9e régiment de tirailleurs marocains. Le 27, il sort à la recherche d'un officier et de quatre hommes du groupe franc du groupe de reconnaissance, disparus la nuit précédente entre le moulin de Schreckling et la cote 284&nbsp;; pris sous le feu des mitrailleuses allemandes vers 20&nbsp;heures, il se replie sans perte. Début mai, il s'embusque entre le Dammerwald et l'Eberswald, couvre la relève des points d'appui, protège les travailleurs entre l'Eberswald et Schuckling. Le plus souvent, le journal conclut&nbsp;: «&nbsp;R.A.S.&nbsp;» Gaultier, dans ses souvenirs, situe cette activité «&nbsp;dans la région célèbre de la chapelle de "Paris-Soir"&nbsp;».</p>
+
+<p>Le groupe du 1er bataillon s'installe à Filstroff, sur la Nied, avec le lieutenant Roux. Il y reste quand le bataillon part pour le camp de Bockange, le 25&nbsp;avril. Le 2&nbsp;mai, Roux part en permission et le lieutenant Marc Jurion, de la 1re compagnie, prend le commandement. Le groupe du 2e bataillon est confié au lieutenant <a href="https://www.11regimentetranger.com/recensement-h#hafenscher-janos-laszlo-ladislas" target="_blank" rel="noopener">Jean Hafenscher</a>, officier d'active de la 6e compagnie, dont la 1re section forme le noyau du groupe. Il «&nbsp;patrouille au contact de l'ennemi, dans la région Nord-Est de Bouzonville&nbsp;», écrit le lieutenant Blot. Une partie des hommes de la 7e compagnie n'y fait qu'un passage&nbsp;: neuf rentrent dès le 21&nbsp;avril, quatre autres le 5&nbsp;mai.</p>
+
+<h2 class="section">Nuit du 10 au 11&nbsp;mai&nbsp;: la reconnaissance de Niedaltdorf</h2>
+
+<p>Le 10&nbsp;mai, l'offensive allemande commence en Belgique et aux Pays-Bas. Le soir même, le lieutenant Jurion reçoit l'ordre de reconnaître la lisière sud du village allemand de Niedaltdorf, de l'autre côté du ruisseau du Remel, avec le groupe de la 1re compagnie et deux groupes du groupe de reconnaissance de la division (G.R.D.I. 37). Son compte rendu, conservé à Aubagne, décrit une progression «&nbsp;très lente et difficile&nbsp;» à travers un terrain semé de mines. Les voltigeurs du caporal <a href="https://www.11regimentetranger.com/recensement-g#grenouillat-jean-abel-justin" target="_blank" rel="noopener">Grenouillat</a> doivent accompagner l'officier jusqu'au village&nbsp;; le demi-groupe du fusil-mitrailleur, avec le caporal <a href="https://www.11regimentetranger.com/recensement-p#purrini-etienne" target="_blank" rel="noopener">Purini</a>, s'installe sur une hauteur pour couvrir le repli.</p>
+
+<p>À 2&nbsp;heures 10, le dispositif est en place. Purini, qui cherche un emplacement plus éloigné des mines, revient vers son arme quand l'une d'elles saute, «&nbsp;vraisemblablement déclenchée par le légionnaire <a href="https://www.11regimentetranger.com/recensement-r#rose-niel" target="_blank" rel="noopener">Rose</a>&nbsp;»&nbsp;: le légionnaire <a href="https://www.11regimentetranger.com/recensement-b#boitschenko-serge" target="_blank" rel="noopener">Boitschenko</a> reçoit un éclat dans le dos, près des poumons, et refuse de se faire évacuer. À 2&nbsp;heures 45, une seconde mine tue un brigadier-chef du G.R.D.I. Jurion, «&nbsp;voyant l'heure tardive&nbsp;», donne l'ordre du repli. Boitschenko est proposé pour la médaille militaire, Purini pour une citation.</p>
+
+<h2 class="section">13&nbsp;mai&nbsp;: la cote 262 et la mort du lieutenant Jurion</h2>
+
+<p>Deux nuits plus tard, la mission est d'une autre nature&nbsp;: il faut «&nbsp;déceler les indices de dispositions agressives des Allemands&nbsp;». Le chef d'escadron d'Avesnes, qui commande le sous-secteur, en donne l'itinéraire dans une lettre au capitaine Rouillon&nbsp;: départ du point d'appui de la cote 238 à 23&nbsp;heures, moulin de Neukirchen, puis le long du Remel jusqu'au nord-est du point d'appui du Bois-Carré, où le groupe s'établit en embuscade jusqu'à 3&nbsp;heures 30.</p>
+
+<p>La suite est racontée par un légionnaire du groupe de la 1re compagnie, dans un témoignage de trois pages daté de Marrakech, le 15&nbsp;janvier 1941, et certifié par le capitaine Le Moine. La signature a été remplacée par des points sur la copie conservée à Vincennes, mais l'auteur se nomme dans le texte&nbsp;: «&nbsp;moi Vandrurger, blessé assez gravement&nbsp;». Il s'agit vraisemblablement du légionnaire <a href="https://www.11regimentetranger.com/recensement-uvw#vandeburger-robert" target="_blank" rel="noopener">Vandeburger</a>, grenadier, que l'état des pertes appelle «&nbsp;Vanburger&nbsp;».</p>
+
+<blockquote>
+  <p>«&nbsp;Dans la nuit du 12 au 13 Mai nous avons patrouillé dans le No-mans-land&nbsp;; vers 2&nbsp;heures du matin, nous tendons une embuscade au bois carré&nbsp;: rien n'arrive. […] On aurait dit que le Lieutenant Jurion cherchait à percer le secret de cette nuit trop calme en comparaison des autres nuits.&nbsp;»</p>
+</blockquote>
+
+<p>Vers 4&nbsp;heures 15, le groupe regagne Filstroff par la route. À 200&nbsp;mètres du village, un violent tir d'artillerie se déclenche. Jurion monte sur une hauteur avec son garde du corps, le légionnaire <a href="https://www.11regimentetranger.com/recensement-c#croisier" target="_blank" rel="noopener">Croisier</a>, et comprend que le feu vise le poste d'observation français de la cote 262, sur la route de Colmen, tenu par une section du G.R.D.I. Il donne ses ordres aux trois chefs de groupe&nbsp;: le sergent <a href="https://www.11regimentetranger.com/recensement-h#haound" target="_blank" rel="noopener">Haond</a>, avec le groupe de la 2e compagnie, sur l'aile gauche&nbsp;; le sergent <a href="https://www.11regimentetranger.com/recensement-uvw#vaclav-hosek" target="_blank" rel="noopener">Vaclav</a>, avec celui de la 3e, sur l'aile droite&nbsp;; lui-même, avec le groupe de la 1re, contre-attaquera le poste.</p>
+
+<blockquote>
+  <p>«&nbsp;Arrivé à cent mètres du poste, l'ennemi a déjà vent de notre approche et nous reçoit à coup de mitrailleuses et de mitraillettes. Nous nous rendons malheureusement compte que les allemands ont déjà occupé le poste. Héroïquement, le Lieutenant Jurion entraine le groupe 1° Compagnie et nous nous souviendrons toujours de son cri exalté&nbsp;: "En avant mes enfants".&nbsp;»</p>
+</blockquote>
+
+<p>Le groupe franchit un premier réseau de barbelés et nettoie à la grenade un des trous occupés. Jurion, Croisier et Grenouillat, armés chacun d'une mitraillette, sèment le désordre dans le poste&nbsp;; mais l'ennemi est supérieur en nombre et en armes automatiques, «&nbsp;dotation qui nous fait plutôt défaut&nbsp;». Le groupe Haond s'approche et appuie de son feu&nbsp;; du groupe Vaclav, «&nbsp;pas de nouvelles&nbsp;». C'est alors que l'officier tombe.</p>
+
+<blockquote>
+  <p>«&nbsp;Un commencement de flottement se produit parmi nous quand nous constatons que le Lieutenant Jurion est pris dans les barbelés et ne bouge plus. Quelques uns d'entre nous se précipitent vers lui et le dégagent. […] On veut l'évacuer sur le poste de secours de Filstroff&nbsp;; il refuse et nous donne l'ordre d'aller continuer le combat&nbsp;; pourtant nous sentons qu'il est mourant mais son ordre est formel.&nbsp;»</p>
+</blockquote>
+
+<p>Croisier fait la navette entre l'officier et les combattants. Le témoin cite ceux qu'il a vus se distinguer&nbsp;: Grenouillat et Purini, blessés&nbsp;; <a href="https://www.11regimentetranger.com/recensement-m#meulemans-marcel" target="_blank" rel="noopener">Meuleman</a>, «&nbsp;blessé debout&nbsp;» en vidant un chargeur de fusil-mitrailleur dans un trou&nbsp;; <a href="https://www.11regimentetranger.com/recensement-h#hichetiri" target="_blank" rel="noopener">Hichetiri</a>, «&nbsp;véritable petit démon&nbsp;»&nbsp;; <a href="https://www.11regimentetranger.com/recensement-c#champion" target="_blank" rel="noopener">Champion</a>, de la 2e compagnie, «&nbsp;tireur infaillible&nbsp;»&nbsp;; et Rose, qui tire debout «&nbsp;comme au stand&nbsp;» en disant à chaque coup&nbsp;: «&nbsp;Encore un&nbsp;». Le groupe franc du G.R.D.I. arrive enfin en renfort. Rose, <a href="https://www.11regimentetranger.com/recensement-f#friedmann-antoine" target="_blank" rel="noopener">Friedmann</a> et Croisier portent le lieutenant jusqu'au poste de secours de Filstroff, puis retournent au combat.</p>
+
+<p>Marc Jurion meurt le jour même. Les sources ne s'accordent pas sur sa blessure&nbsp;: le témoin le dit atteint au ventre, alors que le chef d'escadron d'Avesnes et le colonel Robert écrivent qu'une balle lui a traversé les deux cuisses, le colonel précisant qu'il «&nbsp;n'a pas été frappé par un éclat d'obus comme le prétendait le médecin qui l'a évacué&nbsp;». D'Avesnes écrit le jour même&nbsp;: «&nbsp;Entendu naturellement pour la Légion d'honneur.&nbsp;» Elle lui sera décernée à titre posthume, avec une <a href="jo-mars-1943.html">citation à l'ordre de l'armée</a>.</p>
+
+<p>Le poste, «&nbsp;en partie perdu et repris&nbsp;» selon d'Avesnes, est sauvé. L'état des pertes que signe le lieutenant Roux, rentré de permission en hâte, compte pour le groupe franc, outre son chef, un tué, douze blessés et un disparu&nbsp;:</p>
+
+<ul>
+  <li>1re compagnie, blessés&nbsp;: les caporaux Purini et Grenouillat, Meuleman, <a href="https://www.11regimentetranger.com/recensement-h#hochepied-michel" target="_blank" rel="noopener">Hochepied</a> et Vandeburger&nbsp;;</li>
+  <li>2e compagnie, blessés&nbsp;: le sergent Haond, <a href="https://www.11regimentetranger.com/recensement-o#orwat-theodore" target="_blank" rel="noopener">Orwat</a>, Champion et <a href="https://www.11regimentetranger.com/recensement-uvw#van-eeckoute" target="_blank" rel="noopener">Van Eeckoute</a>&nbsp;; tué&nbsp;: <a href="https://www.11regimentetranger.com/recensement-s#simek-karel" target="_blank" rel="noopener">Karel Šimek</a>, ramené dans l'après-midi&nbsp;;</li>
+  <li>3e compagnie, blessés&nbsp;: <a href="https://www.11regimentetranger.com/recensement-p#pilarczyk-edouard" target="_blank" rel="noopener">Pilarczyk</a>, <a href="https://www.11regimentetranger.com/recensement-k#karpowicz-nicolas" target="_blank" rel="noopener">Karpowicz</a> et le caporal <a href="https://www.11regimentetranger.com/recensement-g#georgiou-philippe" target="_blank" rel="noopener">Georgiou</a>&nbsp;; disparu&nbsp;: Bohler.</li>
+</ul>
+
+<p>Le disparu reparaît le soir même. Fait prisonnier pendant l'action, le légionnaire Bohler, de son vrai nom <a href="burcher-francois.html">François Burcher</a>, «&nbsp;a réussi à tromper la surveillance de l'ennemi&nbsp;» et regagne son unité. Trois des blessés ne survivent pas&nbsp;: Pilarczyk meurt le 15&nbsp;mai et Georgiou le 17, à l'ambulance chirurgicale de Pont-à-Chaussy, Grenouillat le 5&nbsp;juin. Le combat de la cote 262 coûte donc cinq morts au régiment. Orwat, grièvement atteint par une rafale, recevra la médaille militaire&nbsp;; Friedmann est cité à l'ordre de la division pour s'être «&nbsp;lancé avec une farouche ardeur à l'assaut d'un point d'appui dont l'ennemi venait de s'emparer&nbsp;».</p>
+
+<h2 class="section">14&nbsp;mai&nbsp;: le P.A. 20 et la cote 335</h2>
+
+<p>Le lendemain, c'est le groupe du 2e bataillon, celui du lieutenant Hafenscher, qui est engagé plus au nord, près de Heining. Son chef y est mortellement blessé. Le sergent-chef <a href="https://www.11regimentetranger.com/recensement-h#helle" target="_blank" rel="noopener">Helle</a>, qui prend alors le commandement, en rend compte en quelques lignes&nbsp;:</p>
+
+<blockquote>
+  <p>«&nbsp;Le Groupe Franc étant au repos a reçu l'ordre à 4&nbsp;heures d'aller dégager le P.A. 20 attaqué. Le groupe-franc, composé de l'officier, 3 s/Off. 2 caporaux-chefs, 5 caporaux et 30&nbsp;légionnaires, s'étant porté vers le P.A. a obligé l'ennemi à se replier sans incident. A 7&nbsp;heures, le Lieutenant, Commandant le sous-quartier, nous a donné l'ordre de monter au poste de 335, pour s'assurer s'il y avait encore du monde. Au cours de cette mission par un boyau d'accès d'environ 30 à 40 cm de profondeur, l'ennemi s'étant révélé fortement retranché, le Lieutenant Hafenscher commandant le groupe-franc a décidé de nous replier, et de demander l'appui de l'artillerie. A l'amorce de ce repli le chef de groupe franc a été atteint par des balles à la poitrine.&nbsp;»</p>
+</blockquote>
+
+<p>Ramené au point d'appui, le lieutenant Hafenscher est évacué. Le groupe reste toute la journée au P.A. 20 pour le protéger, sous un bombardement continu&nbsp;: le caporal <a href="https://www.11regimentetranger.com/recensement-p#peyrot-pierre" target="_blank" rel="noopener">Pierre Peyrot</a>, de la 5e compagnie, est tué&nbsp;; les légionnaires <a href="https://www.11regimentetranger.com/recensement-e#eischen-omer-arthur-alphonse" target="_blank" rel="noopener">Eischen</a> et <a href="https://www.11regimentetranger.com/recensement-s#sanchez-anastasio" target="_blank" rel="noopener">Sanchez</a>, de la 6e, <a href="https://www.11regimentetranger.com/recensement-r#robak" target="_blank" rel="noopener">Robacq</a> et <a href="https://www.11regimentetranger.com/recensement-b#bussiere" target="_blank" rel="noopener">Bussière</a>, de la 5e, sont blessés. À 22&nbsp;heures 30, le groupe regagne Bouzonville. Eischen, engagé volontaire belge de dix-neuf ans, meurt le lendemain&nbsp;; Le lieutenant Jean Hafenscher, né en Hongrie et naturalisé français en 1930, ne survit pas à ses blessures&nbsp;: il meurt le 20&nbsp;mai, six jours après avoir été frappé à la tête de son groupe franc. Un panneau et une croix rappellent aujourd'hui ce combat à la cote 335, près de Heining-lès-Bouzonville (voir la page <a href="monuments.html">Monuments</a>).</p>
+
+<p>Le groupe du 3e bataillon intervient lui aussi, selon Gaultier, «&nbsp;pour dégager les avant-postes fortement pressés à l'Est de Bouzonville&nbsp;», avant d'être relevé. Aucune perte n'y est signalée.</p>
+
+<h2 class="section">15&nbsp;mai&nbsp;: le retour dans les bataillons</h2>
+
+<p>Le régiment est déjà en route vers la Meuse. Les groupes francs le rattrapent en camion&nbsp;: celui du 1er bataillon rejoint à Fey le 15&nbsp;mai au matin, celui du 2e à Corny à 3&nbsp;heures, celui du 3e à Houdelaincourt. Chacun retrouve sa compagnie. À la 2e, le lieutenant Roux reprend sa section avec «&nbsp;les rescapés&nbsp;»&nbsp;; à la 11e, le journal enregistre le retour des détachés.</p>
+
+<p>En un mois, les trois groupes ont perdu huit morts, dont deux de leurs trois chefs, et une quinzaine d'autres blessés. Leur histoire propre s'arrête là, mais non celle de leurs hommes, que l'on retrouve dans les combats du <a href="cartographie-inor.html">bois d'Inor</a> puis dans la retraite. Le caporal <a href="https://www.11regimentetranger.com/recensement-l#le-bloch-pierre" target="_blank" rel="noopener">Le Bloch</a>, le sergent <a href="https://www.11regimentetranger.com/recensement-r#rigubert-felix-frederic-victor" target="_blank" rel="noopener">Rigubert</a> et le légionnaire <a href="https://www.11regimentetranger.com/recensement-uvw#vollmer-rene-fernand" target="_blank" rel="noopener">Vollmer</a> sont tués le 27&nbsp;mai&nbsp;; Mollisson meurt le 31&nbsp;mai, le Britannique <a href="https://www.11regimentetranger.com/recensement-c#clubbe-william" target="_blank" rel="noopener">Clubb</a> le 2&nbsp;juin&nbsp;; <a href="https://www.11regimentetranger.com/recensement-l#libigocki-paul" target="_blank" rel="noopener">Libigocki</a> tombe le 18&nbsp;juin à Saint-Germain-sur-Meuse. Le lieutenant d'Hautefeuille est blessé au visage le 27&nbsp;mai, le lieutenant Roux le 22&nbsp;mai puis le 18&nbsp;juin. Au total, quatorze des hommes passés par les groupes francs sont morts pendant la campagne.</p>
+
+<h2 class="section">Les hommes des groupes francs</h2>
+
+<p>Le tableau réunit les 79 noms que les archives permettent de rattacher à un groupe franc, classés par bataillon. Il reste incomplet&nbsp;: pour la 9e compagnie, un seul nom est connu, et plusieurs légionnaires ne sont désignés que par leur patronyme. Chaque nom renvoie à la fiche du recensement.</p>
+
+<div style="overflow-x:auto;margin:1rem 0">
+  <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.8rem;background:var(--card)">
+    <thead>
+      <tr>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Nom</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Grade</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Compagnie</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Au groupe franc</th>
+        <th style="border:1px solid var(--border);padding:.5rem .6rem;text-align:left;background:var(--row);font-weight:600">Pendant la campagne</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="5" style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top;background:var(--row);font-weight:600">Groupe franc du 1er bataillon (40 noms)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-a#amadeo-hurtado" target="_blank" rel="noopener">AMADEO Hurtado</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1er bataillon</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Section de commandement. Groupe franc</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-b#bleuse-jean-henri-clodomir" target="_blank" rel="noopener">BLEUSE Jean</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-b#boitschenko-serge" target="_blank" rel="noopener">BOITSCHENKO Serge</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 10/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-b#burcher-francois" target="_blank" rel="noopener">BURCHER François</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier, évadé</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-c#champion" target="_blank" rel="noopener">CHAMPION</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-c#croisier" target="_blank" rel="noopener">CROISIER</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Garde du corps de Jurion</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-f#friedmann-antoine" target="_blank" rel="noopener">FRIEDMANN Antoine</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier, évadé</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-g#georgiou-philippe" target="_blank" rel="noopener">GEORGIOU Philippe</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940, mort le 17/05/1940 (Pont-à-Chaussy)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-g#grenouillat-jean-abel-justin" target="_blank" rel="noopener">GRENOUILLAT Jean</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940, mort le 05/06/1940 (Pont-à-Chaussy)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#haound" target="_blank" rel="noopener">HAOUND/HAOND/HAONG</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#heleniak-czeslaw-bronislaw" target="_blank" rel="noopener">HELENIAK Célestin</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 18/06/1940, prisonnier, évadé</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#henel-charles" target="_blank" rel="noopener">HENEL/HENNEL Charles</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#hichetiri" target="_blank" rel="noopener">HICHETIRI</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#hochepied-michel" target="_blank" rel="noopener">HOCHEPIED Michel</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#hora-karel" target="_blank" rel="noopener">HORA Charles</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Section Derly</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 18/06/1940, prisonnier, évadé</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-j#jarmuzewski" target="_blank" rel="noopener">JARMUZEWSKI</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-j#jurion-marc-andre-maurice-felicien" target="_blank" rel="noopener">JURION Marc</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">lieutenant</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Chef de section</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940, mort le 13/05/1940 (Filstroff)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-k#karpowicz-nicolas" target="_blank" rel="noopener">KARPOWICZ/KARPOWITZ Nicolas</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-l#libigocki-paul" target="_blank" rel="noopener">LIBIGOCKI/LIBIGSKI Paul</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">mort le 18/06/1940 (Saint Germain sur Meuse)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-l#lopez" target="_blank" rel="noopener">LOPEZ</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-m#meulemans-marcel" target="_blank" rel="noopener">MEULEMANS/MEULEMAN Marcel</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-m#montagne" target="_blank" rel="noopener">MONTAGNE</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-m#montfort-yvon" target="_blank" rel="noopener">MONTFORT Yvon</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 22/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-n#novotny" target="_blank" rel="noopener">NOVOTNY</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 27/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-o#orwat-theodore" target="_blank" rel="noopener">ORWAT Théodore</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-p#pilarczyk-edouard" target="_blank" rel="noopener">PILARCZYK Edouard</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940, mort le 15/05/1940 (Pont-à-Chaussy)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-p#piotrowicz" target="_blank" rel="noopener">PIOTROWICZ</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-p#purrini-etienne" target="_blank" rel="noopener">PURRINI Etienne</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-r#rose-niel" target="_blank" rel="noopener">ROSE Niel</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 18/06/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-r#roux-robert-louis-maurice" target="_blank" rel="noopener">ROUX Robert</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">lieutenant</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Chef de section commandant le Groupe franc</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 22/05/1940, prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-s#sachon-georges-joseph-bernard" target="_blank" rel="noopener">SACHON Georges</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-s#sajti" target="_blank" rel="noopener">SAJTI/SAJHI</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-s#simek-karel" target="_blank" rel="noopener">ŠIMEK Karel</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">mort le 13/05/1940 (Filstroff)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-s#szemas-georges" target="_blank" rel="noopener">SZEMAS Georges</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-t#timerman-gregoire" target="_blank" rel="noopener">TIMERMAN Grégoire</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Section Sautour tireur FM. Groupe franc</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 27/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-uvw#vaclav-hosek" target="_blank" rel="noopener">VACLAV Hosek</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">3e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-uvw#van-eeckoute" target="_blank" rel="noopener">VAN EECKOUTE</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-uvw#vandeburger-robert" target="_blank" rel="noopener">VANDEBURGER Robert</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 13/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-uvw#vandhuysen" target="_blank" rel="noopener">VANDHUYSEN</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-xyz#zannoni-joseph" target="_blank" rel="noopener">ZANNONI Joseph</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1re Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td colspan="5" style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top;background:var(--row);font-weight:600">Groupe franc du 2e bataillon (22 noms)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-b#bertenant-auguste-emile" target="_blank" rel="noopener">BERTENANT Auguste</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Garde magasin du groupe franc</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-b#brousse" target="_blank" rel="noopener">BROUSSE</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-b#bussiere" target="_blank" rel="noopener">BUSSIERE</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 14/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-c#cadiou-pierre-jean-marie-yvon" target="_blank" rel="noopener">CADIOU Pierre</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-c#cheftel" target="_blank" rel="noopener">CHEFTEL</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16/04 au 05/05/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-c#cichy-ladislas" target="_blank" rel="noopener">CICHY Ladislas</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16/04 au 05/05/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-c#cossard" target="_blank" rel="noopener">COSSARD</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-d#delacour" target="_blank" rel="noopener">DELACOUR</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 22/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-d#delwaide-rene" target="_blank" rel="noopener">DELWAIDE René</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-d#desombre-louis-eugene-francois" target="_blank" rel="noopener">DESOMBRE Louis</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">5e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Affecté au groupe franc</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-d#dozier-roger-marius" target="_blank" rel="noopener">DOZIER Roger</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-e#eischen-omer-arthur-alphonse" target="_blank" rel="noopener">EISCHEN Omer</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">6e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère section</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 14/05/1940, mort le 15/05/1940 (Pont-à-Chaussy)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#hafenscher-janos-laszlo-ladislas" target="_blank" rel="noopener">HAFENSCHER Jean</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">lieutenant</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">6e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère section puis commandant du groupe franc</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 14/05/1940, mort le 20/05/1940 (Filstroff)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-h#helle" target="_blank" rel="noopener">HELLE</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent chef</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">6e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère section</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-l#labrandero" target="_blank" rel="noopener">LABRANDERO</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-m#martin-roger-antoine" target="_blank" rel="noopener">MARTIN Roger</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal chef puis sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-p#peyrot-pierre" target="_blank" rel="noopener">PEYROT Pierre</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">5e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">mort le 14/05/1940 (Heckling)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-r#robak" target="_blank" rel="noopener">ROBAK/ROBACQ</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">5e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 14/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-s#sambout" target="_blank" rel="noopener">SAMBOUT</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16 au 21/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-s#sanchez-anastasio" target="_blank" rel="noopener">SANCHEZ Anastasio</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">légionnaire</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">6e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 14/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-t#tcheratchoukine-prokopy" target="_blank" rel="noopener">TCHERATCHOUKINE Prosper</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16/04 au 05/05/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-t#touzeau-andre-camille-gaston" target="_blank" rel="noopener">TOUZEAU André</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">7e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Détaché au groupe franc du 16/04 au 05/05/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td colspan="5" style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top;background:var(--row);font-weight:600">Groupe franc du 3e bataillon (17 noms)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-a#arbaretier-rolland-lucien" target="_blank" rel="noopener">ARBARETIER Rolland</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 25/05/1940, prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-b#boudoux-d-hautefeuille-marie-joseph-louis-etienne" target="_blank" rel="noopener">BOUDOUX D'HAUTEFEUILLE Claude</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">lieutenant</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">10e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">4è section (10è compagnie) commandant le groupe franc du 3è bataillon</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 27/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-c#clubbe-william" target="_blank" rel="noopener">CLUBB/CLUBBE William</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">mort le 02/06/1940 (Ancemont)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-d#decaillet-joseph" target="_blank" rel="noopener">DECAILLET Joseph</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal chef</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-d#dubois-emile-francois-gustave" target="_blank" rel="noopener">DUBOIS Emile</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-f#forcioli-paul" target="_blank" rel="noopener">FORCIOLI dit d’ARBEL Paul</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-l#lakomiak-marjan" target="_blank" rel="noopener">LAKOMIAK Marjan</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé, prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-l#le-bloch-pierre" target="_blank" rel="noopener">LE BLOCH Pierre</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">9e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">mort le 27/05/1940 (Bois d'Inor)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-l#lefevre" target="_blank" rel="noopener">LEFEVRE/LEFEBVRE</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">10e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 18/04/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-m#marchandise-albert" target="_blank" rel="noopener">MARCHANDISE/MARCHANDISSE Albert</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">10e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">4è section</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 20/04/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-m#moissienko" target="_blank" rel="noopener">MOISSIENKO/MOISSEIENKO/MOISSEINKO</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-m#mollisson-johan" target="_blank" rel="noopener">MOLLISSON/MATTISSON Johan</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">2è classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">10e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Blessé accidentellement au groupe franc le 19/04/1940</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">blessé le 19/04/1940, mort le 31/05/1940 (Bras sur Meuse)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-n#nulens-albert" target="_blank" rel="noopener">NULENS Albert</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">10e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">En remplacement de Marchandisse blessé. 3è section</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-r#rafalovitch-jeckok" target="_blank" rel="noopener">RAFALOVITCH/RAFALOWICZ Jean</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier, évadé</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-r#rigubert-felix-frederic-victor" target="_blank" rel="noopener">RIGUBERT Félix</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">sergent</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">mort le 27/05/1940</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-uvw#vollmer-rene-fernand" target="_blank" rel="noopener">VOLLMER René</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">1ère classe</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">11e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">Brosseur. Groupe franc</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">mort le 27/05/1940 (Bras sur Meuse)</td></tr>
+      <tr><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"><a href="https://www.11regimentetranger.com/recensement-uvw#voukovitch" target="_blank" rel="noopener">VOUKOVITCH/VONKOVITCH/VANKOVITCH</a></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">caporal</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">10e Cie</td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top"></td><td style="border:1px solid var(--border);padding:.4rem .6rem;vertical-align:top">prisonnier</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="sources">
+  <h3>Sources</h3>
+  <ul>
+    <li>Archives du 11e REI (CDRH-LE, Aubagne), 1er bataillon&nbsp;: état des pertes du groupe franc (lettre du colonel Robert du 15&nbsp;mai 1940, état signé du lieutenant Roux, compte rendu du lieutenant Jurion sur la nuit du 10 au 11&nbsp;mai, lettre du chef d'escadron d'Avesnes du 13&nbsp;mai 1940).</li>
+    <li>Archives du 11e REI (SHD Vincennes)&nbsp;: «&nbsp;Mort du Lieutenant Jurion&nbsp;», témoignage daté de Marrakech, 15&nbsp;janvier 1941, copie certifiée par le capitaine Le Moine.</li>
+    <li>Archives du 11e REI (CDRH-LE, Aubagne), 2e bataillon&nbsp;: compte rendu du sergent-chef Helle sur le combat du 14&nbsp;mai 1940&nbsp;; journal de marche du 2e bataillon (capitaine d'Alegron)&nbsp;; journaux des 6e et 7e compagnies&nbsp;; comptes rendus des lieutenants Blot et Chevillotte.</li>
+    <li>Archives du 11e REI (CDRH-LE, Aubagne), 3e bataillon&nbsp;: journal de marche du 3e bataillon et souvenirs du capitaine Gaultier&nbsp;; journaux des 9e, 10e et 11e compagnies&nbsp;; compte rendu du lieutenant Levacher (décembre 1941).</li>
+    <li>Journal de marche du régiment (colonel Robert)&nbsp;; <a href="jmo-1er-bataillon.html">journal de marche du 1er bataillon</a>&nbsp;; journaux des 1re, 2e et 3e compagnies&nbsp;; comptes rendus Roux et Verny.</li>
+    <li>Journal officiel&nbsp;: citations de Marchandisse (26&nbsp;juin 1941), Friedmann (12 décembre 1942), Orwat (16 août 1942) et Jurion (mars 1943).</li>
+    <li>Georges R. Manue, <em>Rien n'est perdu</em>.</li>
+    <li>Ministère des Armées, Chemins de mémoire, «&nbsp;France 1939. La drôle de guerre&nbsp;»&nbsp;: <a href="https://www.defense.gouv.fr/chemins-memoire/histoire-memoires/ressources-historiques/seconde-guerre-mondiale/operations-militaires/1939-1940-6" target="_blank" rel="noopener">defense.gouv.fr</a>.</li>
+    <li>Pour aller plus loin&nbsp;: Margot Sévin, «&nbsp;À l'origine des premiers commandos français&nbsp;: les "groupes francs" (1939-1940)&nbsp;», <em>Revue historique des armées</em>, n°308, 2023, p. 65-74.</li>
+  </ul>
+</div>
+
+</article>
+
+<footer>11e Régiment Étranger d'Infanterie — 11regimentetranger.com</footer>
+
+</main>
+<a class="floating-comment-btn" href="https://www.11regimentetranger.com/commentaire?page=Blog-GroupeFranc" target="_blank" rel="noopener">💬 Laisser un commentaire</a>
+<button type="button" class="floating-top-btn" id="floating-top-btn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<script>(function(){
+  var btn = document.getElementById('floating-top-btn');
+  if(!btn) return;
+  function onScroll(){
+    if(window.scrollY > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();</script>
+</body>
+</html>
